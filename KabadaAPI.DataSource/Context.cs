@@ -8,6 +8,8 @@ namespace KabadaAPI.DataSource
     {
         public DbSet<User> Users { get; set; }
 
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
