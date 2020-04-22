@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KabadaAPI.DataSource.Models;
+using KabadaAPI.DataSource.Utilities;
 
 namespace KabadaAPI.DataSource
 {
@@ -9,7 +10,7 @@ namespace KabadaAPI.DataSource
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=localhost; Initial Catalog=KabadaDB; User Id=use_your_own_name; Password=use_your_own_password;");
+            optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
