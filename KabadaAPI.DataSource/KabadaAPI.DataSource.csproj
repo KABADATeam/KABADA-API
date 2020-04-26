@@ -17,4 +17,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ConnectionStrings.cs" />
+  </ItemGroup>
 </Project>
