@@ -36,38 +36,5 @@ namespace KabadaAPI.Controllers
         {
             return Ok(user);
         }
-
-        [HttpGet]
-        [Route("users/all")]
-        public IActionResult GetAll()
-        {
-            UsersRepository repository = new UsersRepository();
-            return Ok(repository.GetUsers());
-        }
-
-        [HttpPost]
-        [Route("users/register")]
-        public IActionResult AddUser([FromBody]User user)
-        {
-            UsersRepository repository = new UsersRepository();
-            try
-            {
-                repository.AddUser(user.UserName, user.Password);
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
-        }
-
-        [HttpPost]
-        [Route("users/updatepassword")]
-        public IActionResult UpdatePassword([FromBody]User user)
-        {
-            UsersRepository repository = new UsersRepository();
-            repository.UpdatePassword(user.UserName, user.Password);
-            return Ok("Success on password");
-        }
     }
 }
