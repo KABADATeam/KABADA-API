@@ -19,25 +19,23 @@ namespace KabadaAPI.DataSource.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-<<<<<<< HEAD
             modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
-=======
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
-                {
+            {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD
                     b.Property<string>("CountryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+            });
+            modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
+                {
+                 
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
-=======
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 
@@ -53,7 +51,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.User", b =>

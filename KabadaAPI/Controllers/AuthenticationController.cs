@@ -45,33 +45,12 @@ namespace KabadaAPI.Controllers
         [Route("login")]
         public IActionResult Get([FromBody]UserViewModel userView)
         {
-<<<<<<< HEAD
-            UsersRepository repository = new UsersRepository();
-            return Ok(repository.GetUsers());
-        }
-        [HttpGet]
-        [Route("countryAll")]
-        public IActionResult GetAllCountries()
-        {
-            CountryRepository CntrName = new CountryRepository();
-            return Ok(CntrName.GetCountries());
-        }
-=======
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
 
             UsersRepository repository = new UsersRepository();
             try
             {
-<<<<<<< HEAD
-                
-                    repository.AddUser(user.UserName, user.Password);
-                    return Ok("Success");
-                
-               
-
-=======
                 var user = repository.AuthenticateUser(userView.Email, userView.Password);
                 var tokenString = Token.Generate(user, config);
                 return Ok(new
@@ -80,23 +59,21 @@ namespace KabadaAPI.Controllers
                     email = user.Email,
                     name = user.Name
                 });
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
             }
             catch (Exception exc)
             {
                 return BadRequest(exc.Message);
             }
         }
-<<<<<<< HEAD
-
-        [HttpPost]
-        [Route("users/updatepassword")]
-        public IActionResult UpdatePassword([FromBody]User user)
+        
+        [HttpGet]
+        [Route("countryAll")]
+        public IActionResult GetAllCountries()
         {
-            UsersRepository repository = new UsersRepository();
-            repository.UpdatePassword(user.UserName, user.Password);
-            return Ok("Success on password");
+            CountryRepository CntrName = new CountryRepository();
+            return Ok(CntrName.GetCountries());
         }
+
         [HttpGet]
         [Route("country")]
         public IActionResult PostCountry()
@@ -105,7 +82,5 @@ namespace KabadaAPI.Controllers
             List<string> CountryList = repository.CountryNameList();
             return Ok(CountryList);
         }
-=======
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
     }
 }

@@ -7,13 +7,9 @@ namespace KabadaAPI.DataSource
     public class Context : DbContext
     {
         public DbSet<User> Users { get; set; }
-<<<<<<< HEAD
         public DbSet<Country> Countries { get; set; }
-
-=======
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,10 +33,6 @@ namespace KabadaAPI.DataSource
 
             base.OnModelCreating(modelBuilder);
         }
-        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
-         {
-
-         }
-         */
+      
     }
 }
