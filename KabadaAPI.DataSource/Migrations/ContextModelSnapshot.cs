@@ -62,12 +62,24 @@ namespace KabadaAPI.DataSource.Migrations
                     b.ToTable("Industries");
                 });
 
+            modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
+            {
+                b.Property<Guid>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("uniqueidentifier");
+
+                b.Property<string>("CountryName")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(max)");
+
+            });
+
             modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
 
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 

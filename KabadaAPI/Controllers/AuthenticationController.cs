@@ -65,5 +65,22 @@ namespace KabadaAPI.Controllers
                 return BadRequest(exc.Message);
             }
         }
+        
+        [HttpGet]
+        [Route("countryAll")]
+        public IActionResult GetAllCountries()
+        {
+            CountryRepository CntrName = new CountryRepository();
+            return Ok(CntrName.GetCountries());
+        }
+
+        [HttpGet]
+        [Route("country")]
+        public IActionResult PostCountry()
+        {
+            CountryRepository repository = new CountryRepository();
+            List<string> CountryList = repository.CountryNameList();
+            return Ok(CountryList);
+        }
     }
 }

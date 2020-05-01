@@ -7,6 +7,7 @@ namespace KabadaAPI.DataSource
     public class Context : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<Activity> Activities { get; set; }
@@ -32,6 +33,12 @@ namespace KabadaAPI.DataSource
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 100, Title = "Simple" });
 
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Country>().Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+            base.OnModelCreating(modelBuilder);
         }
+      
     }
 }
