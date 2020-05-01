@@ -4,14 +4,16 @@ using KabadaAPI.DataSource;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KabadaAPI.DataSource.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200501150335_addLanguageColumnToIndustryTable")]
+    partial class addLanguageColumnToIndustryTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,6 +45,21 @@ namespace KabadaAPI.DataSource.Migrations
                     b.ToTable("Activities");
                 });
 
+            modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Countries");
+                });
+
             modelBuilder.Entity("KabadaAPI.DataSource.Models.Industry", b =>
                 {
                     b.Property<Guid>("Id")
@@ -53,11 +70,11 @@ namespace KabadaAPI.DataSource.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
+                    b.Property<string>("Language")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Language")
+                    b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -65,24 +82,12 @@ namespace KabadaAPI.DataSource.Migrations
                     b.ToTable("Industries");
                 });
 
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
-            {
-                b.Property<Guid>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("uniqueidentifier");
-
-                b.Property<string>("CountryName")
-                    .IsRequired()
-                    .HasColumnType("nvarchar(max)");
-
-            });
-
             modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Countries");
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 
