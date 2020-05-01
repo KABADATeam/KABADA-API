@@ -7,7 +7,7 @@ namespace KabadaAPI.DataSource
     public class Context : DbContext
     {
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Country> Countries { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,6 +21,16 @@ namespace KabadaAPI.DataSource
                 .ValueGeneratedOnAdd();
 
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Country>().Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+            base.OnModelCreating(modelBuilder);
         }
+        /* protected override void OnModelCreating(ModelBuilder modelBuilder)
+         {
+
+         }
+         */
     }
 }

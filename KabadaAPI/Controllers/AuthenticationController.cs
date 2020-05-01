@@ -44,6 +44,13 @@ namespace KabadaAPI.Controllers
             UsersRepository repository = new UsersRepository();
             return Ok(repository.GetUsers());
         }
+        [HttpGet]
+        [Route("countryAll")]
+        public IActionResult GetAllCountries()
+        {
+            CountryRepository CntrName = new CountryRepository();
+            return Ok(CntrName.GetCountries());
+        }
 
         [HttpPost]
         [Route("users/register")]
@@ -52,8 +59,12 @@ namespace KabadaAPI.Controllers
             UsersRepository repository = new UsersRepository();
             try
             {
-                repository.AddUser(user.UserName, user.Password);
-                return Ok("Success");
+                
+                    repository.AddUser(user.UserName, user.Password);
+                    return Ok("Success");
+                
+               
+
             }
             catch (Exception exc)
             {
@@ -68,6 +79,14 @@ namespace KabadaAPI.Controllers
             UsersRepository repository = new UsersRepository();
             repository.UpdatePassword(user.UserName, user.Password);
             return Ok("Success on password");
+        }
+        [HttpGet]
+        [Route("country")]
+        public IActionResult PostCountry()
+        {
+            CountryRepository repository = new CountryRepository();
+            List<string> CountryList = repository.CountryNameList();
+            return Ok(CountryList);
         }
     }
 }
