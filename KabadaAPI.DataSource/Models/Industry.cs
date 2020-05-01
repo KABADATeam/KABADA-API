@@ -13,6 +13,7 @@ namespace KabadaAPI.DataSource.Models
         public string Code { get; set; }
         [Required]
         public string Title { get; set; }
+        public string Language { get; set; }
         public virtual List<Activity> Activities { get; set; }
 
     }
