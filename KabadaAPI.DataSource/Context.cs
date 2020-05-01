@@ -9,6 +9,8 @@ namespace KabadaAPI.DataSource
         public DbSet<User> Users { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+        public DbSet<Activity> Activities { get; set; }
+        public DbSet<Industry> Industries { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -17,6 +19,10 @@ namespace KabadaAPI.DataSource
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Activity>().Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+            modelBuilder.Entity<Industry>().Property(x => x.Id)
+                .ValueGeneratedOnAdd();
             modelBuilder.Entity<User>().Property(x => x.Id)
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<RefreshToken>().Property(x => x.Id)
