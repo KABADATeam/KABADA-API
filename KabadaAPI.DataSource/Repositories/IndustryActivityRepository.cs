@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -78,28 +79,70 @@ namespace KabadaAPI.DataSource.Repositories
             }
         }
 
-        //public void AddIndustryAndActivities(string indCode, string indTitle, List<Activity> activities)
+        public List<Industry> GetAllIndustriesbyLanguage(string language)
+        {
+            return context.Industries
+                .Where(s => s.Language == language)
+                           .ToList();
+        }
+        //public List<Industry> GetIndustriesbyLanguageAndCode(string language, string code)
         //{
-        //    Industry industry = new Industry()
-        //    {
-        //        Id = Guid.NewGuid(),
-        //        Code = indCode,
-        //        Title = indTitle
-        //    };
-
-        //    foreach (var act in activities)
-        //    {
-        //        Activity activity = new Activity()
-        //        {
-        //            Id = Guid.NewGuid(),
-        //            Code = act.Code,
-        //            Title = act.Title,
-        //            Industry = industry
-        //        };
-        //        context.Activities.Add(activity);
-        //        context.SaveChanges();
-        //    }
-
+        //    return context.Industries
+        //        .Where(s => s.Language == language && s.Code == code)
+        //        .Include(s => s.Activities)
+        //                   .ToList();
         //}
+        public List<Activity> GetAllActivitiesbyLanguageIndustry(string language, string industry)
+        {
+            return context.Activities
+                .Where(s => s.Industry.Language == language && s.Industry.Code == industry)
+                           .ToList();
+        }
+        public List<Activity> GetAllActivitiesbyLanguage(string language)
+        {
+            return context.Activities
+                .Where(s => s.Industry.Language == language)
+                           .ToList();
+        }
+
+        public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
+        {
+            Activity act = context.Activities.FirstOrDefault(i => i.Code.Equals(actCode) && i.Industry.Language.Equals(indLang));
+            Industry ind = context.Industries.FirstOrDefault(i => i.Code.Equals(indCode) && i.Language.Equals(indLang));
+
+            if (ind == null && act == null)
+            {
+                Industry industry = new Industry()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = indCode,
+                    Language = indLang,
+                    Title = indTitle
+                };
+
+                Activity activity = new Activity()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = actCode,
+                    Title = actTitle,
+                    Industry = industry
+                };
+                context.Activities.Add(activity);
+            }
+            else if (ind != null && act == null)
+            {
+                Activity activity = new Activity()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = actCode,
+                    Title = actTitle,
+                    Industry = ind
+                };
+                context.Activities.Add(activity);
+            }
+            context.SaveChanges();
+
+
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace KabadaAPI.ViewModels
     {
         public string Code { get; set; }
         public string Title { get; set; }
+        public string Language { get; set; }
+        public List<Activity> Activities { get; set; }
     }
 }
