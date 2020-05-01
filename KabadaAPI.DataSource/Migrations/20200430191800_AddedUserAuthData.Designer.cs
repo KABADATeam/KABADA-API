@@ -4,14 +4,16 @@ using KabadaAPI.DataSource;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KabadaAPI.DataSource.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200430191800_AddedUserAuthData")]
+    partial class AddedUserAuthData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,25 +21,12 @@ namespace KabadaAPI.DataSource.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-<<<<<<< HEAD
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
-=======
             modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-<<<<<<< HEAD
-                    b.Property<string>("CountryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Countries");
-=======
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime2");
 
@@ -53,7 +42,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
->>>>>>> cc57adec159412e014c670f5c3043f39128b08c4
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.User", b =>

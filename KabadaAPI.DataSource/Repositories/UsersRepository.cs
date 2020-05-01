@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
 using System.Linq;
+using KabadaAPI.DataSource.Utilities;
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -14,44 +15,51 @@ namespace KabadaAPI.DataSource.Repositories
             context = new Context();
         }
 
-
-
-        public List<User> GetUsers()
+        public User AddUser(string name, string email, string password)
         {
-            return context.Users.ToList();
+            if (!Email.isValid(email))
+                throw new Exception("Mismatch of email address pattern");
+
+            if (context.Users.Where(u => u.Email == email).FirstOrDefault() != null)
+                throw new Exception("This email address already registered");
+
+            string salt = Cryptography.GetSalt();
+            string passwordHash = Cryptography.GetHash(password, salt);
+            string confirmationCode = Cryptography.GetHash(email, salt);
+
+            UserType type = context.UserTypes.FirstOrDefault(x => x.Id == 100);
+
+            User user = new User()
+            {
+                Name = name,
+                Surname = "",
+                Email = email,
+                EmailConfirmed = false,
+                PasswordHash = passwordHash,
+                Salt = salt,
+                Type = type,
+                TwoFactorAuthEnabled = false
+            };
+
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            return user;
         }
 
-        public void AddUser(string userName, string password)
+        public User AuthenticateUser(string email, string password)
         {
-            User usr = context.Users.FirstOrDefault(u => u.UserName.Equals(userName));
-
-            if (usr == null)
+            var user = context.Users.Where(u => u.Email == email).FirstOrDefault();
+            if (user != null)
             {
-                User user = new User()
-                {
-                    Id = Guid.NewGuid(),
-                    UserName = userName,
-                    Password = password
-                };
-
-                context.Users.Add(user);
-                context.SaveChanges();
+                string passwordHash = Cryptography.GetHash(password, user.Salt);
+                if (user.PasswordHash.Equals(passwordHash))
+                    return user;
+                else
+                    throw new Exception("Wrong email or password");
             }
             else
-            {
-                throw new Exception("Such user already exists");
-            }
-        }
-
-        public void UpdatePassword(string userName, string password)
-        {
-            User usr = context.Users.FirstOrDefault(u => u.UserName.Equals(userName));
-
-            if (usr != null)
-            {
-                usr.Password = password;
-                context.SaveChanges();
-            }
+                throw new Exception("Wrong email or password");
         }
     }
 }
