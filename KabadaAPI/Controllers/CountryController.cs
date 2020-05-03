@@ -23,6 +23,20 @@ namespace KabadaAPI.Controllers
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetLanguage(country));
         }
+        [HttpGet]
+        [Route("latitude/{country}")]
+        public IActionResult GetCountriesLatitude(string country)//pasitikrinti
+        {
+            CountryRepository Cntrlatitude = new CountryRepository();
+            return Ok(Cntrlatitude.GetLatitude(country));
+        }
+        [HttpGet]
+        [Route("longitude/{country}")]
+        public IActionResult GetCountriesLongitude(string country)//pasitikrinti
+        {
+            CountryRepository Cntrlatitude = new CountryRepository();
+            return Ok(Cntrlatitude.GetLongitude(country));
+        }
 
         [HttpPost]
         [Route("entry")]

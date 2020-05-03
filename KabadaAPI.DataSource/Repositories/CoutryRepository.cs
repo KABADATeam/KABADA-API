@@ -67,7 +67,28 @@ namespace KabadaAPI.DataSource.Repositories
  
 
         }
+        public string GetLongitude(string country)
+        {
+            var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
+            if (lang != null)
+            {
+                return lang.Longitude;
+            }
+            else { throw new Exception("Country not found"); }
 
+
+        }
+        public string GetLatitude(string country)
+        {
+            var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
+            if (lang != null)
+            {
+                return lang.Latitude;
+            }
+            else { throw new Exception("Country not found"); }
+
+
+        }
     }
 }
 
