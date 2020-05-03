@@ -15,6 +15,7 @@ namespace KabadaAPI.Controllers
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetCountries());
         }
+
         [HttpGet]
         [Route("language/{country}")]
         public IActionResult GetCountriesLanguage( string country)//pasitikrinti

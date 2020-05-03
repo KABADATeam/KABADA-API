@@ -3,8 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KabadaAPI.DataSource.Models
 {
-
-
     public class Country
     {
         [Key]
@@ -21,7 +19,5 @@ namespace KabadaAPI.DataSource.Models
 
         [Required]
         public string Language { get; set; }
-
-
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace KabadaAPI.DataSource.Migrations
 {
-    public partial class InitialCreate2 : Migration
+    public partial class CountryModelAdd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,10 @@ namespace KabadaAPI.DataSource.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CountryName = table.Column<string>(nullable: false)
+                    CountryName = table.Column<string>(nullable: false),
+                    Longitude = table.Column<string>(nullable: false),
+                    Latitude = table.Column<string>(nullable: false),
+                    Language = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

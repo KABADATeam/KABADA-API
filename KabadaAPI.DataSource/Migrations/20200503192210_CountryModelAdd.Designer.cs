@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.DataSource.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200503180224_CountryTablechanged5")]
-    partial class CountryTablechanged5
+    [Migration("20200503192210_CountryModelAdd")]
+    partial class CountryModelAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
