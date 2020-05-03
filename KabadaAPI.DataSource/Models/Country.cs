@@ -9,8 +9,19 @@ namespace KabadaAPI.DataSource.Models
     {
         [Key]
         public Guid Id { get; set; }
+
         [Required]
         public string CountryName { get; set; }
+
+        [Required]
+        public string Longitude { get; set; }
+
+        [Required]
+        public string Latitude { get; set; }
+
+        [Required]
+        public string Language { get; set; }
+
 
     }
 }

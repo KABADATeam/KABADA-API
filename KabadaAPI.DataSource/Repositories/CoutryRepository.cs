@@ -13,12 +13,12 @@ namespace KabadaAPI.DataSource.Repositories
 
         //   static HttpClient client = new HttpClient();
         public Context context1;
-       
+
         public CountryRepository()
         {
             context1 = new Context();
         }
-        
+
         public List<string> CountryNameList()
         {
             List<string> Culturelist = new List<string>();
@@ -29,42 +29,48 @@ namespace KabadaAPI.DataSource.Repositories
                 if (!Culturelist.Contains(regionInfo.EnglishName))
                 {
                     Culturelist.Add(regionInfo.EnglishName);
-                    Country country = new Country()
+                    Country country1 = new Country()
                     {
                         Id = Guid.NewGuid(),
-                        CountryName = regionInfo.EnglishName
+                        CountryName = regionInfo.EnglishName,
+                        Language = regionInfo.TwoLetterISORegionName,
+                        Latitude="555",
+                        Longitude="999"
 
                     };
-                    context1.Countries.Add(country);
-                    
+                    context1.Countries.Add(country1);
+                   
 
                 }
 
-            }context1.SaveChanges();
+            }
+            context1.SaveChanges();
             Culturelist.Sort();
             return Culturelist;
         }
         public List<Country> GetCountries()
         {
             List<Country> a = new List<Country>();
-            a=context1.Countries.ToList();
+            a = context1.Countries.ToList();
             a.Sort((x, y) => string.Compare(x.CountryName, y.CountryName));
-           
+
             return a;
         }
-        //  public void AddCountry()
-        //  {
-        //User usr = context.Users.FirstOrDefault(u => u.UserName.Equals(userName));
-        //User mail = context.Users.FirstOrDefault(u => u.Email.Equals(email));
-        //    List<string> AddingCountry = CountryNameList();
+        public string GetLanguage(string country)
+        {
+            var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
+            if (lang != null)
+            {
+                return lang.Language;
+            }
+            else { throw new Exception("Country not found"); }
+ 
 
-        //  foreach (var Cname in AddingCountry) { 
-
-        //}
-        //   context.SaveChanges();
+        }
 
     }
-
-
 }
+
+
+
 
