@@ -10,7 +10,7 @@ namespace KabadaAPI.Controllers
     {
         [HttpGet]
         [Route("all")]
-        public IActionResult GetAllinfo()
+        public IActionResult GetAllinfo()//if need to see all table info
         {
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetCountries());
@@ -18,27 +18,27 @@ namespace KabadaAPI.Controllers
 
         [HttpGet]
         [Route("language/{country}")]
-        public IActionResult GetCountriesLanguage( string country)//pasitikrinti
+        public IActionResult GetCountriesLanguage( string country)//if need one country language
         {
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetLanguage(country));
         }
         [HttpGet]
-        [Route("latitude/{country}")]
+        [Route("latitude/{country}")]// if need one country latitude
         public IActionResult GetCountriesLatitude(string country)
         {
             CountryRepository Cntrlatitude = new CountryRepository();
             return Ok(Cntrlatitude.GetLatitude(country));
         }
         [HttpGet]
-        [Route("longitude/{country}")]
+        [Route("longitude/{country}")]//if need one country longitude
         public IActionResult GetCountriesLongitude(string country)
         {
             CountryRepository Cntrlongitude = new CountryRepository();
             return Ok(Cntrlongitude.GetLongitude(country));
         }
         [HttpGet]
-        [Route("contriesList")]
+        [Route("contriesList")]//if need list of countyNames;
         public IActionResult GetCountriesList()
         {
             CountryRepository Cntrlist = new CountryRepository();
@@ -47,7 +47,7 @@ namespace KabadaAPI.Controllers
         }
 
         [HttpPost]
-        [Route("entry")]
+        [Route("entry")]//if need to fill database
         public IActionResult PostCountry()
         {
             CountryRepository repository = new CountryRepository();
