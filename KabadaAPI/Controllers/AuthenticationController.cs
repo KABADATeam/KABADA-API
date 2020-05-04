@@ -37,11 +37,11 @@ namespace KabadaAPI.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest(exc.Message);
+                return BadRequest(new { message = exc.Message });
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("login")]
         public IActionResult Get([FromBody]UserViewModel userView)
         {
@@ -62,7 +62,7 @@ namespace KabadaAPI.Controllers
             }
             catch (Exception exc)
             {
-                return BadRequest(exc.Message);
+                return BadRequest(new { message = exc.Message });
             }
         }
     }
