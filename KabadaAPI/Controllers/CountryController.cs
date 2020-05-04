@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using KabadaAPI.DataSource.Repositories;
 using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
 namespace KabadaAPI.Controllers
 {
     [Route("api/countries")]
@@ -10,7 +10,7 @@ namespace KabadaAPI.Controllers
     {
         [HttpGet]
         [Route("all")]
-        public IActionResult GetAllCountries()
+        public IActionResult GetAllinfo()
         {
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetCountries());
@@ -25,17 +25,25 @@ namespace KabadaAPI.Controllers
         }
         [HttpGet]
         [Route("latitude/{country}")]
-        public IActionResult GetCountriesLatitude(string country)//pasitikrinti
+        public IActionResult GetCountriesLatitude(string country)
         {
             CountryRepository Cntrlatitude = new CountryRepository();
             return Ok(Cntrlatitude.GetLatitude(country));
         }
         [HttpGet]
         [Route("longitude/{country}")]
-        public IActionResult GetCountriesLongitude(string country)//pasitikrinti
+        public IActionResult GetCountriesLongitude(string country)
         {
-            CountryRepository Cntrlatitude = new CountryRepository();
-            return Ok(Cntrlatitude.GetLongitude(country));
+            CountryRepository Cntrlongitude = new CountryRepository();
+            return Ok(Cntrlongitude.GetLongitude(country));
+        }
+        [HttpGet]
+        [Route("contriesList")]
+        public IActionResult GetCountriesList()
+        {
+            CountryRepository Cntrlist = new CountryRepository();
+            //List<string> CountryList = new List<string>();
+            return Ok(Cntrlist.GetList());
         }
 
         [HttpPost]
