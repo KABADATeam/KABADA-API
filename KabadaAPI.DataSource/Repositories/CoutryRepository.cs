@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+//using 
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -35,6 +36,7 @@ namespace KabadaAPI.DataSource.Repositories
                                    //else code = "non";
                 string lang = dataList[i]["name"];
                 string coords = dataList[i]["latlng"].ToString();
+                string nr = dataList[i]["numericCode"].ToString();
                 string latit;
                 string longi;
                 if (coords.Length > 5)
@@ -54,7 +56,8 @@ namespace KabadaAPI.DataSource.Repositories
                     CountryName = lang,
                     Language = code,
                     Latitude = latit,
-                    Longitude = longi
+                    Longitude = longi,
+                    CountryNr=nr
 
                 };
                 names.Sort();
@@ -73,6 +76,7 @@ namespace KabadaAPI.DataSource.Repositories
                                    //else code = "non";
                 string lang1 = dataList[i]["translations"]["it"];
                 string coords = dataList[i]["latlng"].ToString();
+                string nr = dataList[i]["numericCode"].ToString();
                 string latit;
                 string longi;
                 if (coords.Length > 5)
@@ -92,7 +96,8 @@ namespace KabadaAPI.DataSource.Repositories
                     CountryName = lang1,
                     Language = code,
                     Latitude = latit,
-                    Longitude = longi
+                    Longitude = longi,
+                    CountryNr = nr
 
                 };
                 names.Sort();
@@ -115,6 +120,7 @@ namespace KabadaAPI.DataSource.Repositories
                                    //else code = "non";
                 string lang2 = dataList[i]["translations"]["pt"];
                 string coords = dataList[i]["latlng"].ToString();
+                string nr = dataList[i]["numericCode"].ToString();
                 string latit;
                 string longi;
                 if (coords.Length > 5)
@@ -134,7 +140,8 @@ namespace KabadaAPI.DataSource.Repositories
                     CountryName = lang2,
                     Language = code,
                     Latitude = latit,
-                    Longitude = longi
+                    Longitude = longi,
+                    CountryNr=nr
 
                 };
                 names.Sort();
@@ -145,36 +152,39 @@ namespace KabadaAPI.DataSource.Repositories
                     context1.Countries.Add(country3);
                 }
                 context1.SaveChanges();
-            } 
-                //
-                /*
-                List<string> Culturelist = new List<string>();
-                CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
-                foreach (CultureInfo getculture in getcultureinfo)
+            }
+
+            //==========================================================================
+         //   var jsonText = File.ReadAllText("filepath");
+         //   var sponsors = JsonConvert.DeserializeObject<IList<SponsorInfo>>(jsonText);
+            /*
+            List<string> Culturelist = new List<string>();
+            CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+            foreach (CultureInfo getculture in getcultureinfo)
+            {
+                RegionInfo regionInfo = new RegionInfo(getculture.LCID);
+                if (!Culturelist.Contains(regionInfo.EnglishName))
                 {
-                    RegionInfo regionInfo = new RegionInfo(getculture.LCID);
-                    if (!Culturelist.Contains(regionInfo.EnglishName))
+                    Culturelist.Add(regionInfo.EnglishName);
+                    Country country1 = new Country()
                     {
-                        Culturelist.Add(regionInfo.EnglishName);
-                        Country country1 = new Country()
-                        {
-                            Id = Guid.NewGuid(),
-                            CountryName = regionInfo.EnglishName,
-                            Language = regionInfo.TwoLetterISORegionName,
-                            Latitude="555",
-                            Longitude="999"
+                        Id = Guid.NewGuid(),
+                        CountryName = regionInfo.EnglishName,
+                        Language = regionInfo.TwoLetterISORegionName,
+                        Latitude="555",
+                        Longitude="999"
 
-                        };
-                        context1.Countries.Add(country1);
+                    };
+                    context1.Countries.Add(country1);
 
-
-                    }
 
                 }
-                context1.SaveChanges();
-                Culturelist.Sort();
-                return Culturelist;*/
-                return names;
+
+            }
+            context1.SaveChanges();
+            Culturelist.Sort();
+            return Culturelist;*/
+            return names;
         }
         public List<Country> GetCountries()
         {

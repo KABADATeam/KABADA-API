@@ -19,5 +19,8 @@ namespace KabadaAPI.DataSource.Models
 
         [Required]
         public string Language { get; set; }
+
+        [Required]
+        public string CountryNr { get; set; }
     }
 }
