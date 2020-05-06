@@ -1,6 +1,6 @@
-[{"id":4,"name":"Afganistanas","alpha2":"af","alpha3":"afg"},
+[{"id":"004","name":"Afganistanas","alpha2":"af","alpha3":"afg"},
 {"id":248,"name":"Alandų salos","alpha2":"ax","alpha3":"ala"},
-{"id":8,"name":"Albanija","alpha2":"al","alpha3":"alb"},
+{"id":"008","name":"Albanija","alpha2":"al","alpha3":"alb"},
 {"id":12,"name":"Alžyras","alpha2":"dz","alpha3":"dza"},
 {"id":16,"name":"Amerikos Samoa","alpha2":"as","alpha3":"asm"},
 {"id":20,"name":"Andora","alpha2":"ad","alpha3":"and"},

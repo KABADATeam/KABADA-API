@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
-//using 
+using System.IO;
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -114,10 +114,7 @@ namespace KabadaAPI.DataSource.Repositories
             }
             for (int i = 0; i < 250; i++)
             {
-                string code = "PT";//dataList[i]["topLevelDomain"][0].ToString();
-                                   //  if (code.Length > 1)
-                                   //    code = code.Substring(1, code.Length - 1);
-                                   //else code = "non";
+                string code = "PT";
                 string lang2 = dataList[i]["translations"]["pt"];
                 string coords = dataList[i]["latlng"].ToString();
                 string nr = dataList[i]["numericCode"].ToString();
@@ -155,8 +152,39 @@ namespace KabadaAPI.DataSource.Repositories
             }
 
             //==========================================================================
-         //   var jsonText = File.ReadAllText("filepath");
-         //   var sponsors = JsonConvert.DeserializeObject<IList<SponsorInfo>>(jsonText);
+            var jsonText = File.ReadAllText("CountriesLT.txt");
+            dynamic countriesLT = JsonConvert.DeserializeObject<IList<dynamic>>(jsonText);
+            int j = -1;
+            foreach (object duom in countriesLT) {
+                j++;
+                string code = "LT";
+                string nr2 = countriesLT[j]["id"];
+                string lang6 = countriesLT[j]["name"];
+                //string coords = dataList[i]["latlng"].ToString();
+                // string nr = dataList[i]["numericCode"].ToString();
+                var nr1 = context1.Countries.Where(u => u.CountryNr == nr2).FirstOrDefault();
+                if (nr1 != null) { string latit=nr1.Latitude;
+                string longi=nr1.Longitude;
+                Country country3 = new Country()
+                {
+                    Id = Guid.NewGuid(),
+                    CountryName = lang6,
+                    Language = code,
+                    Latitude = latit,
+                    Longitude = longi,
+                    CountryNr = nr2
+
+                };
+                names.Sort();
+
+                if (country3.CountryName != null)
+                {
+                    names.Add(lang6);
+                    context1.Countries.Add(country3);
+                }}
+                
+                context1.SaveChanges();
+            }
             /*
             List<string> Culturelist = new List<string>();
             CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
