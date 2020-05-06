@@ -26,13 +26,13 @@ namespace KabadaAPI.DataSource.Repositories
             WebClient client = new WebClient();
             string stringPageCode = client.DownloadString("https://restcountries.eu/rest/v2");
             dynamic dataList = JsonConvert.DeserializeObject<dynamic>(stringPageCode);
-            List < string >names= new List<string>();
+            List<string> names = new List<string>();
             for (int i = 0; i < 250; i++)
             {
-                string code = dataList[i]["topLevelDomain"][0].ToString();
-                if (code.Length > 1)
-                    code = code.Substring(1, code.Length - 1);
-                else code = "non";
+                string code = "EN";//dataList[i]["topLevelDomain"][0].ToString();
+                                   //  if (code.Length > 1)
+                                   //    code = code.Substring(1, code.Length - 1);
+                                   //else code = "non";
                 string lang = dataList[i]["name"];
                 string coords = dataList[i]["latlng"].ToString();
                 string latit;
@@ -46,7 +46,7 @@ namespace KabadaAPI.DataSource.Repositories
                     longi = coords.Substring(startIndex, endIndex - startIndex);
                     latit = coords.Substring(start, end - start);
                 }
-                else { latit = "non";longi = "non"; }
+                else { latit = "non"; longi = "non"; }
 
                 Country country1 = new Country()
                 {
@@ -58,40 +58,123 @@ namespace KabadaAPI.DataSource.Repositories
 
                 };
                 names.Sort();
-                names.Add(code);
+                names.Add(lang);
                 context1.Countries.Add(country1);
+
+
                 context1.SaveChanges();
-                
+
             }
-            //
-            /*
-            List<string> Culturelist = new List<string>();
-            CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
-            foreach (CultureInfo getculture in getcultureinfo)
+            for (int i = 0; i < 250; i++)
             {
-                RegionInfo regionInfo = new RegionInfo(getculture.LCID);
-                if (!Culturelist.Contains(regionInfo.EnglishName))
+                string code = "IT";//dataList[i]["topLevelDomain"][0].ToString();
+                                   //  if (code.Length > 1)
+                                   //    code = code.Substring(1, code.Length - 1);
+                                   //else code = "non";
+                string lang1 = dataList[i]["translations"]["it"];
+                string coords = dataList[i]["latlng"].ToString();
+                string latit;
+                string longi;
+                if (coords.Length > 5)
                 {
-                    Culturelist.Add(regionInfo.EnglishName);
-                    Country country1 = new Country()
-                    {
-                        Id = Guid.NewGuid(),
-                        CountryName = regionInfo.EnglishName,
-                        Language = regionInfo.TwoLetterISORegionName,
-                        Latitude="555",
-                        Longitude="999"
+                    int start = coords.IndexOf(",") + 3;
+                    int end = coords.Length - 3;
+                    int startIndex = coords.IndexOf("  "); ;
+                    int endIndex = coords.IndexOf(",");
+                    longi = coords.Substring(startIndex, endIndex - startIndex);
+                    latit = coords.Substring(start, end - start);
+                }
+                else { latit = "non"; longi = "non"; }
 
-                    };
-                    context1.Countries.Add(country1);
-                   
+                Country country2 = new Country()
+                {
+                    Id = Guid.NewGuid(),
+                    CountryName = lang1,
+                    Language = code,
+                    Latitude = latit,
+                    Longitude = longi
 
+                };
+                names.Sort();
+
+                if (country2.CountryName != null)
+                {
+                    names.Add(lang1);
+                    context1.Countries.Add(country2);
                 }
 
+
+                context1.SaveChanges();
+
             }
-            context1.SaveChanges();
-            Culturelist.Sort();
-            return Culturelist;*/
-            return names;
+            for (int i = 0; i < 250; i++)
+            {
+                string code = "PT";//dataList[i]["topLevelDomain"][0].ToString();
+                                   //  if (code.Length > 1)
+                                   //    code = code.Substring(1, code.Length - 1);
+                                   //else code = "non";
+                string lang2 = dataList[i]["translations"]["pt"];
+                string coords = dataList[i]["latlng"].ToString();
+                string latit;
+                string longi;
+                if (coords.Length > 5)
+                {
+                    int start = coords.IndexOf(",") + 3;
+                    int end = coords.Length - 3;
+                    int startIndex = coords.IndexOf("  "); ;
+                    int endIndex = coords.IndexOf(",");
+                    longi = coords.Substring(startIndex, endIndex - startIndex);
+                    latit = coords.Substring(start, end - start);
+                }
+                else { latit = "non"; longi = "non"; }
+
+                Country country3 = new Country()
+                {
+                    Id = Guid.NewGuid(),
+                    CountryName = lang2,
+                    Language = code,
+                    Latitude = latit,
+                    Longitude = longi
+
+                };
+                names.Sort();
+
+                if (country3.CountryName != null)
+                {
+                    names.Add(lang2);
+                    context1.Countries.Add(country3);
+                }
+                context1.SaveChanges();
+            } 
+                //
+                /*
+                List<string> Culturelist = new List<string>();
+                CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+                foreach (CultureInfo getculture in getcultureinfo)
+                {
+                    RegionInfo regionInfo = new RegionInfo(getculture.LCID);
+                    if (!Culturelist.Contains(regionInfo.EnglishName))
+                    {
+                        Culturelist.Add(regionInfo.EnglishName);
+                        Country country1 = new Country()
+                        {
+                            Id = Guid.NewGuid(),
+                            CountryName = regionInfo.EnglishName,
+                            Language = regionInfo.TwoLetterISORegionName,
+                            Latitude="555",
+                            Longitude="999"
+
+                        };
+                        context1.Countries.Add(country1);
+
+
+                    }
+
+                }
+                context1.SaveChanges();
+                Culturelist.Sort();
+                return Culturelist;*/
+                return names;
         }
         public List<Country> GetCountries()
         {
@@ -101,20 +184,22 @@ namespace KabadaAPI.DataSource.Repositories
 
             return a;
         }
-        public List<string> GetList()
+        public List<string> GetList(string language)
         {
             
 
             List<string> names = new List<string>();
            List<Country> a1 = context1.Countries.ToList();
             foreach (Country row in a1)
+                if(row.Language==language)
                 names.Add(row.CountryName);
             names.Sort();
             return names;
         }
-        public string GetLanguage(string country)
+
+      /*  public string GetLanguage(string country,string language)
         {
-            var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
+            var lang = context1.Countries.Where(u => u.CountryName == country && u.Language==language).FirstOrDefault();
             if (lang != null)
             {
                 return lang.Language;
@@ -122,7 +207,8 @@ namespace KabadaAPI.DataSource.Repositories
             else { throw new Exception("Country not found"); }
  
 
-        }
+        }*/
+
         public string GetLongitude(string country)
         {
             var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();

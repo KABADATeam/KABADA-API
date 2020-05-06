@@ -17,11 +17,11 @@ namespace KabadaAPI.Controllers
         }
 
         [HttpGet]
-        [Route("language/{country}")]
-        public IActionResult GetCountriesLanguage( string country)//if need one country language
+        [Route("languages/{country}/{language}")]//???????????????????????????
+        public IActionResult GetCountriesLanguage( string country, string language)//if need one country language
         {
             CountryRepository CntrName = new CountryRepository();
-            return Ok(CntrName.GetLanguage(country));
+            return Ok(CntrName.GetLanguage(country,language));
         }
         [HttpGet]
         [Route("latitude/{country}")]// if need one country latitude
@@ -38,12 +38,12 @@ namespace KabadaAPI.Controllers
             return Ok(Cntrlongitude.GetLongitude(country));
         }
         [HttpGet]
-        [Route("contriesList")]//if need list of countyNames;
-        public IActionResult GetCountriesList()
+        [Route("contriesList/{language}")]//if need list of countyNames;
+        public IActionResult GetCountriesList(string language)
         {
             CountryRepository Cntrlist = new CountryRepository();
             //List<string> CountryList = new List<string>();
-            return Ok(Cntrlist.GetList());
+            return Ok(Cntrlist.GetList(language));
         }
 
         [HttpPost]
