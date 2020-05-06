@@ -152,10 +152,11 @@ namespace KabadaAPI.DataSource.Repositories
             }
 
             //==========================================================================
-            var jsonText = File.ReadAllText("CountriesLT.txt");
+            var jsonText = File.ReadAllText("C:/Users/sandra/Documents/Projektas/Kabada_API/CountriesLT.txt");
             dynamic countriesLT = JsonConvert.DeserializeObject<IList<dynamic>>(jsonText);
             int j = -1;
-            foreach (object duom in countriesLT) {
+            foreach (object duom in countriesLT)
+            {
                 j++;
                 string code = "LT";
                 string nr2 = countriesLT[j]["id"];
@@ -184,7 +185,46 @@ namespace KabadaAPI.DataSource.Repositories
                 }}
                 
                 context1.SaveChanges();
+
             }
+            //---------------------------------------------------------------------------------------------------------
+            var jsonText2 = File.ReadAllText("C:/Users/sandra/Documents/Projektas/Kabada_API/CountriesCZ.txt");
+            dynamic countriesCZ = JsonConvert.DeserializeObject<IList<dynamic>>(jsonText2);
+            int k = -1;
+            foreach (object duom1 in countriesCZ)
+            {
+                k++;
+                string code = "CZ";
+                string nr4 = countriesCZ[k]["id"].ToString();
+                string lang7 = countriesCZ[k]["name"].ToString();
+                var nr5 = context1.Countries.Where(u => u.CountryNr == nr4).FirstOrDefault();
+                if (nr5 != null)
+                {
+                    string latit = nr5.Latitude;
+                    string longi = nr5.Longitude;
+                    Country country4 = new Country()
+                    {
+                        Id = Guid.NewGuid(),
+                        CountryName = lang7,
+                        Language = code,
+                        Latitude = latit,
+                        Longitude = longi,
+                        CountryNr = nr4
+
+                    };
+                    names.Sort();
+
+                    if (country4.CountryName != null)
+                    {
+                        names.Add(lang7);
+                        context1.Countries.Add(country4);
+                    }
+                }
+
+                context1.SaveChanges();
+
+            }
+
             /*
             List<string> Culturelist = new List<string>();
             CultureInfo[] getcultureinfo = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
