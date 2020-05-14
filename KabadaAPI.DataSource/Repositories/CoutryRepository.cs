@@ -262,16 +262,16 @@ namespace KabadaAPI.DataSource.Repositories
 
             return a;
         }
-        public List<string> GetList(string language)
+        public List<object> GetList(string language)
         {
             
 
-            List<string> names = new List<string>();
+            List<object> names = new List<object>();
            List<Country> a1 = context1.Countries.ToList();
             foreach (Country row in a1)
-                if(row.Language==language)
-                names.Add(row.CountryName);
-            names.Sort();
+                if(row.Language==language.ToUpper())
+                names.Add(new { countryName=row.CountryName,shortName=row.Language});
+           // names.OrderBy(x => x.countryName);
             return names;
         }
 

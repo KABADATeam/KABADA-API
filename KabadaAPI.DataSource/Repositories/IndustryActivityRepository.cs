@@ -81,9 +81,14 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<Industry> GetAllIndustriesbyLanguage(string language)
         {
-            return context.Industries
-                .Where(s => s.Language == language)
+            List<Industry> act = new List<Industry>();
+            act = context.Industries.Where(s => s.Language == language)
                            .ToList();
+            act.Sort((x, y) => string.Compare(x.Code, y.Code));
+            return act;
+          /*  return context.Industries
+                .Where(s => s.Language == language)
+                           .ToList();*/
         }
         //public List<Industry> GetIndustriesbyLanguageAndCode(string language, string code)
         //{
@@ -94,15 +99,26 @@ namespace KabadaAPI.DataSource.Repositories
         //}
         public List<Activity> GetAllActivitiesbyLanguageIndustry(string language, string industry)
         {
-            return context.Activities
-                .Where(s => s.Industry.Language == language && s.Industry.Code == industry)
+            List<Activity> act = new List<Activity>();
+            act = context.Activities.Where(s => s.Industry.Language == language && s.Industry.Code == industry)
                            .ToList();
+            act.Sort((x, y) => string.Compare(x.Code, y.Code));
+
+            return act;
+           /* return context.Activities
+                .Where(s => s.Industry.Language == language && s.Industry.Code == industry)
+                           .ToList();*/
         }
         public List<Activity> GetAllActivitiesbyLanguage(string language)
         {
-            return context.Activities
-                .Where(s => s.Industry.Language == language)
+            List<Activity> act = new List<Activity>();
+            act = context.Activities.Where(s => s.Industry.Language == language)
                            .ToList();
+            act.Sort((x, y) => string.Compare(x.Code, y.Code));
+            return act;
+          //  return context.Activities
+                
+            //               .ToList();
         }
 
         public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
