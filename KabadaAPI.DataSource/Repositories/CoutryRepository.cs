@@ -22,9 +22,23 @@ namespace KabadaAPI.DataSource.Repositories
             context1 = new Context();
         }
 
-        public List<string> CountryNameList()
+       /* public string CountryNameList()
         {
-            WebClient client = new WebClient();
+           
+            Guid code = Guid.NewGuid();
+            
+                Country country = new Country()
+                {
+                    Id =code
+
+
+                };
+           
+             context1.Countries.Add(country);
+            context1.SaveChanges();
+            return "Success";
+        }*/
+            /*WebClient client = new WebClient();
             string stringPageCode = client.DownloadString("https://restcountries.eu/rest/v2");
             dynamic dataList = JsonConvert.DeserializeObject<dynamic>(stringPageCode);
             List<string> names = new List<string>();
@@ -183,7 +197,7 @@ namespace KabadaAPI.DataSource.Repositories
                     names.Add(lang6);
                     context1.Countries.Add(country3);
                 }}
-                
+
                 context1.SaveChanges();
 
             }
@@ -251,26 +265,32 @@ namespace KabadaAPI.DataSource.Repositories
             }
             context1.SaveChanges();
             Culturelist.Sort();
-            return Culturelist;*/
+            return Culturelist;
             return names;
-        }
-        public List<Country> GetCountries()
+        }*/
+            public List<Country> GetCountries()
         {
             List<Country> a = new List<Country>();
             a = context1.Countries.ToList();
-            a.Sort((x, y) => string.Compare(x.CountryName, y.CountryName));
+            a.Sort((x, y) => string.Compare(x.Title, y.Title));
 
             return a;
         }
-        public List<object> GetList(string language)
+     /*   public Guid GetID(string title)
+        {
+            return context1.Countries.Where(u => u.Title == title).FirstOrDefault().Id;
+        }
+
+        */
+        public List<object> GetList()//ĄĄĄĄpakeiciau parametra
         {
             
 
             List<object> names = new List<object>();
            List<Country> a1 = context1.Countries.ToList();
             foreach (Country row in a1)
-                if(row.Language==language.ToUpper())
-                names.Add(new { countryName=row.CountryName,shortName=row.Language});
+            //    if(row.Language==language.ToUpper())
+                names.Add(new { countryName=row.Title,shortName=row.ShortCode});
            // names.OrderBy(x => x.countryName);
             return names;
         }
@@ -287,9 +307,9 @@ namespace KabadaAPI.DataSource.Repositories
 
         }*/
 
-        public string GetLongitude(string country)
+      /*  public string GetLongitude(string country)
         {
-            var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
+            var lang = context1.Countries.Where(u => u.Title == country).FirstOrDefault();
             if (lang != null)
             {
                 return lang.Longitude;
@@ -297,7 +317,8 @@ namespace KabadaAPI.DataSource.Repositories
             else { throw new Exception("Country not found"); }
 
 
-        }
+        }*/
+        /*
         public string GetLatitude(string country)
         {
             var lang = context1.Countries.Where(u => u.CountryName == country).FirstOrDefault();
@@ -308,7 +329,7 @@ namespace KabadaAPI.DataSource.Repositories
             else { throw new Exception("Country not found"); }
 
 
-        }
+        }*/
     }
 }
 

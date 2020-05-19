@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KabadaAPI.DataSource.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using KabadaAPI.ViewModels;
 namespace KabadaAPI.Controllers
 {
     [Route("api/countries")]
@@ -23,7 +24,7 @@ namespace KabadaAPI.Controllers
             CountryRepository CntrName = new CountryRepository();
             return Ok(CntrName.GetLanguage(country,language));
         }*/
-        [HttpGet]
+      /*  [HttpGet]
         [Route("latitude/{country}")]// if need one country latitude
         public IActionResult GetCountriesLatitude(string country)
         {
@@ -36,23 +37,23 @@ namespace KabadaAPI.Controllers
         {
             CountryRepository Cntrlongitude = new CountryRepository();
             return Ok(Cntrlongitude.GetLongitude(country));
-        }
+        }*/
         [HttpGet]
-        [Route("countriesList/{language}")]//if need list of countyNames;
-        public IActionResult GetCountriesList(string language)
+        [Route("countriesList")]//if need list of countyNames;
+        public IActionResult GetCountriesList()
         {
             CountryRepository Cntrlist = new CountryRepository();
             //List<string> CountryList = new List<string>();
-            return Ok(Cntrlist.GetList(language));
+            return Ok(Cntrlist.GetList());
         }
 
-        [HttpPost]
+     /*   [HttpPost]
         [Route("entry")]//if need to fill database
         public IActionResult PostCountry()
         {
             CountryRepository repository = new CountryRepository();
-            List<string> CountryList = repository.CountryNameList();
+            string CountryList = repository.CountryNameList();
             return Ok(CountryList);
-        }
+        }*/
     }
 }
