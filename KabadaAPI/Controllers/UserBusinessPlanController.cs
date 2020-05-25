@@ -17,20 +17,29 @@ namespace KabadaAPI.Controllers
     [ApiController]
     public class UserBusinessPlanController : ControllerBase
     {
-      /*  [HttpGet]
-        [Route("all")]
-        public IActionResult GetSelections()
+        /*  [HttpGet]
+          [Route("all")]
+          public IActionResult GetSelections()
+          {
+              SelectionRepository repository = new SelectionRepository();
+              return Ok(repository.GetSelections());
+          }
+          */
+        [HttpGet]
+        [Route("{userId}")]
+        public IActionResult AddInformation(Guid userId)
         {
-            SelectionRepository repository = new SelectionRepository();
-            return Ok(repository.GetSelections());
+            UserPlanRepository repository = new UserPlanRepository();
+           return Ok(repository.GetPlans(userId));
+          
         }
-        */
+
         [HttpPost]
-        [Route("/{title}/{activityId}/{CountryId}/{userId}")]
+        [Route("{title}/{activityId}/{CountryId}/{userId}")]
         public IActionResult AddInformation(string title, Guid activityId, Guid CountryId, Guid userId)
         {
             UserPlanRepository repository = new UserPlanRepository();
-            repository.AddInfo(title, activityId,CountryId, userId);
+            //repository.AddInfo(title, activityId,CountryId, userId);
             return Ok(repository.AddInfo(title, activityId, CountryId, userId));
         }
     }

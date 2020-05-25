@@ -16,28 +16,28 @@ namespace KabadaAPI.DataSource.Repositories
             {
                 context = new Context();
             }
-        /* public List<Selection> GetSelections()
-          {
-              return context.Selections.ToList();
-          }
+        
 
-                public List<Selection> GetSelection(title, actName, indName, selectedCountry, user)
-          {
-          Selection selection =new Selection();
-          {
-                    Id = Guid.NewGuid(),
-                    UserID = usr,
-                    PlanTitle = title,
-                    CountryID=GetID(selectedCountry),//aaaaaaaaaaaaaaaaaaaaaa
-                    NaceID = indId.Id,
-                    ActionID=actId.Id
+        public List<BusinessPlan> GetPlans(Guid userId)
+        {
+            List<BusinessPlan> yourPlans = new List<BusinessPlan>();
+            User you = context.Users.FirstOrDefault(i => i.Id.Equals(userId));
+            UserBusinessPlan plan = context.UserBusinessPlans.FirstOrDefault(i => i.User.Equals(you));
+           // UserBusinessPlan plan = context.UserBusinessPlans.FirstOrDefault(i => i.User.Id.Equals(userId));
+            yourPlans = plan.BusinessPlans;
             
-            }
-              return context.Selections.ToList();
-          }
-               */
-
-
+                if (yourPlans != null)
+                {
+                    return yourPlans;
+                }
+                else
+                {
+                    throw new Exception("Plan was not found");
+                }
+            
+            
+            
+        }
         public string AddInfo(string title,Guid activityId, Guid countryId ,Guid usrId)
             {
            //
@@ -45,16 +45,12 @@ namespace KabadaAPI.DataSource.Repositories
                 Country = context.Countries.FirstOrDefault(i => i.Id.Equals(countryId)),
                 Activity = context.Activities.FirstOrDefault(i => i.Id.Equals(activityId)),
                 Title = title
-            }; 
-            
-            UserBusinessPlan a= context.UserBusinessPlans.FirstOrDefault(i => i.Id.Equals(usrId));
+            };
+          User you= context.Users.FirstOrDefault(i => i.Id.Equals(usrId));
+            UserBusinessPlan a = context.UserBusinessPlans.FirstOrDefault(i => i.User.Equals(you));
             try
             {
-                if (a != null)
-                {
-                    a.BusinessPlans.Add(UserPlan);
-                }
-                else
+                if (a== null)
                 {
                     List<BusinessPlan> Plans = new List<BusinessPlan>();
                     Plans.Add(UserPlan);
@@ -65,9 +61,14 @@ namespace KabadaAPI.DataSource.Repositories
                         BusinessPlans = Plans
 
                     };
+                    //a.BusinessPlans.Add(UserPlan) ;
                     context.UserBusinessPlans.Add(UserPlansList);
                     context.SaveChanges();
-                    // Plans.Add(UserPlan);
+                    //
+                }
+                else
+                {
+                    a.BusinessPlans.Add(UserPlan);
                 }
             }
       catch {
@@ -77,18 +78,9 @@ namespace KabadaAPI.DataSource.Repositories
             
 
 
-           
-           /* UserBusinessPlan UserPlansList = new UserBusinessPlan()
-                {
-                    Id = Guid.NewGuid(),
-                    User = context.Users.FirstOrDefault(i => i.Id.Equals(usrId)),
-                    BusinessPlans=Plans
-
-            };*/
-
-                    //context.UserBusinessPlans.Add(UserPlansList);
+       
                     context.SaveChanges();
-            return "Sucess";
+            return "Success";
                 }
                
             }

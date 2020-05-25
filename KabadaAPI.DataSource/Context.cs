@@ -14,6 +14,8 @@ namespace KabadaAPI.DataSource
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Industry> Industries { get; set; }
         public DbSet<UserBusinessPlan> UserBusinessPlans { get; set; }//aaaaaaaaaa
+       // public DbSet<BusinessPlan>BusinessPlans { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
@@ -21,7 +23,9 @@ namespace KabadaAPI.DataSource
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          //  modelBuilder.Entity<UserBusinessPlan>().OwnsOne(x => x.BusinessPlans);
+            //modelBuilder.Entity<BusinessPlan>().Property(x => x.Id)//aaaaaa
+              //    .ValueGeneratedOnAdd();//aaaaaa
+          
             modelBuilder.Entity<UserBusinessPlan>().Property(x => x.Id)//aaaaaa
                    .ValueGeneratedOnAdd();//aaaaaaa
             modelBuilder.Entity<Activity>().Property(x => x.Id)
