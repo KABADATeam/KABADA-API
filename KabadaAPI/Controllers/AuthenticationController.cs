@@ -7,11 +7,13 @@ using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace KabadaAPI.Controllers
 {
+    [Authorize]
     [Route("api/auth")]
     public class AuthenticationController : ControllerBase
     {
@@ -22,6 +24,7 @@ namespace KabadaAPI.Controllers
             this.config = config;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("register")]
         public IActionResult Register([FromBody]UserViewModel userView)
@@ -41,6 +44,7 @@ namespace KabadaAPI.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("login")]
         public IActionResult Get([FromBody]UserViewModel userView)
@@ -57,7 +61,8 @@ namespace KabadaAPI.Controllers
                 {
                     access_token = tokenString,
                     email = user.Email,
-                    name = user.Name
+                    name = user.Name,
+                    role = user.Type.Title
                 });
             }
             catch (Exception exc)

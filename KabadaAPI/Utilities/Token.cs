@@ -16,7 +16,8 @@ namespace KabadaAPI.Utilities
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[] {
-                new Claim(ClaimTypes.Name, user.Id.ToString())
+                new Claim(ClaimTypes.Name, user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.Type.Title)
             };
 
             var identity = new ClaimsIdentity(claims);
