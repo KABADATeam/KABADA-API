@@ -1,117 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
-using Microsoft.AspNetCore.Authorization;
 
 namespace KabadaAPI.Controllers
 {
-  //  [Authorize]
-    [Route("api/[controller]")]
-    public class NACEController : Controller
+    [ApiController]
+    [Route("api/nace")]
+    public class NACEController : ControllerBase
     {
-       // [Authorize(Roles = Role.Admin)]
         [HttpGet]
-        [Route("activity/all")]
+        [Route("industries")]
         public IActionResult GetActivities()
         {
             IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetActivities());
-        }
-
-        [HttpGet]
-        [Route("activity/all/{industry}")]
-        public IActionResult GetActivity(string industry)
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetActivity(industry));
-        }
-
-       // [Authorize(Roles = Role.User)]
-        [HttpGet]
-        [Route("industry/all")]
-        public IActionResult GetIndustries()
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetIndustries());
-        }
-
-        [HttpGet]
-        [Route("industry/of/{language}")]
-        public IActionResult GetAllIndustriesbyLanguage(string language)
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetAllIndustriesbyLanguage(language));
-        }
-
-        //[HttpGet]
-        //[Route("industry/of/{language}/{code}")]
-        //public IActionResult GetIndustriesbyLanguageAndCode(string language,string code)
-        //{
-        //    IndustryActivityRepository repository = new IndustryActivityRepository();
-        //    return Ok(repository.GetIndustriesbyLanguageAndCode(language, code));
-        //}
-
-        [HttpGet]
-        [Route("activity/of/{language}")]
-        public IActionResult GetAllActivitiesbyLanguage(string language)
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetAllActivitiesbyLanguage(language));
-        }
-
-        [HttpGet]
-        [Route("activity/of/{language}/{industry}")]
-        public IActionResult GetAllActivitiesbyLanguageIndustry(string language, string industry)
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            return Ok(repository.GetAllActivitiesbyLanguageIndustry(language, industry));
-        }
-
-        [HttpPost]
-        [Route("industry/add")]
-        public IActionResult AddIndustry([FromBody]List<Industry> industry)
-        {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
-            try
-            {
-                foreach (var ind in industry)
+            var industries = repository.GetIndustries();
+            var industriesView = new List<object>();
+            foreach (var item in industries)
+                industriesView.Add(new
                 {
-                    repository.AddIndustry(ind.Code, ind.Title);
-                }
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
+                    id = item.Id,
+                    title = item.Title,
+                    code = item.Code
+                });
+
+            return Ok(industriesView);
         }
 
-        [HttpPost]
-        [Route("activity/add")]
-        public IActionResult AddActivity([FromBody]List<Activity> activity)
+        [HttpGet]
+        [Route("industries/{industryId}/activities/")]
+        public IActionResult GetActivities(Guid industryId)
         {
             IndustryActivityRepository repository = new IndustryActivityRepository();
-            try
-            {
-                foreach (var act in activity)
-                {
-                    repository.AddActivity(act.Code, act.Title, act.Industry);
-                }
+            var activities = repository.GetActivities(industryId);
+            var activitiesView = new List<ParentActivityView>();
 
-                return Ok("Success");
-            }
-            catch (Exception exc)
+            foreach (var item in activities)
             {
-                return BadRequest(exc.Message);
+                string[] s = item.Code.Split('.');
+                if (s.Length == 2)
+                {
+                    activitiesView.Add(new ParentActivityView()
+                    {
+                        Id = item.Id,
+                        Code = item.Code,
+                        Title = item.Title,
+                        ChildActivities = new List<ActivityView>()
+                    });
+                }
+                else
+                {
+                    var parentActivity = activitiesView.FirstOrDefault(x => x.Code.Equals(s[0] + "." + s[1]));
+                    parentActivity?.ChildActivities.Add(new ActivityView()
+                    {
+                        Code = item.Code,
+                        Id = item.Id,
+                        Title = item.Title
+                    });
+                }   
             }
+
+            return Ok(activitiesView);
         }
 
         [HttpPost]
-        [Route("industry/addall")]
+        [Route("industries")]
         public IActionResult AddIndustryActivity([FromBody]List<Industry> industry)
         {
             IndustryActivityRepository repository = new IndustryActivityRepository();

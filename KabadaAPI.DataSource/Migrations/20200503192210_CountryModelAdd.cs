@@ -12,10 +12,8 @@ namespace KabadaAPI.DataSource.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    CountryName = table.Column<string>(nullable: false),
-                    Longitude = table.Column<string>(nullable: false),
-                    Latitude = table.Column<string>(nullable: false),
-                    Language = table.Column<string>(nullable: false)
+                    Title = table.Column<string>(nullable: false),
+                    ShortCode = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

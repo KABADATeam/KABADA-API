@@ -13,7 +13,5 @@ namespace KabadaAPI.DataSource.Models
 
         [Required]
         public string ShortCode { get; set; }
-
-        
     }
 }

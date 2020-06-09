@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace KabadaAPI.DataSource.Models
@@ -39,5 +40,7 @@ namespace KabadaAPI.DataSource.Models
         public string EmailConfirmationString { get; set; }
 
         public string PasswordResetString { get; set; }
+
+        public virtual List<BusinessPlan> BusinessPlans { get; set; }
     }
 }

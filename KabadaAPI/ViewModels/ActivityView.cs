@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace KabadaAPI.ViewModels
 {
-    public class Industry
+    public class ActivityView
     {
+        public Guid Id { get; set; }
         public string Code { get; set; }
         public string Title { get; set; }
-        public string Language { get; set; }
-        public List<ActivityView> Activities { get; set; }
     }
 }

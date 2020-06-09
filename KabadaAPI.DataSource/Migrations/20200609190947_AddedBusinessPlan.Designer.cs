@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.DataSource.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200519113643_Countries_and_UserBusinessPlan_Tables2")]
-    partial class Countries_and_UserBusinessPlan_Tables2
+    [Migration("20200609190947_AddedBusinessPlan")]
+    partial class AddedBusinessPlan
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,16 +51,17 @@ namespace KabadaAPI.DataSource.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ActivityId")
+                    b.Property<Guid>("ActivityId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("CountryId")
+                    b.Property<Guid>("CountryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserBusinessPlanId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
@@ -69,9 +70,9 @@ namespace KabadaAPI.DataSource.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.HasIndex("UserBusinessPlanId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("BusinessPlan");
+                    b.ToTable("BusinessPlans");
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
@@ -95,135 +96,219 @@ namespace KabadaAPI.DataSource.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("42f8ae56-377e-4f98-a7fb-825e059304fb"),
-                            ShortCode = "BE",
-                            Title = "Belgium"
-                        },
-                        new
-                        {
-                            Id = new Guid("ca1fe07b-9573-4912-bea2-ca06118caa8d"),
-                            ShortCode = "BG",
-                            Title = "Bulgaria"
-                        },
-                        new
-                        {
-                            Id = new Guid("9b4a4576-0789-4ede-8613-499ce0e496ba"),
-                            ShortCode = "CZ",
-                            Title = "Czechia"
-                        },
-                        new
-                        {
-                            Id = new Guid("7b1ff062-92ca-4937-9d88-93f3c31a9a89"),
-                            ShortCode = "DK",
-                            Title = "Denmark"
-                        },
-                        new
-                        {
-                            Id = new Guid("4df57557-e9aa-4675-b635-7b41b588dd72"),
-                            ShortCode = "DE",
-                            Title = "Germany"
-                        },
-                        new
-                        {
-                            Id = new Guid("78a3fb8c-f2cb-4b80-8734-486a9495d4f9"),
-                            ShortCode = "EE",
-                            Title = "Estonia"
-                        },
-                        new
-                        {
-                            Id = new Guid("92a96c9e-5468-4370-ae7b-034aaede9910"),
-                            ShortCode = "IE",
-                            Title = "Ireland"
-                        },
-                        new
-                        {
-                            Id = new Guid("9d052193-94b0-4650-ba95-edb2ecf3e8db"),
-                            ShortCode = "EL",
-                            Title = "Greece"
-                        },
-                        new
-                        {
-                            Id = new Guid("f3fb16a8-82c8-405f-b200-7801e66ca9c6"),
-                            ShortCode = "ES",
-                            Title = "Spain"
-                        },
-                        new
-                        {
-                            Id = new Guid("8aa7b82d-e1e0-444e-9039-6f2770b33e79"),
-                            ShortCode = "FR",
-                            Title = "France"
-                        },
-                        new
-                        {
-                            Id = new Guid("7b7daea2-9dfa-4087-9c5e-4dbfdf1111e8"),
-                            ShortCode = "HR",
-                            Title = "Croatia"
-                        },
-                        new
-                        {
-                            Id = new Guid("a5430d3b-55fb-4af8-8115-9c046b27d683"),
-                            ShortCode = "IT",
-                            Title = "Italy"
-                        },
-                        new
-                        {
-                            Id = new Guid("54183507-d544-4a51-adf9-f5d3f0569fa8"),
-                            ShortCode = "CY",
-                            Title = "Cyprus"
-                        },
-                        new
-                        {
-                            Id = new Guid("ec1bdfb2-6a45-48da-9511-bbc29463e779"),
-                            ShortCode = "LV",
-                            Title = "Latvia"
-                        },
-                        new
-                        {
-                            Id = new Guid("e4082eb6-b027-4d9e-8d37-f88bcd7cd30f"),
-                            ShortCode = "LT",
-                            Title = "Lithuania"
-                        },
-                        new
-                        {
-                            Id = new Guid("9206cdc0-0fe7-4ed9-8ba9-1f8c1c15105d"),
-                            ShortCode = "LU",
-                            Title = "Luxembourg"
-                        },
-                        new
-                        {
-                            Id = new Guid("3f1ae0bd-01d7-4b55-9c9c-c0c63d59ff97"),
-                            ShortCode = "HU",
-                            Title = "Hungary"
-                        },
-                        new
-                        {
-                            Id = new Guid("89c8ec1c-ff5a-4d97-a245-e8214f106644"),
-                            ShortCode = "MT",
-                            Title = "Malta"
-                        },
-                        new
-                        {
-                            Id = new Guid("47c37222-1e70-47eb-8789-010f50c1aed5"),
-                            ShortCode = "NL",
-                            Title = "Netherlands"
-                        },
-                        new
-                        {
-                            Id = new Guid("59f14e5a-dd91-4db1-b902-b89e12a77fe0"),
+                            Id = new Guid("19c9a496-113e-432f-818b-0cac6826c1bd"),
                             ShortCode = "AT",
                             Title = "Austria"
                         },
                         new
                         {
-                            Id = new Guid("86ed97fd-3a7a-43b9-8ff2-9bd615cd3992"),
+                            Id = new Guid("9c050dff-56c1-4498-a0cd-d8ae6d9a6852"),
+                            ShortCode = "BA",
+                            Title = "Bosnia and Herzegovina"
+                        },
+                        new
+                        {
+                            Id = new Guid("7e8b8007-19fe-4540-abbd-d4f25d139cf0"),
+                            ShortCode = "BE",
+                            Title = "Belgium"
+                        },
+                        new
+                        {
+                            Id = new Guid("ed572569-ddea-4c67-8802-cc3292e538ed"),
+                            ShortCode = "BG",
+                            Title = "Bulgaria"
+                        },
+                        new
+                        {
+                            Id = new Guid("04156915-3b6a-426c-afa3-c919be1dde80"),
+                            ShortCode = "HR",
+                            Title = "Croatia"
+                        },
+                        new
+                        {
+                            Id = new Guid("a96eacf7-1b7a-4ae6-9330-abad1e4d6b35"),
+                            ShortCode = "CY",
+                            Title = "Cyprus"
+                        },
+                        new
+                        {
+                            Id = new Guid("e4d2bfc0-afba-42ae-b679-0a6ea9117d96"),
+                            ShortCode = "CZ",
+                            Title = "Czechia"
+                        },
+                        new
+                        {
+                            Id = new Guid("9566004f-1bf0-4d79-a9cc-758e596bf253"),
+                            ShortCode = "DK",
+                            Title = "Denmark"
+                        },
+                        new
+                        {
+                            Id = new Guid("86b69af7-7092-4d3e-b0d2-d061e9f4faa2"),
+                            ShortCode = "EE",
+                            Title = "Estonia"
+                        },
+                        new
+                        {
+                            Id = new Guid("99e6e658-76f7-4cdd-af7c-007df834df9d"),
+                            ShortCode = "FI",
+                            Title = "Finland"
+                        },
+                        new
+                        {
+                            Id = new Guid("9aa4620d-cac4-4866-81d4-ccac9ceec330"),
+                            ShortCode = "FR",
+                            Title = "France"
+                        },
+                        new
+                        {
+                            Id = new Guid("51ec6742-3f0a-4194-8c34-d1a602af273b"),
+                            ShortCode = "DE",
+                            Title = "Germany"
+                        },
+                        new
+                        {
+                            Id = new Guid("19938bf5-d608-4479-9d33-0263152aae04"),
+                            ShortCode = "EL",
+                            Title = "Greece"
+                        },
+                        new
+                        {
+                            Id = new Guid("48d107ee-ee37-4d16-bb55-022e5c7d79cb"),
+                            ShortCode = "HU",
+                            Title = "Hungary"
+                        },
+                        new
+                        {
+                            Id = new Guid("5fc9ac01-cf9b-4cbe-bfec-1ce3c3c878db"),
+                            ShortCode = "IS",
+                            Title = "Iceland"
+                        },
+                        new
+                        {
+                            Id = new Guid("e9df115d-7475-47ce-8a4f-e12c07cd248f"),
+                            ShortCode = "IE",
+                            Title = "Ireland"
+                        },
+                        new
+                        {
+                            Id = new Guid("e8fd9ca2-465d-4e20-8422-8324706ba33f"),
+                            ShortCode = "IT",
+                            Title = "Italy"
+                        },
+                        new
+                        {
+                            Id = new Guid("5543dca5-56d2-4d20-805e-a85d363e3bef"),
+                            ShortCode = "LV",
+                            Title = "Latvia"
+                        },
+                        new
+                        {
+                            Id = new Guid("8897a384-f454-451c-afb9-4b4704cc65e2"),
+                            ShortCode = "LI",
+                            Title = "Liechtenstein"
+                        },
+                        new
+                        {
+                            Id = new Guid("6869a7ca-514a-4305-9694-25a5ecaacd3c"),
+                            ShortCode = "LT",
+                            Title = "Lithuania"
+                        },
+                        new
+                        {
+                            Id = new Guid("80e01a3d-aef4-4686-9f39-a0bd5cd53ae5"),
+                            ShortCode = "LU",
+                            Title = "Luxembourg"
+                        },
+                        new
+                        {
+                            Id = new Guid("1c0cf7ba-e377-4579-b827-331ce81f6396"),
+                            ShortCode = "MT",
+                            Title = "Malta"
+                        },
+                        new
+                        {
+                            Id = new Guid("c33f3bef-ca43-4faa-8b7f-3fd843b5011a"),
+                            ShortCode = "NL",
+                            Title = "Netherlands"
+                        },
+                        new
+                        {
+                            Id = new Guid("82a03045-edbe-4689-9e8c-4a0357539ce8"),
+                            ShortCode = "MK",
+                            Title = "North Macedonia"
+                        },
+                        new
+                        {
+                            Id = new Guid("d5b7b411-79ec-47a0-a35b-2d8eed5000b4"),
+                            ShortCode = "NO",
+                            Title = "Norway"
+                        },
+                        new
+                        {
+                            Id = new Guid("5b3dfc90-8a00-4a39-a028-9ef977f5230e"),
                             ShortCode = "PL",
                             Title = "Poland"
                         },
                         new
                         {
-                            Id = new Guid("5caf0d71-49c5-4bb5-821a-00776f12e951"),
+                            Id = new Guid("42c96344-1a64-4d51-9bef-fea0eb399df2"),
                             ShortCode = "PT",
                             Title = "Portugal"
+                        },
+                        new
+                        {
+                            Id = new Guid("01c11456-a25d-464c-82f7-affdbf8b61aa"),
+                            ShortCode = "RO",
+                            Title = "Romania"
+                        },
+                        new
+                        {
+                            Id = new Guid("1deb28f9-ce83-401e-a44f-5fbc621227a8"),
+                            ShortCode = "RS",
+                            Title = "Serbia"
+                        },
+                        new
+                        {
+                            Id = new Guid("2404514c-e872-43ca-a3a1-34f5c2d44877"),
+                            ShortCode = "SK",
+                            Title = "Slovakia"
+                        },
+                        new
+                        {
+                            Id = new Guid("a2581b15-5bfd-42fe-92b8-88122a74eecb"),
+                            ShortCode = "SI",
+                            Title = "Slovenia"
+                        },
+                        new
+                        {
+                            Id = new Guid("0b085bc4-87ba-4b4d-9712-94fdc5c5e249"),
+                            ShortCode = "ES",
+                            Title = "Spain"
+                        },
+                        new
+                        {
+                            Id = new Guid("14c7449d-1d4e-44be-a121-39d2fbbcb927"),
+                            ShortCode = "SE",
+                            Title = "Sweden"
+                        },
+                        new
+                        {
+                            Id = new Guid("837632d0-aeb2-4383-8eed-4883327e672c"),
+                            ShortCode = "CH",
+                            Title = "Switzerland"
+                        },
+                        new
+                        {
+                            Id = new Guid("03e387ca-6901-44f9-b668-8947179339db"),
+                            ShortCode = "TR",
+                            Title = "Turkey"
+                        },
+                        new
+                        {
+                            Id = new Guid("e7a381cc-9597-4d92-83c0-08d82ea0cc03"),
+                            ShortCode = "UK",
+                            Title = "United Kingdom"
                         });
                 });
 
@@ -326,22 +411,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.UserBusinessPlan", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserBusinessPlans");
-                });
-
             modelBuilder.Entity("KabadaAPI.DataSource.Models.UserType", b =>
                 {
                     b.Property<int>("Id")
@@ -381,15 +450,19 @@ namespace KabadaAPI.DataSource.Migrations
                 {
                     b.HasOne("KabadaAPI.DataSource.Models.Activity", "Activity")
                         .WithMany()
-                        .HasForeignKey("ActivityId");
+                        .HasForeignKey("ActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("KabadaAPI.DataSource.Models.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("KabadaAPI.DataSource.Models.UserBusinessPlan", null)
+                    b.HasOne("KabadaAPI.DataSource.Models.User", null)
                         .WithMany("BusinessPlans")
-                        .HasForeignKey("UserBusinessPlanId");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.RefreshToken", b =>
@@ -408,13 +481,6 @@ namespace KabadaAPI.DataSource.Migrations
                         .HasForeignKey("TypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.UserBusinessPlan", b =>
-                {
-                    b.HasOne("KabadaAPI.DataSource.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

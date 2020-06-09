@@ -9,11 +9,15 @@ namespace KabadaAPI.DataSource.Models
     {
         [Key]
         public Guid Id { get; set; }
+
         [Required]
         public string Code { get; set; }
+
         [Required]
         public string Title { get; set; }
+
         public string Language { get; set; }
+
         public virtual List<Activity> Activities { get; set; }
 
     }

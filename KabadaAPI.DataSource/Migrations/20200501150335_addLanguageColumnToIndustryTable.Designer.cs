@@ -45,21 +45,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.ToTable("Activities");
                 });
 
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.Country", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CountryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Countries");
-                });
-
             modelBuilder.Entity("KabadaAPI.DataSource.Models.Industry", b =>
                 {
                     b.Property<Guid>("Id")

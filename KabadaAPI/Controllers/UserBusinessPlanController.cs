@@ -9,38 +9,33 @@ using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Logging;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace KabadaAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
+    [Route("api/users")]
     public class UserBusinessPlanController : ControllerBase
     {
-        /*  [HttpGet]
-          [Route("all")]
-          public IActionResult GetSelections()
-          {
-              SelectionRepository repository = new SelectionRepository();
-              return Ok(repository.GetSelections());
-          }
-          */
+        [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
-        [Route("{userId}")]
-        public IActionResult AddInformation(Guid userId)
+        [Route("{userId}/plans")]
+        public IActionResult GetPlans(Guid userId)
         {
             UserPlanRepository repository = new UserPlanRepository();
-           return Ok(repository.GetPlans(userId));
+            return Ok(repository.GetPlans(userId));
           
         }
 
+        [Authorize(Roles = Role.User)]
         [HttpPost]
-        [Route("{title}/{activityId}/{CountryId}/{userId}")]
-        public IActionResult AddInformation(string title, Guid activityId, Guid CountryId, Guid userId)
+        [Route("{userId}/plans")]
+        public IActionResult AddPlan([FromBody]BusinessPlan businessPlan, Guid userId)
         {
             UserPlanRepository repository = new UserPlanRepository();
-            //repository.AddInfo(title, activityId,CountryId, userId);
-            return Ok(repository.AddInfo(title, activityId, CountryId, userId));
+            repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.CountryId);
+            return Ok();
         }
     }
-    }
+}

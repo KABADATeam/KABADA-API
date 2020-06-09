@@ -18,107 +18,15 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<Industry> GetIndustries()
         {
-            return context.Industries.ToList();
+            return context.Industries.OrderBy(x => x.Code).ToList();
         }
 
-        public List<Activity> GetActivities()
-        {
-            return context.Activities.ToList();
-        }
-
-        public List<Activity> GetActivity(string industry)
+        public List<Activity> GetActivities(Guid industryId)
         {
             return context.Activities
-                .Where(s => s.Industry.Code == industry)
-                           .ToList();
-        }
-        public void AddIndustry(string code, string title)
-        {
-            Industry ind = context.Industries.FirstOrDefault(i => i.Code.Equals(code));
-
-            if (ind == null)
-            {
-                Industry industry = new Industry()
-                {
-                    Id = Guid.NewGuid(),
-                    Code = code,
-                    Title = title
-                };
-
-                context.Industries.Add(industry);
-                context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception("Such industry already exists");
-            }
-        }
-
-        public void AddActivity(string code, string title, string industry)
-        {
-            Activity act = context.Activities.FirstOrDefault(i => i.Code.Equals(code));
-            Industry ind = context.Industries.FirstOrDefault(i => i.Code.Equals(industry));
-
-            if (act == null && ind != null)
-            {
-                Activity activity = new Activity()
-                {
-                    Id = Guid.NewGuid(),
-                    Code = code,
-                    Title = title,
-                    Industry = ind
-                };
-
-                context.Activities.Add(activity);
-
-                context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception("Such activity already exists");
-            }
-        }
-
-        public List<Industry> GetAllIndustriesbyLanguage(string language)
-        {
-            List<Industry> act = new List<Industry>();
-            act = context.Industries.Where(s => s.Language == language)
-                           .ToList();
-            act.Sort((x, y) => string.Compare(x.Code, y.Code));
-            return act;
-          /*  return context.Industries
-                .Where(s => s.Language == language)
-                           .ToList();*/
-        }
-        //public List<Industry> GetIndustriesbyLanguageAndCode(string language, string code)
-        //{
-        //    return context.Industries
-        //        .Where(s => s.Language == language && s.Code == code)
-        //        .Include(s => s.Activities)
-        //                   .ToList();
-        //}
-        public List<Activity> GetAllActivitiesbyLanguageIndustry(string language, string industry)
-        {
-            List<Activity> act = new List<Activity>();
-            act = context.Activities.Where(s => s.Industry.Language == language && s.Industry.Code == industry)
-                           .ToList();
-            act.Sort((x, y) => string.Compare(x.Code, y.Code));
-
-            return act;
-           /* return context.Activities
-                .Where(s => s.Industry.Language == language && s.Industry.Code == industry)
-                           .ToList();*/
-        }
-        public List<Activity> GetAllActivitiesbyLanguage(string language)
-        {
-            List<Activity> act = new List<Activity>();
-            act = context.Activities.Where(s => s.Industry.Language == language)
-                           .ToList();
-            act.Sort((x, y) => string.Compare(x.Code, y.Code));
-            return act;
-          //  return context.Activities
-                
-            //               .ToList();
+                .Where(s => s.Industry.Id == industryId)
+                .OrderBy(x => x.Code)
+                .ToList();
         }
 
         public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
@@ -157,8 +65,6 @@ namespace KabadaAPI.DataSource.Repositories
                 context.Activities.Add(activity);
             }
             context.SaveChanges();
-
-
         }
     }
 }
