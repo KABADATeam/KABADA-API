@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KabadaAPI.DataSource.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using KabadaAPI.ViewModels;
 namespace KabadaAPI.Controllers
 {
     [Route("api/countries")]
@@ -16,15 +17,14 @@ namespace KabadaAPI.Controllers
             return Ok(CntrName.GetCountries());
         }
 
-        [HttpGet]
-        [Route("language/{country}")]
-        public IActionResult GetCountriesLanguage( string country)//if need one country language
+       /* [HttpGet]
+        [Route("languages/{country}/{language}")]//???????????????????????????
+        public IActionResult GetCountriesLanguage( string country, string language)//if need one country language
         {
             CountryRepository CntrName = new CountryRepository();
-            return Ok(CntrName.GetLanguage(country));
-        }
-
-        [HttpGet]
+            return Ok(CntrName.GetLanguage(country,language));
+        }*/
+      /*  [HttpGet]
         [Route("latitude/{country}")]// if need one country latitude
         public IActionResult GetCountriesLatitude(string country)
         {
@@ -38,10 +38,9 @@ namespace KabadaAPI.Controllers
         {
             CountryRepository Cntrlongitude = new CountryRepository();
             return Ok(Cntrlongitude.GetLongitude(country));
-        }
-
+        }*/
         [HttpGet]
-        [Route("contriesList")]//if need list of countyNames;
+        [Route("countriesList")]//if need list of countyNames;
         public IActionResult GetCountriesList()
         {
             CountryRepository Cntrlist = new CountryRepository();
@@ -49,13 +48,13 @@ namespace KabadaAPI.Controllers
             return Ok(Cntrlist.GetList());
         }
 
-        [HttpPost]
+     /*   [HttpPost]
         [Route("entry")]//if need to fill database
         public IActionResult PostCountry()
         {
             CountryRepository repository = new CountryRepository();
-            List<string> CountryList = repository.CountryNameList();
+            string CountryList = repository.CountryNameList();
             return Ok(CountryList);
-        }
+        }*/
     }
 }

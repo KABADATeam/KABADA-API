@@ -5,12 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KabadaAPI.Controllers
 {
+  //  [Authorize]
     [Route("api/[controller]")]
     public class NACEController : Controller
     {
+       // [Authorize(Roles = Role.Admin)]
         [HttpGet]
         [Route("activity/all")]
         public IActionResult GetActivities()
@@ -27,6 +30,7 @@ namespace KabadaAPI.Controllers
             return Ok(repository.GetActivity(industry));
         }
 
+       // [Authorize(Roles = Role.User)]
         [HttpGet]
         [Route("industry/all")]
         public IActionResult GetIndustries()

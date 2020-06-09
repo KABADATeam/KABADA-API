@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
 using System.Linq;
 using KabadaAPI.DataSource.Utilities;
+using Microsoft.EntityFrameworkCore;
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -49,7 +50,7 @@ namespace KabadaAPI.DataSource.Repositories
 
         public User AuthenticateUser(string email, string password)
         {
-            var user = context.Users.Where(u => u.Email == email).FirstOrDefault();
+            var user = context.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
                 string passwordHash = Cryptography.GetHash(password, user.Salt);
