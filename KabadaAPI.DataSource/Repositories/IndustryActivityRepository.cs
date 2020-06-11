@@ -18,7 +18,10 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<Industry> GetIndustries()
         {
-            return context.Industries.OrderBy(x => x.Code).ToList();
+            return context.Industries
+                .Where(x => x.Language.Equals("EN"))
+                .OrderBy(x => x.Code)
+                .ToList();
         }
 
         public List<Activity> GetActivities(Guid industryId)
