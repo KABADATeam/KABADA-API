@@ -38,5 +38,24 @@ namespace KabadaAPI.DataSource.Repositories
             user.BusinessPlans.Add(plan);
             return plan;
         }
+
+        public void Remove(Guid userId, Guid planId)
+        {            
+            BusinessPlan businessPlan = context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            context.BusinessPlans.Remove(businessPlan);
+            context.SaveChanges();
+           // return plan;
+        }
+
+        public BusinessPlan GetSelectedPlan(Guid userId, Guid planId)
+        {
+            BusinessPlan businessPlan = context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            if (businessPlan != null)
+            {
+                return businessPlan;
+            }
+            else
+                throw new Exception("Plan was not found");            
+        }
     }
 }

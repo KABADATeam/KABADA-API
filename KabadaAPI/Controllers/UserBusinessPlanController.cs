@@ -64,5 +64,41 @@ namespace KabadaAPI.Controllers
                 return BadRequest(exc.Message);
             }
         }
+
+        [Route("remove")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult RemovePlan([FromBody]BusinessPlan businessPlan)
+        {
+            try
+            {
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+                UsersPlansRepository repository = new UsersPlansRepository();
+                repository.Remove(userId, businessPlan.Id);
+                return Ok("Success");
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
+            }
+        }
+
+        [Route("fetch")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult GetSelectedPlan([FromBody]BusinessPlan businessPlan)
+        {
+            try
+            {
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+                UsersPlansRepository repository = new UsersPlansRepository();
+                var plan = repository.GetSelectedPlan(userId, businessPlan.Id);
+                return Ok(plan);
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
+            }
+        }
     }
 }
