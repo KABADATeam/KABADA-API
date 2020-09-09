@@ -4,7 +4,10 @@ using KabadaAPI.DataSource.Models;
 using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-
+using System.Net;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Net.Http;
 namespace KabadaAPI.DataSource.Repositories
 {
     public class IndustryActivityRepository
@@ -31,6 +34,52 @@ namespace KabadaAPI.DataSource.Repositories
                 .OrderBy(x => x.Code)
                 .ToList();
         }
+
+        public List<List<Activity>> GetActivitiesByKeyword(string planTitle)
+        {
+            
+            List<List<Activity>> allLists = new List<List<Activity>>();
+            string[] words = planTitle.Split(' ');
+            foreach (string word in words)
+            {
+             
+                List<Activity> act = context.Activities.Where(s => s.Title.Contains(word)).ToList();
+                List<Activity> actWithoutNull = new List<Activity>();
+                if (act.Count != 0) {allLists.Add(act.Distinct().ToList()) ; }
+                
+        
+                if ((word != null )&& (allLists.Count==0))
+                 {
+                    WebClient client = new WebClient();
+
+                    string response = client.DownloadString("http://wikisynonyms.ipeirotis.com/api/"+word+"");
+
+                     dynamic obj = JsonConvert.DeserializeObject<dynamic>(response);
+                     if (obj!=null&&obj["message"]=="success")
+                     {
+                         List<string> synonyms = new List<string>();
+                         string synonym;
+                         foreach (dynamic term in obj["terms"])
+                         {
+                             synonym = term["term"].ToString();
+                            if(synonym!=null)
+                             synonyms.Add(synonym);
+                         }
+                         foreach (string synonim in synonyms)
+                         {
+                             List<Activity> syn = context.Activities.Where(s => s.Title.Contains(synonim)).ToList();
+                             if (syn.Count != 0) { allLists.Add(syn); }
+
+                         }
+                     }
+                 }
+
+             }
+            allLists.RemoveAll(x => x == null);
+            return allLists.Distinct().ToList();
+        }
+          
+        
 
         public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
         {

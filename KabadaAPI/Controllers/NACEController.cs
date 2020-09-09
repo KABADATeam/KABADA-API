@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
+using KabadaAPI.DataSource.Models;
 
 namespace KabadaAPI.Controllers
 {
@@ -28,7 +29,16 @@ namespace KabadaAPI.Controllers
 
             return Ok(industriesView);
         }
-
+        [HttpGet]
+        [Route("{TitleKeyword}")]
+        public IActionResult GetActivitiesByKey(string TitleKeyword)
+        {
+            IndustryActivityRepository repository = new IndustryActivityRepository();
+            List<List<Activity>> a = repository.GetActivitiesByKeyword(TitleKeyword);
+            if (a != null) { return Ok(repository.GetActivitiesByKeyword(TitleKeyword)); }
+            else return BadRequest("Not found");
+            
+        }
         [HttpGet]
         [Route("industries/{industryId}/activities/")]
         public IActionResult GetActivities(Guid industryId)
@@ -67,7 +77,7 @@ namespace KabadaAPI.Controllers
 
         [HttpPost]
         [Route("industries")]
-        public IActionResult AddIndustryActivity([FromBody]List<Industry> industry)
+        public IActionResult AddIndustryActivity([FromBody]List<DataSource.Models.Industry> industry)
         {
             IndustryActivityRepository repository = new IndustryActivityRepository();
             try
