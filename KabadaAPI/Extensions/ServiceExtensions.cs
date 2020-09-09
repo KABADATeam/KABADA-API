@@ -18,7 +18,7 @@ namespace KabadaAPI.Extensions
 
                     builder.WithOrigins("http://localhost:3000").AllowAnyMethod();
                     builder.WithHeaders("Access-Control-Allow-Origin", "*");
-                    builder.WithHeaders("Access-Control-Allow-Headers", "Authorization, Origin, WWW-Authenticate, Content-Length, X-Requested-With, Content-Type, Accept");
+                    builder.WithHeaders("Access-Control-Allow-Headers", "*");
                 });
             });
         }

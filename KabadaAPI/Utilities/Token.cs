@@ -31,7 +31,7 @@ namespace KabadaAPI.Utilities
                 Audience = config["JWT:Issuer"],
                 Subject = identity,
                 NotBefore = now,
-                Expires = now.AddMinutes(10),
+                Expires = now.AddMinutes(600),
                 IssuedAt = now,
                 SigningCredentials = credentials
             });
