@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.DataSource.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KabadaAPI.Controllers
 {
@@ -29,6 +30,7 @@ namespace KabadaAPI.Controllers
 
             return Ok(industriesView);
         }
+
         [HttpGet]
         [Route("{TitleKeyword}")]
         public IActionResult GetActivitiesByKey(string TitleKeyword)
@@ -75,9 +77,10 @@ namespace KabadaAPI.Controllers
             return Ok(activitiesView);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("industries")]
-        public IActionResult AddIndustryActivity([FromBody]List<DataSource.Models.Industry> industry)
+        public IActionResult AddIndustryActivity([FromBody]List<ViewModels.Industry> industry)
         {
             IndustryActivityRepository repository = new IndustryActivityRepository();
             try
