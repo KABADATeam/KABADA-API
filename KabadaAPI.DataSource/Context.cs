@@ -14,10 +14,19 @@ namespace KabadaAPI.DataSource
         public DbSet<User> Users { get; set; }
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<BusinessPlan> BusinessPlans { get; set; }
-        
+
+
+        //public Context(DbContextOptions<Context> options) : base(options) { }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
+            //optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
+                //optionsBuilder.UseSqlServer(@"name=ConnectionStrings:DefaultConnection");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
