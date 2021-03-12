@@ -1,6 +1,7 @@
 using KabadaAPI.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+//using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,6 +20,9 @@ namespace KabadaAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddDbContext<DataSource.Context>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), x => x.MigrationsAssembly("KabadaAPI.DataSource")));
+
             services.ConfigureCors();
             services.ConfigureJWTAuthentication(Configuration);
             services.ConfigureJWTAuthorization();
