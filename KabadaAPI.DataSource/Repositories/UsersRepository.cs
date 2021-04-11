@@ -55,14 +55,51 @@ namespace KabadaAPI.DataSource.Repositories
             var user = context.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
-                string passwordHash = Cryptography.GetHash(password, user.Salt);
-                if (user.PasswordHash.Equals(passwordHash))
-                    return user;
+                if (user.PasswordHash.Length > 0 && user.Salt.Length > 0)
+                {
+                    string passwordHash = Cryptography.GetHash(password, user.Salt);
+                    if (user.PasswordHash.Equals(passwordHash))
+                        return user;
+                    else
+                        throw new Exception("Wrong email or password");
+                }
                 else
-                    throw new Exception("Wrong email or password");
+                    throw new Exception("User cannot be authenticated");
             }
             else
                 throw new Exception("Wrong email or password");
+        }
+
+        public User AuthenticateGoogleUser(string email)
+        {
+            var user = context.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
+            if (user != null)
+            {
+                if (user.PasswordHash.Length > 0)
+                    throw new Exception("Account under this email already exist");
+                else
+                    return user;
+            }
+            else
+            {
+                UserType type = context.UserTypes.FirstOrDefault(x => x.Id == 100);
+                user = new User()
+                {
+                    Surname = "",
+                    Name = "",
+                    Email = email,
+                    EmailConfirmed = false,
+                    PasswordHash = "",
+                    Salt = "",
+                    Type = type,
+                    TwoFactorAuthEnabled = false
+                };
+
+                context.Users.Add(user);
+                context.SaveChanges();
+
+                return user;
+            }
         }
 
         public void RequestPassword(string email)
@@ -70,12 +107,17 @@ namespace KabadaAPI.DataSource.Repositories
             var user = context.Users.Where(u => u.Email.Equals(email)).FirstOrDefault();
             if (user != null)
             {
-                string confirmationCode = Cryptography.GetHash(user.Email, DateTime.Now.Ticks.ToString());
-                user.PasswordResetString = confirmationCode;
+                if (user.PasswordHash.Length > 0)
+                {
+                    string confirmationCode = Cryptography.GetHash(user.Email, DateTime.Now.Ticks.ToString());
+                    user.PasswordResetString = confirmationCode;
 
-                context.SaveChanges();
+                    context.SaveChanges();
 
-                Email.SendPasswordResetLink(user.Email, confirmationCode);
+                    Email.SendPasswordResetLink(user.Email, confirmationCode);
+                }
+                else
+                    throw new Exception("Cannot reset password for this account");
             }
         }
 

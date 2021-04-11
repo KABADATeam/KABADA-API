@@ -10,8 +10,8 @@ namespace KabadaAPI.DataSource.Utilities
 {
     public static class Email
     {
-        private static readonly string baseURL = "http://localhost:3000/";
-        //private static readonly string baseURL = "http://kabada.ba.lv/";
+        //private static readonly string baseURL = "http://localhost:3000/";
+        private static readonly string baseURL = "http://kabada.ba.lv/";
 
         public static bool isValid(string emailAddress)
         {

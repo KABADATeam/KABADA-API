@@ -71,6 +71,33 @@ namespace KabadaAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [Route("google")]
+        public IActionResult GoogleLogin([FromBody] UserViewModel userView)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new { message = "Invalid input" });
+
+            UsersRepository repository = new UsersRepository();
+            try
+            {
+                var user = repository.AuthenticateGoogleUser(userView.Email);
+                var tokenString = Token.Generate(user, config);
+                return Ok(new
+                {
+                    access_token = tokenString,
+                    email = user.Email,
+                    name = user.Name,
+                    role = user.Type.Title
+                });
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(new { message = exc.Message });
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
         [Route("reset")]
         public IActionResult RequestPassword([FromBody] UserViewModel userView)
         {
