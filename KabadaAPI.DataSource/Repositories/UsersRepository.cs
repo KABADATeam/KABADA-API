@@ -16,7 +16,7 @@ namespace KabadaAPI.DataSource.Repositories
             context = new Context();
         }
 
-        public User AddUser(string name, string email, string password)
+        public User AddUser(string email, string password)
         {
             if (!Email.isValid(email))
                 throw new Exception("Mismatch of email address pattern");
@@ -32,8 +32,8 @@ namespace KabadaAPI.DataSource.Repositories
 
             User user = new User()
             {
-                Name = name,
                 Surname = "",
+                Name = "",
                 Email = email,
                 EmailConfirmed = false,
                 PasswordHash = passwordHash,
@@ -44,6 +44,8 @@ namespace KabadaAPI.DataSource.Repositories
 
             context.Users.Add(user);
             context.SaveChanges();
+
+            Email.SendOnRegistrationConfirmation(email);
 
             return user;
         }
@@ -61,6 +63,49 @@ namespace KabadaAPI.DataSource.Repositories
             }
             else
                 throw new Exception("Wrong email or password");
+        }
+
+        public void RequestPassword(string email)
+        {
+            var user = context.Users.Where(u => u.Email.Equals(email)).FirstOrDefault();
+            if (user != null)
+            {
+                string confirmationCode = Cryptography.GetHash(user.Email, DateTime.Now.Ticks.ToString());
+                user.PasswordResetString = confirmationCode;
+
+                context.SaveChanges();
+
+                Email.SendPasswordResetLink(user.Email, confirmationCode);
+            }
+        }
+
+        public void ResetPassword(string resetString, string newPassword)
+        {
+            var user = context.Users.Where(u => u.PasswordResetString.Equals(resetString)).FirstOrDefault();
+            if (user == null)
+                throw new Exception("The link has expired");
+
+            user.PasswordHash = Cryptography.GetHash(newPassword, user.Salt);
+            user.PasswordResetString = null;
+
+            context.SaveChanges();
+
+            Email.SendOnPasswordChange(user.Email);
+        }
+
+        public void ChangePassword(Guid Id, string oldPassword, string newPassword)
+        {
+            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            if (user == null)
+                throw new Exception("Wrong email or password");
+
+            string passwordHash = Cryptography.GetHash(oldPassword, user.Salt);
+            if (!user.PasswordHash.Equals(passwordHash))
+                throw new Exception("Wrong email or password");
+
+            user.PasswordHash = Cryptography.GetHash(newPassword, user.Salt);
+
+            context.SaveChanges();
         }
     }
 }
