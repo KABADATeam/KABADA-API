@@ -33,7 +33,7 @@ namespace KabadaAPI.Controllers
             UsersRepository repository = new UsersRepository();
             try
             {
-                var user = repository.AddUser(userView.Name, userView.Email, userView.Password);
+                var user = repository.AddUser(userView.Email, userView.Password);
                 return Ok(new { id = user.Id });
             }
             catch (Exception exc)
@@ -62,6 +62,73 @@ namespace KabadaAPI.Controllers
                     name = user.Name,
                     role = user.Type.Title
                 });
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(new { message = exc.Message });
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("google")]
+        public IActionResult GoogleLogin([FromBody] UserViewModel userView)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new { message = "Invalid input" });
+
+            UsersRepository repository = new UsersRepository();
+            try
+            {
+                var user = repository.AuthenticateGoogleUser(userView.Email);
+                var tokenString = Token.Generate(user, config);
+                return Ok(new
+                {
+                    access_token = tokenString,
+                    email = user.Email,
+                    name = user.Name,
+                    role = user.Type.Title
+                });
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(new { message = exc.Message });
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("reset")]
+        public IActionResult RequestPassword([FromBody] UserViewModel userView)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new { message = "Invalid input" });
+
+            UsersRepository repository = new UsersRepository();
+            try
+            {
+                repository.RequestPassword(userView.Email);
+                return Ok();
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(new { message = exc.Message });
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("set_password")]
+        public IActionResult SetNewPassword([FromBody] UserViewModel userView)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new { message = "Invalid input" });
+
+            UsersRepository repository = new UsersRepository();
+            try
+            {
+                repository.ResetPassword(userView.PasswordResetString, userView.Password);
+                return Ok();
             }
             catch (Exception exc)
             {

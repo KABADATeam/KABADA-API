@@ -9,6 +9,7 @@ namespace KabadaAPI.ViewModels
         public string Email { get; set; }
         public string Password { get; set; }
         public bool TwoFactorAuthEnabled { get; set; } = false;
+        public string PasswordResetString { get; set; }
         public string Role { get; set; }
     }
 }
