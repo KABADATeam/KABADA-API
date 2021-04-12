@@ -2,9 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Mail;
-using MailKit.Net.Smtp;
-using MimeKit;
-using MimeKit.Text;
 
 namespace KabadaAPI.DataSource.Utilities
 {
