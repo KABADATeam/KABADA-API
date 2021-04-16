@@ -1,0 +1,30 @@
+# -- https://github.com/Huachao/vscode-restclient
+@host = https://localhost:44324
+
+###
+
+GET {{host}}/api/files HTTP/1.1
+
+###
+
+POST {{host}}/api/files HTTP/1.1
+Content-Type: application/json
+Content-Disposition: inline; filename="filename.jpg"
+
+< ./CountriesLT.txt
+
+###
+
+POST {{host}}/api/files HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+< ./CountriesLT.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
