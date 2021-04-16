@@ -15,8 +15,10 @@ namespace KabadaAPI.DataSource
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<BusinessPlan> BusinessPlans { get; set; }
 
+        public DbSet<UserFile> UserFiles { get; set; } // [vp]
 
-        //public Context(DbContextOptions<Context> options) : base(options) { }
+
+        // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -43,6 +45,11 @@ namespace KabadaAPI.DataSource
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<User>().Property(x => x.Id)
                 .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<UserFile>().Property(x => x.Id) // [vp]
+                .ValueGeneratedOnAdd();
+            modelBuilder.Entity<BusinessPlan>().Property(x => x.Created)
+                .HasDefaultValueSql("getdate()");
 
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 1, Title = "Administrator" });
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 100, Title = "Simple" });
