@@ -135,19 +135,68 @@ namespace KabadaAPI.DataSource.Repositories
             Email.SendOnPasswordChange(user.Email);
         }
 
+        private void validatePassword(User user, string oldPassword){
+          string passwordHash = Cryptography.GetHash(oldPassword, user.Salt);
+          if (!user.PasswordHash.Equals(passwordHash))
+            throw new Exception("Wrong email or password");
+          }
+
         public void ChangePassword(Guid Id, string oldPassword, string newPassword)
         {
             var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
             if (user == null)
                 throw new Exception("Wrong email or password");
 
-            string passwordHash = Cryptography.GetHash(oldPassword, user.Salt);
-            if (!user.PasswordHash.Equals(passwordHash))
-                throw new Exception("Wrong email or password");
+            //string passwordHash = Cryptography.GetHash(oldPassword, user.Salt);
+            //if (!user.PasswordHash.Equals(passwordHash))
+            //    throw new Exception("Wrong email or password");
+            validatePassword(user, oldPassword);
 
             user.PasswordHash = Cryptography.GetHash(newPassword, user.Salt);
 
             context.SaveChanges();
         }
+
+    protected void updateBasicFields(User real, User newContents){
+          real.Name=newContents.Name;
+          real.Surname=newContents.Surname;
+          real.EmailConfirmed=newContents.EmailConfirmed;
+          // TODO 4 fields
+          }
+
+        public void UpdateUser(Guid Id, User newContents, int updateKind=0){
+            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            if (user == null)
+                throw new Exception("User not found");
+
+            switch(updateKind){
+              case 1: // update without photo
+                updateBasicFields(user, newContents);
+                break;
+              case 2: // update with photo
+                updateBasicFields(user, newContents);
+                // TODO userPhoto
+                break;
+             default: throw new Exception("Internal error: invalid update kind "+updateKind.ToString());
+              }
+
+            context.SaveChanges();
+         }
+
+        public User Read(Guid Id)
+        {
+            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            if (user == null)
+                throw new Exception("Wrong email or password");
+            return user;
+        }
+
+    public void ChangeEmail(Guid userId, string password, string newValue) {
+      var user=Read(userId);
+      validatePassword(user, password);
+      //TODO verification e-mail
+      user.Email=newValue;
+      context.SaveChanges();
+      }
     }
 }
