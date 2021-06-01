@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Security.Claims;
+using System.Linq;
 
 namespace KabadaAPI.Controllers {
   [Route("api/user")]
@@ -23,7 +24,14 @@ namespace KabadaAPI.Controllers {
           r.Name=parms.firstName;
           r.Surname=parms.lastName;
           r.EmailConfirmed=parms.isEmailConfirmed;
-          //TODO 5 missing fields
+          r.Facebook=parms.facebook;
+          r.Google=parms.google;
+          r.ReceiveEmail=parms.recieveEmail;
+          r.ReceiveNotification=parms.recieveNotification;
+          if(parms.userPhoto==null)
+            r.UserPhoto=null;
+           else
+            r.UserPhoto = parms.userPhoto.ToArray();
           return r;
           }
 
@@ -32,7 +40,14 @@ namespace KabadaAPI.Controllers {
           r.firstName=p.Name;
           r.lastName=p.Surname;
           r.isEmailConfirmed=p.EmailConfirmed;
-          //TODO 5 missing fields
+          r.facebook=p.Facebook;
+          r.google=p.Google;
+          r.recieveEmail=p.ReceiveEmail;
+          r.recieveNotification=p.ReceiveNotification;
+          if(p.UserPhoto==null)
+            r.userPhoto=null;
+           else
+            r.userPhoto = p.UserPhoto.ToArray();
           return r;
           }
 

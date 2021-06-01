@@ -7,6 +7,6 @@
     public bool recieveEmail;
     public bool recieveNotification;
     public bool isEmailConfirmed;
-     //userPhoto: image
-     }
+    public byte[] userPhoto;
+    }
   }

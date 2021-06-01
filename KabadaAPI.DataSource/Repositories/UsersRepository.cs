@@ -161,7 +161,10 @@ namespace KabadaAPI.DataSource.Repositories
           real.Name=newContents.Name;
           real.Surname=newContents.Surname;
           real.EmailConfirmed=newContents.EmailConfirmed;
-          // TODO 4 fields
+          real.Google=newContents.Google;
+          real.Facebook=newContents.Facebook;
+          real.ReceiveEmail=newContents.ReceiveEmail;
+          real.ReceiveNotification=newContents.ReceiveNotification;
           }
 
         public void UpdateUser(Guid Id, User newContents, int updateKind=0){
@@ -175,7 +178,7 @@ namespace KabadaAPI.DataSource.Repositories
                 break;
               case 2: // update with photo
                 updateBasicFields(user, newContents);
-                // TODO userPhoto
+                user.UserPhoto=newContents.UserPhoto;
                 break;
              default: throw new Exception("Internal error: invalid update kind "+updateKind.ToString());
               }
