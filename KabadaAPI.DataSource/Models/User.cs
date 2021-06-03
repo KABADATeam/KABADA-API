@@ -55,6 +55,6 @@ namespace KabadaAPI.DataSource.Models
 
         public string PasswordResetString { get; set; }
 
-        public virtual List<BusinessPlan> BusinessPlans { get; set; }
+        //public virtual List<BusinessPlan> BusinessPlans { get; set; }
     }
 }

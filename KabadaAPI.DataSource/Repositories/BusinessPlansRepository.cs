@@ -1,6 +1,7 @@
 ﻿using KabadaAPI.DataSource.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace KabadaAPI.DataSource.Repositories
 {
@@ -9,10 +10,13 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<BusinessPlan> GetPublicPlans()
         {
-            return context.BusinessPlans.Where(x => x.Public == true)
-                   .OrderBy(x => x.Title)
-                   .ToList();
+            return Getplans().Where(x => x.Public == true).OrderBy(x => x.Title).ToList();
         }
-        
+        protected IQueryable<BusinessPlan> Getplans()
+        {
+            var p = context.BusinessPlans.Include(x => x.Country).Include(x => x.User)
+                    .Include(x => x.Activity.Industry);
+            return p;
+        }
     }
 }

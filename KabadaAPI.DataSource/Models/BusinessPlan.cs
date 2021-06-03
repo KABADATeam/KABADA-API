@@ -26,5 +26,6 @@ namespace KabadaAPI.DataSource.Models
         [Range(0,100)]
         public int Completed { get; set; }
         public bool Public { get; set; }
+        public User User { get; set; }
     }
 }

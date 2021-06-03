@@ -14,7 +14,7 @@ namespace KabadaAPI.ViewModels
         public String country { get; set; }
         public DateTime dateCreated { get; set; }
         public String owner { get; set; }
-       // public byte[] ownerAvatar { get; set; }
+        public byte[] ownerAvatar { get; set; }
        
     }
 }

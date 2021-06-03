@@ -100,5 +100,38 @@ namespace KabadaAPI.Controllers
                 return BadRequest(exc.Message);
             }
         }
+
+        [AllowAnonymous]
+        [Route("public")]
+        [HttpGet]
+        public IActionResult GetPublicPlans()
+        {
+            try
+            {
+                BusinessPlansRepository repository = new BusinessPlansRepository();
+                var plans = repository.GetPublicPlans();
+                var publicPlans = new PublicBusinessPlans() { BusinessPlan = new List<PublicBusinessPlan>() };
+                foreach (var p in plans)
+                {
+                    publicPlans.BusinessPlan.Add(new PublicBusinessPlan
+                    {
+                        Id = p.Id,
+                        name = p.Title,
+                        industry = p.Activity?.Industry.Title,
+                        country = p.Country?.Title,
+                        dateCreated = p.Created.Date,
+                        owner = String.Format("{0} {1}", p.User.Name, p.User.Surname),
+                        ownerAvatar = p.User.UserPhoto
+                    }) ;
+                }
+                return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
+            }
+
+        }
+
     }
 }

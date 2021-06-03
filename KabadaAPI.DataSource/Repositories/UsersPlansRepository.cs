@@ -12,11 +12,11 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<BusinessPlan> GetPlans(Guid userId)
         {
-            User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
-
-            if (user?.BusinessPlans != null)
+            //User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
+            var plans = context.BusinessPlans.Where(x => x.User.Id.Equals(userId)).ToList();
+            if (plans != null)
             {
-                return user.BusinessPlans;
+                return plans;
             }
             else
                 throw new Exception("Plan was not found");
@@ -24,7 +24,8 @@ namespace KabadaAPI.DataSource.Repositories
 
         public BusinessPlan Save(Guid userId, string title, Guid activityId, Guid countryId)
         {
-            User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
+            //User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
+            var user = context.Users.FirstOrDefault(i => i.Id.Equals(userId));
             var activity = context.Activities.FirstOrDefault(i => i.Id.Equals(activityId));
             var country = context.Countries.FirstOrDefault(i => i.Id.Equals(countryId));
 
@@ -35,7 +36,7 @@ namespace KabadaAPI.DataSource.Repositories
                 Country = country
             };
 
-            user.BusinessPlans.Add(plan);
+         //   user.BusinessPlans.Add(plan);
             return plan;
         }
 
