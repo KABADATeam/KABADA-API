@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
 using System.Linq;
 using KabadaAPI.DataSource.Utilities;
 using Microsoft.EntityFrameworkCore;
 
-namespace KabadaAPI.DataSource.Repositories
-{
-    public class UsersRepository
+namespace KabadaAPI.DataSource.Repositories {
+  public class UsersRepository : BaseRepository
     {
-        protected readonly Context context;
+      public UsersRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
 
-        public UsersRepository()
-        {
-            context = new Context();
-        }
-
-        public User AddUser(string email, string password)
+      public User AddUser(string email, string password)
         {
             if (!Email.isValid(email))
                 throw new Exception("Mismatch of email address pattern");
@@ -197,9 +190,9 @@ namespace KabadaAPI.DataSource.Repositories
     public void ChangeEmail(Guid userId, string password, string newValue) {
       var user=Read(userId);
       validatePassword(user, password);
-      //TODO verification e-mail
       user.Email=newValue;
       context.SaveChanges();
+      Email.SendEmailChange(user.Email);
       }
     }
 }

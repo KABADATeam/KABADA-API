@@ -6,6 +6,7 @@ using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.DataSource.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI.Controllers
 {
@@ -13,11 +14,17 @@ namespace KabadaAPI.Controllers
     [Route("api/nace")]
     public class NACEController : ControllerBase
     {
+        private readonly IConfiguration config;
+
+        public NACEController(IConfiguration config){ this.config = config; }
+
+        protected IndustryActivityRepository iRepo { get { return new IndustryActivityRepository(config); }}
+
         [HttpGet]
         [Route("industries")]
         public IActionResult GetActivities()
         {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
+            IndustryActivityRepository repository = iRepo;
             var industries = repository.GetIndustries();
             var industriesView = new List<object>();
             foreach (var item in industries)
@@ -35,7 +42,7 @@ namespace KabadaAPI.Controllers
         [Route("{TitleKeyword}")]
         public IActionResult GetActivitiesByKey(string TitleKeyword)
         {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
+            IndustryActivityRepository repository = iRepo;
             List<List<Activity>> a = repository.GetActivitiesByKeyword(TitleKeyword);
             if (a != null) { return Ok(repository.GetActivitiesByKeyword(TitleKeyword)); }
             else return BadRequest("Not found");
@@ -45,7 +52,7 @@ namespace KabadaAPI.Controllers
         [Route("industries/{industryId}/activities/")]
         public IActionResult GetActivities(Guid industryId)
         {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
+            IndustryActivityRepository repository = iRepo;
             var activities = repository.GetActivities(industryId);
             var activitiesView = new List<ParentActivityView>();
 
@@ -82,7 +89,7 @@ namespace KabadaAPI.Controllers
         [Route("industries")]
         public IActionResult AddIndustryActivity([FromBody]List<ViewModels.Industry> industry)
         {
-            IndustryActivityRepository repository = new IndustryActivityRepository();
+            IndustryActivityRepository repository = iRepo;
             try
             {
                 foreach (var ind in industry)

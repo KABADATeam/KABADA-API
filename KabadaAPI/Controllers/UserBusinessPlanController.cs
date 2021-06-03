@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
-using Microsoft.Extensions.Logging;
-using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
-namespace KabadaAPI.Controllers
-{
-    [Authorize]
+namespace KabadaAPI.Controllers {
+  [Authorize]
     [ApiController]
     [Route("api/plans")]
     public class UserBusinessPlanController : ControllerBase
@@ -26,6 +19,8 @@ namespace KabadaAPI.Controllers
             this.config = config;
         }
 
+        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config); }}
+
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
         public IActionResult GetPlans()
@@ -33,7 +28,7 @@ namespace KabadaAPI.Controllers
             try
             {
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                UsersPlansRepository repository = new UsersPlansRepository();
+                var repository = pRepo;
                 return Ok(repository.GetPlans(userId));
             }
             catch (Exception exc)
@@ -52,7 +47,7 @@ namespace KabadaAPI.Controllers
 
             try
             {               
-                using (UsersPlansRepository repository = new UsersPlansRepository())
+                using (var repository = pRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                     var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.CountryId);
@@ -73,7 +68,7 @@ namespace KabadaAPI.Controllers
             try
             {
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                UsersPlansRepository repository = new UsersPlansRepository();
+                UsersPlansRepository repository = new UsersPlansRepository(config);
                 repository.Remove(userId, businessPlan.Id);
                 return Ok("Success");
             }
@@ -91,7 +86,7 @@ namespace KabadaAPI.Controllers
             try
             {
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                UsersPlansRepository repository = new UsersPlansRepository();
+                var repository = pRepo;
                 var plan = repository.GetSelectedPlan(userId, businessPlan.Id);
                 return Ok(plan);
             }

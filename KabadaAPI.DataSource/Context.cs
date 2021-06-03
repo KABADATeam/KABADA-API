@@ -2,11 +2,19 @@
 using KabadaAPI.DataSource.Models;
 using KabadaAPI.DataSource.Utilities;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI.DataSource
 {
     public class Context : DbContext
     {
+        public Context(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Industry> Industries { get; set; }
@@ -26,7 +34,8 @@ namespace KabadaAPI.DataSource
             //optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer(new AppSettings(Configuration).connectionString);
+                //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
                 //optionsBuilder.UseSqlServer(@"name=ConnectionStrings:DefaultConnection");
             }
         }

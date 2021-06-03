@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace KabadaAPI.Controllers
   public class UserFileController : ControllerBase
   {
     private readonly ILogger _logger;
+    private readonly IConfiguration config;
 
-    public UserFileController(ILogger<UserFileController> logger)
+    public UserFileController(ILogger<UserFileController> logger, IConfiguration configuration)
     {
       _logger = logger;
+      config=configuration;
     }
 
 
@@ -42,7 +45,7 @@ namespace KabadaAPI.Controllers
         {
           _logger.LogInformation($"-- UploadFile {f.FileName} {f.Length}");
           using (var ms = new System.IO.MemoryStream())
-          using (var db = new DataSource.Context())
+          using (var db = new DataSource.Context(config))
           {
             await f.CopyToAsync(ms);
             _logger.LogInformation($"-- {ms.Length}");
@@ -82,7 +85,7 @@ namespace KabadaAPI.Controllers
         }
 
         var fileId = Guid.Parse(id);
-        using (var db = new DataSource.Context())
+        using (var db = new DataSource.Context(config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Id == fileId);
           if (r != null)
@@ -116,7 +119,7 @@ namespace KabadaAPI.Controllers
         //Guid? userId = null;
 
         var fileId = Guid.Parse(id);
-        using (var db = new DataSource.Context())
+        using (var db = new DataSource.Context(config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Id == fileId);
           if (r != null)
@@ -149,7 +152,7 @@ namespace KabadaAPI.Controllers
         //var userId = Guid.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value.ToString());
         //Guid? userId = null;
 
-        using (var db = new DataSource.Context())
+        using (var db = new DataSource.Context(config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Name == name);
           if (r != null)
@@ -172,7 +175,7 @@ namespace KabadaAPI.Controllers
     public async Task<IActionResult> test()
     {
       _logger.LogInformation("-- all files");
-      using (var db = new DataSource.Context())
+      using (var db = new DataSource.Context(config))
       {
         var r = await db.UserFiles.Select(r => new { r.Id, r.UserId, r.Name, r.Content.Length }).ToListAsync();
         return Ok(r);

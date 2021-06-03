@@ -3,12 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace KabadaAPI.DataSource.Repositories
-{
-    public class UsersPlansRepository : BaseRepository
+namespace KabadaAPI.DataSource.Repositories {
+  public class UsersPlansRepository : BaseRepository
     {
+      public UsersPlansRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
 
         public List<BusinessPlan> GetPlans(Guid userId)
         {
