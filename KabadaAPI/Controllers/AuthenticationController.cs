@@ -18,6 +18,8 @@ namespace KabadaAPI.Controllers
     {
         private readonly IConfiguration config;
 
+       private UsersRepository uRepo { get { return new UsersRepository(config); }}
+
         public AuthenticationController(IConfiguration config)
         {
             this.config = config;
@@ -31,7 +33,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AddUser(userView.Email, userView.Password);
@@ -51,7 +53,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AuthenticateUser(userView.Email, userView.Password);
@@ -78,7 +80,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AuthenticateGoogleUser(userView.Email);
@@ -105,7 +107,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 repository.RequestPassword(userView.Email);
@@ -125,7 +127,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 repository.ResetPassword(userView.PasswordResetString, userView.Password);
@@ -149,7 +151,7 @@ namespace KabadaAPI.Controllers
             {               
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 
-                var repository = new UsersRepository();
+                var repository = uRepo;
                 repository.ChangeEmail(userId, userUpdate.password, userUpdate.newValue);
                 return Ok("Success");
             }
@@ -171,7 +173,7 @@ namespace KabadaAPI.Controllers
             {               
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 
-                var repository = new UsersRepository();
+                var repository = uRepo;
                 repository.ChangePassword(userId, userUpdate.password, userUpdate.newValue);
                 return Ok("Success");
             }

@@ -93,5 +93,36 @@ namespace KabadaAPI.DataSource.Utilities
 
             smtpClient.Send(mailMessage);
         }
+
+
+        public static void SendEmailChange(string userEmail)
+        {
+            string messageText = $"Hi,<br /><br />";
+            messageText += $"Password reset link:{baseURL}set-password?requestId={userEmail}<br /><br />";
+            messageText += $"KABADA Team";
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress(EmailAccount.UserName, "KABADA"),
+                Subject = "Update password",
+                Body = messageText,
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add(userEmail);
+            SendGmail(mailMessage);
+        }
+
+        private static void SendGmail(MailMessage mailMessage){
+            var smtpClient = new SmtpClient
+            {  Host="smtp.gmail.com",
+                Port = 587,
+                Credentials = new NetworkCredential(EmailAccount.UserName, EmailAccount.Password),
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                EnableSsl = true,
+                UseDefaultCredentials = false
+            };
+
+            smtpClient.Send(mailMessage);
+          }
     }
 }

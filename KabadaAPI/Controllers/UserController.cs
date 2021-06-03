@@ -18,6 +18,7 @@ namespace KabadaAPI.Controllers {
         {
             this.config = config;
         }
+       private UsersRepository uRepo { get { return new UsersRepository(config); }}
 
         private User convert(UserUpdate parms){
           var r=new User();
@@ -58,11 +59,10 @@ namespace KabadaAPI.Controllers {
         {
             if (!ModelState.IsValid)
                 return BadRequest("Invalid input");
-
             try
             {               
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                var repository = new UsersRepository();
+                var repository = uRepo;
                 var r=repository.Read(userId);
                 return Ok(convert(r));
             }
@@ -84,7 +84,7 @@ namespace KabadaAPI.Controllers {
             {               
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 
-                var repository = new UsersRepository();
+                var repository = uRepo;
                 repository.UpdateUser(userId, convert(userUpdate), 1);
                 return Ok("Success");
             }
@@ -106,7 +106,7 @@ namespace KabadaAPI.Controllers {
             {               
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 
-                var repository = new UsersRepository();
+                var repository = uRepo;
                 repository.UpdateUser(userId, convert(userUpdate), 2);
                 return Ok("Success");
             }
