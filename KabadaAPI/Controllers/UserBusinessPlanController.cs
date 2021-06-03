@@ -5,6 +5,7 @@ using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
+using System.Collections.Generic;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -103,7 +104,7 @@ namespace KabadaAPI.Controllers {
         {
             try
             {
-                BusinessPlansRepository repository = new BusinessPlansRepository();
+                BusinessPlansRepository repository = new BusinessPlansRepository(config);
                 var plans = repository.GetPublicPlans();
                 var publicPlans = new PublicBusinessPlans() { BusinessPlan = new List<PublicBusinessPlan>() };
                 foreach (var p in plans)
