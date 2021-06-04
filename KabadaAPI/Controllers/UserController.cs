@@ -7,18 +7,21 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Security.Claims;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers {
   [Route("api/user")]
   [ApiController]
   public class UserController : ControllerBase {
-        private readonly IConfiguration config;
+    private readonly IConfiguration config;
+    private readonly ILogger _logger;
 
-        public UserController(IConfiguration config)
-        {
-            this.config = config;
-        }
-       private UsersRepository uRepo { get { return new UsersRepository(config); }}
+    public UserController(ILogger<UserFileController> logger, IConfiguration configuration){
+      config = configuration;
+      _logger=logger;     
+      }
+    
+    private UsersRepository uRepo { get { return new UsersRepository(config); }}
 
         private User convert(UserUpdate parms){
           var r=new User();
@@ -57,7 +60,7 @@ namespace KabadaAPI.Controllers {
         [HttpGet]
         public IActionResult getSettings()
         {
-            if (!ModelState.IsValid)
+             if (!ModelState.IsValid)
                 return BadRequest("Invalid input");
             try
             {               
@@ -115,6 +118,14 @@ namespace KabadaAPI.Controllers {
                 return BadRequest(exc.Message);
             }
         }
+        //[Route("jst")]
+        //[Authorize]
+        //[HttpGet]
+        //public IActionResult jst() {
+        //_logger.LogInformation($"-- User.getSettings entered at {DateTime.Now}");
 
+        //new DataSource.Utilities.Kmail(config).send("test", $"<b>{DateTime.Now}</b>", "strods@web.de", "sev", "teksts");
+        //return Ok("ok");
+        //}
     }
   }
