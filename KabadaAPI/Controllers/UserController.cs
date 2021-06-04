@@ -118,14 +118,15 @@ namespace KabadaAPI.Controllers {
                 return BadRequest(exc.Message);
             }
         }
-        //[Route("jst")]
-        //[Authorize]
-        //[HttpGet]
-        //public IActionResult jst() {
-        //_logger.LogInformation($"-- User.getSettings entered at {DateTime.Now}");
 
-        //new DataSource.Utilities.Kmail(config).send("test", $"<b>{DateTime.Now}</b>", "strods@web.de", "sev", "teksts");
-        //return Ok("ok");
-        //}
+    [Route("jst")]
+    [Authorize]
+    [HttpGet]
+    public IActionResult jst() {
+      _logger.LogInformation($"-- User.getSettings entered at {DateTime.Now}");
+
+      new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
+      return Ok("ok");
+      }
     }
   }

@@ -22,10 +22,14 @@ namespace KabadaAPI.DataSource.Utilities {
 
     protected void send(MimeMessage mailMessage){
       var opt=new AppSettings(config);
-      mailMessage.From.Add(new MailboxAddress("KABADA",opt.smtpUsername+"@"+opt.smtpHost));
+      var a=new MailboxAddress("KABADA",opt.smtpUsername.Trim());
+      mailMessage.From.Add(a);
 
       using (var smtpClient = new SmtpClient()){
-        smtpClient.Connect(opt.smtpHost, opt.smtpPort, SecureSocketOptions.StartTls);
+//        if(opt.useTLS)
+          smtpClient.Connect(opt.smtpHost, opt.smtpPort, SecureSocketOptions.StartTls);
+         //else
+         // smtpClient.Connect(opt.smtpHost, opt.smtpPort, true);
         smtpClient.Authenticate(opt.smtpUsername, opt.smtpPassword);
         smtpClient.Send(mailMessage);
         smtpClient.Disconnect(true);
@@ -47,13 +51,13 @@ namespace KabadaAPI.DataSource.Utilities {
       }
 
 
-    protected string autoQuote(string baseText){
-      var r=$"Hi,<br /><br />"+baseText+$"KABADA Team";
+    protected string autoQuote(string baseText, string name=null){
+      var r=$"Hi {name},<br /><br />"+baseText+$"KABADA Team";
       return r;
       }
 
     public void SendOnMailchangeConfirmation(string userEmail, string userName){
-      var mb=autoQuote($"You have successfully changed your e-mail address.<br />");
+      var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
       send("Welcome", mb, userEmail, userName);
       }
      }

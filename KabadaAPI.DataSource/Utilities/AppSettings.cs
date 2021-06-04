@@ -46,5 +46,10 @@ namespace KabadaAPI.DataSource.Utilities {
     public string smtpPassword { get {
       return getS("Smtp:Password", EmailAccount.Password);
       }}
+
+    public bool useTLS { get {
+      var t=getS("Smtp:Security", "Full");
+      return (t=="TLS");
+      }}
     }
   }
