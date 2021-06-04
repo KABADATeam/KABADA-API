@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using System.Collections.Generic;
 
-namespace KabadaAPI.Controllers {
-  [Authorize]
+namespace KabadaAPI.Controllers
+{
+    [Authorize]
     [ApiController]
     [Route("api/plans")]
     public class UserBusinessPlanController : ControllerBase
@@ -20,7 +21,7 @@ namespace KabadaAPI.Controllers {
             this.config = config;
         }
 
-        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config); }}
+        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config); } }
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
@@ -30,24 +31,35 @@ namespace KabadaAPI.Controllers {
             {
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 var repository = pRepo;
-                return Ok(repository.GetPlans(userId));
+                var plans = repository.GetPlans(userId);
+                var privatePlans = new PrivateBusinessPlans();
+                foreach (var p in plans)
+                {
+                    privatePlans.BusinessPlan.Add(new PrivateBusinessPlan
+                    {
+                        Id = p.Id,
+                        name = p.Title,
+                        dateCreated = p.Created.Date,
+                    });
+                }
+                return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });
             }
             catch (Exception exc)
             {
                 return BadRequest(exc.Message);
             }
-          
+
         }
 
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult AddPlan([FromBody]BusinessPlan businessPlan)
+        public IActionResult AddPlan([FromBody] BusinessPlan businessPlan)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Invalid input");
 
             try
-            {               
+            {
                 using (var repository = pRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
@@ -64,7 +76,7 @@ namespace KabadaAPI.Controllers {
         [Route("remove")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult RemovePlan([FromBody]BusinessPlan businessPlan)
+        public IActionResult RemovePlan([FromBody] BusinessPlan businessPlan)
         {
             try
             {
@@ -82,7 +94,7 @@ namespace KabadaAPI.Controllers {
         [Route("fetch")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult GetSelectedPlan([FromBody]BusinessPlan businessPlan)
+        public IActionResult GetSelectedPlan([FromBody] BusinessPlan businessPlan)
         {
             try
             {
@@ -106,7 +118,7 @@ namespace KabadaAPI.Controllers {
             {
                 BusinessPlansRepository repository = new BusinessPlansRepository(config);
                 var plans = repository.GetPublicPlans();
-                var publicPlans = new PublicBusinessPlans() { BusinessPlan = new List<PublicBusinessPlan>() };
+                var publicPlans = new PublicBusinessPlans();
                 foreach (var p in plans)
                 {
                     publicPlans.BusinessPlan.Add(new PublicBusinessPlan
@@ -118,7 +130,7 @@ namespace KabadaAPI.Controllers {
                         dateCreated = p.Created.Date,
                         owner = String.Format("{0} {1}", p.User.Name, p.User.Surname),
                         ownerAvatar = p.User.UserPhoto
-                    }) ;
+                    }); 
                 }
                 return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
             }
@@ -128,6 +140,33 @@ namespace KabadaAPI.Controllers {
             }
 
         }
+        //[Route("private")]
+        //[HttpGet]
+        //public IActionResult GetPrivatePlans()
+        //{
+        //    try
+        //    {
+        //        var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+        //        BusinessPlansRepository repository = new BusinessPlansRepository(config);
+        //        var plans = repository.GetPlans(userId);
+        //        var privatePlans = new PrivateBusinessPlans();
+        //        foreach (var p in plans)
+        //        {
+        //            privatePlans.BusinessPlan.Add(new PrivateBusinessPlan
+        //            {
+        //                Id = p.Id,
+        //                name = p.Title,
+        //                dateCreated = p.Created.Date,
+        //            });
+        //        }
+        //        return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });//repository.GetPublicPlans());
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        return BadRequest(exc.Message);
+        //    }
+
+        //}
 
     }
 }
