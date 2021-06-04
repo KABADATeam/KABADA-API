@@ -22,7 +22,10 @@ namespace KabadaAPI.DataSource.Utilities {
 
     protected void send(MimeMessage mailMessage){
       var opt=new AppSettings(config);
-      var a=new MailboxAddress("KABADA",opt.smtpUsername.Trim());
+      var u=opt.smtpUsername.Trim();
+      if(u.IndexOf('@')<0)
+        u+="@"+opt.smtpHost;
+      var a=new MailboxAddress("KABADA", u);
       mailMessage.From.Add(a);
 
       using (var smtpClient = new SmtpClient()){
