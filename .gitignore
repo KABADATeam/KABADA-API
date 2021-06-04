@@ -406,3 +406,4 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 /KabadaAPI/appsettings.Development.json
+/KabadaAPI/Logs
