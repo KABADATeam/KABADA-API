@@ -8,13 +8,11 @@ namespace KabadaAPI.DataSource
 {
     public class Context : DbContext
     {
-        public Context(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Context(IConfiguration configuration) : base() { Configuration = configuration; }
+ 
+        public Context() { }
 
-        public IConfiguration Configuration { get; }
-
+        public IConfiguration Configuration { get; private set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Industry> Industries { get; set; }
