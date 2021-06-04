@@ -192,7 +192,8 @@ namespace KabadaAPI.DataSource.Repositories {
       validatePassword(user, password);
       user.Email=newValue;
       context.SaveChanges();
-      Email.SendEmailChange(user.Email);
+      new Kmail(config).SendOnMailchangeConfirmation(user.Email, user.Name);
+      //Email.SendEmailChange(user.Email);
       }
     }
 }

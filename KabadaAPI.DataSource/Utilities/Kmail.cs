@@ -45,5 +45,16 @@ namespace KabadaAPI.DataSource.Utilities {
       var m=buildMessage(subject, htmlBody, toAddress, toName, textBody);
       send(m);
       }
-    }
+
+
+    protected string autoQuote(string baseText){
+      var r=$"Hi,<br /><br />"+baseText+$"KABADA Team";
+      return r;
+      }
+
+    public void SendOnMailchangeConfirmation(string userEmail, string userName){
+      var mb=autoQuote($"You have successfully changed your e-mail address.<br />");
+      send("Welcome", mb, userEmail, userName);
+      }
+     }
   }
