@@ -12,13 +12,13 @@ namespace KabadaAPI.DataSource.Repositories {
         public List<BusinessPlan> GetPlans(Guid userId)
         {
             //User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
-            var plans = context.BusinessPlans.Where(x => x.User.Id.Equals(userId)).ToList();
+            var plans = context.BusinessPlans.Where(x => x.User.Id.Equals(userId));
             if (plans != null)
             {
-                return plans;
+                return plans.ToList();
             }
             else
-                throw new Exception("Plan was not found");
+                throw new Exception("No plans found");
         }
 
         public BusinessPlan Save(Guid userId, string title, Guid activityId, Guid countryId)
