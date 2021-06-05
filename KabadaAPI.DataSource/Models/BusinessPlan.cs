@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace KabadaAPI.DataSource.Models
@@ -17,6 +18,14 @@ namespace KabadaAPI.DataSource.Models
         public Activity Activity { get; set; }
 
         [Required]
-        public string Title { get; set; }   
+        public string Title { get; set; }
+        
+        // [vp]
+        public Guid? Img { get; set; }
+        public DateTime Created { get; set; }
+        [Range(0,100)]
+        public int Completed { get; set; }
+        public bool Public { get; set; }
+        public User User { get; set; }
     }
 }

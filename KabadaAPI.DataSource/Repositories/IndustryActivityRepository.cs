@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
-using System.Text;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using System.Net;
 using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using System.Net.Http;
-namespace KabadaAPI.DataSource.Repositories
-{
-    public class IndustryActivityRepository
+using Microsoft.Extensions.Configuration;
+
+namespace KabadaAPI.DataSource.Repositories {
+  public class IndustryActivityRepository
     {
+        private readonly IConfiguration config;
         protected readonly Context context;
 
-        public IndustryActivityRepository()
-        {
-            context = new Context();
-        }
+        public IndustryActivityRepository(IConfiguration config){ this.config = config; context = new Context(config);}
+
 
         public List<Industry> GetIndustries()
         {

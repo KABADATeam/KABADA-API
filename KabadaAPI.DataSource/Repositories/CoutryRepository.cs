@@ -1,27 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using KabadaAPI.DataSource.Models;
 using System.Linq;
-using System.Globalization;
-using System.Net;
-using System.Net.Http;
-using Newtonsoft.Json;
-using System.Text.RegularExpressions;
-using System.IO;
 
-namespace KabadaAPI.DataSource.Repositories
-{
-    public class CountryRepository
+namespace KabadaAPI.DataSource.Repositories {
+  public class CountryRepository : BaseRepository
     {
+       public CountryRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
 
-        public Context context;
-
-        public CountryRepository()
-        {
-            context = new Context();
-        }
-
-        public List<Country> GetCountries()
+       public List<Country> GetCountries()
         {
             var list = context.Countries.ToList();
             return list.OrderBy(x => x.Title).ToList();

@@ -2,11 +2,17 @@
 using KabadaAPI.DataSource.Models;
 using KabadaAPI.DataSource.Utilities;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI.DataSource
 {
     public class Context : DbContext
     {
+        public Context(IConfiguration configuration) : base() { Configuration = configuration; }
+ 
+        public Context() { }
+
+        public IConfiguration Configuration { get; private set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Industry> Industries { get; set; }
@@ -15,8 +21,10 @@ namespace KabadaAPI.DataSource
         public DbSet<UserType> UserTypes { get; set; }
         public DbSet<BusinessPlan> BusinessPlans { get; set; }
 
+        public DbSet<UserFile> UserFiles { get; set; } // [vp]
 
-        //public Context(DbContextOptions<Context> options) : base(options) { }
+
+        // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -24,7 +32,8 @@ namespace KabadaAPI.DataSource
             //optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
+                optionsBuilder.UseSqlServer(new AppSettings(Configuration).connectionString);
+                //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
                 //optionsBuilder.UseSqlServer(@"name=ConnectionStrings:DefaultConnection");
             }
         }
@@ -43,6 +52,11 @@ namespace KabadaAPI.DataSource
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<User>().Property(x => x.Id)
                 .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<UserFile>().Property(x => x.Id) // [vp]
+                .ValueGeneratedOnAdd();
+            modelBuilder.Entity<BusinessPlan>().Property(x => x.Created)
+                .HasDefaultValueSql("getdate()");
 
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 1, Title = "Administrator" });
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 100, Title = "Simple" });

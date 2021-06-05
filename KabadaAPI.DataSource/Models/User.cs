@@ -33,6 +33,20 @@ namespace KabadaAPI.DataSource.Models
         [Required]
         public bool TwoFactorAuthEnabled { get; set; } = false;
 
+        [Required]
+        public bool Facebook { get; set; } = false;
+
+        [Required]
+        public bool Google { get; set; } = false;
+
+        [Required]
+        public bool ReceiveEmail { get; set; } = false;
+
+        [Required]
+        public bool ReceiveNotification { get; set; } = false;
+
+        public byte[] UserPhoto { get; set; }
+
         public string TwoFactorString { get; set; }
 
         public DateTime TwoFactorStringExpiration { get; set; }
@@ -41,6 +55,6 @@ namespace KabadaAPI.DataSource.Models
 
         public string PasswordResetString { get; set; }
 
-        public virtual List<BusinessPlan> BusinessPlans { get; set; }
+        //public virtual List<BusinessPlan> BusinessPlans { get; set; }
     }
 }

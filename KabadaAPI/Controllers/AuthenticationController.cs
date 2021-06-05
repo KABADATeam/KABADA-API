@@ -8,6 +8,7 @@ using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace KabadaAPI.Controllers
 {
@@ -16,6 +17,8 @@ namespace KabadaAPI.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly IConfiguration config;
+
+       private UsersRepository uRepo { get { return new UsersRepository(config); }}
 
         public AuthenticationController(IConfiguration config)
         {
@@ -30,7 +33,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AddUser(userView.Email, userView.Password);
@@ -50,7 +53,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AuthenticateUser(userView.Email, userView.Password);
@@ -77,7 +80,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 var user = repository.AuthenticateGoogleUser(userView.Email);
@@ -104,7 +107,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 repository.RequestPassword(userView.Email);
@@ -124,7 +127,7 @@ namespace KabadaAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(new { message = "Invalid input" });
 
-            UsersRepository repository = new UsersRepository();
+            var repository = uRepo;
             try
             {
                 repository.ResetPassword(userView.PasswordResetString, userView.Password);
@@ -133,6 +136,50 @@ namespace KabadaAPI.Controllers
             catch (Exception exc)
             {
                 return BadRequest(new { message = exc.Message });
+            }
+        }
+
+        [Route("change_email")]
+        [Authorize]
+        [HttpPost]
+        public IActionResult change_email([FromBody]ChangeUserParameter userUpdate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid input");
+
+            try
+            {               
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+                
+                var repository = uRepo;
+                repository.ChangeEmail(userId, userUpdate.password, userUpdate.newValue);
+                return Ok("Success");
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
+            }
+        }
+
+        [Route("change_password")]
+        [Authorize]
+        [HttpPost]
+        public IActionResult change_password([FromBody]ChangeUserParameter userUpdate)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid input");
+
+            try
+            {               
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+                
+                var repository = uRepo;
+                repository.ChangePassword(userId, userUpdate.password, userUpdate.newValue);
+                return Ok("Success");
+            }
+            catch (Exception exc)
+            {
+                return BadRequest(exc.Message);
             }
         }
     }
