@@ -8,7 +8,7 @@ namespace KabadaAPI.DataSource.Repositories
 {
     public class BusinessPlansRepository : BaseRepository
     {
-        public BusinessPlansRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
+        public BusinessPlansRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
 
         public List<BusinessPlan> GetPublicPlans()
         {

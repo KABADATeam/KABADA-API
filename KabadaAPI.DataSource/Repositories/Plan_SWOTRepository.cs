@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace KabadaAPI.DataSource.Repositories {
   public class Plan_SWOTRepository : BaseRepository {
-       public Plan_SWOTRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
+       public Plan_SWOTRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
    }
   }

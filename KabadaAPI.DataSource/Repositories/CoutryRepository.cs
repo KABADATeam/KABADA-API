@@ -5,7 +5,7 @@ using System.Linq;
 namespace KabadaAPI.DataSource.Repositories {
   public class CountryRepository : BaseRepository
     {
-       public CountryRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
+       public CountryRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
 
        public List<Country> GetCountries()
         {

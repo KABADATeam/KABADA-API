@@ -7,12 +7,10 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI.DataSource.Repositories {
-  public class IndustryActivityRepository
+  public class IndustryActivityRepository : BaseRepository
     {
-        private readonly IConfiguration config;
-        protected readonly Context context;
-
-        public IndustryActivityRepository(IConfiguration config){ this.config = config; context = new Context(config);}
+    
+        public IndustryActivityRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
 
 
         public List<Industry> GetIndustries()

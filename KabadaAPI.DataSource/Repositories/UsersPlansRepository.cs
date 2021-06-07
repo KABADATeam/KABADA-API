@@ -7,7 +7,7 @@ using System.Linq;
 namespace KabadaAPI.DataSource.Repositories {
   public class UsersPlansRepository : BaseRepository
     {
-      public UsersPlansRepository(Microsoft.Extensions.Configuration.IConfiguration configuration) : base(configuration) { }
+      public UsersPlansRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
 
         public List<BusinessPlan> GetPlans(Guid userId)
         {
