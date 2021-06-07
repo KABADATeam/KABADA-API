@@ -4,14 +4,16 @@ using KabadaAPI.DataSource;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KabadaAPI.DataSource.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20210604122958_AddedSharedPlan")]
+    partial class AddedSharedPlan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,217 +110,217 @@ namespace KabadaAPI.DataSource.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c096f401-de5e-4e9c-8a8d-8deac0e147ea"),
+                            Id = new Guid("7947eb99-e61a-431c-9b66-cc1e0e5b4e6e"),
                             ShortCode = "AT",
                             Title = "Austria"
                         },
                         new
                         {
-                            Id = new Guid("7498d010-db21-4762-9283-facdadac74f8"),
+                            Id = new Guid("71b7f9ec-9df4-4fd6-91a8-4d6e999f1479"),
                             ShortCode = "BA",
                             Title = "Bosnia and Herzegovina"
                         },
                         new
                         {
-                            Id = new Guid("dd740d99-f863-4014-8b4d-232473ce56d4"),
+                            Id = new Guid("35f40fa3-0222-4275-a640-ff135a3d5e7b"),
                             ShortCode = "BE",
                             Title = "Belgium"
                         },
                         new
                         {
-                            Id = new Guid("8e0c8d9e-1ced-4e58-95a4-c64c86c6267a"),
+                            Id = new Guid("10947744-1d19-4ac7-9c41-02de4c745eba"),
                             ShortCode = "BG",
                             Title = "Bulgaria"
                         },
                         new
                         {
-                            Id = new Guid("944fd834-b723-4dec-9fe6-9394d54da53c"),
+                            Id = new Guid("eb9c6bf4-7dc6-4b38-a039-0e0ef1f01372"),
                             ShortCode = "HR",
                             Title = "Croatia"
                         },
                         new
                         {
-                            Id = new Guid("ed1d2957-e95a-4c57-a2c3-8f9ca771bb7c"),
+                            Id = new Guid("8437eaaf-804a-4e40-8c49-f6b1a2937df5"),
                             ShortCode = "CY",
                             Title = "Cyprus"
                         },
                         new
                         {
-                            Id = new Guid("befc51b7-2c89-4db4-a80c-c60113df6ad4"),
+                            Id = new Guid("872af87c-eea1-4d30-baa1-0721bbb16bfe"),
                             ShortCode = "CZ",
                             Title = "Czechia"
                         },
                         new
                         {
-                            Id = new Guid("14e981be-bac8-46bc-82e5-32ead6cb58f1"),
+                            Id = new Guid("27823f9e-a42e-4289-ae57-b79e5a521096"),
                             ShortCode = "DK",
                             Title = "Denmark"
                         },
                         new
                         {
-                            Id = new Guid("23fd694c-8c5d-49ac-a32c-1cf1946661fb"),
+                            Id = new Guid("9835ca9c-2ebe-410b-8cf5-4652d9237730"),
                             ShortCode = "EE",
                             Title = "Estonia"
                         },
                         new
                         {
-                            Id = new Guid("791fd1be-fc27-44e1-9c56-b2fba273d86c"),
+                            Id = new Guid("0824ab4c-5bd7-4044-833e-c9e790ee67b3"),
                             ShortCode = "FI",
                             Title = "Finland"
                         },
                         new
                         {
-                            Id = new Guid("13e2582d-5095-426d-91ba-b01fefb82d9b"),
+                            Id = new Guid("658d3ad0-ef1d-4bea-9597-f1b1f44f6946"),
                             ShortCode = "FR",
                             Title = "France"
                         },
                         new
                         {
-                            Id = new Guid("6780de5e-48e5-412f-92c1-9ee5ffc2179f"),
+                            Id = new Guid("48ced809-5294-4bed-a90a-3f2afd7b7228"),
                             ShortCode = "DE",
                             Title = "Germany"
                         },
                         new
                         {
-                            Id = new Guid("51a92ecc-c481-407b-81e6-feb7067cdf96"),
+                            Id = new Guid("5c17fe1c-296c-4f8e-9888-789f3559534f"),
                             ShortCode = "EL",
                             Title = "Greece"
                         },
                         new
                         {
-                            Id = new Guid("da2485b5-5201-49a1-9e2e-20f6a8f67771"),
+                            Id = new Guid("cbf9f1b2-a7be-4b2d-81f2-e59c086441b2"),
                             ShortCode = "HU",
                             Title = "Hungary"
                         },
                         new
                         {
-                            Id = new Guid("82d56c8a-8169-4bcf-b0ae-6e678bfd54fe"),
+                            Id = new Guid("d3078b28-eb08-4d5a-a1f4-1c843da82059"),
                             ShortCode = "IS",
                             Title = "Iceland"
                         },
                         new
                         {
-                            Id = new Guid("892a8ad4-1a91-4f38-908c-a182ecba5722"),
+                            Id = new Guid("5f14cbe1-bf8b-4046-baaf-743fa1802023"),
                             ShortCode = "IE",
                             Title = "Ireland"
                         },
                         new
                         {
-                            Id = new Guid("1f70afd3-bff3-4066-b4cb-3ca9bb750f58"),
+                            Id = new Guid("51798121-a63e-45ea-ab14-5956eb606be5"),
                             ShortCode = "IT",
                             Title = "Italy"
                         },
                         new
                         {
-                            Id = new Guid("6281bf95-7315-41f5-ac4e-fb1537963668"),
+                            Id = new Guid("59c1db11-f27a-4c66-9bce-2e7329585cc3"),
                             ShortCode = "LV",
                             Title = "Latvia"
                         },
                         new
                         {
-                            Id = new Guid("385d9a3b-a5b6-4c24-aeaf-f5fd30dba44d"),
+                            Id = new Guid("711d2ab0-5f07-49ea-8c15-e4446dfde001"),
                             ShortCode = "LI",
                             Title = "Liechtenstein"
                         },
                         new
                         {
-                            Id = new Guid("5c3340c2-7a58-4c1d-855b-9f87649626e6"),
+                            Id = new Guid("7a993fa7-5fd0-4f8f-83a0-53d3c1191dca"),
                             ShortCode = "LT",
                             Title = "Lithuania"
                         },
                         new
                         {
-                            Id = new Guid("1e5902d8-e310-4e90-8b9b-03c561db0124"),
+                            Id = new Guid("14f8ece7-d2ae-4178-a156-066a1821d5ef"),
                             ShortCode = "LU",
                             Title = "Luxembourg"
                         },
                         new
                         {
-                            Id = new Guid("05bba7c6-742d-4f1d-8ed4-c2cc2c156eaf"),
+                            Id = new Guid("ce05ca02-cebb-4a06-841c-adfa28de9f04"),
                             ShortCode = "MT",
                             Title = "Malta"
                         },
                         new
                         {
-                            Id = new Guid("dd99a756-0632-480d-937e-eb5d39e16423"),
+                            Id = new Guid("a0f7e2cf-a87d-4dc4-b0df-460070088730"),
                             ShortCode = "NL",
                             Title = "Netherlands"
                         },
                         new
                         {
-                            Id = new Guid("f17a8b5e-3063-4070-a12c-b929c79cd721"),
+                            Id = new Guid("f7cd6b83-af2a-4218-bda1-81978aad3431"),
                             ShortCode = "MK",
                             Title = "North Macedonia"
                         },
                         new
                         {
-                            Id = new Guid("62524e7f-12fc-409b-ac26-c3c4fd887177"),
+                            Id = new Guid("43288f2c-bf73-4f91-aa5b-9dab264ccb24"),
                             ShortCode = "NO",
                             Title = "Norway"
                         },
                         new
                         {
-                            Id = new Guid("a305e39f-5a3a-4fda-81cb-82a4ac48aca8"),
+                            Id = new Guid("1b21573b-c588-4bf8-8be9-cac65f8a57bc"),
                             ShortCode = "PL",
                             Title = "Poland"
                         },
                         new
                         {
-                            Id = new Guid("b9bb510a-c96f-40d4-8f14-d6c3bcfac947"),
+                            Id = new Guid("9159a305-a9ee-48cf-b5b8-ad003326afb6"),
                             ShortCode = "PT",
                             Title = "Portugal"
                         },
                         new
                         {
-                            Id = new Guid("a7af6f04-5f33-42e6-940f-dab8d5a87d8a"),
+                            Id = new Guid("734272a8-72ef-4951-b8a9-7ace3abe0bcc"),
                             ShortCode = "RO",
                             Title = "Romania"
                         },
                         new
                         {
-                            Id = new Guid("8356c33c-8904-4991-bf74-5e7c6128946c"),
+                            Id = new Guid("6485f7f2-b8a1-40d2-9004-9f5e76333673"),
                             ShortCode = "RS",
                             Title = "Serbia"
                         },
                         new
                         {
-                            Id = new Guid("14d87cb9-01e8-412e-8ebb-283d956633ce"),
+                            Id = new Guid("72f5e3d9-4ca3-47da-8def-70e54350249c"),
                             ShortCode = "SK",
                             Title = "Slovakia"
                         },
                         new
                         {
-                            Id = new Guid("37ac6e38-8c8e-46ee-b018-c7d442afb451"),
+                            Id = new Guid("34d29e86-9d37-425a-b4f8-5622858b23bd"),
                             ShortCode = "SI",
                             Title = "Slovenia"
                         },
                         new
                         {
-                            Id = new Guid("e469fc99-01cb-417e-b2c2-ed62ab880263"),
+                            Id = new Guid("013f8b33-8db7-45b7-b1df-845d0782b522"),
                             ShortCode = "ES",
                             Title = "Spain"
                         },
                         new
                         {
-                            Id = new Guid("b7a2a4bf-b038-42ad-9ab9-28360701a471"),
+                            Id = new Guid("7b141cc4-1295-4df2-8a0a-868f81fa6dc9"),
                             ShortCode = "SE",
                             Title = "Sweden"
                         },
                         new
                         {
-                            Id = new Guid("1260aa58-e2f7-456d-b101-07f13363bf77"),
+                            Id = new Guid("68ae076a-b2fe-4489-9919-6fbfddfe658f"),
                             ShortCode = "CH",
                             Title = "Switzerland"
                         },
                         new
                         {
-                            Id = new Guid("1fd6107c-0861-4da6-b532-84af2ab6b461"),
+                            Id = new Guid("cf62d0bf-7180-477f-af88-970ffa144382"),
                             ShortCode = "TR",
                             Title = "Turkey"
                         },
                         new
                         {
-                            Id = new Guid("51bacae2-3bac-4771-a9c2-d552668fb2df"),
+                            Id = new Guid("86a2292c-8d46-4223-843b-5ed7930621cc"),
                             ShortCode = "UK",
                             Title = "United Kingdom"
                         });
@@ -367,25 +369,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
-                });
-
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.SharedPlan", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BusinessPlanId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BusinessPlanId");
-
-                    b.ToTable("SharedPlans");
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.User", b =>
@@ -547,15 +530,6 @@ namespace KabadaAPI.DataSource.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.SharedPlan", b =>
-                {
-                    b.HasOne("KabadaAPI.DataSource.Models.BusinessPlan", null)
-                        .WithMany("SharedPlans")
-                        .HasForeignKey("BusinessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("KabadaAPI.DataSource.Models.User", b =>
                 {
                     b.HasOne("KabadaAPI.DataSource.Models.UserType", "Type")
@@ -563,11 +537,6 @@ namespace KabadaAPI.DataSource.Migrations
                         .HasForeignKey("TypeId");
 
                     b.Navigation("Type");
-                });
-
-            modelBuilder.Entity("KabadaAPI.DataSource.Models.BusinessPlan", b =>
-                {
-                    b.Navigation("SharedPlans");
                 });
 
             modelBuilder.Entity("KabadaAPI.DataSource.Models.Industry", b =>

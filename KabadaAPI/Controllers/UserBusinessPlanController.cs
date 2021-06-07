@@ -6,20 +6,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers
 {
     [Authorize]
     [ApiController]
     [Route("api/plans")]
-    public class UserBusinessPlanController : ControllerBase
+    public class UserBusinessPlanController : KController
     {
-        private readonly IConfiguration config;
-
-        public UserBusinessPlanController(IConfiguration config)
-        {
-            this.config = config;
-        }
+        public UserBusinessPlanController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) { }
 
         protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config); } }
 
@@ -31,6 +27,7 @@ namespace KabadaAPI.Controllers
             {
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                 var repository = pRepo;
+                _logger.LogInformation($"-- List of plans for user={userId}");
                 var plans = repository.GetPlans(userId);
                 var privatePlans = new PrivateBusinessPlans();
                 foreach (var p in plans)
@@ -40,8 +37,15 @@ namespace KabadaAPI.Controllers
                         Id = p.Id,
                         name = p.Title,
                         dateCreated = p.Created.Date,
-                    });
+                        Public = p.Public,
+                        planImage = p.Img,
+                      
+                        SharedWithMe = false
+
+                    }) ;
                 }
+                _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
+
                 return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });
             }
             catch (Exception exc)

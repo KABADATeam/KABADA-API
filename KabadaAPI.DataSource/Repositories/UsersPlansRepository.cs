@@ -12,8 +12,15 @@ namespace KabadaAPI.DataSource.Repositories {
         public List<BusinessPlan> GetPlans(Guid userId)
         {
             //User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
-            var plans = context.BusinessPlans.Where(x => x.User.Id.Equals(userId));
-            if (plans != null)
+            var plans = context.BusinessPlans.Where(x => x.User.Id.Equals(userId)).ToList();
+               // .Include(x => x.SharedPlans).ToList();
+            var shp = context.SharedPlans.Where(x => x.UserId.Equals(userId));
+            var pp = context.BusinessPlans;
+            var res = from sh in shp
+                      join bp in pp on sh.BusinessPlanId equals bp.Id 
+                      select bp;
+           // var plans = p.ToList();
+            if (plans.Count>0)
             {
                 return plans.ToList();
             }
@@ -35,7 +42,7 @@ namespace KabadaAPI.DataSource.Repositories {
                 Country = country
             };
 
-         //   user.BusinessPlans.Add(plan);
+            context.BusinessPlans.Add(plan);
             return plan;
         }
 

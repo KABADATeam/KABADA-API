@@ -23,7 +23,7 @@ namespace KabadaAPI.DataSource
 
         public DbSet<UserFile> UserFiles { get; set; } // [vp]
 
-
+        public DbSet<SharedPlan> SharedPlans { get; set; } 
         // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
 
 
@@ -57,6 +57,8 @@ namespace KabadaAPI.DataSource
                 .ValueGeneratedOnAdd();
             modelBuilder.Entity<BusinessPlan>().Property(x => x.Created)
                 .HasDefaultValueSql("getdate()");
+            modelBuilder.Entity<SharedPlan>().Property(x => x.Id) 
+                .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 1, Title = "Administrator" });
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 100, Title = "Simple" });
