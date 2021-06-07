@@ -5,12 +5,10 @@ using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 
-namespace KabadaAPI.Controllers
-{
-    [Authorize]
+namespace KabadaAPI.Controllers {
+  [Authorize]
     [ApiController]
     [Route("api/plans")]
     public class UserBusinessPlanController : KController
@@ -21,11 +19,9 @@ namespace KabadaAPI.Controllers
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
-        public IActionResult GetPlans()
-        {
-            try
-            {
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+        public IActionResult GetPlans(){ return grun(_GetPlans); }
+        private IActionResult _GetPlans(){
+                var userId = uGuid;
                 var repository = pRepo;
                 _logger.LogInformation($"-- List of plans for user={userId}");
                 var plans = repository.GetPlans(userId);
@@ -45,80 +41,45 @@ namespace KabadaAPI.Controllers
                 _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
 
                 return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
-
         }
 
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult AddPlan([FromBody] BusinessPlan businessPlan)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-
-            try
-            {
-                using (var repository = pRepo)
+        public IActionResult AddPlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_AddPlan, businessPlan); }
+        private IActionResult _AddPlan([FromBody] BusinessPlan businessPlan){
+                 using (var repository = pRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                     var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.CountryId);
                     return Ok(plan);
                 }
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
         }
 
         [Route("remove")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult RemovePlan([FromBody] BusinessPlan businessPlan)
-        {
-            try
-            {
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                UsersPlansRepository repository = new UsersPlansRepository(config);
-                repository.Remove(userId, businessPlan.Id);
+        public IActionResult RemovePlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_RemovePlan, businessPlan); }
+        private IActionResult _RemovePlan([FromBody] BusinessPlan businessPlan){
+                UsersPlansRepository repository = new UsersPlansRepository(config, _logger);
+                repository.Remove(uGuid, businessPlan.Id);
                 return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
         }
 
         [Route("fetch")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult GetSelectedPlan([FromBody] BusinessPlan businessPlan)
-        {
-            try
-            {
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                var repository = pRepo;
-                var plan = repository.GetSelectedPlan(userId, businessPlan.Id);
+        public IActionResult GetSelectedPlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_GetSelectedPlan, businessPlan); }
+        private IActionResult _GetSelectedPlan([FromBody] BusinessPlan businessPlan){
+                var plan = pRepo.GetSelectedPlan(uGuid, businessPlan.Id);
                 return Ok(plan);
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
         }
 
         [AllowAnonymous]
         [Route("public")]
         [HttpGet]
-        public IActionResult GetPublicPlans()
-        {
-            try
-            {
-                BusinessPlansRepository repository = new BusinessPlansRepository(config);
+        public IActionResult GetPublicPlans(){ return grun(_GetPublicPlans);}
+        private IActionResult _GetPublicPlans(){
+                BusinessPlansRepository repository = new BusinessPlansRepository(config, _logger);
                 var plans = repository.GetPublicPlans();
                 var publicPlans = new PublicBusinessPlans();
                 foreach (var p in plans)
@@ -135,12 +96,6 @@ namespace KabadaAPI.Controllers
                     }); 
                 }
                 return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
-
         }
         //[Route("private")]
         //[HttpGet]
