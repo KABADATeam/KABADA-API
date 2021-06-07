@@ -12,14 +12,10 @@ namespace KabadaAPI.DataSource.Repositories
 
         public List<BusinessPlan> GetPublicPlans()
         {
-            var plans = context.BusinessPlans.Where(x => x.Public == true).Include(x => x.Country).Include(x => x.User)
-                    .Include(x => x.Activity.Industry);
-            if (plans != null)
-            {
-                return plans.OrderBy(x => x.Title).ToList();
-            }
-            else
-                throw new Exception("No plans found");
+            var plans = context.BusinessPlans.Where(x => x.Public == true)
+                        .Include(x => x.Country).Include(x => x.User)
+                        .Include(x => x.Activity.Industry);
+            return plans.OrderBy(x => x.Title).ToList();           
         }
     }
 }
