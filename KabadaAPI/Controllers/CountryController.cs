@@ -13,7 +13,7 @@ namespace KabadaAPI.Controllers {
        [HttpGet]
         public IActionResult GetAll() { return grun(_GetAll); }
         private IActionResult _GetAll() {
-            CountryRepository repository = new CountryRepository(config);
+            CountryRepository repository = new CountryRepository(config, _logger);
             return Ok(repository.GetCountries());
         }
     }

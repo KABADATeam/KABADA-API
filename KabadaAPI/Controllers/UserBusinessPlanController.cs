@@ -17,7 +17,7 @@ namespace KabadaAPI.Controllers
     {
         public UserBusinessPlanController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) { }
 
-        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config); } }
+        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config, _logger); } }
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]

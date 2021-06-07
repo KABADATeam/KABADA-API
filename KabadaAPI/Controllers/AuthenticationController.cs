@@ -12,7 +12,7 @@ namespace KabadaAPI.Controllers {
     public class AuthenticationController : KController
     {
 
-       private UsersRepository uRepo { get { return new UsersRepository(config); }}
+       private UsersRepository uRepo { get { return new UsersRepository(config, _logger); }}
 
         public AuthenticationController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
