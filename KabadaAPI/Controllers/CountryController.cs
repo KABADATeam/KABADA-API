@@ -1,18 +1,18 @@
 ﻿using KabadaAPI.DataSource.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers {
   [Route("api/countries")]
-    public class CountryController : ControllerBase
+    public class CountryController : KController
     {
-        private readonly IConfiguration config;
 
-        public CountryController(IConfiguration config){ this.config = config; }
+        public CountryController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
        [HttpGet]
-        public IActionResult GetAll()
-        {
+        public IActionResult GetAll() { return grun(_GetAll); }
+        private IActionResult _GetAll() {
             CountryRepository repository = new CountryRepository(config);
             return Ok(repository.GetCountries());
         }
