@@ -79,7 +79,7 @@ namespace KabadaAPI.Controllers {
     [Route("jst")]
     [Authorize]
     [HttpGet]
-    public IActionResult jst() { return grun(_jst); }
+    public IActionResult test() { return grun(_jst); }
 
     private  IActionResult _jst() {
       LogInformation($"-- User.getSettings entered at {DateTime.Now}");

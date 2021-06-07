@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Security.Claims;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace KabadaAPI.Controllers {
   public abstract class KController : ControllerBase {  // KabadaAPI Controller base
@@ -96,6 +97,29 @@ namespace KabadaAPI.Controllers {
          }
       return _result;
       }
+
+    protected virtual async Task<IActionResult> grun(Func<Task<IActionResult>> actor) {
+      IActionResult _result;
+      var strt=DateTime.Now;
+      try { 
+        _session=sessionId;
+        var fun=GetType().Name+"."+(new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name;
+        LogInformation($"[{_session}] {fun} started at {strt}.");
+
+        if (!ModelState.IsValid)
+          _result=BadRequest("Invalid input");
+         else
+          _result=await actor();
+
+        var t=DateTime.Now;
+        LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
+        }
+       catch (Exception exc){
+         LogInformation($"[{_session}] crashed.");
+         _result=BadRequest(exc.Message);
+         }
+      return _result;
+      }
     
     protected virtual IActionResult prun<T>(Func<T, IActionResult> actor, T parameter) {
       IActionResult _result;
@@ -109,6 +133,29 @@ namespace KabadaAPI.Controllers {
           _result=BadRequest("Invalid input");
          else
           _result=actor(parameter);
+
+        var t=DateTime.Now;
+        LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
+        }
+       catch (Exception exc){
+         LogInformation($"[{_session}] crashed.");
+         _result=BadRequest(exc.Message);
+         }
+      return _result;
+      }
+    
+    protected async virtual Task<IActionResult> prun<T>(Func<T, Task<IActionResult>> actor, T parameter) {
+      IActionResult _result;
+      var strt=DateTime.Now;
+      try { 
+        _session=sessionId;
+        var fun=GetType().Name+"."+(new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name;
+        LogInformation($"[{_session}] {fun} started at {strt}.");
+
+        if (!ModelState.IsValid)
+          _result=BadRequest("Invalid input");
+         else
+          _result=await actor(parameter);
 
         var t=DateTime.Now;
         LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");

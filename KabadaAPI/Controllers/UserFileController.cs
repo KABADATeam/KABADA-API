@@ -14,22 +14,16 @@ namespace KabadaAPI.Controllers
   [Authorize]
   [Route("api/files")]
   [ApiController]
-  public class UserFileController : ControllerBase
+  public class UserFileController : KController
   {
-    private readonly ILogger _logger;
-    private readonly IConfiguration config;
 
-    public UserFileController(ILogger<UserFileController> logger, IConfiguration configuration)
-    {
-      _logger = logger;
-      config=configuration;
-    }
+    public UserFileController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
 
     [HttpPost, DisableRequestSizeLimit]
     [AllowAnonymous]
-    public async Task<IActionResult> UploadFile([FromForm]List<IFormFile> files)
-    {
+    public async Task<IActionResult> UploadFile([FromForm]List<IFormFile> files){ return await prun<List<IFormFile>>(_UploadFile, files); }
+    private async Task<IActionResult> _UploadFile([FromForm]List<IFormFile> files){
 #if XX
       return Ok(new { count = files?.Count, rq = Request.Form.Files?.Count });
 #endif
@@ -74,8 +68,8 @@ namespace KabadaAPI.Controllers
     /// <param name="id">guid string</param>
     [HttpDelete("{id}")]
     [AllowAnonymous]
-    public async Task<IActionResult> DeleteFile(string id)
-    {
+    public async Task<IActionResult> DeleteFile(string id){ return await prun<string>(_DeleteFile, id); }
+    private async Task<IActionResult> _DeleteFile(string id){
       _logger.LogInformation($"-- DeleteFile {id}");
       try
       {
@@ -105,8 +99,8 @@ namespace KabadaAPI.Controllers
 
     [HttpGet("{id}")]
     [AllowAnonymous]
-    public IActionResult DownloadFile(string id)
-    {
+    public IActionResult DownloadFile(string id) { return prun<string>(_DownloadFile, id); }
+    private IActionResult _DownloadFile(string id) {
       _logger.LogInformation($"-- DownloadFile {id}");
       try
       {
@@ -139,8 +133,8 @@ namespace KabadaAPI.Controllers
 
     [HttpGet("byname/{name}")]
     [AllowAnonymous]
-    public IActionResult DownloadFileByName(string name)
-    {
+    public IActionResult DownloadFileByName(string name){ return prun<string>(_DownloadFileByName, name); }
+    private IActionResult _DownloadFileByName(string name){
       _logger.LogInformation($"-- DownloadFileByName {name}");
       try
       {
@@ -172,8 +166,8 @@ namespace KabadaAPI.Controllers
 
     [HttpGet]
     [AllowAnonymous]
-    public async Task<IActionResult> test()
-    {
+    public async Task<IActionResult> test() { return await grun(_test); }
+    private async Task<IActionResult> _test() {
       _logger.LogInformation("-- all files");
       using (var db = new DataSource.Context(config))
       {
