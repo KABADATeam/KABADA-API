@@ -1,186 +1,94 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using KabadaAPI.ViewModels;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
+using Microsoft.Extensions.Logging;
 
-namespace KabadaAPI.Controllers
-{
-    [Authorize]
+namespace KabadaAPI.Controllers {
+  [Authorize]
     [Route("api/auth")]
-    public class AuthenticationController : ControllerBase
+    public class AuthenticationController : KController
     {
-        private readonly IConfiguration config;
 
        private UsersRepository uRepo { get { return new UsersRepository(config); }}
 
-        public AuthenticationController(IConfiguration config)
-        {
-            this.config = config;
-        }
+        public AuthenticationController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
         [AllowAnonymous]
         [HttpPost]
         [Route("register")]
-        public IActionResult Register([FromBody]UserViewModel userView)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new { message = "Invalid input" });
-
-            var repository = uRepo;
-            try
-            {
-                var user = repository.AddUser(userView.Email, userView.Password);
-                return Ok(new { id = user.Id });
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(new { message = exc.Message });
-            }
+        public IActionResult Register([FromBody]UserViewModel userView){ return prun<UserViewModel>(_Register, userView); }
+        private IActionResult _Register([FromBody]UserViewModel userView){
+          var user = uRepo.AddUser(userView.Email, userView.Password);
+          return Ok(new { id = user.Id });
         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IActionResult Get([FromBody]UserViewModel userView)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new { message = "Invalid input" });
-
-            var repository = uRepo;
-            try
-            {
-                var user = repository.AuthenticateUser(userView.Email, userView.Password);
-                var tokenString = Token.Generate(user, config);
-                return Ok(new
-                {
+        public IActionResult Get([FromBody]UserViewModel userView){ return prun<UserViewModel>(_Get, userView); }
+        private IActionResult _Get([FromBody]UserViewModel userView){
+           var user = uRepo.AuthenticateUser(userView.Email, userView.Password);
+           var tokenString = Token.Generate(user, config);
+           return Ok(new {
                     access_token = tokenString,
                     email = user.Email,
                     name = user.Name,
                     role = user.Type.Title
                 });
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(new { message = exc.Message });
-            }
         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("google")]
-        public IActionResult GoogleLogin([FromBody] UserViewModel userView)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new { message = "Invalid input" });
-
-            var repository = uRepo;
-            try
-            {
-                var user = repository.AuthenticateGoogleUser(userView.Email);
-                var tokenString = Token.Generate(user, config);
-                return Ok(new
-                {
+        public IActionResult GoogleLogin([FromBody] UserViewModel userView){ return prun<UserViewModel>(_GoogleLogin, userView); }
+        private IActionResult _GoogleLogin([FromBody] UserViewModel userView){
+          var user = uRepo.AuthenticateGoogleUser(userView.Email);
+          var tokenString = Token.Generate(user, config);
+          return Ok(new {
                     access_token = tokenString,
                     email = user.Email,
                     name = user.Name,
                     role = user.Type.Title
                 });
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(new { message = exc.Message });
-            }
         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("reset")]
-        public IActionResult RequestPassword([FromBody] UserViewModel userView)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new { message = "Invalid input" });
-
-            var repository = uRepo;
-            try
-            {
-                repository.RequestPassword(userView.Email);
+        public IActionResult RequestPassword([FromBody] UserViewModel userView){ return prun<UserViewModel>(_RequestPassword, userView); }
+        private IActionResult _RequestPassword([FromBody] UserViewModel userView){
+                uRepo.RequestPassword(userView.Email);
                 return Ok();
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(new { message = exc.Message });
-            }
-        }
+         }
 
         [AllowAnonymous]
         [HttpPost]
         [Route("set_password")]
-        public IActionResult SetNewPassword([FromBody] UserViewModel userView)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new { message = "Invalid input" });
-
-            var repository = uRepo;
-            try
-            {
-                repository.ResetPassword(userView.PasswordResetString, userView.Password);
+        public IActionResult SetNewPassword([FromBody] UserViewModel userView){ return prun<UserViewModel>(_SetNewPassword, userView); }
+        private IActionResult _SetNewPassword([FromBody] UserViewModel userView){
+                uRepo.ResetPassword(userView.PasswordResetString, userView.Password);
                 return Ok();
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(new { message = exc.Message });
-            }
         }
 
         [Route("change_email")]
         [Authorize]
         [HttpPost]
-        public IActionResult change_email([FromBody]ChangeUserParameter userUpdate)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-
-            try
-            {               
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                
-                var repository = uRepo;
-                repository.ChangeEmail(userId, userUpdate.password, userUpdate.newValue);
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
+        public IActionResult change_email([FromBody]ChangeUserParameter userUpdate){ return prun<ChangeUserParameter>(_change_email, userUpdate); }
+        private IActionResult _change_email([FromBody]ChangeUserParameter userUpdate){
+           uRepo.ChangeEmail(uGuid, userUpdate.password, userUpdate.newValue);
+           return Ok("Success");
         }
 
         [Route("change_password")]
         [Authorize]
         [HttpPost]
-        public IActionResult change_password([FromBody]ChangeUserParameter userUpdate)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-
-            try
-            {               
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                
-                var repository = uRepo;
-                repository.ChangePassword(userId, userUpdate.password, userUpdate.newValue);
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
+        public IActionResult change_password([FromBody]ChangeUserParameter userUpdate){ return prun<ChangeUserParameter>(_change_password, userUpdate); }
+        private IActionResult _change_password([FromBody]ChangeUserParameter userUpdate){
+           uRepo.ChangePassword(uGuid, userUpdate.password, userUpdate.newValue);
+           return Ok("Success");
         }
     }
 }
