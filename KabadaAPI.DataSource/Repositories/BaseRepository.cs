@@ -7,7 +7,6 @@ namespace KabadaAPI.DataSource.Repositories
         protected readonly IConfiguration config;
         protected readonly Context context;
 
- 
         public BaseRepository(IConfiguration config){
           this.config = config;
           context = new Context(config);
