@@ -38,10 +38,8 @@ namespace KabadaAPI.Controllers
                         name = p.Title,
                         dateCreated = p.Created.Date,
                         Public = p.Public,
-                        planImage = p.Img,
-                      
-                        SharedWithMe = false
-
+                        planImage = p.Img,                      
+                        SharedWithMe = p.User.Id!=userId?true:false
                     }) ;
                 }
                 _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
