@@ -5,22 +5,16 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
-using System.Security.Claims;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers {
   [Route("api/user")]
   [ApiController]
-  public class UserController : ControllerBase {
-    private readonly IConfiguration config;
-    private readonly ILogger _logger;
+  public class UserController : KController {
 
-    public UserController(ILogger<UserFileController> logger, IConfiguration configuration){
-      config = configuration;
-      _logger=logger;     
-      }
-    
+    public UserController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
+     
     private UsersRepository uRepo { get { return new UsersRepository(config); }}
 
         private User convert(UserUpdate parms){
@@ -58,74 +52,39 @@ namespace KabadaAPI.Controllers {
         [Route("getSettings")]
         [Authorize]
         [HttpGet]
-        public IActionResult getSettings()
-        {
-             if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-            try
-            {               
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                var repository = uRepo;
-                var r=repository.Read(userId);
-                return Ok(convert(r));
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
-        }
+        public IActionResult getSettings(){ return grun(_getSettings); }
+        private IActionResult _getSettings() {
+          var r=uRepo.Read(uGuid);
+          return Ok(convert(r));
+          }
 
         [Route("updateWithoutPhoto")]
         [Authorize]
         [HttpPost]
-        public IActionResult updateWithoutPhoto([FromBody]UserUpdate userUpdate)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-
-            try
-            {               
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                
-                var repository = uRepo;
-                repository.UpdateUser(userId, convert(userUpdate), 1);
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
+        public IActionResult updateWithoutPhoto([FromBody]UserUpdate userUpdate){ return prun<UserUpdate>(_updateWithoutPhoto, userUpdate); }
+        private IActionResult _updateWithoutPhoto(UserUpdate userUpdate){
+          uRepo.UpdateUser(uGuid, convert(userUpdate), 1);
+          return Ok("Success");
         }
 
         [Route("updateWithPhoto")]
         [Authorize]
         [HttpPost]
-        public IActionResult updateWithPhoto([FromBody]UserUpdate userUpdate)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest("Invalid input");
-
-            try
-            {               
-                var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                
-                var repository = uRepo;
-                repository.UpdateUser(userId, convert(userUpdate), 2);
-                return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
+        public IActionResult updateWithPhoto([FromBody]UserUpdate userUpdate){ return prun<UserUpdate>(_updateWithPhoto, userUpdate); }
+        private IActionResult _updateWithPhoto([FromBody]UserUpdate userUpdate){
+          uRepo.UpdateUser(uGuid, convert(userUpdate), 2);
+          return Ok("Success");
         }
 
     [Route("jst")]
     [Authorize]
     [HttpGet]
-    public IActionResult jst() {
-      _logger.LogInformation($"-- User.getSettings entered at {DateTime.Now}");
+    public IActionResult jst() { return grun(_jst); }
 
-      new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
+    private  IActionResult _jst() {
+      LogInformation($"-- User.getSettings entered at {DateTime.Now}");
+
+      //new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
       return Ok("ok");
       }
     }
