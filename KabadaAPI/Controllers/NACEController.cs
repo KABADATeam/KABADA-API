@@ -7,25 +7,23 @@ using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.DataSource.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers
 {
     [ApiController]
     [Route("api/nace")]
-    public class NACEController : ControllerBase
+    public class NACEController : KController
     {
-        private readonly IConfiguration config;
-
-        public NACEController(IConfiguration config){ this.config = config; }
+        public NACEController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
         protected IndustryActivityRepository iRepo { get { return new IndustryActivityRepository(config); }}
 
         [HttpGet]
         [Route("industries")]
-        public IActionResult GetActivities()
-        {
-            IndustryActivityRepository repository = iRepo;
-            var industries = repository.GetIndustries();
+        public IActionResult GetActivities(){ return grun(_GetActivities); }
+        private IActionResult _GetActivities(){
+            var industries = iRepo.GetIndustries();
             var industriesView = new List<object>();
             foreach (var item in industries)
                 industriesView.Add(new
@@ -40,18 +38,18 @@ namespace KabadaAPI.Controllers
 
         [HttpGet]
         [Route("{TitleKeyword}")]
-        public IActionResult GetActivitiesByKey(string TitleKeyword)
-        {
+        public IActionResult GetActivitiesByKey(string TitleKeyword) { return prun<string>(_GetActivitiesByKey, TitleKeyword); }
+        private IActionResult _GetActivitiesByKey(string TitleKeyword) {
             IndustryActivityRepository repository = iRepo;
             List<List<Activity>> a = repository.GetActivitiesByKeyword(TitleKeyword);
             if (a != null) { return Ok(repository.GetActivitiesByKeyword(TitleKeyword)); }
-            else return BadRequest("Not found");
+             else return BadRequest("Not found");
             
         }
         [HttpGet]
         [Route("industries/{industryId}/activities/")]
-        public IActionResult GetActivities(Guid industryId)
-        {
+        public IActionResult GetActivities(Guid industryId) { return prun<Guid>( _GetActivities, industryId); }
+        private IActionResult _GetActivities(Guid industryId) {
             IndustryActivityRepository repository = iRepo;
             var activities = repository.GetActivities(industryId);
             var activitiesView = new List<ParentActivityView>();
@@ -87,11 +85,9 @@ namespace KabadaAPI.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("industries")]
-        public IActionResult AddIndustryActivity([FromBody]List<ViewModels.Industry> industry)
-        {
+        public IActionResult AddIndustryActivity([FromBody]List<ViewModels.Industry> industry){ return prun<List<ViewModels.Industry>>( _AddIndustryActivity, industry); }
+        private IActionResult _AddIndustryActivity([FromBody]List<ViewModels.Industry> industry){
             IndustryActivityRepository repository = iRepo;
-            try
-            {
                 foreach (var ind in industry)
                 {
                     foreach (var act in ind.Activities)
@@ -101,11 +97,6 @@ namespace KabadaAPI.Controllers
                 }
 
                 return Ok("Success");
-            }
-            catch (Exception exc)
-            {
-                return BadRequest(exc.Message);
-            }
         }
     }
 }
