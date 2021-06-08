@@ -97,33 +97,16 @@ namespace KabadaAPI.Controllers {
                 }
                 return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
         }
-        //[Route("private")]
-        //[HttpGet]
-        //public IActionResult GetPrivatePlans()
-        //{
-        //    try
-        //    {
-        //        var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-        //        BusinessPlansRepository repository = new BusinessPlansRepository(config);
-        //        var plans = repository.GetPlans(userId);
-        //        var privatePlans = new PrivateBusinessPlans();
-        //        foreach (var p in plans)
-        //        {
-        //            privatePlans.BusinessPlan.Add(new PrivateBusinessPlan
-        //            {
-        //                Id = p.Id,
-        //                name = p.Title,
-        //                dateCreated = p.Created.Date,
-        //            });
-        //        }
-        //        return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });//repository.GetPublicPlans());
-        //    }
-        //    catch (Exception exc)
-        //    {
-        //        return BadRequest(exc.Message);
-        //    }
-
-        //}
+        [Route("changeSwotCompleted")]
+        [Authorize]
+        [HttpPost]
+        public IActionResult ChangeSwotCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeSwotCompleted, planUpdate); }
+        private IActionResult _changeSwotCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(config, _logger);
+            repo.ChangeSwotCompleted(planUpdate.business_plan_id, planUpdate.is_swot_completed);
+            return Ok();
+        }
 
     }
 }

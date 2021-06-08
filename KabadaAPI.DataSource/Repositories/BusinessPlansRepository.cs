@@ -17,5 +17,12 @@ namespace KabadaAPI.DataSource.Repositories
                         .Include(x => x.Activity.Industry);
             return plans.OrderBy(x => x.Title).ToList();           
         }
+        public void ChangeSwotCompleted(Guid planId, bool newValue)
+        {
+            BusinessPlan businessPlan = context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            businessPlan.IsSwotCompleted = newValue;
+            context.SaveChanges();
+        }
+
     }
 }

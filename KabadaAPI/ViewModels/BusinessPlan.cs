@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KabadaAPI.ViewModels
 {
@@ -11,5 +8,6 @@ namespace KabadaAPI.ViewModels
         public Guid CountryId { get; set; }
         public Guid ActivityId { get; set; }
         public string Title { get; set; }
+        
     }
 }
