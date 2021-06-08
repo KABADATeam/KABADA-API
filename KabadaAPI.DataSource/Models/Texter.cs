@@ -13,8 +13,8 @@ namespace KabadaAPI.DataSource.Models {
         [Required]
         [Range(1,100)]
         public short Kind { get; set; }
-        
-        public Guid Master { get; set; } // at the moment BusinessPlan.Id when defined locally in the plan
+
+        public Guid? MasterId { get; set; } // at the moment BusinessPlan.Id when defined locally in the plan
 
         [MaxLength(500)]
         public string LongValue { get; set; }
