@@ -2,7 +2,7 @@
 
 namespace KabadaAPI.ViewModels {
   public class ChangePlanParameter {
-    public Guid business_plan_id;
-    public bool is_swot_completed;
-    }
+    public Guid business_plan_id { get; set; }
+    public bool is_swot_completed { get; set; }
   }
+}
