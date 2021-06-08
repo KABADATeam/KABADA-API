@@ -27,5 +27,6 @@ namespace KabadaAPI.DataSource.Models
         public int Completed { get; set; }
         public bool Public { get; set; }
         public User User { get; set; }
+        public bool IsSwotCompleted { get; set; }
     }
 }
