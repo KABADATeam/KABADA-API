@@ -19,7 +19,7 @@ namespace KabadaAPI.DataSource.Repositories
         }
         public void ChangeSwotCompleted(Guid planId, bool newValue)
         {
-            BusinessPlan businessPlan = context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            BusinessPlan businessPlan = GetPlan(planId);
             businessPlan.IsSwotCompleted = newValue;
             context.SaveChanges();
         }
