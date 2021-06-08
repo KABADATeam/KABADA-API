@@ -19,11 +19,13 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet]
     [Route("{BusinessPlan}")]
-    public IActionResult GetByKey(Guid planId) { return prun<Guid>(_GetByKey, planId); }
-    private IActionResult _GetByKey(Guid planId) {
+    public IActionResult GetByKey(string BusinessPlan) { return prun<string>(_GetByKey, BusinessPlan); }
+    private IActionResult _GetByKey(string planId0) {
+      Guid planId=new Guid(planId0);
       var r=new PlanSwots();
-      DataSource.Models.BusinessPlan p =pRepo.GetPlan(planId);
-     r.is_swot_completed=p.IsSwotCompleted;
+      var p =pRepo.GetPlan(planId);
+      if(p!=null)
+        r.is_swot_completed=p.IsSwotCompleted;
       var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
       var visi=tRepo.get(planId);
       Plan_SWOT v=null;
