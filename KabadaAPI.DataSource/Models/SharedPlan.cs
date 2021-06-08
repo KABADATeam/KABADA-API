@@ -15,6 +15,6 @@ namespace KabadaAPI.DataSource.Models
 
         [Required]
         public Guid BusinessPlanId { get; set; }
-        
+        public BusinessPlan BusinessPlan { get; set; }
     }
 }

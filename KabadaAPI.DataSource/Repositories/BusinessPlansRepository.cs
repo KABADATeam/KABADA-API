@@ -17,9 +17,9 @@ namespace KabadaAPI.DataSource.Repositories
                         .Include(x => x.Activity.Industry);
             return plans.OrderBy(x => x.Title).ToList();           
         }
-        public void ChangeSwotCompleted(Guid planId, bool newValue)
+        public void ChangeSwotCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlan(planId);
+            BusinessPlan businessPlan = GetPlanForUpdate(userId,planId);
             businessPlan.IsSwotCompleted = newValue;
             context.SaveChanges();
         }
@@ -27,6 +27,13 @@ namespace KabadaAPI.DataSource.Repositories
         {
            return context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
         }
-
+        public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
+        {
+            var mp = context.BusinessPlans.Include(x =>x.User).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
+            if (mp!=null) return mp; 
+            var shp = context.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).FirstOrDefault();
+            if (shp?.BusinessPlan != null) return shp.BusinessPlan;
+            throw new Exception("No plan found for update");
+        }
     }
 }

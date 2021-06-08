@@ -104,7 +104,7 @@ namespace KabadaAPI.Controllers {
         private IActionResult _changeSwotCompleted([FromBody] ChangePlanParameter planUpdate)
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(config, _logger);
-            repo.ChangeSwotCompleted(planUpdate.business_plan_id, planUpdate.is_swot_completed);
+            repo.ChangeSwotCompleted(planUpdate.business_plan_id, planUpdate.is_swot_completed, uGuid);
             return Ok("Success");
         }
 
