@@ -10,19 +10,22 @@ namespace KabadaAPI.DataSource.Repositories
         protected readonly Context context;
         protected readonly ILogger _logger;
 
-
-        public BaseRepository(IConfiguration config){
+        public BaseRepository(IConfiguration config=null, ILogger logger=null, Context context=null) {
           this.config = config;
-          context = new Context(config);
+          _logger=logger;
+          if(context==null)
+            this.context = new Context(config);
+           else
+            this.context=context;
+          } 
+
+        protected virtual void dispose(){
+          context.SaveChanges();
+          context?.Dispose();
           }
 
-        public BaseRepository(IConfiguration config, ILogger logger):this(config) { _logger=logger; } 
+        public void Dispose() { dispose(); }
 
-        public void Dispose()
-        {
-            context.SaveChanges();
-            context?.Dispose();
-        }
     protected void LogInformation(string message){
       if(_logger!=null)
         _logger.LogInformation(message);

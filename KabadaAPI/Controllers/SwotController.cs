@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
 namespace KabadaAPI.Controllers {
   [Route("api/swot")]
@@ -39,6 +41,15 @@ namespace KabadaAPI.Controllers {
           r.oportunities_threats.Add(o);
         }
       return Ok(r);
+      }
+
+    [HttpPost]
+    [Route("update")]
+    public IActionResult Update(PlanSwotUpdate update) { return prun<PlanSwotUpdate>(_Update, update); }
+    private IActionResult _Update(PlanSwotUpdate update) {
+      var plan=pRepo.GetPlanForUpdate(uGuid, update.business_plan_id);
+      update.Perform(config, _logger, plan);
+      return Ok("success");
       }
     }
   }
