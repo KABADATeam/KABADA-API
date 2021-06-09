@@ -21,12 +21,12 @@ namespace KabadaAPI.Controllers
 
         [HttpGet]
         [Route("industries")]
-        public IActionResult GetActivities(){ return grun(_GetActivities); }
-        private IActionResult _GetActivities(){
+        public IActionResult GetIndustries(){ return grun(_GetIndustries); }
+        private IActionResult _GetIndustries(){
             var industries = iRepo.GetIndustries();
-            var industriesView = new List<object>();
+            var industriesView = new List<IndustryView>();
             foreach (var item in industries)
-                industriesView.Add(new
+                industriesView.Add(new IndustryView()
                 {
                     id = item.Id,
                     title = item.Title,

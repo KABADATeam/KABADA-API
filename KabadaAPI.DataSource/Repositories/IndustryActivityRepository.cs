@@ -83,16 +83,14 @@ namespace KabadaAPI.DataSource.Repositories {
             if (ind == null && act == null)
             {
                 Industry industry = new Industry()
-                {
-                    Id = Guid.NewGuid(),
+                {                   
                     Code = indCode,
                     Language = indLang,
                     Title = indTitle
                 };
 
                 Activity activity = new Activity()
-                {
-                    Id = Guid.NewGuid(),
+                {                  
                     Code = actCode,
                     Title = actTitle,
                     Industry = industry
@@ -102,8 +100,7 @@ namespace KabadaAPI.DataSource.Repositories {
             else if (ind != null && act == null)
             {
                 Activity activity = new Activity()
-                {
-                    Id = Guid.NewGuid(),
+                {           
                     Code = actCode,
                     Title = actTitle,
                     Industry = ind
@@ -111,8 +108,6 @@ namespace KabadaAPI.DataSource.Repositories {
                 context.Activities.Add(activity);
             }
             context.SaveChanges();
-        }
-
-        
+        }        
     }
 }
