@@ -42,9 +42,13 @@ namespace KabadaAPI.Controllers
         private IActionResult _GetActivitiesByKey(string TitleKeyword) {
             IndustryActivityRepository repository = iRepo;
             List<List<Activity>> a = repository.GetActivitiesByKeyword(TitleKeyword);
-            if (a != null) { return Ok(repository.GetActivitiesByKeyword(TitleKeyword)); }
-             else return BadRequest("Not found");
-            
+            List<List<ActivityView>> res = new List<List<ActivityView>>();
+            foreach (var i in a)
+            { 
+                var l = i.Select(x => new ActivityView() { Id = x.Id, Code =x.Code, Title=x.Title }).ToList();
+                res.Add(l);
+            }
+            return Ok(res);           
         }
         [HttpGet]
         [Route("industries/{industryId}/activities/")]

@@ -30,8 +30,7 @@ namespace KabadaAPI.DataSource.Repositories {
         }
 
         public List<List<Activity>> GetActivitiesByKeyword(string planTitle)
-        {
-            
+        {            
             List<List<Activity>> allLists = new List<List<Activity>>();
             string[] words = planTitle.Split(' ');
             foreach (string word in words)
@@ -40,35 +39,37 @@ namespace KabadaAPI.DataSource.Repositories {
                 List<Activity> act = context.Activities.Where(s => s.Title.Contains(word)).ToList();
                 List<Activity> actWithoutNull = new List<Activity>();
                 if (act.Count != 0) {allLists.Add(act.Distinct().ToList()) ; }
-                
-        
-                if ((word != null )&& (allLists.Count==0))
-                 {
-                    WebClient client = new WebClient();
 
-                    string response = client.DownloadString("http://wikisynonyms.ipeirotis.com/api/"+word+"");
+                //EGO: the code below is disabled because it does not work properly; 
+                //     should be refined later if necessary
+                //
+                //if ((word != null )&& (allLists.Count==0))
+                // {
+                //    WebClient client = new WebClient();
 
-                     dynamic obj = JsonConvert.DeserializeObject<dynamic>(response);
-                     if (obj!=null&&obj["message"]=="success")
-                     {
-                         List<string> synonyms = new List<string>();
-                         string synonym;
-                         foreach (dynamic term in obj["terms"])
-                         {
-                             synonym = term["term"].ToString();
-                            if(synonym!=null)
-                             synonyms.Add(synonym);
-                         }
-                         foreach (string synonim in synonyms)
-                         {
-                             List<Activity> syn = context.Activities.Where(s => s.Title.Contains(synonim)).ToList();
-                             if (syn.Count != 0) { allLists.Add(syn); }
+                //    string response = client.DownloadString("http://wikisynonyms.ipeirotis.com/api/"+word+"");
 
-                         }
-                     }
-                 }
+                //     dynamic obj = JsonConvert.DeserializeObject<dynamic>(response);
+                //     if (obj!=null&&obj["message"]=="success")
+                //     {
+                //         List<string> synonyms = new List<string>();
+                //         string synonym;
+                //         foreach (dynamic term in obj["terms"])
+                //         {
+                //             synonym = term["term"].ToString();
+                //            if(synonym!=null)
+                //             synonyms.Add(synonym);
+                //         }
+                //         foreach (string synonim in synonyms)
+                //         {
+                //             List<Activity> syn = context.Activities.Where(s => s.Title.Contains(synonim)).ToList();
+                //             if (syn.Count != 0) { allLists.Add(syn); }
 
-             }
+                //         }
+                //     }
+                // }
+
+            }
             allLists.RemoveAll(x => x == null);
             return allLists.Distinct().ToList();
         }
