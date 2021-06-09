@@ -31,6 +31,10 @@ namespace KabadaAPI.DataSource.Utilities {
       return getS("ConnectionStrings:DefaultConnection", @"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
       }}
 
+    public string connectionProvider { get {
+      return getS("ConnectionStrings:DefaultConnectionProvider", "MS");
+      }}
+
     public string smtpHost { get {
       return getS("Smtp:Host", "smtp.gmail.com");
       }}

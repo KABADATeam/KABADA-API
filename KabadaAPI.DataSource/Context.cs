@@ -10,6 +10,14 @@ namespace KabadaAPI.DataSource
     public class Context : DbContext
     {
         public Context(IConfiguration configuration) : base() { Configuration = configuration; }
+
+        protected static AppSettings _opt;
+        protected AppSettings opt { get {
+          if(_opt==null)
+            _opt=new AppSettings(Configuration);
+          return _opt;
+          }}
+     
  
         public Context() { }
 
@@ -35,7 +43,13 @@ namespace KabadaAPI.DataSource
             //optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(new AppSettings(Configuration).connectionString);
+               var cstr=opt.connectionString;
+               var prov=opt.connectionProvider.ToUpper();
+               switch(prov){ 
+                 case "POSTGRES": optionsBuilder.UseNpgsql(cstr); break;
+                default:  
+                 case "MS": optionsBuilder.UseSqlServer(cstr); break;
+                 }
                 //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
                 //optionsBuilder.UseSqlServer(@"name=ConnectionStrings:DefaultConnection");
             }
