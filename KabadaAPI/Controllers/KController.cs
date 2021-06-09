@@ -74,9 +74,14 @@ namespace KabadaAPI.Controllers {
 
 
     protected int           _session;
+    protected IActionResult _result;
+
+    protected void crash(Exception exc){
+      LogError($"[{_session}] crashed: Message='{exc.Message}' StackTrace='{exc.StackTrace}'.");
+      _result=BadRequest(exc.Message);
+      }
     
     protected virtual IActionResult grun(Func<IActionResult> actor) {
-      IActionResult _result;
       var strt=DateTime.Now;
       try { 
         _session=sessionId;
@@ -91,15 +96,11 @@ namespace KabadaAPI.Controllers {
         var t=DateTime.Now;
         LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
         }
-       catch (Exception exc){
-         LogInformation($"[{_session}] crashed.");
-         _result=BadRequest(exc.Message);
-         }
+       catch (Exception exc){ crash(exc); }
       return _result;
       }
 
     protected virtual async Task<IActionResult> grun(Func<Task<IActionResult>> actor) {
-      IActionResult _result;
       var strt=DateTime.Now;
       try { 
         _session=sessionId;
@@ -114,15 +115,11 @@ namespace KabadaAPI.Controllers {
         var t=DateTime.Now;
         LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
         }
-       catch (Exception exc){
-         LogInformation($"[{_session}] crashed.");
-         _result=BadRequest(exc.Message);
-         }
+       catch (Exception exc){ crash(exc); }
       return _result;
       }
     
     protected virtual IActionResult prun<T>(Func<T, IActionResult> actor, T parameter) {
-      IActionResult _result;
       var strt=DateTime.Now;
       try { 
         _session=sessionId;
@@ -137,15 +134,11 @@ namespace KabadaAPI.Controllers {
         var t=DateTime.Now;
         LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
         }
-       catch (Exception exc){
-         LogInformation($"[{_session}] crashed.");
-         _result=BadRequest(exc.Message);
-         }
+       catch (Exception exc){ crash(exc); }
       return _result;
       }
     
     protected async virtual Task<IActionResult> prun<T>(Func<T, Task<IActionResult>> actor, T parameter) {
-      IActionResult _result;
       var strt=DateTime.Now;
       try { 
         _session=sessionId;
@@ -160,10 +153,7 @@ namespace KabadaAPI.Controllers {
         var t=DateTime.Now;
         LogInformation($"[{_session}] {fun} ended at {t}. duration={t-strt}.");
         }
-       catch (Exception exc){
-         LogInformation($"[{_session}] crashed.");
-         _result=BadRequest(exc.Message);
-         }
+       catch (Exception exc){ crash(exc); }
       return _result;
       }
 
