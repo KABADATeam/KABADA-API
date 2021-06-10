@@ -12,19 +12,23 @@ namespace KabadaAPI.ViewModels {
     Transactioner tr;
 
     protected TexterRepository tR;
-    protected Plan_SWOTRepository psR;
+    //protected Plan_SWOTRepository psR;
+    protected Plan_AttributeRepository paR;
 
     protected Dictionary<Guid, Texter> inventory;
-    protected Dictionary<Guid, Plan_SWOT> oldi;
+    protected Dictionary<Guid, Plan_Attribute> oldi;
+    //protected Dictionary<Guid, Plan_SWOT> oldi;
 
 
     internal void Perform(IConfiguration config, ILogger logger, DataSource.Models.BusinessPlan plan) {
-      inventory=new TexterRepository(config, logger).get(business_plan_id).ToDictionary(x=>x.Id);
+      inventory=new TexterRepository(config, logger).getSWOTs(business_plan_id).ToDictionary(x=>x.Id);
 
       using(tr=new Transactioner(config, logger)){
-        psR=new Plan_SWOTRepository(config, logger, tr.Context);
+        //psR=new Plan_SWOTRepository(config, logger, tr.Context);
+        paR=new Plan_AttributeRepository(config, logger, tr.Context);
         tR=new TexterRepository(config, logger, tr.Context);
-        oldi=psR.get(business_plan_id).ToDictionary(x=>x.TexterId);
+        oldi=paR.get(business_plan_id, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
+        //oldi=psR.get(business_plan_id).ToDictionary(x=>x.TexterId);
 
         perform(this.strengths_weakness, EnumTexterKind.strength_local);
         perform(this.opportunities_threats, EnumTexterKind.oportunity_local);
@@ -37,7 +41,8 @@ namespace KabadaAPI.ViewModels {
       if(todo==null || todo.Count<1)
         return;
       var lk=(short)localKind;
-      Plan_SWOT olduks=null;
+      Plan_Attribute olduks=null;
+      //Plan_SWOT olduks=null;
       foreach(var o in todo){
         // process Texter
         if(o.id==null){ // new local
@@ -58,18 +63,18 @@ namespace KabadaAPI.ViewModels {
         // process resolution
         if(oldi.TryGetValue(o.id.Value, out olduks)){ // was present
            oldi.Remove(olduks.Id);
-           if(o.operation==olduks.Kind)
+           if(o.operation==(short.Parse(olduks.AttrVal)))
              continue; // the same value already present
            if(o.operation<1)
-             psR.Delete(olduks);
+             paR.Delete(olduks);
             else {
-             olduks.Kind=o.operation;
-             psR.Save(olduks);
+             olduks.AttrVal=o.operation.ToString();
+             paR.Save(olduks);
              }
          } else {
           if(o.operation>0){
-            var nrs=new Plan_SWOT(){ BusinessPlanId=business_plan_id, Kind=o.operation, TexterId=o.id.Value };
-            psR.Create(nrs);
+            var nrs=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)Plan_AttributeRepository.PlanAttributeKind.swot, AttrVal=o.operation.ToString(), TexterId=o.id.Value };
+            paR.Create(nrs);
             }
           }
 

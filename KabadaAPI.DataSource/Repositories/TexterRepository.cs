@@ -10,7 +10,7 @@ namespace KabadaAPI.DataSource.Repositories {
     public TexterRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null, Context context=null)
       : base(configuration, logger, context) { }
 
-    public List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null){
+    protected List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null){
       var q=context.Texters.AsQueryable();
       if(plan==null)
         q=q.Where(x=>x.MasterId==null);

@@ -16,7 +16,8 @@ namespace KabadaAPI.Controllers {
     public SwotController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
     protected TexterRepository tRepo { get { return new TexterRepository(config, _logger); }}
-    protected Plan_SWOTRepository psRepo { get { return new Plan_SWOTRepository(config, _logger); }}
+    //protected Plan_SWOTRepository psRepo { get { return new Plan_SWOTRepository(config, _logger); }}
+    protected Plan_AttributeRepository paRepo { get { return new Plan_AttributeRepository(config, _logger); }}
     protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(config, _logger); }}
 
     [HttpGet]
@@ -28,13 +29,15 @@ namespace KabadaAPI.Controllers {
       var p =pRepo.GetPlan(planId);
       if(p!=null)
         r.is_swot_completed=p.IsSwotCompleted;
-      var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
-      var visi=tRepo.get(planId);
-      Plan_SWOT v=null;
+      var speci=paRepo.get(planId, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
+      //var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
+      var visi=tRepo.getSWOTs(planId);
+      Plan_Attribute v=null;
+      //Plan_SWOT v=null;
       foreach(var x in visi){
         var o=new Swoter(){ description=x.LongValue, id=x.Id, isLocal=((x.Kind % 2) == 0), title=x.Value, value=0 };
         if(speci.TryGetValue(x.Id, out v))
-          o.value=v.Kind;
+          o.value=short.Parse(v.AttrVal);
         if(x.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
           r.strengths_weakness_items.Add(o);
          else

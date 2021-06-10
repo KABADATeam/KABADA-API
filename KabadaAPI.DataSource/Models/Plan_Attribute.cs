@@ -18,6 +18,7 @@ namespace KabadaAPI.DataSource.Models {
         [Range(1,20)]
         public short Kind { get; set; }
 
-        public string Value; // json-ed attribute value - has different types depending on Kind
+        [Required]
+        public string AttrVal { get; set; } // json-ed attribute value - has different types depending on Kind
     }
   }
