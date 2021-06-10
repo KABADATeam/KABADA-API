@@ -51,7 +51,7 @@ namespace KabadaAPI.DataSource.Utilities
         public static void SendPasswordResetLink(string userEmail, string passwordString, Kmail alternative=null)
         {
             string messageText = $"Hi,<br /><br />";
-            messageText += $"Password reset link:{alternative.Opt.baseURL}set-password?requestId={passwordString}<br /><br />";
+            messageText += $"<a href=\"{alternative.Opt.baseURL}set-password?requestId={passwordString}\">Password reset link</a><br /><br />";
             messageText += $"KABADA Team";
 
             var mailMessage = new MailMessage

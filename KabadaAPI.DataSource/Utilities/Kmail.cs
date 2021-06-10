@@ -61,7 +61,7 @@ namespace KabadaAPI.DataSource.Utilities {
 
 
     public void send(System.Net.Mail.MailMessage me){
-      send(me.Subject, me.Body, me.To[0].Address, me.To[0].DisplayName);
+      send(me.Subject, me.IsBodyHtml?me.Body:null,me.To[0].Address, me.To[0].DisplayName, me.IsBodyHtml?null:me.Body);
       }
 
     protected string autoQuote(string baseText, string name=null){
