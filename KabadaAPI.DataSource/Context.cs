@@ -35,6 +35,7 @@ namespace KabadaAPI.DataSource
         public DbSet<SharedPlan> SharedPlans { get; set; } 
         public DbSet<Texter>     Texters     { get; set; } 
         public DbSet<Plan_SWOT>  Plan_SWOTs  { get; set; } 
+        public DbSet<Plan_Attribute>  Plan_Attributes  { get; set; } 
         // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
 
 

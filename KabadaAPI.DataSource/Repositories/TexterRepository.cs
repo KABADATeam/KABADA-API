@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace KabadaAPI.DataSource.Repositories {
   public class TexterRepository : BaseRepository {
-    public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local }
+    public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local, keyResourceType=5, keyResourceSubType=6 }
 
     public TexterRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null, Context context=null)
       : base(configuration, logger, context) { }
 
-    public List<Texter> get(Guid? plan=null, List<short> kinds=null){
+    public List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null){
       var q=context.Texters.AsQueryable();
       if(plan==null)
         q=q.Where(x=>x.MasterId==null);
@@ -20,9 +20,23 @@ namespace KabadaAPI.DataSource.Repositories {
         }
       if(kinds!=null)
         q=q.Where(x=>kinds.Contains(x.Kind));
+      if(@from!=null){
+        var w=@from.Value;
+        q=q.Where(x=>x.Kind>=w);
+        }
+      if(@to!=null){
+        var w=@to.Value;
+        q=q.Where(x=>x.Kind<=w);
+        }
       var r=q.ToList();
       return r;
       }
+
+    public List<Texter> getSWOTs(Guid? plan=null){ return get(plan, (short)EnumTexterKind.strength, (short)EnumTexterKind.oportunity_local); }
+
+    public List<Texter> getKeyResourceTypes(){ return get(null, (short)EnumTexterKind.keyResourceType, (short)EnumTexterKind.keyResourceType); }
+
+    public List<Texter> getKeyResourceSubTypes(Guid @type){ return get(@type, (short)EnumTexterKind.keyResourceSubType, (short)EnumTexterKind.keyResourceSubType); }
 
     public Texter Create(Texter me) {
       context.Texters.Add(me);
