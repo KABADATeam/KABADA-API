@@ -28,8 +28,8 @@ namespace KabadaAPI.Controllers {
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]
-        public IActionResult Get([FromBody]UserViewModel userView){ return prun<UserViewModel>(_Get, userView); }
-        private IActionResult _Get([FromBody]UserViewModel userView){
+        public IActionResult Login([FromBody]UserViewModel userView){ return prun<UserViewModel>(_Login, userView); }
+        private IActionResult _Login([FromBody]UserViewModel userView){
            var user = uRepo.AuthenticateUser(userView.Email, userView.Password);
            var tokenString = Token.Generate(user, config);
            return Ok(new {

@@ -7,15 +7,15 @@ namespace KabadaAPI.DataSource.Utilities
 {
     public static class Email
     {
-        //private static readonly string baseURL = "http://localhost:3000/";
-        private static readonly string baseURL = "http://kabada.ba.lv/";
+        ////private static readonly string baseURL = "http://localhost:3000/";
+        //private static readonly string baseURL = "http://kabada.ba.lv/";
 
         public static bool isValid(string emailAddress)
         {
             return (new EmailAddressAttribute()).IsValid(emailAddress);
         }
 
-        public static void SendOnRegistrationConfirmation(string userEmail)
+        public static void SendOnRegistrationConfirmation(string userEmail, Kmail alternative=null)
         {
             string messageText = $"Hi,<br /><br />";
             messageText += $"You have successfully created an account.<br />";
@@ -32,6 +32,11 @@ namespace KabadaAPI.DataSource.Utilities
             };
             mailMessage.To.Add(userEmail);
 
+            if(alternative!=null){
+              alternative.send(mailMessage);
+              return;
+              }
+
             var smtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
@@ -43,10 +48,10 @@ namespace KabadaAPI.DataSource.Utilities
 
         }
 
-        public static void SendPasswordResetLink(string userEmail, string passwordString)
+        public static void SendPasswordResetLink(string userEmail, string passwordString, Kmail alternative=null)
         {
             string messageText = $"Hi,<br /><br />";
-            messageText += $"Password reset link:{baseURL}set-password?requestId={passwordString}<br /><br />";
+            messageText += $"Password reset link:{alternative.Opt.baseURL}set-password?requestId={passwordString}<br /><br />";
             messageText += $"KABADA Team";
 
             var mailMessage = new MailMessage
@@ -57,6 +62,11 @@ namespace KabadaAPI.DataSource.Utilities
                 IsBodyHtml = true,
             };
             mailMessage.To.Add(userEmail);
+
+            if(alternative!=null){
+              alternative.send(mailMessage);
+              return;
+              }
 
             var smtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com")
             {
@@ -69,7 +79,7 @@ namespace KabadaAPI.DataSource.Utilities
             
         }
 
-        public static void SendOnPasswordChange(string userEmail)
+        public static void SendOnPasswordChange(string userEmail, Kmail alternative=null)
         {
             string messageText = $"Hi,<br /><br />";
             messageText += $"New password have been set.<br /><br />";
@@ -84,6 +94,11 @@ namespace KabadaAPI.DataSource.Utilities
             };
             mailMessage.To.Add(userEmail);
 
+            if(alternative!=null){
+              alternative.send(mailMessage);
+              return;
+              }
+
             var smtpClient = new System.Net.Mail.SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
@@ -95,34 +110,34 @@ namespace KabadaAPI.DataSource.Utilities
         }
 
 
-        public static void SendEmailChange(string userEmail)
-        {
-            string messageText = $"Hi,<br /><br />";
-            messageText += $"Password reset link:{baseURL}set-password?requestId={userEmail}<br /><br />";
-            messageText += $"KABADA Team";
+        //public static void SendEmailChange(string userEmail)
+        //{
+        //    string messageText = $"Hi,<br /><br />";
+        //    messageText += $"Password reset link:{baseURL}set-password?requestId={userEmail}<br /><br />";
+        //    messageText += $"KABADA Team";
 
-            var mailMessage = new MailMessage
-            {
-                From = new MailAddress(EmailAccount.UserName, "KABADA"),
-                Subject = "Update password",
-                Body = messageText,
-                IsBodyHtml = true,
-            };
-            mailMessage.To.Add(userEmail);
-            SendGmail(mailMessage);
-        }
+        //    var mailMessage = new MailMessage
+        //    {
+        //        From = new MailAddress(EmailAccount.UserName, "KABADA"),
+        //        Subject = "Update password",
+        //        Body = messageText,
+        //        IsBodyHtml = true,
+        //    };
+        //    mailMessage.To.Add(userEmail);
+        //    SendGmail(mailMessage);
+        //}
 
-        private static void SendGmail(MailMessage mailMessage){
-            var smtpClient = new SmtpClient
-            {  Host="smtp.gmail.com",
-                Port = 587,
-                Credentials = new NetworkCredential(EmailAccount.UserName, EmailAccount.Password),
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                EnableSsl = true,
-                UseDefaultCredentials = false
-            };
+        //private static void SendGmail(MailMessage mailMessage){
+        //    var smtpClient = new SmtpClient
+        //    {  Host="smtp.gmail.com",
+        //        Port = 587,
+        //        Credentials = new NetworkCredential(EmailAccount.UserName, EmailAccount.Password),
+        //        DeliveryMethod = SmtpDeliveryMethod.Network,
+        //        EnableSsl = true,
+        //        UseDefaultCredentials = false
+        //    };
 
-            smtpClient.Send(mailMessage);
-          }
+        //    smtpClient.Send(mailMessage);
+        //  }
     }
 }

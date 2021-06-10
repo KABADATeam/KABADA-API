@@ -38,7 +38,7 @@ namespace KabadaAPI.DataSource.Repositories {
             context.Users.Add(user);
             context.SaveChanges();
 
-            Email.SendOnRegistrationConfirmation(email);
+            Email.SendOnRegistrationConfirmation(email, new Kmail(config));
 
             return user;
         }
@@ -107,7 +107,7 @@ namespace KabadaAPI.DataSource.Repositories {
 
                     context.SaveChanges();
 
-                    Email.SendPasswordResetLink(user.Email, confirmationCode);
+                    Email.SendPasswordResetLink(user.Email, confirmationCode, new Kmail(config));
                 }
                 else
                     throw new Exception("Cannot reset password for this account");
@@ -125,7 +125,7 @@ namespace KabadaAPI.DataSource.Repositories {
 
             context.SaveChanges();
 
-            Email.SendOnPasswordChange(user.Email);
+            Email.SendOnPasswordChange(user.Email, new Kmail(config));
         }
 
         private void validatePassword(User user, string oldPassword){

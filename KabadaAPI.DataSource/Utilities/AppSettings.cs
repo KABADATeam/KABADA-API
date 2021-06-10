@@ -55,5 +55,9 @@ namespace KabadaAPI.DataSource.Utilities {
       var t=getS("Smtp:Security", "Full");
       return (t=="TLS");
       }}
+
+    public string baseURL { get {
+      return getS("baseURL", "http://kabada.ba.lv/");
+      }}
     }
   }
