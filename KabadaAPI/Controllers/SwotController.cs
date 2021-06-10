@@ -32,7 +32,7 @@ namespace KabadaAPI.Controllers {
       var visi=tRepo.get(planId);
       Plan_SWOT v=null;
       foreach(var x in visi){
-        var o=new Swoter(){ description=x.LongValue, id=x.Id, kind_type=x.Kind, title=x.Value, value=0 };
+        var o=new Swoter(){ description=x.LongValue, id=x.Id, isLocal=((x.Kind % 2) == 0), title=x.Value, value=0 };
         if(speci.TryGetValue(x.Id, out v))
           o.value=v.Kind;
         if(x.Kind<(int)TexterRepository.EnumTexterKind.oportunity)

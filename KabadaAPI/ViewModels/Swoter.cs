@@ -5,7 +5,7 @@ namespace KabadaAPI.ViewModels {
     public Guid id;
     public string title;
     public string description;
-    public short kind_type;
+    public bool isLocal;
     public short value;
     }
   }
