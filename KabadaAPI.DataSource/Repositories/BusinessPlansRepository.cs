@@ -23,6 +23,12 @@ namespace KabadaAPI.DataSource.Repositories
             businessPlan.IsSwotCompleted = newValue;
             context.SaveChanges();
         }
+        public void ChangeResourcesCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsResourcesCompleted = newValue;
+            context.SaveChanges();
+        }
         public BusinessPlan GetPlan(Guid planId)
         {
            return context.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
