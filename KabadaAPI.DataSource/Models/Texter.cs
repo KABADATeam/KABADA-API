@@ -18,5 +18,7 @@ namespace KabadaAPI.DataSource.Models {
 
         [MaxLength(500)]
         public string LongValue { get; set; }
+        [Required] 
+        public short OrderValue { get; set; }
     }
   }
