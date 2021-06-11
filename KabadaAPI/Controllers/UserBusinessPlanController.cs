@@ -107,10 +107,10 @@ namespace KabadaAPI.Controllers {
             repo.ChangeSwotCompleted(planUpdate.business_plan_id, planUpdate.is_swot_completed, uGuid);
             return Ok("Success");
         }
-        [Route("changeResourcesCompleted")]
-        [Authorize]
-        [HttpPost]
-        public IActionResult ChangeResourcesCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeResourcesCompleted, planUpdate); }
+        //[Route("changeResourcesCompleted")]
+        //[Authorize]
+        //[HttpPost]
+        //public IActionResult ChangeResourcesCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeResourcesCompleted, planUpdate); }
         private IActionResult _changeResourcesCompleted([FromBody] ChangePlanParameter planUpdate)
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(config, _logger);
