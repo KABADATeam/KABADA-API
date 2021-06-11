@@ -4,6 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="appsettings.Development %281%29.json" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\KabadaAPI.DataSource\KabadaAPI.DataSource.csproj">
