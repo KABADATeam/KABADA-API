@@ -1,5 +1,4 @@
-﻿using KabadaAPI.DataSource.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace KabadaAPI.ViewModels {

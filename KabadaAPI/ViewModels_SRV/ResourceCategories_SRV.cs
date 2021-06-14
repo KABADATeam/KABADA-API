@@ -1,9 +1,8 @@
-﻿using KabadaAPI.DataSource.Repositories;
+﻿using KabadaAPI.BL;
+using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
-using System.Linq;
-using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
 namespace KabadaAPI.ViewModels {
   partial class ResourceCategories {
@@ -12,14 +11,12 @@ namespace KabadaAPI.ViewModels {
 
       var tRepo=new TexterRepository(config, logger);
       var txi=tRepo.getKeyResourceMeta(); // all required texters
-      
-      var k=(short)EnumTexterKind.keyResourceCategory;
-      var cli=txi.Where(x=>x.Kind==k).ToList();              // top leyer
+      var vxi=Tertex.CreateMasterTree(txi);
 
-      foreach(var o in cli){
+      foreach(var o in vxi.children){
         var t=new ResourceCategory();
-        t.fill(o, txi);
         categories.Add(t);
+        t.fill(o);
         }
       }
     }
