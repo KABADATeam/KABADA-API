@@ -6,7 +6,9 @@ namespace KabadaAPI.ViewModels {
 
     internal void fill(Tertex tvo) {
       this.title=tvo.me.Value;
-      this.options=Newtonsoft.Json.JsonConvert.DeserializeObject<List<ResourceOption>>(tvo.me.LongValue);
+      var dao=tvo.me.LongValue;
+      if(!string.IsNullOrWhiteSpace(dao))
+        this.options=Newtonsoft.Json.JsonConvert.DeserializeObject<List<ResourceOption>>(dao);
       }
      }
   }

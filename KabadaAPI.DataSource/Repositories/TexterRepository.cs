@@ -12,13 +12,15 @@ namespace KabadaAPI.DataSource.Repositories {
     public TexterRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null, Context context=null)
       : base(configuration, logger, context) { }
 
-    protected List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null){
+    protected List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
       var q=context.Texters.AsQueryable();
-      if(plan==null)
-        q=q.Where(x=>x.MasterId==null);
-       else {
-        var w=plan.Value;
-        q=q.Where(x=>x.MasterId==null || x.MasterId==w);
+      if(ignoreMaster==false){
+        if(plan==null)
+          q=q.Where(x=>x.MasterId==null);
+         else {
+          var w=plan.Value;
+          q=q.Where(x=>x.MasterId==null || x.MasterId==w);
+          }
         }
       if(kinds!=null)
         q=q.Where(x=>kinds.Contains(x.Kind));
@@ -42,7 +44,7 @@ namespace KabadaAPI.DataSource.Repositories {
 
     public List<Texter> getKeyResourceSubTypes(Guid? @type){ return get(@type, (short)EnumTexterKind.keyResourceSubType, (short)EnumTexterKind.keyResourceSubType); }
 
-    public List<Texter> getKeyResourceMeta(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourcesSelection); } 
+    public List<Texter> getKeyResourceMeta(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourcesSelection, ignoreMaster:true); } 
 
     public Texter Create(Texter me) {
       context.Texters.Add(me);
