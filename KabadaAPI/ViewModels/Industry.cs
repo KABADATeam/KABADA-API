@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KabadaAPI.ViewModels
-{
+namespace KabadaAPI {
     public class Industry
     {
         public string Code { get; set; }

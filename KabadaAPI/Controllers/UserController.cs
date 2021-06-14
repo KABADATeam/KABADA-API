@@ -1,6 +1,6 @@
 ﻿using KabadaAPI.DataSource.Models;
 using KabadaAPI.DataSource.Repositories;
-using KabadaAPI.ViewModels;
+using KabadaAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

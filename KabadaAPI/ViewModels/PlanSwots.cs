@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   public class PlanSwots {
     public bool is_swot_completed;
     public List<Swoter> strengths_weakness_items;

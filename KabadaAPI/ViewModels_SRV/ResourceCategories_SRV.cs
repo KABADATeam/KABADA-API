@@ -1,10 +1,10 @@
-﻿using KabadaAPI.BL;
-using KabadaAPI.DataSource.Repositories;
+﻿using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class ResourceCategories {
     internal void read(IConfiguration config, ILogger logger) {
       categories=new List<ResourceCategory>();
@@ -18,6 +18,9 @@ namespace KabadaAPI.ViewModels {
         categories.Add(t);
         t.fill(o);
         }
+      }
+
+    internal void read1(Guid planId, IConfiguration config, ILogger logger) {
       }
     }
   }

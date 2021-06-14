@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   public class SwotUpdater {
     public Guid?  id        { get; set; }  // texter id. is null only for a new local
     public string name      { get; set; }  // name for new local

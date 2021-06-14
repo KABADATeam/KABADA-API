@@ -1,7 +1,7 @@
-﻿using KabadaAPI.BL;
+﻿using KabadaAPI;
 using System.Collections.Generic;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class ResourceType {
 
     //internal void fill(Texter incomingO, List<Texter> children) {

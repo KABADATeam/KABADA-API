@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KabadaAPI.ViewModels
+namespace KabadaAPI
 {
     public static class Role
     {

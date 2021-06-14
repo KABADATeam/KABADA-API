@@ -1,12 +1,8 @@
-﻿using KabadaAPI.BL;
-using KabadaAPI.DataSource.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class ResourceCategory {
     internal void fill(Tertex tvo) {
       var incomingO=tvo.me;

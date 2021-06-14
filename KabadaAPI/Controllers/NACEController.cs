@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using KabadaAPI.ViewModels;
+using KabadaAPI;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.DataSource.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -89,8 +89,8 @@ namespace KabadaAPI.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("industries")]
-        public IActionResult AddIndustryActivity([FromBody]List<ViewModels.Industry> industry){ return prun<List<ViewModels.Industry>>( _AddIndustryActivity, industry); }
-        private IActionResult _AddIndustryActivity([FromBody]List<ViewModels.Industry> industry){
+        public IActionResult AddIndustryActivity([FromBody]List<Industry> industry){ return prun<List<Industry>>( _AddIndustryActivity, industry); }
+        private IActionResult _AddIndustryActivity([FromBody]List<Industry> industry){
             IndustryActivityRepository repository = iRepo;
                 foreach (var ind in industry)
                 {

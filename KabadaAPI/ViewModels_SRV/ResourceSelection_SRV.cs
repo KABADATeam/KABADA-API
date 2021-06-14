@@ -1,7 +1,7 @@
-﻿using KabadaAPI.BL;
+﻿using KabadaAPI;
 using System.Collections.Generic;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class ResourceSelection {
 
     internal void fill(Tertex tvo) {

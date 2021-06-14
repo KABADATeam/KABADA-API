@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class PlanSwotUpdate {
     Transactioner tr;
 

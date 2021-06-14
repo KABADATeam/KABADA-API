@@ -1,4 +1,4 @@
-﻿namespace KabadaAPI.ViewModels {
+﻿namespace KabadaAPI {
   public class UserUpdate {
     public bool facebook;
     public bool google;

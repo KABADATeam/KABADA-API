@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI.ViewModels
-{
+namespace KabadaAPI {
     public class PrivateBusinessPlans
     {        
         public List<PrivateBusinessPlan> BusinessPlan { get; set; }

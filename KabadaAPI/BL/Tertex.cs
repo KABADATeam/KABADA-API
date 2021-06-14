@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KabadaAPI.BL {
+namespace KabadaAPI {
   public class Tertex {    // Texter tree vertex
     public Texter me;
     public string data;

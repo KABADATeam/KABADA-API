@@ -1,6 +1,6 @@
-﻿using KabadaAPI.BL;
+﻿using KabadaAPI;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   partial class ResourceSubType {
 
     internal void fill(Tertex tvo) {

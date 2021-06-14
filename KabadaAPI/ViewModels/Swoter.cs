@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KabadaAPI.ViewModels {
+namespace KabadaAPI {
   public class Swoter {
     public Guid id;
     public string title;

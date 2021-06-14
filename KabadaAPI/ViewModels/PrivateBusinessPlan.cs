@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace KabadaAPI.ViewModels
-{
-    public class PrivateBusinessPlan
+namespace KabadaAPI {
+  public class PrivateBusinessPlan
     {
 
         public Guid Id { get; set; }

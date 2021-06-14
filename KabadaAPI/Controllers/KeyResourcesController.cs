@@ -1,8 +1,9 @@
-﻿using KabadaAPI.ViewModels;
+﻿using KabadaAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace KabadaAPI.Controllers {
   [Route("api/kres")]
@@ -13,10 +14,20 @@ namespace KabadaAPI.Controllers {
     [Route("categories")]
     [Authorize]
     [HttpGet]
-    public IActionResult Cantegories() { return grun(_Cantegories); }
-    private IActionResult _Cantegories() {
+    public IActionResult Categories() { return grun(_Categories); }
+    private IActionResult _Categories() {
       var r=new ResourceCategories();
       r.read(config, _logger);
+      return Ok(r);
+      }
+
+    [HttpGet]
+    [Authorize]
+    [Route("{planId}/1")]
+    public IActionResult MyCategories(Guid planId) { return prun<Guid>( _MyCategories, planId); }
+    private IActionResult _MyCategories(Guid planId) {
+      var r=new ResourceCategories();
+      r.read1(planId, config, _logger);
       return Ok(r);
       }
     }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using KabadaAPI.ViewModels;
+using KabadaAPI;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;

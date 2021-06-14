@@ -1,7 +1,6 @@
 ﻿using System;
 
-namespace KabadaAPI.ViewModels
-{
+namespace KabadaAPI {
     public class BusinessPlan
     {       
         public Guid Id { get; set; }

@@ -1,6 +1,5 @@
 ﻿using System;
-namespace KabadaAPI.ViewModels
-{
+namespace KabadaAPI {
     public class UserViewModel
     {
         public Guid Id { get; set; }
