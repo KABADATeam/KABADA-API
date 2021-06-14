@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace KabadaAPI.DataSource.Models
+namespace KabadaAPIdao
 {
     public class User
     {

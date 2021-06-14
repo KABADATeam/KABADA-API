@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using KabadaAPI.DataSource.Models;
+using KabadaAPIdao;
 using KabadaAPI.DataSource.Utilities;
 using System;
 using Microsoft.Extensions.Configuration;

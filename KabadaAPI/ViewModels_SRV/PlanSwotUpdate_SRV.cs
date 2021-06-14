@@ -1,4 +1,4 @@
-﻿using KabadaAPI.DataSource.Models;
+﻿using KabadaAPIdao;
 using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -20,7 +20,7 @@ namespace KabadaAPI {
     //protected Dictionary<Guid, Plan_SWOT> oldi;
 
 
-    internal void Perform(IConfiguration config, ILogger logger, DataSource.Models.BusinessPlan plan) {
+    internal void Perform(IConfiguration config, ILogger logger, KabadaAPIdao.BusinessPlan plan) {
       inventory=new TexterRepository(config, logger).getSWOTs(business_plan_id).ToDictionary(x=>x.Id);
 
       using(tr=new Transactioner(config, logger)){

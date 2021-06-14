@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using KabadaAPI.DataSource.Models;
+using KabadaAPIdao;
 using System.Linq;
 
 namespace KabadaAPI.DataSource.Repositories {

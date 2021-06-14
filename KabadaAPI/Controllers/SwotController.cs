@@ -1,4 +1,4 @@
-﻿using KabadaAPI.DataSource.Models;
+﻿using KabadaAPIdao;
 using KabadaAPI.DataSource.Repositories;
 using KabadaAPI;
 using Microsoft.AspNetCore.Mvc;

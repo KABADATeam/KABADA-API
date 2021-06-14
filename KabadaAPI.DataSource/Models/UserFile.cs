@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KabadaAPI.DataSource.Models
+namespace KabadaAPIdao
 {
   public class UserFile
   {

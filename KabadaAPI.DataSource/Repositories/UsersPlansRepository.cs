@@ -1,4 +1,4 @@
-﻿using KabadaAPI.DataSource.Models;
+﻿using KabadaAPIdao;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

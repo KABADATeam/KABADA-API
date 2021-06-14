@@ -1,5 +1,5 @@
 ﻿using System;
-using KabadaAPI.DataSource.Models;
+using KabadaAPIdao;
 using System.Linq;
 using KabadaAPI.DataSource.Utilities;
 using Microsoft.EntityFrameworkCore;

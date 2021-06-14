@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace KabadaAPI.DataSource.Models {
+namespace KabadaAPIdao {
   public class Plan_Attribute {
         [Key]
         public Guid Id { get; set; }

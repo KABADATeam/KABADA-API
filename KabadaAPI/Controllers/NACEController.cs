@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using KabadaAPI;
 using KabadaAPI.DataSource.Repositories;
-using KabadaAPI.DataSource.Models;
+using KabadaAPIdao;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;

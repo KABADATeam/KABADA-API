@@ -44,7 +44,7 @@ namespace KabadaAPI.Controllers
             await f.CopyToAsync(ms);
             _logger.LogInformation($"-- {ms.Length}");
 
-            var r = new DataSource.Models.UserFile { Name = f.FileName, UserId = null, Content = ms.ToArray() };
+            var r = new KabadaAPIdao.UserFile { Name = f.FileName, UserId = null, Content = ms.ToArray() };
             await db.UserFiles.AddAsync(r);
             await db.SaveChangesAsync();
 

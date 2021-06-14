@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace KabadaAPI.DataSource.Models
+namespace KabadaAPIdao
 {
     public class SharedPlan
     {
