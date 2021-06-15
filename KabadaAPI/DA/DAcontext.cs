@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KabadaAPIdao;
-using KabadaAPI.DataSource.Utilities;
 using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI {

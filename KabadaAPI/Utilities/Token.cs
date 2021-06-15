@@ -6,8 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace KabadaAPI.Utilities
-{
+namespace KabadaAPI {
     public static class Token
     {
         public static string Generate(User user, IConfiguration config)

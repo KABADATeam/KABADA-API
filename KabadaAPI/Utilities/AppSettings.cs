@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace KabadaAPI.DataSource.Utilities {
+namespace KabadaAPI {
   public class AppSettings {
     protected IConfiguration config;
 

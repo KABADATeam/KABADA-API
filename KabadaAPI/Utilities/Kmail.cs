@@ -3,7 +3,7 @@ using MailKit.Security;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 
-namespace KabadaAPI.DataSource.Utilities {
+namespace KabadaAPI {
   public class Kmail {
     private readonly IConfiguration config;
 

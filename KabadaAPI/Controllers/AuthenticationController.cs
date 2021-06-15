@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using KabadaAPI;
-using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;

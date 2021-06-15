@@ -2,8 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace KabadaAPI.DataSource.Utilities
-{
+namespace KabadaAPI {
     public static class Cryptography
     {
         public static string GetSalt()

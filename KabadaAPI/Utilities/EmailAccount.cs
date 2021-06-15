@@ -1,6 +1,5 @@
 ﻿using System;
-namespace KabadaAPI.DataSource.Utilities
-{
+namespace KabadaAPI {
     public static class EmailAccount
     {
         public static readonly string UserName = "kabadaka2@gmail.com ";

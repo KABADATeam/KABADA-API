@@ -3,8 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Net.Mail;
 
-namespace KabadaAPI.DataSource.Utilities
-{
+namespace KabadaAPI {
     public static class Email
     {
         ////private static readonly string baseURL = "http://localhost:3000/";
