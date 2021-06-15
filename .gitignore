@@ -407,3 +407,4 @@ ASALocalRun/
 .localhistory/
 /KabadaAPI/appsettings.Development.json
 /KabadaAPI/Logs
+/KabadaAPI/wwroot

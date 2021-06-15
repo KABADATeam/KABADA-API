@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using KabadaAPI;
-using KabadaAPI.DataSource.Repositories;
 using KabadaAPI.Utilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+using Kabada;
 
 namespace KabadaAPI.Controllers {
   [Authorize]

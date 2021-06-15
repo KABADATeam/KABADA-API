@@ -1,6 +1,6 @@
 cd "%~dp0"
 cd ..
 dotnet build
-cd "KabadaAPI.DataSource"
-dotnet ef database drop --force -s ..\KabadaAPI\KabadaAPI.csproj"
-dotnet ef database update -s ..\KabadaAPI\KabadaAPI.csproj
+cd "KabadaAPI"
+dotnet ef database drop --force
+dotnet ef database update

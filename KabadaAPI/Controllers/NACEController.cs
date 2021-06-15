@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using KabadaAPI;
-using KabadaAPI.DataSource.Repositories;
-using KabadaAPIdao;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Kabada;
 
 namespace KabadaAPI.Controllers
 {
@@ -41,8 +39,8 @@ namespace KabadaAPI.Controllers
         public IActionResult GetActivitiesByKey(string TitleKeyword) { return prun<string>(_GetActivitiesByKey, TitleKeyword); }
         private IActionResult _GetActivitiesByKey(string TitleKeyword) {
             IndustryActivityRepository repository = iRepo;
-            List<List<Activity>> a = repository.GetActivitiesByKeyword(TitleKeyword);
-            List<List<ActivityView>> res = new List<List<ActivityView>>();
+            var a = repository.GetActivitiesByKeyword(TitleKeyword);
+            var res = new List<List<ActivityView>>();
             foreach (var i in a)
             { 
                 var l = i.Select(x => new ActivityView() { Id = x.Id, Code =x.Code, Title=x.Title }).ToList();

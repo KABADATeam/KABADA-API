@@ -1,13 +1,10 @@
-﻿using KabadaAPIdao;
-using KabadaAPI.DataSource.Repositories;
-using KabadaAPI;
+﻿using Kabada;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
 namespace KabadaAPI.Controllers {
   [Route("api/swot")]
@@ -32,7 +29,7 @@ namespace KabadaAPI.Controllers {
       var speci=paRepo.get(planId, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
       //var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
       var visi=tRepo.getSWOTs(planId);
-      Plan_Attribute v=null;
+      KabadaAPIdao.Plan_Attribute v =null;
       //Plan_SWOT v=null;
       foreach(var x in visi){
         var o=new Swoter(){ description=x.LongValue, id=x.Id, isLocal=((x.Kind % 2) == 0), title=x.Value, value=0 };

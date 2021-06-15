@@ -1,12 +1,11 @@
 ﻿using KabadaAPIdao;
-using KabadaAPI.DataSource.Repositories;
-using KabadaAPI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
+using Kabada;
 
 namespace KabadaAPI.Controllers {
   [Route("api/user")]

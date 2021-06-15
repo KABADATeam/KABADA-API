@@ -1,10 +1,10 @@
 cd "%~dp0"
 cd ..
-del "KabadaAPI.DataSource\Migrations\*"
+del "KabadaAPI\Migrations\*"
 
 dotnet build
 
-cd "KabadaAPI.DataSource"
-dotnet ef migrations add InitialCreate -s ..\KabadaAPI\KabadaAPI.csproj
-dotnet ef database drop --force -s ..\KabadaAPI\KabadaAPI.csproj
-dotnet ef database update -s ..\KabadaAPI\KabadaAPI.csproj
+cd "KabadaAPI"
+dotnet ef migrations add InitialCreate 
+dotnet ef database drop --force
+dotnet ef database update
