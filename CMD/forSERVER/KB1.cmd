@@ -40,4 +40,6 @@ ren %C% %A%
 call unzip0.cmd %W%
 ren %U% %V%
 
+del /f /q "%A%\KabadaAPI\Properties\launchSettings.json"
+
 goto :eof
