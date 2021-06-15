@@ -1,4 +1,4 @@
-1. pieslēgties kabada testa videi ar RDP atbilstoši
+﻿1. pieslēgties kabada testa videi ar RDP atbilstoši
  "Access" -- https://www.dropbox.com/home/BA.KABADA?preview=BACKLOG+-+Software.xlsx 
 
 2. Visas darbības veicamas C:\Users\kabada\test
@@ -11,7 +11,7 @@ Logu atstāt vaļā (noderēs nākošajā solī)
 
 6. Atvērt komandlogu (var arī PowerShell) un nonākt mūsu direktorijā.
 
-7. KBfull
+7. .\KBfull.cmd
 
 8. Darbību virkne iet ~10 minūtes un beidzas ar piestartētu aplikāciju.
 
