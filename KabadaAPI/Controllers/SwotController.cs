@@ -26,7 +26,7 @@ namespace KabadaAPI.Controllers {
       var p =pRepo.GetPlan(planId);
       if(p!=null)
         r.is_swot_completed=p.IsSwotCompleted;
-      var speci=paRepo.get(planId, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
+      var speci=paRepo.getSwots(planId).ToDictionary(x=>x.TexterId);
       //var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
       var visi=tRepo.getSWOTs(planId);
       KabadaAPIdao.Plan_Attribute v =null;

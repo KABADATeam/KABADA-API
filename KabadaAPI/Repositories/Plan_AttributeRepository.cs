@@ -9,11 +9,14 @@ namespace KabadaAPI {
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
-    public List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
+    protected List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
       var w=(short)such;
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).ToList();
       return r;
       }
+
+    public List<Plan_Attribute> getSwots(Guid plan){ return get(plan, PlanAttributeKind.swot); }
+    public List<Plan_Attribute> getResources(Guid plan){ return get(plan, PlanAttributeKind.keyResource); }
 
     public void Delete(Plan_Attribute me) {
       daContext.Plan_Attributes.Remove(me);

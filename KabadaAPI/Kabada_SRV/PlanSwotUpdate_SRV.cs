@@ -22,7 +22,7 @@ namespace Kabada {
       using(tr=new Transactioner(context)){
         paR=new Plan_AttributeRepository(context, tr.Context);
         tR=new TexterRepository(context, tr.Context);
-        oldi=paR.get(business_plan_id, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
+        oldi=paR.getSwots(business_plan_id).ToDictionary(x=>x.TexterId);
 
         perform(this.strengths_weakness, EnumTexterKind.strength_local);
         perform(this.opportunities_threats, EnumTexterKind.oportunity_local);
