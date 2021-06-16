@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210615093419_InitialCreate")]
+    [Migration("20210616105540_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,217 +116,217 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("420230d1-0749-4533-8ece-4135bae3ebda"),
+                            Id = new Guid("3e128a45-f2e8-4448-af0a-264d7cede543"),
                             ShortCode = "AT",
                             Title = "Austria"
                         },
                         new
                         {
-                            Id = new Guid("cd6eba4c-5672-4dcb-ac52-767aec958e23"),
+                            Id = new Guid("fb5a3dba-1897-4130-9f39-9c653efe5568"),
                             ShortCode = "BA",
                             Title = "Bosnia and Herzegovina"
                         },
                         new
                         {
-                            Id = new Guid("b3b27d47-9742-417f-b0de-d85a128c2d8e"),
+                            Id = new Guid("09575b33-abe4-4c85-8e1a-876879f57caa"),
                             ShortCode = "BE",
                             Title = "Belgium"
                         },
                         new
                         {
-                            Id = new Guid("6d9915ca-9644-4242-8a1d-b3d2f05b6539"),
+                            Id = new Guid("591c8db0-d204-42b8-875d-bbaed5224ee7"),
                             ShortCode = "BG",
                             Title = "Bulgaria"
                         },
                         new
                         {
-                            Id = new Guid("3be02dd1-d859-49d4-95d2-f008e58dbd5d"),
+                            Id = new Guid("1983d649-911f-47ee-868c-776722508470"),
                             ShortCode = "HR",
                             Title = "Croatia"
                         },
                         new
                         {
-                            Id = new Guid("232c51e6-6ac6-4696-8d95-676ff0541011"),
+                            Id = new Guid("345096e7-e3d8-49f4-9539-64d70c08c1da"),
                             ShortCode = "CY",
                             Title = "Cyprus"
                         },
                         new
                         {
-                            Id = new Guid("260f1d83-260c-44a8-82d7-7086f87bbed5"),
+                            Id = new Guid("b20d9c52-87b2-4d09-aa88-216bce7af99c"),
                             ShortCode = "CZ",
                             Title = "Czechia"
                         },
                         new
                         {
-                            Id = new Guid("7418a8da-05cf-494d-bb75-b66c3f3f9a8d"),
+                            Id = new Guid("82a2474f-de2b-4fb0-98ee-6fda4eefbac8"),
                             ShortCode = "DK",
                             Title = "Denmark"
                         },
                         new
                         {
-                            Id = new Guid("a12fe0ab-f001-4b3d-94a4-67d5ed6c7934"),
+                            Id = new Guid("40163f71-0ba2-4c67-b37f-0a079e92e8ec"),
                             ShortCode = "EE",
                             Title = "Estonia"
                         },
                         new
                         {
-                            Id = new Guid("e65f5554-98f7-4630-9ebd-5c7a3c1136a8"),
+                            Id = new Guid("9ce39b1d-18cd-4d6f-b221-866a90627648"),
                             ShortCode = "FI",
                             Title = "Finland"
                         },
                         new
                         {
-                            Id = new Guid("5796198a-a13e-4951-9168-3981eb935517"),
+                            Id = new Guid("bcc34d36-c1b1-4244-9d68-d10abf5ee42e"),
                             ShortCode = "FR",
                             Title = "France"
                         },
                         new
                         {
-                            Id = new Guid("ed8d9290-6a03-4c78-91a9-ded88049eb7f"),
+                            Id = new Guid("beb14375-6ec0-420f-9713-75c49eda2c9d"),
                             ShortCode = "DE",
                             Title = "Germany"
                         },
                         new
                         {
-                            Id = new Guid("8c5a7461-111b-478c-8acd-79246bfeab2a"),
+                            Id = new Guid("3a4d71c7-c870-4c47-ba0a-78c109cd63ef"),
                             ShortCode = "EL",
                             Title = "Greece"
                         },
                         new
                         {
-                            Id = new Guid("7c893ea6-8cdb-427d-847a-68bd1612b5f0"),
+                            Id = new Guid("87bcc430-0157-4bfe-9955-01e840050b18"),
                             ShortCode = "HU",
                             Title = "Hungary"
                         },
                         new
                         {
-                            Id = new Guid("939a630c-84d5-4261-a2bc-fe3d94c30669"),
+                            Id = new Guid("55fa3d91-d9c4-410c-9952-14913b0c9184"),
                             ShortCode = "IS",
                             Title = "Iceland"
                         },
                         new
                         {
-                            Id = new Guid("eb714e01-7c1d-416d-898e-73e79f91f82e"),
+                            Id = new Guid("a6e55a02-1922-4a7e-a01a-51a68cbb617b"),
                             ShortCode = "IE",
                             Title = "Ireland"
                         },
                         new
                         {
-                            Id = new Guid("64d404c4-9d91-47de-8414-53f07fbab775"),
+                            Id = new Guid("065cd383-1c55-4d07-9759-fe87a0dd21ec"),
                             ShortCode = "IT",
                             Title = "Italy"
                         },
                         new
                         {
-                            Id = new Guid("6763e3db-481b-4877-b9d2-752d78fa260b"),
+                            Id = new Guid("4c4b08a3-527a-46bc-a8d4-8095ce01a61b"),
                             ShortCode = "LV",
                             Title = "Latvia"
                         },
                         new
                         {
-                            Id = new Guid("07c054a2-7d9b-439a-b54a-e0a1c7d3b10e"),
+                            Id = new Guid("312b9e65-5659-4339-98f7-ee6a0f92ad7d"),
                             ShortCode = "LI",
                             Title = "Liechtenstein"
                         },
                         new
                         {
-                            Id = new Guid("b2828cb1-e324-405b-b4e4-46721820b1a7"),
+                            Id = new Guid("3fc19e14-950c-4698-8bd7-0b47eaebde2e"),
                             ShortCode = "LT",
                             Title = "Lithuania"
                         },
                         new
                         {
-                            Id = new Guid("180ee9cd-8c49-42a3-add1-441c39c57584"),
+                            Id = new Guid("64f56e64-e8f1-45cd-904f-64076423dc9f"),
                             ShortCode = "LU",
                             Title = "Luxembourg"
                         },
                         new
                         {
-                            Id = new Guid("17c9038d-8e7e-483f-be0e-644ed916ad39"),
+                            Id = new Guid("c0cf3334-2fb4-4e14-9a29-d64ec212379e"),
                             ShortCode = "MT",
                             Title = "Malta"
                         },
                         new
                         {
-                            Id = new Guid("a9efbed3-0805-44e0-bf85-43046d907b1a"),
+                            Id = new Guid("7f30fb4a-0474-4e4a-bac6-02e43c2fcf6c"),
                             ShortCode = "NL",
                             Title = "Netherlands"
                         },
                         new
                         {
-                            Id = new Guid("0ef44bfb-4696-42a3-b597-6e2783e623ce"),
+                            Id = new Guid("5e9b4f8b-183f-4be9-b5d1-da1c4c1892b5"),
                             ShortCode = "MK",
                             Title = "North Macedonia"
                         },
                         new
                         {
-                            Id = new Guid("ec258459-44fa-4903-a0c7-767323843a00"),
+                            Id = new Guid("e9428454-e251-41da-82eb-94dd2bc6417f"),
                             ShortCode = "NO",
                             Title = "Norway"
                         },
                         new
                         {
-                            Id = new Guid("68707b72-def8-41ad-9694-ab4ab073cbe0"),
+                            Id = new Guid("46f9ad24-d99f-4bf2-a178-96bac68deafc"),
                             ShortCode = "PL",
                             Title = "Poland"
                         },
                         new
                         {
-                            Id = new Guid("422a978a-8acf-463b-92f3-b3df15b5bdd1"),
+                            Id = new Guid("6a35b01d-8344-4234-ae37-1f369c96be3e"),
                             ShortCode = "PT",
                             Title = "Portugal"
                         },
                         new
                         {
-                            Id = new Guid("5fc79f6f-35de-4ad3-8b69-cbaafefc317d"),
+                            Id = new Guid("2c86a137-f7a8-442b-bd85-cce086a681d2"),
                             ShortCode = "RO",
                             Title = "Romania"
                         },
                         new
                         {
-                            Id = new Guid("5e32fe0d-fb6a-4417-9807-89b10682e041"),
+                            Id = new Guid("ee7f45b2-dedb-41d3-b249-ad4ce217c983"),
                             ShortCode = "RS",
                             Title = "Serbia"
                         },
                         new
                         {
-                            Id = new Guid("13c2e120-e200-40eb-b9b3-749d8a45b2d5"),
+                            Id = new Guid("10a3e067-ff38-4bc7-bc31-9b87271647f0"),
                             ShortCode = "SK",
                             Title = "Slovakia"
                         },
                         new
                         {
-                            Id = new Guid("bd33ce5e-04d8-48a4-81cb-375136506b75"),
+                            Id = new Guid("4a206a3a-eff7-489d-b42f-f5d7dfc0ec3e"),
                             ShortCode = "SI",
                             Title = "Slovenia"
                         },
                         new
                         {
-                            Id = new Guid("37d0511d-6d35-4270-93b0-0f6c98080c1a"),
+                            Id = new Guid("33b28f32-c0d0-45b6-9cd2-1eaa429a9331"),
                             ShortCode = "ES",
                             Title = "Spain"
                         },
                         new
                         {
-                            Id = new Guid("7f288f77-f005-40a1-9bf0-2bcd0f62d4dd"),
+                            Id = new Guid("a99e40e9-da70-43a9-9b1f-e06a8928ca85"),
                             ShortCode = "SE",
                             Title = "Sweden"
                         },
                         new
                         {
-                            Id = new Guid("f8309568-62d8-43a8-bf99-512f9cb21307"),
+                            Id = new Guid("fce5b0db-8d0c-4ef2-9140-fe2a91afe95d"),
                             ShortCode = "CH",
                             Title = "Switzerland"
                         },
                         new
                         {
-                            Id = new Guid("fc9fb381-6d4e-45c1-987b-88448e4f413b"),
+                            Id = new Guid("e7ae0d87-db8a-4ba1-b132-f8efe4620f29"),
                             ShortCode = "TR",
                             Title = "Turkey"
                         },
                         new
                         {
-                            Id = new Guid("f948901a-4d49-433a-a2aa-89f9caf7ffc6"),
+                            Id = new Guid("9a456220-18a3-4a49-a69f-8876f4538f07"),
                             ShortCode = "UK",
                             Title = "United Kingdom"
                         });
@@ -455,7 +455,7 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3d18b9f0-1bc4-4ccb-b02a-361d2926d18a"),
+                            Id = new Guid("3e82184d-d008-4758-8ff5-5ce2e88b2416"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)1,
@@ -463,7 +463,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("908848e8-c31e-4ac2-83ca-76225f7f1cdd"),
+                            Id = new Guid("bb6808d8-8805-4484-b05c-aa07303c2409"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)2,
@@ -471,7 +471,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("68fb9a25-75d5-4e2d-8668-323b00917d97"),
+                            Id = new Guid("079f42d4-47d7-4df4-abba-f50b068d8e4f"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)3,
@@ -479,7 +479,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3db1db93-bcf5-4491-9640-8831043b94bc"),
+                            Id = new Guid("bebc0b35-0c28-43c9-9985-99bf42afb8dc"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)4,
@@ -487,7 +487,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a2c02476-2691-4203-be48-354deb445d0c"),
+                            Id = new Guid("ce11d48a-98de-4187-8573-a11e65b84e6d"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)5,
@@ -495,7 +495,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("882e7bd3-9fc4-40c4-a3a1-33329b0f7693"),
+                            Id = new Guid("3ce84d91-81d1-489b-a511-5d02c585aba7"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)6,
@@ -503,7 +503,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4d4b6c93-d5f4-43d1-8a67-1c9b6642d850"),
+                            Id = new Guid("f08b9928-6c1d-4dc1-95ce-24dbadd806a3"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)7,
@@ -511,7 +511,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cfe9ad59-1d0d-49d3-8416-28df2d05e88c"),
+                            Id = new Guid("e6e424c3-8cd0-4cd8-b123-bd04a838e36f"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)8,
@@ -519,7 +519,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("28a524b6-2569-408a-9430-6ac2fb4b1621"),
+                            Id = new Guid("39c1d3e7-1bee-436a-87c1-f0506e620d29"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)9,
@@ -527,7 +527,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("397f6b31-f86c-46f5-83f7-b8853e0ca393"),
+                            Id = new Guid("c6138b7c-7ba1-48b1-8d3b-c8cc0d334496"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)10,
@@ -535,7 +535,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("275d4cb4-74f1-4fcd-8ede-2e117de91b1d"),
+                            Id = new Guid("5074931f-063f-4de9-bcfa-cff75ac63036"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)11,
@@ -543,7 +543,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("17f3df6c-0bdd-4846-9a19-e155e38d31a3"),
+                            Id = new Guid("df0383e3-4ef3-422b-9c62-0ed6f7c4fc23"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)12,
@@ -551,7 +551,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("950c3e5b-c1d7-401c-8769-1929808c602a"),
+                            Id = new Guid("78991cec-dfc3-4f62-a406-69f692366e29"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)13,
@@ -559,7 +559,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("98669c70-b9b5-4901-a262-9ddef513e61f"),
+                            Id = new Guid("8d8fe810-52fc-4d07-ac0e-579f98075f02"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)14,
@@ -567,7 +567,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0a57b538-971a-4433-b018-46ca87440886"),
+                            Id = new Guid("34356bc5-a9a9-402a-bf2c-64f6fc9dc228"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)15,
@@ -575,7 +575,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("060dd9f2-965d-42ce-a62a-c84c73d3521a"),
+                            Id = new Guid("e69546fd-d565-4713-99cc-f51667a03b59"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)16,
@@ -583,7 +583,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8aca00fa-bf1f-46d5-844f-8fb38177fdd4"),
+                            Id = new Guid("1887aa34-0dd6-4680-a863-09bd7d71174c"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)17,
@@ -591,7 +591,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("41d3f5d3-47df-4fb2-b27c-4ef98dfecb06"),
+                            Id = new Guid("3f78e393-b323-4df0-8414-6bab833b5dc3"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)18,
@@ -599,7 +599,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ccff4586-a8b2-4563-9e35-d820aedd9b0c"),
+                            Id = new Guid("dbc4fc6a-9cfa-44e7-b9b7-64cd6c9a0554"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)19,
@@ -607,7 +607,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cf476f67-0ad3-4c08-a516-a11b34324310"),
+                            Id = new Guid("b2f42fdd-07fe-42f7-a5a5-e213da64e2af"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)20,
@@ -615,7 +615,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4b9af6da-e3ec-4ffe-85a0-efdd535ba081"),
+                            Id = new Guid("e96c2336-a96a-484a-8511-627d028d5f84"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)21,
@@ -623,7 +623,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d57c7c0e-10c9-439f-a95e-c839ea8971e0"),
+                            Id = new Guid("b9cfb1ab-45b9-4666-957d-ca48cfeb46a7"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)22,
@@ -631,7 +631,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4f7ff17f-3994-4df9-bcfa-d055397ee8a1"),
+                            Id = new Guid("5068c469-7ed0-40bc-9da4-901a45caa05e"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)23,
@@ -639,7 +639,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d26ca7c0-f903-4afe-b3a1-ea7557cd7935"),
+                            Id = new Guid("c05f4c3f-1554-4d19-a0c1-703d4cbb7a70"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -647,7 +647,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1d626ff4-fcf1-4d11-a027-3512d6d0c0ef"),
+                            Id = new Guid("f64ec1b0-7635-4823-8922-df8117bef88b"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -655,7 +655,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("18ee5bec-ce85-48fd-bfcf-e977b59fa2ea"),
+                            Id = new Guid("006dab47-f56f-497c-bd92-c4e8a7ff3755"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -663,7 +663,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f09fead5-f828-48c9-8fb4-1ed0d562bde7"),
+                            Id = new Guid("7bec036b-e509-43e4-a3d7-b5a076cbec4c"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -671,7 +671,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9100165a-5447-4c65-8dc4-4dde0162d2c8"),
+                            Id = new Guid("08face55-dba0-4a02-827a-51523c185889"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -679,7 +679,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5641268d-1cf9-4e58-b79d-7257c65d5540"),
+                            Id = new Guid("7242f7d8-d690-4981-beea-a4057239bcee"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -687,7 +687,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
+                            Id = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
                             Kind = (short)5,
                             LongValue = "Physical assets are tangible resources that a company uses to create its value proposition. These could include equipment, inventory, buildings, manufacturing plants and distribution networks that enable the business to function.",
                             OrderValue = (short)1,
@@ -695,105 +695,128 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
+                            Id = new Guid("5de92430-de46-4585-ac4d-09a609fe3dd9"),
                             Kind = (short)6,
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
+                            MasterId = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
                             OrderValue = (short)1,
                             Value = "Buildings"
                         },
                         new
                         {
-                            Id = new Guid("d2db4aeb-b5d0-4812-b449-c44e38e7dfa4"),
-                            Kind = (short)7,
-                            MasterId = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
-                            OrderValue = (short)1,
-                            Value = "Office"
-                        },
-                        new
-                        {
-                            Id = new Guid("06058194-90e9-4cc6-95ad-c8ce968d5987"),
-                            Kind = (short)7,
-                            MasterId = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
-                            OrderValue = (short)2,
-                            Value = "Manufacturing Buildings"
-                        },
-                        new
-                        {
-                            Id = new Guid("1f07bdfb-1e3d-4e6e-8156-6096ff282668"),
-                            Kind = (short)7,
-                            MasterId = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
-                            OrderValue = (short)3,
-                            Value = "Inventory Buildings"
-                        },
-                        new
-                        {
-                            Id = new Guid("a3cbef62-52a0-48a8-9e86-b432033e46b5"),
-                            Kind = (short)7,
-                            MasterId = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
-                            OrderValue = (short)4,
-                            Value = "Sales Buildings (Shop)"
-                        },
-                        new
-                        {
-                            Id = new Guid("cfaae7b0-bc34-4fbc-bb8a-7ddbbe7afe66"),
-                            Kind = (short)7,
-                            MasterId = new Guid("9acd91c1-be41-4d7c-b1ee-87a97c041706"),
-                            OrderValue = (short)5,
-                            Value = "Other"
-                        },
-                        new
-                        {
-                            Id = new Guid("107b2af6-74fe-4d5b-b37c-c09c89e28864"),
-                            Kind = (short)6,
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
-                            OrderValue = (short)2,
-                            Value = "Production machinery"
-                        },
-                        new
-                        {
-                            Id = new Guid("c6a0110e-5a65-4ab4-a6c8-4203aab66a67"),
-                            Kind = (short)6,
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
-                            OrderValue = (short)3,
-                            Value = "Transport"
-                        },
-                        new
-                        {
-                            Id = new Guid("2f422b71-51fd-4e8d-950f-0d46afe073fe"),
-                            Kind = (short)6,
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
-                            OrderValue = (short)4,
-                            Value = "Resources"
-                        },
-                        new
-                        {
-                            Id = new Guid("5a08b013-d3ef-4757-95ba-1b5c2069db43"),
-                            Kind = (short)6,
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
-                            OrderValue = (short)5,
-                            Value = "Other"
-                        },
-                        new
-                        {
-                            Id = new Guid("91695e3a-7066-4660-af9e-6e26fa458432"),
+                            Id = new Guid("dfa6ab0d-ccc1-4860-b22c-5c31734e8f8c"),
                             Kind = (short)8,
-                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false}]",
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("5de92430-de46-4585-ac4d-09a609fe3dd9"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("d9c8d061-49e5-4b16-bbef-cc1d8e29ac57"),
+                            Id = new Guid("6f684521-db20-4778-b147-0057b67203c3"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("1cba3fbe-5af2-4845-b2cd-9d5f66cbd13f"),
+                            MasterId = new Guid("5de92430-de46-4585-ac4d-09a609fe3dd9"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("4c207d8f-b9d6-4f23-b1b2-d9ea4bbea561"),
+                            Id = new Guid("cc48f122-7307-41a7-bd5a-d4352eaccae6"),
+                            Kind = (short)6,
+                            MasterId = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
+                            OrderValue = (short)2,
+                            Value = "Equipment"
+                        },
+                        new
+                        {
+                            Id = new Guid("d5088ba2-3115-406c-ba8c-054e30cf3494"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("cc48f122-7307-41a7-bd5a-d4352eaccae6"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("19e73ade-b2b8-4455-82f2-c2d5f9a7b044"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("cc48f122-7307-41a7-bd5a-d4352eaccae6"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("9aadccde-7593-4ae2-8ad3-a68416600c26"),
+                            Kind = (short)6,
+                            MasterId = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
+                            OrderValue = (short)3,
+                            Value = "Transport"
+                        },
+                        new
+                        {
+                            Id = new Guid("4dfb13ba-8e7a-44a5-89f7-20e204515032"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("9aadccde-7593-4ae2-8ad3-a68416600c26"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("665bbaa9-b444-4f47-9b18-4eac262992ed"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("9aadccde-7593-4ae2-8ad3-a68416600c26"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("9983752c-495a-49df-bcb6-f0af1692887e"),
+                            Kind = (short)6,
+                            MasterId = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
+                            OrderValue = (short)4,
+                            Value = "Raw materials"
+                        },
+                        new
+                        {
+                            Id = new Guid("00a19544-b871-42a6-9a9b-460b1b313b54"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("9983752c-495a-49df-bcb6-f0af1692887e"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("65670f71-7729-463c-9131-83a3119b4294"),
+                            Kind = (short)6,
+                            MasterId = new Guid("3ab4aa6a-2fd3-40a2-9661-cb21831bdeeb"),
+                            OrderValue = (short)5,
+                            Value = "Other"
+                        },
+                        new
+                        {
+                            Id = new Guid("5d491e1b-238b-4641-930c-1f9334042221"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("65670f71-7729-463c-9131-83a3119b4294"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("624e80f5-5eb8-4bd2-93dd-4d737463a880"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("65670f71-7729-463c-9131-83a3119b4294"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("7a7386a0-10f9-4ada-8711-6f3eccf6a795"),
                             Kind = (short)5,
                             LongValue = "These are non-physical, intangible resources like brand, patents, IP, copyrights, and even partnerships. Customer lists, customer knowledge, and even your own people, represent a form of intellectual resource. Intellectual resources take a great deal of time and expenditure to develop. But once developed, they can offer unique advantages to the company.",
                             OrderValue = (short)2,
@@ -801,39 +824,39 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c5213ec4-0eb9-493d-8214-087cf0f2f011"),
+                            Id = new Guid("a5f1ab2d-303e-4fae-a701-d90747e58ffb"),
                             Kind = (short)6,
-                            MasterId = new Guid("4c207d8f-b9d6-4f23-b1b2-d9ea4bbea561"),
+                            MasterId = new Guid("7a7386a0-10f9-4ada-8711-6f3eccf6a795"),
                             OrderValue = (short)1,
                             Value = "Brands"
                         },
                         new
                         {
-                            Id = new Guid("0ddfb52d-c33f-493d-be89-e9273aea2119"),
+                            Id = new Guid("296d5af0-2081-4e16-b962-e44834e87df6"),
                             Kind = (short)6,
-                            MasterId = new Guid("4c207d8f-b9d6-4f23-b1b2-d9ea4bbea561"),
+                            MasterId = new Guid("7a7386a0-10f9-4ada-8711-6f3eccf6a795"),
                             OrderValue = (short)2,
                             Value = "Licenses"
                         },
                         new
                         {
-                            Id = new Guid("f4b8108c-ece8-4cd4-860b-02ce86253660"),
+                            Id = new Guid("9f0eb5a3-8701-4022-b3e2-93407ac6ea08"),
                             Kind = (short)6,
-                            MasterId = new Guid("4c207d8f-b9d6-4f23-b1b2-d9ea4bbea561"),
+                            MasterId = new Guid("7a7386a0-10f9-4ada-8711-6f3eccf6a795"),
                             OrderValue = (short)3,
                             Value = "Software"
                         },
                         new
                         {
-                            Id = new Guid("2dfe03a4-9eed-48cc-93a7-37568e6f6225"),
+                            Id = new Guid("97954f5b-a08b-4a20-8eb1-3fbfb49f6ecd"),
                             Kind = (short)6,
-                            MasterId = new Guid("4c207d8f-b9d6-4f23-b1b2-d9ea4bbea561"),
+                            MasterId = new Guid("7a7386a0-10f9-4ada-8711-6f3eccf6a795"),
                             OrderValue = (short)4,
                             Value = "Other"
                         },
                         new
                         {
-                            Id = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
+                            Id = new Guid("6c747538-0f23-4df8-a146-38253f7d0d22"),
                             Kind = (short)5,
                             LongValue = "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.",
                             OrderValue = (short)3,
@@ -841,94 +864,107 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c60e5310-4c56-4cba-b217-25e1558ccff3"),
+                            Id = new Guid("41905c3f-a276-4c0e-a50a-12ac6ea8528c"),
                             Kind = (short)6,
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
+                            MasterId = new Guid("6c747538-0f23-4df8-a146-38253f7d0d22"),
                             OrderValue = (short)1,
-                            Value = "Know-how"
+                            Value = "Specialists & Know-how"
                         },
                         new
                         {
-                            Id = new Guid("4676586b-820d-46ee-93cf-61a634566377"),
-                            Kind = (short)6,
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
-                            OrderValue = (short)2,
-                            Value = "Office"
-                        },
-                        new
-                        {
-                            Id = new Guid("473403a2-023e-4aa1-8986-968d20a9c1f4"),
-                            Kind = (short)6,
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
-                            OrderValue = (short)3,
-                            Value = "Factory/service"
-                        },
-                        new
-                        {
-                            Id = new Guid("984c2e97-5ebe-45cc-8cab-5cd7295a6ced"),
-                            Kind = (short)6,
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
-                            OrderValue = (short)4,
-                            Value = "Other"
-                        },
-                        new
-                        {
-                            Id = new Guid("aad92c20-5da9-4d4d-90f5-2feb61085d24"),
+                            Id = new Guid("3729b630-d1c5-4ee8-b265-319ec9bcb873"),
                             Kind = (short)8,
-                            LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
+                            LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false},{\"title\":\"Myself\",\"selected\":false}]",
+                            MasterId = new Guid("41905c3f-a276-4c0e-a50a-12ac6ea8528c"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("049ddeff-4ae5-433a-aa92-2dfccbb426e0"),
+                            Id = new Guid("f616eff1-4d20-4488-a645-6dc371f182f6"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("bdc1c905-c4e7-41be-9315-2f112b5bf249"),
+                            MasterId = new Guid("41905c3f-a276-4c0e-a50a-12ac6ea8528c"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("4e9200d3-380b-4781-918f-13f03d61ea36"),
-                            Kind = (short)5,
-                            LongValue = "The financial resource includes cash, lines of credit and the ability to have stock option plans for employees. All businesses have key resources in finance, but some will have stronger financial resources than other, such as banks that are based entirely on the availability of this key resource.",
-                            OrderValue = (short)4,
-                            Value = "Financial resources"
-                        },
-                        new
-                        {
-                            Id = new Guid("30bd9a06-5ed6-4b7d-a034-fc6057e4e2a8"),
+                            Id = new Guid("43cf7216-43e9-46c2-a13e-2c490ae74dc3"),
                             Kind = (short)6,
-                            MasterId = new Guid("4e9200d3-380b-4781-918f-13f03d61ea36"),
-                            OrderValue = (short)1,
-                            Value = "For start-up"
-                        },
-                        new
-                        {
-                            Id = new Guid("b92b2ad0-9bb2-4a48-8ac6-faa3f697a928"),
-                            Kind = (short)6,
-                            MasterId = new Guid("4e9200d3-380b-4781-918f-13f03d61ea36"),
+                            MasterId = new Guid("6c747538-0f23-4df8-a146-38253f7d0d22"),
                             OrderValue = (short)2,
-                            Value = "Operational"
+                            Value = "Administrative"
                         },
                         new
                         {
-                            Id = new Guid("7098477b-31ea-4e90-9db3-656f6ac50015"),
+                            Id = new Guid("de7e8626-dd9c-4e49-92ef-f4de93826ca6"),
                             Kind = (short)8,
-                            LongValue = "[{\"title\":\"Yes\",\"selected\":false},{\"title\":\"No\",\"selected\":false}]",
-                            MasterId = new Guid("4e9200d3-380b-4781-918f-13f03d61ea36"),
+                            LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
+                            MasterId = new Guid("43cf7216-43e9-46c2-a13e-2c490ae74dc3"),
                             OrderValue = (short)1,
-                            Value = "Is available?"
+                            Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("c8bba288-51a8-4a51-abca-1c8666a12a0c"),
-                            Kind = (short)5,
-                            LongValue = "",
-                            OrderValue = (short)5,
+                            Id = new Guid("ef34011e-27f2-48bf-a0c0-a8f0ef6d1cab"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("43cf7216-43e9-46c2-a13e-2c490ae74dc3"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("02a8271b-e605-4ad0-98b5-aac6d2234f8d"),
+                            Kind = (short)6,
+                            MasterId = new Guid("6c747538-0f23-4df8-a146-38253f7d0d22"),
+                            OrderValue = (short)3,
+                            Value = "Employees directly involved in production or service"
+                        },
+                        new
+                        {
+                            Id = new Guid("faae72ac-d25c-434c-aa89-20d7358dae13"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
+                            MasterId = new Guid("02a8271b-e605-4ad0-98b5-aac6d2234f8d"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("462ea77a-aefa-40a6-a53a-dac96da53b7d"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("02a8271b-e605-4ad0-98b5-aac6d2234f8d"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("5e9988ea-4e1b-4086-8aa3-6558b1757327"),
+                            Kind = (short)6,
+                            MasterId = new Guid("6c747538-0f23-4df8-a146-38253f7d0d22"),
+                            OrderValue = (short)4,
                             Value = "Other"
+                        },
+                        new
+                        {
+                            Id = new Guid("56018bbe-d782-4b4a-848e-ab935e1e7934"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
+                            MasterId = new Guid("5e9988ea-4e1b-4086-8aa3-6558b1757327"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("6e1b314b-4ca3-4f28-b9ec-a8947bfb251e"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("5e9988ea-4e1b-4086-8aa3-6558b1757327"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
                         });
                 });
 

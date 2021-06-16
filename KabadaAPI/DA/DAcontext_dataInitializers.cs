@@ -13,33 +13,82 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 1, Value = "Physical resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "Physical assets are tangible resources that a company uses to create its value proposition. These could include equipment, inventory, buildings, manufacturing plants and distribution networks that enable the business to function." });
             var typeGuid = Guid.NewGuid();
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 1, Value = "Buildings", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Office", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Manufacturing Buildings", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Inventory Buildings", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Sales Buildings (Shop)", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Production machinery", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 3, Value = "Transport", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 4, Value = "Resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            //var selGuid = Guid.NewGuid();
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Office", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Manufacturing Buildings", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Inventory Buildings", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Sales Buildings (Shop)", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceSubType, MasterId = typeGuid });
             var options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
             {
                 new Kabada.ResourceOption(){title="Rent", selected=default},
                 new Kabada.ResourceOption(){title="Buy", selected=default},
+                new Kabada.ResourceOption(){title="Own", selected=default},
             });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue=options});
-            //selGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
             options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
             {
                 new Kabada.ResourceOption(){title="Permanently", selected=default},
                 new Kabada.ResourceOption(){title="Time to time", selected=default},
             });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue = options });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Equipment", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Rent", selected=default},
+                new Kabada.ResourceOption(){title="Buy", selected=default},
+                new Kabada.ResourceOption(){title="Own", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 3, Value = "Transport", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Rent", selected=default},
+                new Kabada.ResourceOption(){title="Buy", selected=default},
+                new Kabada.ResourceOption(){title="Own", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 4, Value = "Raw materials", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Buy", selected=default},
+                new Kabada.ResourceOption(){title="Own", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+           
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Rent", selected=default},
+                new Kabada.ResourceOption(){title="Buy", selected=default},
+                new Kabada.ResourceOption(){title="Own", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+
 
             catGuid = Guid.NewGuid();
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 2, Value = "Intellectual resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "These are non-physical, intangible resources like brand, patents, IP, copyrights, and even partnerships. Customer lists, customer knowledge, and even your own people, represent a form of intellectual resource. Intellectual resources take a great deal of time and expenditure to develop. But once developed, they can offer unique advantages to the company." });
@@ -55,44 +104,83 @@ namespace KabadaAPI {
             catGuid = Guid.NewGuid();
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 3, Value = "Human resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal." });
             typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 1, Value = "Know-how", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Office", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 3, Value = "Factory/service", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            //selGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 1, Value = "Specialists & Know-how", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
             options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
             {
                 new Kabada.ResourceOption(){title="Employ", selected=default},
                 new Kabada.ResourceOption(){title="Outsource", selected=default},
+                new Kabada.ResourceOption(){title="Myself", selected=default},
             });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue=options });
-            //selGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
             options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
             {
                 new Kabada.ResourceOption(){title="Permanently", selected=default},
                 new Kabada.ResourceOption(){title="Time to time", selected=default},
             });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue=options });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
 
-            catGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 4, Value = "Financial resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "The financial resource includes cash, lines of credit and the ability to have stock option plans for employees. All businesses have key resources in finance, but some will have stronger financial resources than other, such as banks that are based entirely on the availability of this key resource." });
             typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 1, Value = "For start-up", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            typeGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Operational", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
-            //selGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Administrative", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
             options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
             {
-                new Kabada.ResourceOption(){title="Yes", selected=default},
-                new Kabada.ResourceOption(){title="No", selected=default},
+                new Kabada.ResourceOption(){title="Employ", selected=default},
+                new Kabada.ResourceOption(){title="Outsource", selected=default},
             });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Is available?", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue=options });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
 
-            catGuid = Guid.NewGuid();
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "" });
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 3, Value = "Employees directly involved in production or service", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Employ", selected=default},
+                new Kabada.ResourceOption(){title="Outsource", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue = options });
+
+            typeGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Employ", selected=default},
+                new Kabada.ResourceOption(){title="Outsource", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Ownership type", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue=options });           
+            options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            {
+                new Kabada.ResourceOption(){title="Permanently", selected=default},
+                new Kabada.ResourceOption(){title="Time to time", selected=default},
+            });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Frequency", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = typeGuid, LongValue=options });
+
+            //catGuid = Guid.NewGuid();
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 4, Value = "Financial resources", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "The financial resource includes cash, lines of credit and the ability to have stock option plans for employees. All businesses have key resources in finance, but some will have stronger financial resources than other, such as banks that are based entirely on the availability of this key resource." });
+            //typeGuid = Guid.NewGuid();
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 1, Value = "For start-up", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            //typeGuid = Guid.NewGuid();
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 2, Value = "Operational", Kind = (int)TexterRepository.EnumTexterKind.keyResourceType, MasterId = catGuid });
+            ////selGuid = Guid.NewGuid();
+            //options = Newtonsoft.Json.JsonConvert.SerializeObject(new List<Kabada.ResourceOption>()
+            //{
+            //    new Kabada.ResourceOption(){title="Yes", selected=default},
+            //    new Kabada.ResourceOption(){title="No", selected=default},
+            //});
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Is available?", Kind = (int)TexterRepository.EnumTexterKind.keyResourcesSelection, MasterId = catGuid, LongValue=options });
+
+            //catGuid = Guid.NewGuid();
+            //modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyResourceCategory, LongValue = "" });
         }
 
         private void AddData_SWOTtexters(ModelBuilder modelBuilder)
