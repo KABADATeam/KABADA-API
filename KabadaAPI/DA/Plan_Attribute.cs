@@ -20,5 +20,7 @@ namespace KabadaAPIdao {
 
         [Required]
         public string AttrVal { get; set; } // json-ed attribute value - has different types depending on Kind
+        [Required] 
+        public short OrderValue { get; set; }
     }
   }
