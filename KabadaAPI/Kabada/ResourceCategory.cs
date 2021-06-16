@@ -7,6 +7,6 @@ namespace Kabada {
     public string title;
     public string description;
     public List<ResourceType> types;
-    public List<ResourceSelection> selections;
+//    public List<ResourceSelection> selections;
     }
   }

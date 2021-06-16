@@ -13,7 +13,6 @@ namespace Kabada {
       if(tvo.children.Count<1)
         return; // do not create containers for "Other"
       types=new List<ResourceType>();
-      selections=new List<ResourceSelection>();
 
       var tp=(short)EnumTexterKind.keyResourceType;
 
@@ -25,13 +24,14 @@ namespace Kabada {
         t.fill(o);
         }
 
-      // process selections
-      c1=tvo.children.Where(x=>x.me.Kind!=tp).ToList();
-      foreach(var o in c1){
-        var t=new ResourceSelection();
-        selections.Add(t);
-        t.fill(o);
-        }
+      //// process selections
+      //c1=tvo.children.Where(x=>x.me.Kind!=tp).ToList();
+      //selections=new List<ResourceSelection>();
+      //foreach(var o in c1){
+      //  var t=new ResourceSelection();
+      //  selections.Add(t);
+      //  t.fill(o);
+      //  }
       }
     }
   }

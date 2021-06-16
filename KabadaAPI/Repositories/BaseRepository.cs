@@ -13,7 +13,7 @@ namespace KabadaAPI {
         this.daContext=dContext;
        }
 
-    public BaseRepository(IConfiguration config=null, ILogger logger=null, DAcontext dContext=null) : this(new BLontext(config, logger), dContext) {}
+ //   public BaseRepository(IConfiguration config=null, ILogger logger=null, DAcontext dContext=null) : this(new BLontext(config, logger), dContext) {}
 
     protected virtual void dispose(){
       daContext.SaveChanges();
