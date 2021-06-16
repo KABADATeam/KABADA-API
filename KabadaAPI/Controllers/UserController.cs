@@ -14,7 +14,7 @@ namespace KabadaAPI.Controllers {
 
     public UserController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
      
-    private UsersRepository uRepo { get { return new UsersRepository(config, _logger); }}
+    private UsersRepository uRepo { get { return new UsersRepository(context); }}
 
         private User convert(UserUpdate parms){
           var r=new User();

@@ -1,7 +1,5 @@
 ﻿using KabadaAPI;
 using KabadaAPIdao;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,23 +10,19 @@ namespace Kabada {
     Transactioner tr;
 
     protected TexterRepository tR;
-    //protected Plan_SWOTRepository psR;
     protected Plan_AttributeRepository paR;
 
     protected Dictionary<Guid, Texter> inventory;
     protected Dictionary<Guid, Plan_Attribute> oldi;
-    //protected Dictionary<Guid, Plan_SWOT> oldi;
 
 
-    internal void Perform(IConfiguration config, ILogger logger, KabadaAPIdao.BusinessPlan plan) {
-      inventory=new TexterRepository(config, logger).getSWOTs(business_plan_id).ToDictionary(x=>x.Id);
+    internal void Perform(BLontext context, KabadaAPIdao.BusinessPlan plan) {
+      inventory=new TexterRepository(context).getSWOTs(business_plan_id).ToDictionary(x=>x.Id);
 
-      using(tr=new Transactioner(config, logger)){
-        //psR=new Plan_SWOTRepository(config, logger, tr.Context);
-        paR=new Plan_AttributeRepository(config, logger, tr.Context);
-        tR=new TexterRepository(config, logger, tr.Context);
+      using(tr=new Transactioner(context)){
+        paR=new Plan_AttributeRepository(context, tr.Context);
+        tR=new TexterRepository(context, tr.Context);
         oldi=paR.get(business_plan_id, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
-        //oldi=psR.get(business_plan_id).ToDictionary(x=>x.TexterId);
 
         perform(this.strengths_weakness, EnumTexterKind.strength_local);
         perform(this.opportunities_threats, EnumTexterKind.oportunity_local);
@@ -42,7 +36,6 @@ namespace Kabada {
         return;
       var lk=(short)localKind;
       Plan_Attribute olduks=null;
-      //Plan_SWOT olduks=null;
       foreach(var o in todo){
         // process Texter
         if(o.id==null){ // new local

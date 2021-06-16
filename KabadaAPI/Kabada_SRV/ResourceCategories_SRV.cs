@@ -6,10 +6,10 @@ using System.Collections.Generic;
 
 namespace Kabada {
   partial class ResourceCategories {
-    internal void read(IConfiguration config, ILogger logger) {
+    internal void read(BLontext context) {
       categories=new List<ResourceCategory>();
 
-      var tRepo=new TexterRepository(config, logger);
+      var tRepo=new TexterRepository(context);
       var txi=tRepo.getKeyResourceMeta(); // all required texters
       var vxi=Tertex.CreateMasterTree(txi);
 

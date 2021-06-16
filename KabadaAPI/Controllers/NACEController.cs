@@ -15,7 +15,7 @@ namespace KabadaAPI.Controllers
     {
         public NACEController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
-        protected IndustryActivityRepository iRepo { get { return new IndustryActivityRepository(config, _logger); }}
+        protected IndustryActivityRepository iRepo { get { return new IndustryActivityRepository(context); }}
 
         [HttpGet]
         [Route("industries")]

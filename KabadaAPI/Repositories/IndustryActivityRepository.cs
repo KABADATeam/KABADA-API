@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using KabadaAPIdao;
 using System.Linq;
-using System.Net;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Configuration;
 
 namespace KabadaAPI {
   public class IndustryActivityRepository : BaseRepository
     {
     
-        public IndustryActivityRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
-
+        public IndustryActivityRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+ 
 
         public List<Industry> GetIndustries()
         {
-            return context.Industries
+            return daContext.Industries
                 .Where(x => x.Language.Equals("EN"))
                 .OrderBy(x => x.Code)
                 .ToList();
@@ -23,7 +20,7 @@ namespace KabadaAPI {
 
         public List<Activity> GetActivities(Guid industryId)
         {
-            return context.Activities
+            return daContext.Activities
                 .Where(s => s.Industry.Id == industryId)
                 .OrderBy(x => x.Code)
                 .ToList();
@@ -36,7 +33,7 @@ namespace KabadaAPI {
             foreach (string word in words)
             {
              
-                List<Activity> act = context.Activities.Where(s => s.Title.Contains(word)).ToList();
+                List<Activity> act = daContext.Activities.Where(s => s.Title.Contains(word)).ToList();
                 List<Activity> actWithoutNull = new List<Activity>();
                 if (act.Count != 0) {allLists.Add(act.Distinct().ToList()) ; }
 
@@ -78,8 +75,8 @@ namespace KabadaAPI {
 
         public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
         {
-            Activity act = context.Activities.FirstOrDefault(i => i.Code.Equals(actCode) && i.Industry.Language.Equals(indLang));
-            Industry ind = context.Industries.FirstOrDefault(i => i.Code.Equals(indCode) && i.Language.Equals(indLang));
+            Activity act = daContext.Activities.FirstOrDefault(i => i.Code.Equals(actCode) && i.Industry.Language.Equals(indLang));
+            Industry ind = daContext.Industries.FirstOrDefault(i => i.Code.Equals(indCode) && i.Language.Equals(indLang));
 
             if (ind == null && act == null)
             {
@@ -96,7 +93,7 @@ namespace KabadaAPI {
                     Title = actTitle,
                     Industry = industry
                 };
-                context.Activities.Add(activity);
+                daContext.Activities.Add(activity);
             }
             else if (ind != null && act == null)
             {
@@ -106,9 +103,9 @@ namespace KabadaAPI {
                     Title = actTitle,
                     Industry = ind
                 };
-                context.Activities.Add(activity);
+                daContext.Activities.Add(activity);
             }
-            context.SaveChanges();
+            daContext.SaveChanges();
         }        
     }
 }

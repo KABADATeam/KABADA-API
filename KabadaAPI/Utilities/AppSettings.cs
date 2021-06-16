@@ -2,7 +2,7 @@
 
 namespace KabadaAPI {
   public class AppSettings {
-    protected IConfiguration config;
+    public IConfiguration config { get; protected set; }
 
     public AppSettings(IConfiguration configuration) { config=configuration; }
 

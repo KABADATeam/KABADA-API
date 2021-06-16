@@ -9,11 +9,10 @@ namespace KabadaAPI {
                    , keyResourceCategory=5, keyResourceType=6, keyResourceSubType=7, keyResourcesSelection=8, keyResourceOther
                    }
 
-    public TexterRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null, DAcontext context =null)
-      : base(configuration, logger, context) { }
+   public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
     protected List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
-      var q=context.Texters.AsQueryable();
+      var q=daContext.Texters.AsQueryable();
       if(ignoreMaster==false){
         if(plan==null)
           q=q.Where(x=>x.MasterId==null);
@@ -47,19 +46,19 @@ namespace KabadaAPI {
     public List<Texter> getKeyResourceMeta(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourcesSelection, ignoreMaster:true); } 
 
     public Texter Create(Texter me) {
-      context.Texters.Add(me);
-      context.SaveChanges();
+      daContext.Texters.Add(me);
+      daContext.SaveChanges();
       return me;
       }
 
     public Texter getById(Guid id) {
-      var r=context.Texters.Where(x=>x.Id==id).FirstOrDefault();
+      var r=daContext.Texters.Where(x=>x.Id==id).FirstOrDefault();
       return r;
       }
 
     public void Delete(Texter me) {
-      context.Texters.Remove(me);
-      context.SaveChanges();
+      daContext.Texters.Remove(me);
+      daContext.SaveChanges();
       }
     }
   }

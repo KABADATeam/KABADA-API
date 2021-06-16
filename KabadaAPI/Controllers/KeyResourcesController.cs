@@ -18,7 +18,7 @@ namespace KabadaAPI.Controllers {
     public IActionResult Categories() { return grun(_Categories); }
     private IActionResult _Categories() {
       var r=new ResourceCategories();
-      r.read(config, _logger);
+      r.read(context);
       return Ok(r);
       }
 
@@ -28,7 +28,7 @@ namespace KabadaAPI.Controllers {
     public IActionResult MyCategories(Guid planId) { return prun<Guid>( _MyCategories, planId); }
     private IActionResult _MyCategories(Guid planId) {
       var r=new ResourceCategories();
-      r.read1(planId, config, _logger);
+      r.read1(planId, _config, _logger);
       return Ok(r);
       }
     }

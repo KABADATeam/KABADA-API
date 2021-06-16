@@ -5,11 +5,11 @@ using System.Linq;
 namespace KabadaAPI {
   public class CountryRepository : BaseRepository
     {
-       public CountryRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
+       public CountryRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
        public List<Country> GetCountries()
         {
-            var list = context.Countries.ToList();
+            var list = daContext.Countries.ToList();
             return list.OrderBy(x => x.Title).ToList();
         }
     }

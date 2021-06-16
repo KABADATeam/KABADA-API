@@ -10,7 +10,7 @@ namespace KabadaAPI.Controllers {
     public class AuthenticationController : KController
     {
 
-       private UsersRepository uRepo { get { return new UsersRepository(config, _logger); }}
+       private UsersRepository uRepo { get { return new UsersRepository(context); }}
 
         public AuthenticationController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
@@ -29,7 +29,7 @@ namespace KabadaAPI.Controllers {
         public IActionResult Login([FromBody]UserViewModel userView){ return prun<UserViewModel>(_Login, userView); }
         private IActionResult _Login([FromBody]UserViewModel userView){
            var user = uRepo.AuthenticateUser(userView.Email, userView.Password);
-           var tokenString = Token.Generate(user, config);
+           var tokenString = Token.Generate(user, _config);
            return Ok(new {
                     access_token = tokenString,
                     email = user.Email,
@@ -44,7 +44,7 @@ namespace KabadaAPI.Controllers {
         public IActionResult GoogleLogin([FromBody] UserViewModel userView){ return prun<UserViewModel>(_GoogleLogin, userView); }
         private IActionResult _GoogleLogin([FromBody] UserViewModel userView){
           var user = uRepo.AuthenticateGoogleUser(userView.Email);
-          var tokenString = Token.Generate(user, config);
+          var tokenString = Token.Generate(user, _config);
           return Ok(new {
                     access_token = tokenString,
                     email = user.Email,

@@ -12,10 +12,10 @@ namespace KabadaAPI.Controllers {
   public class SwotController : KController {
     public SwotController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
-    protected TexterRepository tRepo { get { return new TexterRepository(config, _logger); }}
+    protected TexterRepository tRepo { get { return new TexterRepository(context); }}
     //protected Plan_SWOTRepository psRepo { get { return new Plan_SWOTRepository(config, _logger); }}
-    protected Plan_AttributeRepository paRepo { get { return new Plan_AttributeRepository(config, _logger); }}
-    protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(config, _logger); }}
+    protected Plan_AttributeRepository paRepo { get { return new Plan_AttributeRepository(context); }}
+    protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(context); }}
 
     [HttpGet]
     [Route("{BusinessPlan}")]
@@ -48,7 +48,7 @@ namespace KabadaAPI.Controllers {
     public IActionResult Update(PlanSwotUpdate update) { return prun<PlanSwotUpdate>(_Update, update); }
     private IActionResult _Update(PlanSwotUpdate update) {
       var plan=pRepo.GetPlanForUpdate(uGuid, update.business_plan_id);
-      update.Perform(config, _logger, plan);
+      update.Perform(context, plan);
       return Ok("success");
       }
     }

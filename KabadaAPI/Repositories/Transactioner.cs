@@ -4,10 +4,10 @@ namespace KabadaAPI {
   public class Transactioner : BaseRepository {
     protected IDbContextTransaction trans;
 
-    public DAcontext Context { get { return context; }}
+    public DAcontext Context { get { return daContext; }}
 
-    public Transactioner(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) {
-      trans=context.Database.BeginTransaction();
+    public Transactioner(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {
+      trans=daContext.Database.BeginTransaction();
       }
 
     public void Rollback(){

@@ -2,58 +2,24 @@
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace KabadaAPI
-{
-    public class BaseRepository : IDisposable
-    {
-        protected readonly IConfiguration config;
-        protected readonly DAcontext context;
-        protected readonly ILogger _logger;
+namespace KabadaAPI {
+  public class BaseRepository : Blotter, IDisposable   {
+    protected readonly DAcontext daContext;
 
-        public BaseRepository(IConfiguration config=null, ILogger logger=null, DAcontext context=null) {
-          this.config = config;
-          _logger=logger;
-          if(context==null)
-            this.context = new DAcontext(config);
-           else
-            this.context=context;
-          } 
+    public BaseRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
+      if(dContext==null)
+        this.daContext = new DAcontext(_config);
+       else
+        this.daContext=dContext;
+       }
 
-        protected virtual void dispose(){
-          context.SaveChanges();
-          context?.Dispose();
-          }
+    public BaseRepository(IConfiguration config=null, ILogger logger=null, DAcontext dContext=null) : this(new BLontext(config, logger), dContext) {}
 
-        public void Dispose() { dispose(); }
-
-    protected void LogInformation(string message){
-      if(_logger!=null)
-        _logger.LogInformation(message);
+    protected virtual void dispose(){
+      daContext.SaveChanges();
+      daContext?.Dispose();
       }
 
-    protected void LogCritical(string message){
-      if(_logger!=null)
-        _logger.LogCritical(message);
-      }
-
-    protected void LogDebug(string message){
-      if(_logger!=null)
-        _logger.LogDebug(message);
-      }
-
-    protected void LogError(string message){
-      if(_logger!=null)
-        _logger.LogError(message);
-      }
-
-    protected void LogTrace(string message){
-      if(_logger!=null)
-        _logger.LogTrace(message);
-      }
-
-    protected void LogWarning(string message){
-      if(_logger!=null)
-        _logger.LogWarning(message);
-      }
+    public void Dispose() { dispose(); }
     }
 }

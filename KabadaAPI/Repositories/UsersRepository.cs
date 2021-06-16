@@ -6,21 +6,21 @@ using Microsoft.EntityFrameworkCore;
 namespace KabadaAPI {
   public class UsersRepository : BaseRepository
     {
-      public UsersRepository(Microsoft.Extensions.Configuration.IConfiguration configuration, Microsoft.Extensions.Logging.ILogger logger =null) : base(configuration, logger) { }
+      public UsersRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
       public User AddUser(string email, string password)
         {
             if (!Email.isValid(email))
                 throw new Exception("Mismatch of email address pattern");
 
-            if (context.Users.Where(u => u.Email == email).FirstOrDefault() != null)
+            if (daContext.Users.Where(u => u.Email == email).FirstOrDefault() != null)
                 throw new Exception("This email address already registered");
 
             string salt = Cryptography.GetSalt();
             string passwordHash = Cryptography.GetHash(password, salt);
             string confirmationCode = Cryptography.GetHash(email, salt);
 
-            UserType type = context.UserTypes.FirstOrDefault(x => x.Id == 100);
+            UserType type = daContext.UserTypes.FirstOrDefault(x => x.Id == 100);
 
             User user = new User()
             {
@@ -34,17 +34,17 @@ namespace KabadaAPI {
                 TwoFactorAuthEnabled = false
             };
 
-            context.Users.Add(user);
-            context.SaveChanges();
+            daContext.Users.Add(user);
+            daContext.SaveChanges();
 
-            Email.SendOnRegistrationConfirmation(email, new Kmail(config));
+            Email.SendOnRegistrationConfirmation(email, new Kmail(_config));
 
             return user;
         }
 
         public User AuthenticateUser(string email, string password)
         {
-            var user = context.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
+            var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
                 if (user.PasswordHash.Length > 0 && user.Salt.Length > 0)
@@ -64,7 +64,7 @@ namespace KabadaAPI {
 
         public User AuthenticateGoogleUser(string email)
         {
-            var user = context.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
+            var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
                 if (user.PasswordHash.Length > 0)
@@ -74,7 +74,7 @@ namespace KabadaAPI {
             }
             else
             {
-                UserType type = context.UserTypes.FirstOrDefault(x => x.Id == 100);
+                UserType type = daContext.UserTypes.FirstOrDefault(x => x.Id == 100);
                 user = new User()
                 {
                     Surname = "",
@@ -87,8 +87,8 @@ namespace KabadaAPI {
                     TwoFactorAuthEnabled = false
                 };
 
-                context.Users.Add(user);
-                context.SaveChanges();
+                daContext.Users.Add(user);
+                daContext.SaveChanges();
 
                 return user;
             }
@@ -96,7 +96,7 @@ namespace KabadaAPI {
 
         public void RequestPassword(string email)
         {
-            var user = context.Users.Where(u => u.Email.Equals(email)).FirstOrDefault();
+            var user = daContext.Users.Where(u => u.Email.Equals(email)).FirstOrDefault();
             if (user != null)
             {
                 if (user.PasswordHash.Length > 0)
@@ -104,9 +104,9 @@ namespace KabadaAPI {
                     string confirmationCode = Cryptography.GetHash(user.Email, DateTime.Now.Ticks.ToString());
                     user.PasswordResetString = confirmationCode;
 
-                    context.SaveChanges();
+                    daContext.SaveChanges();
 
-                    Email.SendPasswordResetLink(user.Email, confirmationCode, new Kmail(config));
+                    Email.SendPasswordResetLink(user.Email, confirmationCode, new Kmail(_config));
                 }
                 else
                     throw new Exception("Cannot reset password for this account");
@@ -115,16 +115,16 @@ namespace KabadaAPI {
 
         public void ResetPassword(string resetString, string newPassword)
         {
-            var user = context.Users.Where(u => u.PasswordResetString.Equals(resetString)).FirstOrDefault();
+            var user = daContext.Users.Where(u => u.PasswordResetString.Equals(resetString)).FirstOrDefault();
             if (user == null)
                 throw new Exception("The link has expired");
 
             user.PasswordHash = Cryptography.GetHash(newPassword, user.Salt);
             user.PasswordResetString = null;
 
-            context.SaveChanges();
+            daContext.SaveChanges();
 
-            Email.SendOnPasswordChange(user.Email, new Kmail(config));
+            Email.SendOnPasswordChange(user.Email, new Kmail(_config));
         }
 
         private void validatePassword(User user, string oldPassword){
@@ -135,7 +135,7 @@ namespace KabadaAPI {
 
         public void ChangePassword(Guid Id, string oldPassword, string newPassword)
         {
-            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            var user = daContext.Users.Where(u => u.Id == Id).FirstOrDefault();
             if (user == null)
                 throw new Exception("Wrong email or password");
 
@@ -146,7 +146,7 @@ namespace KabadaAPI {
 
             user.PasswordHash = Cryptography.GetHash(newPassword, user.Salt);
 
-            context.SaveChanges();
+            daContext.SaveChanges();
         }
 
     protected void updateBasicFields(User real, User newContents){
@@ -160,7 +160,7 @@ namespace KabadaAPI {
           }
 
         public void UpdateUser(Guid Id, User newContents, int updateKind=0){
-            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            var user = daContext.Users.Where(u => u.Id == Id).FirstOrDefault();
             if (user == null)
                 throw new Exception("User not found");
 
@@ -175,12 +175,12 @@ namespace KabadaAPI {
              default: throw new Exception("Internal error: invalid update kind "+updateKind.ToString());
               }
 
-            context.SaveChanges();
+            daContext.SaveChanges();
          }
 
         public User Read(Guid Id)
         {
-            var user = context.Users.Where(u => u.Id == Id).FirstOrDefault();
+            var user = daContext.Users.Where(u => u.Id == Id).FirstOrDefault();
             if (user == null)
                 throw new Exception("Wrong email or password");
             return user;
@@ -190,8 +190,8 @@ namespace KabadaAPI {
       var user=Read(userId);
       validatePassword(user, password);
       user.Email=newValue;
-      context.SaveChanges();
-      new Kmail(config).SendOnMailchangeConfirmation(user.Email, user.Name);
+      daContext.SaveChanges();
+      new Kmail(_config).SendOnMailchangeConfirmation(user.Email, user.Name);
       //Email.SendEmailChange(user.Email);
       }
     }
