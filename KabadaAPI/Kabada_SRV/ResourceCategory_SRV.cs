@@ -9,7 +9,7 @@ namespace Kabada {
       var incomingO=tvo.me;
       id=incomingO.Id;
       title=incomingO.Value;
-
+      description = incomingO.LongValue; //EGO: get description for category
       if(tvo.children.Count<1)
         return; // do not create containers for "Other"
       types=new List<ResourceType>();
