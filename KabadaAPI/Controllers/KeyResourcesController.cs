@@ -33,11 +33,27 @@ namespace KabadaAPI.Controllers {
       }
 
     [HttpPost]
+    [Authorize]
     [Route("update")]
     public IActionResult Update(PlanResourcePoster update) { return prun<PlanResourcePoster>(_Update, update); }
     private IActionResult _Update(PlanResourcePoster update) {
       Guid r=update.perform(context);
       return Ok(r);
+      }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("delete")]
+    public IActionResult Delete(Guid resource) { return prun<Guid>(_Delete, resource); }
+    private IActionResult _Delete(Guid resource) {
+      using(var tr=new Transactioner(context)){
+        var aRepo=new Plan_AttributeRepository(context, tr.Context);
+        var o=aRepo.byId(resource); 
+        var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
+        aRepo.Delete(o);
+        tr.Commit();
+        }
+      return Ok("deleted");
       }
     }
   }
