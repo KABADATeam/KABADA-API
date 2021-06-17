@@ -21,10 +21,6 @@ namespace Kabada {
 
       var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
 
-      var tp=new TexterRepository(ctx).getById(resource_type_id);
-      if(tp==null || tp.Kind!=tKind)
-        throw new Exception("wrong resource_type");
-
       if(resource_id==null)
         return create();
       var rid=resource_id.Value;
@@ -43,6 +39,10 @@ namespace Kabada {
       }
 
     private Guid create() {
+      var tp=new TexterRepository(ctx).getById(resource_type_id);
+      if(tp==null || tp.Kind!=tKind)
+        throw new Exception("wrong resource_type");
+
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
       var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=resource_type_id, AttrVal=packVal, OrderValue=on};
       o=new Plan_AttributeRepository(ctx).Create(o);
