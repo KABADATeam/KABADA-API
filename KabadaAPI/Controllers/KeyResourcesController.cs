@@ -24,11 +24,19 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet]
     [Authorize]
-    [Route("{planId}/1")]
-    public IActionResult MyCategories(Guid planId) { return prun<Guid>( _MyCategories, planId); }
+    [Route("{BusinessPlan}/1")]
+    public IActionResult MyCategories(Guid BusinessPlan) { return prun<Guid>( _MyCategories, BusinessPlan); }
     private IActionResult _MyCategories(Guid planId) {
       var r=new ResourceCategories();
       r.read1(planId, _config, _logger);
+      return Ok(r);
+      }
+
+    [HttpPost]
+    [Route("update")]
+    public IActionResult Update(PlanResourcePoster update) { return prun<PlanResourcePoster>(_Update, update); }
+    private IActionResult _Update(PlanResourcePoster update) {
+      Guid r=update.perform(context);
       return Ok(r);
       }
     }
