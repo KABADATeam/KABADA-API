@@ -19,8 +19,5 @@ namespace Kabada {
         t.fill(o);
         }
       }
-
-    internal void read1(Guid planId, IConfiguration config, ILogger logger) {
-      }
     }
   }

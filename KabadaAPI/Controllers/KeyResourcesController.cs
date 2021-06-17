@@ -24,11 +24,11 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet]
     [Authorize]
-    [Route("{BusinessPlan}/1")]
-    public IActionResult MyCategories(Guid BusinessPlan) { return prun<Guid>( _MyCategories, BusinessPlan); }
-    private IActionResult _MyCategories(Guid planId) {
-      var r=new ResourceCategories();
-      r.read1(planId, _config, _logger);
+    [Route("{BusinessPlan}")]
+    public IActionResult MyResources(Guid BusinessPlan) { return prun<Guid>( _MyResources, BusinessPlan); }
+    private IActionResult _MyResources(Guid planId) {
+      var r=new PlanResources();
+      r.read(context, planId);
       return Ok(r);
       }
 

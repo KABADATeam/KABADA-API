@@ -11,16 +11,16 @@ namespace KabadaAPI {
 
    public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
-    protected List<Texter> get(Guid? plan=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
+    protected List<Texter> get(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
       var q=daContext.Texters.AsQueryable();
-      if(ignoreMaster==false){
-        if(plan==null)
-          q=q.Where(x=>x.MasterId==null);
+        if(master==null){
+          if(ignoreMaster==false)
+            q=q.Where(x=>x.MasterId==null);
+          }
          else {
-          var w=plan.Value;
+          var w=master.Value;
           q=q.Where(x=>x.MasterId==null || x.MasterId==w);
           }
-        }
       if(kinds!=null)
         q=q.Where(x=>kinds.Contains(x.Kind));
       if(@from!=null){
@@ -39,9 +39,9 @@ namespace KabadaAPI {
 
    public List<Texter> getKeyResourceCategories(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourceType); }
 
-   public List<Texter> getKeyResourceTypes(Guid? kind){ return get(kind, (short)EnumTexterKind.keyResourceType, (short)EnumTexterKind.keyResourceType); }
+   public List<Texter> getKeyResourceTypes(Guid? category){ return get(category, (short)EnumTexterKind.keyResourceType, (short)EnumTexterKind.keyResourceType, ignoreMaster:true); }
 
-    public List<Texter> getKeyResourceSubTypes(Guid? @type){ return get(@type, (short)EnumTexterKind.keyResourceSubType, (short)EnumTexterKind.keyResourceSubType); }
+    //public List<Texter> getKeyResourceSubTypes(Guid? @type){ return get(@type, (short)EnumTexterKind.keyResourceSubType, (short)EnumTexterKind.keyResourceSubType); }
 
     public List<Texter> getKeyResourceMeta(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourcesSelection, ignoreMaster:true); } 
 
