@@ -43,7 +43,7 @@ namespace KabadaAPI.Controllers {
 
     [HttpDelete]
     [Authorize]
-    [Route("delete")]
+    [Route("{resource}")]
     public IActionResult Delete(Guid resource) { return prun<Guid>(_Delete, resource); }
     private IActionResult _Delete(Guid resource) {
       using(var tr=new Transactioner(context)){
