@@ -1,5 +1,4 @@
 ﻿using KabadaAPIdao;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +12,13 @@ namespace KabadaAPI {
     protected List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
       var w=(short)such;
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
+      return r;
+      }
+
+    internal List<Plan_Attribute> getPartners(Guid planId) {
+      var l=(short)PlanAttributeKind.keyDistributor;
+      var h=(short)PlanAttributeKind.otherKeyPartner;
+      var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==planId && x.Kind>=l && x.Kind<=h).OrderBy(x=>x.Kind).ThenBy(x=>x.OrderValue).ToList();
       return r;
       }
 
