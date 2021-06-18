@@ -46,14 +46,5 @@ namespace KabadaAPI.Controllers {
     [Route("{resource}")]
     public IActionResult Delete(Guid resource) { return prun<Guid>(_Delete, resource); }
     private IActionResult _Delete(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keyResource); return Ok("deleted");}
-      //using(var tr=new Transactioner(context)){
-      //  var aRepo=new Plan_AttributeRepository(context, tr.Context);
-      //  var o=aRepo.byId(resource); 
-      //  var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
-      //  aRepo.Delete(o);
-      //  tr.Commit();
-      //  }
-      //return Ok("deleted");
-      //}
     }
   }

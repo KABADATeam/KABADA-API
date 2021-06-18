@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Kabada;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -16,5 +17,15 @@ namespace KabadaAPI.Controllers {
     [Route("distr/{resource}")]
     public IActionResult DeleteDistr(Guid resource) { return prun<Guid>(_DeleteDistr, resource); }
     private IActionResult _DeleteDistr(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keyDistributor); return Ok("deleted");}
+
+    [HttpGet]
+    [Authorize]
+    [Route("{BusinessPlan}")]
+    public ActionResult<PlanPartners> MyResources(Guid BusinessPlan) { return Prun<Guid, PlanPartners>( _MyResources, BusinessPlan); }
+    private ActionResult<PlanPartners> _MyResources(Guid planId) {
+      var r=new PlanPartners();
+      r.read(context, planId);
+      return r;
+      }
     }
   }
