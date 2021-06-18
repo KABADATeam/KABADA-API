@@ -18,8 +18,8 @@ namespace KabadaAPI.Controllers {
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
-        public IActionResult GetPlans(){ return grun(_GetPlans); }
-        private IActionResult _GetPlans(){
+        public ActionResult<PrivateBusinessPlans_ret> GetPlans(){ return Grun<PrivateBusinessPlans_ret>(_GetPlans); }
+        private ActionResult<PrivateBusinessPlans_ret> _GetPlans(){
                 var userId = uGuid;
                 var repository = pRepo;
                 _logger.LogInformation($"-- List of plans for user={userId}");
@@ -39,7 +39,7 @@ namespace KabadaAPI.Controllers {
                 }
                 _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
 
-                return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });
+                return new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans };
         }
 
         [Authorize(Roles = Role.User)]
@@ -76,8 +76,8 @@ namespace KabadaAPI.Controllers {
         [AllowAnonymous]
         [Route("public")]
         [HttpGet]
-        public IActionResult GetPublicPlans(){ return grun(_GetPublicPlans);}
-        private IActionResult _GetPublicPlans(){
+        public ActionResult<PublicBusinessPlans_ret> GetPublicPlans(){ return Grun<PublicBusinessPlans_ret>(_GetPublicPlans);}
+        private ActionResult<PublicBusinessPlans_ret> _GetPublicPlans(){
                 BusinessPlansRepository repository = new BusinessPlansRepository(context);
                 var plans = repository.GetPublicPlans();
                 var publicPlans = new PublicBusinessPlans();
@@ -94,7 +94,7 @@ namespace KabadaAPI.Controllers {
                         ownerAvatar = p.User.UserPhoto
                     }); 
                 }
-                return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
+                return new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans };//repository.GetPublicPlans();
         }
         [Route("changeSwotCompleted")]
         [Authorize]

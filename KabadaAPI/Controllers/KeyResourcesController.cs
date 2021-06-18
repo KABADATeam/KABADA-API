@@ -13,13 +13,12 @@ namespace KabadaAPI.Controllers {
     public KeyResourcesController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
     [Route("categories")]
- //   [Authorize]
     [HttpGet]
-    public IActionResult Categories() { return grun(_Categories); }
-    private IActionResult _Categories() {
+    public ActionResult<ResourceCategories> Categories() { return Grun<ResourceCategories>(_Categories); }
+    private ActionResult<ResourceCategories> _Categories() {
       var r=new ResourceCategories();
       r.read(context);
-      return Ok(r);
+      return r;
       }
 
     [HttpGet]

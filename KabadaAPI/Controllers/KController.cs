@@ -72,6 +72,20 @@ namespace KabadaAPI.Controllers {
         var t=DateTime.Now;
         context.logInformation(context.autoM+$" ended at {t}. duration={t-strt}.");
       }
+
+    protected virtual ActionResult<Tr> Grun<Tr>(Func<ActionResult<Tr>> actor) {
+      ActionResult<Tr> _result=null;
+      try {
+        part1();
+        if (!ModelState.IsValid)
+          _result=BadRequest("Invalid input");
+         else
+          _result=actor();
+        part2();
+        }
+       catch (Exception exc){ crash(exc); }
+      return _result;
+      }
     
     protected virtual IActionResult grun(Func<IActionResult> actor) {
       try {
@@ -98,7 +112,21 @@ namespace KabadaAPI.Controllers {
        catch (Exception exc){ crash(exc); }
       return _result;
       }
-    
+
+    protected virtual async Task<ActionResult<Tr>> Grun<Tr>(Func<Task<ActionResult<Tr>>> actor) {
+      ActionResult<Tr> _result=null;
+      try {
+        part1();
+        if (!ModelState.IsValid)
+          _result=BadRequest("Invalid input");
+         else
+          _result=await actor();
+        part2();
+        }
+       catch (Exception exc){ crash(exc); }
+      return _result;
+      }
+   
     protected virtual IActionResult prun<T>(Func<T, IActionResult> actor, T parameter) {
       try { 
         part1();

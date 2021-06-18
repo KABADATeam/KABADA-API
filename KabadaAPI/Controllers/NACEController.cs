@@ -19,8 +19,8 @@ namespace KabadaAPI.Controllers
 
         [HttpGet]
         [Route("industries")]
-        public IActionResult GetIndustries(){ return grun(_GetIndustries); }
-        private IActionResult _GetIndustries(){
+        public ActionResult<List<IndustryView>> GetIndustries(){ return Grun<List<IndustryView>>(_GetIndustries); }
+        private ActionResult<List<IndustryView>> _GetIndustries(){
             var industries = iRepo.GetIndustries();
             var industriesView = new List<IndustryView>();
             foreach (var item in industries)
@@ -31,7 +31,7 @@ namespace KabadaAPI.Controllers
                     code = item.Code
                 });
 
-            return Ok(industriesView);
+            return industriesView;
         }
 
         [HttpGet]
