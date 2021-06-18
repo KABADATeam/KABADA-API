@@ -36,6 +36,11 @@ namespace KabadaAPI {
       return r;
       }
 
+    internal List<Texter> get(List<Guid> tidi) {
+      var r=daContext.Texters.Where(x=>tidi.Contains(x.Id)).ToList();
+      return r;
+      }
+
     public List<Texter> getSWOTs(Guid? plan=null){ return get(plan, (short)EnumTexterKind.strength, (short)EnumTexterKind.oportunity_local); }
 
    public List<Texter> getKeyResourceCategories(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourceType); }
