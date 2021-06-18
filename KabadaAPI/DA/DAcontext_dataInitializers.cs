@@ -6,7 +6,29 @@ using System.Collections.Generic;
 
 namespace KabadaAPI {
   partial class DAcontext {
+        private void AddData_PartnersTypes(ModelBuilder modelBuilder)
+        {
+            //--- Distributors types
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Self distribution", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors, LongValue = "Possible if you distribute your products through your own channels – directly, your own store, homepage. Often the case in some service sectors" });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Highly diversified distributors", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors, LongValue = "You can choose «Many Distributors» if you believe that distribution channels are strongly diversified and no distributor is of high importance" });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Retailers", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Wholesalers", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Agents", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 6, Value = "Others", Kind = (int)TexterRepository.EnumTexterKind.keyDistributors });
+            //--- Suppliers types
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Raw materials, finished or semi-finished goods", Kind = (int)TexterRepository.EnumTexterKind.keySuppliers });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Equipment and real estate", Kind = (int)TexterRepository.EnumTexterKind.keySuppliers });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Outsourced services", Kind = (int)TexterRepository.EnumTexterKind.keySuppliers });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Financiers", Kind = (int)TexterRepository.EnumTexterKind.keySuppliers });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Human resources", Kind = (int)TexterRepository.EnumTexterKind.keySuppliers });
+            //--- Other types
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Associations", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Government institutions", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Non-governmental institutions", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Consultants", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
 
+        }
         private void AddData_KeyResourcesTexters(ModelBuilder modelBuilder)
         {
             var catGuid = Guid.NewGuid();

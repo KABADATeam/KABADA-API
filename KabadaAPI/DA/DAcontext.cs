@@ -84,6 +84,7 @@ namespace KabadaAPI {
             AddData_Countries(modelBuilder);
             AddData_SWOTtexters(modelBuilder);
             AddData_KeyResourcesTexters(modelBuilder);
+            AddData_PartnersTypes(modelBuilder);
         }
     }
 }
