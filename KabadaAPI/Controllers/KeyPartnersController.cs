@@ -14,9 +14,21 @@ namespace KabadaAPI.Controllers {
 
     [HttpDelete]
     [Authorize]
+    [Route("suppl/{resource}")]
+    public IActionResult DeleteSuppl(Guid resource) { return prun<Guid>(_DeleteSuppl, resource); }
+    private IActionResult _DeleteSuppl(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keySupplier); return Ok("deleted");}
+
+    [HttpDelete]
+    [Authorize]
     [Route("distr/{resource}")]
     public IActionResult DeleteDistr(Guid resource) { return prun<Guid>(_DeleteDistr, resource); }
-    private IActionResult _DeleteDistr(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keyDistributor); return Ok("deleted");}
+    private IActionResult _DeleteDistr(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keyDistributor); return Ok("deleted"); }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("other/{resource}")]
+    public IActionResult DeleteOther(Guid resource) { return prun<Guid>(_DeleteOther, resource); }
+    private IActionResult _DeleteOther(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.otherKeyPartner); return Ok("deleted"); }
 
     [HttpGet]
     [Authorize]
