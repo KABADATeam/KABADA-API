@@ -6,7 +6,8 @@ using System.Linq;
 namespace KabadaAPI {
   public class TexterRepository : BaseRepository {
     public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local
-                   , keyResourceCategory=5, keyResourceType=6, keyResourceSubType=7, keyResourcesSelection=8, keyResourceOther
+                   , keyResourceCategory=5, keyResourceType=6, /*keyResourceSubType=7,*/ keyResourcesSelection=8
+                   , keyPartners=10, keyDistributors=11, keySuppliers=12, keyPartnersOther=13
                    }
 
    public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
