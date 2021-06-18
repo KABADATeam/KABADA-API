@@ -1,11 +1,12 @@
 ﻿using KabadaAPIdao;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace KabadaAPI {
   public class Plan_AttributeRepository : BaseRepository {
-    public enum PlanAttributeKind { swot=1, keyResource=2 }
+    public enum PlanAttributeKind { swot=1, keyResource=2, keyDistributor=3, keySupplier=4, otherKeyPartner=5 }
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
@@ -21,6 +22,19 @@ namespace KabadaAPI {
       }
 
     public List<Plan_Attribute> getSwots(Guid plan){ return get(plan, PlanAttributeKind.swot); }
+
+    internal static void DeleteAttribute(BLontext context, Guid resource, PlanAttributeKind? kindRequired=null) {
+      using(var tr=new Transactioner(context)){
+        var aRepo=new Plan_AttributeRepository(context, tr.Context);
+        var o=aRepo.byId(resource); 
+        if(kindRequired!=null && o.Kind!=(short)kindRequired.Value)
+          throw new Exception("wrong attribute kind");
+        var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
+        aRepo.Delete(o);
+        tr.Commit();
+        }
+      }
+
     public List<Plan_Attribute> getResources(Guid plan){ return get(plan, PlanAttributeKind.keyResource); }
 
     public void Delete(Plan_Attribute me) {
