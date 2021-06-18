@@ -19,8 +19,8 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet]
     [Route("{BusinessPlan}")]
-    public IActionResult GetByKey(string BusinessPlan) { return prun<string>(_GetByKey, BusinessPlan); }
-    private IActionResult _GetByKey(string planId0) {
+    public ActionResult<PlanSwots> GetByKey(string BusinessPlan) { return Prun<string, PlanSwots>(_GetByKey, BusinessPlan); }
+    private ActionResult<PlanSwots> _GetByKey(string planId0) {
       Guid planId=new Guid(planId0);
       var r=new PlanSwots();
       var p =pRepo.GetPlan(planId);
@@ -40,7 +40,7 @@ namespace KabadaAPI.Controllers {
          else
           r.oportunities_threats.Add(o);
         }
-      return Ok(r);
+      return r;
       }
 
     [HttpPost]

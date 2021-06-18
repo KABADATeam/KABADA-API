@@ -13,32 +13,31 @@ namespace KabadaAPI.Controllers {
     public KeyResourcesController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
     [Route("categories")]
- //   [Authorize]
     [HttpGet]
-    public IActionResult Categories() { return grun(_Categories); }
-    private IActionResult _Categories() {
+    public ActionResult<ResourceCategories> Categories() { return Grun<ResourceCategories>(_Categories); }
+    private ActionResult<ResourceCategories> _Categories() {
       var r=new ResourceCategories();
       r.read(context);
-      return Ok(r);
+      return r;
       }
 
     [HttpGet]
     [Authorize]
     [Route("{BusinessPlan}")]
-    public IActionResult MyResources(Guid BusinessPlan) { return prun<Guid>( _MyResources, BusinessPlan); }
-    private IActionResult _MyResources(Guid planId) {
+    public ActionResult<PlanResources> MyResources(Guid BusinessPlan) { return Prun<Guid, PlanResources>( _MyResources, BusinessPlan); }
+    private ActionResult<PlanResources> _MyResources(Guid planId) {
       var r=new PlanResources();
       r.read(context, planId);
-      return Ok(r);
+      return r;
       }
 
     [HttpPost]
     [Authorize]
     [Route("update")]
-    public IActionResult Update(PlanResourcePoster update) { return prun<PlanResourcePoster>(_Update, update); }
-    private IActionResult _Update(PlanResourcePoster update) {
+    public ActionResult<Guid> Update(PlanResourcePoster update) { return Prun<PlanResourcePoster, Guid>(_Update, update); }
+    private ActionResult<Guid> _Update(PlanResourcePoster update) {
       Guid r=update.perform(context);
-      return Ok(r);
+      return r;
       }
 
     [HttpDelete]

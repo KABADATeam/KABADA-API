@@ -19,8 +19,8 @@ namespace KabadaAPI.Controllers
 
         [HttpGet]
         [Route("industries")]
-        public IActionResult GetIndustries(){ return grun(_GetIndustries); }
-        private IActionResult _GetIndustries(){
+        public ActionResult<List<IndustryView>> GetIndustries(){ return Grun<List<IndustryView>>(_GetIndustries); }
+        private ActionResult<List<IndustryView>> _GetIndustries(){
             var industries = iRepo.GetIndustries();
             var industriesView = new List<IndustryView>();
             foreach (var item in industries)
@@ -31,13 +31,13 @@ namespace KabadaAPI.Controllers
                     code = item.Code
                 });
 
-            return Ok(industriesView);
+            return industriesView;
         }
 
         [HttpGet]
         [Route("{TitleKeyword}")]
-        public IActionResult GetActivitiesByKey(string TitleKeyword) { return prun<string>(_GetActivitiesByKey, TitleKeyword); }
-        private IActionResult _GetActivitiesByKey(string TitleKeyword) {
+        public ActionResult<List<List<ActivityView>>> GetActivitiesByKey(string TitleKeyword) { return Prun<string, List<List<ActivityView>>>(_GetActivitiesByKey, TitleKeyword); }
+        private ActionResult<List<List<ActivityView>>> _GetActivitiesByKey(string TitleKeyword) {
             IndustryActivityRepository repository = iRepo;
             var a = repository.GetActivitiesByKeyword(TitleKeyword);
             var res = new List<List<ActivityView>>();
@@ -46,12 +46,12 @@ namespace KabadaAPI.Controllers
                 var l = i.Select(x => new ActivityView() { Id = x.Id, Code =x.Code, Title=x.Title }).ToList();
                 res.Add(l);
             }
-            return Ok(res);           
+            return res;           
         }
         [HttpGet]
         [Route("industries/{industryId}/activities/")]
-        public IActionResult GetActivities(Guid industryId) { return prun<Guid>( _GetActivities, industryId); }
-        private IActionResult _GetActivities(Guid industryId) {
+        public ActionResult<List<ParentActivityView>> GetActivities(Guid industryId) { return Prun<Guid, List<ParentActivityView>>( _GetActivities, industryId); }
+        private ActionResult<List<ParentActivityView>> _GetActivities(Guid industryId) {
             IndustryActivityRepository repository = iRepo;
             var activities = repository.GetActivities(industryId);
             var activitiesView = new List<ParentActivityView>();
@@ -81,7 +81,7 @@ namespace KabadaAPI.Controllers
                 }   
             }
 
-            return Ok(activitiesView);
+            return activitiesView;
         }
 
         [AllowAnonymous]
