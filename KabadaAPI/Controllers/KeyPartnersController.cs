@@ -27,5 +27,14 @@ namespace KabadaAPI.Controllers {
       r.read(context, planId);
       return r;
       }
+
+    [Route("categories")]
+    [HttpGet]
+    public ActionResult<PlanPartnerTypes> Categories() { return Grun<PlanPartnerTypes>(_Categories); }
+    private ActionResult<PlanPartnerTypes> _Categories() {
+      var r=new PlanPartnerTypes();
+      r.read(context);
+      return r;
+      }
     }
   }
