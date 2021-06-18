@@ -41,5 +41,12 @@ namespace KabadaAPI
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
             throw new Exception("No plan found for update");
         }
+
+        internal void ChangePartnersCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsPartnersCompleted = newValue;
+            daContext.SaveChanges();
+        }
     }
 }

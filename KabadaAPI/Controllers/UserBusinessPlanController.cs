@@ -97,7 +97,7 @@ namespace KabadaAPI.Controllers {
                 return new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans };//repository.GetPublicPlans();
         }
         [Route("changeSwotCompleted")]
-        [Authorize]
+        [Authorize(Roles = Role.User)]
         [HttpPost]
         public IActionResult ChangeSwotCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeSwotCompleted, planUpdate); }
         private IActionResult _changeSwotCompleted([FromBody] ChangePlanParameter planUpdate)
@@ -107,13 +107,23 @@ namespace KabadaAPI.Controllers {
             return Ok("Success");
         }
         [Route("changeResourcesCompleted")]
-        [Authorize]
+        [Authorize(Roles = Role.User)]
         [HttpPost]
         public IActionResult ChangeResourcesCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeResourcesCompleted, planUpdate); }
         private IActionResult _changeResourcesCompleted([FromBody] ChangePlanParameter planUpdate)
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(context);
             repo.ChangeResourcesCompleted(planUpdate.business_plan_id, planUpdate.is_resources_completed, uGuid);
+            return Ok("Success");
+        }
+        [Route("changePartnersCompleted")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangePartnersCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changePartnersCompleted, planUpdate); }
+        private IActionResult _changePartnersCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
+            repo.ChangePartnersCompleted(planUpdate.business_plan_id, planUpdate.is_resources_completed, uGuid);
             return Ok("Success");
         }
 
