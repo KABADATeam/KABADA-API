@@ -45,6827 +45,6827 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b4860f1a-5de6-4705-a46a-8b4f196f24b9"),
+                            Id = new Guid("2f4b2ca8-94a8-418b-96ef-a02dd5ca134d"),
                             Code = "A.01",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Crop and animal production, hunting and related service activities"
                         },
                         new
                         {
-                            Id = new Guid("df7d95bd-dc81-4175-91bd-4a1f8e60de1a"),
+                            Id = new Guid("58a84719-6b53-4660-8b7b-0c8f73bffe4c"),
                             Code = "A.01.1",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of non-perennial crops"
                         },
                         new
                         {
-                            Id = new Guid("b9ce7a7e-041d-4eae-a185-af8fb238f912"),
+                            Id = new Guid("0f0c4911-1c98-4103-8fd4-362eb081dba3"),
                             Code = "A.01.11",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of cereals (except rice), leguminous crops and oil seeds"
                         },
                         new
                         {
-                            Id = new Guid("d6e859cf-3c18-4ec8-8a11-4bdfcd7f2424"),
+                            Id = new Guid("028ccaa9-8493-46b0-be24-c54bf7de19a3"),
                             Code = "A.01.12",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of rice"
                         },
                         new
                         {
-                            Id = new Guid("20f9350e-1e8a-471e-8cdb-f296214fbd70"),
+                            Id = new Guid("2b6e9a9f-2da8-4dc4-a458-53aa0e55a852"),
                             Code = "A.01.13",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of vegetables and melons, roots and tubers"
                         },
                         new
                         {
-                            Id = new Guid("581cf424-9cb7-403e-904e-e5ddb7971e8f"),
+                            Id = new Guid("bdfbcd16-9490-4036-a77b-418eff723372"),
                             Code = "A.01.14",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of sugar cane"
                         },
                         new
                         {
-                            Id = new Guid("0281a597-b08e-4b68-8c5d-5f69aae86693"),
+                            Id = new Guid("4b443135-57d1-4258-a1e9-e4d3e9fd4c8e"),
                             Code = "A.01.15",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of tobacco"
                         },
                         new
                         {
-                            Id = new Guid("ac348481-0bcb-4ad2-8728-0d621188ee6f"),
+                            Id = new Guid("22f0ecfd-16db-4e65-ae72-d405bca9610b"),
                             Code = "A.01.16",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of fibre crops"
                         },
                         new
                         {
-                            Id = new Guid("d4fbe9c3-de22-4def-b18d-86edbfa5b861"),
+                            Id = new Guid("6a8edf9e-a15f-4ee0-a973-9c5a1b8f59a9"),
                             Code = "A.01.19",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of other non-perennial crops"
                         },
                         new
                         {
-                            Id = new Guid("615d7bde-383e-42d9-b9af-fa70f81c89d1"),
+                            Id = new Guid("24f0b00f-1d02-427c-bb3d-86710f336a08"),
                             Code = "A.01.2",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of perennial crops"
                         },
                         new
                         {
-                            Id = new Guid("aeb17c38-c226-4aae-894e-1c7ccdd59fbc"),
+                            Id = new Guid("850f220f-cc9d-4c96-ab82-7eb0776a3b17"),
                             Code = "A.01.21",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of grapes"
                         },
                         new
                         {
-                            Id = new Guid("a0c7a601-d4ca-4795-aa61-675f0963362e"),
+                            Id = new Guid("0f82eb7b-1742-45e7-aa80-e8a53c013c6a"),
                             Code = "A.01.22",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of tropical and subtropical fruits"
                         },
                         new
                         {
-                            Id = new Guid("fcb7679c-c3e7-4f1a-b373-4a5cbb46af6c"),
+                            Id = new Guid("02a2f316-685e-4819-a3ab-b470c94179d8"),
                             Code = "A.01.23",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of citrus fruits"
                         },
                         new
                         {
-                            Id = new Guid("a6c4a0c1-a881-492f-b75d-ed914f98cf9f"),
+                            Id = new Guid("f1707e7a-4d92-4dff-b11c-44214e1a5d49"),
                             Code = "A.01.24",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of pome fruits and stone fruits"
                         },
                         new
                         {
-                            Id = new Guid("705c533f-989c-4ac4-99f3-488078636e9c"),
+                            Id = new Guid("610e124e-fce9-4186-afae-2fa74c007874"),
                             Code = "A.01.25",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of other tree and bush fruits and nuts"
                         },
                         new
                         {
-                            Id = new Guid("3c10c35b-6923-462d-abd5-33e5e617871e"),
+                            Id = new Guid("bd42c4c0-b90f-4ae6-a952-af3ffe6015fd"),
                             Code = "A.01.26",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of oleaginous fruits"
                         },
                         new
                         {
-                            Id = new Guid("01491f18-c787-4d97-a564-3a1e52fdcb0e"),
+                            Id = new Guid("40f61b15-c621-49cb-9070-ef647bda1074"),
                             Code = "A.01.27",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of beverage crops"
                         },
                         new
                         {
-                            Id = new Guid("cc25188d-f49d-4e6a-a981-d16b41b9ab32"),
+                            Id = new Guid("ce0ed80a-c456-45a5-bc3f-b7aedd90e6d2"),
                             Code = "A.01.28",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of spices, aromatic, drug and pharmaceutical crops"
                         },
                         new
                         {
-                            Id = new Guid("d26029a4-49da-4036-b984-73c26283395e"),
+                            Id = new Guid("421a7abf-3a54-4d02-82ac-c38c4c7064da"),
                             Code = "A.01.29",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Growing of other perennial crops"
                         },
                         new
                         {
-                            Id = new Guid("0f9a4d8e-63dc-430c-a1b0-fc4428b43ea2"),
+                            Id = new Guid("d2cda624-6fd5-4302-8641-9c71dd233eba"),
                             Code = "A.01.3",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Plant propagation"
                         },
                         new
                         {
-                            Id = new Guid("5de66cb7-6a0d-42bb-afd5-89830b8e0a79"),
+                            Id = new Guid("4453d6af-4afe-43b8-8eea-0a6c5d88b04c"),
                             Code = "A.01.30",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Plant propagation"
                         },
                         new
                         {
-                            Id = new Guid("5bccafa4-703d-4a02-b55b-9feeb0dd82ba"),
+                            Id = new Guid("e449e08f-606e-43fe-9e66-4e1a9f8e1d9b"),
                             Code = "A.01.4",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Animal production"
                         },
                         new
                         {
-                            Id = new Guid("fbea1fa2-2dd0-44d5-8ac7-c24e8c09a5bb"),
+                            Id = new Guid("3d85d4cd-9f22-4deb-b70e-1afa8cb9c9b4"),
                             Code = "A.01.41",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of dairy cattle"
                         },
                         new
                         {
-                            Id = new Guid("a3e907c4-a91f-4bdc-ade0-3a36776910bc"),
+                            Id = new Guid("7b5b9a6d-efec-4cf2-94ca-bc1e76a6fc1a"),
                             Code = "A.01.42",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of other cattle and buffaloes"
                         },
                         new
                         {
-                            Id = new Guid("9aaff185-aa67-4f84-9f81-14cacce0b314"),
+                            Id = new Guid("5a7de1c3-dd4b-4930-980d-256bf2e4d036"),
                             Code = "A.01.43",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of horses and other equines"
                         },
                         new
                         {
-                            Id = new Guid("cb5a2cbb-0682-43d5-94b1-890235967f3f"),
+                            Id = new Guid("a127e37f-0d2e-4957-8a37-3246ca470338"),
                             Code = "A.01.44",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of camels and camelids"
                         },
                         new
                         {
-                            Id = new Guid("fdd2bf3d-b632-484c-af2f-9233c70a08c5"),
+                            Id = new Guid("4cdd9c6b-9a41-42d1-86af-c69eaea922e2"),
                             Code = "A.01.45",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of sheep and goats"
                         },
                         new
                         {
-                            Id = new Guid("c96e7ba4-856c-436a-933a-802c42d89e88"),
+                            Id = new Guid("a8c20bea-1296-4cad-9756-ff52e7c7e21f"),
                             Code = "A.01.46",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of swine/pigs"
                         },
                         new
                         {
-                            Id = new Guid("e76e98e2-8691-4979-8ff3-bdd1257e115e"),
+                            Id = new Guid("674b86ea-c5c3-47b5-b88a-445106099c48"),
                             Code = "A.01.47",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of poultry"
                         },
                         new
                         {
-                            Id = new Guid("951aff30-954e-4618-9487-d67425c3a401"),
+                            Id = new Guid("2d613a22-3e1a-4d94-9d12-65454f2f7fa5"),
                             Code = "A.01.49",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Raising of other animals"
                         },
                         new
                         {
-                            Id = new Guid("1234045b-c7ae-49ef-87c3-2d6f69afb048"),
+                            Id = new Guid("be5d8569-edfc-41d7-a5e5-fbeb0533eb9e"),
                             Code = "A.01.5",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Mixed farming"
                         },
                         new
                         {
-                            Id = new Guid("f5e3aaea-a4d5-4163-a097-27428040fc19"),
+                            Id = new Guid("d42fdf89-23c4-49ff-b475-9f9152658d04"),
                             Code = "A.01.50",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Mixed farming"
                         },
                         new
                         {
-                            Id = new Guid("e7237cf5-7391-4768-9480-2c3af84e0952"),
+                            Id = new Guid("77c5c416-025b-414c-a4f9-163eb30e7643"),
                             Code = "A.01.6",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Support activities to agriculture and post-harvest crop activities"
                         },
                         new
                         {
-                            Id = new Guid("86146918-916b-42ff-a8dc-83ec96d18cb9"),
+                            Id = new Guid("11649794-b935-4abf-904e-6712d66cd8b7"),
                             Code = "A.01.61",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Support activities for crop production"
                         },
                         new
                         {
-                            Id = new Guid("1c26b8b3-a124-4328-b34a-f53117309557"),
+                            Id = new Guid("ea403c65-f5d3-4471-bae6-7dde93d6c97e"),
                             Code = "A.01.62",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Support activities for animal production"
                         },
                         new
                         {
-                            Id = new Guid("1a3dc41d-d348-4446-a05a-9c79cb0e4597"),
+                            Id = new Guid("b70f1bb2-1030-4b39-acbd-392b4aaf78fe"),
                             Code = "A.01.63",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Post-harvest crop activities"
                         },
                         new
                         {
-                            Id = new Guid("76187eba-dc0c-468d-98ff-b83ed8979af0"),
+                            Id = new Guid("a2dd26c1-3603-445b-ade3-5760715c58cf"),
                             Code = "A.01.64",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Seed processing for propagation"
                         },
                         new
                         {
-                            Id = new Guid("f2a12c3d-7fdf-49a4-9cf9-12598100a422"),
+                            Id = new Guid("312f3adc-a395-4e76-89a8-a80f588f0240"),
                             Code = "A.01.7",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Hunting, trapping and related service activities"
                         },
                         new
                         {
-                            Id = new Guid("e8a87c4e-0ce8-43ce-b907-8bc91cc57f45"),
+                            Id = new Guid("0dde153e-acdd-41e5-9c20-4040aea832ce"),
                             Code = "A.01.70",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Hunting, trapping and related service activities"
                         },
                         new
                         {
-                            Id = new Guid("2b5a34e4-2135-4914-8b6c-34b59574b90e"),
+                            Id = new Guid("57036567-8d2d-47cf-ab24-6311875cb7a1"),
                             Code = "A.02",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Forestry and logging"
                         },
                         new
                         {
-                            Id = new Guid("c7844d27-d947-4385-afd7-9d072c84c0fb"),
+                            Id = new Guid("b9e8509a-15a5-43cf-b0f7-90f45e8e9941"),
                             Code = "A.02.1",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Silviculture and other forestry activities"
                         },
                         new
                         {
-                            Id = new Guid("e899d2e4-38ba-4b36-b52f-c9def108f70c"),
+                            Id = new Guid("56d0fd7b-c9c4-46d6-a6ff-6071dd61d7de"),
                             Code = "A.02.10",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Silviculture and other forestry activities"
                         },
                         new
                         {
-                            Id = new Guid("dddcb350-38bc-4417-9244-ac131744d6ca"),
+                            Id = new Guid("bc10d442-c4c0-41ed-81c2-ffa8693f7be2"),
                             Code = "A.02.2",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Logging"
                         },
                         new
                         {
-                            Id = new Guid("97b8157a-ec10-44f6-b834-fb9e97513b01"),
+                            Id = new Guid("3df1967f-1e2c-43d4-aee1-a30643ba5768"),
                             Code = "A.02.20",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Logging"
                         },
                         new
                         {
-                            Id = new Guid("5dd1e5e2-43b6-4255-9f17-0116dcef51d4"),
+                            Id = new Guid("b7e66154-26fb-4ca0-b512-583974b747b4"),
                             Code = "A.02.3",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Gathering of wild growing non-wood products"
                         },
                         new
                         {
-                            Id = new Guid("97476f1d-3475-456a-9485-05b3f12566d0"),
+                            Id = new Guid("adb32b35-d207-498f-9fd0-e490c4099b19"),
                             Code = "A.02.30",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Gathering of wild growing non-wood products"
                         },
                         new
                         {
-                            Id = new Guid("5a9e458d-ed72-4c51-8146-dbc49fd1855a"),
+                            Id = new Guid("8508d702-562d-490b-98c9-611325b14207"),
                             Code = "A.02.4",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Support services to forestry"
                         },
                         new
                         {
-                            Id = new Guid("c8b51b55-2538-4c9b-9e57-d4f97c0d0b6f"),
+                            Id = new Guid("e90a4b63-3a95-47c8-8b2b-88a925c9ffcf"),
                             Code = "A.02.40",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Support services to forestry"
                         },
                         new
                         {
-                            Id = new Guid("f94ab628-f85b-4590-abe6-f078a5706fc8"),
+                            Id = new Guid("c71c1a0d-5b96-497a-95d9-c56f5e2fab9e"),
                             Code = "A.03",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Fishing and aquaculture"
                         },
                         new
                         {
-                            Id = new Guid("4fdee4a5-380d-4a91-a28b-854926cbf86b"),
+                            Id = new Guid("9c9f0603-6802-44cb-a8f7-f9c22c66c3e3"),
                             Code = "A.03.1",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Fishing"
                         },
                         new
                         {
-                            Id = new Guid("f6c15233-1287-4a94-9272-3fa11730a24a"),
+                            Id = new Guid("63f76088-bc01-4115-9049-1745c19725b4"),
                             Code = "A.03.11",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Marine fishing"
                         },
                         new
                         {
-                            Id = new Guid("f6dbe32f-7763-465d-8e60-a558cf70abda"),
+                            Id = new Guid("94d46619-5bbf-4925-8c23-2ed4e3373a86"),
                             Code = "A.03.12",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Freshwater fishing"
                         },
                         new
                         {
-                            Id = new Guid("d5476697-d46a-4fa9-9a08-840cc8cf4048"),
+                            Id = new Guid("f95208b5-82a6-4a40-8e84-e53f2bbbf79d"),
                             Code = "A.03.2",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Aquaculture"
                         },
                         new
                         {
-                            Id = new Guid("30c80e1f-164a-4591-ac26-625964ac3c99"),
+                            Id = new Guid("08585e7d-7717-420b-b650-9b8a9d3b1d0f"),
                             Code = "A.03.21",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Marine aquaculture"
                         },
                         new
                         {
-                            Id = new Guid("fd73a597-e4ae-466b-ae2a-a2e1366d299b"),
+                            Id = new Guid("b20e8161-d942-4115-929e-54607b4958ee"),
                             Code = "A.03.22",
-                            IndustryId = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            IndustryId = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Title = "Freshwater aquaculture"
                         },
                         new
                         {
-                            Id = new Guid("a2d300ee-8063-4305-b26e-2684e0b7fb06"),
+                            Id = new Guid("d66a73be-ae66-44ff-a21f-b42b038f10c0"),
                             Code = "B.05",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of coal and lignite"
                         },
                         new
                         {
-                            Id = new Guid("7faa6f10-d41b-41a5-aa33-c65ea0c635fe"),
+                            Id = new Guid("d878df4f-6505-41cc-a104-7b6516e8c223"),
                             Code = "B.05.1",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of hard coal"
                         },
                         new
                         {
-                            Id = new Guid("026e6c03-62ef-4cd4-8bc6-73a24c2cfd36"),
+                            Id = new Guid("357579ab-66b0-4e11-8a6f-1b1f2bd39f9c"),
                             Code = "B.05.10",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of hard coal"
                         },
                         new
                         {
-                            Id = new Guid("1bfc2171-eb8b-40bf-84d4-d3d33a7e455f"),
+                            Id = new Guid("973c9a02-2e6d-4fc5-b8fe-abea745e0dc0"),
                             Code = "B.05.2",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of lignite"
                         },
                         new
                         {
-                            Id = new Guid("175fd5a9-b23f-4c07-86fe-e43a9fb9c1c9"),
+                            Id = new Guid("04561fda-e830-489b-84be-629064678839"),
                             Code = "B.05.20",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of lignite"
                         },
                         new
                         {
-                            Id = new Guid("5399b429-e222-4336-a3c7-8224732c81d8"),
+                            Id = new Guid("8f55c6d7-270a-4ea5-8f08-2f6e14ae9892"),
                             Code = "B.06",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of crude petroleum and natural gas"
                         },
                         new
                         {
-                            Id = new Guid("58da86ec-5ae9-4753-8c8e-a2a4d33bc0cf"),
+                            Id = new Guid("358cb01b-3c1a-47d1-b301-c7ae707a3751"),
                             Code = "B.06.1",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of crude petroleum"
                         },
                         new
                         {
-                            Id = new Guid("48a0d560-d274-4974-90c7-23c7e0915954"),
+                            Id = new Guid("76f3ee9e-76c4-4727-9ae9-4162c664c9a2"),
                             Code = "B.06.10",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of crude petroleum"
                         },
                         new
                         {
-                            Id = new Guid("3a6eb541-55ec-443a-8738-f3aac2bd3a70"),
+                            Id = new Guid("544b1ae7-c8e9-42c6-b85b-eebdb33a843d"),
                             Code = "B.06.2",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of natural gas"
                         },
                         new
                         {
-                            Id = new Guid("9cdf5a6e-a04f-4781-b5e8-66a53778c552"),
+                            Id = new Guid("152cf8ac-8d3d-4371-ba73-194bf331f45e"),
                             Code = "B.06.20",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of natural gas"
                         },
                         new
                         {
-                            Id = new Guid("900a39b5-904c-4dc8-a93f-43ea5d04b6c6"),
+                            Id = new Guid("6fc3fe19-37f6-4fc4-9571-a246990d6b58"),
                             Code = "B.07",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of metal ores"
                         },
                         new
                         {
-                            Id = new Guid("3ac36a73-56ee-41a3-89cd-7643faa7760e"),
+                            Id = new Guid("934dbec4-b1f6-4392-a55a-a615d3739a8b"),
                             Code = "B.07.1",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of iron ores"
                         },
                         new
                         {
-                            Id = new Guid("b1503d4f-88f2-4fc4-bd01-16fc65f1a835"),
+                            Id = new Guid("3c540f43-779e-404d-baca-82a2096c00a7"),
                             Code = "B.07.10",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of iron ores"
                         },
                         new
                         {
-                            Id = new Guid("331278fe-66c2-4660-88c6-5efb48503b53"),
+                            Id = new Guid("b6344c14-dcbf-4eca-88c4-01d358bd06cf"),
                             Code = "B.07.2",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of non-ferrous metal ores"
                         },
                         new
                         {
-                            Id = new Guid("6bb7e68b-7af7-440f-b272-9b233d2c86fd"),
+                            Id = new Guid("1e368299-fbbd-4495-81e7-2b25068e6b86"),
                             Code = "B.07.21",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of uranium and thorium ores"
                         },
                         new
                         {
-                            Id = new Guid("ef581012-7d3b-4887-bae6-e889ea990f81"),
+                            Id = new Guid("dcf7b1c3-6255-4fea-a6dd-025419fe8770"),
                             Code = "B.07.29",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of other non-ferrous metal ores"
                         },
                         new
                         {
-                            Id = new Guid("2e9867f5-65c1-4090-a3e6-fed0666cb0af"),
+                            Id = new Guid("a6565817-a3b1-49e5-b3a3-9bbbb54280bf"),
                             Code = "B.08",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Other mining and quarrying"
                         },
                         new
                         {
-                            Id = new Guid("beef00ca-743e-40fb-b8b2-29e5b89780f5"),
+                            Id = new Guid("28b7a617-575f-42e0-b49a-f184dbf6cc82"),
                             Code = "B.08.1",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Quarrying of stone, sand and clay"
                         },
                         new
                         {
-                            Id = new Guid("6b692324-8c36-4048-a87e-704095608f5b"),
+                            Id = new Guid("66061853-6cda-4f1b-8a45-963bb0e9c960"),
                             Code = "B.08.11",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate"
                         },
                         new
                         {
-                            Id = new Guid("9871286d-602d-4a84-ab94-810a9d8d009b"),
+                            Id = new Guid("cd426ba2-9d41-4875-ba8c-445b196c24a1"),
                             Code = "B.08.12",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Operation of gravel and sand pits; mining of clays and kaolin"
                         },
                         new
                         {
-                            Id = new Guid("60aafe5a-1d9c-444b-a5c3-e51495d5662d"),
+                            Id = new Guid("8dce0c39-751e-41ae-9353-296ee782a8e0"),
                             Code = "B.08.9",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining and quarrying n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("ed1faecf-a55e-44d6-a9bd-8b7cbdd2626d"),
+                            Id = new Guid("9a216d28-dee9-423c-b722-715fa571f1c9"),
                             Code = "B.08.91",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining of chemical and fertiliser minerals"
                         },
                         new
                         {
-                            Id = new Guid("cf9bcb59-b036-49c1-bc57-2d212510ab8e"),
+                            Id = new Guid("5c4dd93c-84bc-4a9d-ba35-b58670221b37"),
                             Code = "B.08.92",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of peat"
                         },
                         new
                         {
-                            Id = new Guid("06ac0427-30eb-426b-9376-a3b72e4f3aa5"),
+                            Id = new Guid("4da8e2f1-f4ac-413d-83f1-01d7b5f58dad"),
                             Code = "B.08.93",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Extraction of salt"
                         },
                         new
                         {
-                            Id = new Guid("bc92ffdd-9701-4ecc-845c-3081366aecf7"),
+                            Id = new Guid("867d8a32-b49e-4b78-bf9e-8d266607c550"),
                             Code = "B.08.99",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Other mining and quarrying n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("ba73ba35-9277-4646-b421-8939dbfa781f"),
+                            Id = new Guid("c21c6d86-e341-484e-91d0-c1fb28b7ec77"),
                             Code = "B.09",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Mining support service activities"
                         },
                         new
                         {
-                            Id = new Guid("62c363ae-a4c7-4653-aae7-5fe981179bfe"),
+                            Id = new Guid("dfdb58f0-930e-47d3-98b0-6d0745c01fcc"),
                             Code = "B.09.1",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Support activities for petroleum and natural gas extraction"
                         },
                         new
                         {
-                            Id = new Guid("1f8a58dc-7011-4e9b-a515-8944f4f050fe"),
+                            Id = new Guid("17520525-7e0a-4af2-8b49-79f3b0c862c5"),
                             Code = "B.09.10",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Support activities for petroleum and natural gas extraction"
                         },
                         new
                         {
-                            Id = new Guid("edf233b7-b561-453f-b381-cdad63f90fd5"),
+                            Id = new Guid("d9e143b5-50f7-4cad-9b89-4cd127ea1816"),
                             Code = "B.09.9",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Support activities for other mining and quarrying"
                         },
                         new
                         {
-                            Id = new Guid("75b27e8c-3a16-4ec1-874d-f5eca84ae0c8"),
+                            Id = new Guid("9ec8a851-ce32-4caf-871b-0166a2967ab7"),
                             Code = "B.09.90",
-                            IndustryId = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            IndustryId = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Title = "Support activities for other mining and quarrying"
                         },
                         new
                         {
-                            Id = new Guid("d59d829f-f276-444d-ba25-1ccd29edaee0"),
+                            Id = new Guid("c61e4f0f-1916-47c7-a4e0-a508b2a8a6ae"),
                             Code = "C.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of food products"
                         },
                         new
                         {
-                            Id = new Guid("eb839b1d-90a8-4e2e-bb5a-23507fa8d6fe"),
+                            Id = new Guid("1c202e00-511d-4dcb-8ff7-6b8634d0ff81"),
                             Code = "C.10.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of meat and production of meat products"
                         },
                         new
                         {
-                            Id = new Guid("da360359-de73-4c75-8356-8769e6bbf005"),
+                            Id = new Guid("6e5821e9-e9d9-47b7-bde7-e8031054af23"),
                             Code = "C.10.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of meat"
                         },
                         new
                         {
-                            Id = new Guid("3f5c0f50-4f21-4823-a426-75e1c1b5f9fb"),
+                            Id = new Guid("284045fe-686e-45e4-83b3-c256749ad38e"),
                             Code = "C.10.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of poultry meat"
                         },
                         new
                         {
-                            Id = new Guid("e4e659a9-e64e-4368-b0df-55382c4a699b"),
+                            Id = new Guid("1a877bac-8ddf-4dfa-a6ee-ab5fd5fd0316"),
                             Code = "C.10.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Production of meat and poultry meat products"
                         },
                         new
                         {
-                            Id = new Guid("269696b3-1c83-4f10-89ed-72a34722241d"),
+                            Id = new Guid("562f6d7a-7672-4c98-a843-5dcb7d42ebfa"),
                             Code = "C.10.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of fish, crustaceans and molluscs"
                         },
                         new
                         {
-                            Id = new Guid("fa993f1b-6bed-4042-86df-b53814e011b0"),
+                            Id = new Guid("0470168e-d6cc-4120-b4b0-87dbb89cd2ca"),
                             Code = "C.10.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of fish, crustaceans and molluscs"
                         },
                         new
                         {
-                            Id = new Guid("30daebc8-8a1c-4bc7-a07e-039b79d1e601"),
+                            Id = new Guid("8db77311-f293-47fb-b5e9-130d1fdc454e"),
                             Code = "C.10.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of fruit and vegetables"
                         },
                         new
                         {
-                            Id = new Guid("ed86da0e-acb6-439a-8ecf-5bbb205fb92d"),
+                            Id = new Guid("fdc6169d-d393-4b7b-84ef-979b1f227675"),
                             Code = "C.10.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing and preserving of potatoes"
                         },
                         new
                         {
-                            Id = new Guid("9323c00f-5273-4532-a058-7678d263b3a4"),
+                            Id = new Guid("3a7c555f-c45e-47da-bde2-2bd734de18b8"),
                             Code = "C.10.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fruit and vegetable juice"
                         },
                         new
                         {
-                            Id = new Guid("42354eb6-4ecd-44f8-be98-ebed59ebf8ee"),
+                            Id = new Guid("fe9ef7c9-505c-4adf-a723-812431686293"),
                             Code = "C.10.39",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Other processing and preserving of fruit and vegetables"
                         },
                         new
                         {
-                            Id = new Guid("56d05081-188d-4d88-87a2-cde3bedead90"),
+                            Id = new Guid("7a767273-59ed-413f-8573-4e54213dfbed"),
                             Code = "C.10.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of vegetable and animal oils and fats"
                         },
                         new
                         {
-                            Id = new Guid("967d2f96-acf3-45db-9206-5cfa2fd0aa67"),
+                            Id = new Guid("1b4f3f9d-d48b-4e36-b242-59dd4a079774"),
                             Code = "C.10.41",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of oils and fats"
                         },
                         new
                         {
-                            Id = new Guid("de5edbdb-72ec-469b-b7dc-d0b06345b52d"),
+                            Id = new Guid("47843ba3-0d1f-464c-91a6-bf4918590325"),
                             Code = "C.10.42",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of margarine and similar edible fats"
                         },
                         new
                         {
-                            Id = new Guid("27a7d7f7-67db-46b8-a43c-789c5254de9b"),
+                            Id = new Guid("9c213abf-904f-45d8-87f5-ed6397b5ff4f"),
                             Code = "C.10.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of dairy products"
                         },
                         new
                         {
-                            Id = new Guid("b995dbab-4bc3-4464-82a3-b01287721231"),
+                            Id = new Guid("a0fddc71-2388-4dcb-9d5f-c2e286c38f2b"),
                             Code = "C.10.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Operation of dairies and cheese making"
                         },
                         new
                         {
-                            Id = new Guid("88259679-ba4b-4e14-9e7b-afc9e335b2cf"),
+                            Id = new Guid("225821fb-a1ce-4ce9-b34e-4413352d4902"),
                             Code = "C.10.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ice cream"
                         },
                         new
                         {
-                            Id = new Guid("79453bc7-cbe2-4687-8270-4830c51160f1"),
+                            Id = new Guid("f0bf88b6-dbf1-4e0b-b313-8aa856a43698"),
                             Code = "C.10.6",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of grain mill products, starches and starch products"
                         },
                         new
                         {
-                            Id = new Guid("41521424-5b64-4581-86c7-8253fff5fb85"),
+                            Id = new Guid("a354021b-0b62-43a4-93ee-e55e1fcb18fa"),
                             Code = "C.10.61",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of grain mill products"
                         },
                         new
                         {
-                            Id = new Guid("93155805-db00-4125-ab8b-12dd89c12548"),
+                            Id = new Guid("cf7af61f-1abf-40bb-ab4a-185abd9a7c34"),
                             Code = "C.10.62",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of starches and starch products"
                         },
                         new
                         {
-                            Id = new Guid("ac6a801a-fedd-4f67-bd7e-95f0af560d36"),
+                            Id = new Guid("ced12ec0-a2ab-40e7-81fb-8b4e2ac30cec"),
                             Code = "C.10.7",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bakery and farinaceous products"
                         },
                         new
                         {
-                            Id = new Guid("93c025c9-536d-4eab-94ba-14acf174882c"),
+                            Id = new Guid("f7e2a4b8-896b-4d3a-b9e5-570bb02a1c9b"),
                             Code = "C.10.71",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bread; manufacture of fresh pastry goods and cakes"
                         },
                         new
                         {
-                            Id = new Guid("df2c07d2-7734-46e4-a1d6-1b978fcc9d8d"),
+                            Id = new Guid("08240959-3fe6-4e81-8b67-19fd179e83af"),
                             Code = "C.10.72",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes"
                         },
                         new
                         {
-                            Id = new Guid("54e220ec-9ade-4eaa-adf0-315b046fafdc"),
+                            Id = new Guid("fd2015b9-c2e9-4814-8444-c2f161d26b2e"),
                             Code = "C.10.73",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of macaroni, noodles, couscous and similar farinaceous products"
                         },
                         new
                         {
-                            Id = new Guid("f6b10a40-36c3-4ad7-94cf-c25f3c9cf18f"),
+                            Id = new Guid("14b47e01-a098-4a70-b643-e5042d2e28b3"),
                             Code = "C.10.8",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other food products"
                         },
                         new
                         {
-                            Id = new Guid("84a78439-421e-455e-aee3-15ad61c76ac6"),
+                            Id = new Guid("067c0724-7376-4088-b53a-54f86f480e08"),
                             Code = "C.10.81",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of sugar"
                         },
                         new
                         {
-                            Id = new Guid("8409921d-fd05-492b-b5f7-c884af4c7aad"),
+                            Id = new Guid("8069f63a-f77f-4278-bbb4-3e0a84d45d3e"),
                             Code = "C.10.82",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cocoa, chocolate and sugar confectionery"
                         },
                         new
                         {
-                            Id = new Guid("fc37327e-2bbc-4ecd-bc73-61965c2323cb"),
+                            Id = new Guid("a2780950-0d0f-4183-bc67-c86dc75ea32f"),
                             Code = "C.10.83",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing of tea and coffee"
                         },
                         new
                         {
-                            Id = new Guid("af7744ee-ac40-43ae-8d29-3cfc4aaa8c55"),
+                            Id = new Guid("f64b6acc-5b01-477f-a7c1-ba2a0fb3a271"),
                             Code = "C.10.84",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of condiments and seasonings"
                         },
                         new
                         {
-                            Id = new Guid("ccf937fd-c66e-45c1-ba27-a9f28f1d9366"),
+                            Id = new Guid("ceaba2ba-3e28-44b9-9d26-56e13f6c8c81"),
                             Code = "C.10.85",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of prepared meals and dishes"
                         },
                         new
                         {
-                            Id = new Guid("f1bb3923-9a2b-4c76-9ba1-3c27cb6359d5"),
+                            Id = new Guid("18622b5b-dc64-4cd0-a361-c68c2a1d69bb"),
                             Code = "C.10.86",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of homogenised food preparations and dietetic food"
                         },
                         new
                         {
-                            Id = new Guid("bd00416e-61f1-4110-8e1c-fe0af2db97e5"),
+                            Id = new Guid("053ee09b-2c7a-4f70-839f-1012c6af4e0c"),
                             Code = "C.10.89",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other food products n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("e302a9ee-11fe-4949-88cb-b02a4756650d"),
+                            Id = new Guid("c278a565-b73b-4274-9b1c-581bb9b2707b"),
                             Code = "C.10.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of prepared animal feeds"
                         },
                         new
                         {
-                            Id = new Guid("cf9d8d45-4a48-47e1-be9a-4f69f1bbc596"),
+                            Id = new Guid("f727ac31-d32d-46da-b4cb-e2ab676b5596"),
                             Code = "C.10.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of prepared feeds for farm animals"
                         },
                         new
                         {
-                            Id = new Guid("6ad1da82-20dd-4ddc-bafb-2ac0b8054528"),
+                            Id = new Guid("3662f8b9-aea6-48ef-b29d-801a113a19e7"),
                             Code = "C.10.92",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of prepared pet foods"
                         },
                         new
                         {
-                            Id = new Guid("d41977ff-5017-4c61-a348-5a3fe7865d33"),
+                            Id = new Guid("0fc8a840-3fc8-4488-9122-e7a766de1ee6"),
                             Code = "C.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of beverages"
                         },
                         new
                         {
-                            Id = new Guid("409a573a-a543-4f1f-a6a3-2912662e8cb5"),
+                            Id = new Guid("96f4040e-2fc6-4350-a75c-01b248fb8a6e"),
                             Code = "C.11.0",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of beverages"
                         },
                         new
                         {
-                            Id = new Guid("8b6e798c-233f-45ac-b0ba-1f5a6128d4b4"),
+                            Id = new Guid("fbb72deb-648c-41f7-944e-1ee75f4eee9a"),
                             Code = "C.11.01",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Distilling, rectifying and blending of spirits"
                         },
                         new
                         {
-                            Id = new Guid("284dcf3a-9acf-4e0b-a1c6-444fedd83ded"),
+                            Id = new Guid("a152b851-6faf-44f6-9769-88d7cf8ca7a6"),
                             Code = "C.11.02",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wine from grape"
                         },
                         new
                         {
-                            Id = new Guid("4532ad9f-d4db-48c4-a485-97b7f3700a8d"),
+                            Id = new Guid("514be6dd-2220-40de-b795-68e734843b79"),
                             Code = "C.11.03",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cider and other fruit wines"
                         },
                         new
                         {
-                            Id = new Guid("81f557a1-8c4a-45d2-a20b-2e8e217ea2e9"),
+                            Id = new Guid("78b7b09d-81b4-43d3-af19-e1986eff96c1"),
                             Code = "C.11.04",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other non-distilled fermented beverages"
                         },
                         new
                         {
-                            Id = new Guid("845b8da4-5a2a-44ee-9f6c-43ef1c499517"),
+                            Id = new Guid("aa0e0817-8da3-46e1-8309-83a796bba300"),
                             Code = "C.11.05",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of beer"
                         },
                         new
                         {
-                            Id = new Guid("3deecc31-c73a-407d-b4e3-23c3e775b4d2"),
+                            Id = new Guid("8b78571d-5f41-456f-b761-b13cd6289921"),
                             Code = "C.11.06",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of malt"
                         },
                         new
                         {
-                            Id = new Guid("4b253ac9-7e1e-4d45-994b-22a5c6c8f529"),
+                            Id = new Guid("3e0db320-148e-45f6-926d-5fa991d58ea3"),
                             Code = "C.11.07",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of soft drinks; production of mineral waters and other bottled waters"
                         },
                         new
                         {
-                            Id = new Guid("bb1bbf4f-0599-417c-9220-032906baa46e"),
+                            Id = new Guid("be0bf7c7-78d9-4e49-b05c-44cc38305b4f"),
                             Code = "C.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tobacco products"
                         },
                         new
                         {
-                            Id = new Guid("98bc57b4-b44f-48e4-895a-9a237e1cb326"),
+                            Id = new Guid("ef60b581-2586-4f17-ab03-73f1279de308"),
                             Code = "C.12.0",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tobacco products"
                         },
                         new
                         {
-                            Id = new Guid("81f1e1f4-982c-4656-b3f0-4295cae4f55f"),
+                            Id = new Guid("e6c7b05b-ebd0-45f9-ae09-5fcd80af3249"),
                             Code = "C.12.00",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tobacco products"
                         },
                         new
                         {
-                            Id = new Guid("38fe7d9a-1eae-4c3a-adf3-cf2dcb1f7a96"),
+                            Id = new Guid("6a0994fa-c301-4749-b647-1da861aac563"),
                             Code = "C.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of textiles"
                         },
                         new
                         {
-                            Id = new Guid("32a2a6fd-e491-459b-8c64-adb4410bf0c9"),
+                            Id = new Guid("f5889f48-c4d2-40cb-926d-69e262589009"),
                             Code = "C.13.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Preparation and spinning of textile fibres"
                         },
                         new
                         {
-                            Id = new Guid("e11ec0fe-cd60-4d71-849b-0eb64d2feada"),
+                            Id = new Guid("2d08d32f-f343-4c0e-8b58-892cb0c34a10"),
                             Code = "C.13.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Preparation and spinning of textile fibres"
                         },
                         new
                         {
-                            Id = new Guid("274cea32-dea0-4593-83e6-ed2a25f294f9"),
+                            Id = new Guid("3244402b-1bd2-4536-899d-e513523fcf88"),
                             Code = "C.13.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Weaving of textiles"
                         },
                         new
                         {
-                            Id = new Guid("a027c181-02a0-4273-aaa9-41adfe81d323"),
+                            Id = new Guid("e0e3895c-f587-4460-bc64-7dd9c265b7ab"),
                             Code = "C.13.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Weaving of textiles"
                         },
                         new
                         {
-                            Id = new Guid("4a833851-46af-401c-b6fe-c2f7d0b823da"),
+                            Id = new Guid("2f67b430-7f04-49e6-9fa1-1025c67c16d3"),
                             Code = "C.13.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Finishing of textiles"
                         },
                         new
                         {
-                            Id = new Guid("85b97747-467c-4a9e-b2bf-fd50685f6dca"),
+                            Id = new Guid("668568ba-63c2-418c-9108-15cd64733b84"),
                             Code = "C.13.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Finishing of textiles"
                         },
                         new
                         {
-                            Id = new Guid("2daa1015-066e-4715-97ee-d051e63694f0"),
+                            Id = new Guid("c3514065-44ca-48d6-bc91-d191141c5aa6"),
                             Code = "C.13.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other textiles"
                         },
                         new
                         {
-                            Id = new Guid("c593d08f-d662-4331-95ff-57e43deb1d46"),
+                            Id = new Guid("03afe9af-7b87-4665-a39e-9130ae6d6408"),
                             Code = "C.13.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of knitted and crocheted fabrics"
                         },
                         new
                         {
-                            Id = new Guid("0818520d-29e1-4fe6-8a42-d6fc21a01fe4"),
+                            Id = new Guid("962dd88b-dc06-4f45-8de3-8a4821598591"),
                             Code = "C.13.92",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of made-up textile articles, except apparel"
                         },
                         new
                         {
-                            Id = new Guid("ab31c3ca-eae3-471e-a96d-951cfd942104"),
+                            Id = new Guid("294c0bfc-a434-4ead-b53a-278d7796728e"),
                             Code = "C.13.93",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of carpets and rugs"
                         },
                         new
                         {
-                            Id = new Guid("e3eedaaf-5db7-41bc-947d-b7e091eec535"),
+                            Id = new Guid("49d511d0-88f9-4f5b-a8aa-97946a233940"),
                             Code = "C.13.94",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cordage, rope, twine and netting"
                         },
                         new
                         {
-                            Id = new Guid("fd0941e3-aef7-49ba-9925-5e77e8a218e0"),
+                            Id = new Guid("2c5db6b5-2f2c-453c-a889-8b3274c56bb9"),
                             Code = "C.13.95",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of non-wovens and articles made from non-wovens, except apparel"
                         },
                         new
                         {
-                            Id = new Guid("9adf4d8a-daf0-4b2e-bd57-aed6f6dce0d0"),
+                            Id = new Guid("d985492d-7b17-4b6d-8ef7-00b59fa4b4f5"),
                             Code = "C.13.96",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other technical and industrial textiles"
                         },
                         new
                         {
-                            Id = new Guid("f741787f-c3a3-4539-9ff7-969797393214"),
+                            Id = new Guid("a67530a1-281f-4ef6-a3fa-7da1478bd018"),
                             Code = "C.13.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other textiles n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("73357351-15e3-4c52-9363-ef3c7794cacf"),
+                            Id = new Guid("2bc96364-2b4a-44d5-9677-335af4c2530b"),
                             Code = "C.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wearing apparel"
                         },
                         new
                         {
-                            Id = new Guid("139923f3-1aa6-413b-bceb-c09d148cde51"),
+                            Id = new Guid("b80d2223-e4f4-47f4-8636-1fc28ab57f57"),
                             Code = "C.14.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wearing apparel, except fur apparel"
                         },
                         new
                         {
-                            Id = new Guid("eb8be1c7-d3e0-48b3-946d-1dd987564220"),
+                            Id = new Guid("8099ea9b-f5b1-4473-9299-cc61f50d0eb6"),
                             Code = "C.14.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of leather clothes"
                         },
                         new
                         {
-                            Id = new Guid("2394e55e-aa24-44fc-9505-48cd9c5c21fd"),
+                            Id = new Guid("fe5b2d8a-3e25-4ba6-b538-4e9a661e4713"),
                             Code = "C.14.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of workwear"
                         },
                         new
                         {
-                            Id = new Guid("7ab55abe-89db-4c88-89b5-cd50af837600"),
+                            Id = new Guid("5a730594-ec82-4244-b080-a12483b86ac3"),
                             Code = "C.14.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other outerwear"
                         },
                         new
                         {
-                            Id = new Guid("14d6f0e1-12d6-491d-b782-55ee93721539"),
+                            Id = new Guid("138c4979-21c5-4c42-ab1d-907228a9fdf0"),
                             Code = "C.14.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of underwear"
                         },
                         new
                         {
-                            Id = new Guid("089e329d-7b55-4d01-8af0-a8f67814d07f"),
+                            Id = new Guid("676a29d8-5f82-4892-afc0-dae15127c139"),
                             Code = "C.14.19",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other wearing apparel and accessories"
                         },
                         new
                         {
-                            Id = new Guid("ca3bb47a-0db0-4a02-b98f-9cd64bd42b1a"),
+                            Id = new Guid("0dd2fd8b-cefd-48c3-9d33-78b15f0cf912"),
                             Code = "C.14.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of articles of fur"
                         },
                         new
                         {
-                            Id = new Guid("3b4c0415-8d30-494b-8594-427c30d31397"),
+                            Id = new Guid("ec9f0161-4e5e-4a05-a02b-472bdbebbecf"),
                             Code = "C.14.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of articles of fur"
                         },
                         new
                         {
-                            Id = new Guid("f375c931-e918-4ba6-a7fa-2e5b36a422c9"),
+                            Id = new Guid("bad75984-6313-40b4-9d95-1b0c8c1316ac"),
                             Code = "C.14.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of knitted and crocheted apparel"
                         },
                         new
                         {
-                            Id = new Guid("25a19eeb-0ceb-46ee-88c1-e061c625cc6c"),
+                            Id = new Guid("41c3cbc0-60de-4028-a0e2-d13f0d75cf3c"),
                             Code = "C.14.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of knitted and crocheted hosiery"
                         },
                         new
                         {
-                            Id = new Guid("b888e810-5428-44af-9750-d76e18d1ef8a"),
+                            Id = new Guid("0e517950-cb19-4cdc-966e-533144219d35"),
                             Code = "C.14.39",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other knitted and crocheted apparel"
                         },
                         new
                         {
-                            Id = new Guid("c84ae4ee-1780-451b-b34d-216097c00346"),
+                            Id = new Guid("d2978940-4fa2-4dec-b34e-d7c530d68d15"),
                             Code = "C.15",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of leather and related products"
                         },
                         new
                         {
-                            Id = new Guid("96ad0a85-0db9-40b8-9211-dc788007fb85"),
+                            Id = new Guid("0258af43-89f1-43d2-9973-ff81b66100f5"),
                             Code = "C.15.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur"
                         },
                         new
                         {
-                            Id = new Guid("fafb6e50-2707-4cd0-99ee-24f53083d332"),
+                            Id = new Guid("dfce3633-309e-4248-bf79-db7803bb209a"),
                             Code = "C.15.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Tanning and dressing of leather; dressing and dyeing of fur"
                         },
                         new
                         {
-                            Id = new Guid("06ad44e4-75c8-43e8-a8aa-8470f6f9dafe"),
+                            Id = new Guid("31931d5c-277b-4c8a-b852-c97fc001639e"),
                             Code = "C.15.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of luggage, handbags and the like, saddlery and harness"
                         },
                         new
                         {
-                            Id = new Guid("d06a93e5-57fd-4839-bf4c-86cd17d87f73"),
+                            Id = new Guid("29c62347-f9e5-4502-a07d-085bb121010d"),
                             Code = "C.15.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of footwear"
                         },
                         new
                         {
-                            Id = new Guid("0aa2bbd2-7ecf-49ae-a9c2-2f5f66f6873f"),
+                            Id = new Guid("09913d7b-9c47-4ecf-a6d5-f8bbbe047679"),
                             Code = "C.15.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of footwear"
                         },
                         new
                         {
-                            Id = new Guid("8f892177-2ad4-426c-a63e-155e72acae69"),
+                            Id = new Guid("95c164c1-f6fc-4fca-9c72-50fa05b25847"),
                             Code = "C.16",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials"
                         },
                         new
                         {
-                            Id = new Guid("686dbf29-7654-4451-a41e-613843b4bd6c"),
+                            Id = new Guid("7db93cfe-62d6-4a52-9cbc-ce4fbee583e2"),
                             Code = "C.16.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Sawmilling and planing of wood"
                         },
                         new
                         {
-                            Id = new Guid("21477743-79b1-43c7-85e7-f93d8dab74b6"),
+                            Id = new Guid("66c951e5-6eac-4546-944d-c694eed2c880"),
                             Code = "C.16.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Sawmilling and planing of wood"
                         },
                         new
                         {
-                            Id = new Guid("76b65bdc-27c5-44bf-b277-6ecefae766a1"),
+                            Id = new Guid("baa524e1-253a-4eed-9cca-52cdfc62cd09"),
                             Code = "C.16.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of products of wood, cork, straw and plaiting materials"
                         },
                         new
                         {
-                            Id = new Guid("2c526652-44a6-42be-b456-d3d29babcdec"),
+                            Id = new Guid("de789fed-a682-4963-b5a0-d32ea0b00e8c"),
                             Code = "C.16.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of veneer sheets and wood-based panels"
                         },
                         new
                         {
-                            Id = new Guid("26f24d5c-603b-4a83-af19-609fe1c30374"),
+                            Id = new Guid("af5b7e45-028a-4d4e-9525-e921436e66c1"),
                             Code = "C.16.22",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of assembled parquet floors"
                         },
                         new
                         {
-                            Id = new Guid("e37e29a0-68ec-4fac-8388-ff34f411d786"),
+                            Id = new Guid("27e89d8d-58c6-4725-870b-f269afc2d316"),
                             Code = "C.16.23",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other builders' carpentry and joinery"
                         },
                         new
                         {
-                            Id = new Guid("528ab97a-447a-4dd4-bf50-d98f9f14cda1"),
+                            Id = new Guid("3ab40198-8736-4947-8f2c-d62d467f285e"),
                             Code = "C.16.24",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wooden containers"
                         },
                         new
                         {
-                            Id = new Guid("f0889ae8-0ca3-45d4-825e-d02836582295"),
+                            Id = new Guid("69f0204d-269b-4953-b428-eacbb5f67927"),
                             Code = "C.16.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials"
                         },
                         new
                         {
-                            Id = new Guid("2edc5c9e-23e6-4cdb-be07-0bf11f82975e"),
+                            Id = new Guid("77cfdd00-5e8a-4b4d-a766-c77abbb7c4db"),
                             Code = "C.17",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of paper and paper products"
                         },
                         new
                         {
-                            Id = new Guid("4281ec2e-d794-4215-9d94-a1b62e379af4"),
+                            Id = new Guid("f9cd0f19-7ff0-4c66-b170-3dabff8bd139"),
                             Code = "C.17.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pulp, paper and paperboard"
                         },
                         new
                         {
-                            Id = new Guid("b71dba6e-1530-4186-a292-9fc1ec3d4499"),
+                            Id = new Guid("3772fde0-1285-4913-afb9-40eef4b0d64c"),
                             Code = "C.17.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pulp"
                         },
                         new
                         {
-                            Id = new Guid("09f396b8-8a8c-4b88-ad8d-23ce9c8fd7a9"),
+                            Id = new Guid("ae81cffc-e0ff-4af8-80ad-a5855faf5f17"),
                             Code = "C.17.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of paper and paperboard"
                         },
                         new
                         {
-                            Id = new Guid("5bad182a-f419-4657-8a3e-4a692068d4ef"),
+                            Id = new Guid("1fcd7977-e6c4-4733-a998-aaf97c0cba8f"),
                             Code = "C.17.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of articles of paper and paperboard"
                         },
                         new
                         {
-                            Id = new Guid("a17a2804-4d6b-49c2-8e17-924cfea4200e"),
+                            Id = new Guid("d14189ce-500b-433b-a6d3-fcc744c631c6"),
                             Code = "C.17.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard"
                         },
                         new
                         {
-                            Id = new Guid("58139c1d-2dcc-4b35-8f57-0a3c540f74d0"),
+                            Id = new Guid("0a25447a-67ad-4638-b06e-83d40b29f96e"),
                             Code = "C.17.22",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of household and sanitary goods and of toilet requisites"
                         },
                         new
                         {
-                            Id = new Guid("963c7484-47bd-4da3-8d6b-aeb60456f06a"),
+                            Id = new Guid("d35aa2f2-965e-4906-a522-8488214233e6"),
                             Code = "C.17.23",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of paper stationery"
                         },
                         new
                         {
-                            Id = new Guid("8a27f987-1b96-4bc8-a43f-5e3806dbfb4a"),
+                            Id = new Guid("8bd897aa-56b4-414d-bcfe-e3364052193e"),
                             Code = "C.17.24",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wallpaper"
                         },
                         new
                         {
-                            Id = new Guid("a16c6bc3-ba43-4f64-bf30-b4e5fff2073b"),
+                            Id = new Guid("9a8f4b5f-230e-4a9d-b1c3-43a6c185838c"),
                             Code = "C.17.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other articles of paper and paperboard"
                         },
                         new
                         {
-                            Id = new Guid("5ce8baff-2ccb-40e1-951a-016c6ed8ae9f"),
+                            Id = new Guid("bef1f274-afdc-4484-afc9-f778039498d8"),
                             Code = "C.18",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Printing and reproduction of recorded media"
                         },
                         new
                         {
-                            Id = new Guid("40267b1f-f92a-4860-971b-4fc5100d7b46"),
+                            Id = new Guid("b05a9bc9-69a7-4533-b2d2-99fc985ffbac"),
                             Code = "C.18.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Printing and service activities related to printing"
                         },
                         new
                         {
-                            Id = new Guid("32b8c1ad-3e80-4fe1-8ff4-fa97d4c780a6"),
+                            Id = new Guid("d6acf909-766d-4207-ba7f-34f7c44a15a6"),
                             Code = "C.18.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Printing of newspapers"
                         },
                         new
                         {
-                            Id = new Guid("d9152818-c58a-4d9f-89e4-9a7c030c0b3a"),
+                            Id = new Guid("631c7778-91ec-416b-b01d-8051b45ccd6b"),
                             Code = "C.18.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Other printing"
                         },
                         new
                         {
-                            Id = new Guid("98833192-eccc-4f09-abe0-950b3f3802d5"),
+                            Id = new Guid("83cb01b1-e6a0-4509-8f36-c7a68ec514c1"),
                             Code = "C.18.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Pre-press and pre-media services"
                         },
                         new
                         {
-                            Id = new Guid("2d95a602-576a-417a-9455-7d3bb3de9400"),
+                            Id = new Guid("6c5ca487-093a-4c00-b18b-05d14695c983"),
                             Code = "C.18.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Binding and related services"
                         },
                         new
                         {
-                            Id = new Guid("42a4f266-4deb-4c89-87d1-89e5a7b51eca"),
+                            Id = new Guid("48f8a6f1-5785-44af-b5f2-31a11b00dcd8"),
                             Code = "C.18.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Reproduction of recorded media"
                         },
                         new
                         {
-                            Id = new Guid("f4996e5b-b090-446a-9396-4edfc87bc59b"),
+                            Id = new Guid("0e9454a5-faa0-4ece-a575-f287488f1959"),
                             Code = "C.18.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Reproduction of recorded media"
                         },
                         new
                         {
-                            Id = new Guid("40110a90-6071-49a2-aebe-7ce559e24832"),
+                            Id = new Guid("e115142f-6ae1-41be-9758-7f25242b8be7"),
                             Code = "C.19",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of coke and refined petroleum products"
                         },
                         new
                         {
-                            Id = new Guid("b80f23bc-bfe9-47d4-8dec-b3baa3065cea"),
+                            Id = new Guid("f9a0281d-821c-4943-81d9-2f55049dfa9c"),
                             Code = "C.19.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of coke oven products"
                         },
                         new
                         {
-                            Id = new Guid("2e2fa340-1c9c-4e95-8bf9-79d313944daa"),
+                            Id = new Guid("39eacb59-bab8-4b84-be15-154f0c121abe"),
                             Code = "C.19.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of coke oven products"
                         },
                         new
                         {
-                            Id = new Guid("c0c0b756-afd1-4bcb-b5a3-31f63fbb3b32"),
+                            Id = new Guid("cce294d0-5659-402a-b2be-995fd5ac13c3"),
                             Code = "C.19.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of refined petroleum products"
                         },
                         new
                         {
-                            Id = new Guid("1d35f33c-63f3-4450-a674-5ea9328a2b60"),
+                            Id = new Guid("215d50f0-9f9d-4df2-b170-9a4d77dd4213"),
                             Code = "C.19.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of refined petroleum products"
                         },
                         new
                         {
-                            Id = new Guid("f38d4b50-0139-4ad3-ae65-e4f304b9e69a"),
+                            Id = new Guid("da8504b9-7f8f-40b8-9153-fef3a67e9081"),
                             Code = "C.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of chemicals and chemical products"
                         },
                         new
                         {
-                            Id = new Guid("25bfbfaf-f70a-423f-a8f1-8cddef322b8c"),
+                            Id = new Guid("3bb22744-3004-4456-ba2a-67dc3a76a2f9"),
                             Code = "C.20.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic chemicals, fertilisers and nitrogen compounds, plastics and synthetic rubber in primary forms"
                         },
                         new
                         {
-                            Id = new Guid("3041a3d7-962b-4bfe-8ef1-8d47eb9810ba"),
+                            Id = new Guid("06d27cad-df44-4908-8bde-f60f0b84ee74"),
                             Code = "C.20.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of industrial gases"
                         },
                         new
                         {
-                            Id = new Guid("9d80ebbd-bf60-4c79-addd-de8587728a90"),
+                            Id = new Guid("38d47cf0-9e93-443b-82af-5c102212bff0"),
                             Code = "C.20.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of dyes and pigments"
                         },
                         new
                         {
-                            Id = new Guid("47c0cb15-9c12-4060-a027-ce4c4dfb6264"),
+                            Id = new Guid("6ea98935-d723-4276-b348-c5ba97b1804f"),
                             Code = "C.20.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other inorganic basic chemicals"
                         },
                         new
                         {
-                            Id = new Guid("3e609e69-e242-4a88-9f39-3f91ad85d2a7"),
+                            Id = new Guid("1ef10fbc-a396-411a-8935-e4f6a62784dd"),
                             Code = "C.20.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other organic basic chemicals"
                         },
                         new
                         {
-                            Id = new Guid("fa285ba6-4090-4eb5-bf3b-f6cb6c7fa326"),
+                            Id = new Guid("c1d8019c-8379-4ea9-836f-ed4e91dc336f"),
                             Code = "C.20.15",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fertilisers and nitrogen compounds"
                         },
                         new
                         {
-                            Id = new Guid("72c29955-fc01-46ce-a151-370c515f18f5"),
+                            Id = new Guid("d3947714-9da8-4120-a097-6007a177d296"),
                             Code = "C.20.16",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plastics in primary forms"
                         },
                         new
                         {
-                            Id = new Guid("43e77fea-581e-4646-bc91-f3feb88c6ee1"),
+                            Id = new Guid("64704719-038b-48f8-8d54-60208b6790f1"),
                             Code = "C.20.17",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of synthetic rubber in primary forms"
                         },
                         new
                         {
-                            Id = new Guid("5ac1364d-47f0-4149-b107-0c5226a1d59e"),
+                            Id = new Guid("72d6a34e-3c39-4406-9c80-a4ff10e30be8"),
                             Code = "C.20.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pesticides and other agrochemical products"
                         },
                         new
                         {
-                            Id = new Guid("97d771b2-bd8a-4853-8b99-84cddf959033"),
+                            Id = new Guid("e875cb42-717b-42d9-a8f5-3d6f96247697"),
                             Code = "C.20.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pesticides and other agrochemical products"
                         },
                         new
                         {
-                            Id = new Guid("c2611fba-7938-408b-9881-a4eac72d3103"),
+                            Id = new Guid("8b1869d4-7207-4a31-b444-37f717025114"),
                             Code = "C.20.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of paints, varnishes and similar coatings, printing ink and mastics"
                         },
                         new
                         {
-                            Id = new Guid("e548a0b8-5f0d-4bc1-980e-776955652194"),
+                            Id = new Guid("1c9e5248-b60a-4221-b47d-5138838aeccc"),
                             Code = "C.20.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of paints, varnishes and similar coatings, printing ink and mastics"
                         },
                         new
                         {
-                            Id = new Guid("27c4323c-27cf-47a8-bfcb-d2f958149b6f"),
+                            Id = new Guid("e3380b4d-cb6f-4738-b0a1-48bb1d9992db"),
                             Code = "C.20.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations"
                         },
                         new
                         {
-                            Id = new Guid("293b5827-6711-438d-b21a-293ea8847494"),
+                            Id = new Guid("c2785b15-febe-46b6-a9a8-4bf019494900"),
                             Code = "C.20.41",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of soap and detergents, cleaning and polishing preparations"
                         },
                         new
                         {
-                            Id = new Guid("45a386b7-1f8e-40e0-8444-7331ccd7eb53"),
+                            Id = new Guid("d87f7771-6921-4852-8fac-da6122a75eeb"),
                             Code = "C.20.42",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of perfumes and toilet preparations"
                         },
                         new
                         {
-                            Id = new Guid("aabaddfc-76e7-40d0-bf00-058463863b34"),
+                            Id = new Guid("c6fe4aba-e2ca-4476-bab8-9478bb60f882"),
                             Code = "C.20.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other chemical products"
                         },
                         new
                         {
-                            Id = new Guid("0c998bba-8268-49e5-8ded-c3455bac6032"),
+                            Id = new Guid("9705aeef-dc83-4eb0-8427-882d7c03feac"),
                             Code = "C.20.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of explosives"
                         },
                         new
                         {
-                            Id = new Guid("64275985-0cc3-48d1-8a15-4f6aee8908a3"),
+                            Id = new Guid("89bb3dc3-8b42-49f6-a212-513fe100f411"),
                             Code = "C.20.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of glues"
                         },
                         new
                         {
-                            Id = new Guid("469d9194-1f0e-4191-ac4e-3d0aab08fb5c"),
+                            Id = new Guid("360b42da-ec53-4d93-a37e-a1ea5c82fb7b"),
                             Code = "C.20.53",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of essential oils"
                         },
                         new
                         {
-                            Id = new Guid("2502bb8d-720e-4e7c-afb9-c49b9cc70ccf"),
+                            Id = new Guid("a8bd8526-3b2e-42f1-be30-5784b925958c"),
                             Code = "C.20.59",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other chemical products n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("d1fb5f11-149c-46c7-95e9-6d5b3892c22a"),
+                            Id = new Guid("802e3818-3df2-4138-97f8-48e6062aca71"),
                             Code = "C.20.6",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of man-made fibres"
                         },
                         new
                         {
-                            Id = new Guid("411e1e9f-3e07-499b-97a5-74445f5216b0"),
+                            Id = new Guid("5baa02c2-c819-465a-8400-4c95f3fdf5a0"),
                             Code = "C.20.60",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of man-made fibres"
                         },
                         new
                         {
-                            Id = new Guid("9e88cc3f-c65c-4ab8-9459-8f303ff1386a"),
+                            Id = new Guid("298dce45-c852-4404-8adc-88528e7c3472"),
                             Code = "C.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic pharmaceutical products and pharmaceutical preparations"
                         },
                         new
                         {
-                            Id = new Guid("cfd60334-5969-4070-839c-b3bc8b431558"),
+                            Id = new Guid("aedbfd85-a9e6-4605-b11a-791574b7217e"),
                             Code = "C.21.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic pharmaceutical products"
                         },
                         new
                         {
-                            Id = new Guid("3c2c470c-8404-44c6-b38b-42bc0fc790c0"),
+                            Id = new Guid("eb5faccd-74b2-414c-b665-adffa4d784be"),
                             Code = "C.21.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic pharmaceutical products"
                         },
                         new
                         {
-                            Id = new Guid("d85d8355-ebc5-4954-acac-b6c1b6e63d11"),
+                            Id = new Guid("e8393ae3-a118-4e7c-8874-cd95b93b54bb"),
                             Code = "C.21.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pharmaceutical preparations"
                         },
                         new
                         {
-                            Id = new Guid("c6cb1f75-1af2-482b-814f-c2fae3f1e9f6"),
+                            Id = new Guid("1a56850c-6fc8-4eb7-a3b2-3b952f330804"),
                             Code = "C.21.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of pharmaceutical preparations"
                         },
                         new
                         {
-                            Id = new Guid("dfdeae7c-884e-4e8f-9d85-7398037b209d"),
+                            Id = new Guid("9a1789c9-cb32-470b-af44-52415f7d6e8f"),
                             Code = "C.22",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of rubber and plastic products"
                         },
                         new
                         {
-                            Id = new Guid("905181b0-e092-4ac5-bb8b-b67825e740a9"),
+                            Id = new Guid("7b5c27a9-3d7c-4549-86d3-0b036e7c1b86"),
                             Code = "C.22.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of rubber products"
                         },
                         new
                         {
-                            Id = new Guid("c97d5dee-ede2-43eb-b17b-d9f82aae9863"),
+                            Id = new Guid("935d62d4-1fa9-4d9e-95cf-d711a3dbf90a"),
                             Code = "C.22.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres"
                         },
                         new
                         {
-                            Id = new Guid("ad345792-003a-4c26-93ba-aeed4a4c2be8"),
+                            Id = new Guid("3c5b42ed-a075-4609-a39f-a0d5a0fbb72e"),
                             Code = "C.22.19",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other rubber products"
                         },
                         new
                         {
-                            Id = new Guid("bde70d72-b400-4605-94e8-5860e11822bb"),
+                            Id = new Guid("ecdbf37f-4ee1-4d5f-8467-c2f83312550e"),
                             Code = "C.22.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plastics products"
                         },
                         new
                         {
-                            Id = new Guid("b2fc3a9a-9391-4bce-aeef-23316096eafa"),
+                            Id = new Guid("962abf13-169b-4606-b762-994a759d6b00"),
                             Code = "C.22.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plastic plates, sheets, tubes and profiles"
                         },
                         new
                         {
-                            Id = new Guid("b4c6a5cb-6cec-430e-9bec-1f3004fd6b81"),
+                            Id = new Guid("ff94a5f5-921d-4e6f-ae8d-d4bbae93ef5c"),
                             Code = "C.22.22",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plastic packing goods"
                         },
                         new
                         {
-                            Id = new Guid("6f5e8f09-1f6b-404a-bdc8-1a2d3e280892"),
+                            Id = new Guid("61e7f090-98ce-4f87-88f0-bb220a2d8075"),
                             Code = "C.22.23",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of builders’ ware of plastic"
                         },
                         new
                         {
-                            Id = new Guid("78f46101-e959-492b-a6d5-9882b71b1290"),
+                            Id = new Guid("248bc4c6-bafd-4026-bbff-1ca2564f90ae"),
                             Code = "C.22.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other plastic products"
                         },
                         new
                         {
-                            Id = new Guid("281fc7c3-b7ed-424b-a03f-dbb4732d024d"),
+                            Id = new Guid("a019f699-0311-4dc6-86d5-8793e152d88f"),
                             Code = "C.23",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other non-metallic mineral products"
                         },
                         new
                         {
-                            Id = new Guid("ed498588-f1c1-4f18-81ed-c98bed1d37cb"),
+                            Id = new Guid("2d82a5da-f475-49b8-9082-5da6f72b773f"),
                             Code = "C.23.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of glass and glass products"
                         },
                         new
                         {
-                            Id = new Guid("60749cf1-fc80-4a2d-af3a-46404e102819"),
+                            Id = new Guid("51aa600f-00be-451e-b1b3-047e752d1a10"),
                             Code = "C.23.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of flat glass"
                         },
                         new
                         {
-                            Id = new Guid("0d13c3dd-bd11-402d-a451-035775df626a"),
+                            Id = new Guid("d35e9c94-8e3e-4f8d-8b0b-4fa5a66a8a64"),
                             Code = "C.23.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Shaping and processing of flat glass"
                         },
                         new
                         {
-                            Id = new Guid("647fde72-11bf-4a10-bdfe-80e297ae2263"),
+                            Id = new Guid("cf4092b1-8765-45d4-aab7-d729b27e1515"),
                             Code = "C.23.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of hollow glass"
                         },
                         new
                         {
-                            Id = new Guid("9952f988-dedf-489d-aedd-292defcd3765"),
+                            Id = new Guid("f0dc244c-105f-4470-abf1-f4b37acdb222"),
                             Code = "C.23.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of glass fibres"
                         },
                         new
                         {
-                            Id = new Guid("c001cc60-6553-4ee4-849f-90bb7d65f1b1"),
+                            Id = new Guid("ce8876c4-5504-4be7-82ab-88a510f2d73a"),
                             Code = "C.23.19",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture and processing of other glass, including technical glassware"
                         },
                         new
                         {
-                            Id = new Guid("9602e92c-d1c1-4b08-b686-8ef0538ddda0"),
+                            Id = new Guid("b3bb8158-f378-44e7-abdc-401ffbb39869"),
                             Code = "C.23.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of refractory products"
                         },
                         new
                         {
-                            Id = new Guid("89ee3ec3-6a27-48e8-ac94-e53006532461"),
+                            Id = new Guid("cc54a2eb-d243-48ce-832f-9fd0049ce0b4"),
                             Code = "C.23.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of refractory products"
                         },
                         new
                         {
-                            Id = new Guid("f6be7488-b78b-4127-a147-7e4e209c700c"),
+                            Id = new Guid("7de84462-7d3c-4890-b56b-bc9f054316b3"),
                             Code = "C.23.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of clay building materials"
                         },
                         new
                         {
-                            Id = new Guid("efe00844-9b4d-483b-af32-f2d5679d02ee"),
+                            Id = new Guid("6867e701-c5c9-41bc-96a5-9f9f4ba5a20e"),
                             Code = "C.23.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ceramic tiles and flags"
                         },
                         new
                         {
-                            Id = new Guid("67ec98eb-d0b3-4988-a90e-cb67c0727ce6"),
+                            Id = new Guid("f700e0c9-1357-4a1b-ab9f-1d3bb35a6444"),
                             Code = "C.23.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bricks, tiles and construction products, in baked clay"
                         },
                         new
                         {
-                            Id = new Guid("975be43d-95c4-4d9d-bb58-b9bd51eec6df"),
+                            Id = new Guid("dffed5f3-b505-4382-887e-b10983685e44"),
                             Code = "C.23.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other porcelain and ceramic products"
                         },
                         new
                         {
-                            Id = new Guid("2163ed4c-b5ae-4e40-a021-f7e88e5a2f11"),
+                            Id = new Guid("0581b33f-a67b-4ea8-b2c3-e0e089e8b8a2"),
                             Code = "C.23.41",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ceramic household and ornamental articles"
                         },
                         new
                         {
-                            Id = new Guid("182f5187-0811-4715-b7d0-72f4eaaa3a8d"),
+                            Id = new Guid("5d09dc13-3b32-4e67-a16c-a33282bc51b7"),
                             Code = "C.23.42",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ceramic sanitary fixtures"
                         },
                         new
                         {
-                            Id = new Guid("49c9e650-a5cb-4951-af9f-3ef8feed1618"),
+                            Id = new Guid("cd0d0019-21ff-4169-b3f5-24049282b052"),
                             Code = "C.23.43",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ceramic insulators and insulating fittings"
                         },
                         new
                         {
-                            Id = new Guid("41ab6a73-5c0e-4990-83ac-c0b38ff0fbf1"),
+                            Id = new Guid("828caac4-9837-4f62-88ed-531ca8bc49f6"),
                             Code = "C.23.44",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other technical ceramic products"
                         },
                         new
                         {
-                            Id = new Guid("081157f5-9dac-43b9-be9a-006595744f46"),
+                            Id = new Guid("951519f8-0a82-4fe9-bda3-b0b229e53e60"),
                             Code = "C.23.49",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other ceramic products"
                         },
                         new
                         {
-                            Id = new Guid("f9a2f6f3-e83e-4082-b150-761e0ec179a5"),
+                            Id = new Guid("a60f5c39-1d45-40bb-9a04-df8e9ef593ea"),
                             Code = "C.23.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cement, lime and plaster"
                         },
                         new
                         {
-                            Id = new Guid("f8892e5b-fb3b-4d05-a77b-96e9821b26ac"),
+                            Id = new Guid("848868b3-3ec6-45fe-b0bf-1e10788daf3e"),
                             Code = "C.23.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cement"
                         },
                         new
                         {
-                            Id = new Guid("95d7a748-766f-401b-9ba1-39670ab44448"),
+                            Id = new Guid("92330c30-70ae-40e8-8722-679d89427880"),
                             Code = "C.23.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of lime and plaster"
                         },
                         new
                         {
-                            Id = new Guid("231abe35-60e5-4129-92c8-6da44cbf4206"),
+                            Id = new Guid("a71ed9cc-efdd-44d3-aed3-585134c0e447"),
                             Code = "C.23.6",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of articles of concrete, cement and plaster"
                         },
                         new
                         {
-                            Id = new Guid("a996fab7-e801-44ce-a330-fe1ceec1ee2d"),
+                            Id = new Guid("44746462-4021-466d-8791-6ce67c3a8ca8"),
                             Code = "C.23.61",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of concrete products for construction purposes"
                         },
                         new
                         {
-                            Id = new Guid("18c526ad-1f8b-40f6-a3ea-de29ee91324a"),
+                            Id = new Guid("aa8dfe79-b2c2-4626-95ea-6028137dd581"),
                             Code = "C.23.62",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plaster products for construction purposes"
                         },
                         new
                         {
-                            Id = new Guid("63fc4bc8-e4ca-4e21-9b6d-2efae4883787"),
+                            Id = new Guid("a52811c2-e736-4bb4-b591-fa2770b276ed"),
                             Code = "C.23.63",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ready-mixed concrete"
                         },
                         new
                         {
-                            Id = new Guid("37271acb-d88d-4d23-a344-334ff93d3edf"),
+                            Id = new Guid("92f60f07-c997-42df-b37f-b2896af59242"),
                             Code = "C.23.64",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of mortars"
                         },
                         new
                         {
-                            Id = new Guid("7cc9eba5-dcb1-4cfa-b21e-baf7c7a066d4"),
+                            Id = new Guid("f32c4665-07fe-49eb-9770-bb32da1ee1fe"),
                             Code = "C.23.65",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fibre cement"
                         },
                         new
                         {
-                            Id = new Guid("77318065-f4ff-4ade-813d-a7a142c08abd"),
+                            Id = new Guid("9ce250ec-f51b-4857-8b85-92c630be9735"),
                             Code = "C.23.69",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other articles of concrete, plaster and cement"
                         },
                         new
                         {
-                            Id = new Guid("7bdc2baa-aac8-4e11-a769-b2af3b9dc99e"),
+                            Id = new Guid("86839e92-7f44-4b84-8d96-9199ea432f74"),
                             Code = "C.23.7",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cutting, shaping and finishing of stone"
                         },
                         new
                         {
-                            Id = new Guid("010c5c2c-d607-41d5-aed4-80d849954f0f"),
+                            Id = new Guid("ab0f72ff-6344-41b6-adec-a0e9d9adc0a4"),
                             Code = "C.23.70",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cutting, shaping and finishing of stone"
                         },
                         new
                         {
-                            Id = new Guid("cbe8c941-7f33-40da-8267-92caead55081"),
+                            Id = new Guid("a431025a-95b6-420a-8861-92726d0b4c4f"),
                             Code = "C.23.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of abrasive products and non-metallic mineral products n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("97d4c464-3fa1-4953-a593-9d605620e303"),
+                            Id = new Guid("c0acd9f9-78db-4d72-b785-e567a1ca255d"),
                             Code = "C.23.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Production of abrasive products"
                         },
                         new
                         {
-                            Id = new Guid("2453b6cb-9481-49a6-9959-67677ca34c8f"),
+                            Id = new Guid("0df01fb9-c289-4248-8b0a-c3b645555b46"),
                             Code = "C.23.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other non-metallic mineral products n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("b7282c74-06b2-4830-8c79-3528dcce72a1"),
+                            Id = new Guid("8637bc83-3bfa-49ff-92ff-4ad731ffe60b"),
                             Code = "C.24",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic metals"
                         },
                         new
                         {
-                            Id = new Guid("abfa44a2-ecd4-4b0c-8f65-099f0f65bdda"),
+                            Id = new Guid("274ba6d8-4429-42e5-9776-ce9737df31e3"),
                             Code = "C.24.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic iron and steel and of ferro-alloys"
                         },
                         new
                         {
-                            Id = new Guid("9ac41136-adfa-40a3-9e22-fde3b7a61450"),
+                            Id = new Guid("27cf4b8d-b3e2-4e53-a258-c4791aff8a85"),
                             Code = "C.24.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic iron and steel and of ferro-alloys"
                         },
                         new
                         {
-                            Id = new Guid("203047f4-052a-4cab-9968-404c965bae88"),
+                            Id = new Guid("822b1a64-d025-4fb7-9c59-ab99a8a0554a"),
                             Code = "C.24.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tubes, pipes, hollow profiles and related fittings, of steel"
                         },
                         new
                         {
-                            Id = new Guid("a9589ff5-9f41-4e9b-9c17-6745e97c2a84"),
+                            Id = new Guid("c4955298-0e0f-40d3-be95-ba3554ff5307"),
                             Code = "C.24.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tubes, pipes, hollow profiles and related fittings, of steel"
                         },
                         new
                         {
-                            Id = new Guid("20ce1bf2-b50f-41e4-a6c9-634fad71b106"),
+                            Id = new Guid("3ae9d542-8029-4552-8976-13d1c7eff83a"),
                             Code = "C.24.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other products of first processing of steel"
                         },
                         new
                         {
-                            Id = new Guid("403b17d4-f74c-4ec9-a090-55cd5c2c6c50"),
+                            Id = new Guid("cb206f43-f1cb-4a85-8773-28aaba093dbb"),
                             Code = "C.24.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cold drawing of bars"
                         },
                         new
                         {
-                            Id = new Guid("28b5009c-5bdd-487b-bc72-adc13287baf6"),
+                            Id = new Guid("48058d4f-3e20-466f-85ee-00698384fb67"),
                             Code = "C.24.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cold rolling of narrow strip"
                         },
                         new
                         {
-                            Id = new Guid("bf252524-1f22-46c4-a911-e415fe4cd92f"),
+                            Id = new Guid("872358e0-6e7b-4766-9842-a9ba53e7eeac"),
                             Code = "C.24.33",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cold forming or folding"
                         },
                         new
                         {
-                            Id = new Guid("9434c543-3853-4f1b-a6af-b233e2ec0898"),
+                            Id = new Guid("e79ff383-c925-413b-a852-73c7892dd207"),
                             Code = "C.24.34",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Cold drawing of wire"
                         },
                         new
                         {
-                            Id = new Guid("b1ea884b-0952-438e-b968-11c3dc4accb2"),
+                            Id = new Guid("cd98e39c-1585-4af2-85af-f8cc3d6e8a24"),
                             Code = "C.24.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of basic precious and other non-ferrous metals"
                         },
                         new
                         {
-                            Id = new Guid("e2b332f1-75f4-4d03-bb8d-689da3addfd8"),
+                            Id = new Guid("e3b60f9a-d22b-4e2d-aa4a-15655b072c6d"),
                             Code = "C.24.41",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Precious metals production"
                         },
                         new
                         {
-                            Id = new Guid("844ecc9b-d2cc-455d-8d94-8ea92a27f714"),
+                            Id = new Guid("9df4d456-8e16-4633-9f4b-5c64efbfbe8a"),
                             Code = "C.24.42",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Aluminium production"
                         },
                         new
                         {
-                            Id = new Guid("3fada7d2-0e1e-4c63-a6d8-0d0965172c0f"),
+                            Id = new Guid("54885c93-75ca-4846-ad23-276b6cb15ade"),
                             Code = "C.24.43",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Lead, zinc and tin production"
                         },
                         new
                         {
-                            Id = new Guid("32a65b0e-fa85-49a6-85e7-5eb02a210cf9"),
+                            Id = new Guid("455eab6e-f95b-4d82-9170-cd0e9e18f76d"),
                             Code = "C.24.44",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Copper production"
                         },
                         new
                         {
-                            Id = new Guid("c3ebc97a-7a8f-46ce-a288-288ec044e195"),
+                            Id = new Guid("53302408-0cb9-4c45-ad65-a5f1b5a575b8"),
                             Code = "C.24.45",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Other non-ferrous metal production"
                         },
                         new
                         {
-                            Id = new Guid("9affa1b4-f771-4a9f-939f-208ba1a56c46"),
+                            Id = new Guid("13cc3154-811a-473a-8068-5f44d6e29db8"),
                             Code = "C.24.46",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Processing of nuclear fuel"
                         },
                         new
                         {
-                            Id = new Guid("94942149-a0cb-419e-aba0-4b62395e8158"),
+                            Id = new Guid("a7dbbbd0-802e-42ee-b5cb-f96147653e2f"),
                             Code = "C.24.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Casting of metals"
                         },
                         new
                         {
-                            Id = new Guid("c5a6de1c-d93f-48b5-8858-74237dcc78fd"),
+                            Id = new Guid("f622d7a8-e605-40ff-8a0f-377a31434d8d"),
                             Code = "C.24.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Casting of iron"
                         },
                         new
                         {
-                            Id = new Guid("2ebb9bb7-00c8-4544-bdf9-f28b07f24997"),
+                            Id = new Guid("54067bf6-65e8-4057-a534-0691210dd0a2"),
                             Code = "C.24.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Casting of steel"
                         },
                         new
                         {
-                            Id = new Guid("9a3d8d77-471e-41e7-96b2-55fd6878d225"),
+                            Id = new Guid("f7d72656-cfb8-4a02-8273-da1a38e10301"),
                             Code = "C.24.53",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Casting of light metals"
                         },
                         new
                         {
-                            Id = new Guid("85c871f8-a3c3-41f2-8318-a79d62172632"),
+                            Id = new Guid("9849a035-cb6b-4638-b7c0-0b778c3cb053"),
                             Code = "C.24.54",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Casting of other non-ferrous metals"
                         },
                         new
                         {
-                            Id = new Guid("71f3c65e-c2ee-4208-bd7b-f85eb8da783b"),
+                            Id = new Guid("212d62ec-32d7-4d1d-bbe5-3d36270e0604"),
                             Code = "C.25",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fabricated metal products, except machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("5b2c2b30-03ef-4ce9-928b-01eefbdfaa7b"),
+                            Id = new Guid("1a45359d-150b-4cdd-b276-f205c5dbe8b3"),
                             Code = "C.25.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of structural metal products"
                         },
                         new
                         {
-                            Id = new Guid("76a8572b-dfa8-447f-b73c-db52a7ebd87b"),
+                            Id = new Guid("78dab62d-0d05-43e1-b1ef-503683d1f8b6"),
                             Code = "C.25.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of metal structures and parts of structures"
                         },
                         new
                         {
-                            Id = new Guid("72f8f37d-d898-4617-91dd-41d709d8b73b"),
+                            Id = new Guid("f452d666-8fa8-410e-8393-8f6bbdd9e41a"),
                             Code = "C.25.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of doors and windows of metal"
                         },
                         new
                         {
-                            Id = new Guid("37ffa88b-23cb-479b-8179-1a486f078c52"),
+                            Id = new Guid("377b319c-23b6-4864-8fbf-74b9feaa6d25"),
                             Code = "C.25.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tanks, reservoirs and containers of metal"
                         },
                         new
                         {
-                            Id = new Guid("09459074-0caf-47cb-9b5b-d0f658a410ce"),
+                            Id = new Guid("ca073f49-603e-4fe8-84ea-bf1814cbf9f8"),
                             Code = "C.25.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of central heating radiators and boilers"
                         },
                         new
                         {
-                            Id = new Guid("0a6136d9-155f-4848-9c6e-5f9c92d0244c"),
+                            Id = new Guid("94f04a7d-93c3-4154-9e30-e218e7660005"),
                             Code = "C.25.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other tanks, reservoirs and containers of metal"
                         },
                         new
                         {
-                            Id = new Guid("b4d2c1b5-2533-427d-b227-5ad849737a59"),
+                            Id = new Guid("d1d8ac42-1dc7-4b3a-9aa0-8bdb71483379"),
                             Code = "C.25.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of steam generators, except central heating hot water boilers"
                         },
                         new
                         {
-                            Id = new Guid("0a10f8a2-9c8b-4563-b2a2-ef88f54210ec"),
+                            Id = new Guid("977563cd-4251-4f60-a1a5-cf6c80e68ce7"),
                             Code = "C.25.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of steam generators, except central heating hot water boilers"
                         },
                         new
                         {
-                            Id = new Guid("f4ccd4a8-7e95-4a13-82c9-ea7ad83659d2"),
+                            Id = new Guid("65e254cc-8c86-4548-9554-a1e60f1b7542"),
                             Code = "C.25.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of weapons and ammunition"
                         },
                         new
                         {
-                            Id = new Guid("ff12ce04-1349-4b65-9056-c6bb66215c8c"),
+                            Id = new Guid("9ece6f25-9356-45f2-96cb-dd9279605c3a"),
                             Code = "C.25.40",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of weapons and ammunition"
                         },
                         new
                         {
-                            Id = new Guid("21c014f1-5c7b-4101-8e93-e9f323afeeef"),
+                            Id = new Guid("528385aa-2b44-4d43-a25c-3cb21af6e2e6"),
                             Code = "C.25.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Forging, pressing, stamping and roll-forming of metal; powder metallurgy"
                         },
                         new
                         {
-                            Id = new Guid("e70e0764-40cb-4468-a7ed-ac2d37b79d19"),
+                            Id = new Guid("c2c8d126-fc72-4813-abde-648b8b2784aa"),
                             Code = "C.25.50",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Forging, pressing, stamping and roll-forming of metal; powder metallurgy"
                         },
                         new
                         {
-                            Id = new Guid("6a42232a-4329-4e14-bdda-44a7ebb26c04"),
+                            Id = new Guid("61c27727-adef-45b5-821f-0f89004b2cda"),
                             Code = "C.25.6",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Treatment and coating of metals; machining"
                         },
                         new
                         {
-                            Id = new Guid("46b1687d-7b49-4cd0-94cc-a7e51554d5ce"),
+                            Id = new Guid("7395dc0b-0773-4ec4-aeb3-66182284e94e"),
                             Code = "C.25.61",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Treatment and coating of metals"
                         },
                         new
                         {
-                            Id = new Guid("c8ea4893-bf7a-460b-97b3-7037123fb5a1"),
+                            Id = new Guid("36752848-e16e-47a4-92a1-6869990b1502"),
                             Code = "C.25.62",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Machining"
                         },
                         new
                         {
-                            Id = new Guid("2a6d9321-5356-42b8-9e9d-577b2d40dc2f"),
+                            Id = new Guid("31edb457-2502-483d-8ecc-99a8b5d1673c"),
                             Code = "C.25.7",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cutlery, tools and general hardware"
                         },
                         new
                         {
-                            Id = new Guid("9a2b6704-a99c-46ed-9fa7-1938a0e42e00"),
+                            Id = new Guid("7581e5ca-272d-4798-922c-21934ab237ab"),
                             Code = "C.25.71",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of cutlery"
                         },
                         new
                         {
-                            Id = new Guid("891f3bbf-cb14-47b6-b1b2-b3ba124096cb"),
+                            Id = new Guid("be373e86-3c06-4144-9e67-f7570994f524"),
                             Code = "C.25.72",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of locks and hinges"
                         },
                         new
                         {
-                            Id = new Guid("7d885162-969a-438a-bec9-78736e0ef9e4"),
+                            Id = new Guid("8ab2d6c7-157b-46c7-914a-6be14784db77"),
                             Code = "C.25.73",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of tools"
                         },
                         new
                         {
-                            Id = new Guid("b08b68a2-b5f0-4bd6-a280-591cb590eab1"),
+                            Id = new Guid("c3935be3-625f-4ff7-96e7-d7a45c453416"),
                             Code = "C.25.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other fabricated metal products"
                         },
                         new
                         {
-                            Id = new Guid("289f501e-527f-45f1-956b-220b17447438"),
+                            Id = new Guid("cc0f962f-0e38-47c4-91a3-101f29fe0eb5"),
                             Code = "C.25.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of steel drums and similar containers"
                         },
                         new
                         {
-                            Id = new Guid("b5bfc3ee-48cd-4c95-b136-daec03002ca1"),
+                            Id = new Guid("dd2d1834-bae6-458f-b93a-ebf6b24b287a"),
                             Code = "C.25.92",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of light metal packaging"
                         },
                         new
                         {
-                            Id = new Guid("b0088c06-0aa7-4773-953c-fded4684d1dc"),
+                            Id = new Guid("54936149-186f-4b13-8832-96b409f5a237"),
                             Code = "C.25.93",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wire products, chain and springs"
                         },
                         new
                         {
-                            Id = new Guid("254bf43c-5edd-475e-ac55-76a451787256"),
+                            Id = new Guid("511418c1-008e-4f05-9adb-6d3238975a13"),
                             Code = "C.25.94",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fasteners and screw machine products"
                         },
                         new
                         {
-                            Id = new Guid("1fdd25b7-b6e4-4fb6-bae5-5fa4e7a22478"),
+                            Id = new Guid("609d2dde-484a-41ae-a933-acdba564a4db"),
                             Code = "C.25.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other fabricated metal products n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("f06f9735-0dc8-44b6-8a52-6dc5b15b517b"),
+                            Id = new Guid("e6d95c23-d7d4-4c7a-a6c3-0e72ae4649b0"),
                             Code = "C.26",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of computer, electronic and optical products"
                         },
                         new
                         {
-                            Id = new Guid("897f633f-f482-4157-a763-b8fe3d2b92b0"),
+                            Id = new Guid("347aadb6-082e-47ba-bc1d-0e04ee1d16eb"),
                             Code = "C.26.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electronic components and boards"
                         },
                         new
                         {
-                            Id = new Guid("caf2aa12-0c86-4d99-8d47-ef888ce760f5"),
+                            Id = new Guid("1116326b-51c5-4d15-9b88-02ed91335f01"),
                             Code = "C.26.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electronic components"
                         },
                         new
                         {
-                            Id = new Guid("e85dd86e-3728-402e-8fe9-5e94d6713a9c"),
+                            Id = new Guid("8bb9a8a0-9aab-4664-a8ca-50516a416058"),
                             Code = "C.26.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of loaded electronic boards"
                         },
                         new
                         {
-                            Id = new Guid("4544dd24-b450-482d-9998-4e4f6b695b1f"),
+                            Id = new Guid("dfc59384-8ae4-4f11-99a4-b4e6bea00f07"),
                             Code = "C.26.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of computers and peripheral equipment"
                         },
                         new
                         {
-                            Id = new Guid("ff42beb1-5288-4848-9ed1-12293e3c4dd0"),
+                            Id = new Guid("7df10694-fa5e-4764-9073-8a7bf582985c"),
                             Code = "C.26.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of computers and peripheral equipment"
                         },
                         new
                         {
-                            Id = new Guid("c7b98b90-75b8-4dab-bc9d-7f7d7e357ceb"),
+                            Id = new Guid("87559897-4ac6-423a-b5dd-991c313fda8b"),
                             Code = "C.26.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of communication equipment"
                         },
                         new
                         {
-                            Id = new Guid("124f96f9-8a4f-414a-bd76-10e588723041"),
+                            Id = new Guid("61298cc7-0822-4e96-a5bf-c00eb0508d80"),
                             Code = "C.26.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of communication equipment"
                         },
                         new
                         {
-                            Id = new Guid("95b63c90-44fe-4e30-afd3-d3668c532286"),
+                            Id = new Guid("6a8e101e-d433-484d-84dc-73bdc4e6aa96"),
                             Code = "C.26.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of consumer electronics"
                         },
                         new
                         {
-                            Id = new Guid("2494d3b9-c681-492c-bc66-9c8668155412"),
+                            Id = new Guid("e431f7aa-9789-4a7d-9ad0-70feffc6c9a4"),
                             Code = "C.26.40",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of consumer electronics"
                         },
                         new
                         {
-                            Id = new Guid("2354f9a0-312b-4b48-93e3-9110bd6e99c9"),
+                            Id = new Guid("b553d0d6-dfc6-4f68-8aa7-d18dcf42defb"),
                             Code = "C.26.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of instruments and appliances for measuring, testing and navigation; watches and clocks"
                         },
                         new
                         {
-                            Id = new Guid("20447619-941f-4c94-8b5a-da6f639deb62"),
+                            Id = new Guid("b85ff692-f0ec-43e2-a7ee-290f7d857e03"),
                             Code = "C.26.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of instruments and appliances for measuring, testing and navigation"
                         },
                         new
                         {
-                            Id = new Guid("729fb232-d644-4954-9e7a-a99f92241dbe"),
+                            Id = new Guid("4a3a84ac-99b6-4d3b-92d1-894404b696a5"),
                             Code = "C.26.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of watches and clocks"
                         },
                         new
                         {
-                            Id = new Guid("2b6e3765-0f25-4680-84fb-59d223e2e8de"),
+                            Id = new Guid("ea419de8-5f70-4570-85d8-01dd1039993e"),
                             Code = "C.26.6",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of irradiation, electromedical and electrotherapeutic equipment"
                         },
                         new
                         {
-                            Id = new Guid("8e7a5f7e-0f73-4b60-9644-514f63bed615"),
+                            Id = new Guid("6cc56e21-6eb9-48a8-a533-927dbc14b89f"),
                             Code = "C.26.60",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of irradiation, electromedical and electrotherapeutic equipment"
                         },
                         new
                         {
-                            Id = new Guid("560ad77e-e68c-484f-b61b-e88af374e85d"),
+                            Id = new Guid("027f23a6-f4aa-43d2-8814-d22893fd06d4"),
                             Code = "C.26.7",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of optical instruments and photographic equipment"
                         },
                         new
                         {
-                            Id = new Guid("243ee7c8-7a80-4bfe-82ac-2f1d89100760"),
+                            Id = new Guid("14937bc6-c80e-4af5-b6c0-073c25ca0dc3"),
                             Code = "C.26.70",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of optical instruments and photographic equipment"
                         },
                         new
                         {
-                            Id = new Guid("86fa23a8-b939-4ee1-bf58-51e116e91231"),
+                            Id = new Guid("2cbda976-7837-4682-b828-d00c16176692"),
                             Code = "C.26.8",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of magnetic and optical media"
                         },
                         new
                         {
-                            Id = new Guid("236865e6-69c0-4b4f-a78e-f1b5979a190f"),
+                            Id = new Guid("1671f8e7-e933-4544-ad95-4e7a26eb8d9d"),
                             Code = "C.26.80",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of magnetic and optical media"
                         },
                         new
                         {
-                            Id = new Guid("6cb08c6e-8f3d-40e6-b60f-78615cdca6b2"),
+                            Id = new Guid("01767c63-9585-4f89-9874-2deaa60c98d5"),
                             Code = "C.27",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electrical equipment"
                         },
                         new
                         {
-                            Id = new Guid("f48da278-6d96-4150-9e03-2f40e5fdd9cb"),
+                            Id = new Guid("7af73d80-6981-4b6f-80ed-a3c5dea95349"),
                             Code = "C.27.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus"
                         },
                         new
                         {
-                            Id = new Guid("8f215c08-610a-41d6-8247-89f40a6d53d2"),
+                            Id = new Guid("30945d8f-9c07-4022-aae3-6cac0e1468c3"),
                             Code = "C.27.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electric motors, generators and transformers"
                         },
                         new
                         {
-                            Id = new Guid("2b0ac305-51ba-4b1d-941a-85a37161a1d4"),
+                            Id = new Guid("c6285d3a-8823-466d-a8ff-754ef0ec2d19"),
                             Code = "C.27.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electricity distribution and control apparatus"
                         },
                         new
                         {
-                            Id = new Guid("4db0cc6d-20ef-426e-b14f-5c0de7b08315"),
+                            Id = new Guid("f9011f76-5f44-4fe0-8a77-900a765f25ba"),
                             Code = "C.27.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of batteries and accumulators"
                         },
                         new
                         {
-                            Id = new Guid("f2c445a6-f80a-4ac8-b03c-95fad0e01424"),
+                            Id = new Guid("b8511785-0a9b-40c7-abcd-79f1b6991511"),
                             Code = "C.27.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of batteries and accumulators"
                         },
                         new
                         {
-                            Id = new Guid("d87959d4-7384-442f-b10b-b7ed7c7e20aa"),
+                            Id = new Guid("9ca3772d-f466-4844-9563-ee32722bc9c1"),
                             Code = "C.27.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wiring and wiring devices"
                         },
                         new
                         {
-                            Id = new Guid("26bb8127-a8be-4ebd-a1b1-7f6f27d5f6a2"),
+                            Id = new Guid("8880d848-bc0d-4bfe-8961-bd8e3a412585"),
                             Code = "C.27.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fibre optic cables"
                         },
                         new
                         {
-                            Id = new Guid("a75fb384-08eb-46fd-9176-87370efb292f"),
+                            Id = new Guid("6c1b53fc-cf12-419c-b55c-ee83e2becaa4"),
                             Code = "C.27.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other electronic and electric wires and cables"
                         },
                         new
                         {
-                            Id = new Guid("78bef733-62c7-4d0f-9dcc-479ae6f54ef3"),
+                            Id = new Guid("2d6a63fc-99f4-4c5b-9a77-acdc91daf531"),
                             Code = "C.27.33",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of wiring devices"
                         },
                         new
                         {
-                            Id = new Guid("23f28591-327f-4f02-bec5-dc3461f7906a"),
+                            Id = new Guid("e484cea0-1b96-4ab6-a052-0b58661b31d8"),
                             Code = "C.27.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electric lighting equipment"
                         },
                         new
                         {
-                            Id = new Guid("d1cc5444-1781-4ccb-895f-63c039aa0b7a"),
+                            Id = new Guid("e4c56e43-a750-4aff-bb18-44fafb6ac448"),
                             Code = "C.27.40",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electric lighting equipment"
                         },
                         new
                         {
-                            Id = new Guid("3bb091ab-5066-4725-b992-c250ec41f271"),
+                            Id = new Guid("6385a3f8-f194-4721-8c10-973e5b802fbd"),
                             Code = "C.27.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of domestic appliances"
                         },
                         new
                         {
-                            Id = new Guid("956c903b-4465-4af9-80b6-031a6a64dfd9"),
+                            Id = new Guid("61c6225f-5d65-4429-a110-2ec62a2f32d4"),
                             Code = "C.27.51",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electric domestic appliances"
                         },
                         new
                         {
-                            Id = new Guid("e1d30221-1001-4666-9f48-8eb62b8e4c5d"),
+                            Id = new Guid("2813366c-ab89-4301-905c-a126c9734881"),
                             Code = "C.27.52",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of non-electric domestic appliances"
                         },
                         new
                         {
-                            Id = new Guid("9fe8a22c-01df-4c45-9dda-9016f4a7385c"),
+                            Id = new Guid("6f8c7566-4087-439e-b3f7-b2bd11ec64aa"),
                             Code = "C.27.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other electrical equipment"
                         },
                         new
                         {
-                            Id = new Guid("c82b0481-c002-4b45-b768-ef5df2763952"),
+                            Id = new Guid("3283a376-3e71-4e95-82c9-74728d32ad51"),
                             Code = "C.27.90",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other electrical equipment"
                         },
                         new
                         {
-                            Id = new Guid("f16682c2-aa69-43ff-bf84-53b1e88f4237"),
+                            Id = new Guid("2f45b8ce-e546-4fdc-ab9e-fb9d718659fb"),
                             Code = "C.28",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery and equipment n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("1226dd66-8693-40d5-8860-546f72f47467"),
+                            Id = new Guid("4dd8da68-c74d-4322-8922-dfb716f22e32"),
                             Code = "C.28.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of general-purpose machinery"
                         },
                         new
                         {
-                            Id = new Guid("319e6962-a377-4e11-80a4-05be7994281e"),
+                            Id = new Guid("e863da84-e339-4102-bd6b-4a70cf0669d1"),
                             Code = "C.28.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines"
                         },
                         new
                         {
-                            Id = new Guid("dc379960-df35-459f-ae2e-2a9421a90c27"),
+                            Id = new Guid("2c2afa4a-61fb-4cb9-9ecc-18e17448a871"),
                             Code = "C.28.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of fluid power equipment"
                         },
                         new
                         {
-                            Id = new Guid("002cc089-e499-4efe-a6f5-a775db3fca17"),
+                            Id = new Guid("300a79ff-f60d-47bc-b664-4c2270b43dc0"),
                             Code = "C.28.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other pumps and compressors"
                         },
                         new
                         {
-                            Id = new Guid("83037b7e-258b-4e03-84f0-603a32028f4d"),
+                            Id = new Guid("11fd2de2-94e8-442d-87a3-e3c073eefacb"),
                             Code = "C.28.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other taps and valves"
                         },
                         new
                         {
-                            Id = new Guid("e430666f-5e17-4637-8522-a61159d8e02b"),
+                            Id = new Guid("a8d43043-44aa-4234-9d2c-f6c6c2dff115"),
                             Code = "C.28.15",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bearings, gears, gearing and driving elements"
                         },
                         new
                         {
-                            Id = new Guid("fb49fb70-75b0-4a4b-9848-f33c15daa827"),
+                            Id = new Guid("d917b946-8516-4f7b-b7fc-e93c98b0b615"),
                             Code = "C.28.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other general-purpose machinery"
                         },
                         new
                         {
-                            Id = new Guid("a68daaaa-45fc-4a79-8092-054e7e5e7ea5"),
+                            Id = new Guid("0a9ec6ca-9856-4579-ba76-5f8364aa0088"),
                             Code = "C.28.21",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of ovens, furnaces and furnace burners"
                         },
                         new
                         {
-                            Id = new Guid("f1c86477-50b1-4836-9ba0-68c155c9b81e"),
+                            Id = new Guid("bfd23b17-ddf4-4822-8ed8-2c300501e51a"),
                             Code = "C.28.22",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of lifting and handling equipment"
                         },
                         new
                         {
-                            Id = new Guid("b0dbc0d4-e5ce-44fb-bd65-a62a9156dd70"),
+                            Id = new Guid("5fb38d15-ba5f-4871-b7c1-aaffc8181431"),
                             Code = "C.28.23",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of office machinery and equipment (except computers and peripheral equipment)"
                         },
                         new
                         {
-                            Id = new Guid("ed65ace8-294a-4e6b-9d01-9510213df08d"),
+                            Id = new Guid("2cfc4f78-a6e1-4a1f-8ba7-4d0f39efc7fb"),
                             Code = "C.28.24",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of power-driven hand tools"
                         },
                         new
                         {
-                            Id = new Guid("6b772bc3-5a34-4209-b5ee-7ada8b3f4098"),
+                            Id = new Guid("2a5fc4c0-12ab-4d4d-806c-0213e6d38758"),
                             Code = "C.28.25",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of non-domestic cooling and ventilation equipment"
                         },
                         new
                         {
-                            Id = new Guid("c035ff4e-aef6-4274-95ba-952fddd40e2c"),
+                            Id = new Guid("05d54490-e4af-4792-9b1e-140e65833b77"),
                             Code = "C.28.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other general-purpose machinery n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("ba307b7f-c0a9-4998-9f81-62a13eaa77ba"),
+                            Id = new Guid("11ced251-61a6-47a9-ae6e-acfecf08cd84"),
                             Code = "C.28.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of agricultural and forestry machinery"
                         },
                         new
                         {
-                            Id = new Guid("e3cffe4d-33c0-497e-a971-98c72fe209dd"),
+                            Id = new Guid("ff2aeeb2-1b01-43df-9ab9-6c2626ac8a4e"),
                             Code = "C.28.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of agricultural and forestry machinery"
                         },
                         new
                         {
-                            Id = new Guid("cd3ab16a-44ea-4cfa-b3eb-2522a5995fef"),
+                            Id = new Guid("64ac1b67-4dae-4dd4-afd9-c93aa62f4e62"),
                             Code = "C.28.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of metal forming machinery and machine tools"
                         },
                         new
                         {
-                            Id = new Guid("9baac7be-3fd4-4b20-8a89-5c47d0d2a4a8"),
+                            Id = new Guid("ba850d22-a67c-4e2c-a006-2fbccd4cb5dd"),
                             Code = "C.28.41",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of metal forming machinery"
                         },
                         new
                         {
-                            Id = new Guid("5effbf1c-e599-4596-88c7-4fb23375a592"),
+                            Id = new Guid("cc64e7aa-df9f-48ec-a8fa-294a83d3b972"),
                             Code = "C.28.49",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other machine tools"
                         },
                         new
                         {
-                            Id = new Guid("1b1230c4-0e90-43af-99a6-102c05e4ff0d"),
+                            Id = new Guid("f36efc2b-ff5d-4776-accf-db855cc3fece"),
                             Code = "C.28.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other special-purpose machinery"
                         },
                         new
                         {
-                            Id = new Guid("34baa257-5a7d-45cc-88da-1d8a8cdd1372"),
+                            Id = new Guid("4a147a05-f4eb-4b27-adf8-d585c259c1ed"),
                             Code = "C.28.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery for metallurgy"
                         },
                         new
                         {
-                            Id = new Guid("259ebcf1-e3f8-4df4-89e8-48dd2c507104"),
+                            Id = new Guid("3b2e8cbe-479d-40a9-a524-bf46987de621"),
                             Code = "C.28.92",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery for mining, quarrying and construction"
                         },
                         new
                         {
-                            Id = new Guid("994f975c-6393-461b-b38a-e96e82ee7e4c"),
+                            Id = new Guid("59888920-b848-4ae5-9897-2333972e5bb1"),
                             Code = "C.28.93",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery for food, beverage and tobacco processing"
                         },
                         new
                         {
-                            Id = new Guid("a69b84eb-8178-483f-a4e8-19cd0b6258dc"),
+                            Id = new Guid("aa22d33c-82e0-4010-bfba-fe5399177066"),
                             Code = "C.28.94",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery for textile, apparel and leather production"
                         },
                         new
                         {
-                            Id = new Guid("dac4c277-9cc1-4457-8b16-a1a1582f8f41"),
+                            Id = new Guid("986448ea-e29d-40eb-9fc5-0c8e3783c55a"),
                             Code = "C.28.95",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of machinery for paper and paperboard production"
                         },
                         new
                         {
-                            Id = new Guid("75485e99-cff1-46c2-a9c6-9afd5160a81f"),
+                            Id = new Guid("afba3647-8801-4bd8-a26c-a9649e4d2770"),
                             Code = "C.28.96",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of plastics and rubber machinery"
                         },
                         new
                         {
-                            Id = new Guid("7f91c7bc-e4e0-43aa-ba04-13896afddff9"),
+                            Id = new Guid("3eee0617-0c74-4288-8308-14a6e539a853"),
                             Code = "C.28.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other special-purpose machinery n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("19468d0f-7e3c-4c67-8f0e-b7cc01a761f7"),
+                            Id = new Guid("7a19943f-286b-412c-9803-4b3e2a434b2a"),
                             Code = "C.29",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of motor vehicles, trailers and semi-trailers"
                         },
                         new
                         {
-                            Id = new Guid("f11e79dd-c00c-4e2c-9b77-416a89972334"),
+                            Id = new Guid("2d2fdeb5-3843-4d8c-8487-ab5ad1ccfe1e"),
                             Code = "C.29.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("a740761c-0e54-4de2-b5bf-99321d592abe"),
+                            Id = new Guid("3dfdae97-fcb0-4b6b-9cc6-0b43104cf568"),
                             Code = "C.29.10",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("e33ed516-c896-45e3-afed-30f6227c6325"),
+                            Id = new Guid("9b9a9570-1411-47ef-8039-7b8d929fcb4f"),
                             Code = "C.29.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers"
                         },
                         new
                         {
-                            Id = new Guid("f564c8ef-e700-4442-8dbf-f315624de8b3"),
+                            Id = new Guid("00a81100-9135-47cb-8aee-ff5ac784b971"),
                             Code = "C.29.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers"
                         },
                         new
                         {
-                            Id = new Guid("06a8f2c4-aaba-493c-909c-bd5415915117"),
+                            Id = new Guid("14c46639-da2f-4c17-9c69-04b2bc7d2404"),
                             Code = "C.29.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of parts and accessories for motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("dbc4e2c9-5704-4284-8493-10d1ae2f7f87"),
+                            Id = new Guid("22a1dac7-f018-4f70-a96e-e37c2647749d"),
                             Code = "C.29.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of electrical and electronic equipment for motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("8aea7a5e-5b88-485c-ba49-4b11247dd04d"),
+                            Id = new Guid("de528445-47b1-4d0b-a5d2-d7242c5750cf"),
                             Code = "C.29.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other parts and accessories for motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("ec1cc08d-eb8e-4fb6-a26d-0b469f73f1c1"),
+                            Id = new Guid("5beb2699-f2c0-4854-8069-593979f9fef7"),
                             Code = "C.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other transport equipment"
                         },
                         new
                         {
-                            Id = new Guid("85079877-9555-43a3-a8f8-62e52b3af052"),
+                            Id = new Guid("1f721c31-6a6c-46ec-a552-d9224e6589ab"),
                             Code = "C.30.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Building of ships and boats"
                         },
                         new
                         {
-                            Id = new Guid("ab2b3521-9f3d-453e-8930-fca706b58bb1"),
+                            Id = new Guid("18c25c9b-d032-4af9-9256-4c0831055b1c"),
                             Code = "C.30.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Building of ships and floating structures"
                         },
                         new
                         {
-                            Id = new Guid("ddcf8f07-4fd2-44b3-b119-8526c21bbd43"),
+                            Id = new Guid("2b43cd48-f479-47a3-af0c-fbf0a7e40399"),
                             Code = "C.30.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Building of pleasure and sporting boats"
                         },
                         new
                         {
-                            Id = new Guid("bd23a5e5-28e8-433d-91e9-b817eb579595"),
+                            Id = new Guid("fc92a9cc-ff13-4af2-9370-7ab3b38a4124"),
                             Code = "C.30.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of railway locomotives and rolling stock"
                         },
                         new
                         {
-                            Id = new Guid("41f4107c-5689-4f14-90c3-ed644f86682f"),
+                            Id = new Guid("91e29391-1ed4-4402-95d4-ed9272f32f6e"),
                             Code = "C.30.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of railway locomotives and rolling stock"
                         },
                         new
                         {
-                            Id = new Guid("56cc261a-5d5b-4714-8b8b-6312ddc7c075"),
+                            Id = new Guid("ad1f73b5-dddf-4652-9ca7-a8ffef6d990e"),
                             Code = "C.30.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of air and spacecraft and related machinery"
                         },
                         new
                         {
-                            Id = new Guid("768a9997-709d-4340-a519-5df2bfe0d194"),
+                            Id = new Guid("38eeb6b0-9ec4-44a9-87b4-c046e6d6e265"),
                             Code = "C.30.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of air and spacecraft and related machinery"
                         },
                         new
                         {
-                            Id = new Guid("6776fcdf-7fe8-4580-811b-b1b5f0c3088a"),
+                            Id = new Guid("07c487a9-b74a-4a37-ad4b-c7964ea20c18"),
                             Code = "C.30.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of military fighting vehicles"
                         },
                         new
                         {
-                            Id = new Guid("5c653b12-9423-4854-91f4-9c728007667a"),
+                            Id = new Guid("690544a0-2b25-4801-a3ac-bb915f926769"),
                             Code = "C.30.40",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of military fighting vehicles"
                         },
                         new
                         {
-                            Id = new Guid("8e52f6c7-e7b3-46bc-822b-6c9fb51a8508"),
+                            Id = new Guid("b9ec5fd1-4d7a-4543-92a5-b06a85d716ea"),
                             Code = "C.30.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of transport equipment n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("c05aa692-6d87-4880-9cb0-5b76bb67add2"),
+                            Id = new Guid("7a6d1652-a8f7-4852-96c3-cadba4b84980"),
                             Code = "C.30.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of motorcycles"
                         },
                         new
                         {
-                            Id = new Guid("a9c8e8ee-6184-4ffa-8c36-c52dbe171274"),
+                            Id = new Guid("df40f6ac-a72a-4bc0-a6c5-a8afc26271f9"),
                             Code = "C.30.92",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of bicycles and invalid carriages"
                         },
                         new
                         {
-                            Id = new Guid("039a0956-83a2-44d3-89ae-265e0d6f9ca9"),
+                            Id = new Guid("4b65623d-97a9-4737-bdac-8e052efff8a4"),
                             Code = "C.30.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other transport equipment n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("5f0e373e-2339-49a6-9caa-7741a2967b3c"),
+                            Id = new Guid("b9de92e9-8dfe-4f2e-87fa-aadd8aa0066f"),
                             Code = "C.31",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of furniture"
                         },
                         new
                         {
-                            Id = new Guid("ef8fdb75-0277-4739-a7b0-74473a4f2f5d"),
+                            Id = new Guid("8202c5b8-831b-4f6c-bd21-d8ebbbbcbf3b"),
                             Code = "C.31.0",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of furniture"
                         },
                         new
                         {
-                            Id = new Guid("3876e68e-3262-4408-a849-438da2712985"),
+                            Id = new Guid("e1acf72c-a3eb-4dd8-a9c8-ff65a45db4ee"),
                             Code = "C.31.01",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of office and shop furniture"
                         },
                         new
                         {
-                            Id = new Guid("10aaa58b-e548-4644-8a73-90d5ce41aceb"),
+                            Id = new Guid("7cfc8527-e4f6-4c2b-a76d-d95477d92546"),
                             Code = "C.31.02",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of kitchen furniture"
                         },
                         new
                         {
-                            Id = new Guid("7323fbac-79fa-4ea5-8136-a66dc06ea973"),
+                            Id = new Guid("639e1005-d259-451a-8041-2a705c61f189"),
                             Code = "C.31.03",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of mattresses"
                         },
                         new
                         {
-                            Id = new Guid("9ca77bf3-e7cb-4a46-8378-16f862f2e893"),
+                            Id = new Guid("3586c51b-24a1-4e54-82a2-7f6f97f756ea"),
                             Code = "C.31.09",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of other furniture"
                         },
                         new
                         {
-                            Id = new Guid("79733ae6-5388-4a42-a36b-a3c7f3d3fa34"),
+                            Id = new Guid("3968460e-d8cb-497b-a667-cfe45ea112a6"),
                             Code = "C.32",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Other manufacturing"
                         },
                         new
                         {
-                            Id = new Guid("1679fb3f-0b3d-486a-bb87-ad0d41cb592b"),
+                            Id = new Guid("94a5ec91-f9e8-47d5-819f-652a3be0e348"),
                             Code = "C.32.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of jewellery, bijouterie and related articles"
                         },
                         new
                         {
-                            Id = new Guid("674ce225-7e6d-433a-9ccf-ae6a866cc16c"),
+                            Id = new Guid("4ba24b2d-c2bd-486b-9547-7834eebb3e7e"),
                             Code = "C.32.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Striking of coins"
                         },
                         new
                         {
-                            Id = new Guid("4f8326a6-4071-4678-8251-84db2c398787"),
+                            Id = new Guid("ba35f4da-95c6-42d2-8d09-ba12339a4ced"),
                             Code = "C.32.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of jewellery and related articles"
                         },
                         new
                         {
-                            Id = new Guid("da2a898f-4253-4df6-9a89-a3e2e8420df7"),
+                            Id = new Guid("abeb4fa4-c9e6-40b5-a63b-867531024302"),
                             Code = "C.32.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of imitation jewellery and related articles"
                         },
                         new
                         {
-                            Id = new Guid("09a15a16-86b3-4fca-bda2-1ad68fb38651"),
+                            Id = new Guid("cb01a855-c427-440e-ae91-3de011a197e5"),
                             Code = "C.32.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of musical instruments"
                         },
                         new
                         {
-                            Id = new Guid("51a1f3b7-cd8b-46d3-86b8-a96b93c99038"),
+                            Id = new Guid("9399e961-60e3-487f-8e1c-a06759f9bac2"),
                             Code = "C.32.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of musical instruments"
                         },
                         new
                         {
-                            Id = new Guid("ea4b4c79-a0da-46f9-a8f0-c94b532d2d79"),
+                            Id = new Guid("b0e8e3f7-4265-4e0d-94dd-1a01c828e139"),
                             Code = "C.32.3",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of sports goods"
                         },
                         new
                         {
-                            Id = new Guid("8ed70d1d-78e0-4838-b55d-cacce6cfc329"),
+                            Id = new Guid("2cd7b298-eb7e-4900-8c7d-20c093e33d8d"),
                             Code = "C.32.30",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of sports goods"
                         },
                         new
                         {
-                            Id = new Guid("4eeedb66-77ae-4179-a4fe-3e64991f0160"),
+                            Id = new Guid("9107ad0c-17b3-4277-bd41-9852bc4493e4"),
                             Code = "C.32.4",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of games and toys"
                         },
                         new
                         {
-                            Id = new Guid("41c0c588-fd85-405f-86f8-ad26c4fe8072"),
+                            Id = new Guid("ecfffc4b-d3fb-420a-98ae-eb34110f9d98"),
                             Code = "C.32.40",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of games and toys"
                         },
                         new
                         {
-                            Id = new Guid("2d652445-1a4f-475b-9cb2-b175dffc5eb6"),
+                            Id = new Guid("6acccf17-260a-4d81-8bb5-491b5789d5e4"),
                             Code = "C.32.5",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of medical and dental instruments and supplies"
                         },
                         new
                         {
-                            Id = new Guid("4ac893ab-42f0-4795-afdc-e9fbf5941ee5"),
+                            Id = new Guid("def3767b-c031-4df9-bdb2-823ee6b98282"),
                             Code = "C.32.50",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of medical and dental instruments and supplies"
                         },
                         new
                         {
-                            Id = new Guid("5c5df6e3-54ac-4ffa-bed8-988dd079a1e3"),
+                            Id = new Guid("3e02cb2e-fd03-4e51-8341-57619fd3aa06"),
                             Code = "C.32.9",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacturing n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("9a88a814-9063-4c67-9fac-1d67d7b7b988"),
+                            Id = new Guid("1e736cb7-fc7d-473e-92f5-948d8a8acbb1"),
                             Code = "C.32.91",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Manufacture of brooms and brushes"
                         },
                         new
                         {
-                            Id = new Guid("103fa9f4-5c97-45a0-9908-e60a75b21a0c"),
+                            Id = new Guid("efd53d52-cf6f-4a0a-8d1f-5671b2a9dd9b"),
                             Code = "C.32.99",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Other manufacturing n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("fe0d2c19-f392-4e94-8282-818bc1aa8d84"),
+                            Id = new Guid("bbd03dc8-7a26-47f3-8b11-afa46ba659a4"),
                             Code = "C.33",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair and installation of machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("b6915583-cf7f-46fb-8ff4-d6b5ed0f1164"),
+                            Id = new Guid("326aa5e7-eedd-4312-9aad-c921f1af394a"),
                             Code = "C.33.1",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of fabricated metal products, machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("3a80bb08-2833-4629-a093-cded95a178d7"),
+                            Id = new Guid("b11d3667-7601-489e-a075-042f937e0597"),
                             Code = "C.33.11",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of fabricated metal products"
                         },
                         new
                         {
-                            Id = new Guid("7ebae103-13ce-489a-a7df-d2e01c87a72a"),
+                            Id = new Guid("494c579d-f4e8-4620-9730-542eec5fe5f5"),
                             Code = "C.33.12",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of machinery"
                         },
                         new
                         {
-                            Id = new Guid("cf392e02-9b00-4dd6-9165-361017bf6c03"),
+                            Id = new Guid("026889bb-e24b-4dc8-ad36-48c56388aa70"),
                             Code = "C.33.13",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of electronic and optical equipment"
                         },
                         new
                         {
-                            Id = new Guid("04b4580d-d4f5-47a9-adc3-ebf5204126a9"),
+                            Id = new Guid("cfe17744-9734-4494-869e-05f32238d78f"),
                             Code = "C.33.14",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of electrical equipment"
                         },
                         new
                         {
-                            Id = new Guid("44f21ab6-d74d-4c9b-8cc4-a89b99cb64c2"),
+                            Id = new Guid("6773959c-27f8-41bb-9987-ec2c66232e51"),
                             Code = "C.33.15",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair and maintenance of ships and boats"
                         },
                         new
                         {
-                            Id = new Guid("fa5881b4-653d-4c3f-bd86-69bdbcbd4c5d"),
+                            Id = new Guid("860ab45f-ce0f-45d1-9804-7d6bade867ba"),
                             Code = "C.33.16",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair and maintenance of aircraft and spacecraft"
                         },
                         new
                         {
-                            Id = new Guid("90fa4674-3e5a-425a-b1dc-19d23e35d46c"),
+                            Id = new Guid("1347df11-b425-4f6e-8c31-9c0f6bc5c9ed"),
                             Code = "C.33.17",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair and maintenance of other transport equipment"
                         },
                         new
                         {
-                            Id = new Guid("bd346ae9-2522-4086-9612-2f036b6744c7"),
+                            Id = new Guid("00019904-45ae-4dd3-a220-8e6bdbe5b720"),
                             Code = "C.33.19",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Repair of other equipment"
                         },
                         new
                         {
-                            Id = new Guid("3ddf4052-2c5a-44b8-aed7-0aceb3fd97e4"),
+                            Id = new Guid("94bd5211-11c8-41b3-b67f-f91a3d32dd1f"),
                             Code = "C.33.2",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Installation of industrial machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("957bb9c6-53ee-48d2-a52d-0be752a86f3b"),
+                            Id = new Guid("1dc5497f-c192-4d30-8e90-7e4fa041e2fe"),
                             Code = "C.33.20",
-                            IndustryId = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            IndustryId = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Title = "Installation of industrial machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("9aa29e70-5e69-407b-b4a1-a74d36cdf72a"),
+                            Id = new Guid("b6228469-401e-424f-a36c-4f6908c5c58b"),
                             Code = "D.35",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Electricity, gas, steam and air conditioning supply"
                         },
                         new
                         {
-                            Id = new Guid("7b531a5f-7c88-4c57-8b82-444366225ab2"),
+                            Id = new Guid("f6385fca-be4c-45ac-ba75-e302f869bfc9"),
                             Code = "D.35.1",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Electric power generation, transmission and distribution"
                         },
                         new
                         {
-                            Id = new Guid("18b907d7-b881-4f42-9745-eb4ea7151b2d"),
+                            Id = new Guid("a77f90cd-e712-4160-add7-5a5b519eb361"),
                             Code = "D.35.11",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Production of electricity"
                         },
                         new
                         {
-                            Id = new Guid("37e0bdbe-a07e-4279-ae30-34028a7241cf"),
+                            Id = new Guid("777b6bdf-45bf-4bae-91b0-6da51e5e5b75"),
                             Code = "D.35.12",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Transmission of electricity"
                         },
                         new
                         {
-                            Id = new Guid("d72a2d3e-9b0d-4cce-9578-cb7c6668fe3a"),
+                            Id = new Guid("b8da76e4-584a-4593-b5f9-2b80c075f85a"),
                             Code = "D.35.13",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Distribution of electricity"
                         },
                         new
                         {
-                            Id = new Guid("7415bfca-548f-472c-a136-f5d49e30c6e8"),
+                            Id = new Guid("a9492fb2-bafc-451a-ba96-734837b4a531"),
                             Code = "D.35.14",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Trade of electricity"
                         },
                         new
                         {
-                            Id = new Guid("29148804-e713-4f74-a688-6f6ba8987e4a"),
+                            Id = new Guid("e0cd2536-8d2a-4000-9870-5766a1473e66"),
                             Code = "D.35.2",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Manufacture of gas; distribution of gaseous fuels through mains"
                         },
                         new
                         {
-                            Id = new Guid("a8b74b60-b505-436d-bd6b-544476c9004c"),
+                            Id = new Guid("222784b0-a4c7-497a-a57b-883e1e2adfb7"),
                             Code = "D.35.21",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Manufacture of gas"
                         },
                         new
                         {
-                            Id = new Guid("677a073b-3210-404b-952b-afe4ee120c1a"),
+                            Id = new Guid("69f20532-4df3-47a5-9f70-be662ae893da"),
                             Code = "D.35.22",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Distribution of gaseous fuels through mains"
                         },
                         new
                         {
-                            Id = new Guid("6583c6d5-d03a-4cd5-ac82-ef86a0b6d243"),
+                            Id = new Guid("2c643d2f-8aa1-43ab-ac86-414b5d5d42c0"),
                             Code = "D.35.23",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Trade of gas through mains"
                         },
                         new
                         {
-                            Id = new Guid("252ef1f4-f139-4a0a-a596-f599d2d7522b"),
+                            Id = new Guid("839c4c04-d061-426c-ad82-4a29ce03b05a"),
                             Code = "D.35.3",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Steam and air conditioning supply"
                         },
                         new
                         {
-                            Id = new Guid("e1d056ba-d176-489c-bdc9-dda53298059f"),
+                            Id = new Guid("4fedbd1e-01ac-45e6-8cdc-77337101845a"),
                             Code = "D.35.30",
-                            IndustryId = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            IndustryId = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Title = "Steam and air conditioning supply"
                         },
                         new
                         {
-                            Id = new Guid("b1d8c417-728f-438c-b75c-54b89cc7f1ac"),
+                            Id = new Guid("b446baf0-4a6c-46b2-8be0-271d187c1236"),
                             Code = "E.36",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Water collection, treatment and supply"
                         },
                         new
                         {
-                            Id = new Guid("7b1f3d22-8844-468c-9624-2dba350aed14"),
+                            Id = new Guid("2d98c6e4-5ec7-4613-9bf2-41d47083f489"),
                             Code = "E.36.0",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Water collection, treatment and supply"
                         },
                         new
                         {
-                            Id = new Guid("d50b72e9-fa04-4250-b04b-c808ee52a0ac"),
+                            Id = new Guid("6a03e549-28b4-4168-aef6-2437694c177a"),
                             Code = "E.36.00",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Water collection, treatment and supply"
                         },
                         new
                         {
-                            Id = new Guid("9ee8f218-d89d-480e-a3ec-832da274e068"),
+                            Id = new Guid("9415e665-d2d9-4784-90fd-5ca7a9d9b446"),
                             Code = "E.37",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Sewerage"
                         },
                         new
                         {
-                            Id = new Guid("a19b05cb-3475-4c10-8225-3d487067a917"),
+                            Id = new Guid("4019931e-89cd-4820-a70d-423f86e42a44"),
                             Code = "E.37.0",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Sewerage"
                         },
                         new
                         {
-                            Id = new Guid("6948a376-b21d-4bcd-8c1c-a0b2046430b3"),
+                            Id = new Guid("b87f14f5-ba01-4871-a0b1-a9ba4104a5da"),
                             Code = "E.37.00",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Sewerage"
                         },
                         new
                         {
-                            Id = new Guid("4fbdbc6b-cdbd-43b2-a149-7053ec23e3c6"),
+                            Id = new Guid("7d6dcfed-5735-42e4-824b-289bd0764a59"),
                             Code = "E.38",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Waste collection, treatment and disposal activities; materials recovery"
                         },
                         new
                         {
-                            Id = new Guid("be2ca744-ad18-4e3b-9429-5a94c3e35b22"),
+                            Id = new Guid("920ce1fe-b881-4497-bfb1-9fea104c5f24"),
                             Code = "E.38.1",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Waste collection"
                         },
                         new
                         {
-                            Id = new Guid("a169460a-b867-4860-89aa-98ff00b2d225"),
+                            Id = new Guid("4922e4ac-4c42-440c-b8ff-16cecf2e5b7a"),
                             Code = "E.38.11",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Collection of non-hazardous waste"
                         },
                         new
                         {
-                            Id = new Guid("b046808a-0768-4000-b88f-19cdf45133ff"),
+                            Id = new Guid("4b77dfd8-3cef-4f2d-b497-c10dfb1a8c9c"),
                             Code = "E.38.12",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Collection of hazardous waste"
                         },
                         new
                         {
-                            Id = new Guid("172114e8-8494-4541-a91f-db2e7d8c9106"),
+                            Id = new Guid("85a7c4c6-64c3-4edf-924c-019d55198869"),
                             Code = "E.38.2",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Waste treatment and disposal"
                         },
                         new
                         {
-                            Id = new Guid("62eb6ea4-0552-4e64-af1f-9b8130cc1d34"),
+                            Id = new Guid("d36a56d4-b4c0-42bd-8ed0-90c964e734b7"),
                             Code = "E.38.21",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Treatment and disposal of non-hazardous waste"
                         },
                         new
                         {
-                            Id = new Guid("deb66e31-b0c1-42de-ac45-5728b9ff1b25"),
+                            Id = new Guid("04f544c4-cfe0-4cab-9118-cc2e39bc8058"),
                             Code = "E.38.22",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Treatment and disposal of hazardous waste"
                         },
                         new
                         {
-                            Id = new Guid("7163fd87-4269-4e03-8668-ada155949c3f"),
+                            Id = new Guid("46db9363-c9d9-42da-b5c2-3b6cc76a335b"),
                             Code = "E.38.3",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Materials recovery"
                         },
                         new
                         {
-                            Id = new Guid("d8a6046e-bead-4fc7-aa14-248627d5d642"),
+                            Id = new Guid("6ce91527-6060-4bc4-82a8-e949533d7da0"),
                             Code = "E.38.31",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Dismantling of wrecks"
                         },
                         new
                         {
-                            Id = new Guid("415a8912-7e21-4fe7-b030-ba5fe78a44ac"),
+                            Id = new Guid("b748e8bf-e3a0-412d-a205-9207df1b06aa"),
                             Code = "E.38.32",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Recovery of sorted materials"
                         },
                         new
                         {
-                            Id = new Guid("02991862-61a1-485b-9727-97e5268565dc"),
+                            Id = new Guid("795afea4-227c-4d41-8259-fa995acc2d2a"),
                             Code = "E.39",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Remediation activities and other waste management services"
                         },
                         new
                         {
-                            Id = new Guid("b3e98ca5-fe8a-46e1-aa61-491ef8da8f4f"),
+                            Id = new Guid("f4838d6f-db87-4932-82aa-a6a669df5be1"),
                             Code = "E.39.0",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Remediation activities and other waste management services"
                         },
                         new
                         {
-                            Id = new Guid("a15dd07b-1303-4151-9cab-3def0c4c68e1"),
+                            Id = new Guid("267e72af-3088-4df2-8634-077db8cec97f"),
                             Code = "E.39.00",
-                            IndustryId = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            IndustryId = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Title = "Remediation activities and other waste management services"
                         },
                         new
                         {
-                            Id = new Guid("f0ac35ab-1356-4e1c-81a4-3f2d11a0799e"),
+                            Id = new Guid("c676d3a6-45a4-4785-9c20-c6a9c0a325f6"),
                             Code = "F.41",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of buildings"
                         },
                         new
                         {
-                            Id = new Guid("fced3518-83de-4ddb-914a-9e05a6e404c4"),
+                            Id = new Guid("b300ad01-9c0b-4f74-bbc3-6c055f1a3711"),
                             Code = "F.41.1",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Development of building projects"
                         },
                         new
                         {
-                            Id = new Guid("f722c61d-3732-47c2-ae4b-07d5dabf8cb0"),
+                            Id = new Guid("351a5149-1daa-4120-a7ff-6d6b6723d222"),
                             Code = "F.41.10",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Development of building projects"
                         },
                         new
                         {
-                            Id = new Guid("9fcda733-14ae-47a1-b18a-26f3088c8834"),
+                            Id = new Guid("0e485623-a169-43ba-840a-016f1cf3c527"),
                             Code = "F.41.2",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of residential and non-residential buildings"
                         },
                         new
                         {
-                            Id = new Guid("f9568af5-3d5f-4f96-ae37-a3e936a7b8b9"),
+                            Id = new Guid("2a8cd3bb-0ac7-4c89-9bd6-387b7dab4e3a"),
                             Code = "F.41.20",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of residential and non-residential buildings"
                         },
                         new
                         {
-                            Id = new Guid("f14df25c-ef2a-4ce2-b2bd-b3ebcc4e3116"),
+                            Id = new Guid("746bfd93-caef-4ae7-8bca-7e1f67828f82"),
                             Code = "F.42",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Civil engineering"
                         },
                         new
                         {
-                            Id = new Guid("1945cf33-33d5-4a07-b4f1-019e14758662"),
+                            Id = new Guid("bc7aa12d-af2a-4877-86b9-acf9f6e46c58"),
                             Code = "F.42.1",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of roads and railways"
                         },
                         new
                         {
-                            Id = new Guid("4c187806-3a07-413c-b9ee-3e2aaf199a04"),
+                            Id = new Guid("c19c5cf4-5124-42d4-840a-3986f203e4df"),
                             Code = "F.42.11",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of roads and motorways"
                         },
                         new
                         {
-                            Id = new Guid("b523199f-53f5-4cac-b846-ed73c56d20d7"),
+                            Id = new Guid("8c099d34-ac9b-4dfb-81ac-f364ef71ba93"),
                             Code = "F.42.12",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of railways and underground railways"
                         },
                         new
                         {
-                            Id = new Guid("9d82e026-abb7-4b8f-b6e5-1f9907e4144f"),
+                            Id = new Guid("8ac29bcb-fae4-4f17-812d-bbc539310f67"),
                             Code = "F.42.13",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of bridges and tunnels"
                         },
                         new
                         {
-                            Id = new Guid("92e131ae-c524-442e-b6e1-2a53e44c70a4"),
+                            Id = new Guid("86104ade-38df-488e-8455-5c192830ccf4"),
                             Code = "F.42.2",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of utility projects"
                         },
                         new
                         {
-                            Id = new Guid("ff4c4e7e-26ad-49b6-befb-b7133b61b0f9"),
+                            Id = new Guid("60329afa-d71a-467e-90bf-9d67b0ed7756"),
                             Code = "F.42.21",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of utility projects for fluids"
                         },
                         new
                         {
-                            Id = new Guid("13a84c58-3bbf-4afb-844a-fd8819bfb176"),
+                            Id = new Guid("3ebdb4d6-1ce3-423d-8c80-426100412a7f"),
                             Code = "F.42.22",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of utility projects for electricity and telecommunications"
                         },
                         new
                         {
-                            Id = new Guid("edffe056-b1f9-4c1c-8cec-8d1b75903bdc"),
+                            Id = new Guid("0260118c-71d3-4dab-86e3-5abcbd456e0e"),
                             Code = "F.42.9",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of other civil engineering projects"
                         },
                         new
                         {
-                            Id = new Guid("e2a512b8-78e7-48a0-9255-fae5b5298a2f"),
+                            Id = new Guid("af937458-de33-4b58-bee6-4fa28245b069"),
                             Code = "F.42.91",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of water projects"
                         },
                         new
                         {
-                            Id = new Guid("03173d6b-74c7-4892-83bc-ab30eff484c9"),
+                            Id = new Guid("b7d61a3b-a604-4e1c-ba0f-f4c483e36e0b"),
                             Code = "F.42.99",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Construction of other civil engineering projects n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("cac1014a-a3b5-4c6d-bc9d-f2381cc87b54"),
+                            Id = new Guid("e6a513f9-c07b-4818-9dea-18531090a6ea"),
                             Code = "F.43",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Specialised construction activities"
                         },
                         new
                         {
-                            Id = new Guid("4b959750-b3f4-4089-a97d-c1dc2aa1bc86"),
+                            Id = new Guid("76cd5a22-8083-4266-a3b0-fa32941cdc83"),
                             Code = "F.43.1",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Demolition and site preparation"
                         },
                         new
                         {
-                            Id = new Guid("fa9c0057-64b7-4a40-ae39-148c48ae4314"),
+                            Id = new Guid("2644c88c-9255-4723-80af-4f9f2b945456"),
                             Code = "F.43.11",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Demolition"
                         },
                         new
                         {
-                            Id = new Guid("d32f9b18-6412-4222-8252-a04c85002421"),
+                            Id = new Guid("d748c824-7b2f-4179-a89b-8f33a02fe23d"),
                             Code = "F.43.12",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Site preparation"
                         },
                         new
                         {
-                            Id = new Guid("fbeee103-a60d-4556-93ef-2022b2e9ca5c"),
+                            Id = new Guid("165a4323-5b08-412a-bb47-b4622d9052f2"),
                             Code = "F.43.13",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Test drilling and boring"
                         },
                         new
                         {
-                            Id = new Guid("40d2f0df-cecd-4bec-a9fa-484c1267f163"),
+                            Id = new Guid("46904aab-266e-47e5-97ea-82c2ce2bb2ef"),
                             Code = "F.43.2",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Electrical, plumbing and other construction installation activities"
                         },
                         new
                         {
-                            Id = new Guid("a5571cbc-a67f-4cc0-b3f9-05865692f7a4"),
+                            Id = new Guid("ba554462-b339-473a-aee1-1a675a2dbd05"),
                             Code = "F.43.21",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Electrical installation"
                         },
                         new
                         {
-                            Id = new Guid("67722a93-c7f4-4ec1-9a4e-388d966d6fbc"),
+                            Id = new Guid("d6620fcb-d5cc-45c6-be45-b82d2584ee2c"),
                             Code = "F.43.22",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Plumbing, heat and air-conditioning installation"
                         },
                         new
                         {
-                            Id = new Guid("8e44ba4a-e90d-49fc-802b-89586223496d"),
+                            Id = new Guid("7b7d0a6e-b17b-4105-a558-5da90097445a"),
                             Code = "F.43.29",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Other construction installation"
                         },
                         new
                         {
-                            Id = new Guid("92a54193-52f3-4b26-b728-0fdaa6df4583"),
+                            Id = new Guid("74378907-ee08-4942-80d7-b058518df2ba"),
                             Code = "F.43.3",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Building completion and finishing"
                         },
                         new
                         {
-                            Id = new Guid("55ae15fb-94e8-423b-a2b9-5be5e9bc7606"),
+                            Id = new Guid("11fd82dd-05ea-4c8f-a4bf-f9f58f89199e"),
                             Code = "F.43.31",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Plastering"
                         },
                         new
                         {
-                            Id = new Guid("13deb097-4501-40b3-ade7-be76481ab928"),
+                            Id = new Guid("586e8770-7d52-43c0-90f3-018565e360e9"),
                             Code = "F.43.32",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Joinery installation"
                         },
                         new
                         {
-                            Id = new Guid("159448a0-592b-4cc4-81db-98a32dcf45cb"),
+                            Id = new Guid("f1bcb20d-9959-415b-892b-3a247f132634"),
                             Code = "F.43.33",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Floor and wall covering"
                         },
                         new
                         {
-                            Id = new Guid("bdc06488-4c44-4595-8f23-3fb60374f98c"),
+                            Id = new Guid("acdd4fcf-1d6c-4520-b396-e198a3b2f77f"),
                             Code = "F.43.34",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Painting and glazing"
                         },
                         new
                         {
-                            Id = new Guid("97548229-495d-484a-956e-f7f0bac4f7f8"),
+                            Id = new Guid("de23a946-8892-4214-8c13-8a42f0a18f23"),
                             Code = "F.43.39",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Other building completion and finishing"
                         },
                         new
                         {
-                            Id = new Guid("8bf98744-1c64-43f1-b87f-02646e55f7c7"),
+                            Id = new Guid("6135c1eb-f191-419a-b934-7f1b9be1a50c"),
                             Code = "F.43.9",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Other specialised construction activities"
                         },
                         new
                         {
-                            Id = new Guid("25525536-ea6b-4580-b806-6c10196d4a17"),
+                            Id = new Guid("417555ff-fd13-4cb4-866e-b41afd4f3ad8"),
                             Code = "F.43.91",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Roofing activities"
                         },
                         new
                         {
-                            Id = new Guid("11932d6d-0eb7-4107-98b9-5823917cd691"),
+                            Id = new Guid("0dd25067-b013-4272-a7c0-d5a9fed06b5f"),
                             Code = "F.43.99",
-                            IndustryId = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            IndustryId = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Title = "Other specialised construction activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("0a8b59f9-db9c-4c7c-8b44-7e1f8e726cce"),
+                            Id = new Guid("58ff5f86-7136-4609-996b-aa2280614f2c"),
                             Code = "G.45",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale and retail trade and repair of motor vehicles and motorcycles"
                         },
                         new
                         {
-                            Id = new Guid("aa2f7ccb-237a-4bba-bd75-e37669a4323f"),
+                            Id = new Guid("165bc48b-9432-4ea6-9a4c-1941ddabd95e"),
                             Code = "G.45.1",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("e7852ff0-3251-4021-9094-8bee882dbe00"),
+                            Id = new Guid("3d20e289-420f-4c52-92bd-eabdb443c0f4"),
                             Code = "G.45.11",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale of cars and light motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("ae81d1be-50b4-4169-b534-ad4fe5b541a6"),
+                            Id = new Guid("1cceb9ec-bde5-4736-a615-02a3ffc742ab"),
                             Code = "G.45.19",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale of other motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("ce9401d8-a670-4ae1-b670-fd8e4f3d05d0"),
+                            Id = new Guid("dfceceb8-a924-47bf-afd3-ea2f96f5f978"),
                             Code = "G.45.2",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Maintenance and repair of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("6dd30bb2-5ba4-4414-b49e-41fb8d1a2f28"),
+                            Id = new Guid("46afa7a6-d61a-4590-9955-aa74e4dfdf59"),
                             Code = "G.45.20",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Maintenance and repair of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("d67f4395-779c-4296-b6ed-ec438cb066bd"),
+                            Id = new Guid("a04f0e88-4936-4fc3-a9d7-da97c7810fde"),
                             Code = "G.45.3",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale of motor vehicle parts and accessories"
                         },
                         new
                         {
-                            Id = new Guid("1b672e46-b35d-4c87-b444-ece0a1f43744"),
+                            Id = new Guid("2519ea22-ae48-474f-84ea-8993a47a348d"),
                             Code = "G.45.31",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale trade of motor vehicle parts and accessories"
                         },
                         new
                         {
-                            Id = new Guid("4ccac688-9dd1-4fe9-8be0-0c9b7f7ae38c"),
+                            Id = new Guid("c92cb121-2b2a-43f2-aebd-253a8aa379e5"),
                             Code = "G.45.32",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail trade of motor vehicle parts and accessories"
                         },
                         new
                         {
-                            Id = new Guid("bab2eefc-a533-48f9-b7ba-b99ed6ec565b"),
+                            Id = new Guid("37072754-2634-4e10-b334-1facd1fb1838"),
                             Code = "G.45.4",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale, maintenance and repair of motorcycles and related parts and accessories"
                         },
                         new
                         {
-                            Id = new Guid("af636e4b-0cbf-4ef0-b41a-e710492e407e"),
+                            Id = new Guid("8c1334f3-8de6-40ee-88bf-16b7ea2ee7ba"),
                             Code = "G.45.40",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Sale, maintenance and repair of motorcycles and related parts and accessories"
                         },
                         new
                         {
-                            Id = new Guid("909eed8d-0a2d-40eb-92f7-ba18b86ddc80"),
+                            Id = new Guid("fc5a6ff4-1720-43db-9b3e-b0ea41df2a4b"),
                             Code = "G.46",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale trade, except of motor vehicles and motorcycles"
                         },
                         new
                         {
-                            Id = new Guid("c4ff383f-99c1-4b73-a92d-e1c909e943be"),
+                            Id = new Guid("5c7edbd5-c623-426b-9d51-cee664221964"),
                             Code = "G.46.1",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale on a fee or contract basis"
                         },
                         new
                         {
-                            Id = new Guid("8ed1acea-4edf-4539-824b-dbf7d61f216f"),
+                            Id = new Guid("f1189724-98c6-4fea-bb01-e6326c510a01"),
                             Code = "G.46.11",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished goods"
                         },
                         new
                         {
-                            Id = new Guid("fcad9c03-3412-4af5-89f2-516c51af8e29"),
+                            Id = new Guid("128c17db-4672-4702-b1ad-adb5e52d147f"),
                             Code = "G.46.12",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of fuels, ores, metals and industrial chemicals"
                         },
                         new
                         {
-                            Id = new Guid("fff68f2f-6ea5-494e-87bf-7d16a844d7a3"),
+                            Id = new Guid("7b63a280-f233-44e9-af3d-f15d178135c7"),
                             Code = "G.46.13",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of timber and building materials"
                         },
                         new
                         {
-                            Id = new Guid("847a734f-048c-4c51-a5a4-1485efb2ee73"),
+                            Id = new Guid("a02431fe-7c0d-4e14-a6a8-4ac50e72f99f"),
                             Code = "G.46.14",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of machinery, industrial equipment, ships and aircraft"
                         },
                         new
                         {
-                            Id = new Guid("96aa9671-6da2-492a-ad88-c7c793aa5ebf"),
+                            Id = new Guid("2b4f5b81-343f-4620-b2a5-212561bccac2"),
                             Code = "G.46.15",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of furniture, household goods, hardware and ironmongery"
                         },
                         new
                         {
-                            Id = new Guid("b9245e3d-7266-4e88-ba83-f21b80c7a4d4"),
+                            Id = new Guid("5a76ab01-5e0d-415a-8dbe-c7c13a560328"),
                             Code = "G.46.16",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of textiles, clothing, fur, footwear and leather goods"
                         },
                         new
                         {
-                            Id = new Guid("459c0bc5-b584-4317-8886-f10aceec2204"),
+                            Id = new Guid("04dd3e23-e889-44fe-8f41-ae0fdc9e80bb"),
                             Code = "G.46.17",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of food, beverages and tobacco"
                         },
                         new
                         {
-                            Id = new Guid("aabad8fa-e387-4522-a92e-82cf655e5c4f"),
+                            Id = new Guid("4453f9f2-b8cc-42db-94df-3f3c7dd71bf9"),
                             Code = "G.46.18",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents specialised in the sale of other particular products"
                         },
                         new
                         {
-                            Id = new Guid("2a93a714-6f70-4bd9-b61d-934f7151ea71"),
+                            Id = new Guid("3398ef90-1a70-486b-9218-ac91ea659431"),
                             Code = "G.46.19",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Agents involved in the sale of a variety of goods"
                         },
                         new
                         {
-                            Id = new Guid("5be01ad2-3e7c-46d4-bf2f-61bff3e9e66a"),
+                            Id = new Guid("6c8e5ee2-15ff-4504-b91e-2add66845def"),
                             Code = "G.46.2",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of agricultural raw materials and live animals"
                         },
                         new
                         {
-                            Id = new Guid("329ca64f-abd3-4449-bc28-ff55c7f3881d"),
+                            Id = new Guid("63da6902-3bda-45ae-a960-96ad81f9d9c6"),
                             Code = "G.46.21",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of grain, unmanufactured tobacco, seeds and animal feeds"
                         },
                         new
                         {
-                            Id = new Guid("8b0095da-5194-4ce2-a4e9-a0f7241b5095"),
+                            Id = new Guid("d700f5f0-74a2-4df5-9f43-3a51df5741ea"),
                             Code = "G.46.22",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of flowers and plants"
                         },
                         new
                         {
-                            Id = new Guid("b6d6f553-37cf-49b4-8180-aa591cb7f965"),
+                            Id = new Guid("a59cee30-7e9d-4b1d-9f37-6c38844ba516"),
                             Code = "G.46.23",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of live animals"
                         },
                         new
                         {
-                            Id = new Guid("38225a59-8a31-452b-bfe6-d053c8631dff"),
+                            Id = new Guid("cbd5aaf2-300f-4283-a5ea-ad9cf4935d05"),
                             Code = "G.46.24",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of hides, skins and leather"
                         },
                         new
                         {
-                            Id = new Guid("ed3507ae-3b39-4c6c-9580-8a5070c1c6e4"),
+                            Id = new Guid("4ab1ef26-6122-44a5-b4c5-93727e2c5cf1"),
                             Code = "G.46.3",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of food, beverages and tobacco"
                         },
                         new
                         {
-                            Id = new Guid("3dd1313b-9ea9-4bec-ae62-461b6fa44ec2"),
+                            Id = new Guid("2fd8179b-c168-4af8-a543-5d0dc5d883bb"),
                             Code = "G.46.31",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of fruit and vegetables"
                         },
                         new
                         {
-                            Id = new Guid("9f758c2d-b2c2-4656-9776-620d535d6e12"),
+                            Id = new Guid("d2941bff-0589-402f-8f80-ad4e4cd7c603"),
                             Code = "G.46.32",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of meat and meat products"
                         },
                         new
                         {
-                            Id = new Guid("33a90a55-38fb-4e3d-853f-7024fe3af03b"),
+                            Id = new Guid("431f93dd-18fc-4274-9afd-c5f9870131a5"),
                             Code = "G.46.33",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of dairy products, eggs and edible oils and fats"
                         },
                         new
                         {
-                            Id = new Guid("da40d856-23ed-4776-9a6c-2cde004cdebd"),
+                            Id = new Guid("33ac9754-4d68-4192-84b5-c6010cd71219"),
                             Code = "G.46.34",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of beverages"
                         },
                         new
                         {
-                            Id = new Guid("288e64a5-d671-49e6-ae3a-219161931a90"),
+                            Id = new Guid("47f4be8c-f690-4b3f-aa2e-7a9ae8a89d6e"),
                             Code = "G.46.35",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of tobacco products"
                         },
                         new
                         {
-                            Id = new Guid("60f33b8d-4ecb-4aea-bdfe-bf85e6abd127"),
+                            Id = new Guid("b3b79d91-0991-4a9a-adfc-313d2c9af6ff"),
                             Code = "G.46.36",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of sugar and chocolate and sugar confectionery"
                         },
                         new
                         {
-                            Id = new Guid("a1d0ab19-0b7c-440c-8e2f-de8e681c9559"),
+                            Id = new Guid("2af172a1-9152-431c-b7c6-48fdf15ada2c"),
                             Code = "G.46.37",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of coffee, tea, cocoa and spices"
                         },
                         new
                         {
-                            Id = new Guid("6d9c8c48-d786-46f0-9285-03ac8e35aaf2"),
+                            Id = new Guid("e88e3c75-678d-402d-91d0-aa3159d8997f"),
                             Code = "G.46.38",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other food, including fish, crustaceans and molluscs"
                         },
                         new
                         {
-                            Id = new Guid("fa8f1d72-7d56-4511-9938-f188ff7e182c"),
+                            Id = new Guid("777c6b2a-e472-4336-88db-e61a2f3757fe"),
                             Code = "G.46.39",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Non-specialised wholesale of food, beverages and tobacco"
                         },
                         new
                         {
-                            Id = new Guid("0c391609-4fad-4f04-8166-8feb7678fe2b"),
+                            Id = new Guid("c3724a2a-0da9-427f-892b-ce484bf823b5"),
                             Code = "G.46.4",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of household goods"
                         },
                         new
                         {
-                            Id = new Guid("22ecc9db-577c-4252-9506-98837c0d56f0"),
+                            Id = new Guid("43daa75d-5b7f-44d0-aa83-a4aebafa9b29"),
                             Code = "G.46.41",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of textiles"
                         },
                         new
                         {
-                            Id = new Guid("a81645bf-9115-45c9-b883-b05c400110da"),
+                            Id = new Guid("abd436c7-ff6d-48c1-a4ba-8f4432deafa4"),
                             Code = "G.46.42",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of clothing and footwear"
                         },
                         new
                         {
-                            Id = new Guid("48249e73-175b-407b-9e7a-5aa779f62280"),
+                            Id = new Guid("5b194ff8-971f-46a8-92c9-487548a091a6"),
                             Code = "G.46.43",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of electrical household appliances"
                         },
                         new
                         {
-                            Id = new Guid("9fd584ed-3b57-413a-b6e9-a990be01aa24"),
+                            Id = new Guid("3688fadd-e9f0-4a89-af43-732feed0fc42"),
                             Code = "G.46.44",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of china and glassware and cleaning materials"
                         },
                         new
                         {
-                            Id = new Guid("f9bc8307-41a3-4968-97d2-4522bdd0c316"),
+                            Id = new Guid("f7114395-ea40-4d52-a4b6-27f7e4882d99"),
                             Code = "G.46.45",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of perfume and cosmetics"
                         },
                         new
                         {
-                            Id = new Guid("37272fc2-88d1-4a0b-a0e0-896f29a7399d"),
+                            Id = new Guid("39011e85-140c-488c-9327-d1e08ebc766c"),
                             Code = "G.46.46",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of pharmaceutical goods"
                         },
                         new
                         {
-                            Id = new Guid("ea9cdaa5-5251-4693-8e69-abd94641bfc3"),
+                            Id = new Guid("39776325-2984-485d-a7a7-3dd05ba82a72"),
                             Code = "G.46.47",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of furniture, carpets and lighting equipment"
                         },
                         new
                         {
-                            Id = new Guid("39c9ba26-91ea-4583-8f27-ebff50c1f4ad"),
+                            Id = new Guid("79b7bdd9-e275-4a13-86ef-368445d28bb0"),
                             Code = "G.46.48",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of watches and jewellery"
                         },
                         new
                         {
-                            Id = new Guid("d3915761-22ba-4da1-8e10-1368fdd2d71c"),
+                            Id = new Guid("a0b1cd56-5c05-4eca-a498-3ca75f3043bc"),
                             Code = "G.46.49",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other household goods"
                         },
                         new
                         {
-                            Id = new Guid("390aa553-0b65-4608-984e-8ca84923b00e"),
+                            Id = new Guid("230d23e1-5c17-470a-bbcf-7d457ea95305"),
                             Code = "G.46.5",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of information and communication equipment"
                         },
                         new
                         {
-                            Id = new Guid("670aa33b-6c5b-4ac2-9831-ec6758532df9"),
+                            Id = new Guid("3afc3d96-af7e-4b55-912e-803350ad6646"),
                             Code = "G.46.51",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of computers, computer peripheral equipment and software"
                         },
                         new
                         {
-                            Id = new Guid("3e939e69-9ceb-4fa3-a228-a683b79049f7"),
+                            Id = new Guid("70f55460-e84f-401c-9d94-cbc7222127cc"),
                             Code = "G.46.52",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of electronic and telecommunications equipment and parts"
                         },
                         new
                         {
-                            Id = new Guid("8d2dc9a4-5e65-49df-8fc6-0a22a19bf281"),
+                            Id = new Guid("1a695e11-e76f-4c3a-b2fe-a77654b21103"),
                             Code = "G.46.6",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other machinery, equipment and supplies"
                         },
                         new
                         {
-                            Id = new Guid("7eff1d7a-fc68-4cfb-8ec1-de8a437394a3"),
+                            Id = new Guid("98a04fe2-05ad-4eab-9a7f-f4521b9447e0"),
                             Code = "G.46.61",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of agricultural machinery, equipment and supplies"
                         },
                         new
                         {
-                            Id = new Guid("6521e26e-6379-4cf0-a7b3-fe3a1d60f4de"),
+                            Id = new Guid("efdf58b4-4c94-47f1-ac85-fd6afdae08a9"),
                             Code = "G.46.62",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of machine tools"
                         },
                         new
                         {
-                            Id = new Guid("8ae36ff6-83fa-4c83-80c0-7c7cee1330d4"),
+                            Id = new Guid("6346eb81-14cd-43ad-a9c2-ac47b13fc5a1"),
                             Code = "G.46.63",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of mining, construction and civil engineering machinery"
                         },
                         new
                         {
-                            Id = new Guid("d34ae3ff-668a-41d7-bd1f-29f48c69bcc7"),
+                            Id = new Guid("ed4f78e3-21ab-4ee0-b02c-a5eac2716da6"),
                             Code = "G.46.64",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of machinery for the textile industry and of sewing and knitting machines"
                         },
                         new
                         {
-                            Id = new Guid("e110d5f5-3135-45d5-a8c6-a3c9918d4e9e"),
+                            Id = new Guid("322ae34d-68de-4a7c-8b5b-cd77c9520da1"),
                             Code = "G.46.65",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of office furniture"
                         },
                         new
                         {
-                            Id = new Guid("96f274d5-e8a2-4a61-b012-88c71a8e7d76"),
+                            Id = new Guid("71af6ea0-5321-4753-8781-7eef962b9a71"),
                             Code = "G.46.66",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other office machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("185d63c3-f837-4f82-92f8-c3f74fa81283"),
+                            Id = new Guid("d071bbd2-b5b4-4c86-846a-f31cdf97c748"),
                             Code = "G.46.69",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("f0147115-9564-4658-93ac-8cf94cac0d2a"),
+                            Id = new Guid("b7f48920-c251-41ca-9736-f346124fe91e"),
                             Code = "G.46.7",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Other specialised wholesale"
                         },
                         new
                         {
-                            Id = new Guid("dba1dbd1-c589-4017-8185-e270e81d1e2b"),
+                            Id = new Guid("ddff37cb-137b-4143-970f-2d4f779ac07d"),
                             Code = "G.46.71",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of solid, liquid and gaseous fuels and related products"
                         },
                         new
                         {
-                            Id = new Guid("37a195a9-fc0f-4bab-831e-286ce073e61f"),
+                            Id = new Guid("9e06cf82-3d92-4ac0-8a5e-60227c4c11f3"),
                             Code = "G.46.72",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of metals and metal ores"
                         },
                         new
                         {
-                            Id = new Guid("7649b9c9-6c37-4d9a-a92e-10247d153650"),
+                            Id = new Guid("8efd7a8f-f81d-4600-a006-e6cc87cd72c6"),
                             Code = "G.46.73",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of wood, construction materials and sanitary equipment"
                         },
                         new
                         {
-                            Id = new Guid("6e01b85b-b6f8-45ca-b4c2-15044d70201f"),
+                            Id = new Guid("524354e7-c29f-41f3-9160-c40dc0fd24a0"),
                             Code = "G.46.74",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of hardware, plumbing and heating equipment and supplies"
                         },
                         new
                         {
-                            Id = new Guid("99f52554-3b0e-491f-8e4a-309d5508d84c"),
+                            Id = new Guid("7e90a757-0264-453e-b107-abd990dd929c"),
                             Code = "G.46.75",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of chemical products"
                         },
                         new
                         {
-                            Id = new Guid("d0148459-b4ae-46a4-8790-ebd635fcda34"),
+                            Id = new Guid("6f997add-498a-45a2-9d43-b851b49a6a81"),
                             Code = "G.46.76",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of other intermediate products"
                         },
                         new
                         {
-                            Id = new Guid("c5852d6e-d1b0-44ed-aad4-2bda72edf437"),
+                            Id = new Guid("bc9ac5d8-1683-4e6c-9a3c-c82339ce6629"),
                             Code = "G.46.77",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Wholesale of waste and scrap"
                         },
                         new
                         {
-                            Id = new Guid("ac4f7cf8-5a01-4e5c-8e1d-03f358288ed1"),
+                            Id = new Guid("b973bee8-f9b3-465f-ae99-32cad542d5d4"),
                             Code = "G.46.9",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Non-specialised wholesale trade"
                         },
                         new
                         {
-                            Id = new Guid("3f772063-fa17-4f3c-8401-eb2b0b357149"),
+                            Id = new Guid("e9543fb6-085f-49c5-9de3-4cbc426fae2a"),
                             Code = "G.46.90",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Non-specialised wholesale trade"
                         },
                         new
                         {
-                            Id = new Guid("58d9582e-95fb-454f-a6f7-102ecbc4ae1f"),
+                            Id = new Guid("a1300414-efe8-4990-b1fb-6329ba023095"),
                             Code = "G.47",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail trade, except of motor vehicles and motorcycles"
                         },
                         new
                         {
-                            Id = new Guid("81bd8e79-67a7-4aa9-ab01-11a74121206d"),
+                            Id = new Guid("ab70c465-5994-429c-8257-f7ba6ab09348"),
                             Code = "G.47.1",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale in non-specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("7a796960-7d83-4d42-afe4-02336b5f1ecb"),
+                            Id = new Guid("8bb1828e-9e20-4403-8c01-b564e4f1f12d"),
                             Code = "G.47.11",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale in non-specialised stores with food, beverages or tobacco predominating"
                         },
                         new
                         {
-                            Id = new Guid("cf70aac7-2c8e-4195-82a8-0ac0ced31561"),
+                            Id = new Guid("de33873d-0b8f-41a1-8a50-850e43b48f90"),
                             Code = "G.47.19",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Other retail sale in non-specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("e46c52bc-68a7-444d-8805-f6f12793802a"),
+                            Id = new Guid("fdff0506-2a08-4d1e-b562-669fc34a463f"),
                             Code = "G.47.2",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of food, beverages and tobacco in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("71b753d8-3834-4b99-a60e-06e016cd10a1"),
+                            Id = new Guid("9d490b26-37b8-4f42-9cb7-96d96c570c75"),
                             Code = "G.47.21",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of fruit and vegetables in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("deb536f1-ea05-4863-aa74-7aefcc7dfc7d"),
+                            Id = new Guid("0aaecb89-f1cb-4d9f-9497-bffb4bb67982"),
                             Code = "G.47.22",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of meat and meat products in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("28bd6ad9-e9c7-4496-98fb-c14e87084fda"),
+                            Id = new Guid("a99b9a03-7dc9-40c4-8d42-3622f7b7aa7a"),
                             Code = "G.47.23",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of fish, crustaceans and molluscs in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("5e37a9b7-2cf1-49fb-afed-68ea2249c50b"),
+                            Id = new Guid("50b06ccc-7142-483c-93a4-3bd4b7e6ec8f"),
                             Code = "G.47.24",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of bread, cakes, flour confectionery and sugar confectionery in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("b499c677-417b-42dd-9680-6c2142fe7f58"),
+                            Id = new Guid("7ddebc4f-aeb4-4500-991d-d84d636c2e64"),
                             Code = "G.47.25",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of beverages in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("3352b74a-9f9c-46ed-8f05-20bd7953aeea"),
+                            Id = new Guid("85baa590-cb7b-4c5f-a05c-7bba32b97e02"),
                             Code = "G.47.26",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of tobacco products in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("e6c57b6c-c9ca-4a3b-b426-a0d754d43f18"),
+                            Id = new Guid("d398e1fe-697e-4980-b93a-5810ce828ce7"),
                             Code = "G.47.29",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Other retail sale of food in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("7eaceb32-09f0-4654-bfed-631037ac11fe"),
+                            Id = new Guid("32e6e80a-3aac-444d-9bd0-bc2cb9af70a6"),
                             Code = "G.47.3",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of automotive fuel in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("1e0d2699-648a-4015-8497-76f83f9d7050"),
+                            Id = new Guid("fac61cc6-b584-4423-af33-da48d5a32c4d"),
                             Code = "G.47.30",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of automotive fuel in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("7cbad374-5da0-4ced-a7a8-08d5b4e55506"),
+                            Id = new Guid("2435558d-9b4e-4f8c-9c3d-63b07cada532"),
                             Code = "G.47.4",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of information and communication equipment in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("3171259e-05bb-4628-9364-5bd1731598cf"),
+                            Id = new Guid("8d8db57c-6be9-480d-8156-5e65d84f0487"),
                             Code = "G.47.41",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of computers, peripheral units and software in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("edbbb28b-7a91-479b-a739-be43400017e0"),
+                            Id = new Guid("c2a52016-eac3-4f0d-9b30-f5295a5a33eb"),
                             Code = "G.47.42",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of telecommunications equipment in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("7efa49ec-a218-43e4-91ea-d36c046bd6ae"),
+                            Id = new Guid("9c0b179a-49a3-4ba1-b7dc-37fa174fac85"),
                             Code = "G.47.43",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of audio and video equipment in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("100b57a8-7888-4cbd-8f9a-86496d84e010"),
+                            Id = new Guid("eba2fab8-2d04-4080-9a8e-22d85d3569af"),
                             Code = "G.47.5",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of other household equipment in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("0f7b9edc-c116-4820-a265-6e3c12b6b79a"),
+                            Id = new Guid("45f240dd-b22a-415c-99b0-a6e8be04edfe"),
                             Code = "G.47.51",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of textiles in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("6ae5f583-7ba1-4c52-992d-433f05778b0a"),
+                            Id = new Guid("9357de62-0595-47bc-a8e6-9dd98dc38a7c"),
                             Code = "G.47.52",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of hardware, paints and glass in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("1d0f07a9-9ad0-43ac-a5bb-a9cbab4d0e4f"),
+                            Id = new Guid("cf322e5b-4d15-4bef-8a77-55c311d3c9a4"),
                             Code = "G.47.53",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of carpets, rugs, wall and floor coverings in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("45ca415d-965f-4a5d-8653-877f50da454c"),
+                            Id = new Guid("70edca27-fcb6-4e36-b00c-0bb6eae53c9f"),
                             Code = "G.47.54",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of electrical household appliances in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("d8a16cf4-7f1e-4824-97be-14938b191f02"),
+                            Id = new Guid("188801e8-99ab-4029-aae0-276c6a8689d7"),
                             Code = "G.47.59",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of furniture, lighting equipment and other household articles in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("2f60497e-f0fd-4767-b725-8f0b64b429ce"),
+                            Id = new Guid("a14d92d0-e5ff-4dc6-8c16-10aef22018b1"),
                             Code = "G.47.6",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of cultural and recreation goods in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("7c8e1727-7e0e-43e7-9370-d4176f9956b4"),
+                            Id = new Guid("000df813-6919-4afc-abc9-d14cb8b55e50"),
                             Code = "G.47.61",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of books in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("46f414a7-be72-461b-a1e1-1d0882610599"),
+                            Id = new Guid("7483381f-18ef-4b10-93fa-1cec6cb3a36e"),
                             Code = "G.47.62",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of newspapers and stationery in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("4335eb37-16cb-47da-a5bb-1c1fe76777db"),
+                            Id = new Guid("2f1ae5be-baf2-4a96-8973-3c63cd57625d"),
                             Code = "G.47.63",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of music and video recordings in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("64a3db0b-31e7-4153-854f-e1844dbb5894"),
+                            Id = new Guid("01ce4bcf-ca93-40b6-bc12-46cc6bfc0555"),
                             Code = "G.47.64",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of sporting equipment in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("d4c57578-c09c-417a-9ffb-deff41a4b775"),
+                            Id = new Guid("1bbfd88b-9944-4d29-9297-1cdb519065ca"),
                             Code = "G.47.65",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of games and toys in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("6ab71e5a-5d9a-4798-b580-08ca03769a1c"),
+                            Id = new Guid("2a1b2012-857d-4dc4-8503-23caae76b4b7"),
                             Code = "G.47.7",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of other goods in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("f85d55e5-c3be-4fab-bcf3-b6cc9c3a7c0a"),
+                            Id = new Guid("4abe40b6-5af0-495d-9c88-c831d1d211e5"),
                             Code = "G.47.71",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of clothing in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("63b22f16-7fd5-472b-b21f-01f86e7da500"),
+                            Id = new Guid("4db4348b-3c23-45f6-b912-4181da20c593"),
                             Code = "G.47.72",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of footwear and leather goods in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("866249e2-a319-497d-8786-00d3c4fadffe"),
+                            Id = new Guid("eb732a14-0294-4692-9e31-e86bd70544c3"),
                             Code = "G.47.73",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Dispensing chemist in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("6a3afbb5-487c-4a6d-94f3-b8cf807bfcd2"),
+                            Id = new Guid("20dc1949-7b70-430c-8386-f3270e57a2a2"),
                             Code = "G.47.74",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of medical and orthopaedic goods in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("9c8f9d8f-d317-466d-b692-9026a07d867b"),
+                            Id = new Guid("d5e9a41a-9f1a-42ba-b4ee-1283875a4f77"),
                             Code = "G.47.75",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of cosmetic and toilet articles in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("f538e197-e3bf-40d5-a590-1969af531860"),
+                            Id = new Guid("d4fbff63-6ae4-40a4-bfa1-86fd1da0cd2d"),
                             Code = "G.47.76",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of flowers, plants, seeds, fertilisers, pet animals and pet food in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("5c706d5c-ab0c-4913-887b-24d1c1254fc3"),
+                            Id = new Guid("4ea76414-8800-4c19-a5ef-f2f61d7c431c"),
                             Code = "G.47.77",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of watches and jewellery in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("612fdb60-e50e-4a65-8cb2-da3d28db648f"),
+                            Id = new Guid("f646adf2-555f-4d2b-a327-7bfa881737b1"),
                             Code = "G.47.78",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Other retail sale of new goods in specialised stores"
                         },
                         new
                         {
-                            Id = new Guid("89c767ed-e9f5-4545-86e8-53fc36a07b1a"),
+                            Id = new Guid("c7237a4a-9dc0-4255-bc99-f81006d0e35f"),
                             Code = "G.47.79",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale of second-hand goods in stores"
                         },
                         new
                         {
-                            Id = new Guid("0e5f765a-091f-4ce4-a988-44a6bc133de5"),
+                            Id = new Guid("12b7788a-5de7-4c9d-81a4-d94d95568476"),
                             Code = "G.47.8",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale via stalls and markets"
                         },
                         new
                         {
-                            Id = new Guid("3d353303-f764-4cfd-82f6-f1ba4715d416"),
+                            Id = new Guid("85c2ed5c-ab41-45b6-990e-c9a2dcdc7e91"),
                             Code = "G.47.81",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale via stalls and markets of food, beverages and tobacco products"
                         },
                         new
                         {
-                            Id = new Guid("a0929002-4dcf-44ea-ab54-11fd50075c5b"),
+                            Id = new Guid("0ca668c8-14e2-4356-997a-80f4236e9a52"),
                             Code = "G.47.82",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale via stalls and markets of textiles, clothing and footwear"
                         },
                         new
                         {
-                            Id = new Guid("45312a43-ca51-486f-a1be-a431ac08ba64"),
+                            Id = new Guid("88f772cf-486c-41a7-9b89-8d4229f5c5bb"),
                             Code = "G.47.89",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale via stalls and markets of other goods"
                         },
                         new
                         {
-                            Id = new Guid("8ebdf1a5-b435-4cb4-a4a4-7edf8c66a528"),
+                            Id = new Guid("fe083d6d-f846-4592-be21-745d0bf2ac4a"),
                             Code = "G.47.9",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail trade not in stores, stalls or markets"
                         },
                         new
                         {
-                            Id = new Guid("7cfa62d1-fc82-46f0-b3b6-882c7779e0d9"),
+                            Id = new Guid("d04622b7-3dfb-48fa-89a2-77d002f35497"),
                             Code = "G.47.91",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Retail sale via mail order houses or via Internet"
                         },
                         new
                         {
-                            Id = new Guid("fe27eaf0-e327-42d0-823f-b1f7940d78ec"),
+                            Id = new Guid("0569eb1a-61f2-4289-92e8-723ed4c3c768"),
                             Code = "G.47.99",
-                            IndustryId = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            IndustryId = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Title = "Other retail sale not in stores, stalls or markets"
                         },
                         new
                         {
-                            Id = new Guid("c79db65f-bfa6-400a-965f-2365fcbb66b3"),
+                            Id = new Guid("7dbd24e3-fcdd-426f-a637-7ed79cd39c8c"),
                             Code = "H.49",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Land transport and transport via pipelines"
                         },
                         new
                         {
-                            Id = new Guid("3d1febe0-6baa-4308-8997-3440616caac3"),
+                            Id = new Guid("a044a129-0588-4f1c-a018-ef1547c3f36f"),
                             Code = "H.49.1",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Passenger rail transport, interurban"
                         },
                         new
                         {
-                            Id = new Guid("b5d3b13b-7998-4d44-b991-5ca20522840b"),
+                            Id = new Guid("51527206-e068-4dbb-8ee5-751da4d71fb1"),
                             Code = "H.49.10",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Passenger rail transport, interurban"
                         },
                         new
                         {
-                            Id = new Guid("3ffae2bf-e1f6-48cb-8fdc-abcacdfd6cf3"),
+                            Id = new Guid("cebf2203-146d-4b1c-aded-9e82fb16872e"),
                             Code = "H.49.2",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight rail transport"
                         },
                         new
                         {
-                            Id = new Guid("bcbeeb8d-1bf5-42d1-bc1d-3cf4fa80d3e0"),
+                            Id = new Guid("70424182-939c-4f73-9c66-a1fc9d0a3ddd"),
                             Code = "H.49.20",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight rail transport"
                         },
                         new
                         {
-                            Id = new Guid("3bd8d843-75d7-46bb-98f8-285b91e1cd52"),
+                            Id = new Guid("ed714bf2-9ce0-4ef3-a807-6c5139a548b8"),
                             Code = "H.49.3",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Other passenger land transport"
                         },
                         new
                         {
-                            Id = new Guid("8cb607a7-5ee6-4116-855c-69b3407f2e30"),
+                            Id = new Guid("50dd08b6-917b-45d5-99dd-ccee3011ae5c"),
                             Code = "H.49.31",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Urban and suburban passenger land transport"
                         },
                         new
                         {
-                            Id = new Guid("7e23e3ca-669e-4f63-a05c-ea08ddbf89f2"),
+                            Id = new Guid("3fa877cb-0fd2-4092-b9fb-2bb61af50ce4"),
                             Code = "H.49.32",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Taxi operation"
                         },
                         new
                         {
-                            Id = new Guid("4353b6ba-2a9d-48f8-91cb-447ea0f0d937"),
+                            Id = new Guid("9a45d41f-37bd-49b1-bf73-63497218c89f"),
                             Code = "H.49.39",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Other passenger land transport n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("a8ad1739-4e1d-4dd0-b007-204791a71475"),
+                            Id = new Guid("abe8054e-6d2e-45a2-8be9-9c6a475d80d1"),
                             Code = "H.49.4",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight transport by road and removal services"
                         },
                         new
                         {
-                            Id = new Guid("ae0c2352-2539-44a2-bd75-d70a998ccdc2"),
+                            Id = new Guid("9c475112-8de4-4dc9-a6c0-007a7957f74c"),
                             Code = "H.49.41",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight transport by road"
                         },
                         new
                         {
-                            Id = new Guid("07129114-4e4e-4fcf-8bfa-7d030940608f"),
+                            Id = new Guid("d09ff59d-2740-41f5-b6d9-dd8cda9da95e"),
                             Code = "H.49.42",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Removal services"
                         },
                         new
                         {
-                            Id = new Guid("40967b06-07d2-4f02-a2cc-b312b22f7890"),
+                            Id = new Guid("5b36fbf3-265e-48f6-a29b-8fab12f53d91"),
                             Code = "H.49.5",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Transport via pipeline"
                         },
                         new
                         {
-                            Id = new Guid("b6d556d3-866f-4d36-a1d1-0a0ac518e267"),
+                            Id = new Guid("12230fff-2430-434a-96b9-56d83a37e1ee"),
                             Code = "H.49.50",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Transport via pipeline"
                         },
                         new
                         {
-                            Id = new Guid("cabd06a8-c2c1-47f5-92f1-85b5387a4327"),
+                            Id = new Guid("cdb75f93-833d-4a6d-8097-d23abf020155"),
                             Code = "H.50",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Water transport"
                         },
                         new
                         {
-                            Id = new Guid("53b3fbd1-ec52-4ed5-aaa3-5fc1de8c6365"),
+                            Id = new Guid("70014bc4-194f-42b8-95ac-47d9db7cb9ff"),
                             Code = "H.50.1",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Sea and coastal passenger water transport"
                         },
                         new
                         {
-                            Id = new Guid("28c21191-c048-47df-adf8-727960221b63"),
+                            Id = new Guid("c81e4478-c4db-4aa6-8035-62abc8c269b2"),
                             Code = "H.50.10",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Sea and coastal passenger water transport"
                         },
                         new
                         {
-                            Id = new Guid("2cca3ac0-3c4f-4ede-aed6-f43b1e56858f"),
+                            Id = new Guid("47aaef1f-f5e3-4c66-8735-27d5259857c1"),
                             Code = "H.50.2",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Sea and coastal freight water transport"
                         },
                         new
                         {
-                            Id = new Guid("31f5876a-afbd-425f-bdbf-276ab8f3ac0f"),
+                            Id = new Guid("bc714c41-3aaa-4612-90fa-1b42c14cc5e4"),
                             Code = "H.50.20",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Sea and coastal freight water transport"
                         },
                         new
                         {
-                            Id = new Guid("21e72b54-5a94-4bb3-8c40-31e15c34c63c"),
+                            Id = new Guid("30b7ada1-7aa7-4875-99fb-2216ca8ee326"),
                             Code = "H.50.3",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Inland passenger water transport"
                         },
                         new
                         {
-                            Id = new Guid("32f0ef62-6f56-4554-ba0f-47b69ecd143d"),
+                            Id = new Guid("66f10129-1bec-4406-beda-2e291dc47a18"),
                             Code = "H.50.30",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Inland passenger water transport"
                         },
                         new
                         {
-                            Id = new Guid("5796a664-f0e1-4158-878c-b7061854fcd2"),
+                            Id = new Guid("4a0d97f7-14f5-4d1b-8767-a9ce0d4c16a3"),
                             Code = "H.50.4",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Inland freight water transport"
                         },
                         new
                         {
-                            Id = new Guid("00ebdb69-dade-4242-a63e-a5e497a3a1a6"),
+                            Id = new Guid("7f72faa1-8c5b-4564-bb82-77cad8605f0d"),
                             Code = "H.50.40",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Inland freight water transport"
                         },
                         new
                         {
-                            Id = new Guid("ae33abfc-7490-431d-bea0-af6d62dbe346"),
+                            Id = new Guid("cc33da1f-0f54-4d32-b7e1-c8eb02d13f5b"),
                             Code = "H.51",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Air transport"
                         },
                         new
                         {
-                            Id = new Guid("8246a80f-8f95-440d-a9cb-f5556636cbdb"),
+                            Id = new Guid("ee41f2fa-29a7-4ee5-9ec3-4f97b24ca040"),
                             Code = "H.51.1",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Passenger air transport"
                         },
                         new
                         {
-                            Id = new Guid("2703a6e8-6816-4bf0-ab66-a1a9c18d6138"),
+                            Id = new Guid("1a89f261-c963-4d6d-9e0b-f81bbd103e8d"),
                             Code = "H.51.10",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Passenger air transport"
                         },
                         new
                         {
-                            Id = new Guid("202b54c5-15d0-4bd5-aae7-f156b9b4af25"),
+                            Id = new Guid("5f4a0ed0-e1df-43af-83f3-3026414bd2ee"),
                             Code = "H.51.2",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight air transport and space transport"
                         },
                         new
                         {
-                            Id = new Guid("04419a06-d772-4a3c-91ad-fd1784f22d99"),
+                            Id = new Guid("bfe62436-1688-41a6-9fbd-2ed1c63d67a7"),
                             Code = "H.51.21",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Freight air transport"
                         },
                         new
                         {
-                            Id = new Guid("fedc9ca2-4bbe-468c-9c4b-5fceaf2fea02"),
+                            Id = new Guid("7c3342cc-f805-4cdd-ac9c-2a45b508656b"),
                             Code = "H.51.22",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Space transport"
                         },
                         new
                         {
-                            Id = new Guid("7442d373-900d-4633-ae55-a952c060d5b7"),
+                            Id = new Guid("79639e90-8e1c-4696-87a2-5592f2da8e9b"),
                             Code = "H.52",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Warehousing and support activities for transportation"
                         },
                         new
                         {
-                            Id = new Guid("26fbcdd9-cb8e-468c-a5e8-290bef7a892b"),
+                            Id = new Guid("10666b3e-c28a-49da-b4b6-4dec84e9bfe5"),
                             Code = "H.52.1",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Warehousing and storage"
                         },
                         new
                         {
-                            Id = new Guid("f57958f8-1ce3-47df-b1ac-24a328c46c07"),
+                            Id = new Guid("782eebc2-3bd6-4dc0-b9a6-eb279ddd5268"),
                             Code = "H.52.10",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Warehousing and storage"
                         },
                         new
                         {
-                            Id = new Guid("0c712542-7e1d-4086-b1ec-df949cfe6892"),
+                            Id = new Guid("42b2069b-eaa3-4d13-92bc-a8fad3b38f98"),
                             Code = "H.52.2",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Support activities for transportation"
                         },
                         new
                         {
-                            Id = new Guid("5e6aba37-388f-4e32-8586-689d0e9bba0e"),
+                            Id = new Guid("3ec31706-c25f-4e8d-aafa-1c34fc2764c8"),
                             Code = "H.52.21",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Service activities incidental to land transportation"
                         },
                         new
                         {
-                            Id = new Guid("1b400ae4-37d5-4e44-81c4-801580f03102"),
+                            Id = new Guid("10ae8d46-a0da-4149-84a2-f7f6cd26d418"),
                             Code = "H.52.22",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Service activities incidental to water transportation"
                         },
                         new
                         {
-                            Id = new Guid("52f21949-3da8-4fab-935c-e89994123647"),
+                            Id = new Guid("fb990e39-8f38-4740-92ac-0ffc737ad4b9"),
                             Code = "H.52.23",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Service activities incidental to air transportation"
                         },
                         new
                         {
-                            Id = new Guid("7203850f-8c63-496b-b542-cc27af5ac96c"),
+                            Id = new Guid("17035c3d-e5e6-44d0-8d36-3b3551c5b9e7"),
                             Code = "H.52.24",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Cargo handling"
                         },
                         new
                         {
-                            Id = new Guid("135540ab-e9a0-4ae3-add5-41e8098666dd"),
+                            Id = new Guid("bd7f1c69-1604-43b5-b914-33efac4b1ccf"),
                             Code = "H.52.29",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Other transportation support activities"
                         },
                         new
                         {
-                            Id = new Guid("1b73b372-ec19-4997-beb8-0628ce93ce80"),
+                            Id = new Guid("edfdac76-f754-42a0-9e23-07b4577beae9"),
                             Code = "H.53",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Postal and courier activities"
                         },
                         new
                         {
-                            Id = new Guid("535abfe1-2fd0-4c07-be61-14496522ff8a"),
+                            Id = new Guid("edd8f44e-7b21-4e20-b65f-0fdcaefffd28"),
                             Code = "H.53.1",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Postal activities under universal service obligation"
                         },
                         new
                         {
-                            Id = new Guid("d9604b4d-9bbf-40d9-89ef-8a80ec166617"),
+                            Id = new Guid("7b01d06b-9700-4649-a670-af7c8d2755c3"),
                             Code = "H.53.10",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Postal activities under universal service obligation"
                         },
                         new
                         {
-                            Id = new Guid("5dbb02cf-9f0f-40ee-bce3-6049db94197a"),
+                            Id = new Guid("d630f726-7e48-4db1-ae84-438279e007bb"),
                             Code = "H.53.2",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Other postal and courier activities"
                         },
                         new
                         {
-                            Id = new Guid("0302858c-5744-44c2-8538-d68216a78849"),
+                            Id = new Guid("9a11ac5a-c717-4128-aba0-d881891164d1"),
                             Code = "H.53.20",
-                            IndustryId = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            IndustryId = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Title = "Other postal and courier activities"
                         },
                         new
                         {
-                            Id = new Guid("dc2711ce-002e-4868-9ec5-ff89d2398596"),
+                            Id = new Guid("e46f322a-c47a-4d29-9a3c-e2756ea94694"),
                             Code = "I.55",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Accommodation"
                         },
                         new
                         {
-                            Id = new Guid("70dc19bd-2b3b-4077-822b-6f222e1c9825"),
+                            Id = new Guid("86816e39-d17e-4183-8397-f4c0c1302342"),
                             Code = "I.55.1",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Hotels and similar accommodation"
                         },
                         new
                         {
-                            Id = new Guid("36b100b3-b438-42ef-861b-dc594bcd3078"),
+                            Id = new Guid("225e4bcf-e97b-4662-a2e9-41f013f8ff5d"),
                             Code = "I.55.10",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Hotels and similar accommodation"
                         },
                         new
                         {
-                            Id = new Guid("ea60409c-6043-4251-a814-84cd20e04401"),
+                            Id = new Guid("3e685191-2ac3-41ea-a304-ea137eee32a3"),
                             Code = "I.55.2",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Holiday and other short-stay accommodation"
                         },
                         new
                         {
-                            Id = new Guid("457de1a6-4c49-465e-aba7-c30730d53bfb"),
+                            Id = new Guid("61438ff9-662b-4fe5-ae39-4b576545353e"),
                             Code = "I.55.20",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Holiday and other short-stay accommodation"
                         },
                         new
                         {
-                            Id = new Guid("c94516a0-04ad-4c05-a052-b940b8ae8cba"),
+                            Id = new Guid("f80632a9-259a-421f-9354-e14d8b4c1281"),
                             Code = "I.55.3",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Camping grounds, recreational vehicle parks and trailer parks"
                         },
                         new
                         {
-                            Id = new Guid("886332ec-5263-4b61-87c0-8e9f1bbcdb8a"),
+                            Id = new Guid("298644c4-3e0d-4210-9e2f-455fea524720"),
                             Code = "I.55.30",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Camping grounds, recreational vehicle parks and trailer parks"
                         },
                         new
                         {
-                            Id = new Guid("14ab31bc-67b3-4c64-9362-66c5fed5e983"),
+                            Id = new Guid("1741b8d3-3326-4206-945a-98a66114d5b7"),
                             Code = "I.55.9",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Other accommodation"
                         },
                         new
                         {
-                            Id = new Guid("e357c2d4-2080-46fe-8b7e-ef10364de84b"),
+                            Id = new Guid("c560acf0-83fb-4ba4-bc7d-2fe0a1ad3e55"),
                             Code = "I.55.90",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Other accommodation"
                         },
                         new
                         {
-                            Id = new Guid("53991bb0-245a-41a7-b98f-577d1b48dcbb"),
+                            Id = new Guid("ac450603-1ddf-41e4-998d-9419d7fd86fc"),
                             Code = "I.56",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Food and beverage service activities"
                         },
                         new
                         {
-                            Id = new Guid("0106cfce-6aa3-4624-840d-ca69cc14747b"),
+                            Id = new Guid("de37ac66-53c5-4b27-80b6-1833785a2bf2"),
                             Code = "I.56.1",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Restaurants and mobile food service activities"
                         },
                         new
                         {
-                            Id = new Guid("857c6794-ee6c-45b3-9665-71859a87d70c"),
+                            Id = new Guid("669b00e4-72b3-4529-a652-74974d2f3198"),
                             Code = "I.56.10",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Restaurants and mobile food service activities"
                         },
                         new
                         {
-                            Id = new Guid("78000297-8384-46f0-a708-111049039908"),
+                            Id = new Guid("12e1f1f4-52a2-4df1-bd5c-5c788ecb8d86"),
                             Code = "I.56.2",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Event catering and other food service activities"
                         },
                         new
                         {
-                            Id = new Guid("bd3d4fe8-baf6-4840-afbd-a8924e6988e2"),
+                            Id = new Guid("5b1ce4b7-b5d2-405b-8885-65bad36df7e5"),
                             Code = "I.56.21",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Event catering activities"
                         },
                         new
                         {
-                            Id = new Guid("b6ef9c8a-628a-4f22-b641-43783914ae22"),
+                            Id = new Guid("f7ac6514-ef7b-4522-9832-8cf62e784a86"),
                             Code = "I.56.29",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Other food service activities"
                         },
                         new
                         {
-                            Id = new Guid("9696c5c2-734b-4738-b271-739d32849e39"),
+                            Id = new Guid("5a26bed8-fb7b-44df-9d95-6c760647c370"),
                             Code = "I.56.3",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Beverage serving activities"
                         },
                         new
                         {
-                            Id = new Guid("e6073dbb-f9cc-4ebb-a7b0-5cd3b45167a3"),
+                            Id = new Guid("e5c03f07-0a1f-4bee-bb7a-154c487f6185"),
                             Code = "I.56.30",
-                            IndustryId = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            IndustryId = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Title = "Beverage serving activities"
                         },
                         new
                         {
-                            Id = new Guid("8b241168-6c87-441d-87c8-481a87b0feb3"),
+                            Id = new Guid("da94a0f8-70d8-45ac-bb5f-634873610d30"),
                             Code = "J.58",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("a8e4a202-db40-47be-830b-f4ab7abcdac7"),
+                            Id = new Guid("dce6ec08-1928-42fd-ba07-e83721249d15"),
                             Code = "J.58.1",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing of books, periodicals and other publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("d2ad0fab-f2f3-4cd1-a5e6-52246610a15f"),
+                            Id = new Guid("724563f5-f458-4d8f-b583-291c3958d7c1"),
                             Code = "J.58.11",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Book publishing"
                         },
                         new
                         {
-                            Id = new Guid("1804c103-98a5-4f14-a24c-5c7f37555f97"),
+                            Id = new Guid("98da00f9-6673-4ecf-a1dd-73c8555a9f5e"),
                             Code = "J.58.12",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing of directories and mailing lists"
                         },
                         new
                         {
-                            Id = new Guid("90750dee-6b80-4d0e-b117-a3e285159e58"),
+                            Id = new Guid("73e3a37f-5372-4010-8922-3efa481bf846"),
                             Code = "J.58.13",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing of newspapers"
                         },
                         new
                         {
-                            Id = new Guid("6368eb1c-35db-4bbc-9123-bb1d2225f254"),
+                            Id = new Guid("bf838a3e-7059-45b4-aa55-19d983a9cfcd"),
                             Code = "J.58.14",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing of journals and periodicals"
                         },
                         new
                         {
-                            Id = new Guid("0bd28d08-a16b-48c8-8d7c-3573e535900d"),
+                            Id = new Guid("fb529a65-e5f4-44c7-9cf0-171b0bb88533"),
                             Code = "J.58.19",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("32cbdea8-6ea8-49e1-a084-7c8e0fa2a222"),
+                            Id = new Guid("35789e2b-5bec-44e3-909d-dfec0ea156a9"),
                             Code = "J.58.2",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Software publishing"
                         },
                         new
                         {
-                            Id = new Guid("b9cb80f3-0e0b-4a5c-9ece-7aed63320eb3"),
+                            Id = new Guid("fc1ba19d-286f-4012-aa45-c4a05f7b22a1"),
                             Code = "J.58.21",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Publishing of computer games"
                         },
                         new
                         {
-                            Id = new Guid("7e66ba7b-140f-45aa-9352-338c4f178f1b"),
+                            Id = new Guid("05b4f931-8c56-40f4-8138-a17254f4af34"),
                             Code = "J.58.29",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other software publishing"
                         },
                         new
                         {
-                            Id = new Guid("1229fe46-48ae-4a5f-8d22-fa6256d6b0b5"),
+                            Id = new Guid("2451ce59-b774-4d64-a0e9-9596841151e4"),
                             Code = "J.59",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture, video and television programme production, sound recording and music publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("49f87be4-c49c-4128-9f14-4b1a1540103b"),
+                            Id = new Guid("81314cac-a3ee-40dd-aa62-acad147ec34e"),
                             Code = "J.59.1",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture, video and television programme activities"
                         },
                         new
                         {
-                            Id = new Guid("d5f97651-f835-4220-8c7e-3efc4c2487df"),
+                            Id = new Guid("70e3a99d-f279-487a-82b4-44b8a86e77a5"),
                             Code = "J.59.11",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture, video and television programme production activities"
                         },
                         new
                         {
-                            Id = new Guid("a661da35-7710-4412-8efe-a7c2508f9c85"),
+                            Id = new Guid("c8fd831f-3e51-48bf-96a6-8209c4e3320b"),
                             Code = "J.59.12",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture, video and television programme post-production activities"
                         },
                         new
                         {
-                            Id = new Guid("03d4b5aa-b89d-4427-a493-6928c8c544d8"),
+                            Id = new Guid("0b5f3c36-2ad2-4eae-946b-c6e144630c8e"),
                             Code = "J.59.13",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture, video and television programme distribution activities"
                         },
                         new
                         {
-                            Id = new Guid("51a21179-96ec-4b56-9da6-8fe5181debb2"),
+                            Id = new Guid("bca0ff28-2bff-4b8a-b397-831d5ec6abf9"),
                             Code = "J.59.14",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Motion picture projection activities"
                         },
                         new
                         {
-                            Id = new Guid("ba92acf5-a533-4c1c-adc4-9b253c082584"),
+                            Id = new Guid("4acb4cdb-094c-46e7-a9b2-7ad4ee3d1374"),
                             Code = "J.59.2",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Sound recording and music publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("7e9f709a-ff73-421b-b651-2c6fa9444015"),
+                            Id = new Guid("97c56226-1945-4f49-8a2c-92762a61e67b"),
                             Code = "J.59.20",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Sound recording and music publishing activities"
                         },
                         new
                         {
-                            Id = new Guid("b2aa2462-ebbd-42bf-aa7a-e1badb9f255c"),
+                            Id = new Guid("1d9bfa75-8ae0-4ee9-8426-12c68fd71fc8"),
                             Code = "J.60",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Programming and broadcasting activities"
                         },
                         new
                         {
-                            Id = new Guid("2a33044b-936b-4dff-b072-ebedd6e046f8"),
+                            Id = new Guid("bd59a88b-1828-435a-aa14-b7b76d214582"),
                             Code = "J.60.1",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Radio broadcasting"
                         },
                         new
                         {
-                            Id = new Guid("838bc724-cdfc-4957-95f7-244ef702b89c"),
+                            Id = new Guid("f0479986-4c91-42db-9942-e255ba3a47b8"),
                             Code = "J.60.10",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Radio broadcasting"
                         },
                         new
                         {
-                            Id = new Guid("92950db9-7e07-4743-9e8e-a72da3d09ed4"),
+                            Id = new Guid("908134da-bcab-46f7-b25a-5c3875ddc0c9"),
                             Code = "J.60.2",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Television programming and broadcasting activities"
                         },
                         new
                         {
-                            Id = new Guid("cecd084b-1622-4cb0-912e-b289079d91cd"),
+                            Id = new Guid("a4a18e73-d8c9-4272-a421-ba67f5155229"),
                             Code = "J.60.20",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Television programming and broadcasting activities"
                         },
                         new
                         {
-                            Id = new Guid("78bd584f-4f3e-4df4-99c8-01bdd698e7ee"),
+                            Id = new Guid("4c10c3eb-a7d9-4325-a176-9c500f6e8be5"),
                             Code = "J.61",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Telecommunications"
                         },
                         new
                         {
-                            Id = new Guid("efa6808c-93e9-4467-ba09-6de396f3d50a"),
+                            Id = new Guid("d00a7a63-d9df-4a5e-81d4-611b683b7b56"),
                             Code = "J.61.1",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Wired telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("2499a491-877b-4f9e-8dd5-25c70b3b4cd0"),
+                            Id = new Guid("34df1b98-5905-46c6-a161-be1b3ec73d45"),
                             Code = "J.61.10",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Wired telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("6bbbe4e2-d964-4c9f-a9ab-efe61839659d"),
+                            Id = new Guid("d436170f-abcd-495e-8721-1924ae6c3d38"),
                             Code = "J.61.2",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Wireless telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("bc93ab2c-3aa7-45ed-93c5-d88c314c2981"),
+                            Id = new Guid("c0d914be-4c96-492d-adb3-b47f1563eff0"),
                             Code = "J.61.20",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Wireless telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("077825fd-1018-4b8b-b154-bde17d985905"),
+                            Id = new Guid("ee06e490-c7fc-48c5-acb3-bf093ddbe830"),
                             Code = "J.61.3",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Satellite telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("85ea1cc0-d85d-448f-99da-7cd0752b67cb"),
+                            Id = new Guid("f73af7df-5e57-4acf-ae6e-8f23ceef4bb2"),
                             Code = "J.61.30",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Satellite telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("2eedee8d-9f6e-4d2d-9fec-57fbdbec9890"),
+                            Id = new Guid("f94c23fa-73b5-4cdb-85eb-3a5dfd371436"),
                             Code = "J.61.9",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("afc1c73a-0c43-4629-848a-e33066ed0fec"),
+                            Id = new Guid("45daa4fe-a284-4f14-8a2c-17c8793be988"),
                             Code = "J.61.90",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other telecommunications activities"
                         },
                         new
                         {
-                            Id = new Guid("0c7773fc-568e-4fc1-bdfa-afdb7fb562be"),
+                            Id = new Guid("2106c025-13a0-46f2-8878-870a4aae9f86"),
                             Code = "J.62",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Computer programming, consultancy and related activities"
                         },
                         new
                         {
-                            Id = new Guid("7b131b16-495a-4aeb-9ef3-9d9bf341fab7"),
+                            Id = new Guid("6b5ac396-1805-4a6e-ab91-9c4b8434cb70"),
                             Code = "J.62.0",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Computer programming, consultancy and related activities"
                         },
                         new
                         {
-                            Id = new Guid("d7e80312-e05f-4c0c-bcce-962a06ebcb8d"),
+                            Id = new Guid("643894b2-f4fc-4595-aaf2-26a5d705b0e0"),
                             Code = "J.62.01",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Computer programming activities"
                         },
                         new
                         {
-                            Id = new Guid("63717a65-6449-4980-bb27-9ba5c2a3c33a"),
+                            Id = new Guid("e263752d-908b-49a3-a0a0-a38576ef22b9"),
                             Code = "J.62.02",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Computer consultancy activities"
                         },
                         new
                         {
-                            Id = new Guid("271228f6-1cf1-4491-887e-b547f6113f09"),
+                            Id = new Guid("b75d97ad-d4e5-4323-b52d-5827d1921886"),
                             Code = "J.62.03",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Computer facilities management activities"
                         },
                         new
                         {
-                            Id = new Guid("2101c4ef-e2a0-49d4-af8b-42eba3517b4a"),
+                            Id = new Guid("07a25799-2c91-4fc7-b2fc-a254e5a84e27"),
                             Code = "J.62.09",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other information technology and computer service activities"
                         },
                         new
                         {
-                            Id = new Guid("9dff22b9-b33f-46c2-905e-204c5b6c1a44"),
+                            Id = new Guid("fd180d1d-55eb-4e0c-8f39-7788274fee2c"),
                             Code = "J.63",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Information service activities"
                         },
                         new
                         {
-                            Id = new Guid("599730e0-168b-494b-accc-0086c14bbb8b"),
+                            Id = new Guid("d974912e-afbc-403a-9239-802852c1a19c"),
                             Code = "J.63.1",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Data processing, hosting and related activities; web portals"
                         },
                         new
                         {
-                            Id = new Guid("7e1187ce-fdba-48df-be00-307dfa175d4c"),
+                            Id = new Guid("1abf1c50-65c0-40d5-9ed5-169db27b05a5"),
                             Code = "J.63.11",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Data processing, hosting and related activities"
                         },
                         new
                         {
-                            Id = new Guid("0c90ee5e-fcf8-4359-bc8e-16a5f6a070a6"),
+                            Id = new Guid("a7ce1f38-66bb-4de1-b11d-19c9270b4dda"),
                             Code = "J.63.12",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Web portals"
                         },
                         new
                         {
-                            Id = new Guid("3157e0a1-eb3f-4028-9813-b51e206f9a03"),
+                            Id = new Guid("2457679e-01e8-4c04-b975-4585c74df3b4"),
                             Code = "J.63.9",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other information service activities"
                         },
                         new
                         {
-                            Id = new Guid("9c5454a6-28e0-4e7c-963d-b5fc1b05302a"),
+                            Id = new Guid("398bd757-3165-40b6-a313-931c846680fa"),
                             Code = "J.63.91",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "News agency activities"
                         },
                         new
                         {
-                            Id = new Guid("55aef4a3-3c15-41fe-97a3-2a6afc3854bf"),
+                            Id = new Guid("19646c46-311f-43bc-a02a-4e5ac89b246a"),
                             Code = "J.63.99",
-                            IndustryId = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            IndustryId = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Title = "Other information service activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("947be2c4-9df8-4154-b17f-ef27f6f4e39e"),
+                            Id = new Guid("c908fecf-bb51-411f-baab-840ae26b0e5d"),
                             Code = "K.64",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Financial service activities, except insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("212739fc-e588-404b-99da-81333f06b35c"),
+                            Id = new Guid("17e8de40-71d4-4624-b8d9-40defaeed3bc"),
                             Code = "K.64.1",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Monetary intermediation"
                         },
                         new
                         {
-                            Id = new Guid("4f47b1f7-2794-49b0-a6f7-6fe17d01f89d"),
+                            Id = new Guid("71077937-684c-487b-9fb7-55d4231bdf1c"),
                             Code = "K.64.11",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Central banking"
                         },
                         new
                         {
-                            Id = new Guid("ca065e0e-70cd-4d77-9004-aaba0f249781"),
+                            Id = new Guid("01fa2f56-283d-4203-aad2-04fa21787039"),
                             Code = "K.64.19",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other monetary intermediation"
                         },
                         new
                         {
-                            Id = new Guid("f53847c3-be43-4b34-86fd-e9bcb3d91694"),
+                            Id = new Guid("54c1e3f1-0cc9-4ac2-91c0-ee60e0f4b50f"),
                             Code = "K.64.2",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities of holding companies"
                         },
                         new
                         {
-                            Id = new Guid("a389f4f6-50ea-4444-937b-d61f7ea051b0"),
+                            Id = new Guid("d3f5bed6-bee6-467e-b3e1-19ea3a16f295"),
                             Code = "K.64.20",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities of holding companies"
                         },
                         new
                         {
-                            Id = new Guid("efcf378e-6ac4-46e2-9043-b87bd78a9177"),
+                            Id = new Guid("d295223f-0e07-4dba-9907-3d47119fd390"),
                             Code = "K.64.3",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Trusts, funds and similar financial entities"
                         },
                         new
                         {
-                            Id = new Guid("9c8c38e6-85e5-43e3-aa81-5754b35c39b0"),
+                            Id = new Guid("fd506912-d676-44f8-b6ae-e006cc7d5261"),
                             Code = "K.64.30",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Trusts, funds and similar financial entities"
                         },
                         new
                         {
-                            Id = new Guid("2ecd2b36-de46-42db-bedf-7d0718770b4c"),
+                            Id = new Guid("28ac7016-ecdf-4e45-b3a6-4634189ba173"),
                             Code = "K.64.9",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other financial service activities, except insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("d5c62af0-3cfd-4e0e-9224-8d87dc924275"),
+                            Id = new Guid("6bace0a9-b1f7-41c5-81f2-789b077ab650"),
                             Code = "K.64.91",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Financial leasing"
                         },
                         new
                         {
-                            Id = new Guid("57cbd24c-5f82-4b72-b4f4-4eb43a5e7b47"),
+                            Id = new Guid("bef8aab0-35ad-4556-a0b2-17012889cc99"),
                             Code = "K.64.92",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other credit granting"
                         },
                         new
                         {
-                            Id = new Guid("80f29176-1492-4240-b558-1026d7bd526f"),
+                            Id = new Guid("c80d5979-32a0-41b4-96b7-f2db9200f06f"),
                             Code = "K.64.99",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other financial service activities, except insurance and pension funding n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("04387ad2-3553-4bed-8647-a5c3fcd6bb94"),
+                            Id = new Guid("3602ac95-4a04-48d6-b82e-9c361e476e2b"),
                             Code = "K.65",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Insurance, reinsurance and pension funding, except compulsory social security"
                         },
                         new
                         {
-                            Id = new Guid("be54e987-ee23-49c9-aeef-eb7c8c8d4347"),
+                            Id = new Guid("3b0691bd-bdb3-4791-b856-ed0777e80a80"),
                             Code = "K.65.1",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Insurance"
                         },
                         new
                         {
-                            Id = new Guid("17b7f80e-ec13-4734-87f0-f16ece24d30a"),
+                            Id = new Guid("5910162e-8b16-4c8d-a6ab-40d1b2f6a3de"),
                             Code = "K.65.11",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Life insurance"
                         },
                         new
                         {
-                            Id = new Guid("9500db16-5781-4aab-afca-ea770eeea38e"),
+                            Id = new Guid("13566970-cb33-4f37-8fba-8348f6b5a60d"),
                             Code = "K.65.12",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Non-life insurance"
                         },
                         new
                         {
-                            Id = new Guid("e2b33702-2581-4a2f-b057-7998e0c6b00d"),
+                            Id = new Guid("0eb1aae4-25e2-4d2c-8588-57a02ef201de"),
                             Code = "K.65.2",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Reinsurance"
                         },
                         new
                         {
-                            Id = new Guid("1943f3c9-d8d2-4f0e-b00c-2a30153adfa3"),
+                            Id = new Guid("79dbf1fe-1b31-4351-9ffe-4a7d9551273d"),
                             Code = "K.65.20",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Reinsurance"
                         },
                         new
                         {
-                            Id = new Guid("81f56659-7e75-4433-912b-8e481c8cda53"),
+                            Id = new Guid("2ba485d3-f75a-4a85-ad8a-f72b9da6af38"),
                             Code = "K.65.3",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Pension funding"
                         },
                         new
                         {
-                            Id = new Guid("f380be24-0fe3-4ef7-bca4-a51e5bc3232f"),
+                            Id = new Guid("86e7dc5e-3ca0-46f2-9114-34f79c7c2349"),
                             Code = "K.65.30",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Pension funding"
                         },
                         new
                         {
-                            Id = new Guid("17594603-1154-4f0b-b140-80fb6b9e6566"),
+                            Id = new Guid("4b92b222-703c-484e-b3f5-e79bd9db38c5"),
                             Code = "K.66",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities auxiliary to financial services and insurance activities"
                         },
                         new
                         {
-                            Id = new Guid("01ad3b35-4b7f-4b51-a25d-a65e58f98201"),
+                            Id = new Guid("60c63e13-4aa9-45d0-82a0-1c5047dacca4"),
                             Code = "K.66.1",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities auxiliary to financial services, except insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("5abce2bc-cd82-4d45-93ae-41e46cb19f33"),
+                            Id = new Guid("a74f099b-d782-44f1-b169-ca7af5797696"),
                             Code = "K.66.11",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Administration of financial markets"
                         },
                         new
                         {
-                            Id = new Guid("d591fc3b-cf05-4947-b4c0-fb4c34fab476"),
+                            Id = new Guid("1d2b3c78-8d75-455b-91d3-d0f503641d6b"),
                             Code = "K.66.12",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Security and commodity contracts brokerage"
                         },
                         new
                         {
-                            Id = new Guid("e621663c-2393-4bcc-8699-c1a059b88627"),
+                            Id = new Guid("26c0e751-8245-4d1d-9735-1a6cbdece214"),
                             Code = "K.66.19",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other activities auxiliary to financial services, except insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("0a55a4ea-ddb5-46f1-aa6f-fa4cfd166f92"),
+                            Id = new Guid("f7259661-d0c5-4540-9262-897a74caf30d"),
                             Code = "K.66.2",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities auxiliary to insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("9e779419-1be0-41c1-a7bf-1293e6939ee2"),
+                            Id = new Guid("cf9086f4-427d-4819-afa7-ca4edc61f1dc"),
                             Code = "K.66.21",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Risk and damage evaluation"
                         },
                         new
                         {
-                            Id = new Guid("d4eca07e-b2b3-4780-9f38-388944429ee9"),
+                            Id = new Guid("e2cb93e8-2b14-47f0-afbb-86381398494f"),
                             Code = "K.66.22",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Activities of insurance agents and brokers"
                         },
                         new
                         {
-                            Id = new Guid("f9614198-10b2-4b5a-bfd3-0d4cc5f305b0"),
+                            Id = new Guid("6cc20cc9-27d3-4f57-8b0b-4c3a14e5fdad"),
                             Code = "K.66.29",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Other activities auxiliary to insurance and pension funding"
                         },
                         new
                         {
-                            Id = new Guid("5af82660-a105-4546-b347-4441a467ecb4"),
+                            Id = new Guid("4a09f6ad-9541-4486-8163-efcfaa648e15"),
                             Code = "K.66.3",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Fund management activities"
                         },
                         new
                         {
-                            Id = new Guid("0f33341a-2b25-480a-9a3c-a40a06853835"),
+                            Id = new Guid("acaa6361-e882-46f7-a087-0ddfd15d51cd"),
                             Code = "K.66.30",
-                            IndustryId = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            IndustryId = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Title = "Fund management activities"
                         },
                         new
                         {
-                            Id = new Guid("0bce96a6-5d16-4e81-8999-ecef86beb658"),
+                            Id = new Guid("1205c672-5776-47d6-8d54-ba676fb654d8"),
                             Code = "L.68",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Real estate activities"
                         },
                         new
                         {
-                            Id = new Guid("af31a408-6eca-47b0-9684-ae0534701d66"),
+                            Id = new Guid("ad83f0fa-ab52-4a31-959a-34f78d0c43b5"),
                             Code = "L.68.1",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Buying and selling of own real estate"
                         },
                         new
                         {
-                            Id = new Guid("0286c4bc-95ad-44fd-ac99-3aa5ae514180"),
+                            Id = new Guid("58f6940f-5e47-436e-b7c8-1e28177b4499"),
                             Code = "L.68.10",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Buying and selling of own real estate"
                         },
                         new
                         {
-                            Id = new Guid("e5d687f5-5e8d-43ce-80f0-4e9583a65196"),
+                            Id = new Guid("005024b8-aca4-4982-b37e-8e6023232fb0"),
                             Code = "L.68.2",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Renting and operating of own or leased real estate"
                         },
                         new
                         {
-                            Id = new Guid("5f910aa7-ce0e-4a8d-907f-cc0f9ddbe3a9"),
+                            Id = new Guid("af265d6c-cc7b-42bd-a50d-b24846cebeaa"),
                             Code = "L.68.20",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Renting and operating of own or leased real estate"
                         },
                         new
                         {
-                            Id = new Guid("29f6271e-ca51-45ea-8603-fe7f4754ab61"),
+                            Id = new Guid("6d213cbe-c22b-4c88-ad38-9cdee5c9a243"),
                             Code = "L.68.3",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Real estate activities on a fee or contract basis"
                         },
                         new
                         {
-                            Id = new Guid("359dc3c4-5f57-410b-93c0-53c85800c9ba"),
+                            Id = new Guid("0281dc54-df19-4b19-96df-553bc0532231"),
                             Code = "L.68.31",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Real estate agencies"
                         },
                         new
                         {
-                            Id = new Guid("3d219883-dd26-4171-bcd8-0ad4be43f4c9"),
+                            Id = new Guid("ed88df8d-0e93-4b69-9333-24ca811491c7"),
                             Code = "L.68.32",
-                            IndustryId = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            IndustryId = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Title = "Management of real estate on a fee or contract basis"
                         },
                         new
                         {
-                            Id = new Guid("45f2fdc8-bbc4-482a-b758-91fe2d4e5a73"),
+                            Id = new Guid("555b2b5b-1425-4e31-973b-434999e55b42"),
                             Code = "M.69",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Legal and accounting activities"
                         },
                         new
                         {
-                            Id = new Guid("b9c7e09e-f00b-439e-aa9c-f4515054b75c"),
+                            Id = new Guid("d47ba79d-6665-42e9-88e5-24404ba33740"),
                             Code = "M.69.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Legal activities"
                         },
                         new
                         {
-                            Id = new Guid("b488aa34-b0d9-4957-8186-b06518e5724b"),
+                            Id = new Guid("44efc2d1-383c-4c7a-b49d-6308b201bbd4"),
                             Code = "M.69.10",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Legal activities"
                         },
                         new
                         {
-                            Id = new Guid("1ee8c1a7-207a-468f-9644-560526d2b8c2"),
+                            Id = new Guid("09f9981b-9e76-4870-9964-3edc01bd553a"),
                             Code = "M.69.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Accounting, bookkeeping and auditing activities; tax consultancy"
                         },
                         new
                         {
-                            Id = new Guid("fb2ed24a-3745-43a5-8d70-91d4f3da5569"),
+                            Id = new Guid("c53bf2ca-00fc-411e-a962-0a894c0e4bc7"),
                             Code = "M.69.20",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Accounting, bookkeeping and auditing activities; tax consultancy"
                         },
                         new
                         {
-                            Id = new Guid("771c0b2b-0af6-4b11-a6ee-29dc2a09ddc4"),
+                            Id = new Guid("fded7aac-3fda-4714-89c2-f0033eeb0df4"),
                             Code = "M.70",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Activities of head offices; management consultancy activities"
                         },
                         new
                         {
-                            Id = new Guid("5ff41d3b-b1d3-4a02-97ea-3d7cb6f572db"),
+                            Id = new Guid("8cc2b86c-efe1-4f7c-a901-413966807a5e"),
                             Code = "M.70.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Activities of head offices"
                         },
                         new
                         {
-                            Id = new Guid("cbfd1e8d-aa58-41bd-910d-bed4ae06bd44"),
+                            Id = new Guid("6ebeff29-ccaa-4c93-bd92-db5a7de840ad"),
                             Code = "M.70.10",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Activities of head offices"
                         },
                         new
                         {
-                            Id = new Guid("cdba28b0-f884-44f0-9d76-9a7012da08ed"),
+                            Id = new Guid("b4842b00-131a-4857-807b-e99c0a9a4e31"),
                             Code = "M.70.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Management consultancy activities"
                         },
                         new
                         {
-                            Id = new Guid("69e8fc85-d277-4c66-893a-691002abb5c5"),
+                            Id = new Guid("0652eb8e-f224-4fce-a872-a5378d9b2585"),
                             Code = "M.70.21",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Public relations and communication activities"
                         },
                         new
                         {
-                            Id = new Guid("0d5234db-99cc-40a9-b015-b5298b969fc0"),
+                            Id = new Guid("fdb0adc7-931e-4293-a3c4-521a647d9b41"),
                             Code = "M.70.22",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Business and other management consultancy activities"
                         },
                         new
                         {
-                            Id = new Guid("4ae17dcc-bbcd-44c0-9f26-6a70ed744c7c"),
+                            Id = new Guid("c69e9061-9717-46cf-8e60-770df2634e7c"),
                             Code = "M.71",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Architectural and engineering activities; technical testing and analysis"
                         },
                         new
                         {
-                            Id = new Guid("b43f15b5-39de-412e-9d49-cd19a966459a"),
+                            Id = new Guid("c8bd2120-0676-484b-a5ff-98839a5e9d35"),
                             Code = "M.71.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Architectural and engineering activities and related technical consultancy"
                         },
                         new
                         {
-                            Id = new Guid("9ea340c3-7cb2-4a00-b1e2-e2c5c238e5cf"),
+                            Id = new Guid("d915b05a-d0f7-4c18-bcf4-53273f30cb9d"),
                             Code = "M.71.11",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Architectural activities"
                         },
                         new
                         {
-                            Id = new Guid("f3afe670-5c41-4cf8-b0a7-0bdf7fb8f66a"),
+                            Id = new Guid("3d75109d-a609-4ec1-b212-e5761c8ffc84"),
                             Code = "M.71.12",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Engineering activities and related technical consultancy"
                         },
                         new
                         {
-                            Id = new Guid("ee0f70e1-3e27-4021-9ab5-9154c3f59ad9"),
+                            Id = new Guid("cb37411c-71da-465f-890c-5679da6e30f7"),
                             Code = "M.71.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Technical testing and analysis"
                         },
                         new
                         {
-                            Id = new Guid("0f3a315f-fa12-4e5e-9516-8ebea1efe715"),
+                            Id = new Guid("96221bf8-79c2-48fd-a27b-dc313972063f"),
                             Code = "M.71.20",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Technical testing and analysis"
                         },
                         new
                         {
-                            Id = new Guid("311ed3ed-628b-45a5-ad08-c117f777709c"),
+                            Id = new Guid("4e5bdc8f-1dba-42a2-ada2-ad94d9e6a968"),
                             Code = "M.72",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Scientific research and development"
                         },
                         new
                         {
-                            Id = new Guid("985e9856-3f4f-4b0f-814c-bae6b523ec9e"),
+                            Id = new Guid("ffb51a80-a501-4dd9-a374-648c4e79ce52"),
                             Code = "M.72.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Research and experimental development on natural sciences and engineering"
                         },
                         new
                         {
-                            Id = new Guid("20f1a521-e70b-4975-b362-361265fba9f6"),
+                            Id = new Guid("9583eff2-24e0-4422-bc32-33a110d89076"),
                             Code = "M.72.11",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Research and experimental development on biotechnology"
                         },
                         new
                         {
-                            Id = new Guid("b73ebf5b-ecb7-421e-9cc1-2b96593f3f52"),
+                            Id = new Guid("65649799-51d6-4d0e-a117-21d510df2dd1"),
                             Code = "M.72.19",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Other research and experimental development on natural sciences and engineering"
                         },
                         new
                         {
-                            Id = new Guid("f8bde7cc-8760-4d58-af96-ba9a65637933"),
+                            Id = new Guid("dbd13e59-d503-471a-aef1-c9cd39679ce7"),
                             Code = "M.72.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Research and experimental development on social sciences and humanities"
                         },
                         new
                         {
-                            Id = new Guid("b5dbc7ca-ad78-4071-bc50-a326638e0390"),
+                            Id = new Guid("6e2c6c74-d5c8-43a7-94fc-7cd52dcbcf09"),
                             Code = "M.72.20",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Research and experimental development on social sciences and humanities"
                         },
                         new
                         {
-                            Id = new Guid("ad7fa3e1-97a1-46ea-a5b5-d0f85fb49b7d"),
+                            Id = new Guid("a5ac770a-ae5f-4f6b-94c5-17574cfc4f43"),
                             Code = "M.73",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Advertising and market research"
                         },
                         new
                         {
-                            Id = new Guid("03df938f-cff6-4b82-8566-770bcc13bc07"),
+                            Id = new Guid("5a8ac2de-2246-45dc-ba56-342c84a56fa3"),
                             Code = "M.73.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Advertising"
                         },
                         new
                         {
-                            Id = new Guid("a717353f-f223-4d58-9575-4cc9117c5da2"),
+                            Id = new Guid("3292a324-8157-44b2-ada8-9598a74a65c6"),
                             Code = "M.73.11",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Advertising agencies"
                         },
                         new
                         {
-                            Id = new Guid("85c99f1b-0b80-4275-9b74-43ba9d8a59fa"),
+                            Id = new Guid("0537ba8b-6251-4884-93ca-b9ed7f5328a7"),
                             Code = "M.73.12",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Media representation"
                         },
                         new
                         {
-                            Id = new Guid("9f0f3d51-52fb-4f3b-95a5-c9a5cc3a36c8"),
+                            Id = new Guid("ac221c6d-ca67-4335-8f1b-e59240a829e9"),
                             Code = "M.73.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Market research and public opinion polling"
                         },
                         new
                         {
-                            Id = new Guid("0feaf8a1-5bd3-4283-9d6a-7c20f11e77b3"),
+                            Id = new Guid("2e326f83-8cb5-41ce-8d97-0811fa698530"),
                             Code = "M.73.20",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Market research and public opinion polling"
                         },
                         new
                         {
-                            Id = new Guid("0cf97262-52c3-4850-b346-eebdec259ddb"),
+                            Id = new Guid("76aff54b-4905-474a-89ae-e1df58c6bf46"),
                             Code = "M.74",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Other professional, scientific and technical activities"
                         },
                         new
                         {
-                            Id = new Guid("e8ffec00-e2ec-405f-8809-284c026578da"),
+                            Id = new Guid("e8f86f6a-1a06-48bc-8dce-b13aac15a9b3"),
                             Code = "M.74.1",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Specialised design activities"
                         },
                         new
                         {
-                            Id = new Guid("c3d2cf0d-5a0c-4526-b0e2-526488fd16cf"),
+                            Id = new Guid("86de7a0d-750b-477a-abb8-cf8ab184acb0"),
                             Code = "M.74.10",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Specialised design activities"
                         },
                         new
                         {
-                            Id = new Guid("7d1841d0-6ee9-4e61-827e-46e28cfa629a"),
+                            Id = new Guid("3f103c9f-d544-4b9e-9230-e7168a3337e9"),
                             Code = "M.74.2",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Photographic activities"
                         },
                         new
                         {
-                            Id = new Guid("86a0ea3f-15be-498e-9aa8-7014d276fb11"),
+                            Id = new Guid("11dac285-1bb6-429f-8132-b5905817aa9f"),
                             Code = "M.74.20",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Photographic activities"
                         },
                         new
                         {
-                            Id = new Guid("d4fd8fb7-15b7-4c65-820b-ff6deed51732"),
+                            Id = new Guid("dd223485-a8e1-463a-b236-a3fca878ebb3"),
                             Code = "M.74.3",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Translation and interpretation activities"
                         },
                         new
                         {
-                            Id = new Guid("a48410b5-c3d1-4a1a-bc2a-78f10a406333"),
+                            Id = new Guid("33a5e283-009b-4a53-92d5-4a56318e21e1"),
                             Code = "M.74.30",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Translation and interpretation activities"
                         },
                         new
                         {
-                            Id = new Guid("b22743ab-2a57-49ff-b277-85cf61412936"),
+                            Id = new Guid("357421ca-3321-47fd-877f-4b0a7803cc49"),
                             Code = "M.74.9",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Other professional, scientific and technical activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("4a085519-a7a8-4b70-bbda-9e3b6370e6ba"),
+                            Id = new Guid("4da75769-d19e-4b8e-ad45-80b75fec7dbb"),
                             Code = "M.74.90",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Other professional, scientific and technical activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("41a96cea-0f85-44ba-9625-80d7246140fa"),
+                            Id = new Guid("90812988-5427-4542-a97f-99b8d5f8a226"),
                             Code = "M.75",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Veterinary activities"
                         },
                         new
                         {
-                            Id = new Guid("305afbbb-f3b3-45e1-9abb-0dfcb5e77f4b"),
+                            Id = new Guid("ad1f04ec-8303-41f6-9643-a4f25e57a9b8"),
                             Code = "M.75.0",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Veterinary activities"
                         },
                         new
                         {
-                            Id = new Guid("74e41e42-8763-431c-8785-67762d438261"),
+                            Id = new Guid("6bc99063-8b8b-49d6-a18c-5b5aa4afa3bb"),
                             Code = "M.75.00",
-                            IndustryId = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            IndustryId = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Title = "Veterinary activities"
                         },
                         new
                         {
-                            Id = new Guid("ee5726d5-118d-41dc-bb14-6641991c9e16"),
+                            Id = new Guid("29f38ed9-2b12-4477-a7bf-90a53220b47b"),
                             Code = "N.77",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Rental and leasing activities"
                         },
                         new
                         {
-                            Id = new Guid("c0ac0fe3-18b3-4564-a6cd-32c7fb971ba6"),
+                            Id = new Guid("9e7a2301-5e85-4994-b8ac-e7c9771a4c64"),
                             Code = "N.77.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("039e4e57-4747-4d68-8cdf-0d116680dc0d"),
+                            Id = new Guid("63989773-5ea9-4705-91e9-47ff27177881"),
                             Code = "N.77.11",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of cars and light motor vehicles"
                         },
                         new
                         {
-                            Id = new Guid("1141a4be-efdc-4843-bfd0-feffd6e939f4"),
+                            Id = new Guid("5252f0fe-a018-4ab2-b01b-da9eb1dd85cc"),
                             Code = "N.77.12",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of trucks"
                         },
                         new
                         {
-                            Id = new Guid("063de3f6-3012-45cc-8d50-89f0515f72de"),
+                            Id = new Guid("733d20ba-8de1-43b9-b830-d73588e4085f"),
                             Code = "N.77.2",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of personal and household goods"
                         },
                         new
                         {
-                            Id = new Guid("5a15fb7a-8af1-4a9f-8b1a-cc9d31375d8e"),
+                            Id = new Guid("0d91d1f1-5544-40c3-91e4-9391db869fca"),
                             Code = "N.77.21",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of recreational and sports goods"
                         },
                         new
                         {
-                            Id = new Guid("5bfee7a7-a87c-4bad-93c6-24833f0155ca"),
+                            Id = new Guid("fb1a775b-4092-498f-9935-bf804973dae5"),
                             Code = "N.77.22",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting of video tapes and disks"
                         },
                         new
                         {
-                            Id = new Guid("d087f1f2-2710-4fa7-a5dd-bd01a39118dd"),
+                            Id = new Guid("41148464-4736-457f-8a79-f2c135308efc"),
                             Code = "N.77.29",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of other personal and household goods"
                         },
                         new
                         {
-                            Id = new Guid("7ac1b496-9091-4c18-9836-6312aad830ae"),
+                            Id = new Guid("c68090f8-dad7-47e6-8ccf-0dd334c4f9be"),
                             Code = "N.77.3",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of other machinery, equipment and tangible goods"
                         },
                         new
                         {
-                            Id = new Guid("c454c7ee-613b-4c83-9775-7e495e1ca08d"),
+                            Id = new Guid("bea13687-daf9-4558-958d-e13f0eb5dcbe"),
                             Code = "N.77.31",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of agricultural machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("07289c30-0dc7-4b79-93df-9dca1add5308"),
+                            Id = new Guid("2bcf103c-95e0-4cdf-a5a8-360e5ab17774"),
                             Code = "N.77.32",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of construction and civil engineering machinery and equipment"
                         },
                         new
                         {
-                            Id = new Guid("3f53b7f3-b414-4bb9-b1e6-d45f91885d90"),
+                            Id = new Guid("4c7a3ed8-4615-4593-aad9-5db316fcb817"),
                             Code = "N.77.33",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of office machinery and equipment (including computers)"
                         },
                         new
                         {
-                            Id = new Guid("b287d3e1-c023-4973-b214-ba7a2528951a"),
+                            Id = new Guid("e4289416-6813-49fa-8f7d-90ee73afb63d"),
                             Code = "N.77.34",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of water transport equipment"
                         },
                         new
                         {
-                            Id = new Guid("fe3974a5-ceb1-4559-8146-a9147c3704fd"),
+                            Id = new Guid("ec5f9bea-cdaa-4f0a-9efb-a16decef7529"),
                             Code = "N.77.35",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of air transport equipment"
                         },
                         new
                         {
-                            Id = new Guid("3b32c688-4483-409b-bbf0-286a3b6a38c0"),
+                            Id = new Guid("e7665509-bda1-410d-aaf8-55f524420377"),
                             Code = "N.77.39",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Renting and leasing of other machinery, equipment and tangible goods n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("50f25d28-2cc7-4451-b6f7-08bf9f94ee5f"),
+                            Id = new Guid("81c9a2d9-e2fb-496b-a462-a80f0219caca"),
                             Code = "N.77.4",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Leasing of intellectual property and similar products, except copyrighted works"
                         },
                         new
                         {
-                            Id = new Guid("4c3cd214-9285-41a2-b81e-ec7faabce0de"),
+                            Id = new Guid("f3f29332-7db9-416e-a43d-d50bb9c84f0b"),
                             Code = "N.77.40",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Leasing of intellectual property and similar products, except copyrighted works"
                         },
                         new
                         {
-                            Id = new Guid("969fbbe4-42b1-4dd7-804a-c2ad0fb7765a"),
+                            Id = new Guid("878f4727-fc4e-43ee-9a51-2c379f829e6b"),
                             Code = "N.78",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Employment activities"
                         },
                         new
                         {
-                            Id = new Guid("7ee6653e-55ac-422b-85ff-48f192f3d36d"),
+                            Id = new Guid("a3b1c555-5960-420d-b9da-c98bd31295f8"),
                             Code = "N.78.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Activities of employment placement agencies"
                         },
                         new
                         {
-                            Id = new Guid("1b8d25d3-d75d-469e-8ffc-a3b54bd051fa"),
+                            Id = new Guid("21c14156-ebe6-45cf-825c-4fb8ca5e4efa"),
                             Code = "N.78.10",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Activities of employment placement agencies"
                         },
                         new
                         {
-                            Id = new Guid("b02b150c-6414-4664-b022-23cace5fe8b5"),
+                            Id = new Guid("8152bf36-3ab9-40b7-91d5-f5b9bef745b9"),
                             Code = "N.78.2",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Temporary employment agency activities"
                         },
                         new
                         {
-                            Id = new Guid("e9f953a9-2a91-4bac-a171-a9c672a54afa"),
+                            Id = new Guid("6ca458b6-cd23-405c-a187-2cb2b02eefa9"),
                             Code = "N.78.20",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Temporary employment agency activities"
                         },
                         new
                         {
-                            Id = new Guid("190b120f-c5a5-467a-a98d-f43f58893772"),
+                            Id = new Guid("ee138f5e-3226-410d-a945-692d6e5b9e88"),
                             Code = "N.78.3",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other human resources provision"
                         },
                         new
                         {
-                            Id = new Guid("8c86f40a-38fa-4146-8e50-ffa198d9ba8a"),
+                            Id = new Guid("3b986e25-9c3c-4422-804d-ce67f41a22f1"),
                             Code = "N.78.30",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other human resources provision"
                         },
                         new
                         {
-                            Id = new Guid("8a6f6989-62d4-4add-9703-c2161bdc436f"),
+                            Id = new Guid("8f824fed-d96a-4b77-80e8-3bda85216411"),
                             Code = "N.79",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Travel agency, tour operator and other reservation service and related activities"
                         },
                         new
                         {
-                            Id = new Guid("ae5fef43-a99d-4634-ace0-68e66ca21480"),
+                            Id = new Guid("64f42381-4cef-46f9-ae3b-7c24c0fd849a"),
                             Code = "N.79.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Travel agency and tour operator activities"
                         },
                         new
                         {
-                            Id = new Guid("b29a9427-6d65-40b9-a18b-2e93d2f6c716"),
+                            Id = new Guid("2e248f45-4419-4a12-8af4-2815033e9bc4"),
                             Code = "N.79.11",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Travel agency activities"
                         },
                         new
                         {
-                            Id = new Guid("7983898e-4bee-41df-8d0f-f716fda2b886"),
+                            Id = new Guid("e0051876-528b-432e-acfc-8ac6e818399b"),
                             Code = "N.79.12",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Tour operator activities"
                         },
                         new
                         {
-                            Id = new Guid("88252d14-e962-454b-96b7-128de06b046f"),
+                            Id = new Guid("93b5e748-b8d9-4bf2-bb78-2043f4d154f3"),
                             Code = "N.79.9",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other reservation service and related activities"
                         },
                         new
                         {
-                            Id = new Guid("6750b4a6-8776-4e8b-a527-82abd0af8713"),
+                            Id = new Guid("4afb3ec6-e6a5-44cc-8fa9-4d5c91f4cfe1"),
                             Code = "N.79.90",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other reservation service and related activities"
                         },
                         new
                         {
-                            Id = new Guid("8ec9bd21-fa0f-47f7-a07d-a198695b9cc4"),
+                            Id = new Guid("771ba553-f7d2-46fa-82ed-ecfb7d674bca"),
                             Code = "N.80",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Security and investigation activities"
                         },
                         new
                         {
-                            Id = new Guid("d899a974-25f8-414e-a1ad-9a50765569c3"),
+                            Id = new Guid("d123fd5d-0bf0-4ec0-bc28-6cb46d29f1e5"),
                             Code = "N.80.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Private security activities"
                         },
                         new
                         {
-                            Id = new Guid("8329a16a-4807-440f-a1b3-0da1078fb4cf"),
+                            Id = new Guid("c482667d-2c4f-4e95-98d7-4dde51726bdb"),
                             Code = "N.80.10",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Private security activities"
                         },
                         new
                         {
-                            Id = new Guid("c5eec391-6de5-48f3-8fa7-1ed8e54d877c"),
+                            Id = new Guid("6b15ca30-be02-43f7-9fef-08496dc4b426"),
                             Code = "N.80.2",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Security systems service activities"
                         },
                         new
                         {
-                            Id = new Guid("d46b70e8-6bce-4cba-8ac6-fce2ebbc7dad"),
+                            Id = new Guid("d44ffd7b-df2c-4b40-aff3-663c5368bf73"),
                             Code = "N.80.20",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Security systems service activities"
                         },
                         new
                         {
-                            Id = new Guid("4e8a8bfe-46c2-4a0e-b068-ee846df3e054"),
+                            Id = new Guid("95e750d0-6dc6-4527-bf80-eb932f375e01"),
                             Code = "N.80.3",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Investigation activities"
                         },
                         new
                         {
-                            Id = new Guid("595e2fa4-851f-4d92-8b5e-20ee5e356e5f"),
+                            Id = new Guid("334f529d-f8cf-46af-9cc7-0580d800fa02"),
                             Code = "N.80.30",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Investigation activities"
                         },
                         new
                         {
-                            Id = new Guid("094d5766-ae2b-42fd-a22b-8054fa88cb8c"),
+                            Id = new Guid("c8cf662c-31ce-4b73-ba3f-67baa8617511"),
                             Code = "N.81",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Services to buildings and landscape activities"
                         },
                         new
                         {
-                            Id = new Guid("b16309bd-5d7b-4c6f-a20d-826f04aac925"),
+                            Id = new Guid("c3ded7c9-5ece-480a-8b6e-15eb1c329fe7"),
                             Code = "N.81.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Combined facilities support activities"
                         },
                         new
                         {
-                            Id = new Guid("f4af9d44-0b25-4f5d-bbf7-736cf747547f"),
+                            Id = new Guid("6d7e964a-7b1e-4b68-858f-473c67f99598"),
                             Code = "N.81.10",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Combined facilities support activities"
                         },
                         new
                         {
-                            Id = new Guid("482ca482-511a-4db9-9714-c25aedecd84e"),
+                            Id = new Guid("0d780f31-f3ae-4bb6-a70a-f8f5eaa75083"),
                             Code = "N.81.2",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Cleaning activities"
                         },
                         new
                         {
-                            Id = new Guid("5c175e92-c803-420d-ad45-c07ad4e4d6a1"),
+                            Id = new Guid("83befb5a-532d-49fc-9500-6dacd70f698c"),
                             Code = "N.81.21",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "General cleaning of buildings"
                         },
                         new
                         {
-                            Id = new Guid("bb88618d-2e5f-449a-bfdd-6837baa0a500"),
+                            Id = new Guid("85e0fe2f-16be-4878-be98-468b37a7de4f"),
                             Code = "N.81.22",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other building and industrial cleaning activities"
                         },
                         new
                         {
-                            Id = new Guid("e4d3b660-f75a-4798-a441-56b88c57b273"),
+                            Id = new Guid("6c95d2fb-8805-481d-b33e-d14c75a74c7f"),
                             Code = "N.81.29",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other cleaning activities"
                         },
                         new
                         {
-                            Id = new Guid("9d8a7948-91c5-4de1-80dc-9ee2980f4240"),
+                            Id = new Guid("3c5a0fc4-b633-49ea-88fb-5b87e6ad7916"),
                             Code = "N.81.3",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Landscape service activities"
                         },
                         new
                         {
-                            Id = new Guid("fa14a1bf-f094-4d94-9c79-5545ee181fff"),
+                            Id = new Guid("210e0e6d-678a-4bb6-aabe-e087674f667e"),
                             Code = "N.81.30",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Landscape service activities"
                         },
                         new
                         {
-                            Id = new Guid("e8a0e04d-611c-4882-ac52-90b7f46a25e2"),
+                            Id = new Guid("8a9e14c1-764b-4c64-9574-04fdbf76a14c"),
                             Code = "N.82",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Office administrative, office support and other business support activities"
                         },
                         new
                         {
-                            Id = new Guid("17f7dee4-58fd-4b2e-b707-6ec5019b54f6"),
+                            Id = new Guid("9c982302-862b-4af5-92aa-1d1da0185d01"),
                             Code = "N.82.1",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Office administrative and support activities"
                         },
                         new
                         {
-                            Id = new Guid("8dc10f3c-98a9-4995-8ada-460d8db750fc"),
+                            Id = new Guid("23f3ea75-9149-416d-abdc-297a52fd4ecb"),
                             Code = "N.82.11",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Combined office administrative service activities"
                         },
                         new
                         {
-                            Id = new Guid("66dae27d-61a9-4f5b-a526-4f3280610c00"),
+                            Id = new Guid("93a04eeb-630e-40f6-8928-2fb0eef7eb10"),
                             Code = "N.82.19",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Photocopying, document preparation and other specialised office support activities"
                         },
                         new
                         {
-                            Id = new Guid("a908eeaa-b34b-43fb-b476-c8dc3164ac43"),
+                            Id = new Guid("57e1983d-7781-4551-b15a-6c62e57ec3fb"),
                             Code = "N.82.2",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Activities of call centres"
                         },
                         new
                         {
-                            Id = new Guid("d9346ccb-bbe7-4170-96e7-0ec7111930c3"),
+                            Id = new Guid("eb448e68-fc7f-4e41-800c-73362e26947b"),
                             Code = "N.82.20",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Activities of call centres"
                         },
                         new
                         {
-                            Id = new Guid("a8e9e8f3-865c-4b3d-9cc6-380324977735"),
+                            Id = new Guid("378dd445-6c14-4eac-8e96-685c14fe3ccc"),
                             Code = "N.82.3",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Organisation of conventions and trade shows"
                         },
                         new
                         {
-                            Id = new Guid("3f644a27-8eb9-4b69-957b-05ca77797063"),
+                            Id = new Guid("4c99a6cc-ba3c-4e6a-810e-9d9e4f4b9139"),
                             Code = "N.82.30",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Organisation of conventions and trade shows"
                         },
                         new
                         {
-                            Id = new Guid("42f6a0b6-3db7-4cee-8b3a-ec94e89b7c94"),
+                            Id = new Guid("731a4d69-0c7d-4ce2-af66-33ea52e372d9"),
                             Code = "N.82.9",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Business support service activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("9d3cbc59-7011-45b9-8e0b-5eaf5ae398a3"),
+                            Id = new Guid("fac87f74-42c5-4b40-a52e-d84e35f055e1"),
                             Code = "N.82.92",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Activities of collection agencies and credit bureaus"
                         },
                         new
                         {
-                            Id = new Guid("cec828c6-5cd8-4546-baee-103bb25d8579"),
+                            Id = new Guid("6a826e4a-3088-44e4-a5a4-a55385912241"),
                             Code = "N.82.91",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Packaging activities"
                         },
                         new
                         {
-                            Id = new Guid("44d2efe1-3c55-47e7-8877-a8622e6845a4"),
+                            Id = new Guid("2386aabc-0a94-4f82-b7c6-ecd86160b537"),
                             Code = "N.82.99",
-                            IndustryId = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            IndustryId = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Title = "Other business support service activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("6324ffdb-b54f-4aed-8f4b-76bf728a4392"),
+                            Id = new Guid("6e4dc6f9-cd55-4727-84fe-0c36f3560868"),
                             Code = "O.84",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Public administration and defence; compulsory social security"
                         },
                         new
                         {
-                            Id = new Guid("d982a83d-f03b-4cea-9919-524131c51fde"),
+                            Id = new Guid("788dea26-fa6b-4a5f-9057-7bc986c4d343"),
                             Code = "O.84.1",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Administration of the State and the economic and social policy of the community"
                         },
                         new
                         {
-                            Id = new Guid("a8faf319-67a2-4393-bf0c-ae8a44f72a7c"),
+                            Id = new Guid("380fe150-b961-47d7-a810-2d6b5c81fd85"),
                             Code = "O.84.11",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "General public administration activities"
                         },
                         new
                         {
-                            Id = new Guid("ddb5bb6c-a667-4507-94d9-80c7295b38cd"),
+                            Id = new Guid("ad049b86-ed2d-4255-8b1c-be2609a6a23a"),
                             Code = "O.84.12",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security"
                         },
                         new
                         {
-                            Id = new Guid("3f884569-5fa1-465b-8229-64af2a222b3a"),
+                            Id = new Guid("43f45def-d695-49e7-9341-9df3aaca64ea"),
                             Code = "O.84.13",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Regulation of and contribution to more efficient operation of businesses"
                         },
                         new
                         {
-                            Id = new Guid("3e8863c6-14b7-48ed-814e-80c5797f5ed8"),
+                            Id = new Guid("3674f64e-0c03-4f2f-906e-bac0ab57a4b0"),
                             Code = "O.84.2",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Provision of services to the community as a whole"
                         },
                         new
                         {
-                            Id = new Guid("71725b7a-48cd-4b14-b378-405e142fda7c"),
+                            Id = new Guid("e44f6a14-cdfd-4be8-bd3a-52d40645ef29"),
                             Code = "O.84.21",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Foreign affairs"
                         },
                         new
                         {
-                            Id = new Guid("9dae1981-dbd9-4e25-ace0-2c6faa2d6f79"),
+                            Id = new Guid("2a11f424-91d0-415f-a71c-dab9a84a7443"),
                             Code = "O.84.22",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Defence activities"
                         },
                         new
                         {
-                            Id = new Guid("396cad83-bccf-4d67-b255-2c16a3a7efeb"),
+                            Id = new Guid("ecaeb611-c402-477b-8f01-39dcc47afee1"),
                             Code = "O.84.23",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Justice and judicial activities"
                         },
                         new
                         {
-                            Id = new Guid("a0cda046-2521-4a10-8194-338d107dcccb"),
+                            Id = new Guid("574110e1-2b97-421f-a7da-dee4f274481e"),
                             Code = "O.84.24",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Public order and safety activities"
                         },
                         new
                         {
-                            Id = new Guid("f761d292-cc03-4c90-8867-c6a0e205267c"),
+                            Id = new Guid("a157216f-d6e3-46b3-8564-489d09a36cfd"),
                             Code = "O.84.25",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Fire service activities"
                         },
                         new
                         {
-                            Id = new Guid("a46c257f-50ab-45d9-8d10-0fc704ee48b8"),
+                            Id = new Guid("da1be8c6-057b-4753-ade0-0b1db1d8c5c2"),
                             Code = "O.84.3",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Compulsory social security activities"
                         },
                         new
                         {
-                            Id = new Guid("9654574d-5495-440a-a70b-8938e081d04a"),
+                            Id = new Guid("4a909d26-9c04-47f8-a6d8-a91ffe65116f"),
                             Code = "O.84.30",
-                            IndustryId = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            IndustryId = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Title = "Compulsory social security activities"
                         },
                         new
                         {
-                            Id = new Guid("80ba0c8a-650e-454b-99d6-5a8525505ce4"),
+                            Id = new Guid("8d0a162f-5b6d-4a5f-8379-996f57699e9a"),
                             Code = "P.85",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Education"
                         },
                         new
                         {
-                            Id = new Guid("7056fbdc-5e94-484b-874a-53a7b4338952"),
+                            Id = new Guid("f3faa76f-73ae-4fe1-a41f-124cf3ae1518"),
                             Code = "P.85.1",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Pre-primary education"
                         },
                         new
                         {
-                            Id = new Guid("fdee68f5-965e-4603-8474-ae48826d227c"),
+                            Id = new Guid("53a25026-0ef2-4cab-bb59-f3cccca7c592"),
                             Code = "P.85.10",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Pre-primary education"
                         },
                         new
                         {
-                            Id = new Guid("f6222b41-ee22-4368-919a-ac71695cb74a"),
+                            Id = new Guid("a1ffc5e4-dad2-4ccc-8f0b-3adff3f4197b"),
                             Code = "P.85.2",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Primary education"
                         },
                         new
                         {
-                            Id = new Guid("86f41f1e-f1d8-47f7-9d1b-1e21dd0b4c85"),
+                            Id = new Guid("c5477cbb-7da1-4af4-8af5-ce8e6e0a120f"),
                             Code = "P.85.20",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Primary education"
                         },
                         new
                         {
-                            Id = new Guid("828f59f6-670f-4ee8-8223-5908b69a301f"),
+                            Id = new Guid("1ad54175-70ff-4aa7-8b69-00b9d2955b82"),
                             Code = "P.85.3",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Secondary education"
                         },
                         new
                         {
-                            Id = new Guid("bd37bd17-9db7-445e-82ec-300303b7cfc2"),
+                            Id = new Guid("4909fe03-e5b6-4c79-aab9-55c995c1bdb9"),
                             Code = "P.85.31",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "General secondary education"
                         },
                         new
                         {
-                            Id = new Guid("fbe56e34-3634-4706-bfa1-0d783eee4f73"),
+                            Id = new Guid("e24cc946-ee44-48a2-a8b0-7660f18b71c4"),
                             Code = "P.85.32",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Technical and vocational secondary education"
                         },
                         new
                         {
-                            Id = new Guid("fd762e6d-f293-4d19-865f-eecedadf0837"),
+                            Id = new Guid("27af0a76-56d7-41eb-a96f-04ee8903561e"),
                             Code = "P.85.4",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Higher education"
                         },
                         new
                         {
-                            Id = new Guid("c8575d40-d128-4946-b88d-dadd4c135675"),
+                            Id = new Guid("c6f4e8a8-1cb4-4b93-b1c3-7a4c57da8cc5"),
                             Code = "P.85.41",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Post-secondary non-tertiary education"
                         },
                         new
                         {
-                            Id = new Guid("100a1c8c-3cee-4492-a4e8-b252dba5ffa7"),
+                            Id = new Guid("cca42a01-1ef5-491c-b8b5-a87b5c28fbca"),
                             Code = "P.85.42",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Tertiary education"
                         },
                         new
                         {
-                            Id = new Guid("24c9680e-a8eb-49d9-92e9-6153d20ee2ed"),
+                            Id = new Guid("08f2f8e4-db0a-4db8-b560-e6a3846382c1"),
                             Code = "P.85.5",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Other education"
                         },
                         new
                         {
-                            Id = new Guid("c5cf2c9a-b5ea-439d-96c7-2e90007b44a5"),
+                            Id = new Guid("5e6bf91e-29b4-420f-99f9-490d2fff4a91"),
                             Code = "P.85.51",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Sports and recreation education"
                         },
                         new
                         {
-                            Id = new Guid("fe557e07-19c7-488a-9a42-4d5aad719d56"),
+                            Id = new Guid("a18ffc2c-fc16-452d-9abb-35995b07d0a5"),
                             Code = "P.85.52",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Cultural education"
                         },
                         new
                         {
-                            Id = new Guid("e2917271-ef9d-472a-8342-8b84a7f5d7de"),
+                            Id = new Guid("0410d800-91f5-4b58-9ab5-409890aae331"),
                             Code = "P.85.53",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Driving school activities"
                         },
                         new
                         {
-                            Id = new Guid("5bf1f91e-0561-49d1-80f1-a78cb9250cf2"),
+                            Id = new Guid("62770e20-c3fd-483d-9631-5656f26fff59"),
                             Code = "P.85.59",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Other education n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("72d421b1-5db3-4033-9cfc-a2a089dc2344"),
+                            Id = new Guid("81fd80f9-433e-4391-9812-0306a884c9f1"),
                             Code = "P.85.6",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Educational support activities"
                         },
                         new
                         {
-                            Id = new Guid("b52e4d6a-36f6-4bb7-a700-1d0e6a7291b3"),
+                            Id = new Guid("d8cdc5a8-5bd9-4f9f-8487-fc49baf4d736"),
                             Code = "P.85.60",
-                            IndustryId = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            IndustryId = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Title = "Educational support activities"
                         },
                         new
                         {
-                            Id = new Guid("2dcb10ed-092a-4176-8c20-5cdec85e2272"),
+                            Id = new Guid("88f568d9-712b-4bcc-8d32-18ba7c1e00b1"),
                             Code = "Q.86",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Human health activities"
                         },
                         new
                         {
-                            Id = new Guid("4b2756ed-b453-4a5a-a459-ff416bbbe4c1"),
+                            Id = new Guid("d7253c60-3860-445f-8580-0f395bb3a528"),
                             Code = "Q.86.1",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Hospital activities"
                         },
                         new
                         {
-                            Id = new Guid("0bfe5eb8-38b6-4adb-a0b8-a32574ff26af"),
+                            Id = new Guid("fc952bd2-c25b-443e-aec8-38e290ac28e0"),
                             Code = "Q.86.10",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Hospital activities"
                         },
                         new
                         {
-                            Id = new Guid("5ed6eb69-afc6-4cc1-9ac0-55a3a3746b52"),
+                            Id = new Guid("731034ed-c2b1-4e36-a808-f74078bbf1dc"),
                             Code = "Q.86.2",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Medical and dental practice activities"
                         },
                         new
                         {
-                            Id = new Guid("4c01d398-5d4b-452e-bf1d-fa3743c0f780"),
+                            Id = new Guid("e7bace2e-f9db-47b3-8f86-4e3ee7662d1d"),
                             Code = "Q.86.21",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "General medical practice activities"
                         },
                         new
                         {
-                            Id = new Guid("a8e76c5a-bbcf-490c-b070-3cc8332523e8"),
+                            Id = new Guid("9b8ec972-669e-4e18-8265-529670f3308a"),
                             Code = "Q.86.22",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Specialist medical practice activities"
                         },
                         new
                         {
-                            Id = new Guid("c187362e-d680-426f-a611-f5ee2e208a71"),
+                            Id = new Guid("f97b6e25-be54-4fe0-a0d7-4a7f21f156b6"),
                             Code = "Q.86.23",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Dental practice activities"
                         },
                         new
                         {
-                            Id = new Guid("130da8bf-8a71-40ac-b2b6-2632c832a56f"),
+                            Id = new Guid("ce394b86-80d7-4c7f-bc86-00438cda90f0"),
                             Code = "Q.86.9",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other human health activities"
                         },
                         new
                         {
-                            Id = new Guid("2b16f2dc-c09f-456a-a590-f1c6495c5229"),
+                            Id = new Guid("3a4eaba6-7986-429f-a5f6-716688330b3c"),
                             Code = "Q.86.90",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other human health activities"
                         },
                         new
                         {
-                            Id = new Guid("7230c1e6-7c68-413c-a8b0-31f3769f96f2"),
+                            Id = new Guid("3bfa64d0-e559-4177-9d7d-080515292786"),
                             Code = "Q.87",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential care activities"
                         },
                         new
                         {
-                            Id = new Guid("f64bbb6f-e857-4eb3-a01e-6d21c9ce9783"),
+                            Id = new Guid("29791240-37e0-40d5-9104-d1b8dc57a9fd"),
                             Code = "Q.87.1",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential nursing care activities"
                         },
                         new
                         {
-                            Id = new Guid("3ac9a0d2-f3de-452d-bbd5-3a6d3dc17283"),
+                            Id = new Guid("749ee7e0-30b6-4095-a9ea-72d2c490ab61"),
                             Code = "Q.87.10",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential nursing care activities"
                         },
                         new
                         {
-                            Id = new Guid("7e218264-47cd-4e85-8bbb-a74a4b9fd26c"),
+                            Id = new Guid("47663ee4-ffba-437e-80ff-3cce67a46186"),
                             Code = "Q.87.2",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential care activities for mental retardation, mental health and substance abuse"
                         },
                         new
                         {
-                            Id = new Guid("81c5aa69-02eb-461b-8b2d-db8ab073803f"),
+                            Id = new Guid("391e83b4-543d-4dc9-bab8-db6de410e872"),
                             Code = "Q.87.20",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential care activities for mental retardation, mental health and substance abuse"
                         },
                         new
                         {
-                            Id = new Guid("46f57cdf-32de-4a1b-9137-443ff8aadbd8"),
+                            Id = new Guid("db20edaa-9d08-4cb6-9019-8f36ec8e098c"),
                             Code = "Q.87.3",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential care activities for the elderly and disabled"
                         },
                         new
                         {
-                            Id = new Guid("4bad231b-b61d-4a5d-b16f-8ddc8f9a19c0"),
+                            Id = new Guid("f46b9088-b562-4141-92d6-d1e957536090"),
                             Code = "Q.87.30",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Residential care activities for the elderly and disabled"
                         },
                         new
                         {
-                            Id = new Guid("6fb0a867-1b49-487f-8dd8-8b08fbe50b91"),
+                            Id = new Guid("8347c48b-d8e1-403c-b500-c6f283a7f1e0"),
                             Code = "Q.87.9",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other residential care activities"
                         },
                         new
                         {
-                            Id = new Guid("74bc1bde-eb55-4040-9711-fb75e1f8db33"),
+                            Id = new Guid("7b7124e5-6ea2-4193-b5fc-48665bdb9b30"),
                             Code = "Q.87.90",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other residential care activities"
                         },
                         new
                         {
-                            Id = new Guid("f402efeb-9a99-4ece-acc6-71210c11a5a7"),
+                            Id = new Guid("8ce0c6f7-80f4-459a-a865-179727200a6e"),
                             Code = "Q.88",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Social work activities without accommodation"
                         },
                         new
                         {
-                            Id = new Guid("3acc3012-9a7d-477e-92fa-cc485512cc0c"),
+                            Id = new Guid("3cce2762-d776-4af6-9fa4-ad4a93044198"),
                             Code = "Q.88.1",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Social work activities without accommodation for the elderly and disabled"
                         },
                         new
                         {
-                            Id = new Guid("e8621cd5-7327-4d6a-a4d8-66cf78e6a055"),
+                            Id = new Guid("5ce01ced-3ca7-48e0-bdda-36f1a798eb13"),
                             Code = "Q.88.10",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Social work activities without accommodation for the elderly and disabled"
                         },
                         new
                         {
-                            Id = new Guid("6660525d-51ce-477f-bc38-08aedadf371b"),
+                            Id = new Guid("68c5f8bd-f299-452d-beae-1b18e3eaf829"),
                             Code = "Q.88.9",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other social work activities without accommodation"
                         },
                         new
                         {
-                            Id = new Guid("b9c9b587-a0e3-45a1-8515-2258b369c8fb"),
+                            Id = new Guid("aaee6e5e-a735-47cb-b352-be109e6938ab"),
                             Code = "Q.88.91",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Child day-care activities"
                         },
                         new
                         {
-                            Id = new Guid("1266204b-47c3-42d6-9d97-de861555e6ea"),
+                            Id = new Guid("ba9d02dd-310d-43ca-9713-bbeac079292a"),
                             Code = "Q.88.99",
-                            IndustryId = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            IndustryId = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Title = "Other social work activities without accommodation n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("424bd47a-d904-4f48-891f-b504325ad746"),
+                            Id = new Guid("c85d5801-790b-4563-bfa2-5d8d742efb7f"),
                             Code = "R.90",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Creative, arts and entertainment activities"
                         },
                         new
                         {
-                            Id = new Guid("e3cf8662-e7b8-420d-9293-f44d9edab0bc"),
+                            Id = new Guid("0dca491c-0c6e-4743-8208-577ce6f796ad"),
                             Code = "R.90.0",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Creative, arts and entertainment activities"
                         },
                         new
                         {
-                            Id = new Guid("1039f4d1-334b-48ea-b230-150aff4917bb"),
+                            Id = new Guid("23bd49f6-acb1-4e42-a24e-014de865fdb0"),
                             Code = "R.90.01",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Performing arts"
                         },
                         new
                         {
-                            Id = new Guid("acaa269b-8fec-4234-b646-036cbe8408e2"),
+                            Id = new Guid("78c36efc-9b82-46a5-97cb-a5e1bbc3ca28"),
                             Code = "R.90.02",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Support activities to performing arts"
                         },
                         new
                         {
-                            Id = new Guid("0d9caf4c-b625-4d17-b403-333944a3fb29"),
+                            Id = new Guid("13c32732-8012-49ff-a427-7a393b4092cb"),
                             Code = "R.90.03",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Artistic creation"
                         },
                         new
                         {
-                            Id = new Guid("f8787864-80c5-4875-94ca-d0757adaeff2"),
+                            Id = new Guid("2f291b81-ae7b-4f37-be4b-2b144f15e9f7"),
                             Code = "R.90.04",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Operation of arts facilities"
                         },
                         new
                         {
-                            Id = new Guid("eebeb333-85f1-4532-93d8-1a494b42fd95"),
+                            Id = new Guid("0fe792ef-8d43-4a4d-93dc-34c3cce3117c"),
                             Code = "R.91",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Libraries, archives, museums and other cultural activities"
                         },
                         new
                         {
-                            Id = new Guid("7523df10-b286-4861-9330-b749039af8d1"),
+                            Id = new Guid("d28454bc-26c7-4508-ae1e-5cb5532f2683"),
                             Code = "R.91.0",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Libraries, archives, museums and other cultural activities"
                         },
                         new
                         {
-                            Id = new Guid("d1ea632f-238a-45f8-bc3b-5afc35c6b5ea"),
+                            Id = new Guid("9b2a701d-377e-4bfa-a658-1afdf9059120"),
                             Code = "R.91.01",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Library and archives activities"
                         },
                         new
                         {
-                            Id = new Guid("b9544c5c-d53f-489b-9f05-b3dccf313682"),
+                            Id = new Guid("0b0e4f6c-b348-4bf4-be99-762eda725a44"),
                             Code = "R.91.02",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Museums activities"
                         },
                         new
                         {
-                            Id = new Guid("0b914826-e913-4454-b192-53c695ae4a22"),
+                            Id = new Guid("c760b8b3-9c9e-425b-b32a-82bc651c068f"),
                             Code = "R.91.03",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Operation of historical sites and buildings and similar visitor attractions"
                         },
                         new
                         {
-                            Id = new Guid("2d80e774-5de4-43e5-9df7-20e79c0ce756"),
+                            Id = new Guid("4ee4bb5e-b701-4d82-895d-e87254e0f715"),
                             Code = "R.91.04",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Botanical and zoological gardens and nature reserves activities"
                         },
                         new
                         {
-                            Id = new Guid("e1c7b23d-8f9f-4a69-b005-08bdae3ecf1d"),
+                            Id = new Guid("a3fb46f0-8de1-44a1-9ea9-cfd762ca28e9"),
                             Code = "R.92",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Gambling and betting activities"
                         },
                         new
                         {
-                            Id = new Guid("4de60587-e497-432d-a76f-85f09add5f09"),
+                            Id = new Guid("c7c71514-c08f-4355-acd7-6c20ef1b3d84"),
                             Code = "R.92.0",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Gambling and betting activities"
                         },
                         new
                         {
-                            Id = new Guid("c28206a7-714f-4add-9b1d-a34f7d499e2c"),
+                            Id = new Guid("38cdf12e-7aa7-4236-8360-01f4e47e30fb"),
                             Code = "R.92.00",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Gambling and betting activities"
                         },
                         new
                         {
-                            Id = new Guid("353d5430-96f2-4e1c-ba72-7bc7643e99a7"),
+                            Id = new Guid("474119a4-e4dd-4340-ad09-20d1092ec3c4"),
                             Code = "R.93",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Sports activities and amusement and recreation activities"
                         },
                         new
                         {
-                            Id = new Guid("b65a1e4a-9ba8-492c-a4f4-3bae27375ac1"),
+                            Id = new Guid("3659f5af-2de9-4910-aec6-50f7ba162488"),
                             Code = "R.93.1",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Sports activities"
                         },
                         new
                         {
-                            Id = new Guid("78d32192-be93-4241-b802-669b96af5eec"),
+                            Id = new Guid("6601bb77-a191-40ad-856a-066a638c12fc"),
                             Code = "R.93.11",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Operation of sports facilities"
                         },
                         new
                         {
-                            Id = new Guid("36c193f1-918f-434f-abed-f87af26309ac"),
+                            Id = new Guid("db00b842-9d05-494e-86bc-0dfc692909a9"),
                             Code = "R.93.12",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Activities of sport clubs"
                         },
                         new
                         {
-                            Id = new Guid("b461645d-775b-4920-a3b5-5d7e2d205715"),
+                            Id = new Guid("9200438f-1bb2-42f2-b3ad-da641d62bb1c"),
                             Code = "R.93.13",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Fitness facilities"
                         },
                         new
                         {
-                            Id = new Guid("fa66bb69-14b2-4582-9b34-0ded3416b431"),
+                            Id = new Guid("4fba8f75-be18-4190-b0fa-916ef13b0dd6"),
                             Code = "R.93.19",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Other sports activities"
                         },
                         new
                         {
-                            Id = new Guid("9f1d4a8c-d3fd-4fd0-b10c-78a91afbecb3"),
+                            Id = new Guid("783cbfcd-19ae-430e-b1b6-164f8a927a05"),
                             Code = "R.93.2",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Amusement and recreation activities"
                         },
                         new
                         {
-                            Id = new Guid("cfb145fa-57be-4367-8a1d-efd337c5cd68"),
+                            Id = new Guid("172f2a0e-0a1a-466c-beb4-80807fd3d51e"),
                             Code = "R.93.21",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Activities of amusement parks and theme parks"
                         },
                         new
                         {
-                            Id = new Guid("a308f44b-f569-47fb-8782-2c62f36562f1"),
+                            Id = new Guid("b5627f0d-909c-46c7-99bb-4dbf0767e484"),
                             Code = "R.93.29",
-                            IndustryId = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            IndustryId = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Title = "Other amusement and recreation activities"
                         },
                         new
                         {
-                            Id = new Guid("6b71c8e1-2563-4c9e-8223-fcb7b08312c7"),
+                            Id = new Guid("b8a1cc4f-747d-48ce-ace0-3e960b08ac85"),
                             Code = "S.94",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of membership organisations"
                         },
                         new
                         {
-                            Id = new Guid("cf5b7580-372e-4bb7-8c3c-7db8ce14a94d"),
+                            Id = new Guid("eea0a171-d392-496b-b201-8cd61ba6420d"),
                             Code = "S.94.1",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of business, employers and professional membership organisations"
                         },
                         new
                         {
-                            Id = new Guid("dbc7b809-ab1b-43c5-b63b-06387a3ff266"),
+                            Id = new Guid("87c8a7b5-d205-4297-89be-750062dcb8b8"),
                             Code = "S.94.11",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of business and employers membership organisations"
                         },
                         new
                         {
-                            Id = new Guid("50887581-a5fb-4fb8-8bb2-6d44214228ee"),
+                            Id = new Guid("48aad0a6-ff41-4e9e-a52b-48a5f74e53da"),
                             Code = "S.94.12",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of professional membership organisations"
                         },
                         new
                         {
-                            Id = new Guid("982f2d7d-07d7-49ae-b484-821073a9fb0e"),
+                            Id = new Guid("32698792-c81b-4581-aa94-6186855ebd16"),
                             Code = "S.94.2",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of trade unions"
                         },
                         new
                         {
-                            Id = new Guid("729b3c83-8459-46de-a572-6e2743f0282e"),
+                            Id = new Guid("b5741b88-047d-4720-bbf1-d75d063302ce"),
                             Code = "S.94.20",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of trade unions"
                         },
                         new
                         {
-                            Id = new Guid("619bcdaf-6e28-4b4b-bdd7-9bbec15ac193"),
+                            Id = new Guid("a3eb9b07-d307-4660-89b7-91aaa6cca71b"),
                             Code = "S.94.9",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of other membership organisations"
                         },
                         new
                         {
-                            Id = new Guid("3930d614-289f-416d-9be7-118dfcfd1e23"),
+                            Id = new Guid("552dbba5-4571-454f-90f1-99cb161020bb"),
                             Code = "S.94.91",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of religious organisations"
                         },
                         new
                         {
-                            Id = new Guid("4fb214e0-e95c-4271-8d24-c75c73578beb"),
+                            Id = new Guid("2bef4e53-b07e-42fd-bb7f-e424398feff8"),
                             Code = "S.94.92",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of political organisations"
                         },
                         new
                         {
-                            Id = new Guid("e398eba9-3187-4012-9b50-8b27524f5868"),
+                            Id = new Guid("03d8c45e-e03e-4dba-84e2-60570544e7a0"),
                             Code = "S.94.99",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Activities of other membership organisations n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("6fc4e97e-21ba-4c06-add9-f632ba1a44aa"),
+                            Id = new Guid("66841868-4db2-403d-bd4e-70823b480268"),
                             Code = "S.95",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of computers and personal and household goods"
                         },
                         new
                         {
-                            Id = new Guid("c0213579-dcc1-4279-9a13-46ec1fb92831"),
+                            Id = new Guid("e25b31eb-1aa2-4be6-a0cc-a7067aa8defa"),
                             Code = "S.95.1",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of computers and communication equipment"
                         },
                         new
                         {
-                            Id = new Guid("44a61f52-fe0d-497d-a774-a16ae254a463"),
+                            Id = new Guid("5c0b0b7b-a1db-44d1-80eb-86a70b27394d"),
                             Code = "S.95.11",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of computers and peripheral equipment"
                         },
                         new
                         {
-                            Id = new Guid("7a4c31e8-9635-410e-bb1e-c843d339c900"),
+                            Id = new Guid("d55b7713-edb2-4e82-84da-6035da3632d6"),
                             Code = "S.95.12",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of communication equipment"
                         },
                         new
                         {
-                            Id = new Guid("43b864a8-8f78-4db4-a799-a5492ffecf7e"),
+                            Id = new Guid("64e608a7-dcbb-43a3-86ed-558e84d5877d"),
                             Code = "S.95.2",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of personal and household goods"
                         },
                         new
                         {
-                            Id = new Guid("138b3326-13fb-45f9-97b5-a6e9cce04a52"),
+                            Id = new Guid("6b2f7570-4a03-4cea-9f19-6d8a4124599e"),
                             Code = "S.95.21",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of consumer electronics"
                         },
                         new
                         {
-                            Id = new Guid("80d8dd6d-5aef-4bba-9335-78061acf4919"),
+                            Id = new Guid("1d6ceba5-41d4-443f-a60a-2fdcdfbdae39"),
                             Code = "S.95.22",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of household appliances and home and garden equipment"
                         },
                         new
                         {
-                            Id = new Guid("2723ce3d-2cd6-4bcf-88e8-6a423b7cb220"),
+                            Id = new Guid("5e4837c0-43bd-4659-9cfd-52ba043b2c53"),
                             Code = "S.95.23",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of footwear and leather goods"
                         },
                         new
                         {
-                            Id = new Guid("752cf813-7b61-4940-8d41-d52553385290"),
+                            Id = new Guid("68691f4c-e911-4753-ac88-a3cadd3f188c"),
                             Code = "S.95.24",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of furniture and home furnishings"
                         },
                         new
                         {
-                            Id = new Guid("8d79e561-37f7-442c-a260-5427c7099202"),
+                            Id = new Guid("ed9fd784-e026-4c5a-b0b8-db47449c8333"),
                             Code = "S.95.25",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of watches, clocks and jewellery"
                         },
                         new
                         {
-                            Id = new Guid("15b62572-e905-4f8a-844a-d8fc6c1f6816"),
+                            Id = new Guid("054be395-c1a2-44ec-a8e0-eed5bdc41585"),
                             Code = "S.95.29",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Repair of other personal and household goods"
                         },
                         new
                         {
-                            Id = new Guid("13545cc0-17a1-4a1b-8f63-a1d03280ba92"),
+                            Id = new Guid("6df7a95b-3d3d-4c35-8bba-b261c40a01fa"),
                             Code = "S.96",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Other personal service activities"
                         },
                         new
                         {
-                            Id = new Guid("6f035948-5a2c-42e3-b7f6-ed8197d34f8d"),
+                            Id = new Guid("692e9c1b-d69c-47b9-b8ef-f2f5105eb390"),
                             Code = "S.96.0",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Other personal service activities"
                         },
                         new
                         {
-                            Id = new Guid("4567d367-b3b3-4515-bef8-35668ef4a5a0"),
+                            Id = new Guid("c30d7f93-ab70-4a09-8781-1584c99b51b3"),
                             Code = "S.96.01",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Washing and (dry-)cleaning of textile and fur products"
                         },
                         new
                         {
-                            Id = new Guid("105df747-5611-41c4-b7c6-b3e0951035d2"),
+                            Id = new Guid("440cf1e8-c200-4700-87e5-0975cf2c6e27"),
                             Code = "S.96.02",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Hairdressing and other beauty treatment"
                         },
                         new
                         {
-                            Id = new Guid("14a858d4-d289-4088-8055-6a4245e62ba9"),
+                            Id = new Guid("fd64a646-a455-421c-af00-c3b29dfbeaf7"),
                             Code = "S.96.03",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Funeral and related activities"
                         },
                         new
                         {
-                            Id = new Guid("9b334b60-2af6-4027-9b40-eeb5dfc9f31d"),
+                            Id = new Guid("7195808e-a914-415c-b4d9-13e7d055bfdc"),
                             Code = "S.96.04",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Physical well-being activities"
                         },
                         new
                         {
-                            Id = new Guid("4df41c4e-5369-426e-8f7f-4f5ed4dacec5"),
+                            Id = new Guid("d97be8c1-0ee6-41d2-821e-9b07c2ece381"),
                             Code = "S.96.09",
-                            IndustryId = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            IndustryId = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Title = "Other personal service activities n.e.c."
                         },
                         new
                         {
-                            Id = new Guid("dccf0873-de2c-4f85-af01-3da61b7663a7"),
+                            Id = new Guid("db94bf52-5d64-4b90-afa1-d5b1de0a2b43"),
                             Code = "T.97",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Activities of households as employers of domestic personnel"
                         },
                         new
                         {
-                            Id = new Guid("ea7f3629-4b4d-4812-8c26-7dc6281a8a79"),
+                            Id = new Guid("0056ea47-38a6-484c-8884-add727b2c84d"),
                             Code = "T.97.0",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Activities of households as employers of domestic personnel"
                         },
                         new
                         {
-                            Id = new Guid("90b3ff4c-0604-487d-9ca0-bd31fa3da913"),
+                            Id = new Guid("0daaef28-d6fa-4b87-b908-ec4807484669"),
                             Code = "T.97.00",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Activities of households as employers of domestic personnel"
                         },
                         new
                         {
-                            Id = new Guid("5caa536a-f0d6-43b9-9f42-0d8189cc809b"),
+                            Id = new Guid("d1f91ee9-8225-4069-b0c2-19ebf341adf7"),
                             Code = "T.98",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Undifferentiated goods- and services-producing activities of private households for own use"
                         },
                         new
                         {
-                            Id = new Guid("a1d58d59-4d75-4b36-b9d7-c892b308538c"),
+                            Id = new Guid("851698b1-64c2-46b7-98bf-9002143742d7"),
                             Code = "T.98.1",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Undifferentiated goods-producing activities of private households for own use"
                         },
                         new
                         {
-                            Id = new Guid("13870e51-a174-4e02-b52c-219e5a321798"),
+                            Id = new Guid("38f3fa23-67c0-4f6f-acfc-ccbba81d0e4c"),
                             Code = "T.98.10",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Undifferentiated goods-producing activities of private households for own use"
                         },
                         new
                         {
-                            Id = new Guid("1d0c3c4b-2568-4cc6-9764-4f81d628c7e7"),
+                            Id = new Guid("ca8c566b-21d8-4e28-939e-fb5c3216eb28"),
                             Code = "T.98.2",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Undifferentiated service-producing activities of private households for own use"
                         },
                         new
                         {
-                            Id = new Guid("59286d06-55f9-4996-b0e5-3b818aa6f562"),
+                            Id = new Guid("de6fb04d-8d26-4f9e-a0f5-1d97536a796b"),
                             Code = "T.98.20",
-                            IndustryId = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            IndustryId = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Title = "Undifferentiated service-producing activities of private households for own use"
                         },
                         new
                         {
-                            Id = new Guid("89be61bd-d267-4226-bcf5-29700f9ad677"),
+                            Id = new Guid("3147715e-6e38-4d2d-b916-df0fdeb02c34"),
                             Code = "U.99",
-                            IndustryId = new Guid("1fd26d14-c6e8-4720-8a95-8bbe268c7326"),
+                            IndustryId = new Guid("bfd64441-c86b-4b14-9190-d01e19c7c164"),
                             Title = "Activities of extraterritorial organisations and bodies"
                         },
                         new
                         {
-                            Id = new Guid("41cd4ffc-860d-4897-9255-6a1a19fd21c5"),
+                            Id = new Guid("983d67e0-83a4-46bb-82b1-81b6dd2f2c8a"),
                             Code = "U.99.0",
-                            IndustryId = new Guid("1fd26d14-c6e8-4720-8a95-8bbe268c7326"),
+                            IndustryId = new Guid("bfd64441-c86b-4b14-9190-d01e19c7c164"),
                             Title = "Activities of extraterritorial organisations and bodies"
                         },
                         new
                         {
-                            Id = new Guid("d9390a57-1c49-42cf-b727-37353f6db5b3"),
+                            Id = new Guid("00390d7e-2831-48e4-9c3f-c2a88044f463"),
                             Code = "U.99.00",
-                            IndustryId = new Guid("1fd26d14-c6e8-4720-8a95-8bbe268c7326"),
+                            IndustryId = new Guid("bfd64441-c86b-4b14-9190-d01e19c7c164"),
                             Title = "Activities of extraterritorial organisations and bodies"
                         });
                 });
@@ -6902,6 +6902,9 @@ namespace KabadaAPI.Migrations
                     b.Property<bool>("IsSwotCompleted")
                         .HasColumnType("bit");
 
+                    b.Property<Guid?>("LanguageId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("Public")
                         .HasColumnType("bit");
 
@@ -6917,6 +6920,8 @@ namespace KabadaAPI.Migrations
                     b.HasIndex("ActivityId");
 
                     b.HasIndex("CountryId");
+
+                    b.HasIndex("LanguageId");
 
                     b.HasIndex("UserId");
 
@@ -6944,217 +6949,217 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c7752011-6fb3-497b-91f7-1eadfe5bebf7"),
+                            Id = new Guid("7cb10808-2ae7-4480-b437-fe055efa831e"),
                             ShortCode = "AT",
                             Title = "Austria"
                         },
                         new
                         {
-                            Id = new Guid("2f6f0645-de0f-4b21-b0b7-7c45ccec1e84"),
+                            Id = new Guid("ae6171cc-04eb-42b1-a522-50252f82042a"),
                             ShortCode = "BA",
                             Title = "Bosnia and Herzegovina"
                         },
                         new
                         {
-                            Id = new Guid("7380949d-0f78-4125-81fc-fa3039e269d4"),
+                            Id = new Guid("43051aa7-8cbe-4fd4-8aa9-74b015a5ae3e"),
                             ShortCode = "BE",
                             Title = "Belgium"
                         },
                         new
                         {
-                            Id = new Guid("c5128548-8a34-45a3-ad50-10964090fedf"),
+                            Id = new Guid("4e392b9d-18d9-4cb9-9102-729a03d837d6"),
                             ShortCode = "BG",
                             Title = "Bulgaria"
                         },
                         new
                         {
-                            Id = new Guid("957c21e9-d74b-4e13-9826-202b3810cc02"),
+                            Id = new Guid("c6dd7b9f-c650-4749-b2ae-ef36e35c0f02"),
                             ShortCode = "HR",
                             Title = "Croatia"
                         },
                         new
                         {
-                            Id = new Guid("c1a79eee-196d-4353-a8cd-eaf9b9490f5c"),
+                            Id = new Guid("3cc9e570-ca98-40b5-b1e7-ef93770b0b3c"),
                             ShortCode = "CY",
                             Title = "Cyprus"
                         },
                         new
                         {
-                            Id = new Guid("0ee5c31e-eeb2-41b9-8c8b-047e809771bb"),
+                            Id = new Guid("ef784333-4549-4d4d-aaa6-41a5328947d3"),
                             ShortCode = "CZ",
                             Title = "Czechia"
                         },
                         new
                         {
-                            Id = new Guid("bf632c2d-9835-4639-affe-876fa48d0bef"),
+                            Id = new Guid("d95c634f-5a1e-43a7-91a2-01f920df04f0"),
                             ShortCode = "DK",
                             Title = "Denmark"
                         },
                         new
                         {
-                            Id = new Guid("835bc5f5-220d-4f92-a9e7-b5ebf83ba4b3"),
+                            Id = new Guid("080dea09-9c99-4879-8bb0-9b046ed55714"),
                             ShortCode = "EE",
                             Title = "Estonia"
                         },
                         new
                         {
-                            Id = new Guid("13f30709-c2a8-4ba6-af9b-c5df438f466b"),
+                            Id = new Guid("6d41c867-5026-4038-88f8-3c640b9bab92"),
                             ShortCode = "FI",
                             Title = "Finland"
                         },
                         new
                         {
-                            Id = new Guid("dee2d1ac-6a2c-4d4c-8110-013acd1885b2"),
+                            Id = new Guid("a282d129-c5c7-48b3-9248-fcdfcd76552e"),
                             ShortCode = "FR",
                             Title = "France"
                         },
                         new
                         {
-                            Id = new Guid("f3df26de-336c-4b96-8bc3-e981b6ae5b06"),
+                            Id = new Guid("02065c90-0881-4fcc-b649-bc9f5bf356f1"),
                             ShortCode = "DE",
                             Title = "Germany"
                         },
                         new
                         {
-                            Id = new Guid("645f1ca2-da90-4af8-8fee-a1f6d840d404"),
+                            Id = new Guid("961900e2-3fe8-4dbb-a47c-95cffbaf668d"),
                             ShortCode = "EL",
                             Title = "Greece"
                         },
                         new
                         {
-                            Id = new Guid("8f2587b0-90b9-43fe-874b-871755ba7aed"),
+                            Id = new Guid("64791482-da69-462f-b4d4-ab37a8c16f27"),
                             ShortCode = "HU",
                             Title = "Hungary"
                         },
                         new
                         {
-                            Id = new Guid("757846ec-a71c-4546-a697-b58b67299a00"),
+                            Id = new Guid("0f9085d4-7841-415f-bc42-2820b6623598"),
                             ShortCode = "IS",
                             Title = "Iceland"
                         },
                         new
                         {
-                            Id = new Guid("387828dc-fc87-454e-99c2-2dcf5587eb6f"),
+                            Id = new Guid("6b771d40-163d-4bd3-95d2-f1e2413076ad"),
                             ShortCode = "IE",
                             Title = "Ireland"
                         },
                         new
                         {
-                            Id = new Guid("8fce456d-91f6-40e7-8ea3-e0142e6a5008"),
+                            Id = new Guid("3bc30583-e10b-4430-b411-4f6b44b5764d"),
                             ShortCode = "IT",
                             Title = "Italy"
                         },
                         new
                         {
-                            Id = new Guid("25bcfc22-b4f9-4f8f-a8bf-b4ce6868604b"),
+                            Id = new Guid("2b87bc23-e527-4158-9056-1d654e40ab62"),
                             ShortCode = "LV",
                             Title = "Latvia"
                         },
                         new
                         {
-                            Id = new Guid("b63ea517-ec1e-4197-9a4c-7608f021042a"),
+                            Id = new Guid("df5c967f-6a26-4e91-8f19-36960d52db9a"),
                             ShortCode = "LI",
                             Title = "Liechtenstein"
                         },
                         new
                         {
-                            Id = new Guid("80b13559-7ac0-4188-ac6f-bc8a3a4ac27d"),
+                            Id = new Guid("ae553075-b13b-4a99-9e59-6ae138be1d45"),
                             ShortCode = "LT",
                             Title = "Lithuania"
                         },
                         new
                         {
-                            Id = new Guid("b88656f0-f873-4280-93fe-47fdd833b596"),
+                            Id = new Guid("20022a0f-88e1-40a7-8ab3-92535629cff1"),
                             ShortCode = "LU",
                             Title = "Luxembourg"
                         },
                         new
                         {
-                            Id = new Guid("6b0ae9ea-e7be-4349-869c-76379ad0bded"),
+                            Id = new Guid("8f3637a4-6e7f-4b1a-b176-cfb66b4a696f"),
                             ShortCode = "MT",
                             Title = "Malta"
                         },
                         new
                         {
-                            Id = new Guid("1a266f20-f007-4a09-8f90-0ce6da7742be"),
+                            Id = new Guid("0d72a973-44af-455c-b420-c1cc5009581f"),
                             ShortCode = "NL",
                             Title = "Netherlands"
                         },
                         new
                         {
-                            Id = new Guid("cbb3351a-136e-4913-b79f-968ef92f27ba"),
+                            Id = new Guid("88a0e3bf-faf0-4fc6-ac5f-9053f3639a1b"),
                             ShortCode = "MK",
                             Title = "North Macedonia"
                         },
                         new
                         {
-                            Id = new Guid("6d614265-807e-4d9c-83b4-9d930caa4022"),
+                            Id = new Guid("fab67181-7af5-40f4-afca-7f4577cd46fa"),
                             ShortCode = "NO",
                             Title = "Norway"
                         },
                         new
                         {
-                            Id = new Guid("dafbff28-a1e5-4fb9-8ead-c77ba9aaa615"),
+                            Id = new Guid("603168fd-8fa1-4be4-9a71-60dc7c1e80a8"),
                             ShortCode = "PL",
                             Title = "Poland"
                         },
                         new
                         {
-                            Id = new Guid("aab82f2d-80b4-43b5-bbfa-08e4563ada47"),
+                            Id = new Guid("320da358-0df7-4e98-801b-2378598e440a"),
                             ShortCode = "PT",
                             Title = "Portugal"
                         },
                         new
                         {
-                            Id = new Guid("972cb460-c6b6-4ef3-bf06-659799f9fe88"),
+                            Id = new Guid("62a56d25-41ae-405e-bc05-d7703deb7961"),
                             ShortCode = "RO",
                             Title = "Romania"
                         },
                         new
                         {
-                            Id = new Guid("b81fe13f-6d28-44c0-90ed-81ffaa980435"),
+                            Id = new Guid("ada288ce-512c-481f-b22b-7bc5aa2bb039"),
                             ShortCode = "RS",
                             Title = "Serbia"
                         },
                         new
                         {
-                            Id = new Guid("7c72d164-8a84-44ca-9783-95f67961a3b8"),
+                            Id = new Guid("a53e1222-3ce3-4fc8-93ce-1ef0340e4b97"),
                             ShortCode = "SK",
                             Title = "Slovakia"
                         },
                         new
                         {
-                            Id = new Guid("23ecaa89-9404-4496-84f3-5086ecb732d7"),
+                            Id = new Guid("b5ca45ee-48cc-4603-88bf-68c5917e7213"),
                             ShortCode = "SI",
                             Title = "Slovenia"
                         },
                         new
                         {
-                            Id = new Guid("7e9ab38e-3fc6-4c18-b48f-b02a21b1f224"),
+                            Id = new Guid("7798abcc-70a6-46e7-9b15-6a10733f805a"),
                             ShortCode = "ES",
                             Title = "Spain"
                         },
                         new
                         {
-                            Id = new Guid("b727e1f7-1ff7-4355-be21-b2ca4dc1878c"),
+                            Id = new Guid("af583fc0-95a7-451e-81bf-15254ab4a4a0"),
                             ShortCode = "SE",
                             Title = "Sweden"
                         },
                         new
                         {
-                            Id = new Guid("dce7ba95-91da-45fc-b563-73608917e376"),
+                            Id = new Guid("aa183468-e16c-4fe2-93d2-e4b36893829d"),
                             ShortCode = "CH",
                             Title = "Switzerland"
                         },
                         new
                         {
-                            Id = new Guid("1f78699a-f83f-4e80-91b1-8636490d776b"),
+                            Id = new Guid("d5cd04f5-5590-44eb-9ec8-e34d2c63af2c"),
                             ShortCode = "TR",
                             Title = "Turkey"
                         },
                         new
                         {
-                            Id = new Guid("455559e1-e902-4ef4-b520-206d5229b3c4"),
+                            Id = new Guid("a305b475-907f-4d6f-b189-b113d19e9506"),
                             ShortCode = "UK",
                             Title = "United Kingdom"
                         });
@@ -7184,147 +7189,147 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2dd12739-2ff7-4318-9b3b-0c5316c674c5"),
+                            Id = new Guid("cda51936-ba2b-43ac-ab53-b6246d025d2e"),
                             Code = "A",
                             Language = "EN",
                             Title = "Agriculture, forestry and fishing"
                         },
                         new
                         {
-                            Id = new Guid("05d938d7-83a9-427c-a99f-c050f73f2b97"),
+                            Id = new Guid("1d0949f7-1dff-4910-bde8-55c5149de11f"),
                             Code = "B",
                             Language = "EN",
                             Title = "Mining and quarrying"
                         },
                         new
                         {
-                            Id = new Guid("cdcad068-377b-4020-880c-cde5196056b1"),
+                            Id = new Guid("daf2e4e6-995d-42d6-ba6a-f75629cc514b"),
                             Code = "C",
                             Language = "EN",
                             Title = "Manufacturing"
                         },
                         new
                         {
-                            Id = new Guid("9a71ef5e-a888-47e2-b093-0e1f93dfcf9a"),
+                            Id = new Guid("ae840323-3f88-48fe-b261-c4feb17ec8c4"),
                             Code = "D",
                             Language = "EN",
                             Title = "Electricity, gas, steam and air conditioning supply"
                         },
                         new
                         {
-                            Id = new Guid("7bef9517-df2b-4d5b-be0d-fdcb97fe1613"),
+                            Id = new Guid("212d4c9f-ffb7-49ad-8f96-42d68c90a96f"),
                             Code = "E",
                             Language = "EN",
                             Title = "Water supply; sewerage; waste managment and remediation activities"
                         },
                         new
                         {
-                            Id = new Guid("d58fcb59-0ef5-4d64-b91c-15606d5fc336"),
+                            Id = new Guid("c121876d-d19a-4181-a142-f77b1f92bf95"),
                             Code = "F",
                             Language = "EN",
                             Title = "Construction"
                         },
                         new
                         {
-                            Id = new Guid("ed2c28a9-e1a8-4137-8e5f-fff757ffed17"),
+                            Id = new Guid("dcab7370-97ca-4ae5-ae43-b6d13c6ce09b"),
                             Code = "G",
                             Language = "EN",
                             Title = "Wholesale and retail trade; repair of motor vehicles and motorcycles"
                         },
                         new
                         {
-                            Id = new Guid("b7606a21-104e-48e3-b2d9-b6babf251344"),
+                            Id = new Guid("e111a390-958b-42fb-bfe0-6b0c1da02ff4"),
                             Code = "H",
                             Language = "EN",
                             Title = "Transporting and storage"
                         },
                         new
                         {
-                            Id = new Guid("46410180-ada4-40fd-9522-8c7afb29b7d9"),
+                            Id = new Guid("884d4722-a653-4816-a794-e9308bd8eefb"),
                             Code = "I",
                             Language = "EN",
                             Title = "Accommodation and food service activities"
                         },
                         new
                         {
-                            Id = new Guid("b8eed88f-6c10-4e92-8744-0dec304c8dce"),
+                            Id = new Guid("a744303e-de58-4ed2-ad31-ed5c1df12756"),
                             Code = "J",
                             Language = "EN",
                             Title = "Information and communication"
                         },
                         new
                         {
-                            Id = new Guid("f224da09-8420-4142-a072-3e1cb634f555"),
+                            Id = new Guid("ba6c12cf-a10e-4d44-8cb7-07d85660a6dd"),
                             Code = "K",
                             Language = "EN",
                             Title = "Financial and insurance activities"
                         },
                         new
                         {
-                            Id = new Guid("93028a9d-e485-4ccc-8828-0689447a4e2e"),
+                            Id = new Guid("9483755a-bae7-4aab-a4a2-a18df3e3b793"),
                             Code = "L",
                             Language = "EN",
                             Title = "Real estate activities"
                         },
                         new
                         {
-                            Id = new Guid("c3b30db3-d025-495c-9fae-24fa4658a004"),
+                            Id = new Guid("70c63896-98b2-4074-858e-fd431396be24"),
                             Code = "M",
                             Language = "EN",
                             Title = "Professional, scientific and technical activities"
                         },
                         new
                         {
-                            Id = new Guid("5225576a-f8f8-402b-86a4-946aa6b4841d"),
+                            Id = new Guid("d3319bca-1d5c-4677-813a-5a0f2a554f9f"),
                             Code = "N",
                             Language = "EN",
                             Title = "Administrative and support service activities"
                         },
                         new
                         {
-                            Id = new Guid("a40737a7-0702-43ce-8922-dca840d49d23"),
+                            Id = new Guid("531b559c-b9bd-4fbf-9a03-7635e196d269"),
                             Code = "O",
                             Language = "EN",
                             Title = "Public administration and defence; compulsory social security"
                         },
                         new
                         {
-                            Id = new Guid("9b57f0bf-4bd5-4442-9662-4b4c0827ecac"),
+                            Id = new Guid("ac7f54e6-aea7-48df-909f-40daf319587f"),
                             Code = "P",
                             Language = "EN",
                             Title = "Education"
                         },
                         new
                         {
-                            Id = new Guid("26cf3645-613d-49c2-b1d7-1e284fd70991"),
+                            Id = new Guid("0d4b527d-f8b8-40ee-b8c7-42133995647f"),
                             Code = "Q",
                             Language = "EN",
                             Title = "Human health and social work activities"
                         },
                         new
                         {
-                            Id = new Guid("804c84af-d105-46ea-990d-bc517abd54f4"),
+                            Id = new Guid("11c31533-c3c0-46f7-824c-92faa4140858"),
                             Code = "R",
                             Language = "EN",
                             Title = "Arts, entertainment and recreation"
                         },
                         new
                         {
-                            Id = new Guid("318a8290-3b8b-4bd8-91a8-80bd7b1d50aa"),
+                            Id = new Guid("ad67997d-a4c7-4b9a-bd9d-bb8283b80a89"),
                             Code = "S",
                             Language = "EN",
                             Title = "Other services activities"
                         },
                         new
                         {
-                            Id = new Guid("ae41d7de-2689-4869-911a-7a239df00cf2"),
+                            Id = new Guid("4172a573-6423-473e-9984-825cb545902b"),
                             Code = "T",
                             Language = "EN",
                             Title = "Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use"
                         },
                         new
                         {
-                            Id = new Guid("1fd26d14-c6e8-4720-8a95-8bbe268c7326"),
+                            Id = new Guid("bfd64441-c86b-4b14-9190-d01e19c7c164"),
                             Code = "U",
                             Language = "EN",
                             Title = "Activities of extraterritorial organisations and bodies"
@@ -7352,7 +7357,7 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b7a6db3b-303e-4541-8bb8-6694ff3e1493"),
+                            Id = new Guid("537431bd-3607-410f-bea9-42e771f50c2f"),
                             Code = "EN",
                             Title = "English"
                         });
@@ -7462,7 +7467,7 @@ namespace KabadaAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("43ce1f10-aa1d-48ce-9f49-b6eef5c97683"),
+                            Id = new Guid("4fee4496-ec12-4178-991c-e3dc7ef27ff2"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)1,
@@ -7470,7 +7475,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("edc8c4fe-5f6e-4cc4-b37c-17cfe3c6bb54"),
+                            Id = new Guid("be4e9789-f702-4105-867f-48080eeea562"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)2,
@@ -7478,7 +7483,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8d3e4de8-4e67-4188-beb4-2d7bb35d2b7e"),
+                            Id = new Guid("f5343c05-7644-47bb-82b2-8d8fd9fc3fb0"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)3,
@@ -7486,7 +7491,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("791b3142-a38c-4de9-b78d-ade2398af933"),
+                            Id = new Guid("74920865-7ef9-47fd-8707-346f5f6b0a84"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)4,
@@ -7494,7 +7499,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1886086e-b34f-4a5e-ba3e-0aa4e38dd165"),
+                            Id = new Guid("0a08bb29-2949-49f3-bd93-89647567072a"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)5,
@@ -7502,7 +7507,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("33d4053b-1f4b-496b-b229-2b5258172e13"),
+                            Id = new Guid("5c63934e-a0d9-491f-9962-c19fabb199ef"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)6,
@@ -7510,7 +7515,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("df441782-15c9-4eff-a691-fb1b3ff7c865"),
+                            Id = new Guid("701eca1c-45ab-442f-9b43-34e2c60f8979"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)7,
@@ -7518,7 +7523,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c8a34662-8092-45b0-8f61-0ead7bf1e2e6"),
+                            Id = new Guid("43561aa5-2031-48bd-a559-76be04b5fa81"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)8,
@@ -7526,7 +7531,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("44ca822f-eba1-46d2-9610-d5e9bd6b9317"),
+                            Id = new Guid("8bfef051-8734-4b06-bcfa-70f9273b07b9"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)9,
@@ -7534,7 +7539,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e813290a-25b0-43b9-9ff3-ac4a34046883"),
+                            Id = new Guid("4c7a881b-4f25-454c-b3a4-585c5e5680af"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)10,
@@ -7542,7 +7547,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("634aebc1-764b-4fa1-8e59-3f0dd6294f9e"),
+                            Id = new Guid("28472fce-c097-4139-a041-59df909c310a"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)11,
@@ -7550,7 +7555,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("32329257-8a9d-4c37-a1fa-db52b57209c5"),
+                            Id = new Guid("7c1386a1-8c8b-492c-899e-3790fa39fdf2"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)12,
@@ -7558,7 +7563,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2b748b8e-1b88-409c-a045-141769b244f0"),
+                            Id = new Guid("55f48a3d-c017-489b-b816-2a8f5db986ee"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)13,
@@ -7566,7 +7571,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dac5fc74-bdb2-43dc-b5e5-7cbead488358"),
+                            Id = new Guid("3b93ec71-0da8-4fe1-81ae-c06068d781d1"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)14,
@@ -7574,7 +7579,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6b950ac4-2986-41a6-8bcd-538eb5d92c90"),
+                            Id = new Guid("7c12bdaa-7408-42fa-bb0d-fa59eb84330b"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)15,
@@ -7582,7 +7587,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("55866910-0e70-4d63-a66a-e4ff3b5bbe75"),
+                            Id = new Guid("fb580ff6-6a0e-4376-8fec-f26d066b96c0"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)16,
@@ -7590,7 +7595,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1af09c9e-ded2-4807-91cd-143b54c45d97"),
+                            Id = new Guid("a67d0857-99d0-4fcf-8724-63e32d362d55"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)17,
@@ -7598,7 +7603,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e0aa1af7-baa1-4fd6-91c4-b5eac22d4b04"),
+                            Id = new Guid("513a6f63-f97e-4ab3-9edd-8ace87398b36"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)18,
@@ -7606,7 +7611,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("afc4173c-5dda-4fc1-9d13-bf79f046d887"),
+                            Id = new Guid("f37edf34-a77b-4523-82f6-c8f5d4708c84"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)19,
@@ -7614,7 +7619,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("662b0ab1-cbed-41b1-a0b9-2d1383396a20"),
+                            Id = new Guid("973737a8-8d47-45f4-a8b2-5d2cf5b9a269"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)20,
@@ -7622,7 +7627,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bc12998e-a399-4dfd-a32a-6e0e2dad1d7b"),
+                            Id = new Guid("a86a0fbf-f06d-4caa-b3c6-b3207a6963c4"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)21,
@@ -7630,7 +7635,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5c95b7f0-92d0-44b5-86c7-952a7daebb71"),
+                            Id = new Guid("f05044df-9372-4b9d-85af-584064bf8570"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)22,
@@ -7638,7 +7643,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("34a8bef9-1953-4bbb-8127-9760a196830f"),
+                            Id = new Guid("1ecb7032-01e3-4b81-8d3c-adafd8e4d0c8"),
                             Kind = (short)1,
                             LongValue = "a",
                             OrderValue = (short)23,
@@ -7646,7 +7651,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ef576701-80cd-42a4-84cd-d3d44461f5b3"),
+                            Id = new Guid("f1e75af7-d143-4e7e-9616-be205a9a0350"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7654,7 +7659,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bb38c334-6ecd-4e6e-9745-23fc50897829"),
+                            Id = new Guid("10d40e09-e2a6-4d89-b546-cb4c10676ccd"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7662,7 +7667,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("244d74f2-368e-4ff1-867e-a9df28a92b30"),
+                            Id = new Guid("0cb0794c-aa53-403d-92df-6816eca7746d"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7670,7 +7675,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3ddaa060-ec52-4b9a-8fad-912bed878fef"),
+                            Id = new Guid("ec1f2a2c-7654-49de-9f1a-d4d959398953"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7678,7 +7683,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4b84829d-cdd3-448b-bce5-329a42aebcf1"),
+                            Id = new Guid("160d7f71-ad79-42f3-a10b-0e531feca975"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7686,7 +7691,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2d69e13f-149b-4087-a658-e548241f5fdc"),
+                            Id = new Guid("78f83582-4135-4c7e-86a8-9b9566b93144"),
                             Kind = (short)3,
                             LongValue = "a",
                             OrderValue = (short)0,
@@ -7694,7 +7699,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            Id = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             Kind = (short)5,
                             LongValue = "Physical assets are tangible resources that a company uses to create its value proposition. These could include equipment, inventory, buildings, manufacturing plants and distribution networks that enable the business to function.",
                             OrderValue = (short)1,
@@ -7702,128 +7707,128 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7dccdae0-5df7-48f5-9de4-92173db702a0"),
+                            Id = new Guid("665e102a-27f7-421f-8780-67749caee1cb"),
                             Kind = (short)6,
-                            MasterId = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            MasterId = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             OrderValue = (short)1,
                             Value = "Buildings"
                         },
                         new
                         {
-                            Id = new Guid("240797c7-f5cd-4933-862d-75def92d57fe"),
+                            Id = new Guid("8cb6eb30-e395-47b0-bc04-adf4daac78e3"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
-                            MasterId = new Guid("7dccdae0-5df7-48f5-9de4-92173db702a0"),
+                            MasterId = new Guid("665e102a-27f7-421f-8780-67749caee1cb"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("88bc178d-8ef6-44d8-ae58-7c89d1750c99"),
+                            Id = new Guid("e1e076db-3141-45a0-8be2-8a45877a12cb"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("7dccdae0-5df7-48f5-9de4-92173db702a0"),
+                            MasterId = new Guid("665e102a-27f7-421f-8780-67749caee1cb"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("cd0fe7eb-c03f-4ca8-99a2-3a689d356044"),
+                            Id = new Guid("a3878238-fb6e-4a10-8d5f-a161bee11d2f"),
                             Kind = (short)6,
-                            MasterId = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            MasterId = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             OrderValue = (short)2,
                             Value = "Equipment"
                         },
                         new
                         {
-                            Id = new Guid("3c321a90-68c7-4f3d-b128-b3abd9bc2dd5"),
+                            Id = new Guid("37975fe0-2a4b-4bec-8b2f-89c374314f3d"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
-                            MasterId = new Guid("cd0fe7eb-c03f-4ca8-99a2-3a689d356044"),
+                            MasterId = new Guid("a3878238-fb6e-4a10-8d5f-a161bee11d2f"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("0f2cfaf5-174e-4d68-b7d9-76609fd013f5"),
+                            Id = new Guid("326ffe2d-e70f-4eac-b10e-a6d64e27f492"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("cd0fe7eb-c03f-4ca8-99a2-3a689d356044"),
+                            MasterId = new Guid("a3878238-fb6e-4a10-8d5f-a161bee11d2f"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("ccb178b5-d29e-473f-a263-c906a9be3c1f"),
+                            Id = new Guid("f03a9fc1-2993-4931-95c6-134f1ec637c0"),
                             Kind = (short)6,
-                            MasterId = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            MasterId = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             OrderValue = (short)3,
                             Value = "Transport"
                         },
                         new
                         {
-                            Id = new Guid("c4104a88-8ac9-4408-a1fa-aad9c2a42fc0"),
+                            Id = new Guid("238f8d4e-a843-4035-90d3-f3c55bbdd5f8"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
-                            MasterId = new Guid("ccb178b5-d29e-473f-a263-c906a9be3c1f"),
+                            MasterId = new Guid("f03a9fc1-2993-4931-95c6-134f1ec637c0"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("c9c45e49-1370-4594-a2f8-4bb50189e8a9"),
+                            Id = new Guid("4d4445e8-1c86-4d4d-ae95-b73b895438e9"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("ccb178b5-d29e-473f-a263-c906a9be3c1f"),
+                            MasterId = new Guid("f03a9fc1-2993-4931-95c6-134f1ec637c0"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("f09a8dc8-5423-4d24-9c54-c81acda07fd1"),
+                            Id = new Guid("913fe3c7-495b-40d4-a9eb-04442dd3fe04"),
                             Kind = (short)6,
-                            MasterId = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            MasterId = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             OrderValue = (short)4,
                             Value = "Raw materials"
                         },
                         new
                         {
-                            Id = new Guid("16729818-1818-4e2d-9971-e3b4174f5bc3"),
+                            Id = new Guid("abb416c8-8470-4e0b-ba28-ec0dd68621ce"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
-                            MasterId = new Guid("f09a8dc8-5423-4d24-9c54-c81acda07fd1"),
+                            MasterId = new Guid("913fe3c7-495b-40d4-a9eb-04442dd3fe04"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("a654a8a9-4e65-4edd-b16e-dd036b6b304c"),
+                            Id = new Guid("ae29905d-c91b-4cea-9075-fce51c249114"),
                             Kind = (short)6,
-                            MasterId = new Guid("77306f76-30af-4a51-b834-dab9602fb512"),
+                            MasterId = new Guid("4c68fe49-77fc-4142-b8d8-6ba371fd8472"),
                             OrderValue = (short)5,
                             Value = "Other"
                         },
                         new
                         {
-                            Id = new Guid("725a01ed-5ba7-44b1-bc96-4f09ec91063c"),
+                            Id = new Guid("f45e7585-2c8c-4d44-b0e7-13b789237d89"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
-                            MasterId = new Guid("a654a8a9-4e65-4edd-b16e-dd036b6b304c"),
+                            MasterId = new Guid("ae29905d-c91b-4cea-9075-fce51c249114"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("02d68fce-97e4-4df8-8379-f1cb868b8f37"),
+                            Id = new Guid("1ecbde64-6029-46f7-bb30-6337bb88ab8f"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("a654a8a9-4e65-4edd-b16e-dd036b6b304c"),
+                            MasterId = new Guid("ae29905d-c91b-4cea-9075-fce51c249114"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("5d3064d5-22a4-47fe-b8f4-ae7f92188595"),
+                            Id = new Guid("273acaec-29d9-4737-b204-13fe478455f9"),
                             Kind = (short)5,
                             LongValue = "These are non-physical, intangible resources like brand, patents, IP, copyrights, and even partnerships. Customer lists, customer knowledge, and even your own people, represent a form of intellectual resource. Intellectual resources take a great deal of time and expenditure to develop. But once developed, they can offer unique advantages to the company.",
                             OrderValue = (short)2,
@@ -7831,39 +7836,39 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b98fceba-5593-452b-808b-1c5946b48653"),
+                            Id = new Guid("58b3d675-ed7d-4f33-8855-d624cbd39915"),
                             Kind = (short)6,
-                            MasterId = new Guid("5d3064d5-22a4-47fe-b8f4-ae7f92188595"),
+                            MasterId = new Guid("273acaec-29d9-4737-b204-13fe478455f9"),
                             OrderValue = (short)1,
                             Value = "Brands"
                         },
                         new
                         {
-                            Id = new Guid("af282acd-99d1-4c28-afba-c5c51b98d867"),
+                            Id = new Guid("8173b6ad-c4a0-4bfe-9685-9a2b42edc274"),
                             Kind = (short)6,
-                            MasterId = new Guid("5d3064d5-22a4-47fe-b8f4-ae7f92188595"),
+                            MasterId = new Guid("273acaec-29d9-4737-b204-13fe478455f9"),
                             OrderValue = (short)2,
                             Value = "Licenses"
                         },
                         new
                         {
-                            Id = new Guid("1d61cd4c-25aa-4348-9562-91d1ba5c2e66"),
+                            Id = new Guid("8a58c46a-0698-4305-a094-921fe1902e77"),
                             Kind = (short)6,
-                            MasterId = new Guid("5d3064d5-22a4-47fe-b8f4-ae7f92188595"),
+                            MasterId = new Guid("273acaec-29d9-4737-b204-13fe478455f9"),
                             OrderValue = (short)3,
                             Value = "Software"
                         },
                         new
                         {
-                            Id = new Guid("57249825-a5ca-46d5-8d9f-c58a1c2c0045"),
+                            Id = new Guid("c7a1fc8c-03be-4aa3-8be6-9c32dc715818"),
                             Kind = (short)6,
-                            MasterId = new Guid("5d3064d5-22a4-47fe-b8f4-ae7f92188595"),
+                            MasterId = new Guid("273acaec-29d9-4737-b204-13fe478455f9"),
                             OrderValue = (short)4,
                             Value = "Other"
                         },
                         new
                         {
-                            Id = new Guid("67b13e33-dd18-413b-a4db-ad33352b67c1"),
+                            Id = new Guid("04fcec30-4258-4ef4-a32b-1dac87e11a44"),
                             Kind = (short)5,
                             LongValue = "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.",
                             OrderValue = (short)3,
@@ -7871,111 +7876,111 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("965a37af-52f1-4bae-9c1d-55dbf2a0dd36"),
+                            Id = new Guid("c0c65402-ae57-4be2-8af6-2f3d7128503d"),
                             Kind = (short)6,
-                            MasterId = new Guid("67b13e33-dd18-413b-a4db-ad33352b67c1"),
+                            MasterId = new Guid("04fcec30-4258-4ef4-a32b-1dac87e11a44"),
                             OrderValue = (short)1,
                             Value = "Specialists & Know-how"
                         },
                         new
                         {
-                            Id = new Guid("e60a5170-7852-4f14-8bdf-b8c0b7268029"),
+                            Id = new Guid("56c5d7cc-0c89-45d8-a11b-f0c4fe1f6eae"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false},{\"title\":\"Myself\",\"selected\":false}]",
-                            MasterId = new Guid("965a37af-52f1-4bae-9c1d-55dbf2a0dd36"),
+                            MasterId = new Guid("c0c65402-ae57-4be2-8af6-2f3d7128503d"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("6caf890f-9c82-44a0-9b2a-a13d1b34ac03"),
+                            Id = new Guid("721223aa-80cd-40c9-a528-14be36f96b13"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("965a37af-52f1-4bae-9c1d-55dbf2a0dd36"),
+                            MasterId = new Guid("c0c65402-ae57-4be2-8af6-2f3d7128503d"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("7cd08900-bb76-4f35-87a4-d82d598bb313"),
+                            Id = new Guid("4af02279-6d57-4629-a25a-9a6f503a6eba"),
                             Kind = (short)6,
-                            MasterId = new Guid("67b13e33-dd18-413b-a4db-ad33352b67c1"),
+                            MasterId = new Guid("04fcec30-4258-4ef4-a32b-1dac87e11a44"),
                             OrderValue = (short)2,
                             Value = "Administrative"
                         },
                         new
                         {
-                            Id = new Guid("58b5a3d7-ed11-43bb-a904-070f0d797046"),
+                            Id = new Guid("587ce329-9909-4653-b0d7-124dfe277d4e"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
-                            MasterId = new Guid("7cd08900-bb76-4f35-87a4-d82d598bb313"),
+                            MasterId = new Guid("4af02279-6d57-4629-a25a-9a6f503a6eba"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("637af3c8-a066-4d11-8946-1117da5677e4"),
+                            Id = new Guid("cd9a0a1c-91d4-4ed9-b9b5-7d8fde88b228"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("7cd08900-bb76-4f35-87a4-d82d598bb313"),
+                            MasterId = new Guid("4af02279-6d57-4629-a25a-9a6f503a6eba"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("1476d39d-e091-47ad-b952-1bde818a3e4e"),
+                            Id = new Guid("2a6a9c46-5d9d-4385-9c86-035bea111da7"),
                             Kind = (short)6,
-                            MasterId = new Guid("67b13e33-dd18-413b-a4db-ad33352b67c1"),
+                            MasterId = new Guid("04fcec30-4258-4ef4-a32b-1dac87e11a44"),
                             OrderValue = (short)3,
                             Value = "Employees directly involved in production or service"
                         },
                         new
                         {
-                            Id = new Guid("fd409f4f-bf32-488e-8d07-eea9cb51cd72"),
+                            Id = new Guid("77259b57-9307-4e6a-bee5-b2f271256640"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
-                            MasterId = new Guid("1476d39d-e091-47ad-b952-1bde818a3e4e"),
+                            MasterId = new Guid("2a6a9c46-5d9d-4385-9c86-035bea111da7"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("00faf68d-cc8c-4c73-b55b-e54148a86851"),
+                            Id = new Guid("6be0c540-4c1e-4928-bb4b-5f989ec065e0"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("1476d39d-e091-47ad-b952-1bde818a3e4e"),
+                            MasterId = new Guid("2a6a9c46-5d9d-4385-9c86-035bea111da7"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("47a0e259-07ab-4f64-bf82-4f525eba0892"),
+                            Id = new Guid("01980e94-e802-466f-9dc8-889751a4b406"),
                             Kind = (short)6,
-                            MasterId = new Guid("67b13e33-dd18-413b-a4db-ad33352b67c1"),
+                            MasterId = new Guid("04fcec30-4258-4ef4-a32b-1dac87e11a44"),
                             OrderValue = (short)4,
                             Value = "Other"
                         },
                         new
                         {
-                            Id = new Guid("085b8968-a2d8-4706-957d-c56549be7aa0"),
+                            Id = new Guid("2e71ba8f-d259-42ac-baf9-78f916dc1e4a"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
-                            MasterId = new Guid("47a0e259-07ab-4f64-bf82-4f525eba0892"),
+                            MasterId = new Guid("01980e94-e802-466f-9dc8-889751a4b406"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
                         },
                         new
                         {
-                            Id = new Guid("540e54ec-9080-4fee-ac74-a82eb731c946"),
+                            Id = new Guid("4e60d6e2-76fa-454e-830f-7d58b47a4b0f"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
-                            MasterId = new Guid("47a0e259-07ab-4f64-bf82-4f525eba0892"),
+                            MasterId = new Guid("01980e94-e802-466f-9dc8-889751a4b406"),
                             OrderValue = (short)2,
                             Value = "Frequency"
                         },
                         new
                         {
-                            Id = new Guid("095d6f4d-2a8f-4cc7-bb01-114df3c7cdea"),
+                            Id = new Guid("5abc1795-4132-472b-a667-86fec81321b7"),
                             Kind = (short)11,
                             LongValue = "Possible if you distribute your products through your own channels – directly, your own store, homepage. Often the case in some service sectors",
                             OrderValue = (short)1,
@@ -7983,7 +7988,7 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("46c84ab0-fa42-43f9-a5fb-f29d2301dc18"),
+                            Id = new Guid("105d8728-b3b6-46e9-aaf8-ec54fca35f30"),
                             Kind = (short)11,
                             LongValue = "You can choose «Many Distributors» if you believe that distribution channels are strongly diversified and no distributor is of high importance",
                             OrderValue = (short)2,
@@ -7991,98 +7996,98 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e9b83bea-5a69-4335-969f-3efc28e638c1"),
+                            Id = new Guid("da75ffda-ddca-4a34-8758-899ca387e5a3"),
                             Kind = (short)11,
                             OrderValue = (short)3,
                             Value = "Retailers"
                         },
                         new
                         {
-                            Id = new Guid("bf7b526a-ad7f-4815-97cb-fcefbcb87074"),
+                            Id = new Guid("61995b00-7d70-45a5-b1b0-359eed4f72a9"),
                             Kind = (short)11,
                             OrderValue = (short)4,
                             Value = "Wholesalers"
                         },
                         new
                         {
-                            Id = new Guid("59060030-cf95-4bc3-85da-d728b04ed545"),
+                            Id = new Guid("9bc85756-5894-4f65-84c6-16cc3243bbe1"),
                             Kind = (short)11,
                             OrderValue = (short)5,
                             Value = "Agents"
                         },
                         new
                         {
-                            Id = new Guid("1623a3d8-af81-4f4e-8fa4-fbb83d833230"),
+                            Id = new Guid("3982b37b-dd25-4014-9e35-6a3c4bae1e20"),
                             Kind = (short)11,
                             OrderValue = (short)6,
                             Value = "Others"
                         },
                         new
                         {
-                            Id = new Guid("837f1f3a-a47f-443f-a10c-3e02eeaaa483"),
+                            Id = new Guid("226f5ea3-2038-4236-a297-18db489a3f4a"),
                             Kind = (short)12,
                             OrderValue = (short)1,
                             Value = "Raw materials, finished or semi-finished goods"
                         },
                         new
                         {
-                            Id = new Guid("c7ff09c9-43ae-40a4-adb7-4b3ba9e0ed9a"),
+                            Id = new Guid("7c9243f9-60ae-4284-9055-9430b903603f"),
                             Kind = (short)12,
                             OrderValue = (short)2,
                             Value = "Equipment and real estate"
                         },
                         new
                         {
-                            Id = new Guid("8f49bbd1-5db1-4eba-8429-d0e8bc735055"),
+                            Id = new Guid("bf173067-9c2e-4cd4-9a2a-9d0c22409150"),
                             Kind = (short)12,
                             OrderValue = (short)3,
                             Value = "Outsourced services"
                         },
                         new
                         {
-                            Id = new Guid("ff2832a1-3d4a-488f-922a-968dcfc492b1"),
+                            Id = new Guid("442e063b-55db-41e4-a89d-6b5b9c35cf5c"),
                             Kind = (short)12,
                             OrderValue = (short)4,
                             Value = "Financiers"
                         },
                         new
                         {
-                            Id = new Guid("7099869a-7f49-474f-a9df-2f9b994e68b2"),
+                            Id = new Guid("4b6bf94e-3e16-40e0-8de9-df017a821ca2"),
                             Kind = (short)12,
                             OrderValue = (short)5,
                             Value = "Human resources"
                         },
                         new
                         {
-                            Id = new Guid("f6ee355a-2d83-400c-8db4-feafc22c964d"),
+                            Id = new Guid("955c5e6e-41d3-47a9-8fbf-035ec2d25d20"),
                             Kind = (short)13,
                             OrderValue = (short)1,
                             Value = "Associations"
                         },
                         new
                         {
-                            Id = new Guid("4b3c456e-c4d5-46ba-a575-44c8e8c3aac8"),
+                            Id = new Guid("e5f32d17-6058-4fa8-b5c6-3f52ebf96aa8"),
                             Kind = (short)13,
                             OrderValue = (short)1,
                             Value = "Government institutions"
                         },
                         new
                         {
-                            Id = new Guid("ab419973-136d-4098-a9cf-6ca91c56ad91"),
+                            Id = new Guid("41d6a7fa-9716-4eb3-a096-2a27b0b3717a"),
                             Kind = (short)13,
                             OrderValue = (short)1,
                             Value = "Non-governmental institutions"
                         },
                         new
                         {
-                            Id = new Guid("3ae14858-cc63-4693-ada9-251c06c46908"),
+                            Id = new Guid("e90bfaf0-e93b-4761-9ebb-e712a213a1b2"),
                             Kind = (short)13,
                             OrderValue = (short)1,
                             Value = "Consultants"
                         },
                         new
                         {
-                            Id = new Guid("e06effaa-a8ec-4c81-b732-34f35b7d7443"),
+                            Id = new Guid("d2289ca2-b25c-4308-b022-79ec919171b5"),
                             Kind = (short)13,
                             OrderValue = (short)1,
                             Value = "Other"
@@ -8230,6 +8235,10 @@ namespace KabadaAPI.Migrations
                         .WithMany()
                         .HasForeignKey("CountryId");
 
+                    b.HasOne("KabadaAPIdao.Language", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId");
+
                     b.HasOne("KabadaAPIdao.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
@@ -8237,6 +8246,8 @@ namespace KabadaAPI.Migrations
                     b.Navigation("Activity");
 
                     b.Navigation("Country");
+
+                    b.Navigation("Language");
 
                     b.Navigation("User");
                 });
