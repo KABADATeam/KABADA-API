@@ -31,6 +31,7 @@ namespace KabadaAPI {
         public DbSet<KabadaAPIdao.SharedPlan> SharedPlans { get; set; } 
         public DbSet<KabadaAPIdao.Texter>     Texters     { get; set; } 
         public DbSet<KabadaAPIdao.Plan_Attribute>  Plan_Attributes  { get; set; } 
+        public DbSet<KabadaAPIdao.Language>  Languages  { get; set; } 
         // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
 
 

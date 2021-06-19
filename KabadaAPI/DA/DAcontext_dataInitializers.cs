@@ -27,6 +27,8 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Non-governmental institutions", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Consultants", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
+            //--- Languages
+            modelBuilder.Entity<Language>().HasData(new Language { Id = Guid.NewGuid(), Code="EN", Title="English" });
 
         }
         private void AddData_KeyResourcesTexters(ModelBuilder modelBuilder)
