@@ -86,6 +86,8 @@ namespace KabadaAPI {
             AddData_SWOTtexters(modelBuilder);
             AddData_KeyResourcesTexters(modelBuilder);
             AddData_PartnersTypes(modelBuilder);
+            AddData_Languages(modelBuilder);
+            AddData_NACE(modelBuilder);
         }
     }
 }

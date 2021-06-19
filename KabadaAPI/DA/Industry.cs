@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace KabadaAPIdao
-{
-    public class Industry
+namespace KabadaAPIdao {
+  public class Industry
     {
         [Key]
         public Guid Id { get; set; }
@@ -18,7 +16,7 @@ namespace KabadaAPIdao
 
         public string Language { get; set; }
 
-        public virtual List<Activity> Activities { get; set; }
+    //    public virtual List<Activity> Activities { get; set; }
 
     }
 }

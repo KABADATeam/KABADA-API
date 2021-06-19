@@ -84,21 +84,21 @@ namespace KabadaAPI.Controllers
             return activitiesView;
         }
 
-        [AllowAnonymous]
-        [HttpPost]
-        [Route("industries")]
-        public IActionResult AddIndustryActivity([FromBody]List<Industry> industry){ return prun<List<Industry>>( _AddIndustryActivity, industry); }
-        private IActionResult _AddIndustryActivity([FromBody]List<Industry> industry){
-            IndustryActivityRepository repository = iRepo;
-                foreach (var ind in industry)
-                {
-                    foreach (var act in ind.Activities)
-                    {
-                        repository.AddIndustryAndActivities(ind.Code, ind.Title, ind.Language, act.Code, act.Title);
-                    }
-                }
+        //[AllowAnonymous]
+        //[HttpPost]
+        //[Route("industries")]
+        //public IActionResult AddIndustryActivity([FromBody]List<Industry> industry){ return prun<List<Industry>>( _AddIndustryActivity, industry); }
+        //private IActionResult _AddIndustryActivity([FromBody]List<Industry> industry){
+        //    IndustryActivityRepository repository = iRepo;
+        //        foreach (var ind in industry)
+        //        {
+        //            foreach (var act in ind.Activities)
+        //            {
+        //                repository.AddIndustryAndActivities(ind.Code, ind.Title, ind.Language, act.Code, act.Title);
+        //            }
+        //        }
 
-                return Ok("Success");
-        }
+        //        return Ok("Success");
+        //}
     }
 }

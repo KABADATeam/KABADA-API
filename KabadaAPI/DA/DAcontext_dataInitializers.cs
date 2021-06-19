@@ -1,11 +1,11 @@
-﻿using KabadaAPI;
-using KabadaAPIdao;
+﻿using KabadaAPIdao;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 
 namespace KabadaAPI {
   partial class DAcontext {
+
         private void AddData_PartnersTypes(ModelBuilder modelBuilder)
         {
             //--- Distributors types
@@ -27,10 +27,7 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Non-governmental institutions", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Consultants", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.keyPartnersOther });
-            //--- Languages
-            modelBuilder.Entity<Language>().HasData(new Language { Id = Guid.NewGuid(), Code="EN", Title="English" });
-
-        }
+         }
         private void AddData_KeyResourcesTexters(ModelBuilder modelBuilder)
         {
             var catGuid = Guid.NewGuid();
@@ -287,5 +284,20 @@ namespace KabadaAPI {
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 1, Title = "Administrator" });
             modelBuilder.Entity<UserType>().HasData(new UserType { Id = 100, Title = "Simple" });
         }
+
+       private void AddData_Languages(ModelBuilder modelBuilder) {
+         modelBuilder.Entity<Language>().HasData(new Language { Id = Guid.NewGuid(), Code="EN", Title="English" });
+         }
+ 
+    private void act(ModelBuilder modelBuilder, Guid g, string v1, string v2) {
+      var o=new Activity(){ Code=v1, Title=v2, Id=Guid.NewGuid(), IndustryId=g};
+      modelBuilder.Entity<Activity>().HasData(o);
+      }
+
+    private Guid ind(ModelBuilder modelBuilder, string v1, string v2) {
+      var o=new Industry(){ Code=v1, Language="EN", Title=v2, Id=Guid.NewGuid()};
+      modelBuilder.Entity<Industry>().HasData(o);
+      return o.Id;
+      }
     }
   }
