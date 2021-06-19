@@ -20,19 +20,24 @@ namespace KabadaAPI {
             return myPlans.Concat(sharedPlans).ToList();          
         }
 
-        public BusinessPlan Save(Guid userId, string title, Guid activityId, Guid countryId)
+        public BusinessPlan Save(Guid userId, string title, Guid activityId, Guid langId, Guid? imgId, Guid? countryId)
         {
             //User user = context.Users.Include(x => x.BusinessPlans).FirstOrDefault(i => i.Id.Equals(userId));
             var user = daContext.Users.FirstOrDefault(i => i.Id.Equals(userId));
             var activity = daContext.Activities.FirstOrDefault(i => i.Id.Equals(activityId));
             var country = daContext.Countries.FirstOrDefault(i => i.Id.Equals(countryId));
-
+            var language = daContext.Languages.FirstOrDefault(i => i.Id.Equals(langId));
+            var image = daContext.UserFiles.FirstOrDefault(i => i.Id.Equals(imgId)&&i.UserId.Equals(userId));
+            if (imgId!=null&&image == null) new Exception("Can't find the image specified");
             BusinessPlan plan = new BusinessPlan()
             {
                 Title = title,
                 Activity = activity,
                 Country = country,
-                User = user
+                Language = language,
+                Img = imgId,
+                User = user,
+                Created = DateTime.Now
             };
 
             daContext.BusinessPlans.Add(plan);

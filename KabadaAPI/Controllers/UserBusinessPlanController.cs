@@ -49,7 +49,7 @@ namespace KabadaAPI.Controllers {
                  using (var repository = pRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                    var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.CountryId);
+                    var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.LanguageId,businessPlan.Img,businessPlan.CountryId);
                     return Ok(plan);
                 }
         }
