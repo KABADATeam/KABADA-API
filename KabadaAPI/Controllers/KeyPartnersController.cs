@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using static KabadaAPI.Plan_AttributeRepository;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI.Controllers {
   [Route("api/par")]
@@ -46,6 +47,33 @@ namespace KabadaAPI.Controllers {
     private ActionResult<PlanPartnerTypes> _Categories() {
       var r=new PlanPartnerTypes();
       r.read(context);
+      return r;
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("suppl/save")]
+    public ActionResult<Guid> SaveSupplier(PlanPartnerPoster update) { return Prun<PlanPartnerPoster, Guid>(_SaveSupplier, update); }
+    private ActionResult<Guid> _SaveSupplier(PlanPartnerPoster update) {
+      Guid r=update.perform(context, PlanAttributeKind.keySupplier, EnumTexterKind.keySuppliers);
+      return r;
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("distr/save")]
+    public ActionResult<Guid> SaveDistributor(PlanPartnerPoster update) { return Prun<PlanPartnerPoster, Guid>(_SaveDistributor, update); }
+    private ActionResult<Guid> _SaveDistributor(PlanPartnerPoster update) {
+      Guid r=update.perform(context, PlanAttributeKind.keyDistributor, EnumTexterKind.keyDistributors);
+      return r;
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("other/save")]
+    public ActionResult<Guid> SaveOther(PlanPartnerPoster update) { return Prun<PlanPartnerPoster, Guid>(_SaveOther, update); }
+    private ActionResult<Guid> _SaveOther(PlanPartnerPoster update) {
+      Guid r=update.perform(context, PlanAttributeKind.otherKeyPartner, EnumTexterKind.keyPartnersOther);
       return r;
       }
     }
