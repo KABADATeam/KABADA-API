@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace KabadaAPI.DataSource.Models
+namespace KabadaAPIdao
 {
     public class BusinessPlan
     {
@@ -28,5 +28,6 @@ namespace KabadaAPI.DataSource.Models
         public bool Public { get; set; }
         public User User { get; set; }
         public bool IsSwotCompleted { get; set; }
+        public bool IsResourcesCompleted { get; set; }
     }
 }

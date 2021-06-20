@@ -1,4 +1,4 @@
-﻿using KabadaAPI.DataSource.Models;
+﻿using KabadaAPIdao;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +21,12 @@ namespace KabadaAPI.DataSource.Repositories
         {
             BusinessPlan businessPlan = GetPlanForUpdate(userId,planId);
             businessPlan.IsSwotCompleted = newValue;
+            context.SaveChanges();
+        }
+        public void ChangeResourcesCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsResourcesCompleted = newValue;
             context.SaveChanges();
         }
         public BusinessPlan GetPlan(Guid planId)

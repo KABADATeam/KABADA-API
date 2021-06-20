@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using KabadaAPI.ViewModels;
-using KabadaAPI.DataSource.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
+using Kabada;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -15,12 +14,12 @@ namespace KabadaAPI.Controllers {
     {
         public UserBusinessPlanController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) { }
 
-        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(config, _logger); } }
+        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(context); } }
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
-        public IActionResult GetPlans(){ return grun(_GetPlans); }
-        private IActionResult _GetPlans(){
+        public ActionResult<PrivateBusinessPlans_ret> GetPlans(){ return Grun<PrivateBusinessPlans_ret>(_GetPlans); }
+        private ActionResult<PrivateBusinessPlans_ret> _GetPlans(){
                 var userId = uGuid;
                 var repository = pRepo;
                 _logger.LogInformation($"-- List of plans for user={userId}");
@@ -40,7 +39,7 @@ namespace KabadaAPI.Controllers {
                 }
                 _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
 
-                return Ok(new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans });
+                return new PrivateBusinessPlans_ret() { privateBusinessPlans = privatePlans };
         }
 
         [Authorize(Roles = Role.User)]
@@ -50,7 +49,7 @@ namespace KabadaAPI.Controllers {
                  using (var repository = pRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
-                    var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.CountryId);
+                    var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.LanguageId,businessPlan.Img,businessPlan.CountryId);
                     return Ok(plan);
                 }
         }
@@ -60,7 +59,7 @@ namespace KabadaAPI.Controllers {
         [HttpPost]
         public IActionResult RemovePlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_RemovePlan, businessPlan); }
         private IActionResult _RemovePlan([FromBody] BusinessPlan businessPlan){
-                UsersPlansRepository repository = new UsersPlansRepository(config, _logger);
+                UsersPlansRepository repository = new UsersPlansRepository(context);
                 repository.Remove(uGuid, businessPlan.Id);
                 return Ok("Success");
         }
@@ -77,9 +76,9 @@ namespace KabadaAPI.Controllers {
         [AllowAnonymous]
         [Route("public")]
         [HttpGet]
-        public IActionResult GetPublicPlans(){ return grun(_GetPublicPlans);}
-        private IActionResult _GetPublicPlans(){
-                BusinessPlansRepository repository = new BusinessPlansRepository(config, _logger);
+        public ActionResult<PublicBusinessPlans_ret> GetPublicPlans(){ return Grun<PublicBusinessPlans_ret>(_GetPublicPlans);}
+        private ActionResult<PublicBusinessPlans_ret> _GetPublicPlans(){
+                BusinessPlansRepository repository = new BusinessPlansRepository(context);
                 var plans = repository.GetPublicPlans();
                 var publicPlans = new PublicBusinessPlans();
                 foreach (var p in plans)
@@ -95,16 +94,36 @@ namespace KabadaAPI.Controllers {
                         ownerAvatar = p.User.UserPhoto
                     }); 
                 }
-                return Ok(new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans });//repository.GetPublicPlans());
+                return new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans };//repository.GetPublicPlans();
         }
         [Route("changeSwotCompleted")]
-        [Authorize]
+        [Authorize(Roles = Role.User)]
         [HttpPost]
         public IActionResult ChangeSwotCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeSwotCompleted, planUpdate); }
         private IActionResult _changeSwotCompleted([FromBody] ChangePlanParameter planUpdate)
         {
-            BusinessPlansRepository repo = new BusinessPlansRepository(config, _logger);
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
             repo.ChangeSwotCompleted(planUpdate.business_plan_id, planUpdate.is_swot_completed, uGuid);
+            return Ok("Success");
+        }
+        [Route("changeResourcesCompleted")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangeResourcesCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeResourcesCompleted, planUpdate); }
+        private IActionResult _changeResourcesCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
+            repo.ChangeResourcesCompleted(planUpdate.business_plan_id, planUpdate.is_resources_completed, uGuid);
+            return Ok("Success");
+        }
+        [Route("changePartnersCompleted")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangePartnersCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changePartnersCompleted, planUpdate); }
+        private IActionResult _changePartnersCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
+            repo.ChangePartnersCompleted(planUpdate.business_plan_id, planUpdate.is_resources_completed, uGuid);
             return Ok("Success");
         }
 

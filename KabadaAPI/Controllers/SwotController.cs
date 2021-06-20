@@ -1,13 +1,10 @@
-﻿using KabadaAPI.DataSource.Models;
-using KabadaAPI.DataSource.Repositories;
-using KabadaAPI.ViewModels;
+﻿using Kabada;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static KabadaAPI.DataSource.Repositories.TexterRepository;
 
 namespace KabadaAPI.Controllers {
   [Route("api/swot")]
@@ -15,24 +12,24 @@ namespace KabadaAPI.Controllers {
   public class SwotController : KController {
     public SwotController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
-    protected TexterRepository tRepo { get { return new TexterRepository(config, _logger); }}
+    protected TexterRepository tRepo { get { return new TexterRepository(context); }}
     //protected Plan_SWOTRepository psRepo { get { return new Plan_SWOTRepository(config, _logger); }}
-    protected Plan_AttributeRepository paRepo { get { return new Plan_AttributeRepository(config, _logger); }}
-    protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(config, _logger); }}
+    protected Plan_AttributeRepository paRepo { get { return new Plan_AttributeRepository(context); }}
+    protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(context); }}
 
     [HttpGet]
     [Route("{BusinessPlan}")]
-    public IActionResult GetByKey(string BusinessPlan) { return prun<string>(_GetByKey, BusinessPlan); }
-    private IActionResult _GetByKey(string planId0) {
+    public ActionResult<PlanSwots> GetByKey(string BusinessPlan) { return Prun<string, PlanSwots>(_GetByKey, BusinessPlan); }
+    private ActionResult<PlanSwots> _GetByKey(string planId0) {
       Guid planId=new Guid(planId0);
       var r=new PlanSwots();
       var p =pRepo.GetPlan(planId);
       if(p!=null)
         r.is_swot_completed=p.IsSwotCompleted;
-      var speci=paRepo.get(planId, Plan_AttributeRepository.PlanAttributeKind.swot).ToDictionary(x=>x.TexterId);
+      var speci=paRepo.getSwots(planId).ToDictionary(x=>x.TexterId);
       //var speci=psRepo.get(planId).ToDictionary(x=>x.TexterId);
       var visi=tRepo.getSWOTs(planId);
-      Plan_Attribute v=null;
+      KabadaAPIdao.Plan_Attribute v =null;
       //Plan_SWOT v=null;
       foreach(var x in visi){
         var o=new Swoter(){ description=x.LongValue, id=x.Id, isLocal=((x.Kind % 2) == 0), title=x.Value, value=0 };
@@ -43,7 +40,7 @@ namespace KabadaAPI.Controllers {
          else
           r.oportunities_threats.Add(o);
         }
-      return Ok(r);
+      return r;
       }
 
     [HttpPost]
@@ -51,7 +48,7 @@ namespace KabadaAPI.Controllers {
     public IActionResult Update(PlanSwotUpdate update) { return prun<PlanSwotUpdate>(_Update, update); }
     private IActionResult _Update(PlanSwotUpdate update) {
       var plan=pRepo.GetPlanForUpdate(uGuid, update.business_plan_id);
-      update.Perform(config, _logger, plan);
+      update.Perform(context, plan);
       return Ok("success");
       }
     }

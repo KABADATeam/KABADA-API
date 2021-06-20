@@ -39,12 +39,12 @@ namespace KabadaAPI.Controllers
         {
           _logger.LogInformation($"-- UploadFile {f.FileName} {f.Length}");
           using (var ms = new System.IO.MemoryStream())
-          using (var db = new DataSource.Context(config))
+          using (var db = new DAcontext(_config))
           {
             await f.CopyToAsync(ms);
             _logger.LogInformation($"-- {ms.Length}");
 
-            var r = new DataSource.Models.UserFile { Name = f.FileName, UserId = null, Content = ms.ToArray() };
+            var r = new KabadaAPIdao.UserFile { Name = f.FileName, UserId = null, Content = ms.ToArray() };
             await db.UserFiles.AddAsync(r);
             await db.SaveChangesAsync();
 
@@ -79,7 +79,7 @@ namespace KabadaAPI.Controllers
         }
 
         var fileId = Guid.Parse(id);
-        using (var db = new DataSource.Context(config))
+        using (var db = new DAcontext(_config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Id == fileId);
           if (r != null)
@@ -113,7 +113,7 @@ namespace KabadaAPI.Controllers
         //Guid? userId = null;
 
         var fileId = Guid.Parse(id);
-        using (var db = new DataSource.Context(config))
+        using (var db = new DAcontext(_config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Id == fileId);
           if (r != null)
@@ -146,7 +146,7 @@ namespace KabadaAPI.Controllers
         //var userId = Guid.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value.ToString());
         //Guid? userId = null;
 
-        using (var db = new DataSource.Context(config))
+        using (var db = new DAcontext(_config))
         {
           var r = db.UserFiles.FirstOrDefault(r => r.Name == name);
           if (r != null)
@@ -169,7 +169,7 @@ namespace KabadaAPI.Controllers
     public async Task<IActionResult> test() { return await grun(_test); }
     private async Task<IActionResult> _test() {
       _logger.LogInformation("-- all files");
-      using (var db = new DataSource.Context(config))
+      using (var db = new DAcontext(_config))
       {
         var r = await db.UserFiles.Select(r => new { r.Id, r.UserId, r.Name, r.Content.Length }).ToListAsync();
         return Ok(r);

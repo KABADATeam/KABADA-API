@@ -1,12 +1,11 @@
-﻿using KabadaAPI.DataSource.Models;
-using KabadaAPI.DataSource.Repositories;
-using KabadaAPI.ViewModels;
+﻿using KabadaAPIdao;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
+using Kabada;
 
 namespace KabadaAPI.Controllers {
   [Route("api/user")]
@@ -15,7 +14,7 @@ namespace KabadaAPI.Controllers {
 
     public UserController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
      
-    private UsersRepository uRepo { get { return new UsersRepository(config, _logger); }}
+    private UsersRepository uRepo { get { return new UsersRepository(context); }}
 
         private User convert(UserUpdate parms){
           var r=new User();
@@ -52,10 +51,10 @@ namespace KabadaAPI.Controllers {
         [Route("getSettings")]
         [Authorize]
         [HttpGet]
-        public IActionResult getSettings(){ return grun(_getSettings); }
-        private IActionResult _getSettings() {
+        public ActionResult<UserUpdate> getSettings(){ return Grun<UserUpdate>(_getSettings); }
+        private ActionResult<UserUpdate> _getSettings() {
           var r=uRepo.Read(uGuid);
-          return Ok(convert(r));
+          return convert(r);
           }
 
         [Route("updateWithoutPhoto")]
@@ -77,12 +76,11 @@ namespace KabadaAPI.Controllers {
         }
 
     [Route("jst")]
-    [Authorize]
     [HttpGet]
-    public IActionResult test() { return grun(_jst); }
+    public IActionResult jst() { return grun(_jst); }
 
     private  IActionResult _jst() {
-      LogInformation($"-- User.getSettings entered at {DateTime.Now}");
+      //LogInformation($"-- User.getSettings entered at {DateTime.Now}");
 
       //new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
       return Ok("ok");

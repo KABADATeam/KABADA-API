@@ -1,9 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KabadaAPI", "KabadaAPI\KabadaAPI.csproj", "{93019607-0161-4C9E-8D31-93D9A2CAFFD6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KabadaAPI.DataSource", "KabadaAPI.DataSource\KabadaAPI.DataSource.csproj", "{593849F3-8CD3-4491-95D4-2743FD0A85ED}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KabadaAPI", "KabadaAPI\KabadaAPI.csproj", "{93019607-0161-4C9E-8D31-93D9A2CAFFD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +14,11 @@ Global
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{593849F3-8CD3-4491-95D4-2743FD0A85ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{593849F3-8CD3-4491-95D4-2743FD0A85ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{593849F3-8CD3-4491-95D4-2743FD0A85ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{593849F3-8CD3-4491-95D4-2743FD0A85ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {938DF866-723F-4FCC-BFE4-89689F01DCB7}
 	EndGlobalSection
 EndGlobal
