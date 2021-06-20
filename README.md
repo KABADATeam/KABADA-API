@@ -8,3 +8,7 @@ Project setup:
       // or
       public static string SQLServer = @"Data Source=localhost; Initial Catalog=KabadaDB; User Id=<user>; Password=<password>;";
   }
+
+  
+  #Database update
+  dotnet-ef database update -s ..\KabadaAPI\KabadaAPI.csproj
