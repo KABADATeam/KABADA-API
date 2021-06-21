@@ -27,7 +27,7 @@ namespace KabadaAPI {
             var activity = daContext.Activities.FirstOrDefault(i => i.Id.Equals(activityId));
             var country = daContext.Countries.FirstOrDefault(i => i.Id.Equals(countryId));
             var language = daContext.Languages.FirstOrDefault(i => i.Id.Equals(langId));
-            var image = daContext.UserFiles.FirstOrDefault(i => i.Id.Equals(imgId)&&i.UserId.Equals(userId));
+            var image = daContext.UserFiles.FirstOrDefault(i => i.Id.Equals(imgId));//&&i.UserId.Equals(userId));
             if (imgId!=null&&image == null) new Exception("Can't find the image specified");
             BusinessPlan plan = new BusinessPlan()
             {
