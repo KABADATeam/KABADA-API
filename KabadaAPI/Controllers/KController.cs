@@ -63,7 +63,7 @@ namespace KabadaAPI.Controllers {
     private void part1(){
       strt=DateTime.Now;
       context.sessionId=generateSessionId;
-      context.action=GetType().Name+"."+(new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().Name;
+      context.action=GetType().Name+"."+(new System.Diagnostics.StackTrace()).GetFrame(2).GetMethod().Name;
       context.logInformation(context.autoM+$" started at {strt}.");
       setUguid();
       }
