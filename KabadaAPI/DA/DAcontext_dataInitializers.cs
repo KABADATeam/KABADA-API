@@ -231,12 +231,31 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Customer convenient access to products", Kind = (int)TexterRepository.EnumTexterKind.strength, LongValue = "a", OrderValue = 22 });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Advertising, PR and sales promotion", Kind = (int)TexterRepository.EnumTexterKind.strength, LongValue = "a", OrderValue = 23 });
             //opportinities part
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Arrival of new technology", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "New regulations", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Unfulfilled customer need", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Taking business courses (training)", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Trend changes", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
-            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "New substitute products", Kind = (int)TexterRepository.EnumTexterKind.oportunity, LongValue = "a" });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Political stability", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 1});
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Government regulation", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Economic growth", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 3 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Income and wealth", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 4 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Inflation", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 5 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Exchange rate", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 6 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Interest rate", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 7 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Accessibility of human resources", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 8 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Accessibility of tangible resources", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 9 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Accessibility of financial resources", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 10 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Market size", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 11 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "New markets", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 12 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Infrastructure", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 13 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Demographic trends", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 14 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Cultural norms and values", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 15 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Lifestyle trends", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 16 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Technological change", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 17 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Cybersecurity", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 18 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Climate and its change", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 19 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Natural disasters", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 20 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Competition", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 21 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Bargaining power of suppliers", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 22 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Bargaining power of buyers", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 23 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Potential/future competition", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 24 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Substitution possibilities", Kind = (int)TexterRepository.EnumTexterKind.oportunity, OrderValue = 25 });
         }
 
         private void AddData_Countries(ModelBuilder modelBuilder)

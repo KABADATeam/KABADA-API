@@ -21,7 +21,7 @@ namespace KabadaAPI.Controllers
 
 
     [HttpPost, DisableRequestSizeLimit]
-    [AllowAnonymous]
+   // [AllowAnonymous]
     public async Task<IActionResult> UploadFile([FromForm]List<IFormFile> files){ return await prun<List<IFormFile>>(_UploadFile, files); }
     private async Task<IActionResult> _UploadFile([FromForm]List<IFormFile> files){
 #if XX
@@ -67,7 +67,7 @@ namespace KabadaAPI.Controllers
     /// </summary>
     /// <param name="id">guid string</param>
     [HttpDelete("{id}")]
-    [AllowAnonymous]
+   // [AllowAnonymous]
     public async Task<IActionResult> DeleteFile(string id){ return await prun<string>(_DeleteFile, id); }
     private async Task<IActionResult> _DeleteFile(string id){
       _logger.LogInformation($"-- DeleteFile {id}");
