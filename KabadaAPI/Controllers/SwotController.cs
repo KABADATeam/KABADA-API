@@ -19,9 +19,9 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet]
     [Route("{BusinessPlan}")]
-    public ActionResult<PlanSwots> GetByKey(string BusinessPlan) { return Prun<string, PlanSwots>(_GetByKey, BusinessPlan); }
-    private ActionResult<PlanSwots> _GetByKey(string planId0) {
-      Guid planId=new Guid(planId0);
+    public ActionResult<PlanSwots> GetByKey(Guid BusinessPlan) { return Prun<Guid, PlanSwots>(_GetByKey, BusinessPlan); }
+    private ActionResult<PlanSwots> _GetByKey(Guid planId) {
+      //Guid planId=new Guid(planId0);
       var r=new PlanSwots();
       var p =pRepo.GetPlan(planId);
       if(p!=null)

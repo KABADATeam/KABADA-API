@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Linq;
 using Microsoft.Extensions.Logging;
 using Kabada;
@@ -75,15 +74,15 @@ namespace KabadaAPI.Controllers {
           return Ok("Success");
         }
 
-    [Route("jst")]
-    [HttpGet]
-    public IActionResult jst() { return grun(_jst); }
+    //[Route("jst")]
+    //[HttpGet]
+    //public IActionResult jst() { return grun(_jst); }
 
-    private  IActionResult _jst() {
-      //LogInformation($"-- User.getSettings entered at {DateTime.Now}");
+    //private  IActionResult _jst() {
+    //  //LogInformation($"-- User.getSettings entered at {DateTime.Now}");
 
-      //new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
-      return Ok("ok");
-      }
+    //  //new DataSource.Utilities.Kmail(config).SendOnMailchangeConfirmation("juris.strods@sets.lv", "User.jst");
+    //  return Ok("ok");
+    //  }
     }
   }
