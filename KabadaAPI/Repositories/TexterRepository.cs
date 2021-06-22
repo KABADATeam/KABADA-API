@@ -8,6 +8,7 @@ namespace KabadaAPI {
     public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local
                    , keyResourceCategory=5, keyResourceType=6, /*keyResourceSubType=7,*/ keyResourcesSelection=8
                    , /*keyPartners=10,*/ keyDistributors=11, keySuppliers=12, keyPartnersOther=13
+                   , productType=14
                    }
 
     public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
@@ -53,6 +54,8 @@ namespace KabadaAPI {
     public List<Texter> getKeyResourceMeta(){ return get(null, (short)EnumTexterKind.keyResourceCategory, (short)EnumTexterKind.keyResourcesSelection, ignoreMaster:true); } 
 
     internal List<Texter> getKeyPartnerMeta() {  return get(null, (short)EnumTexterKind.keyDistributors, (short)EnumTexterKind.keyPartnersOther); } 
+
+    internal List<Texter> getProductMeta() {  return get(null, (short)EnumTexterKind.productType, (short)EnumTexterKind.productType); } 
 
     public Texter Create(Texter me) {
       daContext.Texters.Add(me);
