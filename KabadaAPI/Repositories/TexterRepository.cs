@@ -32,6 +32,7 @@ namespace KabadaAPI {
         var w=@to.Value;
         q=q.Where(x=>x.Kind<=w);
         }
+      q=q.OrderBy(x=>x.Kind).ThenBy(x=>x.OrderValue);
       var r=q.ToList();
       return r;
       }
