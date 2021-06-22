@@ -88,6 +88,7 @@ namespace KabadaAPI {
             AddData_PartnersTypes(modelBuilder);
             AddData_Languages(modelBuilder);
             AddData_NACE(modelBuilder);
+            AddData_ProductsTypes(modelBuilder);
         }
     }
 }

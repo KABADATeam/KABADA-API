@@ -307,7 +307,12 @@ namespace KabadaAPI {
        private void AddData_Languages(ModelBuilder modelBuilder) {
          modelBuilder.Entity<Language>().HasData(new Language { Id = Guid.NewGuid(), Code="EN", Title="English" });
          }
- 
+
+       private void AddData_ProductsTypes (ModelBuilder modelBuilder) {
+         modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Physical good", Kind = (int)TexterRepository.EnumTexterKind.productType, OrderValue = 1 });
+         modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Service", Kind = (int)TexterRepository.EnumTexterKind.productType, OrderValue = 2 });
+         }
+
     private void act(ModelBuilder modelBuilder, Guid g, string v1, string v2) {
       var o=new Activity(){ Code=v1, Title=v2, Id=Guid.NewGuid(), IndustryId=g};
       modelBuilder.Entity<Activity>().HasData(o);
