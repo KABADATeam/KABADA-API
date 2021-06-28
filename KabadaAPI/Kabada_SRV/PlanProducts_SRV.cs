@@ -13,7 +13,7 @@ namespace Kabada {
       this.products=new  List<ProductReport>();
 
       var pl=new BusinessPlansRepository(ctx).GetPlan(planId);
-      // TODO this.is_proposition_completed=pl.IsPropositionCompleted;
+      this.is_proposition_completed=pl.IsPropositionCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getProducts(planId);
       if(atri.Count<1)

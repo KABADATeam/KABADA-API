@@ -48,5 +48,11 @@ namespace KabadaAPI
             businessPlan.IsPartnersCompleted = newValue;
             daContext.SaveChanges();
         }
+        internal void ChangePropositionCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsPropositionCompleted = newValue;
+            daContext.SaveChanges();
+        }
     }
 }
