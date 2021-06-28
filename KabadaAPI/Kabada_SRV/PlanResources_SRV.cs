@@ -31,6 +31,7 @@ namespace Kabada {
         o.description=w.description;
         o.name=w.name;
         o.selections=w.selections;
+        o.type_id = a.TexterId;
         }
       }
     }
