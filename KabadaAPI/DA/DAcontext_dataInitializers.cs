@@ -323,5 +323,43 @@ namespace KabadaAPI {
       modelBuilder.Entity<Industry>().HasData(o);
       return o.Id;
       }
+
+    private void AddData_ProductIncomeSources (ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Non time limited usage", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 1 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Additional functions", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 2 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Paid plans", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 3 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Different price for business", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 4 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Different price for individuals", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 5 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Fees come from another product", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 6 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.productAdditionalIncomeSource, OrderValue = 7 });
+        }
+    private void AddData_ProductFeatures (ModelBuilder modelBuilder) {
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Not different from competitors", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 1 });
+        modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Product or service already exists in the market", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "No improvements or innovations", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 3 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Continuous", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 4 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Based on old technology", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 5 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Dominant design unchanged", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 6 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Improvement of existing characteristics", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 7 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Result of R&D", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 8 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Driven by market pull", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 9 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Discontinuous", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 10 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Based on new technologies", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 11 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Leads to a new design", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 12 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Uncertainty", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 13 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "New set of features", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 14 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Driven by technology", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 15 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Expertise of manufacturer", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 16 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Manufacturing complexity", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 17 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Special materials and components", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 18 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Workmanship", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 19 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Rarity", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 20 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Durability", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 21 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Comfortability & Usability", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 22 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Safety", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 23 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Aesthetics", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 24 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Extraordinariness", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 25 });
+
+        }
     }
   }

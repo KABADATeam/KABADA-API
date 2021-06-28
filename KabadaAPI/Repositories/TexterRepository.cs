@@ -8,8 +8,9 @@ namespace KabadaAPI {
     public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local
                    , keyResourceCategory=5, keyResourceType=6, /*keyResourceSubType=7,*/ keyResourcesSelection=8
                    , /*keyPartners=10,*/ keyDistributors=11, keySuppliers=12, keyPartnersOther=13
-                   , productType=14
-                   }
+                   , productType=14, productFeature=15, productAdditionalIncomeSource=16, productPriceLevel=17
+                   , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
+        }
 
     public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
@@ -55,7 +56,10 @@ namespace KabadaAPI {
 
     internal List<Texter> getKeyPartnerMeta() {  return get(null, (short)EnumTexterKind.keyDistributors, (short)EnumTexterKind.keyPartnersOther); } 
 
-    internal List<Texter> getProductMeta() {  return get(null, (short)EnumTexterKind.productType, (short)EnumTexterKind.productType); } 
+    internal List<Texter> getProductTypeMeta() {  return get(null, (short)EnumTexterKind.productType, (short)EnumTexterKind.productType); } 
+    internal List<Texter> getProductFeatureMeta() {  return get(null, (short)EnumTexterKind.productFeature, (short)EnumTexterKind.productFeature); } 
+    internal List<Texter> getProductIncomeSourcesMeta() {  return get(null, (short)EnumTexterKind.productAdditionalIncomeSource, (short)EnumTexterKind.productAdditionalIncomeSource); } 
+    //internal List<Texter> getProductIncomeSourcesMeta() {  return get(null, (short)EnumTexterKind.productAdditionalIncomeSource, (short)EnumTexterKind.productAdditionalIncomeSource); } 
 
     public Texter Create(Texter me) {
       daContext.Texters.Add(me);

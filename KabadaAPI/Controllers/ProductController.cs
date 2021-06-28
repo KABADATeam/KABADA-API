@@ -29,13 +29,26 @@ namespace KabadaAPI.Controllers {
     public IActionResult DeleteMe(Guid resource) { return prun<Guid>(_DeleteMe, resource); }
     private IActionResult _DeleteMe(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.product); return Ok("deleted");}
 
-    [Route("categories")]
+    [Route("types")]
     [HttpGet]
-    public IActionResult Categories() { return grun(_Categories); }
-    private IActionResult _Categories() {
-      var r=new TexterRepository(context).getProductMeta().Select(x=>new { id=x.Id, title=x.Value }).ToList();
+    public IActionResult ProductTypes() { return grun(_ProductTypes); }
+    private IActionResult _ProductTypes() {
+      var r=new TexterRepository(context).getProductTypeMeta().Select(x=>new { id=x.Id, title=x.Value }).ToList();
       return Ok(r);
-      }
-
+    } 
+     [Route("features")]
+    [HttpGet]
+    public IActionResult ProductFeatures() { return grun(_ProductFeatures); }
+    private IActionResult _ProductFeatures() {
+      var r=new TexterRepository(context).getProductFeatureMeta().Select(x=>new { id=x.Id, title=x.Value }).ToList();
+      return Ok(r);
     }
+    [Route("incomeSources")]
+    [HttpGet]
+    public IActionResult IncomeSources() { return grun(_IncomeSources); }
+    private IActionResult _IncomeSources() {
+      var r=new TexterRepository(context).getProductIncomeSourcesMeta().Select(x=>new { id=x.Id, title=x.Value,  }).ToList();
+      return Ok(r);
+    }
+}
   }
