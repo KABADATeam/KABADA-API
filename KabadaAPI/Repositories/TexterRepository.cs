@@ -58,10 +58,14 @@ namespace KabadaAPI {
 
     internal List<Texter> getProductTypeMeta() {  return get(null, (short)EnumTexterKind.productType, (short)EnumTexterKind.productType); } 
     internal List<Texter> getProductFeatureMeta() {  return get(null, (short)EnumTexterKind.productFeature, (short)EnumTexterKind.productFeature); } 
-    internal List<Texter> getProductIncomeSourcesMeta() {  return get(null, (short)EnumTexterKind.productAdditionalIncomeSource, (short)EnumTexterKind.productAdditionalIncomeSource); } 
-    //internal List<Texter> getProductIncomeSourcesMeta() {  return get(null, (short)EnumTexterKind.productAdditionalIncomeSource, (short)EnumTexterKind.productAdditionalIncomeSource); } 
+    internal List<Texter> getProductIncomeSourceMeta() {  return get(null, (short)EnumTexterKind.productAdditionalIncomeSource, (short)EnumTexterKind.productAdditionalIncomeSource); } 
+    internal List<Texter> getProductPriceLevelMeta() {  return get(null, (short)EnumTexterKind.productPriceLevel, (short)EnumTexterKind.productPriceLevel); }
+    internal List<Texter> getProductInnovativeOptionMeta() { return get(null, (short)EnumTexterKind.productInnovativeOption, (short)EnumTexterKind.productInnovativeOption); }
+    internal List<Texter> getProductQualityOptionMeta() { return get(null, (short)EnumTexterKind.productQualityOption, (short)EnumTexterKind.productQualityOption); }
+    internal List<Texter> getProductDifferentiationOptionMeta() { return get(null, (short)EnumTexterKind.productDifferentiationOption, (short)EnumTexterKind.productDifferentiationOption); }
 
-    public Texter Create(Texter me) {
+
+        public Texter Create(Texter me) {
       daContext.Texters.Add(me);
       daContext.SaveChanges();
       return me;

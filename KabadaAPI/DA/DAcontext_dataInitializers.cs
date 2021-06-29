@@ -361,5 +361,30 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Extraordinariness", Kind = (int)TexterRepository.EnumTexterKind.productFeature, OrderValue = 25 });
 
         }
+        private void AddData_ProductsPriceLevels(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Free", Kind = (int)TexterRepository.EnumTexterKind.productPriceLevel, OrderValue = 1 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Economy", Kind = (int)TexterRepository.EnumTexterKind.productPriceLevel, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Market", Kind = (int)TexterRepository.EnumTexterKind.productPriceLevel, OrderValue = 3 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "High-end", Kind = (int)TexterRepository.EnumTexterKind.productPriceLevel, OrderValue = 4 });
+        }
+        private void AddData_ProductsInnovativeOptions(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Not", Kind = (int)TexterRepository.EnumTexterKind.productInnovativeOption, OrderValue = 1 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Medium", Kind = (int)TexterRepository.EnumTexterKind.productInnovativeOption, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Highly", Kind = (int)TexterRepository.EnumTexterKind.productInnovativeOption, OrderValue = 3 });
+        }
+        private void AddData_ProductsQualityOptions(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Basic", Kind = (int)TexterRepository.EnumTexterKind.productQualityOption, OrderValue = 1 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Medium", Kind = (int)TexterRepository.EnumTexterKind.productQualityOption, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Premium", Kind = (int)TexterRepository.EnumTexterKind.productQualityOption, OrderValue = 3 });
+        }
+        private void AddData_ProductsDiffOptions(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Not", Kind = (int)TexterRepository.EnumTexterKind.productDifferentiationOption, OrderValue = 1 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Medium", Kind = (int)TexterRepository.EnumTexterKind.productDifferentiationOption, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Highly", Kind = (int)TexterRepository.EnumTexterKind.productDifferentiationOption, OrderValue = 3 });
+        }
     }
   }
