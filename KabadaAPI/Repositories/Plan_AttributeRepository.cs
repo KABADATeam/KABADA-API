@@ -14,6 +14,7 @@ namespace KabadaAPI {
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
       return r;
       }
+    
 
     internal List<Plan_Attribute> getPartners(Guid planId) {
       var l=(short)PlanAttributeKind.keyDistributor;

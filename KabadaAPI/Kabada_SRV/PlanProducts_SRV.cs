@@ -19,16 +19,23 @@ namespace Kabada {
       if(atri.Count<1)
         return;
 
-      var tidi=atri.Select(x=>x.TexterId).Distinct().ToList();
-      var typi=new TexterRepository(ctx).get(tidi).ToDictionary(x=>x.Id);
-
-      ProductReport o=null;
+      //var tidi=atri.Select(x=>x.TexterId).Distinct().ToList();
+      //var typi=new TexterRepository(ctx).get(tidi).ToDictionary(x=>x.Id);
+      var productTypes=new TexterRepository(ctx).getProductTypeMeta().ToDictionary(x=>x.Id);
+      var priceLevels=new TexterRepository(ctx).getProductPriceLevelMeta().ToDictionary(x=>x.Id);
+      var qualityOptions = new TexterRepository(ctx).getProductQualityOptionMeta().ToDictionary(x => x.Id);
+      ProductReport o =null;
+      ProductAttribute pa=null;
       foreach(var a in atri){
         o=new ProductReport(); products.Add(o);
-        o.unpack(a.AttrVal);
+        pa.unpack(a.AttrVal);
         o.id=a.Id;
-        o.product_type=typi[a.TexterId].Value;
+        o.name = pa.title;
+        o.product_type=productTypes[pa.product_type].Value;        
+        o.price = priceLevels[pa.price_level].Value;
+        o.value = qualityOptions[pa.quality_level].Value;
         }
       }
-    }
+      
+      }
   }
