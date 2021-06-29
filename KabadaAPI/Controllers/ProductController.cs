@@ -66,25 +66,25 @@ namespace KabadaAPI.Controllers {
       var r=new TexterRepository(context).getProductPriceLevelMeta().Select(x=>new CodifierBase() { id=x.Id, level=x.OrderValue, title=x.Value,  }).ToList();
       return Ok(r);
     }
-    [Route("innOption")]
+    [Route("innOptions")]
     [HttpGet]
-    public IActionResult InnovativeOption() { return grun(_InnovativeOption); }
-    private IActionResult _InnovativeOption() {
+    public IActionResult InnovativeOptions() { return grun(_InnovativeOptions); }
+    private IActionResult _InnovativeOptions() {
       var r=new TexterRepository(context).getProductInnovativeOptionMeta().Select(x=>new CodifierBase() { id=x.Id, level=x.OrderValue, title=x.Value,  }).ToList();
       return Ok(r);
     }
-    [Route("qualOption")]
+    [Route("qualOptions")]
     [HttpGet]
-    public IActionResult QualityOption() { return grun(_QualityOption); }
-    private IActionResult _QualityOption()
+    public IActionResult QualityOptions() { return grun(_QualityOptions); }
+    private IActionResult _QualityOptions()
     {
         var r = new TexterRepository(context).getProductQualityOptionMeta().Select(x => new CodifierBase() { id = x.Id, level = x.OrderValue, title = x.Value, }).ToList();
         return Ok(r);
     }
-    [Route("diffOption")]
+    [Route("diffOptions")]
     [HttpGet]
-    public IActionResult DifferentiationOption() { return grun(_DifferentiationOption); }
-    private IActionResult _DifferentiationOption() {
+    public IActionResult DifferentiationOptions() { return grun(_DifferentiationOptions); }
+    private IActionResult _DifferentiationOptions() {
       var r=new TexterRepository(context).getProductDifferentiationOptionMeta().Select(x=>new CodifierBase() { id=x.Id, level=x.OrderValue, title=x.Value,  }).ToList();
       return Ok(r);
     }
