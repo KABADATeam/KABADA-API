@@ -25,7 +25,7 @@ namespace Kabada {
       var priceLevels=new TexterRepository(ctx).getProductPriceLevelMeta().ToDictionary(x=>x.Id);
       var qualityOptions = new TexterRepository(ctx).getProductQualityOptionMeta().ToDictionary(x => x.Id);
       ProductReport o =null;
-      ProductAttribute pa=null;
+      ProductAttribute pa=new ProductAttribute();
       foreach(var a in atri){
         o=new ProductReport(); products.Add(o);
         pa.unpack(a.AttrVal);
