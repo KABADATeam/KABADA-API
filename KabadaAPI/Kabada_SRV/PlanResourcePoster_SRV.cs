@@ -30,6 +30,7 @@ namespace Kabada {
         var v=packVal;
         var changed=(o.AttrVal==v);
         o.AttrVal=v;
+        o.TexterId = resource_type_id;
         if(changed){
           aRepo.Save(o);
           tr.Commit();
