@@ -51,5 +51,13 @@ namespace KabadaAPI.Controllers {
       update.Perform(context, plan);
       return Ok("success");
       }
+    [HttpPost]
+    [Route("add")]
+    public IActionResult AddLocal(PlanSwotLocalSinglePoster item) { return prun<PlanSwotLocalSinglePoster>(_AddLocal, item); }
+    private IActionResult _AddLocal(PlanSwotLocalSinglePoster item) {
+      var plan=pRepo.GetPlanForUpdate(uGuid, item.business_plan_id);
+      var id = item.Save(context);
+      return Ok(id);
+      }
     }
   }
