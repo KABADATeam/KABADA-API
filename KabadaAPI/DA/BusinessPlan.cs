@@ -32,5 +32,6 @@ namespace KabadaAPIdao
         public bool IsResourcesCompleted { get; set; }
         public bool IsPartnersCompleted { get; set; }
         public bool IsPropositionCompleted { get; set; }
+        public bool IsCostCompleted { get; set; }
     }
 }

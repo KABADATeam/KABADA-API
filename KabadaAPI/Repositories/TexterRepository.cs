@@ -10,6 +10,7 @@ namespace KabadaAPI {
                    , /*keyPartners=10,*/ keyDistributors=11, keySuppliers=12, keyPartnersOther=13
                    , productType=14, productFeature=15, productAdditionalIncomeSource=16, productPriceLevel=17
                    , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
+                , fixedCostCategory=21, variableCostCategory=22, costType=23
         }
 
     public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
@@ -63,6 +64,9 @@ namespace KabadaAPI {
     internal List<Texter> getProductInnovativeOptionMeta() { return get(null, (short)EnumTexterKind.productInnovativeOption, (short)EnumTexterKind.productInnovativeOption); }
     internal List<Texter> getProductQualityOptionMeta() { return get(null, (short)EnumTexterKind.productQualityOption, (short)EnumTexterKind.productQualityOption); }
     internal List<Texter> getProductDifferentiationOptionMeta() { return get(null, (short)EnumTexterKind.productDifferentiationOption, (short)EnumTexterKind.productDifferentiationOption); }
+    internal List<Texter> getCostCategories() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.variableCostCategory); }
+    internal List<Texter> getCostTypes() { return get(null, (short)EnumTexterKind.costType, (short)EnumTexterKind.costType); }
+    public List<Texter> getCostMeta() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.costType, ignoreMaster: true); }
 
 
         public Texter Create(Texter me) {

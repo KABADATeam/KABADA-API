@@ -95,6 +95,7 @@ namespace KabadaAPI {
             AddData_ProductsInnovativeOptions(modelBuilder);
             AddData_ProductsQualityOptions(modelBuilder);
             AddData_ProductsDiffOptions(modelBuilder);
+            AddData_CostTypes(modelBuilder);
 
         }
     }

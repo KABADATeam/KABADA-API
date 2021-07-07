@@ -386,5 +386,93 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Medium", Kind = (int)TexterRepository.EnumTexterKind.productDifferentiationOption, OrderValue = 2 });
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Highly", Kind = (int)TexterRepository.EnumTexterKind.productDifferentiationOption, OrderValue = 3 });
         }
+        private void AddData_CostTypes(ModelBuilder modelBuilder)
+        {
+            //----fixed cost
+            var catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 1, Value = "Rent of office", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory});            
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 2, Value = "Rent of buildings", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Manufacturing buildings", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Inventory buildings", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Sales buildings (shops)", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 3, Value = "Rent of equipment", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "IT (office) equipment", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Production equipment and machinery", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Transport", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 4, Value = "Utilities", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Electricity", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Water", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Gas", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Heat", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Maintenance", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 6, Value = "Communication", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 7, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 4, Value = "Outsourcing of services", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Accountant", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "IT support", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 5, Value = "Outsourcing of specified services", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 6, Value = "Salaries", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Management", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Factory workers / service", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Finance management", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Marketing", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 7, Value = "Permits & Licenses", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 8, Value = "Marketing", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 9, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.fixedCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            //----variable cost
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 1, Value = "Resources", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 2, Value = "Rent (short term)", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Manufacturing building", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Office", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Equipment", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 3, Value = "Packaging", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 4, Value = "Salaries", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Employees directly involved in production / service", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 5, Value = "Outsourcing of specified services", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 6, Value = "Permits & licenses", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 7, Value = "Marketing", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 8, Value = "Distribution", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Transport", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Cost of warehouse", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Fees to distributors", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 9, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.variableCostCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
+
+        }
     }
-  }
+    }
