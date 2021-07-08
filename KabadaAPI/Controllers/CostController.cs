@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using static KabadaAPI.Plan_AttributeRepository;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI.Controllers
 {
-    [Route("api/cost")]
+  [Route("api/cost")]
   [ApiController]
   public class CostController : KController {
     public CostController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
@@ -17,6 +19,7 @@ namespace KabadaAPI.Controllers
     protected BusinessPlansRepository pRepo { get { return new BusinessPlansRepository(context); }}
 
     [HttpGet]
+    [Authorize]
     [Route("{BusinessPlan}")]
     public ActionResult<PlanCosts> MyCosts(Guid BusinessPlan) { return Prun<Guid, PlanCosts>(_MyCosts, BusinessPlan); }
         private ActionResult<PlanCosts> _MyCosts(Guid planId)
@@ -34,5 +37,36 @@ namespace KabadaAPI.Controllers
             r.read(context);
             return r;
         }
+
+        [HttpDelete]
+        [Authorize]
+        [Route("fixed/{resource}")]
+        public IActionResult DeleteFixed(Guid resource) { return prun<Guid>(_DeleteFixed, resource); }
+        private IActionResult _DeleteFixed(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.fixedCost); return Ok("deleted"); }
+
+        [HttpDelete]
+        [Authorize]
+        [Route("var/{resource}")]
+        public IActionResult DeleteVariable(Guid resource) { return prun<Guid>(_DeleteVariable, resource); }
+        private IActionResult _DeleteVariable(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.variableCost); return Ok("deleted"); }
+
+        [HttpPost]
+        [Authorize]
+        [Route("fixed/save")]
+        public ActionResult<Guid> SaveFixed(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveFixed, update); }
+        private ActionResult<Guid> _SaveFixed(PlanCostPoster update)
+        {
+            Guid r = update.perform(context, PlanAttributeKind.fixedCost, EnumTexterKind.costType);
+            return r;
+        }
+        [HttpPost]
+        [Authorize]
+        [Route("var/save")]
+        public ActionResult<Guid> SaveVariable(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveVariable, update); }
+        private ActionResult<Guid> _SaveVariable(PlanCostPoster update)
+        {
+            Guid r = update.perform(context, PlanAttributeKind.variableCost, EnumTexterKind.costType);
+            return r;
+        }
     }
-  }
+}

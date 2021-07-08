@@ -65,7 +65,7 @@ namespace KabadaAPI {
     internal List<Texter> getProductQualityOptionMeta() { return get(null, (short)EnumTexterKind.productQualityOption, (short)EnumTexterKind.productQualityOption); }
     internal List<Texter> getProductDifferentiationOptionMeta() { return get(null, (short)EnumTexterKind.productDifferentiationOption, (short)EnumTexterKind.productDifferentiationOption); }
     internal List<Texter> getCostCategories() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.variableCostCategory); }
-    internal List<Texter> getCostTypes() { return get(null, (short)EnumTexterKind.costType, (short)EnumTexterKind.costType); }
+    internal List<Texter> getCostTypes() { return get(null, (short)EnumTexterKind.costType, (short)EnumTexterKind.costType, ignoreMaster: true); }
     public List<Texter> getCostMeta() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.costType, ignoreMaster: true); }
 
 
