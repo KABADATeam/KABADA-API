@@ -52,7 +52,7 @@ namespace KabadaAPI.Controllers {
       return Ok("success");
       }
     [HttpPost]
-    [Route("add")]
+    [Route("save")]
     public IActionResult AddLocal(PlanSwotLocalSinglePoster item) { return prun<PlanSwotLocalSinglePoster>(_AddLocal, item); }
     private IActionResult _AddLocal(PlanSwotLocalSinglePoster item) {
       var plan=pRepo.GetPlanForUpdate(uGuid, item.business_plan_id);

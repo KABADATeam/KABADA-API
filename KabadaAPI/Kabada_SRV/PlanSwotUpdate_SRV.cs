@@ -36,9 +36,15 @@ namespace Kabada {
 
             using (tr = new Transactioner(context))
             {
-                paR = new Plan_AttributeRepository(context, tr.Context);
+               // paR = new Plan_AttributeRepository(context, tr.Context);
                 tR = new TexterRepository(context, tr.Context);
-                var id = addNew(swot, (short)localKind);
+                if (swot.id != null)
+                {
+                    var t = tR.getById(swot.id.Value);
+                    if (t.MasterId != business_plan_id)
+                        throw new Exception($"Wrong request to update the Texter {t.Id} not being local to the {business_plan_id}.");
+                }
+                var id = updateLocal(swot, (short)localKind);
                 tr.Commit();                
                 return id;
             }
@@ -51,7 +57,7 @@ namespace Kabada {
       foreach(var o in todo){
         // process Texter
         if(o.id==null){ // new local
-           o.id = addNew(o, lk);
+           o.id = updateLocal(o, lk);
          } else { // existent
           if(!inventory.ContainsKey(o.id.Value))
             throw new Exception($"A swotter with id '{o.id.Value}' not found.");
@@ -84,16 +90,22 @@ namespace Kabada {
           }
         }
       }
-        private Guid addNew(SwotUpdater swot, short lk)
+        private Guid updateLocal(SwotUpdater swot, short lk)
         {
             if (string.IsNullOrWhiteSpace(swot.name))
-                throw new Exception("No name specified for a new local swotter.");
-            //if(o.kind_type!=lk)
-            //  throw new Exception($"'{o.name}' has invalid kind_type={o.kind_type} (shold be {lk}).");
-            if (swot.operation == -1)
-                throw new Exception($"'{swot.name}' create contradicts delete operation.");
-            var nlt = new Texter() { Kind = lk, MasterId = this.business_plan_id, Value = swot.name };
-            nlt = tR.Create(nlt);
+                throw new Exception("No name specified for a local swotter.");
+            Texter nlt = null; 
+            if (swot.id == null)
+            {
+                nlt = new Texter() { Kind = lk, MasterId = this.business_plan_id, Value = swot.name };
+                nlt = tR.Create(nlt);
+            }
+            else
+            {               
+                nlt = tR.getById(swot.id.Value);
+                nlt.Value = swot.name;
+                tR.Save(nlt);
+            }
             return nlt.Id;
         }
     }

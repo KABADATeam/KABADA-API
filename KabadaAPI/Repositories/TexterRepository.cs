@@ -84,5 +84,10 @@ namespace KabadaAPI {
       daContext.Texters.Remove(me);
       daContext.SaveChanges();
       }
+    
+    public void Save(Texter me)
+    {
+            daContext.SaveChanges();
     }
+}
   }
