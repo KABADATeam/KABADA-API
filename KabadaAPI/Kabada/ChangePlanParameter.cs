@@ -8,5 +8,6 @@ namespace Kabada {
     public bool is_partners_completed { get; set; }
     public bool is_proposition_completed { get; set; }
     public bool is_cost_completed { get; set; }
+    public bool is_revenue_completed { get; set; }
     }
 }

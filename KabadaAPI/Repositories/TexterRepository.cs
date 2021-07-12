@@ -10,10 +10,11 @@ namespace KabadaAPI {
                    , /*keyPartners=10,*/ keyDistributors=11, keySuppliers=12, keyPartnersOther=13
                    , productType=14, productFeature=15, productAdditionalIncomeSource=16, productPriceLevel=17
                    , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
-                , fixedCostCategory=21, variableCostCategory=22, costType=23
-        }
+                   , fixedCostCategory=21, variableCostCategory=22, costType=23
+                   , revenueStreamType=24,revenuePriceCategory=25,revenuePriceType=26
+        }       
 
-    public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+        public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
     protected List<Texter> get(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
       var q=daContext.Texters.AsQueryable();
@@ -67,6 +68,8 @@ namespace KabadaAPI {
     internal List<Texter> getCostCategories() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.variableCostCategory); }
     internal List<Texter> getCostTypes() { return get(null, (short)EnumTexterKind.costType, (short)EnumTexterKind.costType, ignoreMaster: true); }
     public List<Texter> getCostMeta() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.costType, ignoreMaster: true); }
+    public List<Texter> getRevenueStreamTypes() { return get(null, (short)EnumTexterKind.revenueStreamType, (short)EnumTexterKind.revenueStreamType, ignoreMaster: true); }
+    public List<Texter> getRevenuePriceMeta() { return get(null, (short)EnumTexterKind.revenuePriceCategory, (short)EnumTexterKind.revenuePriceType, ignoreMaster: true); }
 
 
         public Texter Create(Texter me) {

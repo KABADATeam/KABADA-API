@@ -474,5 +474,30 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.costType, MasterId = catGuid });
 
         }
+        private void AddData_RevenueStreamTypes(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Asset sale", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 1 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Usage fee", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 2 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Subscription fee", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 3 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Lending, renting, leasing", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 4 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Licensing", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 5 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Brokerage fees", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 6 });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), Value = "Advertising", Kind = (int)TexterRepository.EnumTexterKind.revenueStreamType, OrderValue = 7 });
+        }
+        private void AddData_RevenuePriceTypes(ModelBuilder modelBuilder)
+        {           
+            var catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 1, Value = "Fixed pricing", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "List price", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Product feature dependent", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Volume dependent", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            catGuid = Guid.NewGuid();
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = catGuid, OrderValue = 2, Value = "Dynamic pricing", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceCategory });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 1, Value = "Negotiation", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 2, Value = "Yield management", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 3, Value = "Real time market", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+            modelBuilder.Entity<Texter>().HasData(new Texter { Id = Guid.NewGuid(), OrderValue = 4, Value = "Auctions", Kind = (int)TexterRepository.EnumTexterKind.revenuePriceType, MasterId = catGuid });
+
+        }
     }
     }
