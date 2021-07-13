@@ -53,23 +53,15 @@ namespace KabadaAPI.Controllers
         public IActionResult DeleteMe(Guid resource) { return prun<Guid>(_DeleteMe, resource); }
         private IActionResult _DeleteMe(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource); return Ok("deleted"); }
 
-        //[HttpPost]
-        //[Authorize]
-        //[Route("fixed/save")]
-        //public ActionResult<Guid> SaveFixed(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveFixed, update); }
-        //private ActionResult<Guid> _SaveFixed(PlanCostPoster update)
-        //{
-        //    Guid r = update.perform(context, PlanAttributeKind.fixedCost, EnumTexterKind.costType);
-        //    return r;
-        //}
-        //[HttpPost]
-        //[Authorize]
-        //[Route("var/save")]
-        //public ActionResult<Guid> SaveVariable(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveVariable, update); }
-        //private ActionResult<Guid> _SaveVariable(PlanCostPoster update)
-        //{
-        //    Guid r = update.perform(context, PlanAttributeKind.variableCost, EnumTexterKind.costType);
-        //    return r;
-        //}
+        [HttpPost]
+        [Authorize]
+        [Route("save")]
+        public ActionResult<Guid> Save(PlanRevenuePoster update) { return Prun<PlanRevenuePoster, Guid>(_Save, update); }
+        private ActionResult<Guid> _Save(PlanRevenuePoster update)
+        {
+            Guid r = update.perform(context);
+            return r;
+        }
+        
     }
 }

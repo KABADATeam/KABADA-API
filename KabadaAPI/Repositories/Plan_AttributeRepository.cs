@@ -18,7 +18,10 @@ namespace KabadaAPI {
 
         internal List<Plan_Attribute> getRevenues(Guid planId)
         {
-            throw new NotImplementedException();
+            var l = (short)PlanAttributeKind.revenueSegment1;
+            var h = (short)PlanAttributeKind.revenueOther;
+            var r = daContext.Plan_Attributes.Where(x => x.BusinessPlanId == planId && x.Kind >= l && x.Kind <= h).OrderBy(x => x.Kind).ThenBy(x => x.OrderValue).ToList();
+            return r;
         }
 
         internal List<Plan_Attribute> getCosts(Guid planId) {
