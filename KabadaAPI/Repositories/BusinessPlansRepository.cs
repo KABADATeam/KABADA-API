@@ -61,11 +61,17 @@ namespace KabadaAPI
             businessPlan.IsCostCompleted = newValue;
             daContext.SaveChanges();
         }
-            internal void ChangeRevenueCompleted(Guid planId, bool newValue, Guid userId)
-            {
-                BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
-                businessPlan.IsRevenueCompleted = newValue;
-                daContext.SaveChanges();
-            }
+        internal void ChangeRevenueCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsRevenueCompleted = newValue;
+            daContext.SaveChanges();
         }
+        internal void ChangeChannelsCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsChannelsCompleted = newValue;
+            daContext.SaveChanges();
+        }
+    }
 }

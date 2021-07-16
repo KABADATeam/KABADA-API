@@ -98,7 +98,7 @@ namespace KabadaAPI {
             AddData_CostTypes(modelBuilder);
             AddData_RevenueStreamTypes(modelBuilder);
             AddData_RevenuePriceTypes(modelBuilder);
-
+            AddData_ChannelTypes(modelBuilder);
         }
     }
 }

@@ -3,9 +3,9 @@
     {
         public void unpack(string archived)
         {
-            var t = Newtonsoft.Json.JsonConvert.DeserializeObject<CostBase>(archived);            
+            var t = Newtonsoft.Json.JsonConvert.DeserializeObject<CostBase>(archived);
             name = t.name;
-            description = t.description;            
-        }
+            description = t.description;
+        }        
     }
-    }
+}

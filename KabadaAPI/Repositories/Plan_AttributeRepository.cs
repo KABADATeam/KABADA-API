@@ -5,8 +5,9 @@ using System.Linq;
 
 namespace KabadaAPI {
   public class Plan_AttributeRepository : BaseRepository {
-    public enum PlanAttributeKind { swot=1, keyResource=2, keyDistributor=3, keySupplier=4, otherKeyPartner=5, product=6,
-                                    fixedCost=7, variableCost=8, revenueSegment1=9,revenueSegment2=10,revenueOther=11 }
+    public enum PlanAttributeKind { swot=1, keyResource=2, keyDistributor=3, keySupplier=4, otherKeyPartner=5, product=6
+                                    ,fixedCost=7, variableCost=8, revenueSegment1=9,revenueSegment2=10,revenueOther=11
+                                    ,channel=12}
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
@@ -15,6 +16,13 @@ namespace KabadaAPI {
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
       return r;
       }
+
+        internal List<Plan_Attribute> getChannels(Guid planId)
+        {
+            var l = (short)PlanAttributeKind.channel;
+            var r = daContext.Plan_Attributes.Where(x => x.BusinessPlanId == planId && x.Kind == l).OrderBy(x => x.Kind).ThenBy(x => x.OrderValue).ToList();
+            return r;
+        }
 
         internal List<Plan_Attribute> getRevenues(Guid planId)
         {

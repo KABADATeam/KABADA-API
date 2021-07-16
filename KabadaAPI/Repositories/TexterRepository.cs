@@ -12,6 +12,7 @@ namespace KabadaAPI {
                    , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
                    , fixedCostCategory=21, variableCostCategory=22, costType=23
                    , revenueStreamType=24,revenuePriceCategory=25,revenuePriceType=26
+                , channelType=27,channelSubtype=28,channelSubtypeType=29, channelLocationType=30, channelDistribution=31
         }       
 
         public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
@@ -70,6 +71,7 @@ namespace KabadaAPI {
     public List<Texter> getCostMeta() { return get(null, (short)EnumTexterKind.fixedCostCategory, (short)EnumTexterKind.costType, ignoreMaster: true); }
     public List<Texter> getRevenueStreamTypes() { return get(null, (short)EnumTexterKind.revenueStreamType, (short)EnumTexterKind.revenueStreamType, ignoreMaster: true); }
     public List<Texter> getRevenuePriceMeta() { return get(null, (short)EnumTexterKind.revenuePriceCategory, (short)EnumTexterKind.revenuePriceType, ignoreMaster: true); }
+    public List<Texter> getChannelTypesMeta() { return get(null, (short)EnumTexterKind.channelType, (short)EnumTexterKind.channelDistribution, ignoreMaster: true); }
 
 
         public Texter Create(Texter me) {
