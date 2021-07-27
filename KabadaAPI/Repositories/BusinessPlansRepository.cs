@@ -73,5 +73,11 @@ namespace KabadaAPI
             businessPlan.IsChannelsCompleted = newValue;
             daContext.SaveChanges();
         }
+
+    internal void changeStatus(Guid planId, bool newValue, Guid userId)        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.Public = !newValue;
+            daContext.SaveChanges();
+        }
     }
 }

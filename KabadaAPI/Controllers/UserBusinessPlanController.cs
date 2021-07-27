@@ -15,6 +15,7 @@ namespace KabadaAPI.Controllers {
         public UserBusinessPlanController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) { }
 
         protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(context); } }
+        protected BusinessPlansRepository bRepo { get { return new BusinessPlansRepository(context); } }
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
         [HttpGet]
@@ -164,6 +165,15 @@ namespace KabadaAPI.Controllers {
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(context);
             repo.ChangeRevenueCompleted(planUpdate.business_plan_id, planUpdate.is_channels_completed, uGuid);
+            return Ok("Success");
+        }
+
+        [Route("changeStatus")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangeStatus([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeStatus, planUpdate); }
+        private IActionResult _changeStatus([FromBody] ChangePlanParameter planUpdate){
+            bRepo.changeStatus(planUpdate.business_plan_id, planUpdate.is_private, uGuid);
             return Ok("Success");
         }
     }
