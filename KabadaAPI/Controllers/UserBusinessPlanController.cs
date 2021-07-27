@@ -176,5 +176,14 @@ namespace KabadaAPI.Controllers {
             bRepo.changeStatus(planUpdate.business_plan_id, planUpdate.is_private, uGuid);
             return Ok("Success");
         }
+
+        [Route("inviteMember")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult InviteMember([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_inviteMember, planUpdate); }
+        private IActionResult _inviteMember([FromBody] ChangePlanParameter planUpdate){
+            bRepo.inviteMember(planUpdate.business_plan_id, planUpdate.newMember.Value, uGuid);
+            return Ok("Success");
+        }
     }
 }

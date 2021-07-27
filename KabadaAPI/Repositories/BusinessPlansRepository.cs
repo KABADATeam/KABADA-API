@@ -75,9 +75,16 @@ namespace KabadaAPI
         }
 
     internal void changeStatus(Guid planId, bool newValue, Guid userId)        {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            var businessPlan = GetPlanForUpdate(userId, planId);
             businessPlan.Public = !newValue;
             daContext.SaveChanges();
         }
+
+    internal void inviteMember(Guid planId, Guid newMember, Guid userId) {
+      var businessPlan = GetPlanForUpdate(userId, planId);
+      if(businessPlan.Public)
+        throw new Exception("no members for public plans");
+      new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=userId });
+      }
     }
 }
