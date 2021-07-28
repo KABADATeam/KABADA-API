@@ -27,6 +27,37 @@ namespace KabadaAPI {
 
     public void Dispose() { dispose(); }
 
+    protected List<BaseRepository> deleteBaseOrder { get { // RefreshTokens not included - must be processed separately
+      var r=new List<BaseRepository>();
+
+      r.Add(new Plan_AttributeRepository(blContext, daContext));
+      r.Add(new SharedPlanRepository(blContext, daContext));
+
+      r.Add(new BusinessPlansRepository(blContext, daContext));
+      r.Add(new TexterRepository(blContext, daContext));
+
+      r.Add(new IndustryActivityRepository(blContext, daContext));
+      r.Add(new LanguagesRepository(blContext, daContext));
+      r.Add(new CountryRepository(blContext, daContext));
+      r.Add(new UsersRepository(blContext, daContext));
+
+      r.Add(new IndustryRepository(blContext, daContext));
+      r.Add(new UserTypesRepository(blContext, daContext));
+
+      r.Add(new UserFilesRepository(blContext, daContext));
+
+      return r;
+      }}
+
+    protected List<BaseRepository> exportOrder { get { return deleteBaseOrder; }}
+
+    protected List<BaseRepository> deleteOrder { get {
+      var r=new List<BaseRepository>(){ new RefreshTokenRepository(blContext, daContext) };
+      r.AddRange(deleteBaseOrder);
+      return r;
+      }}
+
+    protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
 
     internal string snap(string key) {
       //TODO: key validation
@@ -36,17 +67,19 @@ namespace KabadaAPI {
       Directory.CreateDirectory(opa);
       int k=0;
 
-      k+=new BusinessPlansRepository(blContext, daContext).snapMe(opa);
-      k+=new CountryRepository(blContext, daContext).snapMe(opa);
-      k+=new IndustryRepository(blContext, daContext).snapMe(opa);
-      k+=new IndustryActivityRepository(blContext, daContext).snapMe(opa);
-      k+=new LanguagesRepository(blContext, daContext).snapMe(opa);
-      k+=new Plan_AttributeRepository(blContext, daContext).snapMe(opa);
-      k+=new SharedPlanRepository(blContext, daContext).snapMe(opa);
-      k+=new TexterRepository(blContext, daContext).snapMe(opa);
-      k+=new UsersRepository(blContext, daContext).snapMe(opa);
-      k+=new UserFilesRepository(blContext, daContext).snapMe(opa);
-      k+=new UserTypesRepository(blContext, daContext).snapMe(opa);
+      //k+=new BusinessPlansRepository(blContext, daContext).snapMe(opa);
+      //k+=new CountryRepository(blContext, daContext).snapMe(opa);
+      //k+=new IndustryRepository(blContext, daContext).snapMe(opa);
+      //k+=new IndustryActivityRepository(blContext, daContext).snapMe(opa);
+      //k+=new LanguagesRepository(blContext, daContext).snapMe(opa);
+      //k+=new Plan_AttributeRepository(blContext, daContext).snapMe(opa);
+      //k+=new SharedPlanRepository(blContext, daContext).snapMe(opa);
+      //k+=new TexterRepository(blContext, daContext).snapMe(opa);
+      //k+=new UsersRepository(blContext, daContext).snapMe(opa);
+      //k+=new UserFilesRepository(blContext, daContext).snapMe(opa);
+      //k+=new UserTypesRepository(blContext, daContext).snapMe(opa);
+      foreach(var o in exportOrder)
+        k+=o.snapMe(opa);
 
       LogInformation($"Total snapped {k} records.");      
       return opa;
