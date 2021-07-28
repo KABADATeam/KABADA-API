@@ -107,6 +107,18 @@ namespace KabadaAPI {
             }
             daContext.SaveChanges();
         }        
-    protected override object[] getAll4snap() { return daContext.Activities.ToArray(); }
+    protected override object[] getAll4snap() {
+      var r=daContext.Activities.ToArray();
+      foreach(var o in r)
+        o.Industry=null;
+      return r;
+      }
+
+    protected override string myTable => "Activities";
+
+    protected override void loadData(string json) {
+      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Activity>(json);
+      daContext.Activities.Add(o);
+      }
     }
-}
+  }

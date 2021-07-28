@@ -1,0 +1,975 @@
+﻿{"Id":"d9bc6b30-0c16-4119-a582-007aa2799126","Code":"N.79.90","Title":"Other reservation service and related activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"4635bd8a-eed2-4107-9040-009ac2421356","Code":"A.01.63","Title":"Post-harvest crop activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"12de4fb2-d231-4036-a09d-0101bc102925","Code":"S.94.2","Title":"Activities of trade unions","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"a0e46bc7-46e2-4663-860c-01170f48a415","Code":"C.17.23","Title":"Manufacture of paper stationery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"77573aad-4ec7-445b-8613-0142f4d9ed01","Code":"T.98.10","Title":"Undifferentiated goods-producing activities of private households for own use","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"8bb8f271-7dd5-446e-ba05-01582e48c307","Code":"S.94.11","Title":"Activities of business and employers membership organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"28713657-98a4-480a-b90d-017d80b7ef20","Code":"R.93.1","Title":"Sports activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"df5dd493-fd8e-4fe9-8df5-01dea780dd77","Code":"C.32.50","Title":"Manufacture of medical and dental instruments and supplies","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"232faa35-e44b-468e-aff5-02167301b3dd","Code":"F.43.29","Title":"Other construction installation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"6e07aea7-ffca-4ef1-a2d1-02273fa5ff18","Code":"H.52.29","Title":"Other transportation support activities","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"c659c2d2-5fe4-4673-9333-02c48fe632e6","Code":"C.23.64","Title":"Manufacture of mortars","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8812010b-a06a-49d8-bed2-02ef2cbf59bb","Code":"A.02.2","Title":"Logging","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"28013f96-bc71-4865-aa3c-02f534af7c18","Code":"P.85.59","Title":"Other education n.e.c.","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"89ebf4dd-9e9d-45cc-aa89-032812d52020","Code":"G.47.91","Title":"Retail sale via mail order houses or via Internet","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"59c094c3-7bbd-4429-98ee-03c25db796d9","Code":"S.96.03","Title":"Funeral and related activities","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"5e43bcd4-e0f3-41f9-9871-03e4b4f03d99","Code":"K.64.11","Title":"Central banking","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"d955124a-4181-44c3-b6df-04173fd9c459","Code":"C.26.52","Title":"Manufacture of watches and clocks","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"75c66631-958c-42a7-ac32-05d8ec75294b","Code":"I.55.1","Title":"Hotels and similar accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"3f193dc0-3948-4bbf-92bc-05e9d8dcc6ed","Code":"N.82.3","Title":"Organisation of conventions and trade shows","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"ef56e5d9-192e-49da-b5f1-060190ff24a5","Code":"C.14.12","Title":"Manufacture of workwear","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cdb9cad7-158a-43e8-b4b1-0631b335e057","Code":"B.08.93","Title":"Extraction of salt","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"b4634457-d9c4-4583-bbd9-0698ef97d17a","Code":"D.35.12","Title":"Transmission of electricity","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"35f89936-9e03-43bf-b09f-07003201a802","Code":"C.26.8","Title":"Manufacture of magnetic and optical media","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a08f0412-2657-446a-a36c-0788f4daddf3","Code":"C.24.20","Title":"Manufacture of tubes, pipes, hollow profiles and related fittings, of steel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d5a17621-e505-4c03-b13a-079e60a1cb38","Code":"N.82.1","Title":"Office administrative and support activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"04f7c46b-edea-4c5b-8444-07b8baf100ab","Code":"G.47.2","Title":"Retail sale of food, beverages and tobacco in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"1d454a2c-d46d-4a6e-bacb-07dc2bd4b09a","Code":"Q.87.30","Title":"Residential care activities for the elderly and disabled","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"b242c64d-6563-4e9b-a90c-082fe58bf945","Code":"C.13.96","Title":"Manufacture of other technical and industrial textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"31e3372b-9c0e-4381-aa07-08586e371d33","Code":"C.18.2","Title":"Reproduction of recorded media","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"71ac38b6-ddc5-4d2c-b1f5-0860c29e667e","Code":"C.16.1","Title":"Sawmilling and planing of wood","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"61a978e7-d9a5-4b54-a9c3-089801b488d6","Code":"M.75","Title":"Veterinary activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"b8ed2a2e-7157-4f6a-9c49-08981ec9c87f","Code":"Q.86.23","Title":"Dental practice activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"18acf3af-f58b-462a-b4b3-090d084e6d28","Code":"R.93.12","Title":"Activities of sport clubs","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"5125d71c-6b6a-41c7-9ad9-0937cf38fa01","Code":"J.58.11","Title":"Book publishing","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"69e4b583-bc4b-451d-aad2-0955b0e6ef69","Code":"P.85.51","Title":"Sports and recreation education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"b9284aca-10fb-48a5-856e-098656ca302b","Code":"C.22.21","Title":"Manufacture of plastic plates, sheets, tubes and profiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f0a29848-d6b6-4437-9853-0999fe3f385d","Code":"C.32","Title":"Other manufacturing","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ebb713b0-8c06-4b48-8686-09b372e30c8f","Code":"C.19.1","Title":"Manufacture of coke oven products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a9b3c8ed-bad7-414a-aa78-09bc327dde51","Code":"M.71.2","Title":"Technical testing and analysis","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"7f096a99-d13c-4de1-b0e1-09f07fdb1620","Code":"N.80.2","Title":"Security systems service activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"22f43c30-29d6-421b-9677-0a56528353ef","Code":"N.77.2","Title":"Renting and leasing of personal and household goods","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"7950b919-0bc4-4b9d-a642-0a6b3c443cc2","Code":"G.47.54","Title":"Retail sale of electrical household appliances in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"2e2b73d8-df5f-41b1-ab54-0a934d60efd1","Code":"A.01.22","Title":"Growing of tropical and subtropical fruits","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"43dded8f-51e6-4f2e-a608-0b20f8e7077b","Code":"C.13.93","Title":"Manufacture of carpets and rugs","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f577ec1b-0c8b-4dd7-9edb-0b2336e69018","Code":"C.18.14","Title":"Binding and related services","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2869e480-5956-4f1f-99da-0b3a93116d80","Code":"C.10.39","Title":"Other processing and preserving of fruit and vegetables","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"82f7bb80-712e-4c97-a987-0b9d4d9edde1","Code":"C.24.41","Title":"Precious metals production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0bd7f925-c283-4e10-87fc-0bc6aa7e6d32","Code":"C.32.13","Title":"Manufacture of imitation jewellery and related articles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b7525e2f-4087-43ff-bbed-0bdc0a64c5f1","Code":"A.01.64","Title":"Seed processing for propagation","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"821cf9ba-38de-4d62-a02c-0be3a1b8a15f","Code":"S.94.12","Title":"Activities of professional membership organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"df78fe69-07c3-4107-babb-0c59ab8516a9","Code":"C.23.91","Title":"Production of abrasive products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1167c4fc-3acf-48c0-bd9b-0c5c9e52aba7","Code":"S.94.9","Title":"Activities of other membership organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"488d79f5-4759-4d6c-8569-0c89598e059e","Code":"A.03.21","Title":"Marine aquaculture","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"79b3f0fd-869a-4ffc-8c3d-0cba7b79598d","Code":"C.25.30","Title":"Manufacture of steam generators, except central heating hot water boilers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d9a116a9-17f1-46c8-9b45-0d5a6d71ab70","Code":"G.45.19","Title":"Sale of other motor vehicles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"7c0d7dd4-d1c0-45e8-9ccf-0dd8da53b7c1","Code":"O.84.22","Title":"Defence activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"5198fb4c-e914-4c32-a1ae-0ded6f1ad414","Code":"G.46","Title":"Wholesale trade, except of motor vehicles and motorcycles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"3d358c79-a35f-45b3-bf7a-0e2f45bfaea0","Code":"C.25.71","Title":"Manufacture of cutlery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ba4671e0-462d-4060-ae77-0e78fec6f777","Code":"H.50.10","Title":"Sea and coastal passenger water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"e0c631c4-5222-4d01-9786-0e8c9d74b62c","Code":"C.23.12","Title":"Shaping and processing of flat glass","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3aaca3cd-87ec-4556-acc5-0f48043ef213","Code":"C.27.20","Title":"Manufacture of batteries and accumulators","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e610fbca-fafd-4643-854d-0f744a507991","Code":"C.20.15","Title":"Manufacture of fertilisers and nitrogen compounds","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"62684f91-abbc-44ae-b9b5-0f942022283e","Code":"C.23.20","Title":"Manufacture of refractory products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"356b5bab-0d37-44b9-a708-0f996c10dea7","Code":"C.18","Title":"Printing and reproduction of recorded media","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e55a36f5-5315-4969-a67a-0ffc90736503","Code":"F.42.11","Title":"Construction of roads and motorways","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"ae182449-b988-4dc9-8b2b-102f6f92f2d9","Code":"G.46.5","Title":"Wholesale of information and communication equipment","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ef4215d1-825e-4d8f-87fd-1052a63e68e2","Code":"P.85.5","Title":"Other education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"131fcdae-2403-42db-aa78-107c3626b380","Code":"C.20.6","Title":"Manufacture of man-made fibres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a29de2b3-f2ee-4e0f-b725-10c898c67872","Code":"K.64.9","Title":"Other financial service activities, except insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"502ab42f-aa19-4b6f-aa25-10da37d47533","Code":"N.80.3","Title":"Investigation activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"0889ba06-87cb-42dd-9f83-10fed79175e6","Code":"C.12","Title":"Manufacture of tobacco products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0002defd-00cd-4177-a47a-116dfe84aa1d","Code":"K.64.92","Title":"Other credit granting","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"ac53d42d-e1e8-43ad-8472-12022888302a","Code":"C.19.10","Title":"Manufacture of coke oven products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3db76307-5bdc-40e4-9736-125f42c4fa51","Code":"C.25.29","Title":"Manufacture of other tanks, reservoirs and containers of metal","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c13b006d-ba1a-47b4-a360-126d60c23a47","Code":"K.65.11","Title":"Life insurance","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"48d11ddd-1ac9-4c64-81cf-129a8680cc77","Code":"C.26.4","Title":"Manufacture of consumer electronics","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"44f9e003-687e-47e3-936b-12fb9fd16167","Code":"C.20.16","Title":"Manufacture of plastics in primary forms","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"476e6376-086d-46ea-a8f0-13602fb9a540","Code":"N.80","Title":"Security and investigation activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"13c16e27-45e2-457e-bbb4-13bcaa2628d8","Code":"G.46.21","Title":"Wholesale of grain, unmanufactured tobacco, seeds and animal feeds","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"849eb17b-84ad-4edf-8e63-1413f1031dd7","Code":"C.10.82","Title":"Manufacture of cocoa, chocolate and sugar confectionery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cb9eb8ef-6b3f-4b37-82e3-145125df9628","Code":"G.46.51","Title":"Wholesale of computers, computer peripheral equipment and software","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"14fb4a19-9ba3-46d5-ab1c-146cd7747fc0","Code":"H.49.20","Title":"Freight rail transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"d40c3d80-d46b-411f-ae04-14f2f0d37403","Code":"D.35.14","Title":"Trade of electricity","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"ada98cbd-f41f-4f3a-a11e-14f4a128a519","Code":"R.92.00","Title":"Gambling and betting activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"9a6bfe00-7f03-4ce0-bd01-151cad83d8bf","Code":"S.96.09","Title":"Other personal service activities n.e.c.","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"632bb8fd-af3c-4742-ab02-152b372ea53f","Code":"J.61.20","Title":"Wireless telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"0bf33f7f-8e8b-4a11-9d8e-1626645ceb96","Code":"C.14.13","Title":"Manufacture of other outerwear","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ab67a29e-d962-48b0-88b3-16ae1fff3325","Code":"B.08.92","Title":"Extraction of peat","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"a6c47d3e-fc3c-42e9-b307-177729021427","Code":"H.49.41","Title":"Freight transport by road","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"c3cb3d8f-76f9-43be-8dcb-17b47f17d4f3","Code":"A.01.45","Title":"Raising of sheep and goats","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"bf5ea57a-cb95-44c4-b28c-17d91c2cae67","Code":"C.27.51","Title":"Manufacture of electric domestic appliances","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4ef0e84d-4b5f-49fe-99f5-18358848a9fd","Code":"C.17.24","Title":"Manufacture of wallpaper","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2c579c3d-3a33-4b04-b55c-18756f9d6432","Code":"B.09.10","Title":"Support activities for petroleum and natural gas extraction","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"9bc0feb4-d43e-4964-8995-18d999a98dbf","Code":"K.64.30","Title":"Trusts, funds and similar financial entities","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"c02893d2-9cd7-4a21-a470-192c6ed196f2","Code":"M.73.12","Title":"Media representation","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"333a41c3-a0f1-453c-9ac7-19721d9a7eee","Code":"A.01.6","Title":"Support activities to agriculture and post-harvest crop activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"b166cb85-5090-4e46-be15-19ce1431c327","Code":"S.96.02","Title":"Hairdressing and other beauty treatment","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"9ada360c-33c8-4eca-9449-19d2b6323857","Code":"I.56.3","Title":"Beverage serving activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"4788352f-7a36-4c3d-9f73-19f27c314183","Code":"C.21.2","Title":"Manufacture of pharmaceutical preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9d8d1949-925f-4f2a-a6fd-1a76b70e84d9","Code":"G.45.32","Title":"Retail trade of motor vehicle parts and accessories","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"41c968ed-dd20-4a59-a8d2-1ad40ea73899","Code":"H.51.1","Title":"Passenger air transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"7c25c352-6f17-47d6-b942-1ae9030d40ba","Code":"A.01.7","Title":"Hunting, trapping and related service activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"87d0f2ad-b843-4f30-ac04-1b0d182993da","Code":"C.24.34","Title":"Cold drawing of wire","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"03894df7-2fce-46b9-8320-1b194cecc744","Code":"C.26.20","Title":"Manufacture of computers and peripheral equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f3e6d718-a017-47db-9f2c-1b2fe8dcc95e","Code":"C.23.99","Title":"Manufacture of other non-metallic mineral products n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2302ca77-5ac3-496e-bb11-1b4381ffa490","Code":"J.63.91","Title":"News agency activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"0744545a-211a-4833-9006-1b4adfd44da0","Code":"C.27.1","Title":"Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b8dc5de0-df03-4c8d-a9a4-1ba70f733598","Code":"D.35.21","Title":"Manufacture of gas","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"c0e6776d-a776-4f10-b98b-1bbc967cd9f0","Code":"C.22.22","Title":"Manufacture of plastic packing goods","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c12d937e-fedc-436d-9ad3-1bd620f91677","Code":"C.18.20","Title":"Reproduction of recorded media","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4d81ec29-1af4-4b05-bfac-1bedf5bee6f6","Code":"J.60","Title":"Programming and broadcasting activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"1dc03103-6843-4e44-a278-1c20d07a46cd","Code":"S.94.92","Title":"Activities of political organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"7b4843ec-9e35-40d4-be81-1c57f68262ab","Code":"S.95.25","Title":"Repair of watches, clocks and jewellery","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"eac7ab8a-dd2e-46c8-bc13-1c6ebfcc759b","Code":"C.32.11","Title":"Striking of coins","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"042beef9-b3b1-4ce1-94fd-1c7cae44b19b","Code":"C.26.6","Title":"Manufacture of irradiation, electromedical and electrotherapeutic equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ef3b2648-e52b-442e-8c5a-1c98495df743","Code":"G.46.18","Title":"Agents specialised in the sale of other particular products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"1b7adf56-fd8b-4812-94d2-1d4b6ffb6ac0","Code":"G.47.89","Title":"Retail sale via stalls and markets of other goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"95ded6b5-c739-48f5-8ec9-1d82246fc1fc","Code":"N.79.12","Title":"Tour operator activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"9236861d-c344-4b07-b38a-1df40ae9426b","Code":"T.98.2","Title":"Undifferentiated service-producing activities of private households for own use","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"c89df749-3174-4344-b002-1e97b085ae18","Code":"S.96.01","Title":"Washing and (dry-)cleaning of textile and fur products","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"88f298a2-58a2-471e-952c-1ebeb076b7c1","Code":"R.93.19","Title":"Other sports activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"c120a9ad-e123-424a-b25b-1ec34d1eb30a","Code":"N.81.3","Title":"Landscape service activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"73514c8d-20e2-4080-a7cd-1f692539d01e","Code":"C.33.15","Title":"Repair and maintenance of ships and boats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"465799f3-f488-4dc3-a5b8-1f716d49d918","Code":"G.46.49","Title":"Wholesale of other household goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"53d3b354-ccdf-4dc4-b2f0-1faac6754eda","Code":"S.95.24","Title":"Repair of furniture and home furnishings","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"06c2b761-eab2-42ef-994f-1ff40da3cba3","Code":"C.14.3","Title":"Manufacture of knitted and crocheted apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"52976cd7-9360-4f8c-9cbb-202428659f3f","Code":"G.47.64","Title":"Retail sale of sporting equipment in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"8759beb7-beed-4d0f-9d64-20683521915d","Code":"G.46.74","Title":"Wholesale of hardware, plumbing and heating equipment and supplies","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"c14c2aac-729c-4221-a2e4-20ab89e9360b","Code":"J.60.1","Title":"Radio broadcasting","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"52373b3b-8d6d-4d3d-9145-20c7af0e74f1","Code":"H.50","Title":"Water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"a7b24755-717e-449e-a745-20ddc0a7bc73","Code":"G.46.45","Title":"Wholesale of perfume and cosmetics","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"0082b9e6-76eb-4b2c-8aeb-212a83b811de","Code":"N.79.9","Title":"Other reservation service and related activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"47c61290-c2b4-4e9a-b52a-218e5e580a43","Code":"A.02.10","Title":"Silviculture and other forestry activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"ddf3bbbf-0edc-4666-8a2e-21ee6349f096","Code":"C.25.93","Title":"Manufacture of wire products, chain and springs","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7aebcd1b-544c-4768-a735-22076b79e7ab","Code":"T.98","Title":"Undifferentiated goods- and services-producing activities of private households for own use","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"6457e262-24ff-48b8-a1d5-22693d3d4e06","Code":"C.20.1","Title":"Manufacture of basic chemicals, fertilisers and nitrogen compounds, plastics and synthetic rubber in primary forms","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b47d8a43-a62d-40b9-aba3-2295c6be2cef","Code":"C.10.20","Title":"Processing and preserving of fish, crustaceans and molluscs","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a7b2b09d-b75a-4372-9dc2-23064914d305","Code":"C.10.3","Title":"Processing and preserving of fruit and vegetables","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"458a5a30-fd42-44a6-8472-232b0fe056ce","Code":"B.05.10","Title":"Mining of hard coal","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"2933f91a-f409-49f7-8a95-242ac3285f75","Code":"O.84.13","Title":"Regulation of and contribution to more efficient operation of businesses","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"6b28f176-c76d-4f20-94d8-247c4da7f65d","Code":"C.17.11","Title":"Manufacture of pulp","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"386949ce-9ef6-4ba8-8294-24a0f6b2b53d","Code":"C.10.5","Title":"Manufacture of dairy products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2b96fd4c-b337-438f-add8-24f0af2645a8","Code":"G.47.8","Title":"Retail sale via stalls and markets","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"7f55676e-2bd4-4e5e-8d4c-261e2ba29d78","Code":"B.07.21","Title":"Mining of uranium and thorium ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"5e842634-6dee-4272-90ad-2672fef48380","Code":"C.26.60","Title":"Manufacture of irradiation, electromedical and electrotherapeutic equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"65968f19-b376-41f6-a1fa-269432f22666","Code":"C.17.2","Title":"Manufacture of articles of paper and paperboard","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"368a04ba-c8e6-41b5-be7f-26e24bbf1eb3","Code":"P.85.2","Title":"Primary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"4a45ec64-e2dc-42e0-85bd-2720fc62df10","Code":"R.93.29","Title":"Other amusement and recreation activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"a00679c5-6fd6-4723-b49b-275a13cefa42","Code":"O.84.12","Title":"Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"c487fffc-d6bb-4d35-b264-277d10e1638c","Code":"C.11.04","Title":"Manufacture of other non-distilled fermented beverages","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d73698ac-4ad8-48b2-857e-27bf5d3c4fed","Code":"P.85.41","Title":"Post-secondary non-tertiary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"baf81546-e5ab-42be-8e8d-27e038968e32","Code":"K.66.11","Title":"Administration of financial markets","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"d628f5fc-5d3a-4c9f-a78d-2875b261c80a","Code":"B.09.1","Title":"Support activities for petroleum and natural gas extraction","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"588574e8-23bc-4a39-a4c4-28fba50b1a02","Code":"P.85.32","Title":"Technical and vocational secondary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"5aa1b537-1005-42b9-a64c-2941efd6c907","Code":"A.03.11","Title":"Marine fishing","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"33e7ad88-76a7-48df-8945-29521a6d4235","Code":"R.91.0","Title":"Libraries, archives, museums and other cultural activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"1933ef5a-3691-4e69-a120-29811404e526","Code":"C.25.73","Title":"Manufacture of tools","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a4c5a737-3eee-4cbc-a5dd-29f1cc31034c","Code":"C.33.2","Title":"Installation of industrial machinery and equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b12400d6-89bc-4ee8-bd44-29f7c9adb6f6","Code":"G.45.31","Title":"Wholesale trade of motor vehicle parts and accessories","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"37ce880f-59d5-436a-8f4f-2a06d53f0f37","Code":"N.82.20","Title":"Activities of call centres","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"ef8cee6c-2c0c-4dc1-aa68-2a2642bb7dbb","Code":"G.47.42","Title":"Retail sale of telecommunications equipment in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a0471773-b15a-4887-b5e3-2a907f67023d","Code":"C.25.40","Title":"Manufacture of weapons and ammunition","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a3901776-431d-4104-a4b5-2a98bfe73405","Code":"G.46.34","Title":"Wholesale of beverages","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"335cb532-5270-4c7a-a2b6-2ab447cdd30f","Code":"G.47.9","Title":"Retail trade not in stores, stalls or markets","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"8ed49051-b634-48fa-9b50-2acf114374f4","Code":"N.78.2","Title":"Temporary employment agency activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"9b216be9-8ee7-4c8e-94d4-2b34adc36c7b","Code":"C.13","Title":"Manufacture of textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e5e45c80-88a0-4e2d-bbba-2b7231b01c72","Code":"L.68.1","Title":"Buying and selling of own real estate","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"edc8e8cd-d696-42d5-9ce4-2bc4a39f1600","Code":"C.31.09","Title":"Manufacture of other furniture","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4f50e0db-c495-4d69-8e5f-2bfac686f4bc","Code":"G.47.22","Title":"Retail sale of meat and meat products in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"78e8d448-bd0a-4bc5-aca2-2c3eb019d1a1","Code":"M.71.1","Title":"Architectural and engineering activities and related technical consultancy","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"c6e974ce-10df-45a4-b3f8-2c609fb218be","Code":"J.58.21","Title":"Publishing of computer games","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"18472a6d-054c-4c7d-add6-2c7f99c4b863","Code":"C.26.70","Title":"Manufacture of optical instruments and photographic equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"57c63eec-a4c3-4d04-b0c9-2cc01e63d838","Code":"G.46.76","Title":"Wholesale of other intermediate products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"d9d09bac-86f0-425d-a98b-2cc0a094c418","Code":"H.52.24","Title":"Cargo handling","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"2ee1e2e3-bfb3-45fc-88a0-2d5b38968855","Code":"C.29.20","Title":"Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"150f73e8-5174-4907-b90e-2d6b8b5e81b2","Code":"C.33.16","Title":"Repair and maintenance of aircraft and spacecraft","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2de0482f-350d-440e-9524-2e52da25ae8d","Code":"C.24.52","Title":"Casting of steel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"336dd774-919b-485e-8fba-2e57530dbbfb","Code":"Q.88.9","Title":"Other social work activities without accommodation","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"aeb25157-36f1-4b93-866b-2e8b63afcdd8","Code":"H.53","Title":"Postal and courier activities","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"e962f21f-44a6-4454-81d4-2ed4efe84b29","Code":"M.74.2","Title":"Photographic activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"984e4cc8-ab02-4ca3-9c19-2ed78a39539d","Code":"C.31","Title":"Manufacture of furniture","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"22dc9111-db84-4c70-8ad0-2eeed133f3d9","Code":"C.33.12","Title":"Repair of machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"18a69dbd-e11e-4000-b55e-3035705914a6","Code":"B.08.12","Title":"Operation of gravel and sand pits; mining of clays and kaolin","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"a9b65f00-227e-4b9b-b701-30d8c9d7af4b","Code":"C.31.01","Title":"Manufacture of office and shop furniture","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3d36a39b-6a22-45ad-8862-30f3584f4b98","Code":"C.32.9","Title":"Manufacturing n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a3626d7f-75f4-488f-b8f7-312405115149","Code":"I.56.1","Title":"Restaurants and mobile food service activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"0f2ae982-ae0a-42a5-b378-315147ce290d","Code":"C.13.99","Title":"Manufacture of other textiles n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2d3d3465-55c5-4079-86e0-31b31e78fd94","Code":"I.55.10","Title":"Hotels and similar accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"b9cc9ca9-b45b-43bc-aa63-31c426d17241","Code":"B.06.10","Title":"Extraction of crude petroleum","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"072beb99-71fb-4199-847f-321e4c820222","Code":"C.27.2","Title":"Manufacture of batteries and accumulators","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8bb55716-5216-4e5c-9f63-323a6e0ce4fc","Code":"Q.88","Title":"Social work activities without accommodation","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"7dea72e0-eafd-4e23-bbff-326e9e33544c","Code":"C.15.1","Title":"Tanning and dressing of leather; manufacture of luggage, handbags, saddlery and harness; dressing and dyeing of fur","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"309fdee0-80d6-447c-855b-32a57199e43e","Code":"A.03.2","Title":"Aquaculture","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"fe3324ec-3ef5-4045-953a-32b51c1acfa3","Code":"C.23.5","Title":"Manufacture of cement, lime and plaster","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4426ac0f-0c29-4aac-a74c-32f0742fbbbf","Code":"G.46.12","Title":"Agents involved in the sale of fuels, ores, metals and industrial chemicals","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a3596608-b7a1-4116-b5e8-33ac289f07c9","Code":"H.51.2","Title":"Freight air transport and space transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"1327186f-c2a6-4a53-9cfd-33ef1ae971e0","Code":"S.96.04","Title":"Physical well-being activities","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"e4efaf0f-0b52-4853-841f-34028649891f","Code":"F.43.99","Title":"Other specialised construction activities n.e.c.","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"1b068e29-3504-4ff5-9b18-34330d303151","Code":"B.08.9","Title":"Mining and quarrying n.e.c.","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"2e1eac71-13f2-4a8c-b2ff-343ed5f60433","Code":"B.07.2","Title":"Mining of non-ferrous metal ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"6a49a24a-7377-45b4-90ec-3495280a87d8","Code":"E.36.00","Title":"Water collection, treatment and supply","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"7d113a5d-328c-4a4c-9432-34e6e4cfc337","Code":"J.62.02","Title":"Computer consultancy activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"67c235fd-664a-46ca-ab6e-3571c9c6da0c","Code":"N.77","Title":"Rental and leasing activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"59b1bcea-d6bb-401d-8986-359ae117ac10","Code":"C.30.9","Title":"Manufacture of transport equipment n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a463ba06-92c4-4273-8f6e-35eddb875a33","Code":"C.25.99","Title":"Manufacture of other fabricated metal products n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3b5cf102-cd94-45c2-ab28-36115e7b4b81","Code":"C.24.10","Title":"Manufacture of basic iron and steel and of ferro-alloys","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"197b3144-a871-438d-a948-362ed74f38ac","Code":"G.46.71","Title":"Wholesale of solid, liquid and gaseous fuels and related products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"15582e4e-3bb4-4fb3-86b1-367415538359","Code":"J.60.20","Title":"Television programming and broadcasting activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"6d2e1d2c-185e-4738-952d-36b7cb16a93e","Code":"R.93.2","Title":"Amusement and recreation activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"21afd4ee-52bb-4734-a870-36beb7ea29b1","Code":"A.02.40","Title":"Support services to forestry","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"19302ec7-e474-4f66-8c36-36d857453a6b","Code":"C.24.54","Title":"Casting of other non-ferrous metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"71981439-b4f6-4893-b4da-37069e7b5310","Code":"J.60.2","Title":"Television programming and broadcasting activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"8f48724d-3940-4d45-89f4-3714c8f7b10d","Code":"C.28.93","Title":"Manufacture of machinery for food, beverage and tobacco processing","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a7dab6b1-e1df-4938-98e9-374c72847b91","Code":"O.84.24","Title":"Public order and safety activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"d295a369-1024-4e04-875b-387288e07f1c","Code":"E.36","Title":"Water collection, treatment and supply","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"eac7d82f-d458-4932-a7e9-388f8ca58cb1","Code":"C.14.20","Title":"Manufacture of articles of fur","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a3cfa62f-db5e-47d7-a99c-3895475550fe","Code":"P.85.53","Title":"Driving school activities","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"0791c2db-8936-4887-9ac1-389d91fcda0c","Code":"K.64.91","Title":"Financial leasing","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"ac9e665d-98e3-4320-abc7-38b2167c1530","Code":"G.45.3","Title":"Sale of motor vehicle parts and accessories","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"8eb4eb9c-2315-4cbd-b41e-38b301ba48d5","Code":"H.49.31","Title":"Urban and suburban passenger land transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"715bf9c2-ea0b-466d-abd7-39363ec639e3","Code":"F.42.91","Title":"Construction of water projects","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"212c2103-f668-4480-a706-397f211eb1bb","Code":"P.85.10","Title":"Pre-primary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"24094a58-9291-44e1-b9a8-397f8d88ddb8","Code":"C.14.2","Title":"Manufacture of articles of fur","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4f9799cb-161f-40b8-bbd8-39b1e12692d6","Code":"I.55.20","Title":"Holiday and other short-stay accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"c68ad135-465a-45cb-bcde-39beeae48dca","Code":"M.71.12","Title":"Engineering activities and related technical consultancy","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"ec37f5eb-667d-4c3d-9623-39cafa491038","Code":"C.23.43","Title":"Manufacture of ceramic insulators and insulating fittings","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"30cfef0d-0194-499f-bd65-39e67cfb53df","Code":"C.23.44","Title":"Manufacture of other technical ceramic products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2aaad66c-07ee-42f4-a40e-3a22f10e3462","Code":"C.11.07","Title":"Manufacture of soft drinks; production of mineral waters and other bottled waters","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6be07ca8-5ad1-4747-b03e-3bac9efbb36a","Code":"G.46.38","Title":"Wholesale of other food, including fish, crustaceans and molluscs","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ee7cce0d-67b0-460e-84d7-3bc1493e3708","Code":"G.46.75","Title":"Wholesale of chemical products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"dd4195e6-7bc0-43db-944a-3c4877f462df","Code":"J.61","Title":"Telecommunications","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"316444d9-84a5-4c22-962d-3c90e7b05e5e","Code":"K.64.3","Title":"Trusts, funds and similar financial entities","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"31f35006-bcd0-44bd-83fb-3d5f1a65f44a","Code":"F.42","Title":"Civil engineering","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"31702f54-c068-4902-8089-3ddbbf0c61d5","Code":"G.47.6","Title":"Retail sale of cultural and recreation goods in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"3288eb1a-b035-4201-b19a-3dff047e3417","Code":"B.07.10","Title":"Mining of iron ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"438b9113-e3c4-4372-af04-3e1333e9e307","Code":"C.10.83","Title":"Processing of tea and coffee","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a6da0ae4-3a6b-4764-8717-3e43ed00775d","Code":"B.05.2","Title":"Mining of lignite","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"568df104-0aab-438b-893c-3ef2593f3e6e","Code":"B.08.91","Title":"Mining of chemical and fertiliser minerals","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"0b6e4f09-f217-45c0-8bab-3f164346ef64","Code":"M.73.20","Title":"Market research and public opinion polling","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"0964a94f-1be2-44ad-b46a-3f706a06df40","Code":"C.25.4","Title":"Manufacture of weapons and ammunition","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5b6bfcbd-849c-4162-9284-402f4be5bff8","Code":"C.22.2","Title":"Manufacture of plastics products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3a9422dc-d9a9-42bf-ad66-407720c2b670","Code":"B.08","Title":"Other mining and quarrying","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"3d110d17-20b4-42c2-8640-40fdc5f5695d","Code":"C.26.5","Title":"Manufacture of instruments and appliances for measuring, testing and navigation; watches and clocks","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f91e1088-b7c1-454e-a773-41517ad465cf","Code":"Q.88.91","Title":"Child day-care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"6ac130db-7509-48ee-9fd8-42518ee6dbed","Code":"C.23.9","Title":"Manufacture of abrasive products and non-metallic mineral products n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e1aff591-6ba8-46b8-8c7d-4252522bffc3","Code":"K.65.12","Title":"Non-life insurance","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"9abf35e1-c042-428e-b6ef-42d99ecf82b8","Code":"A.03","Title":"Fishing and aquaculture","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"770f2b75-ea03-423a-83d6-4316db7f618f","Code":"S.95.23","Title":"Repair of footwear and leather goods","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"68696fdc-2023-47f3-b906-4351d3b6e19d","Code":"N.77.32","Title":"Renting and leasing of construction and civil engineering machinery and equipment","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"d703d612-d76a-4bc6-a182-43e0ecc75d41","Code":"C.14.31","Title":"Manufacture of knitted and crocheted hosiery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b358fb5d-367b-45d5-be69-43f84d4f2147","Code":"C.10.86","Title":"Manufacture of homogenised food preparations and dietetic food","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"86a6de55-9739-4c82-9403-44bdad02d0c8","Code":"N.77.21","Title":"Renting and leasing of recreational and sports goods","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"1d287d5f-2629-463a-a1f2-44c870dc4603","Code":"C.29.1","Title":"Manufacture of motor vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cdb30752-4d3d-4e06-9d8b-44dc1aa69528","Code":"C.19","Title":"Manufacture of coke and refined petroleum products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0739038f-837a-4a98-962e-450ed013d882","Code":"G.46.61","Title":"Wholesale of agricultural machinery, equipment and supplies","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"efc77c32-ec0d-4620-a334-4522c7884dfe","Code":"Q.87.90","Title":"Other residential care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"78b8dbb8-b7ee-4af5-a251-45d1431dec5e","Code":"E.38.31","Title":"Dismantling of wrecks","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"ed4bd88a-977a-4977-9374-46569ed65e46","Code":"H.50.40","Title":"Inland freight water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"8cd50155-b48e-4ed3-9cae-466de54e2d44","Code":"C.27.3","Title":"Manufacture of wiring and wiring devices","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"085c487b-301a-4c97-a4b2-47271431f247","Code":"C.23.70","Title":"Cutting, shaping and finishing of stone","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"558b0390-ff93-4473-943f-472926d24487","Code":"E.38","Title":"Waste collection, treatment and disposal activities; materials recovery","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"8fafbbd2-c6ea-4b27-8d07-4751d05ebdd5","Code":"S.94.99","Title":"Activities of other membership organisations n.e.c.","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"0cdf7ad6-a15b-434e-ae3d-478f7e2a65df","Code":"D.35.3","Title":"Steam and air conditioning supply","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"9b2e8622-9405-40cb-8361-479aafc9544a","Code":"C.28.95","Title":"Manufacture of machinery for paper and paperboard production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"36b66ff0-3438-428b-89f2-4805280d90da","Code":"E.39.00","Title":"Remediation activities and other waste management services","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"b724dd5d-c41e-4b99-a17e-480956126ca3","Code":"J.61.1","Title":"Wired telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"eb73eda7-695e-4df1-bb03-485046e4238f","Code":"K.65.2","Title":"Reinsurance","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"c1cc397d-049a-459f-8502-48f3479d7ed7","Code":"F.41.10","Title":"Development of building projects","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"b0173dfd-9f5b-439e-b83f-497ac784a634","Code":"M.69.1","Title":"Legal activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"ec0da8c6-cbb2-4e39-adc9-497d0a77d202","Code":"M.70.1","Title":"Activities of head offices","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"572c1489-b0aa-4aa3-9e1b-4a2d50a698b3","Code":"A.02","Title":"Forestry and logging","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"ab2e056c-c8cf-488d-90e1-4a4a1e6bd4ac","Code":"P.85.52","Title":"Cultural education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"485ae9c0-767b-4d12-9441-4ab22c92b34d","Code":"C.13.9","Title":"Manufacture of other textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"80ec2931-a10e-4fc0-880d-4b36a2953649","Code":"A.01.27","Title":"Growing of beverage crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"fb1cd41f-c113-484b-9d33-4b3728932762","Code":"A.01.23","Title":"Growing of citrus fruits","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"77cd9e88-7a79-4683-8152-4b580a5e87f3","Code":"N.79.1","Title":"Travel agency and tour operator activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"796b1f46-e95c-4707-813c-4b73b90114a3","Code":"Q.86.22","Title":"Specialist medical practice activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"f04e17a2-a297-479a-9f7c-4b7715b32902","Code":"G.47.19","Title":"Other retail sale in non-specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"6591b4be-4365-4e05-9706-4b9f823d6813","Code":"C.20.13","Title":"Manufacture of other inorganic basic chemicals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"34733c3f-41b9-45f7-82d5-4bf86b74c7e2","Code":"D.35.30","Title":"Steam and air conditioning supply","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"ba97b708-42d1-467a-a0f5-4c9f56e625af","Code":"J.62.01","Title":"Computer programming activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"8e2a40ac-6efe-417b-845e-4cb06966d8c8","Code":"P.85","Title":"Education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"bc9badf3-86c3-4e5b-8251-4ce52bea5c2f","Code":"C.28.3","Title":"Manufacture of agricultural and forestry machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4cb28273-df03-4b00-a889-4cf41cb64775","Code":"C.20.3","Title":"Manufacture of paints, varnishes and similar coatings, printing ink and mastics","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"76040f97-caa5-40dc-8a59-4d689b369292","Code":"C.24.42","Title":"Aluminium production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"dc4a7209-e182-42c2-bf5f-4df0583ea59b","Code":"F.43.12","Title":"Site preparation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"c3912620-3dc1-4c48-b9a2-4e6cd1462106","Code":"K.64.19","Title":"Other monetary intermediation","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"cee0c740-1874-485d-9926-4ea14df312dc","Code":"C.13.20","Title":"Weaving of textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e32c495e-e607-4550-adb1-4ebfb351b796","Code":"C.20.41","Title":"Manufacture of soap and detergents, cleaning and polishing preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b0c861b7-5349-4819-8ac5-4eeaaca84d5d","Code":"F.42.2","Title":"Construction of utility projects","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"1f090f02-03b0-4d6f-b9f6-4f09009f9b89","Code":"N.82.91","Title":"Packaging activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"63c610d4-70c7-4c51-9176-4f109185c5f8","Code":"H.49.2","Title":"Freight rail transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"3a50f6c0-eb5c-42ee-86e7-4f2dc5802da8","Code":"C.23.51","Title":"Manufacture of cement","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6ad2ca69-9be8-49e7-a5ed-4f7ef6d5c1a8","Code":"F.42.13","Title":"Construction of bridges and tunnels","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"4885c715-130c-44cb-859d-4f8ab302c6d2","Code":"C.28.22","Title":"Manufacture of lifting and handling equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"07eb8cf1-4ac6-4a97-a533-4fc580f4104a","Code":"N.81","Title":"Services to buildings and landscape activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"266603d6-3161-4cd9-bf4b-50087b2101af","Code":"F.43.33","Title":"Floor and wall covering","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"1cbae40b-edff-42c2-baef-502000910823","Code":"R.91.03","Title":"Operation of historical sites and buildings and similar visitor attractions","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"656478e0-d40b-4cd9-b47e-508b3a387524","Code":"U.99.00","Title":"Activities of extraterritorial organisations and bodies","IndustryId":"c128e241-6aa3-4c82-b8ed-bb6932f96cf6"}
+{"Id":"1adbb880-e36e-4fd6-a09b-5124a82aa07c","Code":"F.43.13","Title":"Test drilling and boring","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"9601f5fd-8cf2-410e-b8fd-517764f868b2","Code":"K.65.30","Title":"Pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"52a98d42-7d84-411f-ad4f-51b907108c92","Code":"R.90.04","Title":"Operation of arts facilities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"d48b533e-b0d7-4902-86dc-51d312121119","Code":"S.95.21","Title":"Repair of consumer electronics","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"83212b84-3e64-40db-aece-52b0ea324e28","Code":"F.43.2","Title":"Electrical, plumbing and other construction installation activities","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"5e698cc6-2680-4287-8fc2-52f3457e2d05","Code":"G.47.41","Title":"Retail sale of computers, peripheral units and software in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"5dc00504-9a36-4999-ac87-537ba9836bb4","Code":"M.74.30","Title":"Translation and interpretation activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"25157d25-3627-4fbc-9549-539fc2417c82","Code":"J.62","Title":"Computer programming, consultancy and related activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"cf62f3c7-5a6d-4bfa-a311-548f6cf7457a","Code":"S.96.0","Title":"Other personal service activities","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"381c1c95-3e92-47e6-983f-55267e3ba367","Code":"H.53.2","Title":"Other postal and courier activities","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"dfcc2115-042f-4757-99e5-555f047d1c5e","Code":"C.23.11","Title":"Manufacture of flat glass","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"82547ff7-bae0-44fa-9345-55bf906924f1","Code":"T.97","Title":"Activities of households as employers of domestic personnel","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"7143374b-73db-4726-97e0-55c11bd2e03f","Code":"C.23.31","Title":"Manufacture of ceramic tiles and flags","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d6c1003b-9495-4f92-b32c-55e06a1dc788","Code":"C.25","Title":"Manufacture of fabricated metal products, except machinery and equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1a68e5a9-d444-4ff4-81aa-56929809eb4a","Code":"J.61.10","Title":"Wired telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"3c9b21c5-a752-4e4b-80eb-56af62d498e0","Code":"G.46.52","Title":"Wholesale of electronic and telecommunications equipment and parts","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"0c4d5afb-3429-4270-9a0b-575c55fcfbe4","Code":"C.32.1","Title":"Manufacture of jewellery, bijouterie and related articles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"086869ac-57e9-461b-8696-57608d2d1037","Code":"N.82.30","Title":"Organisation of conventions and trade shows","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"a8f7b1a3-357d-4800-942f-579d33f98b98","Code":"S.95.2","Title":"Repair of personal and household goods","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"fa0b1d37-aa4f-41ae-b16e-58828080d3b6","Code":"L.68.3","Title":"Real estate activities on a fee or contract basis","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"eb14db6f-d116-4eab-acfb-58a5c8c3e3a5","Code":"C.32.99","Title":"Other manufacturing n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"06a85ede-ef9a-423a-89b8-5913ea52b3d2","Code":"C.27.31","Title":"Manufacture of fibre optic cables","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b0eef0ff-b1f5-4da7-acf3-5935609f06e1","Code":"G.46.48","Title":"Wholesale of watches and jewellery","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"fb874b76-ce5b-4312-8f7a-59810136811b","Code":"D.35.11","Title":"Production of electricity","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"18203ca5-c128-4d4d-ba7a-59c8e6644d42","Code":"G.46.36","Title":"Wholesale of sugar and chocolate and sugar confectionery","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"5172fbfc-3ec6-4b3d-82a7-59cecad67298","Code":"G.47.73","Title":"Dispensing chemist in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"9509f181-d6ba-4f1f-9230-59d70bb2f512","Code":"C.11.0","Title":"Manufacture of beverages","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7a503dc0-44b4-4440-9386-59d9ffcc2ede","Code":"H.49.42","Title":"Removal services","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"f22fa918-3a4d-454c-b9d9-5a0739bf5782","Code":"H.51.10","Title":"Passenger air transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"6ed287e4-6507-4338-8591-5a1d80c6ab77","Code":"C.10.51","Title":"Operation of dairies and cheese making","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5af74271-603b-47ef-bef1-5a35bef5b4df","Code":"I.56.21","Title":"Event catering activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"9ae21e9b-f4d9-40ba-96cf-5a7ccf474a02","Code":"F.42.9","Title":"Construction of other civil engineering projects","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"a907b740-1e94-423c-927a-5aa409623811","Code":"C.30.30","Title":"Manufacture of air and spacecraft and related machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"68e50443-02d1-492e-a4f0-5ab7c2d7c44f","Code":"J.61.3","Title":"Satellite telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"7d9e623b-28c6-4610-8f09-5ac27e430ac8","Code":"N.82.99","Title":"Other business support service activities n.e.c.","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"98fd4269-9ea1-4475-a476-5b0e20443955","Code":"C.16.29","Title":"Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"27e49980-1d3b-4471-82a3-5b20130525ab","Code":"G.46.77","Title":"Wholesale of waste and scrap","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"95cb0ee9-8384-45a0-8876-5bc3a2f235ce","Code":"K.65.3","Title":"Pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"368e7a9a-f4df-449d-8c19-5c7f320b6a2f","Code":"C.27.12","Title":"Manufacture of electricity distribution and control apparatus","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5112006c-096e-43d9-91aa-5c8153026bb7","Code":"C.22","Title":"Manufacture of rubber and plastic products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b6ea8a23-b690-4a5c-b178-5ccd03658054","Code":"C.30.20","Title":"Manufacture of railway locomotives and rolling stock","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"dfb1e488-9de0-4aa2-8e32-5d67404c8956","Code":"C.10.7","Title":"Manufacture of bakery and farinaceous products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b429c18a-5a68-42a6-a295-5da997378f99","Code":"O.84.30","Title":"Compulsory social security activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"464f2019-0036-4332-b9d8-5dccd66a56b5","Code":"C.29.2","Title":"Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6163119a-23de-48f6-b118-5e232dd133de","Code":"C.23.7","Title":"Cutting, shaping and finishing of stone","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"18763092-93fe-4b6d-816a-5e44088edf4f","Code":"H.49.1","Title":"Passenger rail transport, interurban","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"3b8db5c4-7c06-4ca3-a987-5e4b38c074e0","Code":"H.51","Title":"Air transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"dc1ef2f4-728b-49ac-b882-5e5202f8680b","Code":"A.01.16","Title":"Growing of fibre crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"d0d86af9-3160-440d-9380-5e816644f793","Code":"N.77.39","Title":"Renting and leasing of other machinery, equipment and tangible goods n.e.c.","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"1370569f-55ed-439c-9d2d-5eb97d647ff6","Code":"A.01.4","Title":"Animal production","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"06b979e2-9b4d-42cb-8eed-5ec27481cd92","Code":"C.28.1","Title":"Manufacture of general-purpose machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"844f0da1-95fb-4b4b-a6c6-5ef530753f81","Code":"L.68.2","Title":"Renting and operating of own or leased real estate","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"127771b5-b008-4bc3-a0a8-5f0eb8104a3b","Code":"C.27.9","Title":"Manufacture of other electrical equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6284775f-cba5-4d1d-96d6-5f66e222797e","Code":"L.68.10","Title":"Buying and selling of own real estate","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"c2906f06-94bc-43b0-ba34-5f875554a0b7","Code":"A.01.14","Title":"Growing of sugar cane","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"a1f3220a-4800-4a08-961e-5f88cedf9029","Code":"G.47.51","Title":"Retail sale of textiles in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"cafea931-2b54-4a6f-b8ff-5fde1c13bbe0","Code":"C.10.32","Title":"Manufacture of fruit and vegetable juice","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ab13221c-a0cb-4c38-9064-60524ab8ba94","Code":"F.42.21","Title":"Construction of utility projects for fluids","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"c60e9371-55f4-425e-8095-60552011dd9f","Code":"C.15.2","Title":"Manufacture of footwear","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c1f01766-ffdb-452f-a690-60779d43103e","Code":"F.43.39","Title":"Other building completion and finishing","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"923bee99-48ec-499d-8d62-60807a675815","Code":"G.47.61","Title":"Retail sale of books in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"1dcb394f-1a41-4ced-ab43-6084c529bc41","Code":"C.23.6","Title":"Manufacture of articles of concrete, cement and plaster","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c76bfad1-e31a-4c46-bfc0-6122dbab0000","Code":"A.01.61","Title":"Support activities for crop production","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"451eaf88-f6ce-4ebf-926e-612b9e8d292b","Code":"C.33.13","Title":"Repair of electronic and optical equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"169a5175-31da-45c3-81c2-61434129f59d","Code":"G.47.24","Title":"Retail sale of bread, cakes, flour confectionery and sugar confectionery in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ceba35a4-13a6-4eb1-86e6-61bfa19a3126","Code":"J.61.2","Title":"Wireless telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"94e6c07f-6176-4349-b920-6203cce04efd","Code":"M.72","Title":"Scientific research and development","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"b74b88e7-44ab-4d63-942d-621034afaa5c","Code":"C.11","Title":"Manufacture of beverages","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1339c008-7bd6-4c43-826e-62dcbe1c2cac","Code":"A.01.30","Title":"Plant propagation","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"5b6854b3-ca78-44d7-a1ce-63426cf054c4","Code":"C.18.11","Title":"Printing of newspapers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c16190d0-930c-4474-8c68-6348d9524a6d","Code":"C.26.7","Title":"Manufacture of optical instruments and photographic equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"da0c242e-64c5-4e7a-824f-63c406c4bc4b","Code":"H.52.22","Title":"Service activities incidental to water transportation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"236d3f6a-f5c8-42fd-9127-6440e3c077f2","Code":"I.55.30","Title":"Camping grounds, recreational vehicle parks and trailer parks","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"e0a2f515-e596-4187-8d51-64c0552c6e2b","Code":"B.07.29","Title":"Mining of other non-ferrous metal ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"1a7040f4-3915-407e-9436-6523d2800b5e","Code":"M.72.1","Title":"Research and experimental development on natural sciences and engineering","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"ad5820f4-cc8c-4e2e-bf92-65390d4420ce","Code":"G.47.76","Title":"Retail sale of flowers, plants, seeds, fertilisers, pet animals and pet food in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"12e58e3b-d268-4f48-a5fb-65a61b122308","Code":"C.27.11","Title":"Manufacture of electric motors, generators and transformers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ce3b585c-0c0f-49d7-99d5-66bda369b236","Code":"C.14.39","Title":"Manufacture of other knitted and crocheted apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6ad1be80-cfc6-4153-ac5c-670f54e6b595","Code":"N.81.1","Title":"Combined facilities support activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"a026411c-06df-4e88-b791-671de5113ece","Code":"G.46.13","Title":"Agents involved in the sale of timber and building materials","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"5466fa8a-fc13-4e89-98e5-67710732ab75","Code":"C.20.17","Title":"Manufacture of synthetic rubber in primary forms","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0d35aade-b715-44d8-8981-67c8ce7d7cc4","Code":"C.27.4","Title":"Manufacture of electric lighting equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cd317a24-a4eb-4633-880d-681d3a9e3b94","Code":"N.82.11","Title":"Combined office administrative service activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"be105ce2-9280-483d-95f7-68a7655a1273","Code":"G.47.75","Title":"Retail sale of cosmetic and toilet articles in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"3c86ef91-1212-4b18-8169-68bba353b8b8","Code":"J.63.9","Title":"Other information service activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"fe842928-0618-4895-8ce4-68d1395e99e8","Code":"J.63.11","Title":"Data processing, hosting and related activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"ded23fe8-1b7d-4dcf-9828-68d4ba08944f","Code":"G.46.37","Title":"Wholesale of coffee, tea, cocoa and spices","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"522a1f0c-0d51-4533-bb55-6924a6f46798","Code":"L.68","Title":"Real estate activities","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"bd96fbd4-ee90-4c1e-95ed-697a31376834","Code":"G.47.53","Title":"Retail sale of carpets, rugs, wall and floor coverings in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"18e9cd53-6467-462a-a5fe-69b00fb3e07e","Code":"C.24.1","Title":"Manufacture of basic iron and steel and of ferro-alloys","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5f398200-465b-4d21-9893-6a3290914a35","Code":"M.73.2","Title":"Market research and public opinion polling","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"57902318-a3de-44eb-87b4-6a69edcceb17","Code":"N.82.92","Title":"Activities of collection agencies and credit bureaus","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"05be5f8c-fcc4-4466-a49b-6aeb44b67f3f","Code":"G.45","Title":"Wholesale and retail trade and repair of motor vehicles and motorcycles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"2def9460-a5dd-4d71-a20d-6b1f680dfe9b","Code":"C.13.1","Title":"Preparation and spinning of textile fibres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"28f1a960-1944-4cde-9d17-6b8494fc7cb1","Code":"G.47.81","Title":"Retail sale via stalls and markets of food, beverages and tobacco products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"e09425f3-7e05-413f-bf18-6be43b718819","Code":"C.25.94","Title":"Manufacture of fasteners and screw machine products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ac863440-d872-4076-962e-6cb7366b8d0e","Code":"F.43.3","Title":"Building completion and finishing","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"be29befd-7b13-4df4-8293-6cc6765930b2","Code":"O.84.23","Title":"Justice and judicial activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"7bb94615-81aa-479a-9d81-6cfcda826df8","Code":"N.81.30","Title":"Landscape service activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"3cacbad6-65c0-4998-8087-6d861a55d83a","Code":"C.12.00","Title":"Manufacture of tobacco products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5c54661f-8fbb-472b-bb1c-6dbd67d05c98","Code":"G.46.11","Title":"Agents involved in the sale of agricultural raw materials, live animals, textile raw materials and semi-finished goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"878de6c0-64b6-4144-bb4f-6edf7f960e27","Code":"C.11.06","Title":"Manufacture of malt","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c7e6c9c1-b493-4471-95cd-70084fc9e47b","Code":"P.85.3","Title":"Secondary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"4114bbe6-a4c4-4fb1-8dd8-7035b23846c6","Code":"M.71","Title":"Architectural and engineering activities; technical testing and analysis","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"6d02b390-2e4c-4543-a8bc-707181c74f9e","Code":"G.46.46","Title":"Wholesale of pharmaceutical goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"b3e84d84-85a7-4758-b062-7115b8d2aba4","Code":"C.20.20","Title":"Manufacture of pesticides and other agrochemical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c569e8bb-62c5-41b0-bb1c-715a4368fd52","Code":"H.52.21","Title":"Service activities incidental to land transportation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"400a13f6-1f98-41b0-971e-7188ef1cb1f6","Code":"M.73.11","Title":"Advertising agencies","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"08119231-a8a3-4b08-9ab5-72284784619c","Code":"A.01.43","Title":"Raising of horses and other equines","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"670f5b03-735b-4e78-ac21-72459d9680c4","Code":"C.19.20","Title":"Manufacture of refined petroleum products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"00e5a703-0378-456f-be73-726c3d03b1b6","Code":"C.13.92","Title":"Manufacture of made-up textile articles, except apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"fff9740e-335f-4721-9108-726ce9d57ea1","Code":"B.06","Title":"Extraction of crude petroleum and natural gas","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"c212d577-e62f-44d6-84cc-726f8e689b3e","Code":"H.49.10","Title":"Passenger rail transport, interurban","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"42e82290-c087-4b80-b63a-72ba46d71417","Code":"C.19.2","Title":"Manufacture of refined petroleum products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cb8223c7-6a3e-4428-89c2-72e748d9d5b6","Code":"C.28.9","Title":"Manufacture of other special-purpose machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"999e28dc-d7e2-4bb4-a93e-7394ddc11b10","Code":"Q.86.9","Title":"Other human health activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"2eb45eb3-d847-437b-b49c-739f956f152b","Code":"P.85.42","Title":"Tertiary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"4f664bb0-a7e8-4f3c-aced-74792bb36b13","Code":"O.84","Title":"Public administration and defence; compulsory social security","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"deaee0a1-5c07-4ebb-824c-74c5a6e5c8bd","Code":"M.70.22","Title":"Business and other management consultancy activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"2dfa46f7-1589-47b8-a4ba-75159a21dca6","Code":"G.46.15","Title":"Agents involved in the sale of furniture, household goods, hardware and ironmongery","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"775ec514-f8c8-48c2-8a3f-754076acf795","Code":"N.77.35","Title":"Renting and leasing of air transport equipment","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"7fa9f559-d249-498a-a8e8-7592b6cb956a","Code":"C.29.10","Title":"Manufacture of motor vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9ca55f93-c449-42fa-bde8-75a97f0c2493","Code":"C.33.20","Title":"Installation of industrial machinery and equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"53d0020b-0710-4f7d-8ca1-7693738cdbd9","Code":"Q.87.10","Title":"Residential nursing care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"2bf0f051-773f-4bdf-b9a4-7696bc528e35","Code":"Q.87.20","Title":"Residential care activities for mental retardation, mental health and substance abuse","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"3d5d5043-bd5d-421a-8282-76ba3972584a","Code":"M.69.2","Title":"Accounting, bookkeeping and auditing activities; tax consultancy","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"798b4d65-ec9b-4d94-baa7-76ecb32e6cc4","Code":"Q.87.3","Title":"Residential care activities for the elderly and disabled","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"0b582ff5-a274-47d3-bf20-7724db7149c6","Code":"C.23.32","Title":"Manufacture of bricks, tiles and construction products, in baked clay","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"153cc24b-da42-41e5-b679-7733736b7655","Code":"C.26.30","Title":"Manufacture of communication equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1d260c5a-f676-43f1-a9a8-7753e9b95442","Code":"M.75.00","Title":"Veterinary activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"aafa11d1-a968-4ad6-8a5b-775f9c636f92","Code":"G.46.32","Title":"Wholesale of meat and meat products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"991fa3c0-fe6f-4019-8bc8-77b9b3136ca0","Code":"A.01.44","Title":"Raising of camels and camelids","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"8a82a5b0-3348-4105-b617-783fa3dacc8b","Code":"O.84.2","Title":"Provision of services to the community as a whole","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"1c58dac9-9ff9-4919-a6bc-78534f31e92c","Code":"R.91.01","Title":"Library and archives activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"8fd90dc5-f186-4250-9d33-7876da76036a","Code":"A.01.28","Title":"Growing of spices, aromatic, drug and pharmaceutical crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"f0b2fd8a-d7ba-4b98-894d-78a3790e9844","Code":"C.10.72","Title":"Manufacture of rusks and biscuits; manufacture of preserved pastry goods and cakes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"97276ac9-c19c-4b36-b606-790ea46b6598","Code":"N.77.11","Title":"Renting and leasing of cars and light motor vehicles","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"1007196f-93fd-479a-8dae-792a05d100e1","Code":"A.01.29","Title":"Growing of other perennial crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"d658ae9b-bb13-47f7-bd66-7944286b11e2","Code":"N.78","Title":"Employment activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"4afcf4e4-e663-46ba-ad72-799653d0415f","Code":"G.45.20","Title":"Maintenance and repair of motor vehicles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"48125e7e-b1dd-40e3-9747-799dcac8b587","Code":"C.28","Title":"Manufacture of machinery and equipment n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e14dd9d1-9dc9-467b-9f2a-79b4210337e1","Code":"Q.86.2","Title":"Medical and dental practice activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"4f9b92d3-6296-445c-982b-79d26c4e78f6","Code":"A.02.1","Title":"Silviculture and other forestry activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"0ad8f4be-1fb1-420e-a640-7a1d8d88d512","Code":"A.01.49","Title":"Raising of other animals","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"3916c518-34bc-4706-ab41-7a5a21fc5e88","Code":"Q.88.99","Title":"Other social work activities without accommodation n.e.c.","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"15bda167-7a46-4fe8-9654-7a67e70ab5cb","Code":"C.27.5","Title":"Manufacture of domestic appliances","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7428b9fe-32b5-48d1-bf93-7aaed0dbb336","Code":"R.93.21","Title":"Activities of amusement parks and theme parks","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"02e9c18c-4a38-45f8-841e-7ac9a4a32b7f","Code":"O.84.21","Title":"Foreign affairs","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"ff9fcfb3-e087-4b24-9f65-7ae916ba266f","Code":"A.03.12","Title":"Freshwater fishing","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"58ae76be-fe69-4b03-b94c-7bb9121ce02d","Code":"C.25.62","Title":"Machining","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a1f34658-faec-4e1b-b789-7bd2bdcb64a6","Code":"K.64.2","Title":"Activities of holding companies","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"c66ce3e6-25ff-4769-a8f8-7be804a0a39c","Code":"C.20.59","Title":"Manufacture of other chemical products n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"85b36566-7e0f-4f21-b782-7c73f1d95924","Code":"R.93","Title":"Sports activities and amusement and recreation activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"752c1e6a-21ef-4075-9445-7d05755366d6","Code":"C.17.22","Title":"Manufacture of household and sanitary goods and of toilet requisites","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d0c5a8b7-5160-4e23-b12e-7d07cd353d6f","Code":"G.46.64","Title":"Wholesale of machinery for the textile industry and of sewing and knitting machines","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"febaceab-2b5a-42db-8f8f-7d28e42ed139","Code":"G.45.1","Title":"Sale of motor vehicles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a998be2b-fa7c-47d1-99ed-7d90dc578de4","Code":"C.25.50","Title":"Forging, pressing, stamping and roll-forming of metal; powder metallurgy","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4b543b79-88d0-47d5-8ac1-7d910138aa46","Code":"H.49.4","Title":"Freight transport by road and removal services","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"a932342f-2331-4044-a248-7dbdf16be39a","Code":"C.21.20","Title":"Manufacture of pharmaceutical preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6ac1730a-0f4d-48e7-aded-7e2780c8fea3","Code":"M.72.20","Title":"Research and experimental development on social sciences and humanities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"1b4cde5d-0071-4bb1-a975-7e2c127766f3","Code":"G.46.24","Title":"Wholesale of hides, skins and leather","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"3ba682ae-77ca-4119-961c-7e682c6032fa","Code":"C.10","Title":"Manufacture of food products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f168f811-3642-46c3-b83c-7ee0de6a35c8","Code":"A.01.47","Title":"Raising of poultry","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"cf9b4182-0bf0-4d84-a5d1-7f574599feb6","Code":"C.27.52","Title":"Manufacture of non-electric domestic appliances","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c1a97935-5b3b-4213-8fc9-8069cc19ba6a","Code":"F.43.21","Title":"Electrical installation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"5559eac4-077f-4f63-b184-80856176173a","Code":"N.80.20","Title":"Security systems service activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"90006b02-1399-41d3-aa67-809bef7b8fcf","Code":"G.47.21","Title":"Retail sale of fruit and vegetables in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ced2f9ea-a92c-4264-8e8b-80c20e001d84","Code":"R.90.02","Title":"Support activities to performing arts","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"e48ade6a-70cc-470c-8492-80eb364642ea","Code":"R.90.01","Title":"Performing arts","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"ce41a6c7-2fc1-4acf-a0d8-80ef15c09423","Code":"F.43.31","Title":"Plastering","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"ffd07a63-eb6a-4f62-9f46-81a0d1c0b48b","Code":"C.24.44","Title":"Copper production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f7b3ac60-9573-4447-afe8-81d1a2f494bf","Code":"J.58.19","Title":"Other publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"e86a8f70-df56-4cb8-a2b2-821b1ad8c6e6","Code":"F.42.1","Title":"Construction of roads and railways","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"8a92c415-d92e-4535-a0a1-827c7362f984","Code":"C.20.12","Title":"Manufacture of dyes and pigments","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1e36706b-8324-4c5c-921b-830262d62d26","Code":"N.80.1","Title":"Private security activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"5476f308-af09-4d15-ba7a-833bddf02474","Code":"L.68.32","Title":"Management of real estate on a fee or contract basis","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"2256faaa-c218-4314-8ad7-834c279837f3","Code":"C.25.3","Title":"Manufacture of steam generators, except central heating hot water boilers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"346cec42-d537-4e14-b9c2-8375f8bb5820","Code":"C.30.99","Title":"Manufacture of other transport equipment n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0ca52487-45b8-4707-8133-837c09ebc82a","Code":"B.09.90","Title":"Support activities for other mining and quarrying","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"60fe7a2e-96eb-41cb-84a9-83b73164fa1d","Code":"C.16.2","Title":"Manufacture of products of wood, cork, straw and plaiting materials","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a8332ac7-0f2d-4472-97a9-83da27923eeb","Code":"G.45.11","Title":"Sale of cars and light motor vehicles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"9e24244c-4cff-43ef-9431-83dd90b45090","Code":"I.55.2","Title":"Holiday and other short-stay accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"6a068bf0-60d0-4bf1-a6dc-83ead0742408","Code":"C.20.2","Title":"Manufacture of pesticides and other agrochemical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"72b325a9-8fde-4e85-9213-8423acf05bc1","Code":"G.46.23","Title":"Wholesale of live animals","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"78cc739a-470d-4674-891d-8473445d083f","Code":"C.10.62","Title":"Manufacture of starches and starch products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ad338dc3-0ae0-46dd-9ea9-849c4716b527","Code":"K.66.19","Title":"Other activities auxiliary to financial services, except insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"740dc432-abc4-4b08-b5ae-853a50008bda","Code":"C.24.2","Title":"Manufacture of tubes, pipes, hollow profiles and related fittings, of steel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"99a6ac62-b892-49ad-a7a0-85c16d0eb74e","Code":"C.29.31","Title":"Manufacture of electrical and electronic equipment for motor vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2334e9c5-7ab1-4fbf-b2f3-85c7569ffef4","Code":"N.77.3","Title":"Renting and leasing of other machinery, equipment and tangible goods","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"c5dae5c1-befd-42fc-ba6a-85efa1309708","Code":"Q.88.1","Title":"Social work activities without accommodation for the elderly and disabled","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"fbbb1f0c-45d9-4e54-99fe-85f75008e2a6","Code":"G.46.73","Title":"Wholesale of wood, construction materials and sanitary equipment","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f37c7eec-c318-4b34-8200-861c07b3d0fc","Code":"C.23.61","Title":"Manufacture of concrete products for construction purposes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"991d0b0a-707e-4167-adfc-865a6f7853e7","Code":"B.05.1","Title":"Mining of hard coal","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"e21d1b4b-1011-41f9-81cf-867858adab72","Code":"C.12.0","Title":"Manufacture of tobacco products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1e59ffb5-a80b-4bc9-b59d-868298e5680e","Code":"N.77.22","Title":"Renting of video tapes and disks","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"7a170121-6daf-4e7f-b6aa-868610c7d93e","Code":"C.22.23","Title":"Manufacture of builders’ ware of plastic","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"99cf35ee-b8ff-449e-accf-86bde4b237cb","Code":"T.97.0","Title":"Activities of households as employers of domestic personnel","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"f31cd5a6-2dc7-4618-88d7-86ce81f21b18","Code":"C.24.43","Title":"Lead, zinc and tin production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"67607257-8b76-4228-aca1-86ee9af82d1b","Code":"G.47.7","Title":"Retail sale of other goods in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"bf617330-5a42-42d1-a5c2-87455ffb6c8e","Code":"C.10.6","Title":"Manufacture of grain mill products, starches and starch products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a04d2e21-6294-4d50-9bee-87527def6652","Code":"G.47.3","Title":"Retail sale of automotive fuel in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"2b335a95-7c26-4518-a057-8757bb5cfc1f","Code":"M.73.1","Title":"Advertising","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"504c6032-3906-4488-bb9e-876e399701c0","Code":"C.10.9","Title":"Manufacture of prepared animal feeds","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cca36f94-d09e-400f-8e9a-87bbe28cf7d6","Code":"C.10.8","Title":"Manufacture of other food products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2425f9e8-ec5d-45f1-8d0a-87fe1cf04585","Code":"B.08.11","Title":"Quarrying of ornamental and building stone, limestone, gypsum, chalk and slate","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"91dd8e26-598b-411e-90d7-880098fe6c6a","Code":"A.02.20","Title":"Logging","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"fee7a436-7493-4bf4-93a8-88f59a6a213a","Code":"M.69.20","Title":"Accounting, bookkeeping and auditing activities; tax consultancy","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"461d5075-eff2-4797-88ae-8925af7dbbbe","Code":"C.28.11","Title":"Manufacture of engines and turbines, except aircraft, vehicle and cycle engines","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c1f3983b-628c-43f5-ba1c-8938b1a5ca81","Code":"N.79","Title":"Travel agency, tour operator and other reservation service and related activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"4c241ca8-e569-4891-8df1-89a2e18b0c34","Code":"C.27.40","Title":"Manufacture of electric lighting equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5194ed27-46a7-40d8-9a86-89c2429ee106","Code":"E.38.2","Title":"Waste treatment and disposal","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"29a84d1d-f412-4bd1-8cc4-8a012449c0b8","Code":"C.13.3","Title":"Finishing of textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6d47289a-2cdb-48e7-8f57-8a64f2c86d02","Code":"C.10.61","Title":"Manufacture of grain mill products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a84ed78a-1ef2-43c4-8d7e-8a707c8ffe39","Code":"A.01.12","Title":"Growing of rice","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"ccb35311-2399-4dd8-bbc9-8a98ed58c3b8","Code":"H.52.23","Title":"Service activities incidental to air transportation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"8d3256e1-0e5b-4e31-bcbb-8ac2c35242b8","Code":"S.95.12","Title":"Repair of communication equipment","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"c5557d9a-fe14-4da5-b450-8ac87ed9f64a","Code":"C.33","Title":"Repair and installation of machinery and equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ca1a4a80-ae55-402b-8622-8afee96936a8","Code":"E.37.00","Title":"Sewerage","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"3e0bc6f3-dcd2-4871-b02f-8b5dad70e9a3","Code":"C.16.22","Title":"Manufacture of assembled parquet floors","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"fe14975e-bd86-46e3-b630-8ba4fcb831d6","Code":"J.62.03","Title":"Computer facilities management activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"7e95cd8c-1bf5-4913-ad98-8bd4ea25eccd","Code":"G.47.26","Title":"Retail sale of tobacco products in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"71f612b0-fc59-4f48-a044-8bf85511deef","Code":"C.28.25","Title":"Manufacture of non-domestic cooling and ventilation equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cf9e3829-1737-49b2-8363-8c1f8cc39539","Code":"C.23.62","Title":"Manufacture of plaster products for construction purposes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cc5d8f84-ee3e-4385-8764-8cc9aa2c82ce","Code":"R.92","Title":"Gambling and betting activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"dfbb2f60-525f-4577-9715-8ceab99b98fc","Code":"C.14","Title":"Manufacture of wearing apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f4737bf8-1735-452c-97d3-8dcca740a90c","Code":"N.82.2","Title":"Activities of call centres","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"9176c22b-1019-433e-9951-8e5c561b3620","Code":"G.47.82","Title":"Retail sale via stalls and markets of textiles, clothing and footwear","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a9500fc1-25b1-49a6-8855-8e6c944e67cb","Code":"E.39","Title":"Remediation activities and other waste management services","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"9a82b411-a2f3-4a6a-90c2-8eb2d9020c47","Code":"C.10.1","Title":"Processing and preserving of meat and production of meat products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f1c5fcb1-b74b-4756-a8f4-8ed9558a3351","Code":"I.56.10","Title":"Restaurants and mobile food service activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"fb2c1b1f-4b23-46dd-8dd9-8eee81ab4ff6","Code":"M.74.90","Title":"Other professional, scientific and technical activities n.e.c.","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"f62c1efc-8c26-4369-bfe9-8f2f4458d4d1","Code":"S.95.22","Title":"Repair of household appliances and home and garden equipment","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"32af3bbe-7f72-4d24-a3e1-8fa8ccc9d6fe","Code":"R.91.04","Title":"Botanical and zoological gardens and nature reserves activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"78e57512-a129-4d7e-94bb-8ffa967fdc49","Code":"C.26.51","Title":"Manufacture of instruments and appliances for measuring, testing and navigation","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a3d6d61f-0458-40f6-8ece-902dcb3411d4","Code":"M.74.3","Title":"Translation and interpretation activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"ec87ab4c-5b88-440b-9095-905b2f72ad1a","Code":"S.95.11","Title":"Repair of computers and peripheral equipment","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"af6bee21-8857-45b4-ac32-90b6383a3a77","Code":"A.02.3","Title":"Gathering of wild growing non-wood products","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"65e2736b-38f4-45fd-93a0-90bbd2665c23","Code":"B.09.9","Title":"Support activities for other mining and quarrying","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"c8756954-9d7c-4099-bdba-90d5ec2a2044","Code":"C.15.20","Title":"Manufacture of footwear","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2018c16d-0bd6-4eb3-9967-90dc6b70f7a5","Code":"D.35.2","Title":"Manufacture of gas; distribution of gaseous fuels through mains","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"4c2cd02f-74d0-4e97-b948-90fb724eb282","Code":"C.25.91","Title":"Manufacture of steel drums and similar containers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e633c6a3-f4dd-4273-83a9-91256b1b80fd","Code":"G.46.69","Title":"Wholesale of other machinery and equipment","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"7659b743-ae7e-407f-9b73-9152866464d8","Code":"Q.86.90","Title":"Other human health activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"40bba745-3a35-4aaa-a724-91d1357f9984","Code":"H.51.22","Title":"Space transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"b595fbc1-625a-4abb-9ea0-91ec33a73efa","Code":"C.26.2","Title":"Manufacture of computers and peripheral equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f4ca50de-a944-4dd7-a457-9222ab442ace","Code":"G.46.9","Title":"Non-specialised wholesale trade","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"c31c9073-1659-4a37-894f-92516298b9e9","Code":"C.33.19","Title":"Repair of other equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9c176630-6e85-40d6-b236-9252c4abcd55","Code":"N.78.20","Title":"Temporary employment agency activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"e4b25c55-f177-4e45-9802-9274ae9850a1","Code":"M.70","Title":"Activities of head offices; management consultancy activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"53b582cd-d82e-4562-b811-92c0ce1a64e2","Code":"C.23","Title":"Manufacture of other non-metallic mineral products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"07fcc6f5-8652-4e4b-8127-92ee56f98f3e","Code":"C.30.1","Title":"Building of ships and boats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"dae327be-005c-487b-8a95-93d9a19199e2","Code":"C.27.32","Title":"Manufacture of other electronic and electric wires and cables","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"732253c4-b054-4b38-9f86-943dda33adb3","Code":"G.47.1","Title":"Retail sale in non-specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"0113fa7d-c168-4502-b383-94869b344051","Code":"F.43.9","Title":"Other specialised construction activities","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"8e5b9475-c00c-4986-9cf6-9487fd40f6ab","Code":"C.23.14","Title":"Manufacture of glass fibres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"21d352a0-aee6-482b-a2eb-9514a6c850ba","Code":"I.55","Title":"Accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"de3e9d5c-a8d1-4f34-bec9-9540e3ea17e9","Code":"F.41.2","Title":"Construction of residential and non-residential buildings","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"82b028b6-e6a8-4eaf-92be-95b0694f926a","Code":"H.49.50","Title":"Transport via pipeline","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"dceb2e31-90c6-4f77-8eb0-964d1089b3f7","Code":"A.01.21","Title":"Growing of grapes","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"cc4deca7-63de-4d5b-a6ce-96708d9b4d4d","Code":"F.42.12","Title":"Construction of railways and underground railways","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"c65831fa-088d-448f-a784-967b1839a7f2","Code":"G.47.71","Title":"Retail sale of clothing in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"db4a9215-27a9-42bf-a942-969a35ece102","Code":"C.28.2","Title":"Manufacture of other general-purpose machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e4767ba7-fde8-4e43-8da2-9726204a3d87","Code":"T.98.1","Title":"Undifferentiated goods-producing activities of private households for own use","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"793584ea-75a1-4e8f-b8ab-97651a860103","Code":"N.77.34","Title":"Renting and leasing of water transport equipment","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"7ca46d41-6534-40e5-be56-97706864314f","Code":"C.33.11","Title":"Repair of fabricated metal products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c6af5f29-5457-4bf3-99d6-9787a07a7dc8","Code":"B.08.1","Title":"Quarrying of stone, sand and clay","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"e0470485-1396-43aa-9187-9837181d7509","Code":"G.47.25","Title":"Retail sale of beverages in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ebfa668e-4a22-44c2-846e-9859bcfc6a17","Code":"R.91.02","Title":"Museums activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"a6641753-d41c-4aac-97c7-98ae6c9c50f5","Code":"C.11.02","Title":"Manufacture of wine from grape","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ba9b2129-d655-445a-92f2-98d585630808","Code":"C.28.14","Title":"Manufacture of other taps and valves","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d31cb275-f709-4ad3-8b86-99215b6f4995","Code":"B.06.20","Title":"Extraction of natural gas","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"00103b83-956c-44b0-9d38-994aa43c530d","Code":"C.22.1","Title":"Manufacture of rubber products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"61e6143a-9b08-4e77-b245-9999f171d962","Code":"C.23.69","Title":"Manufacture of other articles of concrete, plaster and cement","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"03c304a9-d9d3-4a74-817c-9a8a690694af","Code":"C.15.11","Title":"Tanning and dressing of leather; dressing and dyeing of fur","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9cd06ef7-3217-43bd-bb01-9a8bc5b2e917","Code":"P.85.1","Title":"Pre-primary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"6c70d0b2-9040-4c6a-8bc3-9a93ef9a8aa3","Code":"C.32.2","Title":"Manufacture of musical instruments","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"af2dc92f-2935-4c94-99be-9a9b8fa35cf1","Code":"R.91","Title":"Libraries, archives, museums and other cultural activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"e5219626-edb0-42d9-bbce-9ab81d01127a","Code":"G.47","Title":"Retail trade, except of motor vehicles and motorcycles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"73b1eb25-5d6d-4820-b88d-9b00b14a0762","Code":"C.23.2","Title":"Manufacture of refractory products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"fdb5c725-2644-446f-be81-9b02ff783def","Code":"E.37","Title":"Sewerage","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"ef2fe725-3aa8-4ff1-8eae-9b1a8164352c","Code":"G.46.42","Title":"Wholesale of clothing and footwear","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"7b77d3d5-1b81-48ab-a3ca-9b7c29a97076","Code":"C.25.92","Title":"Manufacture of light metal packaging","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"876fca29-b985-4e68-9fde-9b7ec399f301","Code":"A.03.1","Title":"Fishing","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"0f1b4edf-d1d4-46d7-9ccd-9bd885bbb60c","Code":"N.82","Title":"Office administrative, office support and other business support activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"6a829921-db83-46f4-b7cd-9c1537546bb2","Code":"A.01.50","Title":"Mixed farming","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"e226cd56-db03-401e-b7da-9c20ead2bea5","Code":"Q.86.1","Title":"Hospital activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"dad2b35e-142f-436d-ba64-9c51abfe325d","Code":"J.58.13","Title":"Publishing of newspapers","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"f7c9a121-8523-4a57-a6c4-9c60b8b768cf","Code":"T.98.20","Title":"Undifferentiated service-producing activities of private households for own use","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"9fbc1d7f-798c-4459-911f-9c672f697e23","Code":"H.52","Title":"Warehousing and support activities for transportation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"0bc2d446-6f46-4f59-89d7-9c6bd199d18b","Code":"S.94","Title":"Activities of membership organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"3af37634-d9ae-4d38-9114-9cce3a3f4dea","Code":"G.47.59","Title":"Retail sale of furniture, lighting equipment and other household articles in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"d97c886b-31e9-40d8-b92f-9d29e63ae51d","Code":"M.72.19","Title":"Other research and experimental development on natural sciences and engineering","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"d4234137-d4c5-440c-9506-9d3ef73adac6","Code":"C.13.2","Title":"Weaving of textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9eacaa6a-c423-4cae-ab4a-9d6d35beaaf9","Code":"G.46.66","Title":"Wholesale of other office machinery and equipment","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f22f0241-62ab-40cb-9e8f-9d8f7dc997f5","Code":"C.10.73","Title":"Manufacture of macaroni, noodles, couscous and similar farinaceous products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c5ceb320-45e9-4b76-84c6-9e3f5a6fc4a1","Code":"C.32.5","Title":"Manufacture of medical and dental instruments and supplies","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5c0245f7-1c32-4f73-beeb-9ea4f73cb2af","Code":"G.47.74","Title":"Retail sale of medical and orthopaedic goods in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"53fb6ee8-11cd-470b-8426-9ec753abd0ad","Code":"C.21.10","Title":"Manufacture of basic pharmaceutical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0c2963ee-7d28-45b2-9e35-9ecfc5259e27","Code":"G.46.22","Title":"Wholesale of flowers and plants","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"874b1020-4cb3-447b-a25c-9ef465bd32ab","Code":"N.81.10","Title":"Combined facilities support activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"079e0daf-e449-4008-87cb-9f243cd51310","Code":"C.33.17","Title":"Repair and maintenance of other transport equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b2f92003-b8d1-4c36-8bc9-9f2e9332cad3","Code":"C.24.45","Title":"Other non-ferrous metal production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"781dedbb-d24c-4b41-8d08-9f37ff302c37","Code":"C.32.3","Title":"Manufacture of sports goods","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d1a7542a-af51-424f-9319-9fe942098d74","Code":"I.56","Title":"Food and beverage service activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"37dbcb1a-d5a8-47d9-bdd1-9fea70819052","Code":"J.63.12","Title":"Web portals","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"24c85ea8-36db-4e27-80d9-9ff5e3f62612","Code":"N.81.22","Title":"Other building and industrial cleaning activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"ed938c08-c071-4689-b248-a00b825e51aa","Code":"B.06.1","Title":"Extraction of crude petroleum","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"f7667a5c-9ee0-45d6-beba-a0d9d533b673","Code":"A.01.46","Title":"Raising of swine/pigs","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"9ab57c07-1ebf-4b96-aa24-a0e3ff58cc0b","Code":"H.49.5","Title":"Transport via pipeline","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"e07406cf-7e50-4de4-ad7a-a10c966684cb","Code":"F.42.99","Title":"Construction of other civil engineering projects n.e.c.","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"2212c844-dab6-46b8-9f5b-a1272839b97e","Code":"C.29.32","Title":"Manufacture of other parts and accessories for motor vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"dcb0bd90-0c5c-4371-910a-a12764cc0d50","Code":"Q.86","Title":"Human health activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"3c7c598c-6372-4196-b928-a182db6d6d23","Code":"K.64.1","Title":"Monetary intermediation","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"cd49a1b7-ec0a-4497-a220-a1cd11a55fa1","Code":"J.58.2","Title":"Software publishing","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"7adec774-0c9d-49d2-8293-a203c3434359","Code":"C.24.46","Title":"Processing of nuclear fuel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f87f2285-784e-4477-98fa-a2a489629bf9","Code":"F.41","Title":"Construction of buildings","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"13edb5ea-cf2e-4b64-8b5d-a30ac01da6fd","Code":"C.28.91","Title":"Manufacture of machinery for metallurgy","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7e08117d-d2fc-40db-8f53-a35257dc3109","Code":"B.09","Title":"Mining support service activities","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"0e2dbc06-aef7-4761-b3d7-a3af07d0ca4b","Code":"C.24.4","Title":"Manufacture of basic precious and other non-ferrous metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7af5b2a8-24f5-4d57-afc5-a3b9ee07c138","Code":"Q.87","Title":"Residential care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"d7e325ac-cd6a-49d2-a7f9-a3e3c9f069b7","Code":"M.69","Title":"Legal and accounting activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"b38463d3-9220-44bf-a1af-a427d9ed2829","Code":"F.43.11","Title":"Demolition","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"477603bb-d8fa-47f1-bcac-a447314c2a25","Code":"K.66.3","Title":"Fund management activities","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"82035e2b-1cc1-45f5-9204-a458deaf9e12","Code":"P.85.20","Title":"Primary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"223eeaa3-91e1-4603-a031-a459202a35bc","Code":"C.23.3","Title":"Manufacture of clay building materials","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"400d8347-6f0b-4558-a9d7-a4c0b18e19ba","Code":"C.25.21","Title":"Manufacture of central heating radiators and boilers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d0ddce98-0e04-459d-a197-a4c16425f49c","Code":"N.79.11","Title":"Travel agency activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"0e9ef0f6-5c6b-4af9-b8fa-a4ebcadf6716","Code":"C.28.96","Title":"Manufacture of plastics and rubber machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9686dcc0-7bca-42bd-8b93-a4ecadfd27d9","Code":"I.56.2","Title":"Event catering and other food service activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"7a867dd1-fcbc-4ed7-b2f4-a50f6f5fbf67","Code":"C.28.92","Title":"Manufacture of machinery for mining, quarrying and construction","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"58ab19ab-3c20-4b7e-afc1-a51d8a5a4982","Code":"J.61.90","Title":"Other telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"346593de-9ebd-49d7-b977-a5241c22d1b8","Code":"C.10.84","Title":"Manufacture of condiments and seasonings","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"977056f5-0e87-47e4-9b67-a53ef46eae2f","Code":"G.46.14","Title":"Agents involved in the sale of machinery, industrial equipment, ships and aircraft","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"00636c43-4b52-4d91-8c55-a5529d57f3e5","Code":"C.30.92","Title":"Manufacture of bicycles and invalid carriages","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"be0a50eb-b739-44c8-8a40-a55527e35422","Code":"Q.87.2","Title":"Residential care activities for mental retardation, mental health and substance abuse","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"ef1fe33d-f0b7-4d68-a89f-a57eb1a006fe","Code":"C.10.92","Title":"Manufacture of prepared pet foods","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"bffec13c-ba8c-4a72-a7e3-a5a1bee41db0","Code":"A.01.25","Title":"Growing of other tree and bush fruits and nuts","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"63eb8b2c-5fba-4bd3-a23c-a5c91690e6de","Code":"C.28.41","Title":"Manufacture of metal forming machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d4bab611-13a4-44d8-afb2-a64ad22b04ee","Code":"F.43.34","Title":"Painting and glazing","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"ed45f398-a0b1-412c-91e9-a6a29da84742","Code":"C.10.31","Title":"Processing and preserving of potatoes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4d0b697f-533c-4819-b487-a6accdf1da63","Code":"C.26.3","Title":"Manufacture of communication equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0d495e63-9113-4945-b3a1-a6b08c4d8d76","Code":"C.10.12","Title":"Processing and preserving of poultry meat","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"67ad5f50-899d-4a96-a303-a6e36faf5e3d","Code":"C.11.01","Title":"Distilling, rectifying and blending of spirits","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"611a0831-a0c7-4a4e-b95b-a7427785548c","Code":"C.13.95","Title":"Manufacture of non-wovens and articles made from non-wovens, except apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f2ad0d24-c5be-4486-a870-a76cae739e46","Code":"F.43","Title":"Specialised construction activities","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"39292019-e4a1-42f0-ba93-a77fcdbc0fcf","Code":"K.66.29","Title":"Other activities auxiliary to insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"bd4cd834-9cfc-4d24-8fdc-a79625ea1696","Code":"C.17","Title":"Manufacture of paper and paper products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3c2c0242-1208-4096-a18b-a7a00471e57c","Code":"C.24.3","Title":"Manufacture of other products of first processing of steel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3ce7e1e8-a856-4006-8fdf-a8040ec5496f","Code":"M.74.1","Title":"Specialised design activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"5ed70d28-6170-4781-a202-a854ec4a026f","Code":"C.23.65","Title":"Manufacture of fibre cement","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3fa40317-6a20-4025-a1da-a875f89649fd","Code":"K.64.99","Title":"Other financial service activities, except insurance and pension funding n.e.c.","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"dc62fdf8-064c-441b-b7fe-a8a482c4d18b","Code":"J.63.1","Title":"Data processing, hosting and related activities; web portals","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"24e9b066-aaaa-440b-aec8-a8b4953d992a","Code":"C.24.5","Title":"Casting of metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f15102d7-8c08-4a2c-aa3b-a8e1c79edbfd","Code":"C.28.15","Title":"Manufacture of bearings, gears, gearing and driving elements","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"885d754e-b725-485e-9c29-a923e0063dc6","Code":"N.82.19","Title":"Photocopying, document preparation and other specialised office support activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"98ffa6ba-f97e-4266-b408-a964012bfda2","Code":"C.14.11","Title":"Manufacture of leather clothes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"113a7b22-7de9-45a9-9cb3-a982a865c3ab","Code":"B.05.20","Title":"Mining of lignite","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"ec72f8dc-1001-4c40-8980-ab36fcf3e8b4","Code":"H.50.3","Title":"Inland passenger water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"188bf723-8c2e-4b0a-ae6b-ab3a1292ed7e","Code":"P.85.60","Title":"Educational support activities","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"216ab953-a3d1-41d8-a666-ab42cca2023f","Code":"S.95.1","Title":"Repair of computers and communication equipment","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"cb0736bc-a6af-4468-84b8-abdfaba737f8","Code":"C.14.1","Title":"Manufacture of wearing apparel, except fur apparel","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"84944b2e-5cd8-4324-be0b-ac1684caf840","Code":"A.01.11","Title":"Growing of cereals (except rice), leguminous crops and oil seeds","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"41fb998c-55c4-4dd4-a284-ac31abfe8527","Code":"N.81.29","Title":"Other cleaning activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"30921550-de59-42cc-97f9-ac36bf95ef55","Code":"A.01.5","Title":"Mixed farming","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"5231196f-94f7-455b-a29e-ac576add10bd","Code":"A.03.22","Title":"Freshwater aquaculture","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"d9c8fb91-6fe9-4c3c-bdc9-ac598b780217","Code":"B.06.2","Title":"Extraction of natural gas","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"547d5554-f70d-49b8-a0ba-ac80cf2bee07","Code":"J.58.1","Title":"Publishing of books, periodicals and other publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"8856cbd6-3212-4789-9205-acacd8f579e9","Code":"G.47.99","Title":"Other retail sale not in stores, stalls or markets","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"af5b4b52-9de3-452a-8bf5-ad0028f48ddc","Code":"F.43.32","Title":"Joinery installation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"1bc0cc98-9595-4196-b430-ad0ab7219402","Code":"G.46.39","Title":"Non-specialised wholesale of food, beverages and tobacco","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a4715ff6-941b-42ff-9da9-ad85d645e5a4","Code":"G.47.4","Title":"Retail sale of information and communication equipment in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f4e8aeba-b5da-471a-ae1b-ae27e54e0485","Code":"G.46.72","Title":"Wholesale of metals and metal ores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"60a7af8c-4a43-4327-b5f6-ae6ff7fafaf4","Code":"C.32.91","Title":"Manufacture of brooms and brushes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6f3ae006-c911-4be5-a549-aea12f992fcc","Code":"J.58.14","Title":"Publishing of journals and periodicals","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"408dd3e3-f270-4b8a-8b31-af3100f5903a","Code":"C.30.3","Title":"Manufacture of air and spacecraft and related machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"36e7f316-b354-44db-994f-afa94209866a","Code":"F.43.91","Title":"Roofing activities","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"b9df769e-2e14-4efd-a5fb-b00d120c6979","Code":"D.35","Title":"Electricity, gas, steam and air conditioning supply","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"4c681bb0-960f-43b0-99b1-b01b0d03ba02","Code":"C.14.19","Title":"Manufacture of other wearing apparel and accessories","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3a494d35-7268-45a7-a4e9-b06b54811550","Code":"I.56.30","Title":"Beverage serving activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"b990612d-0eef-48c3-af8b-b0fbe63bfd0c","Code":"A.01.26","Title":"Growing of oleaginous fruits","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"d87ac715-af21-4c78-9f49-b1033bc39494","Code":"C.13.30","Title":"Finishing of textiles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e4ef1a10-de79-4e67-8f5b-b1461b092d47","Code":"C.23.63","Title":"Manufacture of ready-mixed concrete","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"bea9a8b7-154b-474b-8c73-b21b97c01b4c","Code":"M.71.20","Title":"Technical testing and analysis","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"b6f298a4-f673-47fc-919e-b24955e92a97","Code":"G.47.29","Title":"Other retail sale of food in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a35094bb-dc9f-4f56-8ec6-b25bebce7fe8","Code":"C.25.11","Title":"Manufacture of metal structures and parts of structures","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a1c7ce92-2d7c-40e9-a21f-b2aca71aad86","Code":"G.46.43","Title":"Wholesale of electrical household appliances","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f167b58b-6c09-47fd-b113-b31818d69f26","Code":"C.10.81","Title":"Manufacture of sugar","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"39460219-2fe3-43b6-a3ef-b38ae10a66fc","Code":"A.01.2","Title":"Growing of perennial crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"1737a8c9-f215-4024-9fc0-b41458ba4cb7","Code":"C.24","Title":"Manufacture of basic metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"fdeea457-a1f1-44ec-842b-b42a561c9438","Code":"K.65.1","Title":"Insurance","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"55b38e3d-47bf-4e22-b3ed-b49415a64c9b","Code":"Q.87.1","Title":"Residential nursing care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"6c51451f-0ac5-4273-a368-b4fcd9f3fce4","Code":"C.10.91","Title":"Manufacture of prepared feeds for farm animals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0babeaab-9430-4379-a4eb-b521989502da","Code":"N.77.40","Title":"Leasing of intellectual property and similar products, except copyrighted works","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"bccf0f6d-c0c5-444b-b9d9-b53bdfb9cf2d","Code":"C.20.51","Title":"Manufacture of explosives","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8b475cec-b30c-40bf-a712-b575da3fbfaf","Code":"J.58.12","Title":"Publishing of directories and mailing lists","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"1455312b-0b49-4624-9f89-b584eb1d836a","Code":"C.28.23","Title":"Manufacture of office machinery and equipment (except computers and peripheral equipment)","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"03025ed6-8f81-48ec-8d18-b5b5b2876d05","Code":"C.13.10","Title":"Preparation and spinning of textile fibres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"35144654-bfb9-48de-a67c-b5d41d22c922","Code":"F.43.1","Title":"Demolition and site preparation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"9c9481d6-f50a-4880-9d47-b5eee51262c9","Code":"E.38.12","Title":"Collection of hazardous waste","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"380cdc42-cf17-43dc-a32a-b65c64b1d742","Code":"N.81.2","Title":"Cleaning activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"7eab5f39-746d-47ce-9565-b6bec5ba133d","Code":"C.32.4","Title":"Manufacture of games and toys","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"94593e23-272e-4a50-a21c-b6d77fecf256","Code":"C.31.02","Title":"Manufacture of kitchen furniture","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d1b45828-a0f5-4771-b675-b741c596a586","Code":"C.26.11","Title":"Manufacture of electronic components","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"15d89270-a69b-43c4-9d73-b746e55a8b99","Code":"C.20.30","Title":"Manufacture of paints, varnishes and similar coatings, printing ink and mastics","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c3627cd5-cc98-4dd7-8d9f-b7608b110ee4","Code":"C.20","Title":"Manufacture of chemicals and chemical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"14b7284b-4533-4ec0-9e56-b7a18f6943be","Code":"C.10.41","Title":"Manufacture of oils and fats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cce1c362-5110-4d81-b191-b7b1c765b76c","Code":"G.47.65","Title":"Retail sale of games and toys in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"aef68551-0aac-4671-ad18-b7e0650b32dd","Code":"C.23.19","Title":"Manufacture and processing of other glass, including technical glassware","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d2ff4f39-9eaf-4fee-bbc6-b7e955a36584","Code":"J.59.2","Title":"Sound recording and music publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"d07bbf1c-8358-470f-8b67-b833891b34f1","Code":"G.46.3","Title":"Wholesale of food, beverages and tobacco","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f001579d-bcfd-426e-9a23-b83ec734891a","Code":"D.35.13","Title":"Distribution of electricity","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"dc127cb9-9a4c-4619-b9d9-b841cd32b85e","Code":"N.78.30","Title":"Other human resources provision","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"f5179b3d-4fb7-4df3-b806-b88adcda3a29","Code":"S.94.1","Title":"Activities of business, employers and professional membership organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"da2b28df-3957-42c2-81a4-b906ef1ab181","Code":"C.18.1","Title":"Printing and service activities related to printing","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9168943e-efc8-426a-adea-b975742b00aa","Code":"A.01.19","Title":"Growing of other non-perennial crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"ddd2e9ca-197e-4ddd-b364-b9f1ee467fdc","Code":"H.50.30","Title":"Inland passenger water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"c9909035-4e49-43ed-aa54-baaa25832b03","Code":"Q.86.10","Title":"Hospital activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"e06e8c1c-e160-4013-81ba-badc6ba31ec4","Code":"C.28.12","Title":"Manufacture of fluid power equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3b1d63a1-a9f6-4e3c-8622-bb17dbbdd8ca","Code":"N.78.10","Title":"Activities of employment placement agencies","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"36a6488a-4719-4eac-aa88-bb2f30398660","Code":"C.29","Title":"Manufacture of motor vehicles, trailers and semi-trailers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"67002252-1d22-4ca2-8bb9-bb96607701d6","Code":"U.99","Title":"Activities of extraterritorial organisations and bodies","IndustryId":"c128e241-6aa3-4c82-b8ed-bb6932f96cf6"}
+{"Id":"fe62145e-4692-47f6-8e79-bbd1f7585511","Code":"C.11.03","Title":"Manufacture of cider and other fruit wines","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b7d75367-4402-4923-868b-bbe77d8d69f4","Code":"G.47.78","Title":"Other retail sale of new goods in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"4a610476-d8f6-450c-a095-bc20490a5ef3","Code":"C.24.32","Title":"Cold rolling of narrow strip","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"86d4c98a-a237-468c-a72c-bc2d6cf07cd0","Code":"A.01.3","Title":"Plant propagation","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"5899ccba-44c1-41fe-bfc0-bc81db24f04d","Code":"K.64","Title":"Financial service activities, except insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"a95b70e2-78dc-4513-84c2-bc973ee47052","Code":"R.90.03","Title":"Artistic creation","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"338d4d4f-cab6-49e1-912d-bccb5c19a78a","Code":"J.58.29","Title":"Other software publishing","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"625b9f04-58d8-4034-a0cc-bcd2c1ab68c3","Code":"C.26.1","Title":"Manufacture of electronic components and boards","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7e61f286-62d7-4b53-89c5-bcdb19beacfa","Code":"C.23.41","Title":"Manufacture of ceramic household and ornamental articles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7cefd468-cc90-4994-83dd-bd0836ce889b","Code":"K.64.20","Title":"Activities of holding companies","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"11eaf91f-7887-4e68-aee9-bd28f82e17af","Code":"K.65","Title":"Insurance, reinsurance and pension funding, except compulsory social security","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"c40e41cf-aac9-42dd-ada1-bd2adbd009d8","Code":"B.07","Title":"Mining of metal ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"e888e93e-9825-496e-8d89-be02ffa504f6","Code":"E.36.0","Title":"Water collection, treatment and supply","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"d87af1f9-30c6-4eea-956a-be2786a51a7b","Code":"G.46.33","Title":"Wholesale of dairy products, eggs and edible oils and fats","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"fabd41c7-eb17-4305-8341-be3c1dac97fb","Code":"C.27.90","Title":"Manufacture of other electrical equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1e2a6098-5f89-41a4-af55-be91246e660b","Code":"C.16.24","Title":"Manufacture of wooden containers","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d6d3a4a9-79aa-4b2b-ac3e-beddc4c30850","Code":"G.47.72","Title":"Retail sale of footwear and leather goods in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"097624ba-99e0-470c-a2e2-bee5fe2fab64","Code":"O.84.3","Title":"Compulsory social security activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"ed4d2010-db5d-46d3-8b0c-beef2f8ab996","Code":"H.53.20","Title":"Other postal and courier activities","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"66ae221a-6241-4e5a-a50c-bf508fbbc874","Code":"C.22.11","Title":"Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c7d3f711-3ecb-420c-8765-bf57d45db719","Code":"G.46.90","Title":"Non-specialised wholesale trade","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"b0812292-55f9-4599-8740-bf6f45f382f2","Code":"C.20.11","Title":"Manufacture of industrial gases","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3e7460e0-27f4-4334-8d55-bf9fbf5f8d16","Code":"I.55.9","Title":"Other accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"8b272534-97f6-4bc7-b20b-bfb502d4c2da","Code":"R.92.0","Title":"Gambling and betting activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"8c5dce62-ba38-4b5d-b17d-bfee1ccf3cc9","Code":"M.75.0","Title":"Veterinary activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"2282561e-b07b-4b1c-ae1d-bff0f00a0f86","Code":"J.61.9","Title":"Other telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"d1ddf5e2-dd03-480e-bfb1-c00efc74d27d","Code":"C.24.53","Title":"Casting of light metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1b2ef209-9414-44ce-b568-c0735aff86ea","Code":"C.20.53","Title":"Manufacture of essential oils","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"1df53c8b-e15f-4957-82ac-c1281f702e49","Code":"E.38.22","Title":"Treatment and disposal of hazardous waste","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"83fb6473-b1cd-4c93-8f95-c1ba0fa05111","Code":"S.95","Title":"Repair of computers and personal and household goods","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"a732ce63-4edd-4dd2-b416-c2c5db489ac3","Code":"H.50.4","Title":"Inland freight water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"7e71dfc1-2141-4fba-905d-c3e2a6a03f46","Code":"H.49","Title":"Land transport and transport via pipelines","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"a9c01ab2-00b0-4aee-afdc-c3e5d1c0c7b3","Code":"C.25.2","Title":"Manufacture of tanks, reservoirs and containers of metal","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"055f552a-ca11-4391-85cd-c463fdec3d95","Code":"C.27","Title":"Manufacture of electrical equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"417df9d2-1a5f-4d9d-b580-c47c83d52358","Code":"M.73","Title":"Advertising and market research","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"13b15911-269b-4c51-998e-c4c42c06df40","Code":"C.26.80","Title":"Manufacture of magnetic and optical media","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e00ed5a5-a97e-4f2a-a86e-c4e01858045b","Code":"A.01.1","Title":"Growing of non-perennial crops","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"1ac67146-e5f0-47b6-b5a5-c504eb298a7b","Code":"J.59.20","Title":"Sound recording and music publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"8dc14c39-9599-48d0-94e4-c520722e1468","Code":"G.47.5","Title":"Retail sale of other household equipment in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"e52b16b1-059a-4d6c-a13c-c5262fee5e54","Code":"C.16.10","Title":"Sawmilling and planing of wood","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5604594c-2471-4a66-92b8-c62d6c62d4d4","Code":"N.78.1","Title":"Activities of employment placement agencies","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"9cb18fac-934d-41e6-9765-c666ac51311c","Code":"G.46.6","Title":"Wholesale of other machinery, equipment and supplies","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"b7220b89-2d10-487b-a6bd-c73aeafbfbb2","Code":"D.35.22","Title":"Distribution of gaseous fuels through mains","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"870e2519-c677-4490-9c56-c80a15709e25","Code":"N.77.12","Title":"Renting and leasing of trucks","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"59bbd8e9-bb5d-4ee2-9487-c81632b90f94","Code":"E.37.0","Title":"Sewerage","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"0bd5b44c-cf6a-47fd-93fd-c87aa8a3d63b","Code":"C.16.23","Title":"Manufacture of other builders' carpentry and joinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a79a4d26-e78a-420c-abf4-c8af85545178","Code":"K.65.20","Title":"Reinsurance","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"bf123c66-0d46-4e2f-9b7a-c8de268cc076","Code":"F.42.22","Title":"Construction of utility projects for electricity and telecommunications","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"b49fff47-6a70-4a98-b632-c8e91f44a156","Code":"C.31.03","Title":"Manufacture of mattresses","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8daf7ab5-c397-489d-9976-c8efa03bd602","Code":"C.28.30","Title":"Manufacture of agricultural and forestry machinery","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"962eebf9-25d2-43be-a543-c9817a64312d","Code":"C.22.29","Title":"Manufacture of other plastic products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f3061782-21f8-4ded-936f-c999a50ab725","Code":"S.95.29","Title":"Repair of other personal and household goods","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"953ff469-ce7b-4512-8090-ca3ba31f5c8f","Code":"R.90","Title":"Creative, arts and entertainment activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"81829118-a39b-4456-aad8-cb6725db63ad","Code":"L.68.20","Title":"Renting and operating of own or leased real estate","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"d1b27ebe-8f40-44f3-84bd-cc1c8e000e44","Code":"A.02.30","Title":"Gathering of wild growing non-wood products","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"7c29dd66-e0bb-4266-a28e-cc6ce935694e","Code":"C.28.29","Title":"Manufacture of other general-purpose machinery n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e46b0f4c-4918-40e5-aa16-cca07fee9e49","Code":"S.94.20","Title":"Activities of trade unions","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"0d91026b-0c38-4620-9ce2-ccea04b667d6","Code":"H.49.3","Title":"Other passenger land transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"0126cc3b-bf17-4160-abc8-ccfc7302b58a","Code":"E.38.1","Title":"Waste collection","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"6db702b8-a996-42dd-90cd-cd353e9344aa","Code":"E.38.32","Title":"Recovery of sorted materials","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"d06930df-3eae-4f5c-8d21-cd47da53f8e8","Code":"M.74.20","Title":"Photographic activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"f4f2f643-3fe7-409a-844a-cd87b89109dc","Code":"N.77.4","Title":"Leasing of intellectual property and similar products, except copyrighted works","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"8cfef00d-d3b9-48ca-8706-cdb0b88c9cf4","Code":"D.35.23","Title":"Trade of gas through mains","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"2cd895ad-b1c8-4721-a7e5-cdd6b8dfbb16","Code":"G.47.23","Title":"Retail sale of fish, crustaceans and molluscs in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"9114b21a-94ec-46c2-a8e2-ce009f0c14bf","Code":"K.66","Title":"Activities auxiliary to financial services and insurance activities","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"1c44bb13-6c18-4bd9-a7f3-ce839798a25e","Code":"C.13.91","Title":"Manufacture of knitted and crocheted fabrics","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7881d0fa-0261-4efa-ac2f-ce8832caa612","Code":"C.21","Title":"Manufacture of basic pharmaceutical products and pharmaceutical preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4e969d02-a08b-4ba4-b36f-ce89330938ca","Code":"G.47.30","Title":"Retail sale of automotive fuel in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"6a2a4bae-5c12-4235-aedf-cee4868ab6d4","Code":"C.28.99","Title":"Manufacture of other special-purpose machinery n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e1a6e678-5ca9-4856-a908-cf4a2fb1e1fa","Code":"A.01","Title":"Crop and animal production, hunting and related service activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"d1049978-5995-4681-8299-cf5f7cf27a62","Code":"L.68.31","Title":"Real estate agencies","IndustryId":"c200791e-d807-49f3-b954-31196fb1f931"}
+{"Id":"e4bdb33c-8922-41bb-93fd-cff2ab061505","Code":"C.26","Title":"Manufacture of computer, electronic and optical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4242b888-0f80-46bb-8dc3-d001e25d9492","Code":"N.80.30","Title":"Investigation activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"a7072be5-d6c1-4b0d-8f5b-d01d439d9a78","Code":"S.94.91","Title":"Activities of religious organisations","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"078c18ed-0e6d-4f74-b212-d05e1a7637fd","Code":"F.41.20","Title":"Construction of residential and non-residential buildings","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"6aa40574-8cbc-41d8-80cc-d0e00975176c","Code":"I.55.90","Title":"Other accommodation","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"cb6dccea-4646-41ca-ab4b-d117a995a9d5","Code":"G.46.65","Title":"Wholesale of office furniture","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"3f7e5291-0f98-43e1-b3af-d14c2696e72e","Code":"C.16","Title":"Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"470d1a61-274e-48f1-a5fa-d15a0af8810c","Code":"G.47.77","Title":"Retail sale of watches and jewellery in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"68ab87ef-eef9-492e-baa6-d1df4c2c5a79","Code":"J.59.1","Title":"Motion picture, video and television programme activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"09cbfc73-ddbc-43ec-98c3-d2483e9787da","Code":"A.01.70","Title":"Hunting, trapping and related service activities","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"c251dab6-134d-428f-832c-d249cc1d92d8","Code":"O.84.25","Title":"Fire service activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"e361ffc6-c3ba-4405-b75b-d2bd4a119049","Code":"S.96","Title":"Other personal service activities","IndustryId":"01138d29-1c80-4ec3-90fa-fb64c498a5f8"}
+{"Id":"2dfe825e-cbc1-49fa-8a12-d2e45224c491","Code":"R.90.0","Title":"Creative, arts and entertainment activities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"338f2206-d76e-4269-99dd-d2e690259325","Code":"C.10.52","Title":"Manufacture of ice cream","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7074da6e-567e-43f9-a485-d341e2693706","Code":"J.59.12","Title":"Motion picture, video and television programme post-production activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"68076006-6e98-41a9-9157-d427cc52407e","Code":"G.46.2","Title":"Wholesale of agricultural raw materials and live animals","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"d84f3308-3e12-456f-876f-d42ee8595dc8","Code":"H.50.2","Title":"Sea and coastal freight water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"0e3faa88-43ca-426b-a616-d43cebfe99d8","Code":"N.82.9","Title":"Business support service activities n.e.c.","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"f6c690d5-3457-4d62-94b9-d44935b5efbc","Code":"C.10.85","Title":"Manufacture of prepared meals and dishes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"efc27171-9d7b-4aec-a002-d5b7a65cc0e6","Code":"K.66.12","Title":"Security and commodity contracts brokerage","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"1d4a55f5-363e-4485-a8b5-d5e02d70b6a2","Code":"G.46.17","Title":"Agents involved in the sale of food, beverages and tobacco","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"cd38e34b-ec8e-4f66-b90e-d6628d88a671","Code":"G.45.2","Title":"Maintenance and repair of motor vehicles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"e81640eb-224e-4fab-8bdd-d66a97f362aa","Code":"A.02.4","Title":"Support services to forestry","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"e0d880ab-8490-4d63-bf87-d686da196909","Code":"J.61.30","Title":"Satellite telecommunications activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"b107af92-d973-403e-bbe9-d6f430a8ac67","Code":"I.55.3","Title":"Camping grounds, recreational vehicle parks and trailer parks","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"97d07d61-c5b9-4145-bc4c-d7998f0619f8","Code":"C.24.31","Title":"Cold drawing of bars","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"58bf3182-63b7-4b5d-8c0c-d7ba0c1c548f","Code":"G.46.35","Title":"Wholesale of tobacco products","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"18f4ed96-4986-40b8-84c5-d81b94be271a","Code":"C.21.1","Title":"Manufacture of basic pharmaceutical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e0b321de-c8d1-4f05-ae4b-d8a04ee32425","Code":"C.11.05","Title":"Manufacture of beer","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d69e52b6-6262-4491-bde2-d8ae091bf431","Code":"F.41.1","Title":"Development of building projects","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"ef1adbd1-ef00-4ded-9bc0-d8ccaf1215f9","Code":"G.46.16","Title":"Agents involved in the sale of textiles, clothing, fur, footwear and leather goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"eca79583-8238-4500-9b89-d8e480e40eba","Code":"F.43.22","Title":"Plumbing, heat and air-conditioning installation","IndustryId":"3474aa89-653f-4f11-b1ff-401ab4907066"}
+{"Id":"fac7f998-b815-43eb-9233-d958815614d4","Code":"C.17.29","Title":"Manufacture of other articles of paper and paperboard","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4a27d061-651b-40b2-be3a-d9879da041a2","Code":"K.66.22","Title":"Activities of insurance agents and brokers","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"5ad61a95-a54b-4750-b961-d9b43d970f30","Code":"C.25.5","Title":"Forging, pressing, stamping and roll-forming of metal; powder metallurgy","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"59f4fbd3-b46d-4dde-b5f5-d9b547d57c92","Code":"C.30.12","Title":"Building of pleasure and sporting boats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a48507ad-f4d2-4bff-bdda-da7f55c3807a","Code":"C.23.49","Title":"Manufacture of other ceramic products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e5d8c6af-6cc5-435c-b3cc-dae233fb5b07","Code":"A.01.15","Title":"Growing of tobacco","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"c97f8fb5-eefc-4110-a2e1-dae26938830f","Code":"H.52.10","Title":"Warehousing and storage","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"7ac0a9e8-270d-47b9-9f8e-db10a564b0db","Code":"N.77.33","Title":"Renting and leasing of office machinery and equipment (including computers)","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"196ca8b1-9181-46fc-8d9d-db27b985e087","Code":"J.59","Title":"Motion picture, video and television programme production, sound recording and music publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"6e852433-7a7a-460c-87e9-db3723bdadbf","Code":"C.23.4","Title":"Manufacture of other porcelain and ceramic products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"378edb43-9314-495c-ab1a-db44dbe7100a","Code":"G.46.41","Title":"Wholesale of textiles","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"bb589826-35af-42bf-9021-db744279a16b","Code":"O.84.1","Title":"Administration of the State and the economic and social policy of the community","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"6f6a18ec-4dfa-4eb0-a9de-dbd11376a3b2","Code":"K.66.21","Title":"Risk and damage evaluation","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"f8959bdf-454a-4d17-8f26-dc2d17c8665a","Code":"C.10.13","Title":"Production of meat and poultry meat products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6e9fc4ff-2f36-40eb-96c7-dc6fe6ad8934","Code":"C.33.14","Title":"Repair of electrical equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"ce3f1b06-a73f-4415-b5f5-dc8e118b8348","Code":"B.08.99","Title":"Other mining and quarrying n.e.c.","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"14532b75-151c-4e80-a83e-dcaa287f3c9a","Code":"Q.86.21","Title":"General medical practice activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"ef17a528-e8ae-4157-929b-dce9160cad9b","Code":"M.69.10","Title":"Legal activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"a3f87e37-90cf-4d13-8497-dcfc2b64d7f8","Code":"G.47.52","Title":"Retail sale of hardware, paints and glass in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"1adf1eb3-9038-4a51-92e2-dd55c8f6a0ee","Code":"E.39.0","Title":"Remediation activities and other waste management services","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"7a5db396-7a64-4d4f-80f3-dd59dc9c7fe1","Code":"C.17.1","Title":"Manufacture of pulp, paper and paperboard","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"23737117-2468-43f3-85c6-de67ef19c72f","Code":"N.77.29","Title":"Renting and leasing of other personal and household goods","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"66d66a61-8ded-411a-93d0-deb952ad3323","Code":"N.80.10","Title":"Private security activities","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"127f0f4f-493e-4fd6-bd3e-df06ea5cf572","Code":"K.66.30","Title":"Fund management activities","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"10010a5b-1327-4bd9-988d-df18edef59b2","Code":"C.20.4","Title":"Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8c70ee74-7e67-4259-b04a-df5b50e12011","Code":"C.25.1","Title":"Manufacture of structural metal products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"05c38c45-818f-4a65-8f09-df9f2877469f","Code":"J.60.10","Title":"Radio broadcasting","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"5f7a3336-79ab-46bc-8183-dfa07e53eab7","Code":"M.70.10","Title":"Activities of head offices","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"31ec6e57-997d-4752-8895-dfb1c3f6b71e","Code":"G.47.11","Title":"Retail sale in non-specialised stores with food, beverages or tobacco predominating","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"a44b1c72-b379-494d-9703-e12a839ea94d","Code":"E.38.11","Title":"Collection of non-hazardous waste","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"064bbbcf-ac3e-460b-b510-e132bf29c2c7","Code":"C.30.4","Title":"Manufacture of military fighting vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6806fd10-140d-4e1f-8323-e16da8c99342","Code":"C.25.7","Title":"Manufacture of cutlery, tools and general hardware","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e7b09731-d5d1-4a87-8c7c-e1bc522752bd","Code":"C.32.30","Title":"Manufacture of sports goods","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3b1d4433-f244-417a-ab0f-e1d8293199b8","Code":"C.25.6","Title":"Treatment and coating of metals; machining","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c2112baa-f9e2-4186-8391-e245900896e9","Code":"C.28.94","Title":"Manufacture of machinery for textile, apparel and leather production","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8e72f5b2-b331-4d2c-8c02-e2fadd3ba48e","Code":"M.74.9","Title":"Other professional, scientific and technical activities n.e.c.","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"18364a18-f7e3-422c-a984-e366afac395a","Code":"P.85.6","Title":"Educational support activities","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"e1806601-b237-4942-bb99-e391a3702b92","Code":"G.45.40","Title":"Sale, maintenance and repair of motorcycles and related parts and accessories","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"cf38ec7e-74da-4867-b1cf-e48d4142a33e","Code":"G.46.63","Title":"Wholesale of mining, construction and civil engineering machinery","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"77b9f07e-98c5-43b2-a60b-e4afe6738c1e","Code":"J.59.11","Title":"Motion picture, video and television programme production activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"c7907aa4-30ec-4ca7-a100-e4f122e21879","Code":"C.20.52","Title":"Manufacture of glues","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e6fe37a8-0690-4361-94f6-e534016db901","Code":"A.01.41","Title":"Raising of dairy cattle","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"b2a39965-0a5f-4474-b098-e572f6ea364a","Code":"G.46.47","Title":"Wholesale of furniture, carpets and lighting equipment","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"0f2e5f8d-7919-418c-b684-e5cbd40ca293","Code":"G.46.62","Title":"Wholesale of machine tools","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"b56e69bc-4be5-45b1-9279-e65522d01860","Code":"A.01.13","Title":"Growing of vegetables and melons, roots and tubers","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"1f5ca5c6-0c14-424c-8f20-e68b23b72774","Code":"C.25.12","Title":"Manufacture of doors and windows of metal","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6955a989-7f7c-4f53-a2c5-e6966a85e22d","Code":"G.47.62","Title":"Retail sale of newspapers and stationery in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"7b40e65d-380d-4ba7-8d8e-e6cbb6abc84d","Code":"G.47.43","Title":"Retail sale of audio and video equipment in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"5e3b7e95-fbb4-46b3-8bbc-e74a587f3f83","Code":"C.18.13","Title":"Pre-press and pre-media services","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0194ef92-27d8-4d81-9208-e7ab8a75f32d","Code":"I.56.29","Title":"Other food service activities","IndustryId":"18e4a873-2da4-4acf-bb09-1c59357938ba"}
+{"Id":"d19e49e6-d58d-4b68-803b-e7b879a72f5a","Code":"C.24.33","Title":"Cold forming or folding","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e1145f17-d57d-4a98-a229-e83599f82088","Code":"C.32.20","Title":"Manufacture of musical instruments","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7a032f83-907f-432e-8897-e85a9e1c43b6","Code":"N.81.21","Title":"General cleaning of buildings","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"0e6712ea-ee9d-465b-9833-e8669f63dc8a","Code":"R.93.13","Title":"Fitness facilities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"4f7cd836-38b2-4db5-8614-e878b114a484","Code":"C.24.51","Title":"Casting of iron","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"663da92e-0f8a-4fdf-8283-e8c7f8e6eb42","Code":"H.53.1","Title":"Postal activities under universal service obligation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"d45bc4cb-b5a0-4129-b4f9-e8d18077030e","Code":"C.23.42","Title":"Manufacture of ceramic sanitary fixtures","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6dd28196-c21d-4de2-8a5c-e8f0df4efde8","Code":"G.46.1","Title":"Wholesale on a fee or contract basis","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"2c343205-df54-48ad-a702-e9386414545d","Code":"C.20.14","Title":"Manufacture of other organic basic chemicals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"23c237c5-3995-4879-817b-e952d4af1bd6","Code":"Q.87.9","Title":"Other residential care activities","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"f0a153a9-153b-41a3-b911-e997b69caba3","Code":"C.28.21","Title":"Manufacture of ovens, furnaces and furnace burners","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"05a69015-cb65-419e-906c-e9f836a131e6","Code":"K.66.1","Title":"Activities auxiliary to financial services, except insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"1836b4b4-cdbd-4f26-89d0-ea22593bcf25","Code":"H.53.10","Title":"Postal activities under universal service obligation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"0da253f4-1168-43ca-847f-ea28e163ceef","Code":"C.23.1","Title":"Manufacture of glass and glass products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"315ab364-ffc5-4cfd-87cc-ea41391a6401","Code":"K.66.2","Title":"Activities auxiliary to insurance and pension funding","IndustryId":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b"}
+{"Id":"360d55e6-98c7-4acd-92d4-ea4becefac21","Code":"M.70.21","Title":"Public relations and communication activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"7f6c0b2c-b1f9-46aa-9a65-ea86bb067caa","Code":"P.85.4","Title":"Higher education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"cf553f6e-de21-4c2f-939b-eb5a342246f0","Code":"C.26.12","Title":"Manufacture of loaded electronic boards","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9ff95a20-5b08-4fb7-a5e7-eb74035b3af6","Code":"G.46.7","Title":"Other specialised wholesale","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f9c60356-613f-4c5e-8f6c-eb95df13320d","Code":"C.31.0","Title":"Manufacture of furniture","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4fcf777d-2908-4954-b9cd-ebed4c40bdd1","Code":"C.23.13","Title":"Manufacture of hollow glass","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"be85d3ac-5c9e-416a-947b-ecba8948ff56","Code":"G.46.31","Title":"Wholesale of fruit and vegetables","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"26f8b7cf-2578-470f-bb3b-ecf752dc942f","Code":"G.46.4","Title":"Wholesale of household goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"835dfe04-faa4-46ab-a04c-ed066cea2119","Code":"D.35.1","Title":"Electric power generation, transmission and distribution","IndustryId":"3228e773-7866-4b77-aa78-f6b043086335"}
+{"Id":"f66a4a95-d9ce-486e-b542-ed0fb26a3e65","Code":"C.17.12","Title":"Manufacture of paper and paperboard","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6309604f-8002-4c91-86cd-ed3f13b9ed24","Code":"H.52.1","Title":"Warehousing and storage","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"291bd20a-4775-4998-949e-ed7bd64d0812","Code":"J.63.99","Title":"Other information service activities n.e.c.","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"03ae3181-8320-4ec4-860e-edebaf78570c","Code":"E.38.21","Title":"Treatment and disposal of non-hazardous waste","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"8cc2e1b6-983a-4210-8f17-edecef57bade","Code":"H.49.39","Title":"Other passenger land transport n.e.c.","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"335c3de4-beec-44e0-916c-ee05217e2922","Code":"C.30.40","Title":"Manufacture of military fighting vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"57ca5a8d-0f91-4218-b927-ee791ee42a0a","Code":"C.30.91","Title":"Manufacture of motorcycles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"762ab80b-4b81-49d9-b838-eef6cd15e830","Code":"H.50.20","Title":"Sea and coastal freight water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"bfd3d169-5f37-4fdc-b71b-eeff3e7cdfe5","Code":"O.84.11","Title":"General public administration activities","IndustryId":"c8458554-f0f3-4509-a1aa-46134335e907"}
+{"Id":"d5f7649e-70d8-4c0a-be35-ef1a57eef23e","Code":"M.72.2","Title":"Research and experimental development on social sciences and humanities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"5e068677-42b2-4fae-97d8-ef8b192cda88","Code":"C.18.12","Title":"Other printing","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"497ef29f-69bc-44fe-9e0e-efe14fa072e4","Code":"G.47.79","Title":"Retail sale of second-hand goods in stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"84130032-fbba-4122-95de-f02720928042","Code":"C.15","Title":"Manufacture of leather and related products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"316f8e9c-b391-4cf1-8719-f042c5133bce","Code":"C.20.42","Title":"Manufacture of perfumes and toilet preparations","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"088cdbd3-48db-477e-9988-f0d05ccd4759","Code":"C.28.49","Title":"Manufacture of other machine tools","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"397b15a4-b567-4c58-a7e0-f10a08a5523e","Code":"C.25.61","Title":"Treatment and coating of metals","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5e5b39d1-78a2-4421-ba1d-f10c1d599664","Code":"M.74.10","Title":"Specialised design activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"1618507f-7e0f-453c-b13c-f16ade07f9d2","Code":"G.45.4","Title":"Sale, maintenance and repair of motorcycles and related parts and accessories","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"f19cffd0-abc5-47ca-9ffd-f1cb615cdabe","Code":"G.46.44","Title":"Wholesale of china and glassware and cleaning materials","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"ed52c77a-bed2-48f0-8880-f208b72495a1","Code":"M.70.2","Title":"Management consultancy activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"5f02bf7e-8633-48ed-a08d-f25f1b067833","Code":"J.63","Title":"Information service activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"a8ca3bc7-eeb7-403e-81c4-f2f6a8193fe5","Code":"M.72.11","Title":"Research and experimental development on biotechnology","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"bec85d57-f1c8-44e8-ac1c-f330f1000489","Code":"H.49.32","Title":"Taxi operation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"08c24e27-ba52-473b-815a-f339468f74dc","Code":"H.52.2","Title":"Support activities for transportation","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"0f0d0ab9-a685-44a4-8990-f341daf1335a","Code":"E.38.3","Title":"Materials recovery","IndustryId":"06986339-d221-4ae6-84c9-bb2b03d7d703"}
+{"Id":"fc63d8a5-6740-4c0b-b3f5-f34ee5e682da","Code":"C.10.42","Title":"Manufacture of margarine and similar edible fats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"7d4d6939-c66b-4966-8896-f3b3ce67b6fc","Code":"B.07.1","Title":"Mining of iron ores","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}
+{"Id":"b6acdde1-5889-4ca7-803b-f3bad8913388","Code":"J.59.14","Title":"Motion picture projection activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"8e43c1eb-881b-4134-8110-f3f65067356f","Code":"A.01.62","Title":"Support activities for animal production","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"b6863031-eab3-444c-ae99-f470576fce1c","Code":"C.10.4","Title":"Manufacture of vegetable and animal oils and fats","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"97a20da6-6809-43d5-8230-f4d06517bddb","Code":"C.32.12","Title":"Manufacture of jewellery and related articles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"6db90be0-1c75-4d76-bfa5-f4d9800f9fb6","Code":"C.14.14","Title":"Manufacture of underwear","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"124b0fac-53de-4d02-b8f1-f561a205222b","Code":"H.50.1","Title":"Sea and coastal passenger water transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"6888ab42-e3fe-4834-82fc-f5a6a5f30867","Code":"J.58","Title":"Publishing activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"196355d0-7b6d-49de-8d7d-f5af08f6345c","Code":"T.97.00","Title":"Activities of households as employers of domestic personnel","IndustryId":"a3fa5683-9b41-478b-91db-2a874f161d17"}
+{"Id":"7f8347c7-8284-445f-bcd4-f5b7d9488064","Code":"C.28.24","Title":"Manufacture of power-driven hand tools","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"32838a9f-38bb-4621-bbb1-f5d1ef21eb63","Code":"G.47.63","Title":"Retail sale of music and video recordings in specialised stores","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"cc6b4d54-6075-4c85-a80a-f5ffcb86815d","Code":"C.20.5","Title":"Manufacture of other chemical products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"0ff74801-8cd5-4967-af5b-f6055566ab57","Code":"C.10.2","Title":"Processing and preserving of fish, crustaceans and molluscs","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f77b9c66-f13e-40d0-8774-f65c424d8377","Code":"C.16.21","Title":"Manufacture of veneer sheets and wood-based panels","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"530d5841-0cd9-45fa-89fa-f68b69be8391","Code":"A.01.42","Title":"Raising of other cattle and buffaloes","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"a62ddb39-ff22-48af-980e-f69260351428","Code":"C.32.40","Title":"Manufacture of games and toys","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"e4abbe5e-f5d8-463e-8c0d-f6c148f44a34","Code":"C.13.94","Title":"Manufacture of cordage, rope, twine and netting","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9b7de819-7ebe-49c7-9918-f75ff7f60dac","Code":"A.01.24","Title":"Growing of pome fruits and stone fruits","IndustryId":"72c67ffe-6129-4dc3-adf6-286cbd333dc6"}
+{"Id":"bf5d57e2-2cfa-4d43-aade-f7cbb93d0583","Code":"C.20.60","Title":"Manufacture of man-made fibres","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4bbc716f-dc0e-406a-819a-f7f875618292","Code":"C.25.72","Title":"Manufacture of locks and hinges","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"54bc1c36-f23e-4682-9771-f86e7631ee8a","Code":"H.51.21","Title":"Freight air transport","IndustryId":"853336d2-bf20-44e4-995e-acefbcf26837"}
+{"Id":"1e6df2c5-7c38-4ae8-a062-f8be317a30ce","Code":"C.10.11","Title":"Processing and preserving of meat","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"9a701861-8540-49e6-891b-f965c253dada","Code":"J.62.09","Title":"Other information technology and computer service activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"a0b916f1-47dd-40b0-9475-f98bb7b297a3","Code":"C.23.52","Title":"Manufacture of lime and plaster","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"09ade363-dd48-46e8-aac2-f993c0b02b0e","Code":"G.46.19","Title":"Agents involved in the sale of a variety of goods","IndustryId":"9073e44e-88e7-4d0b-9917-75633ee720bd"}
+{"Id":"30654ba5-a68c-4ee0-8328-f998897d09f0","Code":"J.62.0","Title":"Computer programming, consultancy and related activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"3f85af7c-ff52-4437-8f43-f99bc73c59a2","Code":"M.74","Title":"Other professional, scientific and technical activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"d83f9191-0dbd-4ef2-b90f-f9bb0ae1542a","Code":"N.77.31","Title":"Renting and leasing of agricultural machinery and equipment","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"a2760c33-dd74-4bda-a454-f9c87a8d7b43","Code":"N.78.3","Title":"Other human resources provision","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"b43b823c-0610-4873-9a53-fa4a398189f5","Code":"C.30.2","Title":"Manufacture of railway locomotives and rolling stock","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"5a07373b-c022-4bff-805e-fa6115e502f0","Code":"C.27.33","Title":"Manufacture of wiring devices","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"cdc7eb40-ad25-4b24-9ea3-fa619a185d01","Code":"R.93.11","Title":"Operation of sports facilities","IndustryId":"6648878d-a226-4ab9-901b-15f801b7f051"}
+{"Id":"fb173cdf-338e-4981-9a66-fa9514c53b14","Code":"C.10.71","Title":"Manufacture of bread; manufacture of fresh pastry goods and cakes","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"c077bcf4-ef32-4855-8e41-fab3f802b9b6","Code":"C.10.89","Title":"Manufacture of other food products n.e.c.","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"457166c3-453c-495d-a350-fac419fc27c0","Code":"J.59.13","Title":"Motion picture, video and television programme distribution activities","IndustryId":"1c400054-33bd-48a6-8dc0-39cdd8413b71"}
+{"Id":"ea5bf83d-bcb4-4fb6-bc68-faea4be1f9df","Code":"C.30.11","Title":"Building of ships and floating structures","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"94d9c88b-d19e-4bd6-a1d1-fb3b2d890754","Code":"N.77.1","Title":"Renting and leasing of motor vehicles","IndustryId":"8e84a333-7a65-41ee-965d-01bb08f94bf8"}
+{"Id":"9bffa53d-439c-4b6f-a2bc-fb6b632c0828","Code":"C.22.19","Title":"Manufacture of other rubber products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"d5f1b304-c39c-4609-a504-fb77d92b1070","Code":"C.17.21","Title":"Manufacture of corrugated paper and paperboard and of containers of paper and paperboard","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"f861dd9b-a09d-4333-b6b0-fb86433af59c","Code":"C.15.12","Title":"Manufacture of luggage, handbags and the like, saddlery and harness","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"8c363c7a-2ea6-46a1-bf50-fb87ef56da00","Code":"U.99.0","Title":"Activities of extraterritorial organisations and bodies","IndustryId":"c128e241-6aa3-4c82-b8ed-bb6932f96cf6"}
+{"Id":"0ff93f1d-75b3-4de4-9804-fb886e7d10e9","Code":"C.30","Title":"Manufacture of other transport equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"b76f0adc-bef6-4bab-9a8e-fc097fca37c0","Code":"C.28.4","Title":"Manufacture of metal forming machinery and machine tools","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"62143302-44bc-4666-9d8f-fc0f12f1787e","Code":"C.28.13","Title":"Manufacture of other pumps and compressors","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"4a98a8d7-1cb0-470a-bdd3-fc669d4e5049","Code":"C.25.9","Title":"Manufacture of other fabricated metal products","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"157e2ac9-6f42-4937-91ae-fcb4ad6968a5","Code":"C.33.1","Title":"Repair of fabricated metal products, machinery and equipment","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"a31a7636-2742-4a70-9cc3-fde6d764b5e0","Code":"Q.88.10","Title":"Social work activities without accommodation for the elderly and disabled","IndustryId":"6c29ece4-9ffc-4bf7-878e-e1c562886399"}
+{"Id":"1ca510f5-77cb-4745-82b6-fe6764bc6e9d","Code":"C.29.3","Title":"Manufacture of parts and accessories for motor vehicles","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"2d88d886-0da2-4f18-bbc0-fea875049c4c","Code":"M.71.11","Title":"Architectural activities","IndustryId":"566dfdee-39f5-40af-ada3-4ce4e88e6900"}
+{"Id":"f7d74f7f-2f32-46c2-ad46-fea9f8964864","Code":"C.26.40","Title":"Manufacture of consumer electronics","IndustryId":"c69cb50b-abd6-4244-a1b9-373a74cd5809"}
+{"Id":"3c1677be-e322-4385-9fe8-ff30a6fe8796","Code":"P.85.31","Title":"General secondary education","IndustryId":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed"}
+{"Id":"ee8e2031-6483-4a2a-a944-ffa99bd69514","Code":"B.05","Title":"Mining of coal and lignite","IndustryId":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb"}

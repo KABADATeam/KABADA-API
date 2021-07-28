@@ -55,6 +55,11 @@ namespace KabadaAPI.Controllers {
 
     protected void crash(Exception exc){
       LogError(context.autoM+$" crashed: Message='{exc.Message}' StackTrace='{exc.StackTrace}'.");
+      var u=exc;
+      while(u.InnerException!=null){
+        u=u.InnerException;
+        LogError(context.autoM+$" crashed(inner): Message='{u.Message}' StackTrace='{u.StackTrace}'.");
+        }
       _result=BadRequest(exc.Message);
       }
 

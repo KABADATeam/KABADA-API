@@ -1,0 +1,21 @@
+﻿{"Id":"8e84a333-7a65-41ee-965d-01bb08f94bf8","Code":"N","Title":"Administrative and support service activities","Language":"EN"}
+{"Id":"6648878d-a226-4ab9-901b-15f801b7f051","Code":"R","Title":"Arts, entertainment and recreation","Language":"EN"}
+{"Id":"18e4a873-2da4-4acf-bb09-1c59357938ba","Code":"I","Title":"Accommodation and food service activities","Language":"EN"}
+{"Id":"72c67ffe-6129-4dc3-adf6-286cbd333dc6","Code":"A","Title":"Agriculture, forestry and fishing","Language":"EN"}
+{"Id":"a3fa5683-9b41-478b-91db-2a874f161d17","Code":"T","Title":"Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use","Language":"EN"}
+{"Id":"c200791e-d807-49f3-b954-31196fb1f931","Code":"L","Title":"Real estate activities","Language":"EN"}
+{"Id":"c69cb50b-abd6-4244-a1b9-373a74cd5809","Code":"C","Title":"Manufacturing","Language":"EN"}
+{"Id":"1c400054-33bd-48a6-8dc0-39cdd8413b71","Code":"J","Title":"Information and communication","Language":"EN"}
+{"Id":"3474aa89-653f-4f11-b1ff-401ab4907066","Code":"F","Title":"Construction","Language":"EN"}
+{"Id":"c8458554-f0f3-4509-a1aa-46134335e907","Code":"O","Title":"Public administration and defence; compulsory social security","Language":"EN"}
+{"Id":"566dfdee-39f5-40af-ada3-4ce4e88e6900","Code":"M","Title":"Professional, scientific and technical activities","Language":"EN"}
+{"Id":"ca05e0ac-5b42-480a-ac62-5f0a2485ee4b","Code":"K","Title":"Financial and insurance activities","Language":"EN"}
+{"Id":"9073e44e-88e7-4d0b-9917-75633ee720bd","Code":"G","Title":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Language":"EN"}
+{"Id":"830e89f6-b0ba-4cbc-b7cd-7ef43d9a4eeb","Code":"B","Title":"Mining and quarrying","Language":"EN"}
+{"Id":"7788a9aa-24d9-4d5b-a5d5-a25d6ff2b9ed","Code":"P","Title":"Education","Language":"EN"}
+{"Id":"853336d2-bf20-44e4-995e-acefbcf26837","Code":"H","Title":"Transporting and storage","Language":"EN"}
+{"Id":"06986339-d221-4ae6-84c9-bb2b03d7d703","Code":"E","Title":"Water supply; sewerage; waste managment and remediation activities","Language":"EN"}
+{"Id":"c128e241-6aa3-4c82-b8ed-bb6932f96cf6","Code":"U","Title":"Activities of extraterritorial organisations and bodies","Language":"EN"}
+{"Id":"6c29ece4-9ffc-4bf7-878e-e1c562886399","Code":"Q","Title":"Human health and social work activities","Language":"EN"}
+{"Id":"3228e773-7866-4b77-aa78-f6b043086335","Code":"D","Title":"Electricity, gas, steam and air conditioning supply","Language":"EN"}
+{"Id":"01138d29-1c80-4ec3-90fa-fb64c498a5f8","Code":"S","Title":"Other services activities","Language":"EN"}

@@ -18,5 +18,15 @@ namespace KabadaAPI.Controllers {
         var r=t.snap(key);
         return Ok("Success:"+r);
         }
+
+    [AllowAnonymous]
+    [Route("reinitialize")]
+    [HttpPost]
+        public IActionResult Reinitialize([FromBody] string key){ return prun<string>(_reinitialize, key); }
+        private IActionResult _reinitialize(string key){
+        var t=new UsersRepository(context); // use this because the BaseRepository is abstract
+        var r=t.reinitialize(key);
+        return Ok("Success:"+r);
+        }
     }
   }

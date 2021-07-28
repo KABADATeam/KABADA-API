@@ -102,6 +102,13 @@ namespace KabadaAPI {
       return ++w;
       }
 
-     protected override object[] getAll4snap() { return daContext.Plan_Attributes.ToArray(); }
-     }
+    protected override object[] getAll4snap() { return daContext.Plan_Attributes.ToArray(); }
+
+    protected override string myTable => "Plan_Attributes";
+
+    protected override void loadData(string json) {
+      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Plan_Attribute>(json);
+      daContext.Plan_Attributes.Add(o);
+      }
+    }
   }

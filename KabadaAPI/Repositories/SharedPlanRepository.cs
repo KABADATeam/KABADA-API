@@ -14,5 +14,12 @@ namespace KabadaAPI {
       }
 
      protected override object[] getAll4snap() { return daContext.SharedPlans.ToArray(); }
+
+    protected override string myTable => "SharedPlans";
+
+    protected override void loadData(string json) {
+      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.SharedPlan>(json);
+      daContext.SharedPlans.Add(o);
+      }
     }
   }
