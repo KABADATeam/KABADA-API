@@ -107,5 +107,6 @@ namespace KabadaAPI {
             }
             daContext.SaveChanges();
         }        
+    protected override object[] getAll4snap() { return daContext.Activities.ToArray(); }
     }
 }

@@ -101,5 +101,7 @@ namespace KabadaAPI {
         w=l.Max(x=>x.OrderValue);
       return ++w;
       }
-    }
+
+     protected override object[] getAll4snap() { return daContext.Plan_Attributes.ToArray(); }
+     }
   }

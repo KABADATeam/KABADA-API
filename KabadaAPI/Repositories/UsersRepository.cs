@@ -2,6 +2,7 @@
 using KabadaAPIdao;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace KabadaAPI {
   public class UsersRepository : BaseRepository
@@ -194,5 +195,7 @@ namespace KabadaAPI {
       new Kmail(_config).SendOnMailchangeConfirmation(user.Email, user.Name);
       //Email.SendEmailChange(user.Email);
       }
+
+    protected override object[] getAll4snap() { return daContext.Users.ToArray(); }
     }
 }

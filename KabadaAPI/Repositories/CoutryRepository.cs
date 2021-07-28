@@ -12,5 +12,6 @@ namespace KabadaAPI {
             var list = daContext.Countries.ToList();
             return list.OrderBy(x => x.Title).ToList();
         }
+    protected override object[] getAll4snap() { return daContext.Countries.ToArray(); }
     }
 }

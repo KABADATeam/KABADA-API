@@ -10,5 +10,6 @@ namespace KabadaAPI {
       var r = daContext.Languages.OrderBy(x=>x.Code).ToList();
       return r;
       }
+    protected override object[] getAll4snap() { return daContext.Languages.ToArray(); }
     }
   }

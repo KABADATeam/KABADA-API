@@ -86,5 +86,7 @@ namespace KabadaAPI
         throw new Exception("no members for public plans");
       new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=userId });
       }
+
+    protected override object[] getAll4snap() { return daContext.BusinessPlans.ToArray(); }
     }
 }

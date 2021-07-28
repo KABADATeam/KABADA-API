@@ -12,5 +12,7 @@ namespace KabadaAPI {
       daContext.SharedPlans.Add(sharedPlan);
       daContext.SaveChanges();
       }
+
+     protected override object[] getAll4snap() { return daContext.SharedPlans.ToArray(); }
     }
   }
