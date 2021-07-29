@@ -15,9 +15,10 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.Countries.ToArray(); }
     protected override string myTable => "Countries";
 
-    protected override void loadData(string json) {
+    protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Country>(json);
       daContext.Countries.Add(o);
+      return true;
       }
     }
 }

@@ -17,9 +17,10 @@ namespace KabadaAPI {
 
     protected override string myTable => "SharedPlans";
 
-    protected override void loadData(string json) {
+    protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.SharedPlan>(json);
       daContext.SharedPlans.Add(o);
+      return true;
       }
     }
   }

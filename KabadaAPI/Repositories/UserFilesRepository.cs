@@ -7,9 +7,10 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.UserFiles.ToArray(); }
     protected override string myTable => "UserFiles";
 
-    protected override void loadData(string json) {
+    protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserFile>(json);
       daContext.UserFiles.Add(o);
+      return true;
       }
     }
   }

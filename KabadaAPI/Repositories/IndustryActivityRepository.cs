@@ -116,9 +116,10 @@ namespace KabadaAPI {
 
     protected override string myTable => "Activities";
 
-    protected override void loadData(string json) {
+    protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Activity>(json);
       daContext.Activities.Add(o);
+      return true;
       }
     }
   }

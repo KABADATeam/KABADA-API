@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace KabadaAPI {
   public abstract class BaseRepository : Blotter, IDisposable   {
@@ -111,28 +112,35 @@ namespace KabadaAPI {
       return k;
       }
 
-    internal string reinitialize(string key) {
+    internal string reinitialize(string key, string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false) {
       //TODO: key validation
 
-      var path = Directory.GetCurrentDirectory();  
-      var opa=$"{path}\\DBinit";
+      var opa=inDirectoryPath;
+      if(opa==null){
+        var path = Directory.GetCurrentDirectory();  
+        opa=$"{path}\\DBinit";
+        }
+
       if (!Directory.Exists(opa))  
-        throw new Exception("DBinit not present");
+        throw new Exception($"Not present import directory '{opa}'");
 
       int k=0;
-      foreach(var o in deleteOrder)
-        k+=o.deleteMe();
-      LogInformation($"Total deleted {k} records.");
+      if(deleteOld){
+        foreach(var o in deleteOrder)
+          k+=o.deleteMe();
+        LogInformation($"Total deleted {k} records.");
+       } else
+        LogInformation("Old data arekept.");
 
       k=0;
       foreach(var o in importOrder)
-        k+=o.loadMe(opa);
+        k+=o.loadMe(opa, overwrite);
       LogInformation($"Total loaded {k} records.");
 
       return opa;
       }
 
-    protected virtual int loadMe(string opa) {
+    protected virtual int loadMe(string opa, bool overwrite) {
       var nam=this.GetType().Name;
       var l1=nam.IndexOf("Repository");
       if(l1>0)
@@ -143,17 +151,19 @@ namespace KabadaAPI {
         return 0;
         }
       LogInformation($"{nam} loading.");
+      getOldies();
+
       int k=0;
       string ln;  
       using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){
         while ((ln = os.ReadLine()) != null) {  
           LogInformation(ln);
-          loadData(ln);
+          if(loadData(ln, overwrite))
+            k++; 
+          //daContext.SaveChanges();
+          }
+        if (k>0)
           daContext.SaveChanges();
-          k++; 
-          } 
-        //if(k>0)
-        //  daContext.SaveChanges();
         os.Close();  
         }
       LogInformation($"{nam} loaded {k} records.");
@@ -168,6 +178,30 @@ namespace KabadaAPI {
       return k;
       }
 
-    protected virtual void loadData(string json) {  throw new NotImplementedException(GetType().Name+".loadData is not implemented");}
+    protected virtual bool loadData(string json, bool overwrite) {
+      throw new NotImplementedException(GetType().Name+".loadData is not implemented");
+      }
+
+    protected virtual T getK<T>(object x){
+      var r=(T)(x.GetType().GetProperty("Id").GetValue(x, null));
+      return r;
+      }
+
+    protected virtual Dictionary<T, object> getToldies<T>(){
+      var r=getAll4snap().ToDictionary(x=>getK<T>(x));
+      return r;
+      }
+    protected Dictionary<Guid, object> oldG;
+    protected virtual void getOldies(){
+      oldG=getToldies<Guid>();     //getAll4snap().ToDictionary(x=>(Guid)(x.GetType().GetProperty("Id").GetValue(x, null)));
+      }
+
+    protected virtual object findOld(object me){
+      var k=getK<Guid>(me);
+      object r=null;
+      if(oldG.TryGetValue(k, out r))
+        return r;
+      return null;
+      }
     }
 }

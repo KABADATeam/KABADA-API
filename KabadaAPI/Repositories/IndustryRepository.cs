@@ -6,9 +6,10 @@ namespace KabadaAPI {
 
      protected override object[] getAll4snap() { return daContext.Industries.ToArray(); }
      protected override string myTable => "Industries";
-     protected override void loadData(string json) {
+     protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Industry>(json);
       daContext.Industries.Add(o);
+      return true;
       }
     }
   }

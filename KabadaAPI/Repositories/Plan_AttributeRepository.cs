@@ -106,9 +106,10 @@ namespace KabadaAPI {
 
     protected override string myTable => "Plan_Attributes";
 
-    protected override void loadData(string json) {
+    protected override bool loadData(string json, bool overwrite) {
       var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Plan_Attribute>(json);
       daContext.Plan_Attributes.Add(o);
+      return true;
       }
     }
   }
