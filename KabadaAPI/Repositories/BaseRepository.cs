@@ -42,14 +42,14 @@ namespace KabadaAPI {
       r.Add(new UsersRepository(blContext, daContext));
 
       r.Add(new IndustryRepository(blContext, daContext));
-//      r.Add(new UserTypesRepository(blContext, daContext));
+      r.Add(new UserTypesRepository(blContext, daContext));
 
       r.Add(new UserFilesRepository(blContext, daContext));
 
       return r;
       }}
 
-    protected List<BaseRepository> exportOrder { get { var r=deleteBaseOrder; r.Add(new UserTypesRepository(blContext, daContext)); return r; }}
+    protected List<BaseRepository> exportOrder { get { var r=deleteBaseOrder; return r; }}
 
     protected List<BaseRepository> deleteOrder { get {
       var r=new List<BaseRepository>(){ new RefreshTokenRepository(blContext, daContext) };
@@ -59,25 +59,24 @@ namespace KabadaAPI {
 
     protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
 
-    internal string snap(string key) {
+    internal string snap(string key, string outDirectoryPath=null) {
       //TODO: key validation
-      var dirname=$"snap-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}";
-      var path = Directory.GetCurrentDirectory();  
-      var opa=$"{path}\\Logs\\{dirname}";
-      Directory.CreateDirectory(opa);
+      var opa=outDirectoryPath;
+      if(opa==null){
+        var dirname=$"snap-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}";
+        var path = Directory.GetCurrentDirectory();  
+         opa=$"{path}\\Logs\\{dirname}";
+        }
+      if (!Directory.Exists(opa))  
+        Directory.CreateDirectory(opa);
+       else {
+        var dir = new DirectoryInfo(opa);
+        foreach (var file in dir.EnumerateFiles("*.txt"))
+          file.Delete();
+        }
+
       int k=0;
 
-      //k+=new BusinessPlansRepository(blContext, daContext).snapMe(opa);
-      //k+=new CountryRepository(blContext, daContext).snapMe(opa);
-      //k+=new IndustryRepository(blContext, daContext).snapMe(opa);
-      //k+=new IndustryActivityRepository(blContext, daContext).snapMe(opa);
-      //k+=new LanguagesRepository(blContext, daContext).snapMe(opa);
-      //k+=new Plan_AttributeRepository(blContext, daContext).snapMe(opa);
-      //k+=new SharedPlanRepository(blContext, daContext).snapMe(opa);
-      //k+=new TexterRepository(blContext, daContext).snapMe(opa);
-      //k+=new UsersRepository(blContext, daContext).snapMe(opa);
-      //k+=new UserFilesRepository(blContext, daContext).snapMe(opa);
-      //k+=new UserTypesRepository(blContext, daContext).snapMe(opa);
       foreach(var o in exportOrder)
         k+=o.snapMe(opa);
 
@@ -92,13 +91,17 @@ namespace KabadaAPI {
       var l1=nam.IndexOf("Repository");
       if(l1>0)
         nam=nam.Substring(0, l1);
+      var obi=getAll4snap();
+      if(obi==null || obi.Length<1){
+        LogInformation($"{nam} empty.");
+        return 0;
+        }
       var outf=string.Format($"{opa}\\{nam}.txt", opa);
       int k=0;
       using(var os=new StreamWriter(outf, false, System.Text.Encoding.UTF8)){
-        var obi=getAll4snap();
         foreach(var o in obi){
           var jasons=Newtonsoft.Json.JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-          //TODO newline in text
+          //TODO possible newline in text
           os.WriteLine(jasons);
           k++;
           }
@@ -134,8 +137,12 @@ namespace KabadaAPI {
       var l1=nam.IndexOf("Repository");
       if(l1>0)
         nam=nam.Substring(0, l1);
-      LogInformation($"{nam} loading.");
       var inf=string.Format($"{opa}\\{nam}.txt", opa);
+      if(!File.Exists(inf)){
+        LogInformation($"{nam} not present.");
+        return 0;
+        }
+      LogInformation($"{nam} loading.");
       int k=0;
       string ln;  
       using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){

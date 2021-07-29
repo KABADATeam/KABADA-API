@@ -7,9 +7,9 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.UserTypes.ToArray(); }
     protected override string myTable => "UserTypes";
 
-    //protected override void loadData(string json) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserType>(json);
-    //  daContext.UserTypes.Add(o);
-    //  }
+    protected override void loadData(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserType>(json);
+      daContext.UserTypes.Add(o);
+      }
     }
   }
