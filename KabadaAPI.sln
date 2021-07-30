@@ -4,6 +4,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KabadaAPI", "KabadaAPI\KabadaAPI.csproj", "{93019607-0161-4C9E-8D31-93D9A2CAFFD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "piu", "piu\piu.csproj", "{75679A97-A700-4E97-A58B-5FBC096990EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93019607-0161-4C9E-8D31-93D9A2CAFFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75679A97-A700-4E97-A58B-5FBC096990EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75679A97-A700-4E97-A58B-5FBC096990EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75679A97-A700-4E97-A58B-5FBC096990EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75679A97-A700-4E97-A58B-5FBC096990EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

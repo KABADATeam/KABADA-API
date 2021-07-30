@@ -9,6 +9,8 @@ namespace KabadaAPI.Controllers {
   public class TechnicalController : KController {
     public TechnicalController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
+    internal const string ActualKey="piu pieejas pārbaudīte";
+
     [AllowAnonymous]
     [Route("snap")]
     [HttpPost]

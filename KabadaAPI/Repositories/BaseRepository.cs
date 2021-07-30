@@ -60,10 +60,24 @@ namespace KabadaAPI {
 
     protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
 
+    protected string vk(string key){
+      var w=Controllers.TechnicalController.ActualKey;
+      if(!key.StartsWith(w))
+        throw new Exception("kur lien");
+      return key.Substring(w.Length);
+      }
+
+
     internal string snap(string key, string outDirectoryPath=null) {
-      //TODO: key validation
+      var w=vk(key);
+      if(!string.IsNullOrWhiteSpace(outDirectoryPath))
+        w=outDirectoryPath;
+      return snapI(w);
+      }
+
+    protected string snapI(string outDirectoryPath=null) {
       var opa=outDirectoryPath;
-      if(opa==null){
+      if(string.IsNullOrWhiteSpace(opa)){
         var dirname=$"snap-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}";
         var path = Directory.GetCurrentDirectory();  
          opa=$"{path}\\Logs\\{dirname}";

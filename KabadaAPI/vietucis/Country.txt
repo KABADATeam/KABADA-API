@@ -1,0 +1,36 @@
+﻿{"Id":"4fc44f33-6d0c-4b14-a3d6-086b8887439c","Title":"Lithuania","ShortCode":"LT"}
+{"Id":"d480bd70-e883-4001-ba2b-10c941f2832f","Title":"Turkey","ShortCode":"TR"}
+{"Id":"a25ad04d-d63a-4e6c-a16b-118f5922e175","Title":"North Macedonia","ShortCode":"MK"}
+{"Id":"df4d5d75-8c3b-45b3-8ac0-17c7b5d0b0f9","Title":"Italy","ShortCode":"IT"}
+{"Id":"e876704f-b93c-4a46-ac45-19a45935aa34","Title":"Croatia","ShortCode":"HR"}
+{"Id":"febb11c0-ac67-43c6-8eba-1b9e4fcbe318","Title":"Greece","ShortCode":"EL"}
+{"Id":"faf79adb-0ee3-4831-b3b9-45840415ac0d","Title":"Belgium","ShortCode":"BE"}
+{"Id":"b166b440-11d7-4766-8926-45cc6f97430f","Title":"Austria","ShortCode":"AT"}
+{"Id":"e90a042c-5236-49ad-989f-481f007f32aa","Title":"Poland","ShortCode":"PL"}
+{"Id":"8de06ef6-8966-4e52-a244-48422321ffaa","Title":"Liechtenstein","ShortCode":"LI"}
+{"Id":"8d52d2a1-8459-488d-8315-4a7d2fd28204","Title":"Slovakia","ShortCode":"SK"}
+{"Id":"520e1ff1-ba39-4dec-82f5-56e2868c2822","Title":"Romania","ShortCode":"RO"}
+{"Id":"a0c1dd5e-8ae6-439a-9ac9-7638c8b72020","Title":"Netherlands","ShortCode":"NL"}
+{"Id":"fb1fec9a-4d42-4248-9469-83a1b2ec6a77","Title":"United Kingdom","ShortCode":"UK"}
+{"Id":"9ddbfacc-ef15-4bff-a4e3-8d57e90ca5c2","Title":"France","ShortCode":"FR"}
+{"Id":"c66c593a-d743-4473-8202-955ac09d78cf","Title":"Ireland","ShortCode":"IE"}
+{"Id":"4cf29c73-9558-4ee6-9fe2-973e01a71365","Title":"Serbia","ShortCode":"RS"}
+{"Id":"050b9ee7-07ef-40c6-8f62-9a1e3b932074","Title":"Slovenia","ShortCode":"SI"}
+{"Id":"42da7d0f-bc1e-4738-981d-a347f02e149b","Title":"Estonia","ShortCode":"EE"}
+{"Id":"34656372-3fe8-40b4-b1a2-a8f3e7aadd71","Title":"Malta","ShortCode":"MT"}
+{"Id":"31bf0dc8-84bc-4fb4-be98-adc820e704f0","Title":"Switzerland","ShortCode":"CH"}
+{"Id":"3ba00e48-567d-4ab2-8d69-b2513029450f","Title":"Germany","ShortCode":"DE"}
+{"Id":"f80c19a8-cfbb-4a11-9fcf-b2bb6bb76209","Title":"Portugal","ShortCode":"PT"}
+{"Id":"4cb2912a-653a-44fb-b7a7-bfc336e96452","Title":"Denmark","ShortCode":"DK"}
+{"Id":"9adfa62a-dc9c-4eef-9117-c524d25bed02","Title":"Luxembourg","ShortCode":"LU"}
+{"Id":"e77e44cb-424b-4e9e-af3a-d18d80af7af9","Title":"Iceland","ShortCode":"IS"}
+{"Id":"2f5f58b0-9187-4880-989a-d1c0df55eadf","Title":"Cyprus","ShortCode":"CY"}
+{"Id":"563ddee5-e623-497f-a156-dd017c9cdab8","Title":"Bulgaria","ShortCode":"BG"}
+{"Id":"152b4a85-1cd8-4d6d-8943-e4fe8b54d650","Title":"Norway","ShortCode":"NO"}
+{"Id":"e25fc6c5-ff87-45f6-91fe-e704644c2c72","Title":"Latvia","ShortCode":"LV"}
+{"Id":"e518c516-6118-4b09-b58f-e856299682d4","Title":"Sweden","ShortCode":"SE"}
+{"Id":"0d3a5193-d049-4578-a280-e90bde5f344a","Title":"Hungary","ShortCode":"HU"}
+{"Id":"0440025f-72d4-40df-bd15-f235d391bcb7","Title":"Spain","ShortCode":"ES"}
+{"Id":"67ed2cd2-1f1c-4dcc-b79c-f4484a33ce75","Title":"Finland","ShortCode":"FI"}
+{"Id":"aff0b384-b033-4d50-a2a5-f88459196587","Title":"Czechia","ShortCode":"CZ"}
+{"Id":"cece3c3c-ff40-428a-b6e0-fd4895e727e9","Title":"Bosnia and Herzegovina","ShortCode":"BA"}
