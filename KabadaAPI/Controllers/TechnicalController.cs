@@ -25,7 +25,7 @@ namespace KabadaAPI.Controllers {
         public IActionResult Reinitialize([FromBody] string key){ return prun<string>(_reinitialize, key); }
         private IActionResult _reinitialize(string key){
         var t=new UsersRepository(context); // use this because the BaseRepository is abstract
-        var r=t.reinitialize(key, null, false, true);
+        var r=t.reinitialize(key, null, true, false);
         return Ok("Success:"+r);
         }
     }

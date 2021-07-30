@@ -91,10 +91,14 @@ namespace KabadaAPI
 
     protected override string myTable => "BusinessPlans";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
-      daContext.BusinessPlans.Add(o);
-      return true;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.BusinessPlan, Guid>(daContext.BusinessPlans, json, overwrite, oldDeleted);
       }
+
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
+    //  daContext.BusinessPlans.Add(o);
+    //  return true;
+    //  }
     }
 }

@@ -8,28 +8,32 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.UserTypes.ToArray(); }
     protected override string myTable => "UserTypes";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserType>(json);
-      var t=findOld(o);
-      if(t==null){
-        daContext.UserTypes.Add(o);
-        return true;
-        }
-      //TODO overwrite processing
-      return false;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.UserType, int>(daContext.UserTypes, json, overwrite, oldDeleted);
       }
 
-    protected Dictionary<int, object> oldI;
-    protected override void getOldies(){
-      oldI=getToldies<int>();  //getAll4snap().ToDictionary(x=>(int)(x.GetType().GetProperty("Id").GetValue(x, null)));
-      }
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserType>(json);
+    //  var t=findOld(o);
+    //  if(t==null){
+    //    daContext.UserTypes.Add(o);
+    //    return true;
+    //    }
+    //  //TODO overwrite processing
+    //  return false;
+    //  }
 
-    protected override object findOld(object me){
-      var k=getK<int>(me);
-      object r=null;
-      if(oldI.TryGetValue(k, out r))
-        return r;
-      return null;
-      }
+    //protected Dictionary<int, object> oldI;
+    protected override void getOldies(){ getOldies<int>(); }
+    //  oldI=getToldies<int>();  //getAll4snap().ToDictionary(x=>(int)(x.GetType().GetProperty("Id").GetValue(x, null)));
+    //  }
+
+    //protected override object findOld(object me){
+    //  var k=getK<int>(me);
+    //  object r=null;
+    //  if(oldI.TryGetValue(k, out r))
+    //    return r;
+    //  return null;
+    //  }
     }
   }

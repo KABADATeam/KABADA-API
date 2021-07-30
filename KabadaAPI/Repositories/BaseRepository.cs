@@ -101,7 +101,7 @@ namespace KabadaAPI {
       int k=0;
       using(var os=new StreamWriter(outf, false, System.Text.Encoding.UTF8)){
         foreach(var o in obi){
-          var jasons=Newtonsoft.Json.JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+          var jasons=pack(o); //Newtonsoft.Json.JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
           //TODO possible newline in text
           os.WriteLine(jasons);
           k++;
@@ -134,13 +134,13 @@ namespace KabadaAPI {
 
       k=0;
       foreach(var o in importOrder)
-        k+=o.loadMe(opa, overwrite);
+        k+=o.loadMe(opa, overwrite, deleteOld);
       LogInformation($"Total loaded {k} records.");
 
       return opa;
       }
 
-    protected virtual int loadMe(string opa, bool overwrite) {
+    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted) {
       var nam=this.GetType().Name;
       var l1=nam.IndexOf("Repository");
       if(l1>0)
@@ -151,14 +151,15 @@ namespace KabadaAPI {
         return 0;
         }
       LogInformation($"{nam} loading.");
-      getOldies();
+      if(oldDeleted==false)
+        getOldies();
 
       int k=0;
       string ln;  
       using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){
         while ((ln = os.ReadLine()) != null) {  
           LogInformation(ln);
-          if(loadData(ln, overwrite))
+          if(loadData(ln, overwrite, oldDeleted))
             k++; 
           //daContext.SaveChanges();
           }
@@ -178,7 +179,7 @@ namespace KabadaAPI {
       return k;
       }
 
-    protected virtual bool loadData(string json, bool overwrite) {
+    protected virtual bool loadData(string json, bool overwrite, bool oldDeleted) {
       throw new NotImplementedException(GetType().Name+".loadData is not implemented");
       }
 
@@ -191,17 +192,46 @@ namespace KabadaAPI {
       var r=getAll4snap().ToDictionary(x=>getK<T>(x));
       return r;
       }
-    protected Dictionary<Guid, object> oldG;
-    protected virtual void getOldies(){
-      oldG=getToldies<Guid>();     //getAll4snap().ToDictionary(x=>(Guid)(x.GetType().GetProperty("Id").GetValue(x, null)));
+
+    //protected Dictionary<Guid, object> oldG;
+    protected virtual void getOldies() { getOldies<Guid>(); }
+      //oldG=getToldies<Guid>();     //getAll4snap().ToDictionary(x=>(Guid)(x.GetType().GetProperty("Id").GetValue(x, null)));
+      //}
+
+    protected object oldiesDictionary;
+    protected virtual void getOldies<T>(){
+      oldiesDictionary=getToldies<T>();
       }
 
-    protected virtual object findOld(object me){
-      var k=getK<Guid>(me);
-      object r=null;
-      if(oldG.TryGetValue(k, out r))
-        return r;
-      return null;
+    protected string pack(object o){
+      var r=Newtonsoft.Json.JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+      return r;
+      }
+
+    protected virtual bool loadDataRow<Te, Tk>(DbSet<Te> set, string json, bool overwrite, bool oldDeleted) where Te:class {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Te>(json);
+      object old=null;
+      if(oldDeleted==false && oldiesDictionary!=null){
+        var k=getK<Tk>(o);
+        var d=(Dictionary<Tk, object>)oldiesDictionary;
+        if(d.TryGetValue(k, out old)==false)
+          old=null;
+        }
+      if(old==null){
+        set.Add(o);
+        return true;
+        }
+      if(overwrite==false)
+        return false;
+      var v1=pack(old);
+      var v2=pack(o);
+      if (v1==v2)
+        return false;
+      return update(old, o);
+      }
+
+    protected virtual bool update(object old, object newObject)  {
+      throw new NotImplementedException(GetType().Name+".update is not implemented");
       }
     }
 }

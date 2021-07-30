@@ -199,10 +199,14 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.Users.ToArray(); }
     protected override string myTable => "Users";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.User>(json);
-      daContext.Users.Add(o);
-      return true;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.User, Guid>(daContext.Users, json, overwrite, oldDeleted);
       }
+
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.User>(json);
+    //  daContext.Users.Add(o);
+    //  return true;
+    //  }
     }
 }

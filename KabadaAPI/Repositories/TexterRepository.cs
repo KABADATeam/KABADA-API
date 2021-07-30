@@ -98,10 +98,14 @@ namespace KabadaAPI {
      protected override object[] getAll4snap() { return daContext.Texters.ToArray(); }
     protected override string myTable => "Texters";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Texter>(json);
-      daContext.Texters.Add(o);
-      return true;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.Texter, Guid>(daContext.Texters, json, overwrite, oldDeleted);
       }
+
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Texter>(json);
+    //  daContext.Texters.Add(o);
+    //  return true;
+    //  }
 }
   }

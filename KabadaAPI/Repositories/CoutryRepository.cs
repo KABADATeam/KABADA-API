@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using KabadaAPIdao;
 using System.Linq;
+using System;
 
 namespace KabadaAPI {
   public class CountryRepository : BaseRepository
@@ -15,10 +16,14 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.Countries.ToArray(); }
     protected override string myTable => "Countries";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Country>(json);
-      daContext.Countries.Add(o);
-      return true;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.Country, Guid>(daContext.Countries, json, overwrite, oldDeleted);
       }
+
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Country>(json);
+    //  daContext.Countries.Add(o);
+    //  return true;
+    //  }
     }
 }

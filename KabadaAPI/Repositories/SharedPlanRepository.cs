@@ -17,10 +17,14 @@ namespace KabadaAPI {
 
     protected override string myTable => "SharedPlans";
 
-    protected override bool loadData(string json, bool overwrite) {
-      var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.SharedPlan>(json);
-      daContext.SharedPlans.Add(o);
-      return true;
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
+      return loadDataRow<KabadaAPIdao.SharedPlan, Guid>(daContext.SharedPlans, json, overwrite, oldDeleted);
       }
+
+    //protected override bool loadData(string json, bool overwrite) {
+    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.SharedPlan>(json);
+    //  daContext.SharedPlans.Add(o);
+    //  return true;
+    //  }
     }
   }
