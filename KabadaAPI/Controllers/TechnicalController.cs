@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI.Controllers {
   [Route("api/[controller]")]
   [ApiController]
   public class TechnicalController : KController {
-    public TechnicalController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
+    private IHostApplicationLifetime lft;
+    public TechnicalController(ILogger<KController> logger, IConfiguration configuration, IHostApplicationLifetime lifetime) : base(logger, configuration) { lft=lifetime; }
 
     internal const string ActualKey="piu pieejas pārbaudīte";
 
@@ -18,6 +20,7 @@ namespace KabadaAPI.Controllers {
         private IActionResult _snap(string key){
         var t=new UsersRepository(context); // use this because the BaseRepository is abstract
         var r=t.snap(key);
+        lft.StopApplication();
         return Ok("Success:"+r);
         }
 
