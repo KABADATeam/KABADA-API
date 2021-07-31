@@ -13,25 +13,36 @@ namespace KabadaAPI.Controllers {
 
     internal const string ActualKey="piu pieejas pārbaudīte";
 
-    [AllowAnonymous]
-    [Route("snap")]
-    [HttpPost]
-        public IActionResult Snap([FromBody] string key){ return prun<string>(_snap, key); }
-        private IActionResult _snap(string key){
-        var t=new UsersRepository(context); // use this because the BaseRepository is abstract
-        var r=t.snap(key);
-        lft.StopApplication();
-        return Ok("Success:"+r);
-        }
+    //[AllowAnonymous]
+    //[Route("snap")]
+    //[HttpPost]
+    //    public IActionResult Snap([FromBody] string key){ return prun<string>(_snap, key); }
+    //    private IActionResult _snap(string key){
+    //    var t=new UsersRepository(context); // use this because the BaseRepository is abstract
+    //    var r=t.snap(key);
+    //    lft.StopApplication();
+    //    return Ok("Success:"+r);
+    //    }
+
+    //[AllowAnonymous]
+    //[Route("reinitialize")]
+    //[HttpPost]
+    //    public IActionResult Reinitialize([FromBody] string key){ return prun<string>(_reinitialize, key); }
+    //    private IActionResult _reinitialize(string key){
+    //    var t=new UsersRepository(context); // use this because the BaseRepository is abstract
+    //    var r=t.reinitialize(key, null, true, false);
+    //    return Ok("Success:"+r);
+    //    }
 
     [AllowAnonymous]
-    [Route("reinitialize")]
+    [Route("piu")]
     [HttpPost]
-        public IActionResult Reinitialize([FromBody] string key){ return prun<string>(_reinitialize, key); }
-        private IActionResult _reinitialize(string key){
-        var t=new UsersRepository(context); // use this because the BaseRepository is abstract
-        var r=t.reinitialize(key, null, true, false);
-        return Ok("Success:"+r);
+        public IActionResult Piu([FromBody] string parameter){ return prun<string>(_piu, parameter); }
+        private IActionResult _piu(string parameter){
+        var stp=new Piu(context).go(parameter);
+        if(stp)
+          lft.StopApplication();
+        return Ok("OK");
         }
     }
   }

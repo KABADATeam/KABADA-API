@@ -60,22 +60,22 @@ namespace KabadaAPI {
 
     protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
 
-    protected string vk(string key){
-      var w=Controllers.TechnicalController.ActualKey;
-      if(!key.StartsWith(w))
-        throw new Exception("kur lien");
-      return key.Substring(w.Length);
-      }
+    //protected string vk(string key){
+    //  var w=Controllers.TechnicalController.ActualKey;
+    //  if(!key.StartsWith(w))
+    //    throw new Exception("kur lien");
+    //  return key.Substring(w.Length);
+    //  }
 
 
-    internal string snap(string key, string outDirectoryPath=null) {
-      var w=vk(key);
-      if(!string.IsNullOrWhiteSpace(outDirectoryPath))
-        w=outDirectoryPath;
-      return snapI(w);
-      }
+    //internal string snap(string key, string outDirectoryPath=null) {
+    //  var w=vk(key);
+    //  if(!string.IsNullOrWhiteSpace(outDirectoryPath))
+    //    w=outDirectoryPath;
+    //  return snapI(w);
+    //  }
 
-    protected string snapI(string outDirectoryPath=null) {
+    internal string snap(string outDirectoryPath=null) {
       var opa=outDirectoryPath;
       if(string.IsNullOrWhiteSpace(opa)){
         var dirname=$"snap-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}";
