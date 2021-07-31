@@ -126,9 +126,7 @@ namespace KabadaAPI {
       return k;
       }
 
-    internal string reinitialize(string key, string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false) {
-      //TODO: key validation
-
+    internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false) {
       var opa=inDirectoryPath;
       if(opa==null){
         var path = Directory.GetCurrentDirectory();  

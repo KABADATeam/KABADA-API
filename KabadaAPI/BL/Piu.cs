@@ -19,6 +19,7 @@ namespace KabadaAPI {
       var r=false;
       switch(cmd.Trim().ToUpper()){
         case "SNP": doSnap(); r=true; break;
+        case "REST": doRestore(); break;
         default: throw new Exception("shot moon!");
         }
       return r;
@@ -27,6 +28,11 @@ namespace KabadaAPI {
     private void doSnap() {
       var t=new UsersRepository(context); // use this because the BaseRepository is abstract
       var r=t.snap(backupDirectory);
+      }
+
+    private void doRestore() {
+      var t=new UsersRepository(context); // use this because the BaseRepository is abstract
+      var r=t.reinitialize(backupDirectory);
       }
 
     private string backupDirectory { get {
