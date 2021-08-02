@@ -60,21 +60,6 @@ namespace KabadaAPI {
 
     protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
 
-    //protected string vk(string key){
-    //  var w=Controllers.TechnicalController.ActualKey;
-    //  if(!key.StartsWith(w))
-    //    throw new Exception("kur lien");
-    //  return key.Substring(w.Length);
-    //  }
-
-
-    //internal string snap(string key, string outDirectoryPath=null) {
-    //  var w=vk(key);
-    //  if(!string.IsNullOrWhiteSpace(outDirectoryPath))
-    //    w=outDirectoryPath;
-    //  return snapI(w);
-    //  }
-
     internal string snap(string outDirectoryPath=null) {
       var opa=outDirectoryPath;
       if(string.IsNullOrWhiteSpace(opa)){
@@ -205,10 +190,7 @@ namespace KabadaAPI {
       return r;
       }
 
-    //protected Dictionary<Guid, object> oldG;
     protected virtual void getOldies() { getOldies<Guid>(); }
-      //oldG=getToldies<Guid>();     //getAll4snap().ToDictionary(x=>(Guid)(x.GetType().GetProperty("Id").GetValue(x, null)));
-      //}
 
     protected object oldiesDictionary;
     protected virtual void getOldies<T>(){
@@ -244,6 +226,21 @@ namespace KabadaAPI {
 
     protected virtual bool update(object old, object newObject)  {
       throw new NotImplementedException(GetType().Name+".update is not implemented");
+      }
+
+    protected virtual void expandInit() {
+      throw new NotImplementedException(GetType().Name+".expandInit is not implemented");
+      }
+
+    public static void DBinit(BLontext ctx){ new UsersRepository(ctx).reinitialize(null, false, true); }
+
+    public static void ReBase(BLontext ctx){
+      DBinit(ctx);
+      var o=new UsersRepository(ctx);
+      o.expandInit();
+      var path = Directory.GetCurrentDirectory();  
+      var opa=$"{path}\\ReBase";
+      o.snap(opa);
       }
     }
 }

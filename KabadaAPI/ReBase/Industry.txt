@@ -1,0 +1,21 @@
+﻿{"Id":"b3f121d5-141d-44a5-bc83-04eefb43ea02","Code":"A","Title":"Agriculture, forestry and fishing","Language":"EN"}
+{"Id":"b736e378-91b1-4ac9-9fff-0f507898ec74","Code":"H","Title":"Transporting and storage","Language":"EN"}
+{"Id":"0204f73e-c29b-4728-90f8-14ef1db1db8f","Code":"S","Title":"Other services activities","Language":"EN"}
+{"Id":"59dc62c0-0e24-42b9-855a-172e72e4961d","Code":"E","Title":"Water supply; sewerage; waste managment and remediation activities","Language":"EN"}
+{"Id":"8f0984c6-63fe-4282-8d58-37366d1a5b58","Code":"F","Title":"Construction","Language":"EN"}
+{"Id":"08e384e3-f59b-4b7a-b356-3ef8fa79ac13","Code":"C","Title":"Manufacturing","Language":"EN"}
+{"Id":"badd804d-dda3-4f05-afdf-4167778dac70","Code":"K","Title":"Financial and insurance activities","Language":"EN"}
+{"Id":"2da38e16-d2a2-45af-99a3-43a3cba895ad","Code":"I","Title":"Accommodation and food service activities","Language":"EN"}
+{"Id":"ca191390-10c5-4bff-9930-459cdaab7ce6","Code":"R","Title":"Arts, entertainment and recreation","Language":"EN"}
+{"Id":"744698bc-9ad1-40d2-a810-4e3d865e252c","Code":"J","Title":"Information and communication","Language":"EN"}
+{"Id":"92a890d6-1eb5-467f-8eb3-65a1eafba707","Code":"O","Title":"Public administration and defence; compulsory social security","Language":"EN"}
+{"Id":"e72f48a2-1aeb-416d-8282-65b96623a98c","Code":"P","Title":"Education","Language":"EN"}
+{"Id":"79dee4b7-94f0-4ee5-94f7-705d50ba3a20","Code":"D","Title":"Electricity, gas, steam and air conditioning supply","Language":"EN"}
+{"Id":"852a62fa-0c08-4675-a58b-7fe1b8476aed","Code":"M","Title":"Professional, scientific and technical activities","Language":"EN"}
+{"Id":"d42356d9-186d-408e-857c-8aec5011bae2","Code":"G","Title":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Language":"EN"}
+{"Id":"3dcae13b-1a77-477c-89c9-900e9ed0469c","Code":"Q","Title":"Human health and social work activities","Language":"EN"}
+{"Id":"b6f19c27-77f5-4b31-9303-c16a9654e3aa","Code":"U","Title":"Activities of extraterritorial organisations and bodies","Language":"EN"}
+{"Id":"ce64a561-858c-43f9-90a2-d77a5cae5377","Code":"T","Title":"Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use","Language":"EN"}
+{"Id":"7605dd2a-d935-461c-a1df-d89e9fba0a77","Code":"L","Title":"Real estate activities","Language":"EN"}
+{"Id":"9e1f4f46-173f-402d-ade7-df8ddc6c563f","Code":"B","Title":"Mining and quarrying","Language":"EN"}
+{"Id":"550e86b3-c2d8-4952-9b94-f4f4b35f4f6f","Code":"N","Title":"Administrative and support service activities","Language":"EN"}

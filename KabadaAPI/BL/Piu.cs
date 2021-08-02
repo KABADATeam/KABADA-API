@@ -20,6 +20,7 @@ namespace KabadaAPI {
       switch(cmd.Trim().ToUpper()){
         case "SNP": doSnap(); r=true; break;
         case "REST": doRestore(); break;
+        case "RB": BaseRepository.ReBase(context); break;
         default: throw new Exception("shot moon!");
         }
       return r;

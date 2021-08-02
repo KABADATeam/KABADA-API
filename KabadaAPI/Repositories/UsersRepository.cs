@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace KabadaAPI {
-  public class UsersRepository : BaseRepository
+  public partial class UsersRepository : BaseRepository
     {
       public UsersRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
@@ -202,11 +202,5 @@ namespace KabadaAPI {
     protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
       return loadDataRow<KabadaAPIdao.User, Guid>(daContext.Users, json, overwrite, oldDeleted);
       }
-
-    //protected override bool loadData(string json, bool overwrite) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.User>(json);
-    //  daContext.Users.Add(o);
-    //  return true;
-    //  }
     }
 }
