@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace KabadaAPI {
-  public class TexterRepository : BaseRepository {
+  public partial class TexterRepository : BaseRepository {
     public enum EnumTexterKind { strength=1, strength_local, oportunity=3, oportunity_local
                    , keyResourceCategory=5, keyResourceType=6, /*keyResourceSubType=7,*/ keyResourcesSelection=8
                    , /*keyPartners=10,*/ keyDistributors=11, keySuppliers=12, keyPartnersOther=13
@@ -12,7 +12,8 @@ namespace KabadaAPI {
                    , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
                    , fixedCostCategory=21, variableCostCategory=22, costType=23
                    , revenueStreamType=24,revenuePriceCategory=25,revenuePriceType=26
-                , channelType=27,channelSubtype=28,channelSubtypeType=29, channelLocationType=30, channelDistribution=31
+                  , channelType=27,channelSubtype=28,channelSubtypeType=29, channelLocationType=30, channelDistribution=31
+           , age_group=32, income=33, education=34, geographic_location=35, company_size=36, industry=37, public_bodies_ngo=38, gender=39
         }       
 
         public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
@@ -102,10 +103,16 @@ namespace KabadaAPI {
       return loadDataRow<KabadaAPIdao.Texter, Guid>(daContext.Texters, json, overwrite, oldDeleted);
       }
 
-    //protected override bool loadData(string json, bool overwrite) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Texter>(json);
-    //  daContext.Texters.Add(o);
-    //  return true;
-    //  }
-}
+    public static List<Texter> Codifiers(EnumTexterKind kind, params string[] us){ return Codifiers((short)kind, us); }
+
+    public static List<Texter> Codifiers(short kind, IEnumerable<string> us, short orderOffser=0){
+      var k=orderOffser;
+      var r=new List<Texter>();
+      foreach(var x in us){
+        k++;
+        r.Add(new Texter(){ Id=Guid.NewGuid(), Kind=kind, Value=x, OrderValue=k });
+        }
+      return r;
+      }
+    }
   }

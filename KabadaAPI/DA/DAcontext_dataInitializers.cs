@@ -6,7 +6,6 @@ using System.Collections.Generic;
 namespace KabadaAPI {
     partial class DAcontext
     {
-
         private void AddData_PartnersTypes(ModelBuilder modelBuilder)
         {
             //--- Distributors types
@@ -546,5 +545,12 @@ namespace KabadaAPI {
             modelBuilder.Entity<Texter>().HasData(new Texter { Id = typeGuid, OrderValue = 5, Value = "Other", Kind = (int)TexterRepository.EnumTexterKind.channelType });
 
         }
+
+    private void AddData_CustomerSegmentCodifiers(ModelBuilder modelBuilder){ texters2DB(modelBuilder, TexterRepository.CustomerSegmentsCodifiers()); }
+
+    protected void texters2DB(ModelBuilder modelBuilder, List<Texter> us){
+      foreach(var o in us)
+        modelBuilder.Entity<Texter>().HasData(o);
+      }
     }
     }
