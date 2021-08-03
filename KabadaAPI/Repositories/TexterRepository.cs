@@ -18,7 +18,7 @@ namespace KabadaAPI {
 
         public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
-    protected List<Texter> get(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
+    protected IQueryable<Texter> getQ(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
       var q=daContext.Texters.AsQueryable();
         if(master==null){
           if(ignoreMaster==false)
@@ -39,6 +39,31 @@ namespace KabadaAPI {
         q=q.Where(x=>x.Kind<=w);
         }
       q=q.OrderBy(x=>x.Kind).ThenBy(x=>x.OrderValue);
+      return q;
+      }
+
+    protected List<Texter> get(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
+      var q=getQ(master, @from, to, kinds, ignoreMaster);
+      //var q=daContext.Texters.AsQueryable();
+      //  if(master==null){
+      //    if(ignoreMaster==false)
+      //      q=q.Where(x=>x.MasterId==null);
+      //    }
+      //   else {
+      //    var w=master.Value;
+      //    q=q.Where(x=>x.MasterId==null || x.MasterId==w);
+      //    }
+      //if(kinds!=null)
+      //  q=q.Where(x=>kinds.Contains(x.Kind));
+      //if(@from!=null){
+      //  var w=@from.Value;
+      //  q=q.Where(x=>x.Kind>=w);
+      //  }
+      //if(@to!=null){
+      //  var w=@to.Value;
+      //  q=q.Where(x=>x.Kind<=w);
+      //  }
+      //q=q.OrderBy(x=>x.Kind).ThenBy(x=>x.OrderValue);
       var r=q.ToList();
       return r;
       }
@@ -75,7 +100,7 @@ namespace KabadaAPI {
     public List<Texter> getChannelTypesMeta() { return get(null, (short)EnumTexterKind.channelType, (short)EnumTexterKind.channelDistribution, ignoreMaster: true); }
 
 
-        public Texter Create(Texter me) {
+    public Texter Create(Texter me) {
       daContext.Texters.Add(me);
       daContext.SaveChanges();
       return me;
@@ -112,6 +137,12 @@ namespace KabadaAPI {
         k++;
         r.Add(new Texter(){ Id=Guid.NewGuid(), Kind=kind, Value=x, OrderValue=k });
         }
+      return r;
+      }
+
+    public Dictionary<short , List<Texter>> getCustomerSegmentsCodifiers(){
+      var q=getQ(null, (short)EnumTexterKind.age_group, (short)EnumTexterKind.gender);
+      var r=q.AsEnumerable().GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       return r;
       }
     }
