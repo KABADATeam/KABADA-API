@@ -95,10 +95,11 @@ namespace KabadaAPI
       return loadDataRow<KabadaAPIdao.BusinessPlan, Guid>(daContext.BusinessPlans, json, overwrite, oldDeleted);
       }
 
-    //protected override bool loadData(string json, bool overwrite) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
-    //  daContext.BusinessPlans.Add(o);
-    //  return true;
-    //  }
+    internal void ChangeCustomerSegmentsCompleted(Guid planId, bool newValue, Guid userId) {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsCustomerSegmentsCompleted = newValue;
+            daContext.SaveChanges();
+      }
+
     }
 }

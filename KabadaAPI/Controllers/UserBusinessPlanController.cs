@@ -185,5 +185,15 @@ namespace KabadaAPI.Controllers {
             bRepo.inviteMember(planUpdate.business_plan_id, planUpdate.newMember.Value, uGuid);
             return Ok("Success");
         }
+        [Route("changeChannelsCompleted")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangeCustomerSegmentsCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeCustomerSegmentsCompleted, planUpdate); }
+        private IActionResult _changeCustomerSegmentsCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
+            repo.ChangeCustomerSegmentsCompleted(planUpdate.business_plan_id, planUpdate.is_customer_segments_completed, uGuid);
+            return Ok("Success");
+        }
     }
 }
