@@ -47,5 +47,14 @@ namespace KabadaAPI.Controllers {
       Guid r = update.perform(context, (short)PlanAttributeKind.consumerSegment);
       return r;
       }
+
+    [HttpPost]
+    [Authorize]
+    [Route("updateBusiness")]
+    public ActionResult<Guid> UpdateBusiness(BusinessSegmentPOST update) { return Prun<BusinessSegmentPOST, Guid>(_Update, update); }
+    private ActionResult<Guid> _Update(BusinessSegmentPOST update){
+      Guid r = update.perform(context, (short)PlanAttributeKind.businessSegment);
+      return r;
+      }
     }
   }
