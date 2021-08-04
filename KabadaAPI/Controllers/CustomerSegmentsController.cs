@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
+using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI.Controllers {
   [Route("api/custSegs")]
@@ -17,5 +20,11 @@ namespace KabadaAPI.Controllers {
             r.read(context);
             return r;
         }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("{segment}")]
+    public IActionResult DeleteMe(Guid resource) { return prun<Guid>(_DeleteMe, resource); }
+    private IActionResult _DeleteMe(Guid resource) { Plan_SpecificAttributesRepository.DeleteAttribute(context, resource, PlanAttributeKind.customerSegment); return Ok("deleted");}
     }
   }
