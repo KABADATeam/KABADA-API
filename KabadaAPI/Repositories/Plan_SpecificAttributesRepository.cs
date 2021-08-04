@@ -14,10 +14,12 @@ namespace KabadaAPI {
       return r;
       }
 
-    internal Plan_SpecificAttribute byId(Guid attribute_id, Guid? business_plan_idForValidate=null) {
+    internal Plan_SpecificAttribute byId(Guid attribute_id, Guid? business_plan_idForValidate=null, short? kindForValidate=null) {
       var r=daContext.Plan_SpecificAttributes.Where(x=>x.Id==attribute_id).FirstOrDefault();
       if(business_plan_idForValidate!=null && r.BusinessPlanId!=business_plan_idForValidate)
        throw new Exception("wrong plan as attribute owner");
+      if(kindForValidate!=null && r.Kind!=kindForValidate)
+       throw new Exception("wrong attribute kind");
       return r;
       }
 
@@ -36,6 +38,29 @@ namespace KabadaAPI {
         aRepo.Delete(o);
         tr.Commit();
         }
+      }
+
+    public void Save(Plan_SpecificAttribute olduks) {
+      daContext.SaveChanges();
+      }
+
+    protected List<Plan_SpecificAttribute> get(Guid plan){
+      var r=daContext.Plan_SpecificAttributes.Where(x=>x.BusinessPlanId==plan).OrderBy(x=>x.OrderValue).ToList();
+      return r;
+      }
+
+    internal short generateAtrrOrder(Guid business_plan_id) {
+      short w=0;
+      var l=get(business_plan_id);
+      if(l.Count>0)
+        w=l.Max(x=>x.OrderValue);
+      return ++w;
+      }
+
+    public Plan_SpecificAttribute Create(Plan_SpecificAttribute me) {
+      daContext.Plan_SpecificAttributes.Add(me);
+      daContext.SaveChanges();
+      return me;
       }
     }
   }

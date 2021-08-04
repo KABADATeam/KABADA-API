@@ -8,7 +8,7 @@ namespace KabadaAPI {
     public enum PlanAttributeKind { swot=1, keyResource=2, keyDistributor=3, keySupplier=4, otherKeyPartner=5, product=6
                                     ,fixedCost=7, variableCost=8, revenueSegment1=9,revenueSegment2=10,revenueOther=11
                                     ,channel=12
-            , customerSegment=13, consumer=14, ngo=15 // specific
+            , consumerSegment=13, businessSegment=14, ngoSegment=15 // specific
 
 //range limit 50 in tables 
       }
