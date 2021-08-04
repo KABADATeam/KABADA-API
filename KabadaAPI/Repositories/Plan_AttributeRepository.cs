@@ -7,7 +7,11 @@ namespace KabadaAPI {
   public class Plan_AttributeRepository : BaseRepository {
     public enum PlanAttributeKind { swot=1, keyResource=2, keyDistributor=3, keySupplier=4, otherKeyPartner=5, product=6
                                     ,fixedCost=7, variableCost=8, revenueSegment1=9,revenueSegment2=10,revenueOther=11
-                                    ,channel=12}
+                                    ,channel=12
+            , customerSegment=13, consumer=14, ngo=15 // specific
+
+//range limit 50 in tables 
+      }
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
@@ -109,11 +113,5 @@ namespace KabadaAPI {
     protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
       return loadDataRow<KabadaAPIdao.Plan_Attribute, Guid>(daContext.Plan_Attributes, json, overwrite, oldDeleted);
       }
-
-    //protected override bool loadData(string json, bool overwrite) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Plan_Attribute>(json);
-    //  daContext.Plan_Attributes.Add(o);
-    //  return true;
-    //  }
     }
   }
