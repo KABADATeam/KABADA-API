@@ -20,7 +20,7 @@ namespace KabadaAPI {
       education_types=extract(EnumTexterKind.education, codi);
       income_types=extract(EnumTexterKind.income, codi);
       geographic_locations=extract(EnumTexterKind.geographic_location, codi);
-      //business_types=extract(EnumTexterKind.b, codi);
+      business_types=extract(EnumTexterKind.industry, codi);
       company_sizes=extract(EnumTexterKind.company_size, codi);
       ngo_types=extract(EnumTexterKind.public_bodies_ngo, codi);
       gender_types=extract(EnumTexterKind.gender, codi);
