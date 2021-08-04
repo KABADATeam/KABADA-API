@@ -15,7 +15,7 @@ namespace KabadaAPI {
       }
 
     internal void read(BLontext context) {
-      var codi=new TexterRepository(context).getCustomerSegmentsCodifiers();
+      var codi=new TexterRepository(context).getCustomerSegmentsCodifiersGrouped();
       age_groups=extract(EnumTexterKind.age_group, codi);
       education_types=extract(EnumTexterKind.education, codi);
       income_types=extract(EnumTexterKind.income, codi);

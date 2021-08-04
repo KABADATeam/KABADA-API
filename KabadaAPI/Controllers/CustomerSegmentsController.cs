@@ -65,5 +65,15 @@ namespace KabadaAPI.Controllers {
       Guid r = update.perform(context, (short)PlanAttributeKind.ngoSegment);
       return r;
       }
+
+    [HttpGet]
+    [Authorize]
+    [Route("{BusinessPlan}")]
+    public ActionResult<CustomerSegments> MySegments(Guid BusinessPlan) { return Prun<Guid, CustomerSegments>(_MySegments, BusinessPlan); }
+    private ActionResult<CustomerSegments> _MySegments(Guid planId) {
+       var r = new CustomerSegments();
+       r.read(context, planId);
+       return r;
+       }
     }
   }

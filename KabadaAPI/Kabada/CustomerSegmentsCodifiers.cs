@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace KabadaAPI {
-  public class Codifier {
-    public Guid id;
-    public string title;
-    }
-
   public partial class CustomerSegmentsCodifiers {
     public List<Codifier> age_groups;
     public List<Codifier> education_types;

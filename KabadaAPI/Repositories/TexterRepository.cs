@@ -140,9 +140,15 @@ namespace KabadaAPI {
       return r;
       }
 
-    public Dictionary<short , List<Texter>> getCustomerSegmentsCodifiers(){
+    public Dictionary<short , List<Texter>> getCustomerSegmentsCodifiersGrouped(){
       var q=getQ(null, (short)EnumTexterKind.age_group, (short)EnumTexterKind.gender);
       var r=q.AsEnumerable().GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      return r;
+      }
+
+    public Dictionary<Guid, Codifier> getCustomerSegmentsCodifiers(){
+      var q=getQ(null, (short)EnumTexterKind.age_group, (short)EnumTexterKind.gender);
+      var r=q.Select(x=>new Codifier { id=x.Id, title=x.Value }).ToDictionary(x=>x.id);
       return r;
       }
     }

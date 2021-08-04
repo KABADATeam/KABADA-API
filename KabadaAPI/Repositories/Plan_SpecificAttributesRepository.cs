@@ -14,6 +14,13 @@ namespace KabadaAPI {
       return r;
       }
 
+    internal List<Plan_SpecificAttribute> getSegments(Guid planId) {
+      var l=(short)PlanAttributeKind.consumerSegment;
+      var h=(short)PlanAttributeKind.ngoSegment;
+      var r=daContext.Plan_SpecificAttributes.Where(x=>x.BusinessPlanId==planId && x.Kind>=l && x.Kind<=h).OrderBy(x=>x.Kind).ThenBy(x=>x.OrderValue).ToList();
+      return r;
+      }
+
     internal Plan_SpecificAttribute byId(Guid attribute_id, Guid? business_plan_idForValidate=null, short? kindForValidate=null) {
       var r=daContext.Plan_SpecificAttributes.Where(x=>x.Id==attribute_id).FirstOrDefault();
       if(business_plan_idForValidate!=null && r.BusinessPlanId!=business_plan_idForValidate)
