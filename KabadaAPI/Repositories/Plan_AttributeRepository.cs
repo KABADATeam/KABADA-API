@@ -15,7 +15,7 @@ namespace KabadaAPI {
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
-    protected List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
+    internal List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
       var w=(short)such;
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
       return r;
