@@ -33,6 +33,7 @@ namespace KabadaAPI {
 
       r.Add(new Plan_AttributeRepository(blContext, daContext));
       r.Add(new SharedPlanRepository(blContext, daContext));
+      r.Add(new Plan_SpecificAttributesRepository(blContext, daContext));
 
       r.Add(new BusinessPlansRepository(blContext, daContext));
       r.Add(new TexterRepository(blContext, daContext));
