@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using KabadaAPI;
+using System.Linq;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class CustomerRelationshipActions {
     internal void read(BLontext context) {
        var tRepo=new TexterRepository(context);

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using KabadaAPI;
+using System;
 using System.Collections.Generic;
 using static KabadaAPI.Plan_AttributeRepository;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class CustomerSegments {
      protected BLontext ctx;
 

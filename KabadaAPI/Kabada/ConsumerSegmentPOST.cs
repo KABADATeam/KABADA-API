@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class ConsumerSegmentPOST : CustomerSegmentPostBase {
     public bool is_children;
     public List<Guid> age;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class CustomerSegments {
     public bool is_customer_segments_completed;
     public List<ConsumerSegment> consumers;

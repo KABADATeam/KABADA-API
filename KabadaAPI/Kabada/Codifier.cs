@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KabadaAPI {
+namespace Kabada {
   public class Codifier {
     public Guid id;
     public string title;

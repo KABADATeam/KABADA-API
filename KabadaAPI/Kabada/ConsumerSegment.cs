@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class ConsumerSegment : CustomerSegment {
     public bool is_children;
     public List<Codifier> age;

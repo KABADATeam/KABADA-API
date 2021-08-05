@@ -1,8 +1,9 @@
-﻿using System;
+﻿using KabadaAPI;
+using System;
 using System.Collections.Generic;
 using static KabadaAPI.TexterRepository;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class ConsumerSegment {
     internal override void unpack(CustomerSegmentUniversal w, Dictionary<Guid, Codifier> codes) {
       is_children=(w.flag==true);

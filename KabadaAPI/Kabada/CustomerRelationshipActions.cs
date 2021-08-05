@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class CustomerRelationshipActions {
     public List<Codifier> categories;
     }

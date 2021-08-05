@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class NgoSegmentPOST : CustomerSegmentPostBase {
     public List<Guid> ngo_types;
     }

@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using KabadaAPI;
+using System.Collections.Generic;
 using System.Linq;
 using static KabadaAPI.TexterRepository;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class CustomerSegmentsCodifiers {
     private List<Codifier> extract(EnumTexterKind kind, Dictionary<short , List<KabadaAPIdao.Texter>> fullSet){
       List<KabadaAPIdao.Texter> w=null;

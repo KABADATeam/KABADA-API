@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class CustomerSegmentsCodifiers {
     public List<Codifier> age_groups;
     public List<Codifier> education_types;

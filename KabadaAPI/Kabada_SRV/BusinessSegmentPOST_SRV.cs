@@ -1,6 +1,7 @@
-﻿using static KabadaAPI.TexterRepository;
+﻿using KabadaAPI;
+using static KabadaAPI.TexterRepository;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class BusinessSegmentPOST {
     protected override void fill(CustomerSegmentUniversal t) {
       fill(t, EnumTexterKind.industry, business_type);

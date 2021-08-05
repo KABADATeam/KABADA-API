@@ -1,8 +1,9 @@
-﻿using KabadaAPIdao;
+﻿using KabadaAPI;
+using KabadaAPIdao;
 using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class CustomerSegmentPostBase {
     protected BLontext ctx;
  

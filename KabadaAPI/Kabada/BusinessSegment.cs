@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class BusinessSegment : CustomerSegment {
     public List<Codifier> business_type;
     public List<Codifier> company_size;
