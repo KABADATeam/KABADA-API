@@ -101,5 +101,10 @@ namespace KabadaAPI
             daContext.SaveChanges();
       }
 
+    internal void ChangeRelationshipCompleted(Guid planId, bool newValue, Guid userId) {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsCustomerRelationshipCompleted = newValue;
+            daContext.SaveChanges();
+      }
     }
 }

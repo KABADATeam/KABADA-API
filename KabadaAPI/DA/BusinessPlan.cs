@@ -36,5 +36,6 @@ namespace KabadaAPIdao
         public bool IsRevenueCompleted { get; set; }
         public bool IsChannelsCompleted { get; set; }
         public bool IsCustomerSegmentsCompleted { get; set; }
+        public bool IsCustomerRelationshipCompleted { get; set; }
     }
 }

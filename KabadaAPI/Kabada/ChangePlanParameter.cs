@@ -13,5 +13,6 @@ namespace Kabada {
     public bool is_private { get; set; }
     public Guid? newMember { get; set; }
     public bool is_customer_segments_completed { get; set; }
+    public bool is_customer_relationship_completed { get; set; }
     }
 }
