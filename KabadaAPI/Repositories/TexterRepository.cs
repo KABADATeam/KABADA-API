@@ -152,5 +152,11 @@ namespace KabadaAPI {
       var r=q.Select(x=>new Codifier { id=x.Id, title=x.Value }).ToDictionary(x=>x.id);
       return r;
       }
+
+    internal List<Texter> getCustomerRelationshipActions() {
+      var k=(short)EnumTexterKind.action;
+      return get(null, k, k);
+      }
+
     }
   }
