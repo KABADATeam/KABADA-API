@@ -1,12 +1,8 @@
-﻿using Kabada;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KabadaAPI.Controllers {
   [Route("api/custRel")]
@@ -23,5 +19,14 @@ namespace KabadaAPI.Controllers {
             r.read(context);
             return r;
         }
+
+    [HttpPost]
+    [Authorize]
+    [Route("save")]
+    public ActionResult<Guid> Save(CustomerRelationshipPOST update) { return Prun<CustomerRelationshipPOST, Guid>(_Save, update); }
+    private ActionResult<Guid> _Save(CustomerRelationshipPOST update) {
+      Guid r=update.perform(context);
+      return r;
+      }
     }
   }

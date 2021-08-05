@@ -9,7 +9,7 @@ namespace KabadaAPI {
                                     ,fixedCost=7, variableCost=8, revenueSegment1=9,revenueSegment2=10,revenueOther=11
                                     ,channel=12
             , consumerSegment=13, businessSegment=14, ngoSegment=15 // specific
-
+                                    ,activity1=16, activity2=17, activity3=18
 //range limit 50 in tables 
       }
 
