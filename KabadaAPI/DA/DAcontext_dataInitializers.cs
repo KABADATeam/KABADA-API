@@ -10,7 +10,7 @@ namespace KabadaAPI {
         private ModelBuilder onlyForDBinit;
         private void AddData_DBinit(ModelBuilder modelBuilder){
           onlyForDBinit=modelBuilder;
-          new UsersRepository(null, this).initsFromDBinit();
+          new UsersRepository(context, this).initsFromDBinit();
           }
 
         public void INITaddInit<T>(T me) where T:class { addInit<T>(onlyForDBinit, me); }

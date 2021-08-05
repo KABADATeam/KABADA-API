@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KabadaAPIdao;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI {
   public partial class DAcontext : DbContext
     {
-        public DAcontext(IConfiguration configuration) : base() { Configuration = configuration; }
+       public BLontext context { get; private set; }
+
+       public DAcontext(IConfiguration configuration, ILogger logger=null ) : base() { Configuration = configuration; context=new BLontext(configuration, logger);}
 
         protected static AppSettings _opt;
         protected AppSettings opt { get {
@@ -81,7 +84,8 @@ namespace KabadaAPI {
 
         private void AddData(ModelBuilder modelBuilder)
         {
- var useOldFunctions=true;
+// System.Diagnostics.Debugger.Launch();
+ var useOldFunctions=false;
           if(useOldFunctions){
             AddData_UserTypes(modelBuilder);
             AddData_Countries(modelBuilder);

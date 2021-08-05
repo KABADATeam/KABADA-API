@@ -14,7 +14,7 @@ namespace KabadaAPI {
 
     public BaseRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
       if(dContext==null)
-        this.daContext = new DAcontext(_config);
+        this.daContext = new DAcontext(_config, bCcontext.logger);
        else
         this.daContext=dContext;
        }
@@ -117,7 +117,7 @@ namespace KabadaAPI {
         return $"{path}\\DBinit";
       }}
 
-    internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false) {
+    internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false) {
       var opa=inDirectoryPath;
       if(opa==null){
         opa=iniPath;
@@ -138,13 +138,13 @@ namespace KabadaAPI {
 
       k=0;
       foreach(var o in importOrder)
-        k+=o.loadMe(opa, overwrite, deleteOld);
+        k+=o.loadMe(opa, overwrite, deleteOld, generateInits);
       LogInformation($"Total loaded {k} records.");
 
       return opa;
       }
 
-    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits=false) {
+    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits) {
       var nam=this.GetType().Name;
       var l1=nam.IndexOf("Repository");
       if(l1>0)
@@ -155,7 +155,7 @@ namespace KabadaAPI {
         return 0;
         }
       LogInformation($"{nam} loading.");
-      if(oldDeleted==false)
+      if(oldDeleted==false && generateInits==false)
         getOldies();
 
       int k=0;
@@ -167,7 +167,7 @@ namespace KabadaAPI {
             k++; 
           //daContext.SaveChanges();
           }
-        if (k>0)
+        if (k>0 && generateInits==false)
           daContext.SaveChanges();
         os.Close();  
         }
@@ -256,7 +256,7 @@ namespace KabadaAPI {
 
 
     internal virtual void initsFromDBinit() {
-      loadMe(iniPath, false, false, true);
+      reinitialize(iniPath, false, false, true);
       }
 
     }

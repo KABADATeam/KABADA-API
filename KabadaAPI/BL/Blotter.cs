@@ -10,11 +10,11 @@ namespace KabadaAPI {
 
     //------------------logging---------------------------------------------------//
     protected ILogger _logger { get { return blContext.logger; }}
-    protected void LogInformation(string message){ blContext.logInformation(message); }
-    protected void LogCritical(string message){ blContext.logCritical(message); }
-    protected void LogDebug(string message){ blContext.logDebug(message); }
-    protected void LogError(string message){ blContext.logError(message); }
-    protected void LogTrace(string message){ blContext.logTrace(message); }
-    protected void LogWarning(string message){ blContext.logWarning(message); }
+    protected void LogInformation(string message){ if(blContext!=null) blContext.logInformation(message); }
+    protected void LogCritical(string message){ if(blContext!=null) blContext.logCritical(message); }
+    protected void LogDebug(string message){ if(blContext!=null) blContext.logDebug(message); }
+    protected void LogError(string message){ if(blContext!=null) blContext.logError(message); }
+    protected void LogTrace(string message){ if(blContext!=null) blContext.logTrace(message); }
+    protected void LogWarning(string message){ if(blContext!=null) blContext.logWarning(message); }
     }
   }
