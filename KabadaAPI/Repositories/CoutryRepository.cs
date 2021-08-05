@@ -16,8 +16,8 @@ namespace KabadaAPI {
     protected override object[] getAll4snap() { return daContext.Countries.ToArray(); }
     protected override string myTable => "Countries";
 
-    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
-      return loadDataRow<KabadaAPIdao.Country, Guid>(daContext.Countries, json, overwrite, oldDeleted);
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
+      return loadDataRow<KabadaAPIdao.Country, Guid>(daContext.Countries, json, overwrite, oldDeleted, generateInits);
       }
 
     //protected override bool loadData(string json, bool overwrite) {

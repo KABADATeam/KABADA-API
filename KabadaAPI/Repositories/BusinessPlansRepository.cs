@@ -91,8 +91,8 @@ namespace KabadaAPI
 
     protected override string myTable => "BusinessPlans";
 
-    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
-      return loadDataRow<KabadaAPIdao.BusinessPlan, Guid>(daContext.BusinessPlans, json, overwrite, oldDeleted);
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
+      return loadDataRow<KabadaAPIdao.BusinessPlan, Guid>(daContext.BusinessPlans, json, overwrite, oldDeleted, generateInits);
       }
 
     internal void ChangeCustomerSegmentsCompleted(Guid planId, bool newValue, Guid userId) {

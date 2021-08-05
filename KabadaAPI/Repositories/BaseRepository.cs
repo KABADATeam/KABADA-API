@@ -112,11 +112,17 @@ namespace KabadaAPI {
       return k;
       }
 
+    public string iniPath { get {
+        var path = Directory.GetCurrentDirectory();  
+        return $"{path}\\DBinit";
+      }}
+
     internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false) {
       var opa=inDirectoryPath;
       if(opa==null){
-        var path = Directory.GetCurrentDirectory();  
-        opa=$"{path}\\DBinit";
+        opa=iniPath;
+        //var path = Directory.GetCurrentDirectory();  
+        //opa=$"{path}\\DBinit";
         }
 
       if (!Directory.Exists(opa))  
@@ -128,7 +134,7 @@ namespace KabadaAPI {
           k+=o.deleteMe();
         LogInformation($"Total deleted {k} records.");
        } else
-        LogInformation("Old data arekept.");
+        LogInformation("Old data are kept.");
 
       k=0;
       foreach(var o in importOrder)
@@ -138,7 +144,7 @@ namespace KabadaAPI {
       return opa;
       }
 
-    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted) {
+    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits=false) {
       var nam=this.GetType().Name;
       var l1=nam.IndexOf("Repository");
       if(l1>0)
@@ -157,7 +163,7 @@ namespace KabadaAPI {
       using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){
         while ((ln = os.ReadLine()) != null) {  
           LogInformation(ln);
-          if(loadData(ln, overwrite, oldDeleted))
+          if(loadData(ln, overwrite, oldDeleted, generateInits))
             k++; 
           //daContext.SaveChanges();
           }
@@ -177,7 +183,7 @@ namespace KabadaAPI {
       return k;
       }
 
-    protected virtual bool loadData(string json, bool overwrite, bool oldDeleted) {
+    protected virtual bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
       throw new NotImplementedException(GetType().Name+".loadData is not implemented");
       }
 
@@ -203,8 +209,12 @@ namespace KabadaAPI {
       return r;
       }
 
-    protected virtual bool loadDataRow<Te, Tk>(DbSet<Te> set, string json, bool overwrite, bool oldDeleted) where Te:class {
+    protected virtual bool loadDataRow<Te, Tk>(DbSet<Te> set, string json, bool overwrite, bool oldDeleted, bool generateInits) where Te:class {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Te>(json);
+      if(generateInits){
+        daContext.INITaddInit<Te>(o);
+        return true;
+        }
       object old=null;
       if(oldDeleted==false && oldiesDictionary!=null){
         var k=getK<Tk>(o);
@@ -243,5 +253,11 @@ namespace KabadaAPI {
       var opa=$"{path}\\ReBase";
       o.snap(opa);
       }
+
+
+    internal virtual void initsFromDBinit() {
+      loadMe(iniPath, false, false, true);
+      }
+
     }
 }

@@ -17,8 +17,8 @@ namespace KabadaAPI {
 
     protected override string myTable => "SharedPlans";
 
-    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
-      return loadDataRow<KabadaAPIdao.SharedPlan, Guid>(daContext.SharedPlans, json, overwrite, oldDeleted);
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
+      return loadDataRow<KabadaAPIdao.SharedPlan, Guid>(daContext.SharedPlans, json, overwrite, oldDeleted, generateInits);
       }
 
     //protected override bool loadData(string json, bool overwrite) {

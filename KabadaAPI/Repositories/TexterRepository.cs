@@ -126,8 +126,8 @@ namespace KabadaAPI {
      protected override object[] getAll4snap() { return daContext.Texters.ToArray(); }
     protected override string myTable => "Texters";
 
-    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
-      return loadDataRow<KabadaAPIdao.Texter, Guid>(daContext.Texters, json, overwrite, oldDeleted);
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
+      return loadDataRow<KabadaAPIdao.Texter, Guid>(daContext.Texters, json, overwrite, oldDeleted, generateInits);
       }
 
     public static List<Texter> Codifiers(EnumTexterKind kind, params string[] us){ return Codifiers((short)kind, us); }

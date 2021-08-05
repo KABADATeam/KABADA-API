@@ -81,6 +81,8 @@ namespace KabadaAPI {
 
         private void AddData(ModelBuilder modelBuilder)
         {
+ var useOldFunctions=true;
+          if(useOldFunctions){
             AddData_UserTypes(modelBuilder);
             AddData_Countries(modelBuilder);
             AddData_SWOTtexters(modelBuilder);
@@ -101,6 +103,8 @@ namespace KabadaAPI {
             AddData_ChannelTypes(modelBuilder);
             AddData_CustomerSegmentCodifiers(modelBuilder);
             AddData_CustomerActions(modelBuilder);
+           } else
+            AddData_DBinit(modelBuilder);
             }
     }
 }

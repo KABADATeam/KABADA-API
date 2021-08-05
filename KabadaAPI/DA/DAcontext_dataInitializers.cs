@@ -7,6 +7,22 @@ using static KabadaAPI.TexterRepository;
 namespace KabadaAPI {
     partial class DAcontext
     {
+        private ModelBuilder onlyForDBinit;
+        private void AddData_DBinit(ModelBuilder modelBuilder){
+          onlyForDBinit=modelBuilder;
+          new UsersRepository(null, this).initsFromDBinit();
+          }
+
+        public void INITaddInit<T>(T me) where T:class { addInit<T>(onlyForDBinit, me); }
+        public void INITaddInit<T>(IEnumerable<T> us) where T:class { addInit<T>(onlyForDBinit, us); }
+
+        public void addInit<T>(ModelBuilder modelBuilder, T me) where T:class { modelBuilder.Entity<T>().HasData(me); }
+
+        public void addInit<T>(ModelBuilder modelBuilder, IEnumerable<T> us) where T:class {
+          foreach(var o in us)
+            addInit<T>(modelBuilder, o);
+          }
+
         private void AddData_PartnersTypes(ModelBuilder modelBuilder)
         {
             //--- Distributors types

@@ -110,8 +110,8 @@ namespace KabadaAPI {
 
     protected override string myTable => "Plan_Attributes";
 
-    protected override bool loadData(string json, bool overwrite, bool oldDeleted) {
-      return loadDataRow<KabadaAPIdao.Plan_Attribute, Guid>(daContext.Plan_Attributes, json, overwrite, oldDeleted);
+    protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
+      return loadDataRow<KabadaAPIdao.Plan_Attribute, Guid>(daContext.Plan_Attributes, json, overwrite, oldDeleted, generateInits);
       }
     }
   }
