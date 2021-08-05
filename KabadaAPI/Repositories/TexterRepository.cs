@@ -12,8 +12,9 @@ namespace KabadaAPI {
                    , productInnovativeOption=18, productQualityOption=19, productDifferentiationOption=20
                    , fixedCostCategory=21, variableCostCategory=22, costType=23
                    , revenueStreamType=24,revenuePriceCategory=25,revenuePriceType=26
-                  , channelType=27,channelSubtype=28,channelSubtypeType=29, channelLocationType=30, channelDistribution=31
+                   , channelType=27,channelSubtype=28,channelSubtypeType=29, channelLocationType=30, channelDistribution=31
            , age_group=32, income=33, education=34, geographic_location=35, company_size=36, industry=37, public_bodies_ngo=38, gender=39
+                   , action=40
         }       
 
         public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
     partial class DAcontext
@@ -552,5 +553,16 @@ namespace KabadaAPI {
       foreach(var o in us)
         modelBuilder.Entity<Texter>().HasData(o);
       }
+    private void AddData_CustomerActions(ModelBuilder modelBuilder){
+      var k=(short)EnumTexterKind.action;
+      var g = Guid.NewGuid();
+      modelBuilder.Entity<Texter>().HasData(new Texter { Id = g, Kind = k, OrderValue = 1, Value = "Word of Mouth" });
+      g = Guid.NewGuid();
+      modelBuilder.Entity<Texter>().HasData(new Texter { Id = g, Kind = k, OrderValue = 2, Value = "Ads and Commercials" });
+      g = Guid.NewGuid();
+      modelBuilder.Entity<Texter>().HasData(new Texter { Id = g, Kind = k, OrderValue = 3, Value = "Printed Promotional/informative materials" });
+      g = Guid.NewGuid();
+      modelBuilder.Entity<Texter>().HasData(new Texter { Id = g, Kind = k, OrderValue = 4, Value = "Other" });
+      }
     }
-    }
+  }
