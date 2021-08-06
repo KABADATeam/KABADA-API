@@ -7183,6 +7183,20 @@ namespace KabadaAPI.Migrations
                         });
                 });
 
+            modelBuilder.Entity("KabadaAPIdao.DbSetting", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbSettings");
+                });
+
             modelBuilder.Entity("KabadaAPIdao.Industry", b =>
                 {
                     b.Property<Guid>("Id")

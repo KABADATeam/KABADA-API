@@ -37,7 +37,8 @@ namespace KabadaAPI {
         public DbSet<KabadaAPIdao.Language>  Languages  { get; set; } 
         // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
         public DbSet<KabadaAPIdao.Plan_SpecificAttribute>  Plan_SpecificAttributes  { get; set; } 
-
+        public DbSet<KabadaAPIdao.DbSetting>     DbSettings     { get; set; } 
+ 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(ConnectionStrings.SQLServer);

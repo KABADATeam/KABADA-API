@@ -21,6 +21,18 @@ namespace KabadaAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DbSettings",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DbSettings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Industries",
                 columns: table => new
                 {
@@ -1913,6 +1925,9 @@ namespace KabadaAPI.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "DbSettings");
+
             migrationBuilder.DropTable(
                 name: "Plan_Attributes");
 

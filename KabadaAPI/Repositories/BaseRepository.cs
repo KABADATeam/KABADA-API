@@ -47,6 +47,7 @@ namespace KabadaAPI {
       r.Add(new UserTypesRepository(blContext, daContext));
 
       r.Add(new UserFilesRepository(blContext, daContext));
+      r.Add(new DbSettingRepository(blContext, daContext));
 
       return r;
       }}

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210805142031_InitialCreate")]
+    [Migration("20210806060505_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -7183,6 +7183,20 @@ namespace KabadaAPI.Migrations
                             ShortCode = "BA",
                             Title = "Bosnia and Herzegovina"
                         });
+                });
+
+            modelBuilder.Entity("KabadaAPIdao.DbSetting", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DbSettings");
                 });
 
             modelBuilder.Entity("KabadaAPIdao.Industry", b =>
