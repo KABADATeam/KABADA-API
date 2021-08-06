@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using KabadaAPIdao;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace KabadaAPI {
   public class DbSettingRepository : BaseRepository {
     public DbSettingRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+
+    private DbSet<DbSetting> q0 { get { return daContext.DbSettings; }}    
+
+    internal DbSetting byId(EnumDbSettings id) {
+      var k=id.ToString();
+      var r=q0.Where(x=>x.Id==k).FirstOrDefault();
+      return r;
+      }
 
     protected override object[] getAll4snap() { return daContext.DbSettings.ToArray(); }
     protected override string myTable => "DbSettings";
@@ -15,5 +23,11 @@ namespace KabadaAPI {
       }
 
     public enum EnumDbSettings { initialDataSetLevel }
+
+    internal void add(EnumDbSettings id, string v) {
+      var o=new DbSetting(){ Id=id.ToString(), Value=v };
+      daContext.DbSettings.Add(o);
+      daContext.SaveChanges();
+      }
     }
   }

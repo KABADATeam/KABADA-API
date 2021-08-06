@@ -304,7 +304,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("4fc44f33-6d0c-4b14-a3d6-086b8887439c"), "LT", "Lithuania" },
                     { new Guid("31bf0dc8-84bc-4fb4-be98-adc820e704f0"), "CH", "Switzerland" },
                     { new Guid("3ba00e48-567d-4ab2-8d69-b2513029450f"), "DE", "Germany" },
-                    { new Guid("4cb2912a-653a-44fb-b7a7-bfc336e96452"), "DK", "Denmark" },
+                    { new Guid("f80c19a8-cfbb-4a11-9fcf-b2bb6bb76209"), "PT", "Portugal" },
                     { new Guid("9adfa62a-dc9c-4eef-9117-c524d25bed02"), "LU", "Luxembourg" },
                     { new Guid("e77e44cb-424b-4e9e-af3a-d18d80af7af9"), "IS", "Iceland" },
                     { new Guid("2f5f58b0-9187-4880-989a-d1c0df55eadf"), "CY", "Cyprus" },
@@ -319,7 +319,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("cece3c3c-ff40-428a-b6e0-fd4895e727e9"), "BA", "Bosnia and Herzegovina" },
                     { new Guid("34656372-3fe8-40b4-b1a2-a8f3e7aadd71"), "MT", "Malta" },
                     { new Guid("42da7d0f-bc1e-4738-981d-a347f02e149b"), "EE", "Estonia" },
-                    { new Guid("f80c19a8-cfbb-4a11-9fcf-b2bb6bb76209"), "PT", "Portugal" },
+                    { new Guid("4cb2912a-653a-44fb-b7a7-bfc336e96452"), "DK", "Denmark" },
                     { new Guid("4cf29c73-9558-4ee6-9fe2-973e01a71365"), "RS", "Serbia" },
                     { new Guid("d480bd70-e883-4001-ba2b-10c941f2832f"), "TR", "Turkey" },
                     { new Guid("a25ad04d-d63a-4e6c-a16b-118f5922e175"), "MK", "North Macedonia" },
@@ -340,6 +340,11 @@ namespace KabadaAPI.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "DbSettings",
+                columns: new[] { "Id", "Value" },
+                values: new object[] { "initialDataSetLevel", "1" });
+
+            migrationBuilder.InsertData(
                 table: "Industries",
                 columns: new[] { "Id", "Code", "Language", "Title" },
                 values: new object[,]
@@ -348,8 +353,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("d42356d9-186d-408e-857c-8aec5011bae2"), "G", "EN", "Wholesale and retail trade; repair of motor vehicles and motorcycles" },
                     { new Guid("3dcae13b-1a77-477c-89c9-900e9ed0469c"), "Q", "EN", "Human health and social work activities" },
                     { new Guid("b6f19c27-77f5-4b31-9303-c16a9654e3aa"), "U", "EN", "Activities of extraterritorial organisations and bodies" },
-                    { new Guid("9e1f4f46-173f-402d-ade7-df8ddc6c563f"), "B", "EN", "Mining and quarrying" },
-                    { new Guid("7605dd2a-d935-461c-a1df-d89e9fba0a77"), "L", "EN", "Real estate activities" }
+                    { new Guid("550e86b3-c2d8-4952-9b94-f4f4b35f4f6f"), "N", "EN", "Administrative and support service activities" }
                 });
 
             migrationBuilder.InsertData(
@@ -357,21 +361,22 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Code", "Language", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("550e86b3-c2d8-4952-9b94-f4f4b35f4f6f"), "N", "EN", "Administrative and support service activities" },
+                    { new Guid("7605dd2a-d935-461c-a1df-d89e9fba0a77"), "L", "EN", "Real estate activities" },
+                    { new Guid("9e1f4f46-173f-402d-ade7-df8ddc6c563f"), "B", "EN", "Mining and quarrying" },
                     { new Guid("79dee4b7-94f0-4ee5-94f7-705d50ba3a20"), "D", "EN", "Electricity, gas, steam and air conditioning supply" },
                     { new Guid("ce64a561-858c-43f9-90a2-d77a5cae5377"), "T", "EN", "Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use" },
                     { new Guid("e72f48a2-1aeb-416d-8282-65b96623a98c"), "P", "EN", "Education" },
-                    { new Guid("744698bc-9ad1-40d2-a810-4e3d865e252c"), "J", "EN", "Information and communication" },
-                    { new Guid("b736e378-91b1-4ac9-9fff-0f507898ec74"), "H", "EN", "Transporting and storage" },
                     { new Guid("ca191390-10c5-4bff-9930-459cdaab7ce6"), "R", "EN", "Arts, entertainment and recreation" },
-                    { new Guid("2da38e16-d2a2-45af-99a3-43a3cba895ad"), "I", "EN", "Accommodation and food service activities" },
-                    { new Guid("badd804d-dda3-4f05-afdf-4167778dac70"), "K", "EN", "Financial and insurance activities" },
-                    { new Guid("08e384e3-f59b-4b7a-b356-3ef8fa79ac13"), "C", "EN", "Manufacturing" },
-                    { new Guid("8f0984c6-63fe-4282-8d58-37366d1a5b58"), "F", "EN", "Construction" },
-                    { new Guid("59dc62c0-0e24-42b9-855a-172e72e4961d"), "E", "EN", "Water supply; sewerage; waste managment and remediation activities" },
-                    { new Guid("0204f73e-c29b-4728-90f8-14ef1db1db8f"), "S", "EN", "Other services activities" },
+                    { new Guid("744698bc-9ad1-40d2-a810-4e3d865e252c"), "J", "EN", "Information and communication" },
+                    { new Guid("92a890d6-1eb5-467f-8eb3-65a1eafba707"), "O", "EN", "Public administration and defence; compulsory social security" },
                     { new Guid("b3f121d5-141d-44a5-bc83-04eefb43ea02"), "A", "EN", "Agriculture, forestry and fishing" },
-                    { new Guid("92a890d6-1eb5-467f-8eb3-65a1eafba707"), "O", "EN", "Public administration and defence; compulsory social security" }
+                    { new Guid("0204f73e-c29b-4728-90f8-14ef1db1db8f"), "S", "EN", "Other services activities" },
+                    { new Guid("59dc62c0-0e24-42b9-855a-172e72e4961d"), "E", "EN", "Water supply; sewerage; waste managment and remediation activities" },
+                    { new Guid("b736e378-91b1-4ac9-9fff-0f507898ec74"), "H", "EN", "Transporting and storage" },
+                    { new Guid("08e384e3-f59b-4b7a-b356-3ef8fa79ac13"), "C", "EN", "Manufacturing" },
+                    { new Guid("badd804d-dda3-4f05-afdf-4167778dac70"), "K", "EN", "Financial and insurance activities" },
+                    { new Guid("2da38e16-d2a2-45af-99a3-43a3cba895ad"), "I", "EN", "Accommodation and food service activities" },
+                    { new Guid("8f0984c6-63fe-4282-8d58-37366d1a5b58"), "F", "EN", "Construction" }
                 });
 
             migrationBuilder.InsertData(
@@ -384,12 +389,11 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
-                    { new Guid("41655b64-362b-4402-af8d-a777ed912c97"), (short)20, null, null, (short)3, "Highly" },
-                    { new Guid("9ee57d37-6425-409e-b7fd-aa97f3010e9f"), (short)3, null, null, (short)4, "Income and wealth" },
-                    { new Guid("825d07dd-581b-4473-841c-9ec037746ae2"), (short)35, null, null, (short)7, "Transnational" },
-                    { new Guid("7d1df83e-9bdd-47eb-8fad-ad7f7b1a8329"), (short)1, "a", null, (short)10, "Operational processes" },
                     { new Guid("860adbf1-baf5-4cf2-8b55-a5baca045e60"), (short)23, null, new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)2, "Factory workers / service" },
                     { new Guid("df0fa10f-05df-485a-9f90-aaae6cc11ebc"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)3, "Direct visit" },
+                    { new Guid("7d1df83e-9bdd-47eb-8fad-ad7f7b1a8329"), (short)1, "a", null, (short)10, "Operational processes" },
+                    { new Guid("9ee57d37-6425-409e-b7fd-aa97f3010e9f"), (short)3, null, null, (short)4, "Income and wealth" },
+                    { new Guid("41655b64-362b-4402-af8d-a777ed912c97"), (short)20, null, null, (short)3, "Highly" },
                     { new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)4, "Other" },
                     { new Guid("cdc1a197-fb79-42b9-a7cb-9ff8fd0e1622"), (short)3, null, null, (short)3, "Economic growth" },
                     { new Guid("49ac2e9c-ecbb-4a14-aa35-a35efb4ff919"), (short)15, null, null, (short)17, "Manufacturing complexity" },
@@ -402,13 +406,13 @@ namespace KabadaAPI.Migrations
                     { new Guid("d050dc8f-aa16-47f8-ab35-ae6fc8d7a3ae"), (short)24, null, null, (short)2, "Usage fee" },
                     { new Guid("91d5edff-f361-47aa-8d3c-b420681dcd5e"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)1, "Own shop" },
                     { new Guid("cf6361ec-886e-4b0a-b53b-af9a477f334b"), (short)15, null, null, (short)19, "Workmanship" },
-                    { new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)21, null, null, (short)6, "Salaries" },
-                    { new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)29, null, new Guid("91d5edff-f361-47aa-8d3c-b420681dcd5e"), (short)1, "Physical" },
-                    { new Guid("f5311b29-88a0-4500-8173-b2e16a3137ed"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false},{\"title\":\"Myself\",\"selected\":false}]", new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)1, "Ownership type" },
-                    { new Guid("121f0a92-8b35-4890-8384-b66f48db9ac5"), (short)15, null, null, (short)12, "Leads to a new design" },
-                    { new Guid("22656f17-0f99-438f-a934-b71d64a7fbd6"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)1, "Buildings" },
-                    { new Guid("bf7c1d8a-7240-4c81-84e2-b96709e3c3ba"), (short)24, null, null, (short)3, "Subscription fee" },
-                    { new Guid("88579996-53e2-4699-a6f0-b97df2421276"), (short)32, null, null, (short)6, "65 - 74" },
+                    { new Guid("825d07dd-581b-4473-841c-9ec037746ae2"), (short)35, null, null, (short)7, "Transnational" },
+                    { new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)2, "Administrative" },
+                    { new Guid("fbaa6538-cedd-43f9-b739-bffcf4f00e96"), (short)13, null, null, (short)1, "Other" },
+                    { new Guid("f90efa9d-ff68-4fe7-b6b3-bf55850f7437"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)1, "Self pickup" },
+                    { new Guid("335fcecd-5a78-4b23-a065-be7eaeae4f20"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)2, "Frequency" },
+                    { new Guid("593cfcc0-bc1d-4189-b0af-bdd5f51b0b8d"), (short)37, null, null, (short)2, "Services" },
+                    { new Guid("1afacd96-1b6b-4958-bffd-af953759ee25"), (short)1, "a", null, (short)19, "Price" },
                     { new Guid("0bff5c28-137c-4890-90df-ba7e0746431c"), (short)22, null, null, (short)3, "Packaging" }
                 });
 
@@ -417,14 +421,15 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
-                    { new Guid("593cfcc0-bc1d-4189-b0af-bdd5f51b0b8d"), (short)37, null, null, (short)2, "Services" },
-                    { new Guid("335fcecd-5a78-4b23-a065-be7eaeae4f20"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)2, "Frequency" },
-                    { new Guid("f90efa9d-ff68-4fe7-b6b3-bf55850f7437"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)1, "Self pickup" },
-                    { new Guid("fbaa6538-cedd-43f9-b739-bffcf4f00e96"), (short)13, null, null, (short)1, "Other" },
-                    { new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)2, "Administrative" },
-                    { new Guid("1afacd96-1b6b-4958-bffd-af953759ee25"), (short)1, "a", null, (short)19, "Price" },
+                    { new Guid("bf7c1d8a-7240-4c81-84e2-b96709e3c3ba"), (short)24, null, null, (short)3, "Subscription fee" },
+                    { new Guid("22656f17-0f99-438f-a934-b71d64a7fbd6"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)1, "Buildings" },
+                    { new Guid("121f0a92-8b35-4890-8384-b66f48db9ac5"), (short)15, null, null, (short)12, "Leads to a new design" },
+                    { new Guid("f5311b29-88a0-4500-8173-b2e16a3137ed"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false},{\"title\":\"Myself\",\"selected\":false}]", new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)1, "Ownership type" },
+                    { new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)29, null, new Guid("91d5edff-f361-47aa-8d3c-b420681dcd5e"), (short)1, "Physical" },
+                    { new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)21, null, null, (short)6, "Salaries" },
+                    { new Guid("88579996-53e2-4699-a6f0-b97df2421276"), (short)32, null, null, (short)6, "65 - 74" },
                     { new Guid("7da1cdc9-d7e4-4234-b31b-9e0570e5e9c6"), (short)15, null, null, (short)22, "Comfortability & Usability" },
-                    { new Guid("457f681a-f052-408d-a7f6-8979f6c47063"), (short)3, null, null, (short)20, "Natural disasters" },
+                    { new Guid("2483ee5b-da92-4400-aa64-88eb8a1ea152"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)2, "Product feature dependent" },
                     { new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)21, null, null, (short)2, "Rent of buildings" },
                     { new Guid("e673e497-be75-4692-952c-8cdf3d5a9714"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)1, "IT (office) equipment" },
                     { new Guid("1245994e-b52c-4c9a-9060-8c4856742197"), (short)17, null, null, (short)2, "Economy" },
@@ -434,8 +439,8 @@ namespace KabadaAPI.Migrations
                     { new Guid("a4e19cfd-e63d-4eaf-b45e-8a298a3be406"), (short)23, null, new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)2, "Water" },
                     { new Guid("3861b60b-1598-4b1e-be5a-8d815e6674a7"), (short)3, null, null, (short)7, "Interest rate" },
                     { new Guid("a2254a01-9908-42e0-af0d-8a0b04875197"), (short)36, null, null, (short)1, "Small" },
+                    { new Guid("457f681a-f052-408d-a7f6-8979f6c47063"), (short)3, null, null, (short)20, "Natural disasters" },
                     { new Guid("4c53b804-2392-4744-a1ce-c11d424d7aab"), (short)11, null, null, (short)6, "Others" },
-                    { new Guid("2483ee5b-da92-4400-aa64-88eb8a1ea152"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)2, "Product feature dependent" },
                     { new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)25, null, null, (short)1, "Fixed pricing" },
                     { new Guid("e77f9a30-6e69-432d-9c8e-88380ba63de2"), (short)23, null, new Guid("09b845a4-df9c-4f53-b833-1f69ae6d1835"), (short)1, "Other" },
                     { new Guid("4b0ba05e-88c6-4c54-a313-880e3aee9905"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)3, "Employees directly involved in production or service" },
@@ -457,8 +462,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("c804bad3-0387-44fb-9817-93085d14ccf9"), (short)23, null, new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)1, "Management" },
                     { new Guid("4ae078f2-21a9-4f01-b11d-92eace60e38e"), (short)11, "Possible if you distribute your products through your own channels – directly, your own store, homepage. Often the case in some service sectors", null, (short)1, "Self distribution" },
                     { new Guid("fb4a4c08-a17d-444c-9776-92c54acd6940"), (short)23, null, new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)3, "Finance management" },
-                    { new Guid("93916775-80bd-4355-bfda-907e8a737cbe"), (short)16, null, null, (short)2, "Additional functions" },
-                    { new Guid("6d1b4bb9-7de0-443d-a9f4-9880cb99fab0"), (short)32, null, null, (short)8, "All age groups" }
+                    { new Guid("93916775-80bd-4355-bfda-907e8a737cbe"), (short)16, null, null, (short)2, "Additional functions" }
                 });
 
             migrationBuilder.InsertData(
@@ -466,6 +470,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("6d1b4bb9-7de0-443d-a9f4-9880cb99fab0"), (short)32, null, null, (short)8, "All age groups" },
                     { new Guid("109af523-c8ae-409f-a5ab-c15d02ce5858"), (short)32, null, null, (short)3, "18 - 24" },
                     { new Guid("6dad8d59-0786-43e5-98a6-dd6d4fdc7688"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)1, "Own delivery" },
                     { new Guid("2e4ee3fe-7f1b-4105-b37e-c1ee4d8d4d40"), (short)30, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)1, "Fixed location" },
@@ -506,8 +511,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("22ab4468-869c-4f8a-94c9-e2f5c3974718"), (short)12, null, null, (short)5, "Human resources" },
                     { new Guid("c6a66809-c479-4563-95df-cb9396c37e35"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)4, "" },
                     { new Guid("c055ffa9-c8e4-4f77-859d-cae9785736f6"), (short)35, null, null, (short)1, "Domestic" },
-                    { new Guid("b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d"), (short)15, null, null, (short)18, "Special materials and components" },
-                    { new Guid("2ad13e8d-672f-4eb7-87eb-ca33891eeffb"), (short)15, null, null, (short)24, "Aesthetics" }
+                    { new Guid("b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d"), (short)15, null, null, (short)18, "Special materials and components" }
                 });
 
             migrationBuilder.InsertData(
@@ -515,6 +519,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("2ad13e8d-672f-4eb7-87eb-ca33891eeffb"), (short)15, null, null, (short)24, "Aesthetics" },
                     { new Guid("90a35599-3c47-4389-b571-c9d3c7957daf"), (short)23, null, new Guid("fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c"), (short)4, "Other" },
                     { new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)29, null, new Guid("91d5edff-f361-47aa-8d3c-b420681dcd5e"), (short)2, "Online" },
                     { new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)25, null, null, (short)2, "Dynamic pricing" },
@@ -555,8 +560,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)5, "Other" },
                     { new Guid("58eac7eb-b165-4056-8df3-27e3ab23d1e9"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("4b0ba05e-88c6-4c54-a313-880e3aee9905"), (short)2, "Frequency" },
                     { new Guid("5bf44939-b777-454a-86c2-280eea5fc6dd"), (short)35, null, null, (short)5, "Foreign Urban" },
-                    { new Guid("ce619ee3-d636-497f-8238-2ac9c9e79b49"), (short)40, null, null, (short)2, "Ads and Commercials" },
-                    { new Guid("e3773f81-fa98-4ad4-b235-2bab8369e22b"), (short)3, null, null, (short)25, "Substitution possibilities" }
+                    { new Guid("ce619ee3-d636-497f-8238-2ac9c9e79b49"), (short)40, null, null, (short)2, "Ads and Commercials" }
                 });
 
             migrationBuilder.InsertData(
@@ -564,6 +568,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("e3773f81-fa98-4ad4-b235-2bab8369e22b"), (short)3, null, null, (short)25, "Substitution possibilities" },
                     { new Guid("c7cb2b43-fc30-40ec-b06b-2bdeadc6000f"), (short)39, null, null, (short)1, "male" },
                     { new Guid("373f6176-6eef-4866-96ff-2c4efe5c4a76"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)4, "Other" },
                     { new Guid("3fe4a8e4-daa1-4edb-a209-2d9f6f9ced35"), (short)30, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Platform" },
@@ -604,8 +609,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("7ac334c8-cafd-4f64-8414-00c61aa80cb7"), (short)22, null, null, (short)7, "Marketing" },
                     { new Guid("bbe1a5d6-d7d1-4d70-a5cf-00589419ce8d"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)2, "Cost of warehouse" },
                     { new Guid("6a09985e-01b1-4034-9a82-05945dce19a5"), (short)19, null, null, (short)3, "Premium" },
-                    { new Guid("e1d977e9-0c83-4f69-8bfe-3f2689b6cec2"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)3, "Real time market" },
-                    { new Guid("fef1c6f8-493c-4641-9f0c-1141cb762605"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)3, "Volume dependent" }
+                    { new Guid("e1d977e9-0c83-4f69-8bfe-3f2689b6cec2"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)3, "Real time market" }
                 });
 
             migrationBuilder.InsertData(
@@ -613,6 +617,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("fef1c6f8-493c-4641-9f0c-1141cb762605"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)3, "Volume dependent" },
                     { new Guid("bdb6d057-80b7-411a-a6b6-12aae71581c3"), (short)33, null, null, (short)3, "High" },
                     { new Guid("8e07b533-f25e-4227-8fd8-1b2f19a7b4f3"), (short)1, "a", null, (short)7, "Patents" },
                     { new Guid("bbab5ef4-bbd3-44aa-a879-1a792a5feada"), (short)34, null, null, (short)2, "Secondary" },
@@ -653,8 +658,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)21, null, null, (short)4, "Outsourcing of services" },
                     { new Guid("96f638ad-c41f-492f-982a-7f4018bcb3a6"), (short)15, null, null, (short)6, "Dominant design unchanged" },
                     { new Guid("d89128ed-072e-4f22-aea3-7f058c855888"), (short)1, "a", null, (short)16, "Complementary and after-sales service" },
-                    { new Guid("a3a74886-85d0-4861-baa3-7d09bea0e583"), (short)38, null, null, (short)3, "Muncipality" },
-                    { new Guid("e1915d59-a5a4-43bd-a5db-7c8ab320371a"), (short)27, null, null, (short)3, "Wholesalers" }
+                    { new Guid("a3a74886-85d0-4861-baa3-7d09bea0e583"), (short)38, null, null, (short)3, "Muncipality" }
                 });
 
             migrationBuilder.InsertData(
@@ -662,6 +666,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("e1915d59-a5a4-43bd-a5db-7c8ab320371a"), (short)27, null, null, (short)3, "Wholesalers" },
                     { new Guid("f71ce8b4-dbd8-4280-a216-66677e115f74"), (short)3, null, null, (short)13, "Infrastructure" },
                     { new Guid("aae57ccf-f33c-4a0e-925a-7a65d8ca171e"), (short)15, null, null, (short)1, "Not different from competitors" },
                     { new Guid("4cb290b2-7fbc-4846-be7b-79f9e3efbb46"), (short)15, null, null, (short)16, "Expertise of manufacturer" },
@@ -702,8 +707,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("1b776dfa-533e-4511-8185-5c576db8dcec"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)3, "Transport" },
                     { new Guid("75bcee28-686d-47e6-82b2-5c2a32168377"), (short)16, null, null, (short)1, "Non time limited usage" },
                     { new Guid("0ff6b626-a1ff-4184-b1bb-5bf2992091bd"), (short)15, null, null, (short)2, "Product or service already exists in the market" },
-                    { new Guid("8f79391b-d687-4515-9292-5b4958ef0589"), (short)15, null, null, (short)21, "Durability" },
-                    { new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)1, "Specialists & Know-how" }
+                    { new Guid("8f79391b-d687-4515-9292-5b4958ef0589"), (short)15, null, null, (short)21, "Durability" }
                 });
 
             migrationBuilder.InsertData(
@@ -711,6 +715,7 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)1, "Specialists & Know-how" },
                     { new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)3, "Software" },
                     { new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"), (short)15, null, null, (short)23, "Safety" }
                 });

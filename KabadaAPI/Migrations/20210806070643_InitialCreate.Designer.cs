@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210806060505_InitialCreate")]
+    [Migration("20210806070643_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -7197,6 +7197,13 @@ namespace KabadaAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DbSettings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "initialDataSetLevel",
+                            Value = "1"
+                        });
                 });
 
             modelBuilder.Entity("KabadaAPIdao.Industry", b =>

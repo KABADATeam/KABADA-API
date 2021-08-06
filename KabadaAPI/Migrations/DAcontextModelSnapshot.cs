@@ -7195,6 +7195,13 @@ namespace KabadaAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("DbSettings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "initialDataSetLevel",
+                            Value = "1"
+                        });
                 });
 
             modelBuilder.Entity("KabadaAPIdao.Industry", b =>
