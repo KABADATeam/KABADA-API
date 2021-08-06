@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using KabadaAPI;
+using Newtonsoft.Json;
 using System;
 using static KabadaAPI.Plan_AttributeRepository;
 using static KabadaAPI.TexterRepository;
 
-namespace KabadaAPI {
+namespace Kabada {
   partial class CustomerRelationshipPOST {
     protected BLontext ctx;
     private string packVal { get {
@@ -40,7 +41,7 @@ namespace KabadaAPI {
 
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
       var aKind=(short)PlanAttributeKind.activity1 +group-1;
-      var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=category_id, AttrVal=packVal, OrderValue=on};
+      var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=category_id, AttrVal=packVal, OrderValue=on, Id=Guid.NewGuid() };
       o=new Plan_AttributeRepository(ctx).Create(o);
       return o.Id;
       }

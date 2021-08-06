@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210806070643_InitialCreate")]
+    [Migration("20210806083108_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

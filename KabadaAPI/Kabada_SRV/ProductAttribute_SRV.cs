@@ -3,6 +3,8 @@
     {
         public void unpack(string archived)
         {
+            if(string.IsNullOrWhiteSpace(archived))
+              return; // no seed present
             var t = Newtonsoft.Json.JsonConvert.DeserializeObject<ProductAttribute>(archived);
             title = t.title;
             description = t.description;

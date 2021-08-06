@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI {
+namespace Kabada {
   public partial class CustomerRelationshipPOST {
     public Guid? item_id;
     public Guid business_plan_id;

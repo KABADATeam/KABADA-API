@@ -34,6 +34,7 @@ namespace Kabada {
       foreach(var a in atri){
         var o=new PlanRelationship();
         r.Add(o);
+        o.id=a.Id;
         if(acti.TryGetValue(a.TexterId,out act))
           o.category=new Codifier(){ id=act.Id, title=act.Value };
         o.channels=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);

@@ -88,7 +88,7 @@ namespace KabadaAPI.Controllers {
           _result=actor();
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
     
@@ -101,7 +101,7 @@ namespace KabadaAPI.Controllers {
           _result=actor();
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
 
@@ -114,7 +114,7 @@ namespace KabadaAPI.Controllers {
           _result=await actor();
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
 
@@ -128,7 +128,7 @@ namespace KabadaAPI.Controllers {
           _result=await actor();
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
    
@@ -141,7 +141,7 @@ namespace KabadaAPI.Controllers {
           _result=actor(parameter);
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
    
@@ -155,7 +155,7 @@ namespace KabadaAPI.Controllers {
           _result=actor(parameter);
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
    
@@ -168,7 +168,7 @@ namespace KabadaAPI.Controllers {
           _result=await actor(parameter);
         part2();
         }
-       catch (Exception exc){ crash(exc); }
+       catch (Exception exc){ crash(exc); _result=BadRequest(exc.Message);}
       return _result;
       }
 

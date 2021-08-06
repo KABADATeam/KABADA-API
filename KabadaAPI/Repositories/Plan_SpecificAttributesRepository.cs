@@ -65,6 +65,8 @@ namespace KabadaAPI {
       }
 
     public Plan_SpecificAttribute Create(Plan_SpecificAttribute me) {
+      if(me.Id.ToString()==new Guid().ToString())
+        me.Id=Guid.NewGuid();
       daContext.Plan_SpecificAttributes.Add(me);
       daContext.SaveChanges();
       return me;
