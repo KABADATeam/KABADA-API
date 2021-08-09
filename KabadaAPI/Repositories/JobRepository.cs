@@ -17,7 +17,7 @@ namespace KabadaAPI {
 
     private DbSet<Job> q0 { get { return daContext.Jobs; }}
 
-    public Job Create(Job me){
+    public Job create(Job me){
       if(me.Id.ToString()==new Guid().ToString())
         me.Id=Guid.NewGuid();
       me.CreatedAt=DateTime.Now;
