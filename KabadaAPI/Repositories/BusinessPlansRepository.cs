@@ -80,13 +80,6 @@ namespace KabadaAPI
             daContext.SaveChanges();
         }
 
-    internal void inviteMember(Guid planId, Guid newMember, Guid userId) {
-      var businessPlan = GetPlanForUpdate(userId, planId);
-      if(businessPlan.Public)
-        throw new Exception("no members for public plans");
-      new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=userId });
-      }
-
     protected override object[] getAll4snap() { return daContext.BusinessPlans.ToArray(); }
 
     protected override string myTable => "BusinessPlans";
@@ -105,6 +98,17 @@ namespace KabadaAPI
             BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
             businessPlan.IsCustomerRelationshipCompleted = newValue;
             daContext.SaveChanges();
+      }
+
+    internal string inviteMember(Guid planId, string email, Guid userId) {
+      var businessPlan = GetPlanForUpdate(userId, planId); // ensure rights to change
+      var u=new UsersRepository(blContext).byEmail(email);
+      if(u==null)
+        throw new NotImplementedException("Invitation of unregistered users still not implemented");
+       else {
+        new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
+        return "Success";
+        }
       }
     }
 }

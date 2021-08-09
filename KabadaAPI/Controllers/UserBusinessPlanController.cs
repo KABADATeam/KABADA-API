@@ -180,10 +180,10 @@ namespace KabadaAPI.Controllers {
         [Route("inviteMember")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult InviteMember([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_inviteMember, planUpdate); }
-        private IActionResult _inviteMember([FromBody] ChangePlanParameter planUpdate){
-            bRepo.inviteMember(planUpdate.business_plan_id, planUpdate.newMember.Value, uGuid);
-            return Ok("Success");
+        public IActionResult InviteMember([FromBody] MemberInvitation invitation) { return prun<MemberInvitation>(_inviteMember, invitation); }
+        private IActionResult _inviteMember(MemberInvitation invitation){
+            var r = bRepo.inviteMember(invitation.business_plan_id, invitation.email, uGuid);
+            return Ok(r);
         }
         [Route("changeCustomerSegmentsCompleted")]
         [Authorize(Roles = Role.User)]
@@ -206,5 +206,24 @@ namespace KabadaAPI.Controllers {
             repo.ChangeRelationshipCompleted(planUpdate.business_plan_id, planUpdate.is_customer_relationship_completed, uGuid);
             return Ok("Success");
         }
+
+    [HttpGet]
+    [Authorize]
+    [Route("members/{BusinessPlan}")]
+    public ActionResult<PlanMembers> MyMembers(Guid BusinessPlan) { return Prun<Guid, PlanMembers>(_MyMembers, BusinessPlan); }
+    private ActionResult<PlanMembers> _MyMembers(Guid planId) {
+      var r = new PlanMembers();
+      r.read(context, planId, uGuid);
+      return r;
+      }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("member/{BusinessPlan}")]
+    public IActionResult Dmember(Guid BusinessPlan, [FromBody] Guid user_id) { return prun<Deleter>(_Dmember, new Deleter(){ master=BusinessPlan, part=user_id}); }
+    private IActionResult _Dmember(Deleter resource) {
+      new SharedPlanRepository(context).deleteMember(resource, uGuid);
+      return Ok("deleted");
+      }
     }
-}
+  }

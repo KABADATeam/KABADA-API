@@ -5,9 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
 namespace KabadaAPI {
-  public partial class UsersRepository : BaseRepository
-    {
+  public partial class UsersRepository : BaseRepository {
       public UsersRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+
+      private DbSet<User> q0 { get { return daContext.Users; }}
 
       public User AddUser(string email, string password)
         {
@@ -202,5 +203,16 @@ namespace KabadaAPI {
     protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
       return loadDataRow<KabadaAPIdao.User, Guid>(daContext.Users, json, overwrite, oldDeleted, generateInits);
       }
+
+    internal List<User> Read(List<Guid> mGuis) {
+      var r=q0.Where(x=>mGuis.Contains(x.Id)).ToList();
+      return r;
+      }
+
+    internal User byEmail(string email) {
+      var r=q0.Where(x=>x.Email==email).FirstOrDefault();
+      return r;
+      }
+
     }
 }
