@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
+using static KabadaAPI.JobRepository;
 
 namespace KabadaAPI
 {
@@ -103,9 +104,11 @@ namespace KabadaAPI
     internal string inviteMember(Guid planId, string email, Guid userId) {
       var businessPlan = GetPlanForUpdate(userId, planId); // ensure rights to change
       var u=new UsersRepository(blContext).byEmail(email);
-      if(u==null)
+      if(u==null){
+        var j=new Job(){ Author=userId, Kind=(short)JobKind.invitePlanMember, Lookup=email, Value=planId.ToString() };
+        new Kmail(blContext.config).sendInvitationEmail(email);
         throw new NotImplementedException("Invitation of unregistered users still not implemented");
-       else {
+       } else {
         new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
         return "Success";
         }

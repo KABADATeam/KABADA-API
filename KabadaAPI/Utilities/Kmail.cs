@@ -73,5 +73,10 @@ namespace KabadaAPI {
       var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
       send("Welcome", mb, userEmail, userName);
       }
-     }
+
+    internal void sendInvitationEmail(string email) {
+      //var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
+      //send("Welcome", mb, userEmail, userName);
+      }
+    }
   }

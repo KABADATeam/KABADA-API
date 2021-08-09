@@ -38,11 +38,5 @@ namespace KabadaAPI {
       q0.Remove(o);
       daContext.SaveChanges();
       }
-
-    //protected override bool loadData(string json, bool overwrite) {
-    //  var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.SharedPlan>(json);
-    //  daContext.SharedPlans.Add(o);
-    //  return true;
-    //  }
     }
   }
