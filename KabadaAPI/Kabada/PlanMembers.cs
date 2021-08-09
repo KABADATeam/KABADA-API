@@ -1,11 +1,8 @@
-﻿using KabadaAPI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Kabada {
-  public partial class PlanMembers {
+namespace Kabada
+{
+    public partial class PlanMembers {
     public List<PlanMember> members;
     }
   }
