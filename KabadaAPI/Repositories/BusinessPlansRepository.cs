@@ -106,8 +106,10 @@ namespace KabadaAPI
       var u=new UsersRepository(blContext).byEmail(email);
       if(u==null){
         var j=new Job(){ Author=userId, Kind=(short)JobKind.invitePlanMember, Lookup=email, Value=planId.ToString() };
+        var jRepo=new JobRepository(blContext);
         new Kmail(blContext.config).sendInvitationEmail(email);
-        throw new NotImplementedException("Invitation of unregistered users still not implemented");
+        jRepo.create(j);
+        return "invitation e-mail sent";
        } else {
         new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
         return "Success";

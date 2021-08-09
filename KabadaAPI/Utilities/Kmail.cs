@@ -75,8 +75,8 @@ namespace KabadaAPI {
       }
 
     internal void sendInvitationEmail(string email) {
-      //var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
-      //send("Welcome", mb, userEmail, userName);
+      var mb=autoQuote($"You are invited to join a KABADA project usong link http://kabada.ba.lv/register?email={email}.<br />", "user");
+      send("Welcome", mb, email, "");
       }
     }
   }
