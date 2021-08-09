@@ -38,6 +38,7 @@ namespace KabadaAPI {
         // public Context(DbContextOptions<Context> options) : base(options) { } // [vp]
         public DbSet<KabadaAPIdao.Plan_SpecificAttribute>  Plan_SpecificAttributes  { get; set; } 
         public DbSet<KabadaAPIdao.DbSetting>     DbSettings     { get; set; } 
+        public DbSet<KabadaAPIdao.Job>    Jobs     { get; set; } 
  
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

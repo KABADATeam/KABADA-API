@@ -47,6 +47,23 @@ namespace KabadaAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Jobs",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Kind = table.Column<short>(type: "smallint", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Lookup = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Author = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpiresAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Jobs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Languages",
                 columns: table => new
                 {
@@ -1932,6 +1949,9 @@ namespace KabadaAPI.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DbSettings");
+
+            migrationBuilder.DropTable(
+                name: "Jobs");
 
             migrationBuilder.DropTable(
                 name: "Plan_Attributes");

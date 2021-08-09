@@ -37,6 +37,7 @@ namespace KabadaAPI {
 
       r.Add(new BusinessPlansRepository(blContext, daContext));
       r.Add(new TexterRepository(blContext, daContext));
+      r.Add(new JobRepository(blContext, daContext));
 
       r.Add(new IndustryActivityRepository(blContext, daContext));
       r.Add(new LanguagesRepository(blContext, daContext));
