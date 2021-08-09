@@ -24,19 +24,19 @@ namespace KabadaAPI.Controllers {
 
     [HttpDelete]
     [Authorize]
-    [Route("{consumer}")]
+    [Route("cons/{consumer}")]
     public IActionResult DeleteMe(Guid consumer) { return prun<Guid>(_DeleteMe, consumer); }
     private IActionResult _DeleteMe(Guid resource) { Plan_SpecificAttributesRepository.DeleteAttribute(context, resource, PlanAttributeKind.consumerSegment); return Ok("deleted");}
 
     [HttpDelete]
     [Authorize]
-    [Route("{business}")]
+    [Route("bus/{business}")]
     public IActionResult DeleteBusiness(Guid business) { return prun<Guid>(_Deletebusiness, business); }
     private IActionResult _Deletebusiness(Guid resource) { Plan_SpecificAttributesRepository.DeleteAttribute(context, resource, PlanAttributeKind.businessSegment); return Ok("deleted");}
 
     [HttpDelete]
     [Authorize]
-    [Route("{ngo}")]
+    [Route("ngo/{ngo}")]
     public IActionResult Deletengo(Guid ngo) { return prun<Guid>(_Deletengo, ngo); }
     private IActionResult _Deletengo(Guid resource) { Plan_SpecificAttributesRepository.DeleteAttribute(context, resource, PlanAttributeKind.ngoSegment); return Ok("deleted");}
 
