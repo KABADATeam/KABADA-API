@@ -12,7 +12,7 @@ namespace KabadaAPI {
 
     internal void add(SharedPlan sharedPlan) {
       if(daContext.SharedPlans.Where(x=>x.BusinessPlanId==sharedPlan.BusinessPlanId && x.UserId==sharedPlan.UserId).Count()>0)
-        throw new Exception("duplicates not allowed");
+        return; // already there
       daContext.SharedPlans.Add(sharedPlan);
       daContext.SaveChanges();
       }

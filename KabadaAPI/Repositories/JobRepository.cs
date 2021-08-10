@@ -25,5 +25,43 @@ namespace KabadaAPI {
       daContext.SaveChanges();
       return me;
       }
+
+    public void runAll(){
+      var mid="JobRepository.runAll: ";
+      LogInformation($"{mid}started at {DateTime.Now}.");
+      var tasks=q0.OrderBy(x=>x.CreatedAt).ToList();
+      foreach(var t in tasks)
+        runJob(t);
+      LogInformation($"{mid}ended at {DateTime.Now}.");
+      }
+
+    private void runJob(Job t) {
+      if(t.ExpiresAt!=null && t.ExpiresAt.Value<DateTime.Now){
+        var sn=pack(t);
+        delete(t);
+        LogInformation($"Obsole job deleted: {sn}");
+        return;
+        }
+      switch(t.Kind){
+        case (short)JobKind.invitePlanMember: invitePlanMember(t); break;
+        default: break; // unknown job kind
+        }
+      }
+
+    private void invitePlanMember(Job t) {
+      var u=new UsersRepository(blContext).byEmail(t.Lookup);
+      if(u==null)
+        return; // still not arrived
+      new SharedPlanRepository(blContext, daContext).add(
+        new SharedPlan(){ BusinessPlanId=new Guid(t.Value), UserId=t.Author.Value, Id=Guid.NewGuid() });
+      var sn=pack(t);
+      delete(t);
+      LogInformation($"Job completed: {sn}");
+      }
+
+    private void delete(Job t) {
+      q0.Remove(t);
+      daContext.SaveChanges();
+      }
     }
   }
