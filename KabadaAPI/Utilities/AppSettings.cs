@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System;
 
 namespace KabadaAPI {
   public class AppSettings {
@@ -25,6 +26,19 @@ namespace KabadaAPI {
       if(t==null)
         return defaultValue;
       return r;
+      }
+
+    protected TimeSpan? getD(string key, TimeSpan? defaultValue=null){
+      if(config==null)
+        return defaultValue;
+      var w=config.GetValue<string>(key);
+      if(string.IsNullOrWhiteSpace(w))
+        return defaultValue;
+
+      TimeSpan r;
+      if(TimeSpan.TryParse(w, out r))
+        return r;
+      return defaultValue;
       }
 
     public string connectionString { get {
@@ -58,6 +72,10 @@ namespace KabadaAPI {
 
     public string baseURL { get {
       return getS("baseURL", "http://kabada.ba.lv/");
+      }}
+
+    public TimeSpan? memberInvitationLifetime { get {
+      return getD("MemberInvitationLifetime");
       }}
     }
   }

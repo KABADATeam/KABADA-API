@@ -105,8 +105,11 @@ namespace KabadaAPI
       var businessPlan = GetPlanForUpdate(userId, planId); // ensure rights to change
       var u=new UsersRepository(blContext).byEmail(email);
       if(u==null){
-        var j=new Job(){ Author=userId, Kind=(short)JobKind.invitePlanMember, Lookup=email, Value=planId.ToString() };
         var jRepo=new JobRepository(blContext);
+        var j=new Job(){ Author=userId, Kind=(short)JobKind.invitePlanMember, Lookup=email, Value=planId.ToString() };
+        var d=new AppSettings(_config).memberInvitationLifetime;
+        if(d!=null)
+          j.ExpiresAt=DateTime.Now.Add(d.Value);
         new Kmail(blContext.config).sendInvitationEmail(email);
         jRepo.create(j);
         return "invitation e-mail sent";
