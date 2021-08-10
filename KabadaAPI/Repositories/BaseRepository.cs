@@ -115,8 +115,8 @@ namespace KabadaAPI {
       }
 
     public string iniPath { get {
-        var path = Directory.GetCurrentDirectory();  
-        return $"{path}\\DBinit";
+        var path = Directory.GetCurrentDirectory();
+        return Path.Combine(path, "DBinit");
       }}
 
     internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false) {
