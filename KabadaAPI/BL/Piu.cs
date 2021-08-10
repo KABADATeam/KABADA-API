@@ -39,7 +39,7 @@ namespace KabadaAPI {
     private string backupDirectory { get {
         var dirname="KabadaMigrate";
         var path = Directory.GetCurrentDirectory();
-        var r=Path.Combine(path, @".\..\..\"+dirname);
+        var r=Path.Combine(path, @"./../../"+dirname);
         return r;
       }}
     }

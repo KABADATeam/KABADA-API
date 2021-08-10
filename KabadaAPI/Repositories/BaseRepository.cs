@@ -67,8 +67,9 @@ namespace KabadaAPI {
       var opa=outDirectoryPath;
       if(string.IsNullOrWhiteSpace(opa)){
         var dirname=$"snap-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}";
-        var path = Directory.GetCurrentDirectory();  
-         opa=$"{path}\\Logs\\{dirname}";
+        var path = Directory.GetCurrentDirectory(); 
+        opa=Path.Combine(path, "Logs",dirname);
+        //opa=$"{path}\\Logs\\{dirname}";
         }
       if (!Directory.Exists(opa))  
         Directory.CreateDirectory(opa);
@@ -99,7 +100,8 @@ namespace KabadaAPI {
         LogInformation($"{nam} empty.");
         return 0;
         }
-      var outf=string.Format($"{opa}\\{nam}.txt", opa);
+      var outf=Path.Combine(opa, nam+".txt");
+      //var outf=string.Format($"{opa}\\{nam}.txt", opa);
       int k=0;
       using(var os=new StreamWriter(outf, false, System.Text.Encoding.UTF8)){
         foreach(var o in obi){
@@ -122,9 +124,6 @@ namespace KabadaAPI {
     internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false) {
       var opa=inDirectoryPath;
       if(opa==null){
-        opa=iniPath;
-        //var path = Directory.GetCurrentDirectory();  
-        //opa=$"{path}\\DBinit";
         }
 
       if (!Directory.Exists(opa))  
@@ -151,7 +150,8 @@ namespace KabadaAPI {
       var l1=nam.IndexOf("Repository");
       if(l1>0)
         nam=nam.Substring(0, l1);
-      var inf=string.Format($"{opa}\\{nam}.txt", opa);
+      var inf=Path.Combine(opa, $"{nam}.txt");
+      //var inf=string.Format($"{opa}\\{nam}.txt", opa);
       if(!File.Exists(inf)){
         LogInformation($"{nam} not present.");
         return 0;
@@ -252,7 +252,8 @@ namespace KabadaAPI {
       var o=new UsersRepository(ctx);
       o.expandInit();
       var path = Directory.GetCurrentDirectory();  
-      var opa=$"{path}\\ReBase";
+      var opa=Path.Combine(path, "ReBase");
+      //var opa=$"{path}\\ReBase";
       o.snap(opa);
       }
 

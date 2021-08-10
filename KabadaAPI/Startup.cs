@@ -44,7 +44,8 @@ namespace KabadaAPI {
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             var path = Directory.GetCurrentDirectory();  
-            loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
+            loggerFactory.AddFile(Path.Combine(path, "Logs", "Log.txt"));
+            //loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
 
             //new JobRepository(new BLontext(Configuration, loggerFactory.CreateLogger("batch"))).runAll(); 
 
