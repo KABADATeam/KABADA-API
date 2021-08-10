@@ -63,5 +63,7 @@ namespace KabadaAPI {
       q0.Remove(t);
       daContext.SaveChanges();
       }
+
+    
     }
   }

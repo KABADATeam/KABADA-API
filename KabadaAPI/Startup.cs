@@ -36,7 +36,9 @@ namespace KabadaAPI {
             {
               c.SwaggerDoc("v1", new OpenApiInfo { Title = "kabada-api", Version = "v1" });
             });
-        }
+        //   services.AddSingleton<IWorker, BackgroundJobber>();
+        //   services.AddHostedService<BackgroundJobsService>(); 
+           }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
@@ -44,7 +46,7 @@ namespace KabadaAPI {
             var path = Directory.GetCurrentDirectory();  
             loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
 
-            new JobRepository(new BLontext(Configuration, loggerFactory.CreateLogger("batch"))).runAll(); 
+            //new JobRepository(new BLontext(Configuration, loggerFactory.CreateLogger("batch"))).runAll(); 
 
             if (env.IsDevelopment())
             {
