@@ -10,11 +10,12 @@ namespace KabadaAPI {
 
     private DbSet<SharedPlan> q0 { get { return daContext.SharedPlans; }}
 
-    internal void add(SharedPlan sharedPlan) {
+    internal string add(SharedPlan sharedPlan) {
       if(daContext.SharedPlans.Where(x=>x.BusinessPlanId==sharedPlan.BusinessPlanId && x.UserId==sharedPlan.UserId).Count()>0)
-        return; // already there
+        return "already present"; // already there
       daContext.SharedPlans.Add(sharedPlan);
       daContext.SaveChanges();
+      return "Success";
       }
 
     internal List<Guid> members(Guid planId) {

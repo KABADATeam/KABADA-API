@@ -114,8 +114,8 @@ namespace KabadaAPI
         jRepo.create(j);
         return "invitation e-mail sent";
        } else {
-        new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
-        return "Success";
+        var r=new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
+        return r;
         }
       }
     }
