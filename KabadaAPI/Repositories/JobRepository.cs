@@ -31,24 +31,24 @@ namespace KabadaAPI {
       LogInformation($"{mid}started at {DateTime.Now}.");
       var tasks=q0.OrderBy(x=>x.CreatedAt).ToList();
       foreach(var t in tasks)
-        runJob(t);
+        runJob(t, mid);
       LogInformation($"{mid}ended at {DateTime.Now}.");
       }
 
-    private void runJob(Job t) {
+    private void runJob(Job t, string prefix="") {
       if(t.ExpiresAt!=null && t.ExpiresAt.Value<DateTime.Now){
         var sn=pack(t);
         delete(t);
-        LogInformation($"Obsole job deleted: {sn}");
+        LogInformation($"{prefix}Obsole job deleted: {sn}");
         return;
         }
       switch(t.Kind){
-        case (short)JobKind.invitePlanMember: invitePlanMember(t); break;
+        case (short)JobKind.invitePlanMember: invitePlanMember(t, prefix); break;
         default: break; // unknown job kind
         }
       }
 
-    private void invitePlanMember(Job t) {
+    private void invitePlanMember(Job t, string prefix="") {
       var u=new UsersRepository(blContext).byEmail(t.Lookup);
       if(u==null)
         return; // still not arrived
@@ -56,7 +56,7 @@ namespace KabadaAPI {
         new SharedPlan(){ BusinessPlanId=new Guid(t.Value), UserId=t.Author.Value, Id=Guid.NewGuid() });
       var sn=pack(t);
       delete(t);
-      LogInformation($"Job completed: {sn}");
+      LogInformation($"{prefix}Job completed: {sn}");
       }
 
     private void delete(Job t) {

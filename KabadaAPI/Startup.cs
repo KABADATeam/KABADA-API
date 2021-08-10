@@ -44,6 +44,8 @@ namespace KabadaAPI {
             var path = Directory.GetCurrentDirectory();  
             loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
 
+            new JobRepository(new BLontext(Configuration, loggerFactory.CreateLogger("batch"))).runAll(); 
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,6 +53,7 @@ namespace KabadaAPI {
                 app.UseSwagger(); // [vp]
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "kabada-api v1"));
             }
+
 
             app.UseCors("MyPolicy");
 

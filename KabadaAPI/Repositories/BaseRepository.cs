@@ -164,7 +164,7 @@ namespace KabadaAPI {
       string ln;  
       using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){
         while ((ln = os.ReadLine()) != null) {  
-          LogInformation(ln);
+          //LogInformation(ln);
           if(loadData(ln, overwrite, oldDeleted, generateInits))
             k++; 
           //daContext.SaveChanges();
