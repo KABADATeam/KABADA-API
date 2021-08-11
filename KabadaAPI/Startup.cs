@@ -39,23 +39,15 @@ namespace KabadaAPI {
            }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
-        {
-      var path = Directory.GetCurrentDirectory();
-      loggerFactory.AddFile(Path.Combine(path, "Logs", "Log.txt"));
-      ////loggerFactory.AddFile($"{path}\\Logs\\Log.txt");
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)  {
+          var path = Directory.GetCurrentDirectory();
+          loggerFactory.AddFile(Path.Combine(path, "Logs", "Log.txt"));
 
-      //new JobRepository(new BLontext(Configuration, loggerFactory.CreateLogger("batch"))).runAll(); 
-
-
-      if (env.IsDevelopment())
-            {
+          if (env.IsDevelopment()){
                 app.UseDeveloperExceptionPage();
-
                 app.UseSwagger(); // [vp]
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "kabada-api v1"));
             }
-
 
             app.UseCors("MyPolicy");
 

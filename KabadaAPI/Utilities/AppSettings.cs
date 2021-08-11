@@ -41,6 +41,8 @@ namespace KabadaAPI {
       return defaultValue;
       }
 
+    protected TimeSpan getDM(string key, TimeSpan defaultValue){ return getD(key, defaultValue).Value; }
+
     public string connectionString { get {
       return getS("ConnectionStrings:DefaultConnection", @"Server=(localdb)\mssqllocaldb;Database=kabada-test;Trusted_Connection=True;MultipleActiveResultSets=true");
       }}
@@ -76,6 +78,14 @@ namespace KabadaAPI {
 
     public TimeSpan? memberInvitationLifetime { get {
       return getD("MemberInvitationLifetime");
+      }}
+
+    public TimeSpan jobsRescanInterval { get {
+      return getDM("JobsRescanInterval", new TimeSpan(0, 5, 0));
+      }}
+
+    public TimeSpan jobsNotifyRescanInterval { get {
+      return getDM("JobsNotifyRescanInterval", new TimeSpan(0, 0, 5));
       }}
     }
   }

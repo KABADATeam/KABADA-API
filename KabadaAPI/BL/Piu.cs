@@ -21,6 +21,7 @@ namespace KabadaAPI {
         case "SNP": doSnap(); r=true; break;
         case "REST": doRestore(); break;
         case "RB": BaseRepository.ReBase(context); break;
+        case "P": r=true; break;
         default: throw new Exception("shot moon!");
         }
       return r;

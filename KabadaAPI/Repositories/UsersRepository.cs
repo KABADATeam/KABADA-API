@@ -39,6 +39,8 @@ namespace KabadaAPI {
             daContext.Users.Add(user);
             daContext.SaveChanges();
 
+            BackgroundJobber.Notify();
+
             Email.SendOnRegistrationConfirmation(email, new Kmail(_config));
 
             return user;
@@ -193,6 +195,9 @@ namespace KabadaAPI {
       validatePassword(user, password);
       user.Email=newValue;
       daContext.SaveChanges();
+
+      BackgroundJobber.Notify();
+
       new Kmail(_config).SendOnMailchangeConfirmation(user.Email, user.Name);
       //Email.SendEmailChange(user.Email);
       }
