@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using MimeKit;
 
 namespace KabadaAPI {
-  public class Kmail {
+  public partial class Kmail {
     private readonly IConfiguration config;
 
     public Kmail(IConfiguration config){ this.config = config; }
@@ -64,20 +64,33 @@ namespace KabadaAPI {
       send(me.Subject, me.IsBodyHtml?me.Body:null,me.To[0].Address, me.To[0].DisplayName, me.IsBodyHtml?null:me.Body);
       }
 
-    protected string autoQuote(string baseText, string name=null){
-      var r=$"Hi {name},<br /><br />"+baseText+$"KABADA Team";
-      return r;
-      }
-
-    public void SendOnMailchangeConfirmation(string userEmail, string userName){
-      var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
-      send("Welcome", mb, userEmail, userName);
+    public void sendOnMailchangeConfirmation(string userEmail, string userName){
+      //var mb=autoQuote($"You have successfully changed your e-mail address.<br />", userName);
+      //send("Welcome", mb, userEmail, userName);
+      sendEmail(MessageKinds.mailchangeConfirmation, userEmail, userName);
       }
 
     internal void sendInvitationEmail(string email) {
-      var bu=new AppSettings(config).baseURL;
-      var mb=autoQuote($"You are invited to join a KABADA project usong link {bu}register?email={email}.<br />", "user");
-      send("Welcome", mb, email, "");
+      //var bu=new AppSettings(config).baseURL;
+      //var mb=autoQuote($"You are invited to join a KABADA project usong link {bu}register?email={email}.<br />", "user");
+      //send("Welcome", mb, email, "");
+      sendEmail(MessageKinds.memberInvitation, email);
       }
+
+    private void sendEmail(MessageKinds kind, string email=null, string name=null, string plainTextBody=null){
+      if(email!=null)
+        userEmail=email;
+      if(name!=null)
+        recipientName=name;
+      messager(kind);
+      send(subject, htmlText, userEmail, recipientName, plainTextBody);
+      }
+
+    public void sendOnPasswordChange(string userEmail){ sendEmail(MessageKinds.passwordChange, userEmail); }
+    public void sendPasswordResetLink(string userEmail, string passwordString){
+      parameter=passwordString;
+      sendEmail(MessageKinds.passwordResetLink, userEmail);
+      }
+    public void sendOnRegistrationConfirmation(string userEmail){ sendEmail(MessageKinds.welcome, userEmail); }
     }
   }

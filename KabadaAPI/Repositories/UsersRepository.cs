@@ -41,8 +41,8 @@ namespace KabadaAPI {
 
             BackgroundJobber.Notify();
 
-            Email.SendOnRegistrationConfirmation(email, new Kmail(_config));
-
+            //Email.SendOnRegistrationConfirmation(email, new Kmail(_config));
+            new Kmail(_config).sendOnRegistrationConfirmation(email);
             return user;
         }
 
@@ -110,7 +110,8 @@ namespace KabadaAPI {
 
                     daContext.SaveChanges();
 
-                    Email.SendPasswordResetLink(user.Email, confirmationCode, new Kmail(_config));
+                    //Email.SendPasswordResetLink(user.Email, confirmationCode, new Kmail(_config));
+                    new Kmail(_config).sendPasswordResetLink(user.Email, confirmationCode);
                 }
                 else
                     throw new Exception("Cannot reset password for this account");
@@ -128,7 +129,8 @@ namespace KabadaAPI {
 
             daContext.SaveChanges();
 
-            Email.SendOnPasswordChange(user.Email, new Kmail(_config));
+            //Email.SendOnPasswordChange(user.Email, new Kmail(_config));
+            new Kmail(_config).sendOnPasswordChange(user.Email);
         }
 
         private void validatePassword(User user, string oldPassword){
@@ -198,7 +200,7 @@ namespace KabadaAPI {
 
       BackgroundJobber.Notify();
 
-      new Kmail(_config).SendOnMailchangeConfirmation(user.Email, user.Name);
+      new Kmail(_config).sendOnMailchangeConfirmation(user.Email, user.Name);
       //Email.SendEmailChange(user.Email);
       }
 
