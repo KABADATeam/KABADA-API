@@ -164,7 +164,7 @@ namespace KabadaAPI.Controllers {
         private IActionResult _changeChannelsCompleted([FromBody] ChangePlanParameter planUpdate)
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(context);
-            repo.ChangeRevenueCompleted(planUpdate.business_plan_id, planUpdate.is_channels_completed, uGuid);
+            repo.ChangeChannelsCompleted(planUpdate.business_plan_id, planUpdate.is_channels_completed, uGuid);
             return Ok("Success");
         }
 
