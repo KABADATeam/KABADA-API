@@ -51,7 +51,7 @@ namespace KabadaAPI {
       daContext.SaveChanges();
       }
 
-    protected List<Plan_SpecificAttribute> get(Guid plan){
+    public List<Plan_SpecificAttribute> get(Guid plan){
       var r=daContext.Plan_SpecificAttributes.Where(x=>x.BusinessPlanId==plan).OrderBy(x=>x.OrderValue).ToList();
       return r;
       }

@@ -21,5 +21,7 @@ namespace KabadaAPIdao {
         public short OrderValue { get; set; }
 
         public string Comment;
+
+    public Plan_SpecificAttribute clone(){ return (Plan_SpecificAttribute)this.MemberwiseClone(); }
     }
   }

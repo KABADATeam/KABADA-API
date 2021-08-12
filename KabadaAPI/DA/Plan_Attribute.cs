@@ -22,5 +22,8 @@ namespace KabadaAPIdao {
         public string AttrVal { get; set; } // json-ed attribute value - has different types depending on Kind
         [Required] 
         public short OrderValue { get; set; }
+
+
+    public Plan_Attribute clone(){ return (Plan_Attribute)this.MemberwiseClone(); }
     }
   }

@@ -30,10 +30,10 @@ namespace KabadaAPI
             businessPlan.IsResourcesCompleted = newValue;
             daContext.SaveChanges();
         }
-        public BusinessPlan GetPlan(Guid planId)
-        {
+        public BusinessPlan GetPlan(Guid planId){
            return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
         }
+        
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {
             var mp = daContext.BusinessPlans.Include(x =>x.User).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
@@ -117,6 +117,17 @@ namespace KabadaAPI
         var r=new SharedPlanRepository(blContext, daContext).add(new SharedPlan(){ BusinessPlanId=planId, UserId=u.Id, Id=Guid.NewGuid() });
         return r;
         }
+      }
+
+    public BusinessPlanBL getPlanBL(Guid planId){ return new BusinessPlanBL(GetPlan(planId)); }
+
+    public BusinessPlanBL getPlanBLfull(Guid planId){
+      var r=new BusinessPlanBL(GetPlan(planId));
+      r.a=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone())
+           .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      r.s=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone())
+           .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      return r;
       }
     }
 }

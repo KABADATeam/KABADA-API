@@ -55,8 +55,8 @@ namespace KabadaAPI {
       return r;
       }
 
-    protected List<Plan_Attribute> get(Guid plan){
-      var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan).OrderBy(x=>x.OrderValue).ToList();
+    public List<Plan_Attribute> get(Guid plan){
+      var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan).ToList();
       return r;
       }
 
