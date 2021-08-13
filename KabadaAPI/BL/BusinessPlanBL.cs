@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using static KabadaAPI.Plan_AttributeRepository;
 using System.Linq;
+using Kabada;
 
 namespace KabadaAPI {
   public class BusinessPlanBL {
-    private BusinessPlan _o;
-    public  BusinessPlan o { get { return _o; } set { _o=value.clone(); }}
+    private KabadaAPIdao.BusinessPlan _o;
+    public  KabadaAPIdao.BusinessPlan o { get { return _o; } set { _o=value.clone(); }}
 
     public Dictionary<short, List<Plan_Attribute>> a;
     public Dictionary<short, List<Plan_SpecificAttribute>> s;
 
-    public BusinessPlanBL(BusinessPlan seed=null) {
+    public TexterRepository textSupport;
+
+    public BusinessPlanBL(KabadaAPIdao.BusinessPlan seed=null) {
       if(seed==null)
-        _o=new BusinessPlan();
+        _o=new KabadaAPIdao.BusinessPlan();
        else
         o=seed;
        a=new Dictionary<short, List<Plan_Attribute>>();
@@ -40,8 +43,6 @@ namespace KabadaAPI {
       count(o.IsResourcesCompleted);
       count(o.IsRevenueCompleted);
       count(o.IsSwotCompleted);
-      
-      count(o.Activity!=null);
 
       return ((decimal)_k)/_n;
       }}
@@ -67,6 +68,11 @@ namespace KabadaAPI {
       return r;
       }
 
+    private List<T> gAv<T>(PlanAttributeKind kind) where T:class {
+      var r=gA(kind).Select(x=>Newtonsoft.Json.JsonConvert.DeserializeObject<T>( x.AttrVal)).ToList();
+      return r;
+      }
+
     public string descriptionCustomerSegments { get {//TODO Maybe info from the first two fields: Age groups and Gender
       return "TODO: Maybe info from the first two fields: Age groups and Gender";
       //var r=gSv(PlanAttributeKind.consumerSegment);
@@ -75,32 +81,53 @@ namespace KabadaAPI {
       //return r.Count<1?null:string.Join(" ,", r);
       }}
 
-    public string descriptionPropostion { get {//TODO // product names
-      return "TODO: product names";
+    public string descriptionPropostion { get { // product names
+      var t=gAv<ProductAttribute>(PlanAttributeKind.product).Select(x=>x.title).ToList();
+      return string.Join(", ", t);
       }}
 
-    public string descriptionChannels { get {//TODO Main channel type: Direct sale, Agent, etc. from this level
-      return "TODO: Main channel type: Direct sale, Agent, etc. from this level";
+    public string descriptionChannels { get {// Main channel type: Direct sale, Agent, etc. from this level
+      var w=gAv<ChannelAttribute>(PlanAttributeKind.product).Select(x=>x.channel_type_id).Distinct().ToList();
+      if(w.Count<1)
+        return null;
+      var t=textSupport.get(w).Select(x=>x.Value).ToList();
+      return string.Join(", ", t);
       }}
 
     public string descriptionRelationship { get {//TODO maybe at the first moment selected channels, but not sure (needs more discussion)
       return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
       }}
 
-    public string descriptionRevenue { get {//TODO I guess, - Revenue stream names
-      return "TODO: I guess, - Revenue stream names";
+    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueAttribute>(kind).Select(x=>x.title).ToList(); }
+    public string descriptionRevenue { get {// I guess, - Revenue stream names
+      var t=rvs(PlanAttributeKind.revenueSegment1);
+      t.AddRange(rvs(PlanAttributeKind.revenueSegment2));
+      t.AddRange(rvs(PlanAttributeKind.revenueOther));
+      return string.Join(", ", t);
       }}
 
-    public string descriptionResources { get {//TODO names
-      return "TODO: names";
+    public string descriptionResources { get {// names
+      var t=gAv<PlanResource>(PlanAttributeKind.keyResource).Select(x=>x.name).ToList();
+      return string.Join(", ", t);
       }}
 
     public string descriptionActivity { get {//TODO activities names
       return "TODO: activities names";
       }}
 
-    public string descriptionPartners { get {//TODO String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2
-      return "TODO: String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2";
+    private List<string> rvp(PlanAttributeKind kind){ return gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList(); }
+    private string rvp(string prefix, string name, PlanAttributeKind kind){
+      var t=gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList();
+      if(t.Count<1)
+        return prefix;
+      return (string.IsNullOrWhiteSpace(prefix)?"":prefix+" ")+name+": "+string.Join(", ", t);
+      }
+    public string descriptionPartners { get { // String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2
+      string r=null;
+      r=rvp(r, "Distributors", PlanAttributeKind.keyDistributor);
+      r=rvp(r, "Suppliers", PlanAttributeKind.keySupplier);
+      r=rvp(r, "Other", PlanAttributeKind.otherKeyPartner);
+      return r;
       }}
 
     public string descriptionCost { get {//TODO For cost structure - we also have names

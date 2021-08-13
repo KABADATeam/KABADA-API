@@ -7,19 +7,30 @@ namespace Kabada {
     private PlanOverviewElement md(bool comp){ return me(comp, "TODO"); }
 
     internal void read(BLontext context, Guid planId, Guid uGuid) {
-      var o=new BusinessPlansRepository(context).getPlanBLfull(planId);
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId);
+      p.textSupport=new TexterRepository(context);
 
-    //TODOpublic PlanOverviewNace nace;  
-    customer_segments=me(o.o.IsCustomerSegmentsCompleted, o.descriptionCustomerSegments);     //TODO
-    value_proposition=me(o.o.IsPropositionCompleted, o.descriptionPropostion);                //TODO
-    channels=me(o.o.IsChannelsCompleted, o.descriptionChannels);                              //TODO  
-    customer_relationship=me(o.o.IsCustomerRelationshipCompleted, o.descriptionRelationship); //TODO 
-    revenue_streams=me(o.o.IsRevenueCompleted, o.descriptionRevenue);                         //TODO
-    key_resources=me(o.o.IsResourcesCompleted, o.descriptionResources);                       //TODO
-    key_activities=me(o.o.Activity!=null, o.descriptionActivity);                             //TODO
-    key_partners=me(o.o.IsPartnersCompleted, o.descriptionPartners);                          //TODO
-    cost_structure=me(o.o.IsCostCompleted, o.descriptionCost);                                //TODO
-    swot=me(o.o.IsSwotCompleted);           //TODO not clear, yet
+    // nace;
+    if(p.o.Activity!=null){
+      nace=new PlanOverviewNace();
+      var w=p.o.Activity;
+      nace.activity_code=w.Code;
+      nace.activity_title=w.Title;
+      if(w.Industry!=null){
+        nace.industry_code=w.Industry.Code;
+        nace.industry_title=w.Industry.Title;
+        }
+      }
+    customer_segments=me(p.o.IsCustomerSegmentsCompleted, p.descriptionCustomerSegments);     //TODO
+    value_proposition=me(p.o.IsPropositionCompleted, p.descriptionPropostion);
+    channels=me(p.o.IsChannelsCompleted, p.descriptionChannels); 
+    customer_relationship=me(p.o.IsCustomerRelationshipCompleted, p.descriptionRelationship); //TODO 
+    revenue_streams=me(p.o.IsRevenueCompleted, p.descriptionRevenue);
+    key_resources=me(p.o.IsResourcesCompleted, p.descriptionResources);
+    //TODOkey_activities=me(o.o.Activity!=null, o.descriptionActivity);                             //TODO
+    key_partners=me(p.o.IsPartnersCompleted, p.descriptionPartners);
+    cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);                                //TODO
+    swot=me(p.o.IsSwotCompleted);           //TODO not clear, yet
     //TODOpublic PlanOverviewElement financial_projections;    // not clear, yet
     //TODOpublic PlanOverviewElement team_competencies;    // not clear, yet
       }
