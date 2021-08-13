@@ -110,7 +110,7 @@ namespace KabadaAPI.Controllers {
         [Route("changeCostCompleted")]
         [Authorize(Roles = Role.User)]
         [HttpPost]
-        public IActionResult ChangeCostCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeSwotCompleted, planUpdate); }
+        public IActionResult ChangeCostCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeCostCompleted, planUpdate); }
         private IActionResult _changeCostCompleted([FromBody] ChangePlanParameter planUpdate)
         {
             BusinessPlansRepository repo = new BusinessPlansRepository(context);
