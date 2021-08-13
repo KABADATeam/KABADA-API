@@ -194,7 +194,8 @@ namespace KabadaAPI.Migrations
                     IsRevenueCompleted = table.Column<bool>(type: "bit", nullable: false),
                     IsChannelsCompleted = table.Column<bool>(type: "bit", nullable: false),
                     IsCustomerSegmentsCompleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsCustomerRelationshipCompleted = table.Column<bool>(type: "bit", nullable: false)
+                    IsCustomerRelationshipCompleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActivitiesCompleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -6893,6 +6893,9 @@ namespace KabadaAPI.Migrations
                     b.Property<Guid?>("Img")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("IsActivitiesCompleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsChannelsCompleted")
                         .HasColumnType("bit");
 

@@ -87,3 +87,8 @@ Invitation 01;P;/api/plans/inviteMember;UserBusinessPlan;InviteMember;
 Invitation 02;G;/api/plans/members/{BusinessPlan};UserBusinessPlan;MyMembers;
 Invitation 03;D;/api/plans/member/{BusinessPlan};UserBusinessPlan;Dmember;
 Overview 01;G;/api/plans/overview/{BusinessPlan};UserBusinessPlan;MyOverview;
+Key activities 01;;;;;
+Key activities 02;;;;;
+Key activities 03;;;;;
+Key activities 04;;;;;
+Key activities 05;P;/api/plans/changeActivitiesCompleted;UserBusinessPlan;ChangeActivitiesCompleted;

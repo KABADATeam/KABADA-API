@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210809104957_InitialCreate")]
+    [Migration("20210813095320_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -6894,6 +6894,9 @@ namespace KabadaAPI.Migrations
 
                     b.Property<Guid?>("Img")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActivitiesCompleted")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsChannelsCompleted")
                         .HasColumnType("bit");

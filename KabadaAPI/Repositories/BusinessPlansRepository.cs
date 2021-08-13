@@ -129,5 +129,11 @@ namespace KabadaAPI
            .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       return r;
       }
+
+    internal void ChangeActivitiesCompleted(Guid planId, bool newValue, Guid userId) {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsActivitiesCompleted = newValue;
+            daContext.SaveChanges();
+      }
     }
 }
