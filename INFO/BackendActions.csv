@@ -92,3 +92,4 @@ Key activities 02;;;;;
 Key activities 03;;;;;
 Key activities 04;;;;;
 Key activities 05;P;/api/plans/changeActivitiesCompleted;UserBusinessPlan;ChangeActivitiesCompleted;
+;P;/api/plans/update;UserBusinessPlan;Update;
