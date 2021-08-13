@@ -114,6 +114,12 @@ namespace KabadaAPI {
       return r;
       }
 
+    public List<Texter> getByKind(short kind) {
+      var q=daContext.Texters.Where(x=>x.Kind==kind);
+      var r=q.ToList();
+      return r;
+      }
+
     public void Delete(Texter me) {
       daContext.Texters.Remove(me);
       daContext.SaveChanges();
@@ -158,6 +164,10 @@ namespace KabadaAPI {
     internal List<Texter> getCustomerRelationshipActions() {
       var k=(short)EnumTexterKind.action;
       return get(null, k, k);
+      }
+
+    internal object getActivitiesTypes() {
+      throw new NotImplementedException();
       }
 
     }

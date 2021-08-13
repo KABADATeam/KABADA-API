@@ -87,6 +87,5 @@ namespace KabadaAPI {
        	"male", "female"
         );
      }
-
     }
   }
