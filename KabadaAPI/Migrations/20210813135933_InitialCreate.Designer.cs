@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210813120448_InitialCreate")]
+    [Migration("20210813135933_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -9791,6 +9791,30 @@ namespace KabadaAPI.Migrations
                             OrderValue = (short)13,
                             Value = "Product design"
                         });
+                });
+
+            modelBuilder.Entity("KabadaAPIdao.UniversalAttribute", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AttrVal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("Kind")
+                        .HasColumnType("smallint");
+
+                    b.Property<Guid?>("MasterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<short>("OrderValue")
+                        .HasColumnType("smallint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UniversalAttributes");
                 });
 
             modelBuilder.Entity("KabadaAPIdao.User", b =>

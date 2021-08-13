@@ -9791,6 +9791,30 @@ namespace KabadaAPI.Migrations
                         });
                 });
 
+            modelBuilder.Entity("KabadaAPIdao.UniversalAttribute", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AttrVal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("Kind")
+                        .HasColumnType("smallint");
+
+                    b.Property<Guid?>("MasterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<short>("OrderValue")
+                        .HasColumnType("smallint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UniversalAttributes");
+                });
+
             modelBuilder.Entity("KabadaAPIdao.User", b =>
                 {
                     b.Property<Guid>("Id")

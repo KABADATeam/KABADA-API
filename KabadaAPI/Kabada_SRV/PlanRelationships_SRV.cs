@@ -20,9 +20,9 @@ namespace Kabada {
       var tRepo=new TexterRepository(ctx);
       var acti=tRepo.getCustomerRelationshipActions().ToDictionary(x=>x.Id);
 
-      how_to_get_new=readS(aRepo,acti, planId, PlanAttributeKind.activity1);
-      how_to_keep_existing=readS(aRepo,acti, planId, PlanAttributeKind.activity2);
-      how_to_make_spend=readS(aRepo,acti, planId, PlanAttributeKind.activity3);
+      how_to_get_new=readS(aRepo,acti, planId, PlanAttributeKind.relationshipActivity1);
+      how_to_keep_existing=readS(aRepo,acti, planId, PlanAttributeKind.relationshipActivity2);
+      how_to_make_spend=readS(aRepo,acti, planId, PlanAttributeKind.relationshipActivity3);
       }
 
     private List<PlanRelationship> readS(Plan_AttributeRepository aRepo, Dictionary<Guid, Texter> acti, Guid planId,PlanAttributeKind aKind) {

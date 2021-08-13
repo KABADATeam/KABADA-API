@@ -93,6 +93,21 @@ namespace KabadaAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UniversalAttributes",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MasterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Kind = table.Column<short>(type: "smallint", nullable: false),
+                    AttrVal = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OrderValue = table.Column<short>(type: "smallint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UniversalAttributes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserFiles",
                 columns: table => new
                 {
@@ -1981,6 +1996,9 @@ namespace KabadaAPI.Migrations
 
             migrationBuilder.DropTable(
                 name: "SharedPlans");
+
+            migrationBuilder.DropTable(
+                name: "UniversalAttributes");
 
             migrationBuilder.DropTable(
                 name: "UserFiles");

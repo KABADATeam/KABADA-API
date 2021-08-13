@@ -39,6 +39,7 @@ namespace KabadaAPI {
         public DbSet<KabadaAPIdao.Plan_SpecificAttribute>  Plan_SpecificAttributes  { get; set; } 
         public DbSet<KabadaAPIdao.DbSetting>     DbSettings     { get; set; } 
         public DbSet<KabadaAPIdao.Job>    Jobs     { get; set; } 
+        public DbSet<KabadaAPIdao.UniversalAttribute>    UniversalAttributes     { get; set; } 
  
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

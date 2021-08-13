@@ -1,7 +1,9 @@
 ﻿using Kabada;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace KabadaAPI.Controllers {
   [Route("api/activities")]
@@ -17,5 +19,14 @@ namespace KabadaAPI.Controllers {
         r.read(context);
         return r;
         }
+
+    [HttpPost]
+    [Authorize]
+    [Route("save")]
+    public ActionResult<Guid> Save(KeyActivityPost update) { return Prun<KeyActivityPost, Guid>(_Save, update); }
+    private ActionResult<Guid> _Save(KeyActivityPost update) {
+      Guid r=update.perform(context, uGuid);
+      return r;
+      }
     }
   }
