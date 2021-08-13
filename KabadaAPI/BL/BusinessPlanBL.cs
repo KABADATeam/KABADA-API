@@ -98,12 +98,13 @@ namespace KabadaAPI {
       return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
       }}
 
-    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueAttribute>(kind).Select(x=>x.title).ToList(); }
+//    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueBase>(kind).Select(x=>x..title).ToList(); }
     public string descriptionRevenue { get {// I guess, - Revenue stream names
-      var t=rvs(PlanAttributeKind.revenueSegment1);
-      t.AddRange(rvs(PlanAttributeKind.revenueSegment2));
-      t.AddRange(rvs(PlanAttributeKind.revenueOther));
-      return string.Join(", ", t);
+      return "TODO: I guess, - Revenue stream names";
+      //var t=rvs(PlanAttributeKind.revenueSegment1);
+      //t.AddRange(rvs(PlanAttributeKind.revenueSegment2));
+      //t.AddRange(rvs(PlanAttributeKind.revenueOther));
+      //return string.Join(", ", t);
       }}
 
     public string descriptionResources { get {// names

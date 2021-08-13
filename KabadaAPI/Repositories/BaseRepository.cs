@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace KabadaAPI {
   public abstract class BaseRepository : Blotter, IDisposable   {
-    protected readonly DAcontext daContext;
+    public readonly DAcontext daContext;
 
     public BaseRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
       if(dContext==null)
@@ -31,6 +31,7 @@ namespace KabadaAPI {
     protected List<BaseRepository> deleteBaseOrder { get { // RefreshTokens not included - must be processed separately
       var r=new List<BaseRepository>();
 
+      r.Add(new UniversalAttributeRepository(blContext, daContext));
       r.Add(new Plan_AttributeRepository(blContext, daContext));
       r.Add(new SharedPlanRepository(blContext, daContext));
       r.Add(new Plan_SpecificAttributesRepository(blContext, daContext));

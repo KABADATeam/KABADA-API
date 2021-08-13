@@ -90,6 +90,6 @@ Overview 01;G;/api/plans/overview/{BusinessPlan};UserBusinessPlan;MyOverview;
 Key activities 01;;;;;
 Key activities 02;;;;;
 Key activities 03;G;/api/activities/categories;Activities;Categories;
-Key activities 04;;;;;
+Key activities 04;P;/api/activities/save;Activities;Save;
 Key activities 05;P;/api/plans/changeActivitiesCompleted;UserBusinessPlan;ChangeActivitiesCompleted;
 Slack  2021.08.13 12:54 PM;P;/api/plans/update;UserBusinessPlan;Update;

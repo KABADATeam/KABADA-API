@@ -18,6 +18,6 @@ namespace KabadaAPIdao {
         [Required] 
         public short OrderValue { get; set; }
 
-        public Guid? Category;
+        public Guid? CategoryId;
     }
   }
