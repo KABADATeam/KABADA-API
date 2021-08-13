@@ -7203,7 +7203,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "1"
+                            Value = "2"
                         });
                 });
 
@@ -7970,6 +7970,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("0addb638-0a86-4fc8-90fa-332a530655b8"),
+                            Kind = (short)42,
+                            MasterId = new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"),
+                            OrderValue = (short)0,
+                            Value = "R & D"
+                        },
+                        new
+                        {
                             Id = new Guid("e8f6e9d6-0e37-4182-9c47-33c9d119ac73"),
                             Kind = (short)31,
                             MasterId = new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"),
@@ -8001,6 +8009,22 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("e1da4359-882f-4fd7-8eb0-360b5f859c9a"),
+                            Kind = (short)42,
+                            MasterId = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
+                            OrderValue = (short)0,
+                            Value = "Recruitment"
+                        },
+                        new
+                        {
+                            Id = new Guid("ad8c7415-613b-4c04-b7ee-3643d949fd2a"),
+                            Kind = (short)42,
+                            MasterId = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
+                            OrderValue = (short)0,
+                            Value = "Marketing"
+                        },
+                        new
+                        {
                             Id = new Guid("ab5ffc0e-da10-4ed8-a7fb-369785911381"),
                             Kind = (short)3,
                             OrderValue = (short)6,
@@ -8022,6 +8046,14 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"),
                             OrderValue = (short)1,
                             Value = "Ownership type"
+                        },
+                        new
+                        {
+                            Id = new Guid("ac7a78ec-1dab-4de4-a42a-38af55118921"),
+                            Kind = (short)42,
+                            MasterId = new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"),
+                            OrderValue = (short)0,
+                            Value = "Service provisioning"
                         },
                         new
                         {
@@ -8134,6 +8166,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)21,
                             OrderValue = (short)7,
                             Value = "Permits & Licenses"
+                        },
+                        new
+                        {
+                            Id = new Guid("d8cb55ce-d517-4912-8b07-46d41d4d4c4a"),
+                            Kind = (short)42,
+                            MasterId = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            OrderValue = (short)0,
+                            Value = "Operations"
                         },
                         new
                         {
@@ -8323,6 +8363,13 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
+                            Kind = (short)41,
+                            OrderValue = (short)0,
+                            Value = "Problem solving"
+                        },
+                        new
+                        {
                             Id = new Guid("df75df99-8916-4eba-8ef1-636c8cc2478b"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
@@ -8503,6 +8550,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)16,
                             OrderValue = (short)3,
                             Value = "Paid plans"
+                        },
+                        new
+                        {
+                            Id = new Guid("08a43d2e-87da-433b-9656-787878f8c04d"),
+                            Kind = (short)42,
+                            MasterId = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
+                            OrderValue = (short)0,
+                            Value = "Continous training"
                         },
                         new
                         {
@@ -8806,6 +8861,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("cbf5fd0e-8a6e-420d-8fbb-94585c7558ba"),
+                            Kind = (short)42,
+                            MasterId = new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"),
+                            OrderValue = (short)0,
+                            Value = "Platform management"
+                        },
+                        new
+                        {
                             Id = new Guid("169b2610-f5eb-47c1-88d8-95831dae4a59"),
                             Kind = (short)20,
                             OrderValue = (short)1,
@@ -8944,6 +9007,13 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            Kind = (short)41,
+                            OrderValue = (short)0,
+                            Value = "Production"
+                        },
+                        new
+                        {
                             Id = new Guid("d57d1d34-e721-4d46-a5f4-a3f9e7d3a198"),
                             Kind = (short)27,
                             OrderValue = (short)5,
@@ -9059,6 +9129,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("86d1df12-6c1b-4211-a936-b5c2cad16a81"),
+                            Kind = (short)42,
+                            MasterId = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
+                            OrderValue = (short)0,
+                            Value = "Knowledge management"
+                        },
+                        new
+                        {
                             Id = new Guid("121f0a92-8b35-4890-8384-b66f48db9ac5"),
                             Kind = (short)15,
                             OrderValue = (short)12,
@@ -9071,6 +9149,14 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"),
                             OrderValue = (short)1,
                             Value = "Buildings"
+                        },
+                        new
+                        {
+                            Id = new Guid("e682f874-c899-432d-a963-b82470f6bcf1"),
+                            Kind = (short)42,
+                            MasterId = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            OrderValue = (short)0,
+                            Value = "Logistics"
                         },
                         new
                         {
@@ -9092,6 +9178,13 @@ namespace KabadaAPI.Migrations
                             Kind = (short)22,
                             OrderValue = (short)3,
                             Value = "Packaging"
+                        },
+                        new
+                        {
+                            Id = new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"),
+                            Kind = (short)41,
+                            OrderValue = (short)0,
+                            Value = "Platform/Network"
                         },
                         new
                         {
@@ -9193,6 +9286,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("e33adb3f-4391-4631-ab67-c5ce6989dd38"),
+                            Kind = (short)42,
+                            MasterId = new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"),
+                            OrderValue = (short)0,
+                            Value = "Marketing"
+                        },
+                        new
+                        {
                             Id = new Guid("7a82656a-a993-4a54-b8e6-c69224642dd1"),
                             Kind = (short)13,
                             OrderValue = (short)1,
@@ -9285,6 +9386,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)33,
                             OrderValue = (short)1,
                             Value = "Low"
+                        },
+                        new
+                        {
+                            Id = new Guid("003ba515-28f7-4141-af55-ce6a35b96e41"),
+                            Kind = (short)42,
+                            MasterId = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            OrderValue = (short)0,
+                            Value = "Services"
                         },
                         new
                         {
@@ -9551,6 +9660,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("327ca493-9191-4fb5-b1a8-eec264849f7d"),
+                            Kind = (short)42,
+                            MasterId = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            OrderValue = (short)0,
+                            Value = "R & D"
+                        },
+                        new
+                        {
                             Id = new Guid("5365d22f-9372-4471-baab-f1175d25ae0f"),
                             Kind = (short)15,
                             OrderValue = (short)14,
@@ -9593,6 +9710,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)16,
                             OrderValue = (short)5,
                             Value = "Different price for individuals"
+                        },
+                        new
+                        {
+                            Id = new Guid("d7588518-4eae-4e60-ae17-f8abc90b3358"),
+                            Kind = (short)42,
+                            MasterId = new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"),
+                            OrderValue = (short)0,
+                            Value = "Marketing"
                         },
                         new
                         {

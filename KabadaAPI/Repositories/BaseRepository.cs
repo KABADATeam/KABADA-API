@@ -123,8 +123,8 @@ namespace KabadaAPI {
 
     internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false) {
       var opa=inDirectoryPath;
-      if(opa==null){
-        }
+      if(opa==null)
+        opa=iniPath;
 
       if (!Directory.Exists(opa))  
         throw new Exception($"Not present import directory '{opa}'");

@@ -111,7 +111,7 @@ namespace KabadaAPI {
       return string.Join(", ", t);
       }}
 
-    public string descriptionActivity { get {//TODO activities names
+    public string descriptionActivities { get {//TODO activities names
       return "TODO: activities names";
       }}
 

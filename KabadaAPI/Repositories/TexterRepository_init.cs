@@ -1,6 +1,8 @@
 ﻿using KabadaAPIdao;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KabadaAPI {
   partial class TexterRepository {
@@ -27,6 +29,28 @@ namespace KabadaAPI {
         "Low", "Medium", "High"
         );
      }
+
+    private DbSet<Texter> q0 { get { return daContext.Texters; }}
+
+    internal Guid set(short kind, string value) {
+      var r=q0.Where(x=>x.Kind==kind && x.Value==value).FirstOrDefault();
+      if(r==null){
+        r=new Texter(){Id=Guid.NewGuid(), Kind=kind, Value=value };
+        q0.Add(r);
+        daContext.SaveChanges();
+        }
+      return r.Id;
+      }
+
+    internal Guid set(Guid master, short kind, string value) {
+      var r=q0.Where(x=>x.Kind==kind && x.MasterId==master && x.Value==value).FirstOrDefault();
+      if(r==null){
+        r=new Texter(){Id=Guid.NewGuid(), Kind=kind, Value=value, MasterId=master };
+        q0.Add(r);
+        daContext.SaveChanges();
+        }
+      return r.Id;
+      }
 
     private static List<Texter> education(){
       return Codifiers(EnumTexterKind.education,

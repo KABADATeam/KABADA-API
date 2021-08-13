@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using static KabadaAPI.DbSettingRepository;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
   partial class UsersRepository {
     private List<Func<Transactioner, bool>> initUpdates { get {
       return new List<Func<Transactioner, bool>>(){
 //===============================1========================================//
-        u_0 };
+        u_0, u_1 };
 //=======================================================================//
       }}
 
@@ -17,9 +18,20 @@ namespace KabadaAPI {
       return true;
       }
 
+    private void u_1helper(TexterRepository tx, string type, params string[] subtype){
+      var m=tx.set((short)EnumTexterKind.activityType, type);
+      foreach(var t in subtype)
+        tx.set(m, (short)EnumTexterKind.activitySubtype, t);
+      }
 
-
-
+    private bool u_1(Transactioner tr){ // activities types
+      var ctx=tr.Context;
+      var tx=new TexterRepository(blContext, ctx);
+      u_1helper(tx, "Production", "Logistics", "Operations", "Marketing", "Services", "R & D");
+      u_1helper(tx, "Problem solving", "Knowledge management", "Recruitment", "Continous training", "Marketing");
+      u_1helper(tx, "Platform/Network", "R & D", "Platform management", "Service provisioning", "Marketing");
+      return true;
+      }
 
 
 
