@@ -245,5 +245,15 @@ namespace KabadaAPI.Controllers {
        repo.ChangeActivitiesCompleted(planUpdate.business_plan_id, planUpdate.is_activities_completed, uGuid);
        return Ok("Success");
        }
+
+    [Route("update")]
+    [Authorize(Roles = Role.User)]
+    [HttpPost]
+    public IActionResult Update([FromBody] BusinessPlan planUpdate) { return prun<BusinessPlan>(_Update, planUpdate); }
+    private IActionResult _Update([FromBody] BusinessPlan planUpdate) {
+       BusinessPlansRepository repo = new BusinessPlansRepository(context);
+       repo.updateLight(uGuid, planUpdate);
+       return Ok("Success");
+       }
     }
   }

@@ -36,7 +36,7 @@ namespace KabadaAPI
         
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {
-            var mp = daContext.BusinessPlans.Include(x =>x.User).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
+            var mp = daContext.BusinessPlans.Include(x =>x.User).Include(x => x.Country).Include(x => x.Language).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
             if (mp!=null) return mp; 
             var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
@@ -134,6 +134,21 @@ namespace KabadaAPI
             BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
             businessPlan.IsActivitiesCompleted = newValue;
             daContext.SaveChanges();
+      }
+
+    internal void updateLight(Guid userId, Kabada.BusinessPlan n) {
+      var o=GetPlanForUpdate(userId, n.Id);
+
+      if(n.CountryId!=null && o.Country.Id!=n.CountryId.Value)
+        o.Country=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value));
+      if(o.Activity.Id!=n.ActivityId)
+        o.Activity=daContext.Activities.FirstOrDefault(i => i.Id.Equals(n.ActivityId));
+      if(o.Language.Id!=n.LanguageId)
+        o.Language=daContext.Languages.FirstOrDefault(i => i.Id.Equals(n.LanguageId));
+      o.Img=n.Img;
+      o.Title=n.Title;
+
+      daContext.SaveChanges();
       }
     }
 }
