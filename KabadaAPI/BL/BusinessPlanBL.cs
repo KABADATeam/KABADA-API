@@ -67,11 +67,45 @@ namespace KabadaAPI {
       return r;
       }
 
-    public string descriptionCustomerSegments { get {
-      var r=gSv(PlanAttributeKind.consumerSegment);
-      r.AddRange(gSv(PlanAttributeKind.businessSegment));
-      r.AddRange(gSv(PlanAttributeKind.ngoSegment));
-      return r.Count<1?null:string.Join(" ,", r);
+    public string descriptionCustomerSegments { get {//TODO Maybe info from the first two fields: Age groups and Gender
+      return "TODO: Maybe info from the first two fields: Age groups and Gender";
+      //var r=gSv(PlanAttributeKind.consumerSegment);
+      //r.AddRange(gSv(PlanAttributeKind.businessSegment));
+      //r.AddRange(gSv(PlanAttributeKind.ngoSegment));
+      //return r.Count<1?null:string.Join(" ,", r);
       }}
+
+    public string descriptionPropostion { get {//TODO // product names
+      return "TODO: product names";
+      }}
+
+    public string descriptionChannels { get {//TODO Main channel type: Direct sale, Agent, etc. from this level
+      return "TODO: Main channel type: Direct sale, Agent, etc. from this level";
+      }}
+
+    public string descriptionRelationship { get {//TODO maybe at the first moment selected channels, but not sure (needs more discussion)
+      return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
+      }}
+
+    public string descriptionRevenue { get {//TODO I guess, - Revenue stream names
+      return "TODO: I guess, - Revenue stream names";
+      }}
+
+    public string descriptionResources { get {//TODO names
+      return "TODO: names";
+      }}
+
+    public string descriptionActivity { get {//TODO activities names
+      return "TODO: activities names";
+      }}
+
+    public string descriptionPartners { get {//TODO String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2
+      return "TODO: String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2";
+      }}
+
+    public string descriptionCost { get {//TODO For cost structure - we also have names
+      return "TODO: For cost structure - we also have names";
+      }}
+
     }
   }
