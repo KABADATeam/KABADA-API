@@ -28,5 +28,21 @@ namespace KabadaAPI.Controllers {
       Guid r=update.perform(context, uGuid);
       return r;
       }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("{resource}")]
+    public IActionResult DeleteMe(Guid resource) { return prun<Guid>(_DeleteMe, resource); }
+    private IActionResult _DeleteMe(Guid resource) { UniversalAttributeRepository.DeleteAttribute(context, resource); return Ok("deleted"); }
+
+    [HttpGet]
+    [Authorize]
+    [Route("{BusinessPlan}")]
+    public ActionResult<ProductsKeyActivities> MyActivities(Guid BusinessPlan) { return Prun<Guid, ProductsKeyActivities>(_MyActivities, BusinessPlan); }
+    private ActionResult<ProductsKeyActivities> _MyActivities(Guid planId) {
+      var r = new ProductsKeyActivities();
+      r.read(context, planId);
+      return r;
+      }
     }
   }

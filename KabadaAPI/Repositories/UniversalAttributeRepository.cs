@@ -1,6 +1,7 @@
 ﻿using KabadaAPIdao;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KabadaAPI {
@@ -15,6 +16,10 @@ namespace KabadaAPI {
       return q0.Where(x=>x.Id==id).FirstOrDefault();
       }
 
+    internal List<UniversalAttribute> byMasters(List<Guid?> masters) {
+      return q0.Where(x=>masters.Contains(x.MasterId)).ToList();
+      }
+
     protected override string myTable => "UniversalAttributes";
 
     protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
@@ -23,6 +28,20 @@ namespace KabadaAPI {
 
     internal void create(UniversalAttribute o) {
       q0.Add(o);
+      daContext.SaveChanges();
+      }
+
+    internal static void DeleteAttribute(BLontext context, Guid resource) {
+      using(var tr=new Transactioner(context)){
+        var aRepo=new UniversalAttributeRepository(context, tr.Context);
+        var o=aRepo.byId(resource); 
+        aRepo.Delete(o);
+        tr.Commit();
+        }
+      }
+
+    private void Delete(UniversalAttribute o) {
+      q0.Remove(o);
       daContext.SaveChanges();
       }
     }
