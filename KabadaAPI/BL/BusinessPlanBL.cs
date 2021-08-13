@@ -1,5 +1,7 @@
 ﻿using KabadaAPIdao;
 using System.Collections.Generic;
+using static KabadaAPI.Plan_AttributeRepository;
+using System.Linq;
 
 namespace KabadaAPI {
   public class BusinessPlanBL {
@@ -38,8 +40,38 @@ namespace KabadaAPI {
       count(o.IsResourcesCompleted);
       count(o.IsRevenueCompleted);
       count(o.IsSwotCompleted);
+      
+      count(o.Activity!=null);
 
       return ((decimal)_k)/_n;
+      }}
+
+    private List<Plan_Attribute> gA(short kind){
+      List<Plan_Attribute> r=null;
+      if(a.TryGetValue(kind, out r))
+        return r;
+      return new List<Plan_Attribute>();
+      }
+    private List<Plan_Attribute> gA(PlanAttributeKind kind){ return gA((short)kind); }
+
+    private List<Plan_SpecificAttribute> gS(short kind){
+      List<Plan_SpecificAttribute> r=null;
+      if(s.TryGetValue(kind, out r))
+        return r;
+      return new List<Plan_SpecificAttribute>();
+      }
+    private List<Plan_SpecificAttribute> gS(PlanAttributeKind kind){ return gS((short)kind); }
+
+    private List<string> gSv(PlanAttributeKind kind){
+      var r=gS((short)kind).OrderBy(x=>x.OrderValue).Select(x=>x.AttrVal).ToList();
+      return r;
+      }
+
+    public string descriptionCustomerSegments { get {
+      var r=gSv(PlanAttributeKind.consumerSegment);
+      r.AddRange(gSv(PlanAttributeKind.businessSegment));
+      r.AddRange(gSv(PlanAttributeKind.ngoSegment));
+      return r.Count<1?null:string.Join(" ,", r);
       }}
     }
   }

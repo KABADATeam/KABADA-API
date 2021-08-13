@@ -225,5 +225,15 @@ namespace KabadaAPI.Controllers {
       new SharedPlanRepository(context).deleteMember(resource, uGuid);
       return Ok("deleted");
       }
+
+    [HttpGet]
+    [Authorize]
+    [Route("overview/{BusinessPlan}")]
+    public ActionResult<PlanOverview> MyOverview(Guid BusinessPlan) { return Prun<Guid, PlanOverview>(_MyOverview, BusinessPlan); }
+    private ActionResult<PlanOverview> _MyOverview(Guid planId) {
+      var r = new PlanOverview();
+      r.read(context, planId, uGuid);
+      return r;
+      }
     }
   }
