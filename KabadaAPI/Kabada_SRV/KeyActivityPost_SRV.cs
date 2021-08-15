@@ -1,7 +1,5 @@
 ﻿using KabadaAPI;
-using KabadaAPIdao;
 using System;
-using static KabadaAPI.Plan_AttributeRepository;
 
 namespace Kabada {
   partial class KeyActivityPost {
@@ -12,20 +10,20 @@ namespace Kabada {
       repo=new UniversalAttributeRepository(context);
       if(id==null)
         return createMe(context, uGuid);
-      var o=repo.byId(id.Value);
+      var o=new KeyActivityBL(repo.byId(id.Value), true);
 
-      o.CategoryId=sub_type_id;
-      o.MasterId=product_id;
-      o.AttrVal=packVal;
+      o.categoryId=sub_type_id;
+      o.masterId=product_id;
+      o.unload();
       repo.daContext.SaveChanges();
 
-      return o.Id;
+      return o.id;
       }
 
     private Guid createMe(BLontext context, Guid uGuid) {
-      var o=new UniversalAttribute(){ Id=Guid.NewGuid(), CategoryId=sub_type_id, MasterId=product_id, Kind=(short)PlanAttributeKind.activity, AttrVal=packVal };
-      repo.create(o);
-      return o.Id;
+      var o=new KeyActivityBL(){ categoryId=sub_type_id, masterId=product_id };
+      repo.create(o.unload());
+      return o.id;
       }
     }
   }

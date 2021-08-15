@@ -19,5 +19,7 @@ namespace KabadaAPIdao {
         public short OrderValue { get; set; }
 
         public Guid? CategoryId;
+
+    public UniversalAttribute clone(){ return (UniversalAttribute)this.MemberwiseClone(); }
     }
   }
