@@ -53,7 +53,7 @@ namespace KabadaAPI {
       if(u==null)
         return; // still not arrived
       new SharedPlanRepository(blContext, daContext).add(
-        new SharedPlan(){ BusinessPlanId=new Guid(t.Value), UserId=t.Author.Value, Id=Guid.NewGuid() });
+        new SharedPlan(){ BusinessPlanId=new Guid(t.Value), UserId=u.Id /*  t.Author.Value*/, Id=Guid.NewGuid() });
       var sn=pack(t);
       delete(t);
       LogInformation($"{prefix}Job completed: {sn}");
