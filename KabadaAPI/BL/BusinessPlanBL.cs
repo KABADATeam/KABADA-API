@@ -140,8 +140,10 @@ namespace KabadaAPI {
       return r;
       }}
 
-    public string descriptionCost { get {//TODO For cost structure - we also have names
-      return "TODO: For cost structure - we also have names";
+    public string descriptionCost { get {// For cost structure - we also have names
+      var t=gAv<CostElementBL>(PlanAttributeKind.fixedCost).Select(x=>x.name).ToList();
+      t.AddRange(gAv<CostElementBL>(PlanAttributeKind.variableCost).Select(x=>x.name).ToList());
+      return string.Join(", ", t);
       }}
 
     }

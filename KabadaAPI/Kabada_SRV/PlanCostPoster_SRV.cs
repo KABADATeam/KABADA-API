@@ -12,6 +12,11 @@ namespace Kabada {
        return r;
        }}
     
+     private void assign(CostBL bo){
+       bo.e.name=name;
+       bo.e.description=description;
+       bo.texterId=type_id;
+       }
 
     internal Guid perform(BLontext context, Plan_AttributeRepository.PlanAttributeKind aKind, EnumTexterKind tKind) {
       ctx=context;
@@ -24,13 +29,18 @@ namespace Kabada {
       using(var tr=new Transactioner(ctx)){
         var aRepo=new Plan_AttributeRepository(ctx, tr.Context);
         var o=aRepo.byId(rid, business_plan_id);
-        var v=packVal;
-        var changed=(o.AttrVal==v);
-        o.AttrVal=v;
-        if(changed){
-          aRepo.Save(o);
-          tr.Commit();
-          }
+        var bo=new CostBL(o, true);
+        assign(bo);
+        bo.unload();
+        tr.daContext.SaveChanges();
+        tr.Commit();
+        //var v=packVal;
+        //var changed=(o.AttrVal==v);
+        //o.AttrVal=v;
+        //if(changed){
+        //  aRepo.Save(o);
+        //  tr.Commit();
+        //  }
         }
       return rid;
       }
@@ -41,9 +51,11 @@ namespace Kabada {
         throw new Exception("wrong cost_type");
 
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
-      var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=type_id, AttrVal=packVal, OrderValue=on};
-      o=new Plan_AttributeRepository(ctx).Create(o);
-      return o.Id;
+      var bo=new CostBL(aKind){ businessPlanId=business_plan_id, orderValue=on };
+      assign(bo);
+      //var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=type_id, AttrVal=packVal, OrderValue=on};
+      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      return bo.id;
       }
     }
   }

@@ -29,7 +29,7 @@ namespace Kabada {
     key_resources=me(p.o.IsResourcesCompleted, p.descriptionResources);
     key_activities=me(p.o.IsActivitiesCompleted, p.descriptionActivities);
     key_partners=me(p.o.IsPartnersCompleted, p.descriptionPartners);
-    cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);                                //TODO
+    cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);
     swot=me(p.o.IsSwotCompleted);                                                             //TODO not clear, yet
     //TODOpublic PlanOverviewElement financial_projections;    // not clear, yet
     //TODOpublic PlanOverviewElement team_competencies;    // not clear, yet
