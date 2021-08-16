@@ -22,16 +22,17 @@ namespace Kabada {
       var cati=tRepo.getKeyResourceCategories().ToDictionary(x=>x.Id);
       var typi=tRepo.getKeyResourceTypes(null).ToDictionary(x=>x.Id, x=>x.MasterId.Value);
       foreach(var a in atri){
+        var bo=new KeyResourceBL(a);
         var o=new PlanResorceWithCategory();
         key_resources.Add(o);
-        var c=cati[typi[a.TexterId]];
+        var c=cati[typi[bo.texterId]];
         o.category=new ResourceCategory(){ id=c.Id, description=c.Value, title=c.LongValue};
-        o.resource_id=a.Id;
-        var w=Newtonsoft.Json.JsonConvert.DeserializeObject<PlanResource>(a.AttrVal);
-        o.description=w.description;
-        o.name=w.name;
-        o.selections=w.selections;
-        o.type_id = a.TexterId;
+        o.resource_id=bo.id;
+        //var w=Newtonsoft.Json.JsonConvert.DeserializeObject<PlanResource>(a.AttrVal);
+        o.description=bo.e.description;
+        o.name=bo.e.name;
+        o.selections=bo.e.selections;
+        o.type_id = bo.texterId;
         }
       }
     }

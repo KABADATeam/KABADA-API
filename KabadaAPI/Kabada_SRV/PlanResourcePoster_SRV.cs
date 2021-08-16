@@ -14,7 +14,14 @@ namespace Kabada {
        var r=Newtonsoft.Json.JsonConvert.SerializeObject(this, typeof(PlanResource), null);
        return r;
        }}
-    
+
+    private void assign(KeyResourceBL bo){
+      bo.e.type_id=type_id;
+      bo.e.name=name;
+      bo.e.description=description;
+      bo.e.selections=selections;
+      bo.texterId = resource_type_id;
+      }
 
     internal Guid perform(BLontext context) {
       ctx=context;
@@ -27,14 +34,17 @@ namespace Kabada {
       using(var tr=new Transactioner(ctx)){
         var aRepo=new Plan_AttributeRepository(ctx, tr.Context);
         var o=aRepo.byId(rid, business_plan_id);
-        var v=packVal;
-        var changed=(o.AttrVal==v);
-        o.AttrVal=v;
-            o.TexterId = resource_type_id;
-        if(changed){
-          aRepo.Save(o);
+        var bo=new KeyResourceBL(o, true);
+        assign(bo);
+        tr.daContext.SaveChanges();
+        //var v=packVal;
+        //var changed=(o.AttrVal==v);
+        //o.AttrVal=v;
+        //    o.TexterId = resource_type_id;
+        //if(changed){
+          //aRepo.Save(o);
           tr.Commit();
-          }
+          //}
         }
       return rid;
       }
@@ -45,9 +55,14 @@ namespace Kabada {
         throw new Exception("wrong resource_type");
 
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
-      var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=resource_type_id, AttrVal=packVal, OrderValue=on};
-      o=new Plan_AttributeRepository(ctx).Create(o);
-      return o.Id;
+      var bo=new KeyResourceBL();
+      bo.businessPlanId=business_plan_id;
+      //bo.texterId=resource_type_id;
+      bo.orderValue=on;
+      assign(bo);
+      //var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=resource_type_id, AttrVal=packVal, OrderValue=on};
+      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      return bo.id;
       }
     }
   }

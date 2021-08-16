@@ -83,12 +83,12 @@ namespace KabadaAPI {
       }}
 
     public string descriptionPropostion { get { // product names
-      var t=gAv<ProductAttribute>(PlanAttributeKind.product).Select(x=>x.title).ToList();
+      var t=gAv<ProductElementBL>(PlanAttributeKind.product).Select(x=>x.title).ToList();
       return string.Join(", ", t);
       }}
 
     public string descriptionChannels { get {// Main channel type: Direct sale, Agent, etc. from this level
-      var w=gAv<ChannelAttribute>(PlanAttributeKind.channel).Select(x=>x.channel_type_id).Distinct().ToList();
+      var w=gAv<ChannelElementBL>(PlanAttributeKind.channel).Select(x=>x.channel_type_id).Distinct().ToList();
       if(w.Count<1)
         return null;
       var t=textSupport.get(w).Select(x=>x.Value).ToList();
@@ -99,17 +99,20 @@ namespace KabadaAPI {
       return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
       }}
 
-//    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueStreamElementBL>(kind).Select(x=>x.title).ToList(); }
+    private List<Guid> rvs(PlanAttributeKind kind){ return gAv<RevenueStreamElementBL>(kind).Select(x=>x.stream_type_id).ToList(); }
     public string descriptionRevenue { get {// I guess, - Revenue stream names
-      return "TODO: I guess, - Revenue stream names";
-      //var t=rvs(PlanAttributeKind.revenueSegment1);
-      //t.AddRange(rvs(PlanAttributeKind.revenueSegment2));
-      //t.AddRange(rvs(PlanAttributeKind.revenueOther));
-      //return string.Join(", ", t);
+      //return "TODO: I guess, - Revenue stream names";
+      var w=rvs(PlanAttributeKind.revenueSegment1);
+      w.AddRange(rvs(PlanAttributeKind.revenueSegment2));
+      w.AddRange(rvs(PlanAttributeKind.revenueOther));
+      w=w.Distinct().ToList();
+      var ti=textSupport.get(w).ToDictionary(x=>x.Id, x=>x.Value);
+      var t=w.Select(x=>ti[x]).ToList();
+      return string.Join(", ", t);
       }}
 
     public string descriptionResources { get {// names
-      var t=gAv<PlanResource>(PlanAttributeKind.keyResource).Select(x=>x.name).ToList();
+      var t=gAv<KeyResourceElementBL>(PlanAttributeKind.keyResource).Select(x=>x.name).ToList();
       return string.Join(", ", t);
       }}
 
