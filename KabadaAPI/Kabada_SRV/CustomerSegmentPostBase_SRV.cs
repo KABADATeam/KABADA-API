@@ -10,7 +10,7 @@ namespace Kabada {
     public virtual Guid perform(BLontext context, short kind){
       ctx=context;
      var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
-      var t=new CustomerSegmentUniversal();
+      var t=new CustomerSegmentElementBL();
       fill(t);
       var val=t.pack();
  
@@ -41,9 +41,9 @@ namespace Kabada {
       return o.Id;
       }
 
-    protected virtual void fill(CustomerSegmentUniversal t) { throw new NotImplementedException(); }
+    protected virtual void fill(CustomerSegmentElementBL t) { throw new NotImplementedException(); }
 
-    protected virtual void fill(CustomerSegmentUniversal t, TexterRepository.EnumTexterKind texterKind, List<Guid> contents) { 
+    protected virtual void fill(CustomerSegmentElementBL t, TexterRepository.EnumTexterKind texterKind, List<Guid> contents) { 
       if(contents!=null && contents.Count>0)
         t.minorAttributes.Add((short)texterKind, contents); 
       }

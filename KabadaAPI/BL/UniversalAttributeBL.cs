@@ -2,7 +2,7 @@
 using System;
 
 namespace KabadaAPI {
-  public class UniversalAttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
+  public abstract class UniversalAttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
     private UniversalAttribute o;
 
     public Guid? masterId { get { return o.MasterId; } set { o.MasterId=value; }}

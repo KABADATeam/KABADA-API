@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
@@ -15,13 +16,22 @@ namespace KabadaAPI {
       e=new T();
       }
 
+    private void baseAssign(short kindToAssign, Guid oldId, string packedValue) {
+      kind=kindToAssign;
+      id=oldId;
+      e=JsonConvert.DeserializeObject<T>(packedValue);
+      }
+
     public AttributeTechnicalBaseBL(short kindForValidate, short kindToAssign, Guid oldId, string packedValue) {
       if(kindForValidate!=kindToAssign)
         throw new Exception($"unequal kinds: required={kindForValidate}, from DB={kindToAssign}");
-      kind=kindToAssign;
-      id=oldId;
-      
-      e=JsonConvert.DeserializeObject<T>(packedValue);
+      baseAssign(kindToAssign, oldId, packedValue);
+      }
+
+    public AttributeTechnicalBaseBL(List<short> kindsForValidate, short kindToAssign, Guid oldId, string packedValue) {
+      if(!kindsForValidate.Contains(kindToAssign))
+        throw new Exception($"unequal kinds: required={kindsForValidate}, from DB={kindToAssign}");
+      baseAssign(kindToAssign, oldId, packedValue);
       }
 
     public PlanAttributeKind Kind { get { return (PlanAttributeKind)kind; } protected set { kind=(short)value;} }

@@ -166,8 +166,8 @@ namespace KabadaAPI {
       return get(null, k, k);
       }
 
-    internal object getActivitiesTypes() {
-      throw new NotImplementedException();
+    internal IQueryable<Texter> getActivitiesTypesQ() {
+      return getQ(null, (short)EnumTexterKind.activityType, (short)EnumTexterKind.activitySubtype, null, true);
       }
 
     }

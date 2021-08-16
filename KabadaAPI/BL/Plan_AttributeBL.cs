@@ -2,7 +2,7 @@
 using System;
 
 namespace KabadaAPI {
-  public class Plan_AttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
+  public abstract class Plan_AttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
     private Plan_Attribute o;
 
     public Guid businessPlanId { get { return o.BusinessPlanId; } set { o.BusinessPlanId=value; }}

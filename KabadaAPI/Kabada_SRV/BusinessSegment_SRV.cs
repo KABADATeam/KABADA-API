@@ -5,7 +5,7 @@ using static KabadaAPI.TexterRepository;
 
 namespace Kabada {
   partial class BusinessSegment {
-    internal override void unpack(CustomerSegmentUniversal w, Dictionary<Guid, Codifier> codes) {
+    internal override void unpack(CustomerSegmentElementBL w, Dictionary<Guid, Codifier> codes) {
       business_type=w.decode(EnumTexterKind.industry, codes);
       company_size=w.decode(EnumTexterKind.company_size, codes);
       annual_revenue=w.v1;

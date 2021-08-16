@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 
 namespace KabadaAPI {
-  public class CustomerSegmentUniversal  {
-    public CustomerSegmentUniversal() { minorAttributes=new Dictionary<short, List<Guid>>(); }
+  public class CustomerSegmentElementBL  {
+    public CustomerSegmentElementBL() { minorAttributes=new Dictionary<short, List<Guid>>(); }
 
     public Dictionary<short, List<Guid>> minorAttributes;
     public bool? flag;

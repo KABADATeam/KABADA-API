@@ -1,7 +1,9 @@
-﻿namespace Kabada {
+﻿using System.Collections.Generic;
+
+namespace Kabada {
   public partial class ProductsKeyActivities {
     public bool is_activities_completed;
-    //"products": [       // products are taken from Value proposition stage
+    public List<ProductKeyActivities> products; // products are taken from Value proposition stage
     //    {
     //        "product_id": "guid",
     //        "product_name": "text",

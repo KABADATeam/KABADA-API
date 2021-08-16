@@ -16,9 +16,16 @@ namespace KabadaAPI {
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
-    internal List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
+    internal IQueryable<Plan_Attribute> getQ(Guid plan, PlanAttributeKind such){
       var w=(short)such;
-      var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
+      var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue);
+      return r;
+      }
+
+    internal List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
+      var r=getQ(plan, such).ToList();
+      //var w=(short)such;
+      //var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue).ToList();
       return r;
       }
 

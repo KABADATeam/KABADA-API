@@ -2,7 +2,7 @@
 using System;
 
 namespace KabadaAPI {
-  public class Plan_SpecificAttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
+  public abstract class Plan_SpecificAttributeBL<T> : AttributeTechnicalBaseBL<T> where T:class, new() {
     private Plan_SpecificAttribute o;
 
    public override short orderValue { get => o.OrderValue; set => o.OrderValue=value; }

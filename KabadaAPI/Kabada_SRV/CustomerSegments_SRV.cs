@@ -33,7 +33,7 @@ namespace Kabada {
           }
         o.id=a.Id;
         o.comment=a.Comment;
-        var w=Newtonsoft.Json.JsonConvert.DeserializeObject<CustomerSegmentUniversal>(a.AttrVal);
+        var w=Newtonsoft.Json.JsonConvert.DeserializeObject<CustomerSegmentElementBL>(a.AttrVal);
         o.unpack(w, codes);
         }
        }

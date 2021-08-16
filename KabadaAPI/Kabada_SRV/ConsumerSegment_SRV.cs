@@ -5,7 +5,7 @@ using static KabadaAPI.TexterRepository;
 
 namespace Kabada {
   partial class ConsumerSegment {
-    internal override void unpack(CustomerSegmentUniversal w, Dictionary<Guid, Codifier> codes) {
+    internal override void unpack(CustomerSegmentElementBL w, Dictionary<Guid, Codifier> codes) {
       is_children=(w.flag==true);
       age=w.decode(EnumTexterKind.age_group, codes);
       gender=w.decode(EnumTexterKind.gender, codes);

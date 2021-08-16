@@ -5,7 +5,7 @@ using static KabadaAPI.TexterRepository;
 
 namespace Kabada {
   partial class ConsumerSegmentPOST {
-    protected override void fill(CustomerSegmentUniversal t) {
+    protected override void fill(CustomerSegmentElementBL t) {
       fill(t, EnumTexterKind.age_group, age);
       fill(t, EnumTexterKind.gender, gender);
       t.flag=is_children;
