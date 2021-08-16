@@ -54,6 +54,8 @@ namespace Kabada {
     private void assign(RevenueStreamBL bo){
       bo.businessPlanId=business_plan_id;
       bo.texterId=stream_type_id;
+      bo.e.stream_type_id=stream_type_id;
+      bo.e.price_type_id=price_type_id;
       }
 
     private Guid create() {
