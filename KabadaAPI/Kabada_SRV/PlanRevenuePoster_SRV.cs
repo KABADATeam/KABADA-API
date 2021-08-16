@@ -17,11 +17,11 @@ namespace Kabada {
             }
         }
      private short tKind { get { return (short)EnumTexterKind.revenueStreamType; }}
-     private string packVal { get { 
-       var w=(RevenueBase)this;
-       var r=Newtonsoft.Json.JsonConvert.SerializeObject(this, typeof(RevenueBase), null);
-       return r;
-       }}
+     //private string packVal { get { 
+     //  var w=(RevenueBase)this;
+     //  var r=Newtonsoft.Json.JsonConvert.SerializeObject(this, typeof(RevenueBase), null);
+     //  return r;
+     //  }}
     
 
     internal Guid perform(BLontext context) {
@@ -35,16 +35,25 @@ namespace Kabada {
       using(var tr=new Transactioner(ctx)){
         var aRepo=new Plan_AttributeRepository(ctx, tr.Context);
         var o=aRepo.byId(rid, business_plan_id);
-        var v=packVal;
-        var changed=(o.AttrVal==v);
-        o.AttrVal=v;
-        o.TexterId = stream_type_id;
-        if(changed){
-          aRepo.Save(o);
-          tr.Commit();
-          }
+        var bo=new RevenueStreamBL(o, true);
+        assign(bo);
+        tr.daContext.SaveChanges();
+        tr.Commit();
+        //var v=packVal;
+        //var changed=(o.AttrVal==v);
+        //o.AttrVal=v;
+        //o.TexterId = stream_type_id;
+        //if(changed){
+        //  aRepo.Save(o);
+        //  tr.Commit();
+        //  }
         }
       return rid;
+      }
+
+    private void assign(RevenueStreamBL bo){
+      bo.businessPlanId=business_plan_id;
+      bo.texterId=stream_type_id;
       }
 
     private Guid create() {
@@ -52,10 +61,19 @@ namespace Kabada {
       if(tp==null || tp.Kind!=tKind)
         throw new Exception("wrong stream_type");
 
+      
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
-      var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=stream_type_id, AttrVal=packVal, OrderValue=on};
-      o=new Plan_AttributeRepository(ctx).Create(o);
-      return o.Id;
+      //var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=stream_type_id, AttrVal=packVal, OrderValue=on};
+      var bo=new RevenueStreamBL(aKind);
+      //bo.businessPlanId=business_plan_id;
+      //bo.texterId=stream_type_id;
+      assign(bo);
+      bo.orderValue=on;
+      bo.unload();
+      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      return bo.id;
+      //o=new Plan_AttributeRepository(ctx).Create(o);
+      //return o.Id;
       }
     }
   }

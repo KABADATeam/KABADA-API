@@ -27,7 +27,7 @@ namespace Kabada {
     customer_relationship=me(p.o.IsCustomerRelationshipCompleted, p.descriptionRelationship); //TODO 
     revenue_streams=me(p.o.IsRevenueCompleted, p.descriptionRevenue);
     key_resources=me(p.o.IsResourcesCompleted, p.descriptionResources);
-    key_activities=me(p.o.IsActivitiesCompleted, p.descriptionActivities);                             //TODO
+    key_activities=me(p.o.IsActivitiesCompleted, p.descriptionActivities);
     key_partners=me(p.o.IsPartnersCompleted, p.descriptionPartners);
     cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);                                //TODO
     swot=me(p.o.IsSwotCompleted);           //TODO not clear, yet

@@ -28,10 +28,11 @@ namespace Kabada {
             //var products=tRepo.ge
 
             ChannelAttribute ch = new ChannelAttribute();
-            foreach (var a in atri)
-            {
+            foreach (var a in atri) {
+              var ba=new ChannelBL(a);
                 var o = new PlanChannel(); channels.Add(o);
-                ch.unpack(a.AttrVal);
+              ch=ba.e;
+                //ch.unpack(a.AttrVal);
                 o.id = a.Id;
                 o.channel_type = new ChannelBase();
                 

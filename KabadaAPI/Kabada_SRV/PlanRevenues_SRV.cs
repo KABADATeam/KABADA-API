@@ -35,11 +35,15 @@ namespace Kabada {
           case (short)PlanAttributeKind.revenueOther: { var t=new Revenue(); other.Add(t); o=t; } break;
           default: throw new Exception("wrong type attribute encountered");
           }
-        o.unpack(a.AttrVal);
+        var bo=new RevenueStreamBL(a);
+        //o.unpack(a.AttrVal);
         o.id=a.Id;       
-        o.stream_type_name=streams[o.stream_type_id].Value;
-        o.price_type_name = priceTypes[o.price_type_id].Value;
-        var c=priceTypes[priceTypes[o.price_type_id].MasterId.Value];
+        //o.stream_type_name=streams[o.stream_type_id].Value;
+        //o.price_type_name = priceTypes[o.price_type_id].Value;
+        //var c=priceTypes[priceTypes[o.price_type_id].MasterId.Value];
+        o.stream_type_name=streams[bo.e.stream_type_id].Value;
+        o.price_type_name = priceTypes[bo.e.price_type_id].Value;
+        var c=priceTypes[priceTypes[bo.e.price_type_id].MasterId.Value];
         o.price_category_id = c.Id;
         o.price_category_name = c.Value;              
         }

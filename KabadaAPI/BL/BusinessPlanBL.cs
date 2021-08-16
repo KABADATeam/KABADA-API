@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using static KabadaAPI.Plan_AttributeRepository;
 using System.Linq;
 using Kabada;
+using System;
 
 namespace KabadaAPI {
   public class BusinessPlanBL {
@@ -87,7 +88,7 @@ namespace KabadaAPI {
       }}
 
     public string descriptionChannels { get {// Main channel type: Direct sale, Agent, etc. from this level
-      var w=gAv<ChannelAttribute>(PlanAttributeKind.product).Select(x=>x.channel_type_id).Distinct().ToList();
+      var w=gAv<ChannelAttribute>(PlanAttributeKind.channel).Select(x=>x.channel_type_id).Distinct().ToList();
       if(w.Count<1)
         return null;
       var t=textSupport.get(w).Select(x=>x.Value).ToList();
@@ -98,7 +99,7 @@ namespace KabadaAPI {
       return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
       }}
 
-//    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueBase>(kind).Select(x=>x..title).ToList(); }
+//    private List<string> rvs(PlanAttributeKind kind){ return gAv<RevenueStreamElementBL>(kind).Select(x=>x.title).ToList(); }
     public string descriptionRevenue { get {// I guess, - Revenue stream names
       return "TODO: I guess, - Revenue stream names";
       //var t=rvs(PlanAttributeKind.revenueSegment1);
@@ -112,8 +113,13 @@ namespace KabadaAPI {
       return string.Join(", ", t);
       }}
 
-    public string descriptionActivities { get {//TODO activities names
-      return "TODO: activities names";
+    public string descriptionActivities { get {// activities names
+      var pi=gA((short)PlanAttributeKind.product).Select(x=>(Guid?)x.Id).ToList();
+      if(pi.Count<1)
+        return null;
+      var t=new UniversalAttributeRepository(textSupport.blContext).byMasters(pi).Where(x=>KeyActivityBL.KIND==x.Kind)
+            .Select(x=>new KeyActivityBL(x).e.name).ToList();
+      return string.Join(", ", t);
       }}
 
     private List<string> rvp(PlanAttributeKind kind){ return gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList(); }
