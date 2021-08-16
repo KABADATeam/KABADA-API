@@ -44,6 +44,7 @@ namespace KabadaAPI {
       count(o.IsResourcesCompleted);
       count(o.IsRevenueCompleted);
       count(o.IsSwotCompleted);
+      count(o.IsActivitiesCompleted);
 
       return ((decimal)_k)/_n;
       }}
