@@ -219,8 +219,8 @@ namespace KabadaAPI.Controllers {
 
     [HttpDelete]
     [Authorize]
-    [Route("member/{BusinessPlan}")]
-    public IActionResult Dmember(Guid BusinessPlan, [FromBody] Guid user_id) { return prun<Deleter>(_Dmember, new Deleter(){ master=BusinessPlan, part=user_id}); }
+    [Route("{BusinessPlan}/member/{user_id}")]
+    public IActionResult Dmember(Guid BusinessPlan, Guid user_id) { return prun<Deleter>(_Dmember, new Deleter(){ master=BusinessPlan, part=user_id}); }
     private IActionResult _Dmember(Deleter resource) {
       new SharedPlanRepository(context).deleteMember(resource, uGuid);
       return Ok("deleted");
