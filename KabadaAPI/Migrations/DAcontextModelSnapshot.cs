@@ -9801,6 +9801,9 @@ namespace KabadaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<short>("Kind")
                         .HasColumnType("smallint");
 

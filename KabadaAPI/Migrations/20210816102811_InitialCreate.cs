@@ -100,7 +100,8 @@ namespace KabadaAPI.Migrations
                     MasterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     Kind = table.Column<short>(type: "smallint", nullable: false),
                     AttrVal = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OrderValue = table.Column<short>(type: "smallint", nullable: false)
+                    OrderValue = table.Column<short>(type: "smallint", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
