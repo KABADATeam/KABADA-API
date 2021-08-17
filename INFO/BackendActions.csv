@@ -85,7 +85,7 @@ Customer relationship 04;P;/api/custRel/save;CustomerRelationship;Save;
 Customer relationship 05;P;/api/plans/changeRelationshipCompleted;UserBusinessPlan;ChangeRelationshipCompleted;
 Invitation 01;P;/api/plans/inviteMember;UserBusinessPlan;InviteMember;
 Invitation 02;G;/api/plans/members/{BusinessPlan};UserBusinessPlan;MyMembers;
-Invitation 03;D;/api/plans/member/{BusinessPlan};UserBusinessPlan;Dmember;
+Invitation 03;D;/api/plans/{BusinessPlan}/member/{user_id};UserBusinessPlan;Dmember;
 Overview 01;G;/api/plans/overview/{BusinessPlan};UserBusinessPlan;MyOverview;
 Key activities 01;G;/api/activities/{BusinessPlan};Activities;MyActivities;
 Key activities 02;D;/api/activities/categories{resource};Activities;DeleteMe;
