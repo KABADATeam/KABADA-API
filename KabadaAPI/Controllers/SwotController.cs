@@ -23,7 +23,7 @@ namespace KabadaAPI.Controllers {
     private ActionResult<PlanSwots> _GetByKey(Guid planId) {
       //Guid planId=new Guid(planId0);
       var r=new PlanSwots();
-      var p =pRepo.GetPlan(planId);
+      var p =pRepo.GetPlan(planId, context.userGuid);
       if(p!=null)
         r.is_swot_completed=p.IsSwotCompleted;
       var speci=paRepo.getSwots(planId).ToDictionary(x=>x.TexterId);

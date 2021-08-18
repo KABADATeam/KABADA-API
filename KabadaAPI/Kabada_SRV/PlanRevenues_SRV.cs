@@ -15,7 +15,7 @@ namespace Kabada {
       segment_2 = new List<Revenue>();     
       other = new List<Revenue>();     
 
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId);
+      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
       is_revenue_completed=pl.IsRevenueCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getRevenues(planId);

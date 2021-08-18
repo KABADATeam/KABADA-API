@@ -14,7 +14,7 @@ namespace Kabada {
       fixed_costs = new List<Coster>();
       variable_costs = new List<Coster>();     
 
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId);
+      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
       is_cost_completed=pl.IsCostCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getCosts(planId);

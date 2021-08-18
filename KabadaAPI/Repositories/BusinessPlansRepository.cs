@@ -11,6 +11,17 @@ namespace KabadaAPI
     {
         public BusinessPlansRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
+        private DbSet<BusinessPlan> q0 { get { return daContext.BusinessPlans; }}
+
+        private IQueryable<BusinessPlan> qID(Guid id) { return q0.Where(x=>x.Id==id); }
+        private IQueryable<BusinessPlan> qUid(Guid userId) { return q0.Where(x=>x.User.Id.Equals(userId)); }
+        private IQueryable<BusinessPlan> qFull(IQueryable<BusinessPlan> basic) {
+          return basic
+            .Include(x => x.Country)
+            .Include(x => x.User)
+            .Include(x => x.Activity.Industry);
+            }
+
         public List<BusinessPlan> GetPublicPlans()
         {
             var plans = daContext.BusinessPlans.Where(x => x.Public == true)
@@ -30,15 +41,14 @@ namespace KabadaAPI
             businessPlan.IsResourcesCompleted = newValue;
             daContext.SaveChanges();
         }
-        public BusinessPlan GetPlan(Guid planId){
-           return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
-        }
-        public BusinessPlan GetPlan(Guid planId, Guid userId)
-        {
-            //check if public or mine
-            var plan = daContext.BusinessPlans.Include(x => x.User).FirstOrDefault(i => i.Id.Equals(planId) && (i.Public||i.User.Id.Equals(userId)));
-            if (plan!=null)
-                return plan;
+        //private BusinessPlan GetPlan(Guid planId){
+        //   return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
+        //}
+        public BusinessPlan GetPlan(Guid planId, Guid userId) {
+          //check if public or mine
+          var plan = daContext.BusinessPlans.Include(x => x.User).FirstOrDefault(i => i.Id.Equals(planId) && (i.Public||i.User.Id.Equals(userId)));
+          if (plan!=null)
+            return plan;
             //check if shared with me
             var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
@@ -129,10 +139,10 @@ namespace KabadaAPI
         }
       }
 
-    public BusinessPlanBL getPlanBL(Guid planId){ return new BusinessPlanBL(GetPlan(planId)); }
+    public BusinessPlanBL getPlanBL(Guid planId, Guid userId){ return new BusinessPlanBL(GetPlan(planId, userId)); }
 
-    public BusinessPlanBL getPlanBLfull(Guid planId){
-      var r=new BusinessPlanBL(GetPlan(planId));
+    public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
+      var r=new BusinessPlanBL(GetPlan(planId, userId));
       r.a=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone())
            .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       r.s=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone())

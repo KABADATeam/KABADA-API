@@ -6,7 +6,7 @@ using System.Linq;
 namespace Kabada {
   partial class ProductsKeyActivities {
     internal void read(BLontext context, Guid planId) {
-      var p=new BusinessPlansRepository(context).GetPlan(planId);
+      var p=new BusinessPlansRepository(context).GetPlan(planId, context.userGuid);
       is_activities_completed=p.IsActivitiesCompleted;
       var aRepo=new Plan_AttributeRepository(context);
       //var qProducts=aRepo.get(planId, Plan_AttributeRepository.PlanAttributeKind.product);
