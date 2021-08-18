@@ -35,7 +35,14 @@ namespace KabadaAPI
         }
         public BusinessPlan GetPlan(Guid planId, Guid userId)
         {
-            return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            //check if public or mine
+            var plan = daContext.BusinessPlans.Include(x => x.User).FirstOrDefault(i => i.Id.Equals(planId) && (i.Public||i.User.Id.Equals(userId)));
+            if (plan!=null)
+                return plan;
+            //check if shared with me
+            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).FirstOrDefault();
+            if (shp?.BusinessPlan != null) return shp.BusinessPlan;
+            return null;
         }
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {

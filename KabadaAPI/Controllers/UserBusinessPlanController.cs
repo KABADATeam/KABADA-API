@@ -70,7 +70,7 @@ namespace KabadaAPI.Controllers {
         [HttpPost]
         public IActionResult GetSelectedPlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_GetSelectedPlan, businessPlan); }
         private IActionResult _GetSelectedPlan([FromBody] BusinessPlan businessPlan){
-                var plan = pRepo.GetSelectedPlan(uGuid, businessPlan.Id);
+                var plan = bRepo.GetPlan(businessPlan.Id, uGuid);
                 return Ok(plan);
         }
 

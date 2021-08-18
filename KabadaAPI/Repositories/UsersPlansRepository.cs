@@ -52,15 +52,15 @@ namespace KabadaAPI {
            // return plan;
         }
 
-        public BusinessPlan GetSelectedPlan(Guid userId, Guid planId)
-        {
-            BusinessPlan businessPlan = daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
-            if (businessPlan != null)
-            {
-                return businessPlan;
-            }
-            else
-                throw new Exception("Plan was not found");            
-        }
+        //public BusinessPlan GetSelectedPlan(Guid userId, Guid planId)
+        //{
+        //    BusinessPlan businessPlan = daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+        //    if (businessPlan != null)
+        //    {
+        //        return businessPlan;
+        //    }
+        //    else
+        //        throw new Exception("Plan was not found");            
+        //}
     }
 }
