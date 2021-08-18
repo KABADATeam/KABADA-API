@@ -14,7 +14,7 @@ namespace KabadaAPI.Controllers {
     {
         public UserBusinessPlanController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) { }
 
-        protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(context); } }
+    //    protected UsersPlansRepository pRepo { get { return new UsersPlansRepository(context); } }
         protected BusinessPlansRepository bRepo { get { return new BusinessPlansRepository(context); } }
 
         [Authorize(Roles = Role.User)]      // [Authorize(Roles = Role.Admin)]
@@ -22,7 +22,7 @@ namespace KabadaAPI.Controllers {
         public ActionResult<PrivateBusinessPlans_ret> GetPlans(){ return Grun<PrivateBusinessPlans_ret>(_GetPlans); }
         private ActionResult<PrivateBusinessPlans_ret> _GetPlans(){
                 var userId = uGuid;
-                var repository = pRepo;
+                var repository = bRepo;
                 _logger.LogInformation($"-- List of plans for user={userId}");
                 var plans = repository.GetPlans(userId);
                 var privatePlans = new PrivateBusinessPlans();
@@ -47,7 +47,7 @@ namespace KabadaAPI.Controllers {
         [HttpPost]
         public IActionResult AddPlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_AddPlan, businessPlan); }
         private IActionResult _AddPlan([FromBody] BusinessPlan businessPlan){
-                 using (var repository = pRepo)
+                 using (var repository = bRepo)
                 {
                     var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                     var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId, businessPlan.LanguageId,businessPlan.Img,businessPlan.CountryId);
@@ -60,8 +60,7 @@ namespace KabadaAPI.Controllers {
         [HttpPost]
         public IActionResult RemovePlan([FromBody] BusinessPlan businessPlan){ return prun<BusinessPlan>(_RemovePlan, businessPlan); }
         private IActionResult _RemovePlan([FromBody] BusinessPlan businessPlan){
-                UsersPlansRepository repository = new UsersPlansRepository(context);
-                repository.Remove(uGuid, businessPlan.Id);
+                bRepo.Remove(uGuid, businessPlan.Id);
                 return Ok("Success");
         }
 
