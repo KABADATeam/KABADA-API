@@ -33,7 +33,10 @@ namespace KabadaAPI
         public BusinessPlan GetPlan(Guid planId){
            return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
         }
-        
+        public BusinessPlan GetPlan(Guid planId, Guid userId)
+        {
+            return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+        }
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {
             var mp = daContext.BusinessPlans.Include(x =>x.User).Include(x => x.Country).Include(x => x.Language).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
