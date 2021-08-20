@@ -55,9 +55,11 @@ namespace Kabada {
                 foreach (var p in ch.product_id)
                 {
                     var r = new Plan_AttributeRepository(context).byId(p);
-                    var pr = new ProductAttribute(); pr.unpack(r.AttrVal);
-                    
-                    o.products.Add(new ChannelBase() { id = p, name = pr.title });
+                    if (r != null)
+                    {
+                        var pr = new ProductAttribute(); pr.unpack(r.AttrVal);
+                        o.products.Add(new ChannelBase() { id = p, name = pr.title });
+                    }
                 }
 
             }
