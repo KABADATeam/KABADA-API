@@ -35,11 +35,7 @@ namespace Kabada {
       var repo=new UniversalAttributeRepository(context);
       var o=KeyActivityBL.Make(id, repo);
       assign(o);
-      var w=o.unload();
-      if(id==null)
-        repo.create(w);
-       else
-        repo.daContext.SaveChanges();
+      o.completeSet(id, repo);
       return o.id;
       }
 
