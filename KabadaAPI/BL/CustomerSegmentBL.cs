@@ -2,9 +2,10 @@
 using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
-  public abstract class CustomerSegmentBL : Plan_SpecificAttributeBL<CustomerSegmentElementBL> {
+  public abstract class CustomerSegmentBL : BAsePlan_SpecificAttributeTypedBL<CustomerSegmentElementBL> { //Plan_SpecificAttributeBL<CustomerSegmentElementBL> {
     public CustomerSegmentBL(short kind) : base(kind) {}
-    public CustomerSegmentBL(short kindForTest, KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false) : base(kindForTest, old, forUpdate){}
+    public CustomerSegmentBL(short kindForTest, KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false) : base(old, forUpdate, kindForValidate: kindForTest){}
+    public CustomerSegmentBL(Guid byId, Plan_SpecificAttributesRepository repo, short? kindForValidate=null) : base(byId, repo, true, kindForValidate: kindForValidate) {}
 
     public CustomerSegmentBL Make(KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false){
       var ek=(PlanAttributeKind)old.Kind;
