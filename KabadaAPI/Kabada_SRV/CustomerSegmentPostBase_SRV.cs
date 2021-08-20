@@ -37,7 +37,7 @@ namespace Kabada {
     private Guid create(short aKind, string packVal) {
       short on=new Plan_SpecificAttributesRepository(ctx).generateAtrrOrder(business_plan_id);
       var o=new Plan_SpecificAttribute(){ BusinessPlanId=business_plan_id, Kind=aKind, AttrVal=packVal, OrderValue=on, Comment=comment };
-      o=new Plan_SpecificAttributesRepository(ctx).Create(o);
+      o=new Plan_SpecificAttributesRepository(ctx).create(o);
       return o.Id;
       }
 

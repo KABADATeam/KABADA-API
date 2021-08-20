@@ -42,7 +42,7 @@ namespace Kabada {
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
       var aKind=(short)PlanAttributeKind.relationshipActivity1 +group-1;
       var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=category_id, AttrVal=packVal, OrderValue=on, Id=Guid.NewGuid() };
-      o=new Plan_AttributeRepository(ctx).Create(o);
+      o=new Plan_AttributeRepository(ctx).create(o);
       return o.Id;
       }
     }

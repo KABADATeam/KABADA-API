@@ -100,7 +100,7 @@ namespace KabadaAPI {
       return r;
       }
 
-    public Plan_Attribute Create(Plan_Attribute me) {
+    public Plan_Attribute create(Plan_Attribute me) {
       if(me.Id.ToString()==new Guid().ToString())
         me.Id=Guid.NewGuid();
       daContext.Plan_Attributes.Add(me);

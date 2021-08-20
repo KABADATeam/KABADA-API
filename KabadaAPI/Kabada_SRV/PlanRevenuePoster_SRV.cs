@@ -72,7 +72,7 @@ namespace Kabada {
       assign(bo);
       bo.orderValue=on;
       bo.unload();
-      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      new Plan_AttributeRepository(ctx).create(bo.unload());
       return bo.id;
       //o=new Plan_AttributeRepository(ctx).Create(o);
       //return o.Id;

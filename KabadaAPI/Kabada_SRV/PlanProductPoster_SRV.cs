@@ -46,7 +46,7 @@ namespace Kabada {
 
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
       var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, AttrVal=packVal, TexterId=product_type, OrderValue=on};
-      o=new Plan_AttributeRepository(ctx).Create(o);
+      o=new Plan_AttributeRepository(ctx).create(o);
       return o.Id;
       }
     }

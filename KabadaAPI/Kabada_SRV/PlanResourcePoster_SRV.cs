@@ -61,7 +61,7 @@ namespace Kabada {
       bo.orderValue=on;
       assign(bo);
       //var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=resource_type_id, AttrVal=packVal, OrderValue=on};
-      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      new Plan_AttributeRepository(ctx).create(bo.unload());
       return bo.id;
       }
     }

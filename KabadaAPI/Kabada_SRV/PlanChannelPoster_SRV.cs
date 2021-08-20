@@ -61,7 +61,7 @@ namespace Kabada {
       //return o.Id;
       var bo=new ChannelBL(){ businessPlanId=business_plan_id, texterId=channel_type_id };
       assign(bo);
-      new Plan_AttributeRepository(ctx).Create(bo.unload());
+      new Plan_AttributeRepository(ctx).create(bo.unload());
       return bo.id;
       }
     }

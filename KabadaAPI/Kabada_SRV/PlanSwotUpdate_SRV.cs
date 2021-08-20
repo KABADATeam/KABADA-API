@@ -77,7 +77,7 @@ namespace Kabada {
          } else {
           if(o.operation>0){
             var nrs=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)Plan_AttributeRepository.PlanAttributeKind.swot, AttrVal=o.operation.ToString(), TexterId=o.id.Value };
-            paR.Create(nrs);
+            paR.create(nrs);
             }
           }
 
