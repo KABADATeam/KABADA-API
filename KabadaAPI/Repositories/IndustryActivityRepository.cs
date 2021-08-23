@@ -128,20 +128,27 @@ namespace KabadaAPI {
     public void initContainerActivity()
         {
             var codes = daContext.Activities.OrderBy(o=>o.Code).ToDictionary(x => x.Code, x => x.Id);
-            var activities = daContext.Activities.ToList();
+            var activities = daContext.Activities.OrderBy(o => o.Code).ToList();
             var found = false;
             foreach (var a in activities)
             {
                 var cd = a.Code;
-                while (!found)
+                if (a.Code.Length > 4)
                 {
-                    if (cd.Length == 6) 
-                        found = setContainerActivityId(a, cd.Substring(0, 4), codes);
-
-                    if (cd.Length == 7) {
-                        found = setContainerActivityId(a, cd.Substring(0, 6), codes);
-                        if (!found) cd = cd.Substring(0, 6);
-                    }                   
+                    while (!found)
+                    {
+                        if (cd.Length == 6)
+                        {
+                            found = setContainerActivityId(a, cd.Substring(0, 4), codes);
+                            if (!found) found = !found;
+                        }
+                        if (cd.Length == 7)
+                        {
+                            found = setContainerActivityId(a, cd.Substring(0, 6), codes);
+                            if (!found) cd = cd.Substring(0, 6);
+                        }
+                    }
+                    found = false;
                 }
 
             }
