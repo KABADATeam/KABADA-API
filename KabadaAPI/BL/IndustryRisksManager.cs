@@ -39,7 +39,7 @@ namespace KabadaAPI {
 
     public IndustryRisksManager(IConfiguration configuration, ILogger<BackgroundJobber> logger, DAcontext dContext=null) : this(new BLontext(configuration, logger), dContext) {}
 
-    public string getTheOldiest(string fullDirectoryPath, string pattern="*_IR.csv"){      
+    protected string getTheOldiest(string fullDirectoryPath, string pattern="*_IR.csv"){      
       var f=new DirectoryInfo(fullDirectoryPath).GetFiles(pattern).OrderBy(f => f.LastWriteTime).FirstOrDefault();
       if (f != null) return f.FullName; // return full path for the found
       return null; // nothing found
@@ -50,7 +50,11 @@ namespace KabadaAPI {
       return Path.Combine(path, "ImportInit");
       }}
 
+    protected string settingsDirectory { get { return blContext.importDirectory; } }
+
     protected void proccessCsvFiles(string fullDirectoryPath){
+      if(!Directory.Exists(fullDirectoryPath))
+        throw new Exception($"Import directory '{fullDirectoryPath}' does not exist.");
       while(true){
         var f=getTheOldiest(fullDirectoryPath);
         if(f==null)
@@ -60,6 +64,8 @@ namespace KabadaAPI {
       }
 
     public void processInits(){ proccessCsvFiles(initDirectory); }
+
+    public void processRegulars(){ proccessCsvFiles(settingsDirectory); }
 
     private bool isDelete;
     private List<Guid?> myIndustries;
@@ -113,6 +119,13 @@ namespace KabadaAPI {
       return k;
       }
 
+    private List<Guid?> pointBase(){
+      var ms=new List<Guid?>();
+      ms.AddRange(myIndustries);
+      ms.AddRange(myActivities);
+      return ms;
+      }
+
     private void performLoadAndAddPointers(DateTime started, string fileName, string fullPath) {
       var l=new IndustryRisksLoader(){ infoReporter=log, errorReporter=err}.load(fullPath);
       if(l==null)
@@ -124,9 +137,7 @@ namespace KabadaAPI {
       tRepo.create(t);
 
       var uar=new UniversalAttributeRepository(blContext, daContext);
-      var ms=new List<Guid?>();
-      ms.AddRange(myIndustries);
-      ms.AddRange(myActivities);
+      var ms=pointBase();
       var oldPointers=uar.byMasters(ms).ToDictionary(x=>x.MasterId);
       makePointers(PlanAttributeKind.industryRiskPointer_industry, myIndustries, oldPointers, uar, ti);
       makePointers(PlanAttributeKind.industryRiskPointer_activity, myActivities, oldPointers, uar, ti);
@@ -147,7 +158,9 @@ namespace KabadaAPI {
       }
 
     private void performDeletePointers() {
-      throw new NotImplementedException();
+      var ms=pointBase();
+      var k=new UniversalAttributeRepository(blContext, daContext).deleteIRpointers(ms);
+      log($"{k} pointers deleted.");
       }
 
     private void analyzeRequest(string fileName) {
@@ -167,7 +180,7 @@ namespace KabadaAPI {
       const string deler="_DEL";
       fl=pat.Length;
       var dl=deler.Length;
-      if(fl>dl && pat.Substring(fl-dl, dl)==trailer){
+      if(fl>dl && pat.Substring(fl-dl, dl)==deler){
         isDelete=true;
         pat=pat.Substring(0, fl-dl);
         }

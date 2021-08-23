@@ -30,8 +30,12 @@ namespace KabadaAPI {
       var mid="JobRepository.runAll: ";
       LogInformation($"{mid}started at {DateTime.Now}.");
       var tasks=q0.OrderBy(x=>x.CreatedAt).ToList();
-      foreach(var t in tasks)
-        runJob(t, mid);
+      foreach(var t in tasks){
+        try { runJob(t, mid); }
+        catch (Exception exc) {
+        //TODO  LogInformation($"{prefix}Obsole job deleted: {sn}");
+          }
+        }
       LogInformation($"{mid}ended at {DateTime.Now}.");
       }
 

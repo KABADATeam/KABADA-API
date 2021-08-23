@@ -87,5 +87,11 @@ namespace KabadaAPI {
     public TimeSpan jobsNotifyRescanInterval { get {
       return getDM("JobsNotifyRescanInterval", new TimeSpan(0, 0, 5));
       }}
+
+
+    public string importDirectory { get {
+      return getS("importDirectory", "C:/temp/zirgs");
+      }}
+
     }
   }
