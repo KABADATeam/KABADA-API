@@ -25,7 +25,7 @@ namespace KabadaAPI.Controllers {
     [Route("save")]
     public ActionResult<Guid> Save(KeyActivityPost update) { return Prun<KeyActivityPost, Guid>(_Save, update); }
     private ActionResult<Guid> _Save(KeyActivityPost update) {
-      Guid r=update.perform(context, uGuid);
+      Guid r=update.perform(context);
       return r;
       }
 

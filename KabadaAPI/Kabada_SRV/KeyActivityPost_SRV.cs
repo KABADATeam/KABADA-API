@@ -31,7 +31,7 @@ namespace Kabada {
     //  return o.id;
     //  }
 
-    internal Guid perform(BLontext context, Guid uGuid) {
+    internal Guid perform(BLontext context) {
       var repo=new UniversalAttributeRepository(context);
       var o=KeyActivityBL.Make(id, repo);
       assign(o);
