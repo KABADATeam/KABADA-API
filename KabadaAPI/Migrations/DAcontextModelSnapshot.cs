@@ -29,6 +29,9 @@ namespace KabadaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("ContainerActivityId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("IndustryId")
                         .HasColumnType("uniqueidentifier");
 

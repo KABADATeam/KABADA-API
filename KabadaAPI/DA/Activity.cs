@@ -16,5 +16,7 @@ namespace KabadaAPIdao {
         [Required]
         public Guid IndustryId { get; set; }
         public virtual Industry Industry { get; set; }
+
+        public Guid? ContainerActivityId { get; set; }
     }
 }
