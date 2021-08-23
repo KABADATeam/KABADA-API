@@ -33,6 +33,12 @@ namespace KabadaAPI {
       return true;
       }
 
+    private bool u_2(Transactioner tr){ // Activities.ContainerActivity filling
+      var ctx=tr.Context;
+      var tx=new IndustryActivityRepository(blContext, ctx);
+      return true;
+      }
+
 
 
 
