@@ -201,6 +201,19 @@ namespace KabadaAPI {
       }
 
     protected byte yMbyte(string key) { return (byte)yMlong(key); }
-    }
+    protected byte? yObyte(string key) {
+      var t=yOlong(key);
+      if(t==null)
+        return null;
+      return (byte)t.Value;
+      }
 
+    protected int yMint(string key) { return (int)yMlong(key); }
+    protected int? yOint(string key) {
+      var t=yOlong(key);
+      if(t==null)
+        return null;
+      return (int)t.Value;
+      }
+    }
   }

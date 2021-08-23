@@ -2,11 +2,12 @@
   public class IndustryRiskElementBL {
     public string category;
     public string type;
-    public string likelihood;
-    public string severity;
-    public string total;
+    public byte? likelihood;
+    public byte? severity;
     public string comments;
-    public string countryDeviationScore;
+    public int? countryDeviationScore;
     public string countryDeviationComment;
+
+    //public  total;
     }
   }

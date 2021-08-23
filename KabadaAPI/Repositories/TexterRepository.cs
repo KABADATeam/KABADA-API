@@ -17,6 +17,7 @@ namespace KabadaAPI {
            , age_group=32, income=33, education=34, geographic_location=35, company_size=36, industry=37, public_bodies_ngo=38, gender=39
                    , action=40
                    , activityType=41, activitySubtype=42
+                       , industryRisks=43
         }       
 
         public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
