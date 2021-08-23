@@ -4,12 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using static KabadaAPI.Plan_AttributeRepository;
 using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
   public class IndustryRisksManager : Blotter {
     protected DAcontext daContext;
     protected StreamWriter lgf;
+
+    protected TexterRepository tRepo;
 
     protected void logProtocol(string txt){
       if(lgf!=null)
@@ -31,7 +34,8 @@ namespace KabadaAPI {
         this.daContext = new DAcontext(_config, bCcontext.logger);
        else
         this.daContext=dContext;
-       }
+      tRepo=new TexterRepository(blContext, daContext);
+      }
 
     public IndustryRisksManager(IConfiguration configuration, ILogger<BackgroundJobber> logger, DAcontext dContext=null) : this(new BLontext(configuration, logger), dContext) {}
 
@@ -102,27 +106,42 @@ namespace KabadaAPI {
         }
       }
 
-    private void deleteUnreferenced() {
-      throw new NotImplementedException();
+    private int deleteUnreferenced() {
+      var usi=new UniversalAttributeRepository(blContext, daContext).usedIRs();
+      var k=tRepo.deleteIRs(usi);
+      log($"{k} unused texters are removed.");
+      return k;
       }
 
     private void performLoadAndAddPointers(DateTime started, string fileName, string fullPath) {
       var l=new IndustryRisksLoader(){ infoReporter=log, errorReporter=err}.load(fullPath);
+      if(l==null)
+        throw new Exception("CSV load failed.");
       var to=new IndustryRiskDescriptor(){ fileName=fileName, loadStartedUtc=started, risks=l };
 
       var t=new KabadaAPIdao.Texter(){ Id=Guid.NewGuid(), Kind=(short)EnumTexterKind.industryRisks, Value="", LongValue=to.pack() };
       var ti=t.Id;
-      new TexterRepository(blContext, daContext).create(t);
+      tRepo.create(t);
 
       var uar=new UniversalAttributeRepository(blContext, daContext);
       var ms=new List<Guid?>();
       ms.AddRange(myIndustries);
       ms.AddRange(myActivities);
       var oldPointers=uar.byMasters(ms).ToDictionary(x=>x.MasterId);
+      makePointers(PlanAttributeKind.industryRiskPointer_industry, myIndustries, oldPointers, uar, ti);
+      makePointers(PlanAttributeKind.industryRiskPointer_activity, myActivities, oldPointers, uar, ti);
+      }
+
+    private void makePointers(PlanAttributeKind kind, List<Guid?> us, Dictionary<Guid?, KabadaAPIdao.UniversalAttribute> oldPointers, UniversalAttributeRepository uar, Guid target) {
+      var k=(short)kind;
       KabadaAPIdao.UniversalAttribute o=null;
-      foreach(var x in myIndustries){
+      foreach(var x in us){
         if(oldPointers.TryGetValue(x, out o)){
+          o.CategoryId=target;
+          uar.daContext.SaveChanges();
          } else {
+          var y=new KabadaAPIdao.UniversalAttribute(){ AttrVal="", CategoryId=target, Id=Guid.NewGuid(), Kind=k, MasterId=x };
+          uar.create(y);
           }
         }
       }
@@ -154,6 +173,13 @@ namespace KabadaAPI {
         }
 
       // TODO analyze targets expression from the 'pat'
+      // pattern:: basePattern { '+' basePattern }
+      // basePattern:: letter [ '.' level2 ]
+      // level2:: basic2 { ',' basic2 } || dd level3
+      // basic2:: dd[ '-' dd]
+      // level3:: basic3 { ',' basic3 } || d level4
+      // basic3:: d[ '-' d]
+      // level4:: basic3 { ',' basic3 }
       }
     }
   }

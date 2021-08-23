@@ -44,5 +44,10 @@ namespace KabadaAPI {
       q0.Remove(o);
       daContext.SaveChanges();
       }
+
+    internal List<Guid> usedIRs() {
+      var r=q0.Where(x=>IndustryRiskPointerBL.KINDs.Contains(x.Kind)).Select(x=>x.CategoryId.Value).Distinct().ToList();
+      return r;
+      }
     }
   }
