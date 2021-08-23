@@ -9,7 +9,7 @@ namespace KabadaAPI {
     private List<Func<Transactioner, bool>> initUpdates { get {
       return new List<Func<Transactioner, bool>>(){
 //===============================1========================================//
-        u_0, u_1 };
+        u_0, u_1, u_2 };
 //=======================================================================//
       }}
 
