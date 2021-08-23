@@ -10,7 +10,8 @@ namespace KabadaAPI {
                                     ,channel=12
             , consumerSegment=13, businessSegment=14, ngoSegment=15 // specific
                                     , relationshipActivity1=16, relationshipActivity2=17, relationshipActivity3=18
-                                    , activity=19
+                                           , activity=19
+                                           , industryRiskPointer_activity=20, industryRiskPointer_industry=21
 //range limit 50 in tables 
       }
 
