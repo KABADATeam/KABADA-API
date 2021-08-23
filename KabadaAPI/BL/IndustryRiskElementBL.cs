@@ -8,6 +8,10 @@
     public int? countryDeviationScore;
     public string countryDeviationComment;
 
+    public void validate(){ // errors bring exception
+      // category+type allowed combination
+      // likelihood and severity range [1..3]
+      }
     //public  total;
     }
   }
