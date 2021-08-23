@@ -125,5 +125,38 @@ namespace KabadaAPI {
     //  daContext.Activities.Add(o);
     //  return true;
     //  }
+    public void initContainerActivity()
+        {
+            var codes = daContext.Activities.OrderBy(o=>o.Code).ToDictionary(x => x.Code, x => x.Id);
+            var activities = daContext.Activities.ToList();
+            var found = false;
+            foreach (var a in activities)
+            {
+                var cd = a.Code;
+                while (!found)
+                {
+                    if (cd.Length == 6) 
+                        found = setContainerActivityId(a, cd.Substring(0, 4), codes);
+
+                    if (cd.Length == 7) {
+                        found = setContainerActivityId(a, cd.Substring(0, 6), codes);
+                        if (!found) cd = cd.Substring(0, 6);
+                    }                   
+                }
+
+            }
+            daContext.SaveChanges();
+        }
+        protected bool setContainerActivityId(Activity a, string code, Dictionary<string,Guid> codes)
+        {
+            var found = false;
+            Guid id;
+            if (codes.TryGetValue(code, out id))
+            {
+                a.ContainerActivityId = id;
+                found = true;
+            }
+            return found;
+        }
     }
   }
