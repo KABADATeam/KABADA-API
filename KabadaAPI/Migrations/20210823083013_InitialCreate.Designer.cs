@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210816102811_InitialCreate")]
+    [Migration("20210823083013_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace KabadaAPI.Migrations
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ContainerActivityId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IndustryId")
                         .HasColumnType("uniqueidentifier");
