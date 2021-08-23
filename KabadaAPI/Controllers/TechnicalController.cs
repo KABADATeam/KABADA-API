@@ -45,14 +45,14 @@ namespace KabadaAPI.Controllers {
         return Ok("OK");
         }
 
-    //[AllowAnonymous]
-    //[Route("jst")]
-    //[HttpGet]
-    //public IActionResult jst() { return grun(_jst); }
-    //private IActionResult _jst() {
-    //  var t = new JobRepository(context);
-    //  t.runAll();
-    //  return Ok(".");
-    //  }
+    [AllowAnonymous]
+    [Route("jst")]
+    [HttpGet]
+    public IActionResult jst() { return grun(_jst); }
+    private IActionResult _jst() {
+      var t = new IndustryRisksManager(context);
+      t.processInits();
+      return Ok(".");
+      }
     }
   }

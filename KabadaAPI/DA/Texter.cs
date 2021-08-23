@@ -16,7 +16,7 @@ namespace KabadaAPIdao {
 
         public Guid? MasterId { get; set; } // at the moment BusinessPlan.Id when defined locally in the plan
 
-        [MaxLength(500)]
+        //[MaxLength(500)]
         public string LongValue { get; set; }
         [Required] 
         public short OrderValue { get; set; }

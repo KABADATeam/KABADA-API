@@ -87,5 +87,13 @@ namespace KabadaAPI {
        	"male", "female"
         );
      }
+
+    internal int deleteIRs(List<Guid> excludeList) {
+      var deeli=q0.Where(x=>!excludeList.Contains(x.Id)).ToList();
+      foreach(var o in deeli)
+        q0.Remove(o);
+      daContext.SaveChanges();
+      return deeli.Count;
+      }
     }
   }

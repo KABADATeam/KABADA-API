@@ -84,7 +84,7 @@ namespace KabadaAPI.Migrations
                     Value = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Kind = table.Column<short>(type: "smallint", nullable: false),
                     MasterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    LongValue = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    LongValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     OrderValue = table.Column<short>(type: "smallint", nullable: false)
                 },
                 constraints: table =>

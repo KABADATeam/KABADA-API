@@ -104,7 +104,7 @@ namespace KabadaAPI {
     public List<Texter> getChannelTypesMeta() { return get(null, (short)EnumTexterKind.channelType, (short)EnumTexterKind.channelDistribution, ignoreMaster: true); }
 
 
-    public Texter Create(Texter me) {
+    public Texter create(Texter me) {
       daContext.Texters.Add(me);
       daContext.SaveChanges();
       return me;

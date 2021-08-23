@@ -4,17 +4,38 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using static KabadaAPI.Plan_AttributeRepository;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
   public class IndustryRisksManager : Blotter {
     protected DAcontext daContext;
+    protected StreamWriter lgf;
+
+    protected TexterRepository tRepo;
+
+    protected void logProtocol(string txt){
+      if(lgf!=null)
+        lgf.WriteLine(txt);
+      }
+
+    protected void log(string txt){
+      LogInformation(txt);
+      logProtocol(txt);
+      }
+
+    protected void err(string txt){
+      LogError(txt);
+      logProtocol(txt);
+      }
 
     public IndustryRisksManager(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
       if(dContext==null)
         this.daContext = new DAcontext(_config, bCcontext.logger);
        else
         this.daContext=dContext;
-       }
+      tRepo=new TexterRepository(blContext, daContext);
+      }
 
     public IndustryRisksManager(IConfiguration configuration, ILogger<BackgroundJobber> logger, DAcontext dContext=null) : this(new BLontext(configuration, logger), dContext) {}
 
@@ -24,7 +45,12 @@ namespace KabadaAPI {
       return null; // nothing found
       }
 
-    public void proccessCsvFiles(string fullDirectoryPath){
+    protected string initDirectory { get {
+      var path = Directory.GetCurrentDirectory();
+      return Path.Combine(path, "ImportInit");
+      }}
+
+    protected void proccessCsvFiles(string fullDirectoryPath){
       while(true){
         var f=getTheOldiest(fullDirectoryPath);
         if(f==null)
@@ -33,9 +59,11 @@ namespace KabadaAPI {
         }
       }
 
+    public void processInits(){ proccessCsvFiles(initDirectory); }
+
     private bool isDelete;
-    private List<Guid> myIndustries;
-    private List<Guid> myActivities;
+    private List<Guid?> myIndustries;
+    private List<Guid?> myActivities;
     
     private void processSingleFile(string fullDirectoryPath, string f) {
       var start=DateTime.UtcNow;
@@ -44,20 +72,114 @@ namespace KabadaAPI {
       var suba=Path.Combine(fullDirectoryPath, "Done");
       var lgn=Path.Combine(suba, stmp+"_"+basic+".err");
       var success=false;
-      using(var lgf=new StreamWriter(lgn, false, System.Text.Encoding.UTF8)){
+      using(lgf=new StreamWriter(lgn, false, System.Text.Encoding.UTF8)){
         try {
+          log($"Processing started at {start} UTC.");
+          analyzeRequest(basic);
+          if(isDelete)
+            performDeletePointers();
+           else 
+            performLoadAndAddPointers(start, basic, f);
+          deleteUnreferenced();
+          log($"Processing ended at {DateTime.UtcNow} UTC.");
           success=true;
           }
-        catch (Exception e) {
-           throw;
+        catch (Exception exc) {
+          err($" crashed: Message='{exc.Message}' StackTrace='{exc.StackTrace}'.");
+          var u=exc;
+          while(u.InnerException!=null){
+            u=u.InnerException;
+            err($" crashed(inner): Message='{u.Message}' StackTrace='{u.StackTrace}'.");
+            }
           }
         lgf.Close();
         }
-      // file name ---> (set/DEL, List<isIndustry, i/a Guid>)
-      // load scsv. if good, save to a Texter
-      // create pointers to texter
-      // remove not referenced texters
-      throw new System.NotImplementedException();
+      lgf=null;
+
+      // move the processed input file
+      var nn=Path.Combine(suba, stmp+"_"+basic);
+      File.Move(f, nn);
+
+      if(success){ // rename the log file to indicate success
+        var lgg=Path.Combine(suba, stmp+"_"+basic+".log");
+        File.Move(lgn, lgg);
+        }
+      }
+
+    private int deleteUnreferenced() {
+      var usi=new UniversalAttributeRepository(blContext, daContext).usedIRs();
+      var k=tRepo.deleteIRs(usi);
+      log($"{k} unused texters are removed.");
+      return k;
+      }
+
+    private void performLoadAndAddPointers(DateTime started, string fileName, string fullPath) {
+      var l=new IndustryRisksLoader(){ infoReporter=log, errorReporter=err}.load(fullPath);
+      if(l==null)
+        throw new Exception("CSV load failed.");
+      var to=new IndustryRiskDescriptor(){ fileName=fileName, loadStartedUtc=started, risks=l };
+
+      var t=new KabadaAPIdao.Texter(){ Id=Guid.NewGuid(), Kind=(short)EnumTexterKind.industryRisks, Value="", LongValue=to.pack() };
+      var ti=t.Id;
+      tRepo.create(t);
+
+      var uar=new UniversalAttributeRepository(blContext, daContext);
+      var ms=new List<Guid?>();
+      ms.AddRange(myIndustries);
+      ms.AddRange(myActivities);
+      var oldPointers=uar.byMasters(ms).ToDictionary(x=>x.MasterId);
+      makePointers(PlanAttributeKind.industryRiskPointer_industry, myIndustries, oldPointers, uar, ti);
+      makePointers(PlanAttributeKind.industryRiskPointer_activity, myActivities, oldPointers, uar, ti);
+      }
+
+    private void makePointers(PlanAttributeKind kind, List<Guid?> us, Dictionary<Guid?, KabadaAPIdao.UniversalAttribute> oldPointers, UniversalAttributeRepository uar, Guid target) {
+      var k=(short)kind;
+      KabadaAPIdao.UniversalAttribute o=null;
+      foreach(var x in us){
+        if(oldPointers.TryGetValue(x, out o)){
+          o.CategoryId=target;
+          uar.daContext.SaveChanges();
+         } else {
+          var y=new KabadaAPIdao.UniversalAttribute(){ AttrVal="", CategoryId=target, Id=Guid.NewGuid(), Kind=k, MasterId=x };
+          uar.create(y);
+          }
+        }
+      }
+
+    private void performDeletePointers() {
+      throw new NotImplementedException();
+      }
+
+    private void analyzeRequest(string fileName) {
+      isDelete=false;
+      myIndustries=new List<Guid?>();
+      myActivities=new List<Guid?>();
+
+      var pat=fileName.ToUpper();
+
+      const string trailer="_IR.CSV";
+      var tl=trailer.Length;
+      var fl=pat.Length;
+      if(fl<1+tl || pat.Substring(fl-tl, tl)!=trailer)
+        throw new Exception($"Invalid file name '{fileName}'");
+      pat=pat.Substring(0, fl-tl);
+
+      const string deler="_DEL";
+      fl=pat.Length;
+      var dl=deler.Length;
+      if(fl>dl && pat.Substring(fl-dl, dl)==trailer){
+        isDelete=true;
+        pat=pat.Substring(0, fl-dl);
+        }
+
+      // TODO analyze targets expression from the 'pat'
+      // pattern:: basePattern { '+' basePattern }
+      // basePattern:: letter [ '.' level2 ]
+      // level2:: basic2 { ',' basic2 } || dd level3
+      // basic2:: dd[ '-' dd]
+      // level3:: basic3 { ',' basic3 } || d level4
+      // basic3:: d[ '-' d]
+      // level4:: basic3 { ',' basic3 }
       }
     }
   }

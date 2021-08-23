@@ -7546,8 +7546,7 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("smallint");
 
                     b.Property<string>("LongValue")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("MasterId")
                         .HasColumnType("uniqueidentifier");

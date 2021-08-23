@@ -6,6 +6,8 @@ using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
   public class IndustryRiskPointerBL : BAseUniversalAttributeTypedBL<object> {
+    public static List<short> KINDs=new List<short>(){ (short)PlanAttributeKind.industryRiskPointer_activity, (short)PlanAttributeKind.industryRiskPointer_industry };
+
     public IndustryRiskPointerBL(short kind) : base(kind) {}
     public IndustryRiskPointerBL(short kindForTest, KabadaAPIdao.UniversalAttribute old, bool forUpdate=false) : base(old, forUpdate, kindForValidate: kindForTest){}
     public IndustryRiskPointerBL(Guid byId, UniversalAttributeRepository repo, bool forUpdate=false, short? kindForValidate=null)
