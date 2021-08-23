@@ -98,7 +98,7 @@ namespace Kabada {
             if (swot.id == null)
             {
                 nlt = new Texter() { Kind = lk, MasterId = this.business_plan_id, Value = swot.name };
-                nlt = tR.Create(nlt);
+                nlt = tR.create(nlt);
             }
             else
             {               

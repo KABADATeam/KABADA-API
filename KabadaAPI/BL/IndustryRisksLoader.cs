@@ -2,7 +2,7 @@
 
 namespace KabadaAPI {
   public class IndustryRisksLoader : CsvLoader {
-    List<IndustryRiskElementBL> r;
+    List<IndustryRiskElementBL> returnList;
 
     protected override object storeRow() {
       var r=new IndustryRiskElementBL();
@@ -13,17 +13,20 @@ namespace KabadaAPI {
       r.comments=yOstring("Comments");
       r.countryDeviationScore=yOint("Possible country-specific deviations (Score)");
       r.countryDeviationComment=yOstring("Possible country-specific deviations (Comment))");
+
+      r.validate();
+      returnList.Add(r);
       return r;
       }
 
     public List<IndustryRiskElementBL> load(string fileWithFullPath){
-      r=new List<IndustryRiskElementBL>();
+      returnList=new List<IndustryRiskElementBL>();
       loadInternal(fileWithFullPath);
-      if(r.Count<1)
+      if(returnList.Count<1)
         error("No valid lines loaded.");
       if(errors>0)
         return null;
-      return r;
+      return returnList;
       }
     }
   }
