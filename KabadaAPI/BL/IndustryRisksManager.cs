@@ -110,7 +110,7 @@ namespace KabadaAPI {
       var l=new IndustryRisksLoader(){ infoReporter=log, errorReporter=err}.load(fullPath);
       var to=new IndustryRiskDescriptor(){ fileName=fileName, loadStartedUtc=started, risks=l };
 
-      var t=new KabadaAPIdao.Texter(){ Id=Guid.NewGuid(), Kind=(short)EnumTexterKind.industryRisks, LongValue=to.pack() };
+      var t=new KabadaAPIdao.Texter(){ Id=Guid.NewGuid(), Kind=(short)EnumTexterKind.industryRisks, Value="", LongValue=to.pack() };
       var ti=t.Id;
       new TexterRepository(blContext, daContext).create(t);
 

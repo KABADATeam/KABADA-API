@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210823083013_InitialCreate")]
+    [Migration("20210823125821_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -7548,8 +7548,7 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("smallint");
 
                     b.Property<string>("LongValue")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("MasterId")
                         .HasColumnType("uniqueidentifier");
