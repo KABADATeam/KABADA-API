@@ -177,7 +177,31 @@ namespace KabadaAPI {
       }
 
     public Guid? getMyRisks(Guid industryActivity){
-      return null;
+        Guid? curId = industryActivity;
+        Activity a;
+        while (curId != null)
+        {
+            var risk = getRiskId(curId.Value);
+            if (risk != null) return risk;
+            //no risk exactly for this industryActivity
+            a = q0.Where(x => x.Id == curId).FirstOrDefault();
+            if (a != null)
+            {
+                curId = a.ContainerActivityId; //try traverse the tree
+                if (curId == null)
+                {
+                    risk = getRiskId(a.IndustryId); //if not found for activity, try get from industry
+                    if (risk != null) return risk;
+                }
+            } else { curId = null; }
+        }
+        return null;
       }
+    private Guid? getRiskId(Guid masterId)
+    {
+        var risk = daContext.UniversalAttributes.Where(x => (x.Kind == 21 || x.Kind == 20) && x.MasterId == masterId).FirstOrDefault();
+        if (risk != null) return risk.CategoryId;
+        return null;
+    }
     }
   }
