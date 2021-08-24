@@ -18,7 +18,7 @@ namespace KabadaAPI {
         r=new KeyActivityBL(id.Value, repo, product);
       if(skipValidatePlanRights==false){
         var p=new ProductBL(r.masterId.Value, new Plan_AttributeRepository(repo.blContext, repo.daContext));
-        new BusinessPlansRepository(repo.blContext, repo.daContext).GetPlanForUpdate(repo.blContext.userGuid, p.id);
+        new BusinessPlansRepository(repo.blContext, repo.daContext).GetPlanForUpdate(repo.blContext.userGuid, p.businessPlanId);
         }
       return r;
       }
