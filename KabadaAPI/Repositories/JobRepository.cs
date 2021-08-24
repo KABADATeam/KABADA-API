@@ -13,7 +13,7 @@ namespace KabadaAPI {
       return loadDataRow<KabadaAPIdao.Job, Guid>(daContext.Jobs, json, overwrite, oldDeleted, generateInits);
       }
 
-    public enum JobKind { invitePlanMember=1 }
+    public enum JobKind { invitePlanMember=1, onfly_loadIRs=2 }
 
     private DbSet<Job> q0 { get { return daContext.Jobs; }}
 
@@ -30,8 +30,11 @@ namespace KabadaAPI {
       var mid="JobRepository.runAll: ";
       LogInformation($"{mid}started at {DateTime.Now}.");
       var tasks=q0.OrderBy(x=>x.CreatedAt).ToList();
-      foreach(var t in tasks)
-        runJob(t, mid);
+      tasks.Add(new Job(){ Kind=(short)JobKind.onfly_loadIRs });
+      foreach(var t in tasks){
+        try { runJob(t, mid); }
+        catch (Exception exc) { MIX.EXC(LogError, exc, $"Job({pack(t)}) "); }
+        }
       LogInformation($"{mid}ended at {DateTime.Now}.");
       }
 
@@ -44,6 +47,7 @@ namespace KabadaAPI {
         }
       switch(t.Kind){
         case (short)JobKind.invitePlanMember: invitePlanMember(t, prefix); break;
+        case (short)JobKind.onfly_loadIRs: new IndustryRisksManager(blContext).processRegulars(); break;
         default: break; // unknown job kind
         }
       }

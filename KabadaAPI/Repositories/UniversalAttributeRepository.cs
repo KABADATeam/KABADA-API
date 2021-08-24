@@ -49,5 +49,13 @@ namespace KabadaAPI {
       var r=q0.Where(x=>IndustryRiskPointerBL.KINDs.Contains(x.Kind)).Select(x=>x.CategoryId.Value).Distinct().ToList();
       return r;
       }
+
+    internal int deleteIRpointers(List<Guid?> ms) {
+      var deli=q0.Where(x=>IndustryRiskPointerBL.KINDs.Contains(x.Kind) && ms.Contains(x.MasterId)).ToList();
+      foreach(var d in deli)
+        q0.Remove(d);
+      daContext.SaveChanges();
+      return deli.Count;
+      }
     }
   }

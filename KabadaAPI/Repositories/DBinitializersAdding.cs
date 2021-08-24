@@ -37,11 +37,19 @@ namespace KabadaAPI {
       var ctx=tr.Context;
       var tx=new IndustryActivityRepository(blContext, ctx);
       tx.initContainerActivity();
-      
       return true;
       }
 
+    private bool importLoader(DAcontext da=null){
+      var t = new IndustryRisksManager(blContext, da);
+      t.processInits();
+      return true;
+      }
 
+    //private bool u_3(Transactioner tr){ // Activities.ContainerActivity filling
+    //  var ctx=tr.Context;
+    //  return importLoader(ctx);
+    //  }
 
 
 //=======================================================================//

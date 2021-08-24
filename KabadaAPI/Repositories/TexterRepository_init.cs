@@ -89,7 +89,8 @@ namespace KabadaAPI {
      }
 
     internal int deleteIRs(List<Guid> excludeList) {
-      var deeli=q0.Where(x=>!excludeList.Contains(x.Id)).ToList();
+      var k=(short)EnumTexterKind.industryRisks;
+      var deeli=q0.Where(x=>x.Kind==k && !excludeList.Contains(x.Id)).ToList();
       foreach(var o in deeli)
         q0.Remove(o);
       daContext.SaveChanges();

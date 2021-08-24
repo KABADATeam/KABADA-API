@@ -22,6 +22,7 @@ namespace KabadaAPI {
         case "REST": doRestore(); break;
         case "RB": BaseRepository.ReBase(context); break;
         case "P": r=true; break;
+        case "N": BackgroundJobber.Notify(); break;
         default: throw new Exception("shot moon!");
         }
       return r;
