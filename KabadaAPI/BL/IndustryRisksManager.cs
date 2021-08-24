@@ -163,6 +163,17 @@ namespace KabadaAPI {
       log($"{k} pointers deleted.");
       }
 
+
+    // industryRisksImportFile::  setFile | deleteFile
+    // setFile::                  targets marker
+    // deleteFile::               targets '_DEL' marker
+    // marker::                   '_IR.csv"
+    // targets::                  target [ '+' targets]
+    // target::                   element | interval
+    // interval::                 element '-' element
+    // element::                  letter [ '.' dd [ '.' d [ d ]]]
+    // 1. all elements used must be NACE identifiers loaded in the KABADA system
+    // 2. interval: the both elements must have the same level and the lower bound must be alphabetically before the upper bound
     private void analyzeRequest(string fileName) {
       isDelete=false;
       myIndustries=new List<Guid?>();
@@ -185,14 +196,7 @@ namespace KabadaAPI {
         pat=pat.Substring(0, fl-dl);
         }
 
-      // TODO analyze targets expression from the 'pat'
-      // pattern:: basePattern { '+' basePattern }
-      // basePattern:: letter [ '.' level2 ]
-      // level2:: basic2 { ',' basic2 } || dd level3
-      // basic2:: dd[ '-' dd]
-      // level3:: basic3 { ',' basic3 } || d level4
-      // basic3:: d[ '-' d]
-      // level4:: basic3 { ',' basic3 }
+      // TODO analyze targets expression from the 'pat' and fill myIndustries + myActivities
       }
     }
   }
