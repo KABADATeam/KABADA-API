@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using KabadaAPIdao;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace KabadaAPI {
   public class IndustryActivityRepository : BaseRepository
@@ -9,6 +10,7 @@ namespace KabadaAPI {
     
         public IndustryActivityRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
  
+        private DbSet<Activity> q0 { get { return daContext.Activities; }}
 
         public List<Industry> GetIndustries()
         {
@@ -165,6 +167,10 @@ namespace KabadaAPI {
             }
             return found;
         }
+
+    public Activity byCode(string code){
+      return q0.Where(x=>x.Code==code).FirstOrDefault();
+      }
 
     public Guid? getMyRisks(Guid industryActivity){
       return null;
