@@ -183,6 +183,9 @@ namespace KabadaAPI {
     // element::                  letter [ '.' dd [ '.' d [ d ]]]
     // 1. all elements used must be NACE identifiers loaded in the KABADA system
     // 2. interval: the both elements must have the same level and the lower bound must be alphabetically before the upper bound
+
+    private IndustryActivityRepository iaRepo;
+    private IndustryRepository iRepo;
     private void analyzeRequest(string fileName) {
       isDelete=false;
       myIndustries=new List<Guid?>();
@@ -204,8 +207,51 @@ namespace KabadaAPI {
         isDelete=true;
         pat=pat.Substring(0, fl-dl);
         }
+      if(pat.Length<1)
+        throw new Exception("No targets specified");
+      var targets=pat.Split('+');
 
-      // TODO analyze targets expression from the 'pat' and fill myIndustries + myActivities
+      iaRepo=new IndustryActivityRepository(blContext);
+      iRepo=new IndustryRepository(blContext);
+
+      foreach(var t in targets){
+        var mpos=t.IndexOf('-');
+        if(mpos<0)
+          processElement(t);
+         else
+          processInterval(t.Substring(0, mpos-1), t.Substring(mpos+1));
+        }
+      }
+
+    private bool isIndustry(string element){ return element.Length<2; }
+
+    private Guid findElement(string element){
+      if(isIndustry(element)){
+        var o=iRepo.byCode(element);
+        if(o!=null)
+          return o.Id;
+       } else {
+        var o=iaRepo.byCode(element);
+        if(o!=null)
+          return o.Id;
+       }
+      throw new Exception($"Not registered element '{element}'");
+      }
+
+    private void processInterval(string v1, string v2) {
+      if(v1.Length != v2.Length)
+        throw new Exception($"Interval [{v1}-{v2}] with different bound levels not allowed");
+      if(string.Compare(v1, v2)!=-1)
+        throw new Exception($"Interval [{v1}-{v2}] lower bound must be less than the upper");
+      throw new NotImplementedException(MIX.NI(this));
+      }
+
+    private void processElement(string t) {
+      var x=findElement(t);
+      if(isIndustry(t))
+        myIndustries.Add(x);
+       else
+        myActivities.Add(x);
       }
     }
   }

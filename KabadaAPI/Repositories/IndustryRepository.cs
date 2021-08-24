@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KabadaAPIdao;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace KabadaAPI {
@@ -17,5 +19,11 @@ namespace KabadaAPI {
      // daContext.Industries.Add(o);
      // return true;
      // }
+
+    private DbSet<Industry> q0 { get { return daContext.Industries; }}
+
+    public Industry byCode(string code){
+      return q0.Where(x=>x.Code==code).FirstOrDefault();
+      }
     }
   }
