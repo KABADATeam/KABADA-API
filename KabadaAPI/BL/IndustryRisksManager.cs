@@ -164,6 +164,7 @@ namespace KabadaAPI {
           uar.create(y);
           }
         }
+      log($"{us.Count} pointers of the kind '{kind.ToString()}' set.");
       }
 
     private void performDeletePointers() {
@@ -219,7 +220,7 @@ namespace KabadaAPI {
         if(mpos<0)
           processElement(t);
          else
-          processInterval(t.Substring(0, mpos-1), t.Substring(mpos+1));
+          processInterval(t.Substring(0, mpos), t.Substring(mpos+1));
         }
       }
 
@@ -243,7 +244,11 @@ namespace KabadaAPI {
         throw new Exception($"Interval [{v1}-{v2}] with different bound levels not allowed");
       if(string.Compare(v1, v2)!=-1)
         throw new Exception($"Interval [{v1}-{v2}] lower bound must be less than the upper");
-      throw new NotImplementedException(MIX.NI(this));
+      findElement(v1); findElement(v2); // validate presence in DB
+      if(isIndustry(v1))
+        myIndustries.AddRange(iRepo.interval(v1, v2).Select(x=>(Guid?)x.Id).ToList());
+       else
+        myActivities.AddRange(iaRepo.interval(v1, v2).Select(x=>(Guid?)x.Id).ToList());
       }
 
     private void processElement(string t) {

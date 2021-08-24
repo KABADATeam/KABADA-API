@@ -17,7 +17,7 @@ namespace KabadaAPI {
       }
 
     public static string NI(object me, int stepsBack=0){
-      var r=$"Not implemented '{me.GetType().Name}.{Method(1+stepsBack)}'";
+      var r=$"Not implemented {me.GetType().Name}.{Method(1+stepsBack)}";
       return r;
       }
     }

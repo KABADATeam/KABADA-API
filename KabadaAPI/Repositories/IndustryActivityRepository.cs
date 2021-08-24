@@ -172,6 +172,10 @@ namespace KabadaAPI {
       return q0.Where(x=>x.Code==code).FirstOrDefault();
       }
 
+    public List<Activity> interval(string @from, string @to){
+      return q0.Where(x=>String.Compare(x.Code, @from)>=0 && String.Compare(x.Code, @to)<=0).ToList();
+      }
+
     public Guid? getMyRisks(Guid industryActivity){
       return null;
       }
