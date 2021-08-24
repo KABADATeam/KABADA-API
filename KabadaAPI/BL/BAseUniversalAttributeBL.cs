@@ -25,19 +25,21 @@ namespace KabadaAPI {
       categoryId=category;
       }
 
-    protected void validate(short? kindForValidate, List<short> kindsForValidate){
+    protected void validate(short? kindForValidate, List<short> kindsForValidate, Guid? masterForValidate){
      if(kindForValidate!=null)
         validateKind(kindForValidate.Value);
       if(kindsForValidate!=null)
         validateKind(kindsForValidate);
+     if(masterForValidate!=null && masterId!=masterForValidate)
+        throw new Exception("Wrong master encountered");
       }
 
-    public BAseUniversalAttributeBL(UniversalAttribute old, bool forEdit=false, short? kindForValidate=null, List<short> kindsForValidate=null){
+    public BAseUniversalAttributeBL(UniversalAttribute old, bool forEdit=false, short? kindForValidate=null, List<short> kindsForValidate=null, Guid? masterForValidate=null){
       if(forEdit)
         o=old;
        else
         o=old.clone();
-      validate(kindForValidate, kindsForValidate);
+      validate(kindForValidate, kindsForValidate, masterForValidate);
       }
 
     protected static UniversalAttribute RD(Guid byId, UniversalAttributeRepository rp){ return rp.byId(byId); }

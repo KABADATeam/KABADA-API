@@ -33,7 +33,7 @@ namespace Kabada {
 
     internal Guid perform(BLontext context) {
       var repo=new UniversalAttributeRepository(context);
-      var o=KeyActivityBL.Make(id, repo);
+      var o=KeyActivityBL.Make(id, repo, product_id);
       assign(o);
       o.completeSet(id, repo);
       return o.id;
@@ -41,7 +41,7 @@ namespace Kabada {
 
     private void assign(KeyActivityBL bo){
       bo.categoryId=sub_type_id;
-      bo.masterId=product_id;
+      //bo.masterId=product_id;
       bo.e.name=name;
       bo.e.description=description;
       }
