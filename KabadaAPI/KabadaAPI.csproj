@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20210823152725_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210823152725_InitialCreate.Designer.cs" />
     <Compile Remove="Repositories\UsersPlansRepository.cs" />
   </ItemGroup>
   <ItemGroup>
