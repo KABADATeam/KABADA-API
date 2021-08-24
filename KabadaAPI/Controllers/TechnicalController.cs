@@ -50,7 +50,9 @@ namespace KabadaAPI.Controllers {
     //[HttpGet]
     //public IActionResult jst() { return grun(_jst); }
     //private IActionResult _jst() {
-    //  //string m;
+    //  var t=IndustryRiskDescriptor.ByActivityName("C.11.03", context);
+    //  t=IndustryRiskDescriptor.ByActivityName("C.12.00", context);
+    //   //string m;
     //  //m=MIX.Method(0);
     //  //m=MIX.Method(1);
     //  //m=MIX.Method(2);
