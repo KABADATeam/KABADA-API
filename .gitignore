@@ -411,3 +411,5 @@ ASALocalRun/
 /CMD/rekaba.cmd
 /KabadaAPI/ReBase
 /INFO/.~lock.BackendActions.csv#
+/KabadaAPI/ImportInit/Done/*.err
+/KabadaAPI/ImportInit/Done/*.log
