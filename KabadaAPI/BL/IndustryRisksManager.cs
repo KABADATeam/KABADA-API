@@ -50,7 +50,12 @@ namespace KabadaAPI {
       return Path.Combine(path, "ImportInit");
       }}
 
-    protected string settingsDirectory { get { return blContext.importDirectory; } }
+    protected string settingsDirectory { get {
+      var r=blContext.importDirectory;
+      if(string.IsNullOrWhiteSpace(r))
+        return null;
+      return r;
+      } }
 
     protected void proccessCsvFiles(string fullDirectoryPath){
       if(!Directory.Exists(fullDirectoryPath))
@@ -65,7 +70,11 @@ namespace KabadaAPI {
 
     public void processInits(){ proccessCsvFiles(initDirectory); }
 
-    public void processRegulars(){ proccessCsvFiles(settingsDirectory); }
+    public void processRegulars(){
+      var t=settingsDirectory;
+      if(t!=null)
+        proccessCsvFiles(t);
+      }
 
     private bool isDelete;
     private List<Guid?> myIndustries;

@@ -165,5 +165,9 @@ namespace KabadaAPI {
             }
             return found;
         }
+
+    public Guid? getMyRisks(Guid industryActivity){
+      return null;
+      }
     }
   }

@@ -1,4 +1,4 @@
 set H=%~dp0
 echo %H%
 cd "%H%"
-call RunPIU p
+call RunPIU N

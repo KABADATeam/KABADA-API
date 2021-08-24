@@ -90,7 +90,7 @@ namespace KabadaAPI {
 
 
     public string importDirectory { get {
-      return getS("importDirectory", "C:/temp/zirgs");
+      return getS("importDirectory", null);
       }}
 
     }

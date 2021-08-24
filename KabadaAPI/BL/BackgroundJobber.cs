@@ -22,16 +22,20 @@ namespace KabadaAPI {
       var rescanInterval=s.jobsRescanInterval;
 
       while(true){
-        await Task.Delay(scanningStep);  // give time to fill in log file parameters at sturtup 
-        if(cancellationToken.IsCancellationRequested)
-          break;
-        var w=DateTime.Now;
-        if(notification>lastRun || lastRun.Add(rescanInterval)<=w){
-          lastRun=w;
-          new JobRepository(blC).runAll();
+        try {
+          await Task.Delay(scanningStep);  // give time to fill in log file parameters at sturtup 
+          if (cancellationToken.IsCancellationRequested)
+            break;
+          var w = DateTime.Now;
+          if (notification>lastRun || lastRun.Add(rescanInterval)<=w) {
+            lastRun=w;
+            new JobRepository(blC).runAll();
+            }
+          if (cancellationToken.IsCancellationRequested)
+            break;
+
           }
-        if(cancellationToken.IsCancellationRequested)
-          break;
+        catch (Exception e) { MIX.EXC(blC.logError, e, "BackgroundJobber "); }
         }
       }
     }
