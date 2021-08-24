@@ -377,7 +377,7 @@ namespace KabadaAPI.Migrations
             migrationBuilder.InsertData(
                 table: "DbSettings",
                 columns: new[] { "Id", "Value" },
-                values: new object[] { "initialDataSetLevel", "3" });
+                values: new object[] { "initialDataSetLevel", "4" });
 
             migrationBuilder.InsertData(
                 table: "Industries",
@@ -511,7 +511,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("4ae078f2-21a9-4f01-b11d-92eace60e38e"), (short)11, "Possible if you distribute your products through your own channels – directly, your own store, homepage. Often the case in some service sectors", null, (short)1, "Self distribution" },
                     { new Guid("93916775-80bd-4355-bfda-907e8a737cbe"), (short)16, null, null, (short)2, "Additional functions" },
                     { new Guid("109af523-c8ae-409f-a5ab-c15d02ce5858"), (short)32, null, null, (short)3, "18 - 24" },
-                    { new Guid("3f2faea5-f8f6-43b4-80f2-db55874a5c4b"), (short)14, null, null, (short)1, "Physical good" },
+                    { new Guid("80b218db-fd97-43a7-9945-dbe555990934"), (short)24, null, null, (short)7, "Advertising" },
                     { new Guid("2e4ee3fe-7f1b-4105-b37e-c1ee4d8d4d40"), (short)30, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)1, "Fixed location" },
                     { new Guid("f5e69507-6f10-49bd-a3aa-edd3b0845e67"), (short)3, null, null, (short)14, "Demographic trends" },
                     { new Guid("eaee254e-e4c3-4ebd-86eb-ed38a54c238b"), (short)23, null, new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)1, "Accountant" },
@@ -519,17 +519,18 @@ namespace KabadaAPI.Migrations
                     { new Guid("fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c"), (short)22, null, null, (short)2, "Rent (short term)" },
                     { new Guid("fc87ba60-6c43-4420-bdb0-eacc00ffbca5"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)4, "Raw materials" },
                     { new Guid("ed7c4844-5ab2-431f-b765-ea94db35952d"), (short)3, null, null, (short)19, "Climate and its change" },
-                    { new Guid("dfe881a2-cd69-4295-a16a-edfb2c8fc0bf"), (short)15, null, null, (short)11, "Based on new technologies" },
                     { new Guid("d8aaf777-bd2b-40e6-9eab-ea5e06f34c55"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("22656f17-0f99-438f-a934-b71d64a7fbd6"), (short)1, "Ownership type" },
+                    { new Guid("f782da7f-d1e2-4cf8-9267-ea403651f58d"), (short)1, "a", null, (short)4, "Inventory" },
                     { new Guid("67dc4bec-4276-44df-a573-e95b64864a7e"), (short)22, null, null, (short)5, "Outsourcing of specified services" },
                     { new Guid("eea606be-c02d-41a6-a35e-e8701086869c"), (short)3, null, null, (short)11, "Market size" },
                     { new Guid("5eb6013b-0cca-4f89-b39d-e711477a972f"), (short)15, null, null, (short)3, "No improvements or innovations" },
                     { new Guid("de834ef4-a990-4a17-9385-e6a6c226189c"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)4, "Other" },
                     { new Guid("197debde-3d72-4bae-89e5-e5d9010c8562"), (short)35, null, null, (short)4, "Foreign" },
                     { new Guid("7a4a57fd-79e7-4141-88b5-e57a22d7ef9a"), (short)3, null, null, (short)15, "Cultural norms and values" },
-                    { new Guid("f782da7f-d1e2-4cf8-9267-ea403651f58d"), (short)1, "a", null, (short)4, "Inventory" },
+                    { new Guid("941b8d92-ecb7-4885-b95c-e57408d66213"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)2, "Frequency" },
+                    { new Guid("dfe881a2-cd69-4295-a16a-edfb2c8fc0bf"), (short)15, null, null, (short)11, "Based on new technologies" },
+                    { new Guid("90e3590d-b9d4-4e07-87cf-e45659e486f0"), (short)3, null, null, (short)17, "Technological change" },
                     { new Guid("2d5348f7-f619-4de2-a186-ee0ad4fff927"), (short)35, null, null, (short)3, "Domestic Rural" },
-                    { new Guid("327ca493-9191-4fb5-b1a8-eec264849f7d"), (short)42, null, new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"), (short)0, "R & D" },
                     { new Guid("5365d22f-9372-4471-baab-f1175d25ae0f"), (short)15, null, null, (short)14, "New set of features" },
                     { new Guid("e0c84bf6-dbc3-450e-95ac-fe42299e05df"), (short)1, "a", null, (short)13, "Product design" },
                     { new Guid("187d8314-5350-4f30-a68c-fde38021a178"), (short)15, null, null, (short)20, "Rarity" },
@@ -545,8 +546,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("6e0f7f5e-1780-4218-a5c5-f6be04b49a12"), (short)32, null, null, (short)2, "12 - 17" },
                     { new Guid("e59e3f4e-077f-4d34-9214-f5b93134cf44"), (short)35, null, null, (short)6, "Foreign Rural" },
                     { new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)2, "Equipment" },
-                    { new Guid("be005f23-8f91-4776-835c-f4e231bdb1e5"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("22656f17-0f99-438f-a934-b71d64a7fbd6"), (short)2, "Frequency" },
-                    { new Guid("941b8d92-ecb7-4885-b95c-e57408d66213"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)2, "Frequency" }
+                    { new Guid("be005f23-8f91-4776-835c-f4e231bdb1e5"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("22656f17-0f99-438f-a934-b71d64a7fbd6"), (short)2, "Frequency" }
                 });
 
             migrationBuilder.InsertData(
@@ -554,9 +554,10 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
-                    { new Guid("90e3590d-b9d4-4e07-87cf-e45659e486f0"), (short)3, null, null, (short)17, "Technological change" },
+                    { new Guid("327ca493-9191-4fb5-b1a8-eec264849f7d"), (short)42, null, new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"), (short)0, "R & D" },
+                    { new Guid("e8daf129-e055-4683-b4aa-c1ebd5934e25"), (short)1, "a", null, (short)11, "Management processes" },
                     { new Guid("fc510839-c0c3-4883-a917-e35a2b9ea22e"), (short)23, null, new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)2, "IT support" },
-                    { new Guid("22ab4468-869c-4f8a-94c9-e2f5c3974718"), (short)12, null, null, (short)5, "Human resources" },
+                    { new Guid("0f3080b7-034f-4891-9d66-e1d6f0d8cd8c"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]", new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)1, "Ownership type" },
                     { new Guid("c6a66809-c479-4563-95df-cb9396c37e35"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)4, "" },
                     { new Guid("c055ffa9-c8e4-4f77-859d-cae9785736f6"), (short)35, null, null, (short)1, "Domestic" },
                     { new Guid("b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d"), (short)15, null, null, (short)18, "Special materials and components" },
@@ -573,17 +574,17 @@ namespace KabadaAPI.Migrations
                     { new Guid("44468654-bf65-4e70-ab92-c4bf5c399d03"), (short)18, null, null, (short)2, "Medium" },
                     { new Guid("50477479-4b86-4ce1-bcea-c3e7b075f5c8"), (short)12, null, null, (short)2, "Equipment and real estate" },
                     { new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)25, null, null, (short)2, "Dynamic pricing" },
-                    { new Guid("e8daf129-e055-4683-b4aa-c1ebd5934e25"), (short)1, "a", null, (short)11, "Management processes" },
+                    { new Guid("22ab4468-869c-4f8a-94c9-e2f5c3974718"), (short)12, null, null, (short)5, "Human resources" },
                     { new Guid("a571bc0b-8f30-4070-b16b-cd873a2deab7"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)4, "Other" },
                     { new Guid("003ba515-28f7-4141-af55-ce6a35b96e41"), (short)42, null, new Guid("b2445fa0-fa0d-4f77-b545-a3d10f6da338"), (short)0, "Services" },
-                    { new Guid("0f3080b7-034f-4891-9d66-e1d6f0d8cd8c"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]", new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)1, "Ownership type" },
+                    { new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)43, "{\"fileName\":\"C.11.01-C.11.05_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.3908084Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":3,\"severity\":3,\"comments\":\"Production of alcoholic beverages is a highly regulated and highly taxed industry and is subject to variability of these policies.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"Policies and attitudes toward the production, sale, and use of alcohol differ substantially by country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demand fluctuates with income (especially for beverages such as fine wines and spirits, demand falls during economic downturn). As agricultural produce is used as an input, the industry is exposed to annual variation in crop yields and quality.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":3,\"severity\":2,\"comments\":\"The demand for different classes of alcoholic beverages is subject to large shifts in taste and social norms. Furthermore, due to generational and age differences in tastes, demand shifts can be brought about by demographic changes. The severity of taste shifts is likely to depend on the type of drink (larger for niche drinks, smaller for mainstream/generic drinks).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":1,\"severity\":1,\"comments\":\"New technologies speed up processes and allow for economies of scale, but traditionally produced products are generally perceived as premium and not in direct competition with mass produced ones.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":2,\"severity\":3,\"comments\":\"If the enterprise relies on produce grown in a specific area (e.g., wines, cider, spirits of denominated origin), it may be heavily impacted by climate change/ global warming.\\nNOTE: Think about weather vs climate (what goes under economic/ availability of resources due to weather and what goes under Environmental).\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nCountries closer to the equator are likely to be more negatively impacted by global warming.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Status quo in alco: a few large players and many smaller ones. The products are highly differentiated, so the small players are somewhat protected from direct competition from the big players. Some big players tend to buy out smaller competitors.\\nNOTE: Here we talk about the industry structure, focusing on how easy or hard would it be for our new entrant to survive in this market.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nEspecially in alco, largely affected by brewing/ distilling tradition.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":3,\"severity\":2,\"comments\":\"Industry attracts many (small) new entrants. However, due to the highly differentiated nature of the product and brand loyalty, the small players are not in fierce competition with each other.\\nNOTE: This is about the threat of entry. We talk about the extent to which our enterprise, once it establishes itself in the market, will be threatened by future entrants. Note that differentiation (as in the specialty brewing industry) protects both existing players and entrants from each other!\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nEspecially in alco, largely affected by brewing/ distilling tradition.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"Alcoholic beverages hold a unique position due to tradition. While substitution between different types of beverages is common, mass substitution towards entirely different products seems quite unlikely. Furthermore, should new alternatives emerge, it is likely many consumers will remain loyal to their current drinks of choice.\\nNOTE: Check what counts as emergence of a substitute vs. simply new entry in the same market.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of suppliers depends on the type of beverage and the business model of the producer. In case of a winery owning its vineyards, this risk is low. In the case of a craft brewery buying its malts and hops, key suppliers hold significant power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nSubstantial international differences exist, but they are to a large extent the result of different predominant products and business models\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of buyers depends on the chosen distribution channels and volume of sales. If most of the production is sold directly to consumers and via restaurants, bars, and cafes, the bargaining power of buyers is low. If much of the production is sold via wholesalers/ supermarket chains, buyers hold much more power. Switching between channels is costly and may not be possible in the short run.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nVariations depend on consumption patterns (home vs bar consumption), government policies regarding the distribution of alcohol, and structure of retail markets (the extent to which the largest chains dominate).\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":3,\"comments\":\"This industry, especially its craft/specialty sector, is to a large extent dependent on the skill and experience of a few key personnel (master brewer/ distiller/ winemaker). Losing these key people can be disastrous to the whole operation and finding a replacement at short notice is likely to be difficult. Relatedly, to ensure continuity, it is important to keep detailed documentation of the employed procedures/ recipes.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nAvailability of skilled personnel for a particular drink may vary based on a country’s traditions.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":1,\"comments\":\"After the initial investments have been made, the production equipment should last for a fairly long time. Repairs are unlikely to be excessively costly and can often be done in-house.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":3,\"comments\":\"For all fermented drinks, contamination during any stage of the process (fermentation, bottling, storage) can result in an inferior product or even total loss of a batch. Furthermore, fermentation is subject to natural variation (e.g., in response to changes in the ambient temperature) even when no contamination occurs.\\nNOTE: This is mostly about operational processes but supporting processes might be mentioned if they have industry-specific issues/ potential risks.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}", null, (short)0, "" },
                     { new Guid("5393af35-4b9f-49f4-a366-e1430860ee49"), (short)24, null, null, (short)5, "Licensing" },
                     { new Guid("03af662c-036c-43d8-95c7-e07b9388495c"), (short)23, null, new Guid("ef60cdef-d5b1-421a-aa36-10463faf9f6e"), (short)1, "Other" },
                     { new Guid("0fe097a6-bd15-4272-885e-de82c1d08677"), (short)19, null, null, (short)1, "Basic" },
                     { new Guid("c06464ec-0248-4964-b09a-dd6fd7c6cc17"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)2, "Market/Fairs" },
                     { new Guid("6dad8d59-0786-43e5-98a6-dd6d4fdc7688"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)1, "Own delivery" },
-                    { new Guid("80b218db-fd97-43a7-9945-dbe555990934"), (short)24, null, null, (short)7, "Advertising" },
                     { new Guid("ae7c712d-f780-429f-aed6-87509c0bc43c"), (short)15, null, null, (short)7, "Improvement of existing characteristics" },
+                    { new Guid("3f2faea5-f8f6-43b4-80f2-db55874a5c4b"), (short)14, null, null, (short)1, "Physical good" },
                     { new Guid("636b2c40-cfd3-4eb3-9003-dac709ff860b"), (short)3, null, null, (short)8, "Accessibility of human resources" },
                     { new Guid("3253125f-cc5c-4269-a6e2-d9e95f0d4c3a"), (short)23, null, new Guid("5a7a66cb-25f4-462b-b1f7-47b97735d7da"), (short)1, "Other" },
                     { new Guid("97070765-ae68-4bb1-9b50-d99761807ef4"), (short)27, null, null, (short)2, "Retailers" },
@@ -593,9 +594,8 @@ namespace KabadaAPI.Migrations
                     { new Guid("f611bf2d-3089-4e53-b362-cf740f1f102a"), (short)3, null, null, (short)10, "Accessibility of financial resources" },
                     { new Guid("b30ffa71-9656-4f10-be64-cd92bad378c0"), (short)33, null, null, (short)1, "Low" },
                     { new Guid("be31e251-6784-4472-a771-86c159b3f9fb"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)2, "Yield management" },
-                    { new Guid("69646d5e-0e73-4056-9dac-70ff0d0a9ebe"), (short)23, null, new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)2, "Other" },
-                    { new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)5, "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.", null, (short)3, "Human resources" },
-                    { new Guid("42c22ecb-1f79-467a-8b1f-2e709de5a5e2"), (short)1, "a", null, (short)17, "Guarantees and warranties" }
+                    { new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)2, "Licenses" },
+                    { new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)5, "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.", null, (short)3, "Human resources" }
                 });
 
             migrationBuilder.InsertData(
@@ -603,26 +603,28 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("42c22ecb-1f79-467a-8b1f-2e709de5a5e2"), (short)1, "a", null, (short)17, "Guarantees and warranties" },
                     { new Guid("d39c0155-1419-4a48-962f-2e42d5aca11b"), (short)15, null, null, (short)15, "Driven by technology" },
                     { new Guid("abdbd71b-4c23-4cc1-aacb-2dac249540f3"), (short)21, null, null, (short)5, "Outsourcing of specified services" },
                     { new Guid("3fe4a8e4-daa1-4edb-a209-2d9f6f9ced35"), (short)30, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Platform" },
                     { new Guid("373f6176-6eef-4866-96ff-2c4efe5c4a76"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)4, "Other" },
                     { new Guid("c7cb2b43-fc30-40ec-b06b-2bdeadc6000f"), (short)39, null, null, (short)1, "male" },
-                    { new Guid("75ccb567-91f3-4966-91f6-30565cb59ba0"), (short)3, null, null, (short)23, "Bargaining power of buyers" },
                     { new Guid("e3773f81-fa98-4ad4-b235-2bab8369e22b"), (short)3, null, null, (short)25, "Substitution possibilities" },
+                    { new Guid("ce619ee3-d636-497f-8238-2ac9c9e79b49"), (short)40, null, null, (short)2, "Ads and Commercials" },
                     { new Guid("5bf44939-b777-454a-86c2-280eea5fc6dd"), (short)35, null, null, (short)5, "Foreign Urban" },
                     { new Guid("58eac7eb-b165-4056-8df3-27e3ab23d1e9"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("4b0ba05e-88c6-4c54-a313-880e3aee9905"), (short)2, "Frequency" },
                     { new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)5, "Other" },
                     { new Guid("31ca9e3a-ff44-41db-8833-2661abddb353"), (short)23, null, new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)3, "Other" },
                     { new Guid("6d62227c-94dc-4ad8-a89c-240fe74f26d6"), (short)24, null, null, (short)4, "Lending, renting, leasing" },
                     { new Guid("4a427807-de66-429c-8ae0-2185f71d2543"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("3943c265-621b-4738-93c8-4470986c3af3"), (short)1, "Ownership type" },
-                    { new Guid("ce619ee3-d636-497f-8238-2ac9c9e79b49"), (short)40, null, null, (short)2, "Ads and Commercials" },
+                    { new Guid("bf6b3a07-2578-4ab2-8ca8-21209388c38e"), (short)40, null, null, (short)4, "Other" },
+                    { new Guid("75ccb567-91f3-4966-91f6-30565cb59ba0"), (short)3, null, null, (short)23, "Bargaining power of buyers" },
+                    { new Guid("085df303-2e4d-4dd0-9e9f-204085352597"), (short)16, null, null, (short)6, "Fees come from another product" },
                     { new Guid("fd203ec9-9519-4adb-8c98-314cab2b4689"), (short)40, null, null, (short)3, "Printed Promotional/informative materials" },
-                    { new Guid("0addb638-0a86-4fc8-90fa-332a530655b8"), (short)42, null, new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"), (short)0, "R & D" },
                     { new Guid("e8f6e9d6-0e37-4182-9c47-33c9d119ac73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)3, "To the email" },
-                    { new Guid("37c1161f-aac3-4e5e-81df-3cce00e3b25c"), (short)13, null, null, (short)1, "Associations" },
                     { new Guid("f2424d76-d25a-430a-ab55-3c0480a1f56c"), (short)15, null, null, (short)25, "Extraordinariness" },
-                    { new Guid("73fcb86d-53b1-4063-87b8-3aa42702c820"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)2, "Frequency" },
+                    { new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)43, "{\"fileName\":\"P.85.41+P.85.42_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.784871Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Subject to extensive regulation (such as program accreditation etc.) and directly dependent on government funding/ grants. Massive funding cuts or interventio.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Income elasticity of demand is fairly low. Foreign exchange risk and other international factors might be important for some institutions with high proportions of international students.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demographic shifts are very important, as the industry targets a specific age group. Demand overall does not fluctuate much, whereas demand for specific disciplines can and does change over time (e.g., there has been a shift from the social sciences to STEM subjects).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Currently, a technology-driven shift in the mode of delivery of higher education is in progress. The extent to which institutions will be able to embrace this change will be critical to their future success.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":1,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"The industry is mature and fairly highly concentrated. In addition, reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"It is almost impossible to substitute away from the entire industry but shifts between subdisciplines are likely.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"comments\":\"Many inputs (such as lab equipment, software licences, and data/ journal subscriptions) are supplied by highly concentrated industries (possibly even monopolies). However, this type of expenditure forms a rather small percentage of a typical institution’s budget.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":1,\"severity\":1,\"comments\":\"The customers are individual students, who are numerous and do not wield market power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Higher education is very dependent on highly skilled and specialized labour.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"countryDeviationComment\":\"#N/A\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"countryDeviationComment\":\"#N/A\"}]}", null, (short)0, "" },
+                    { new Guid("ab606dbd-08d6-49be-8bc6-844812d8b214"), (short)24, null, null, (short)6, "Brokerage fees" },
                     { new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)22, null, null, (short)8, "Distribution" },
                     { new Guid("70fad897-dcb6-4818-a9b1-39b2b08dd93c"), (short)3, null, null, (short)18, "Cybersecurity" },
                     { new Guid("a4b8b286-4fc6-4021-ab42-3952154ffeba"), (short)23, null, new Guid("7ac334c8-cafd-4f64-8414-00c61aa80cb7"), (short)1, "Other" },
@@ -635,16 +637,14 @@ namespace KabadaAPI.Migrations
                     { new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)21, null, null, (short)3, "Rent of equipment" },
                     { new Guid("2897fd3b-afad-47e5-8407-3582fb0cdf07"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)1, "Negotiation" },
                     { new Guid("a82e9156-c03c-4815-80ca-35508e2371ad"), (short)30, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)2, "Mobile" },
-                    { new Guid("bf6b3a07-2578-4ab2-8ca8-21209388c38e"), (short)40, null, null, (short)4, "Other" },
-                    { new Guid("085df303-2e4d-4dd0-9e9f-204085352597"), (short)16, null, null, (short)6, "Fees come from another product" },
+                    { new Guid("0addb638-0a86-4fc8-90fa-332a530655b8"), (short)42, null, new Guid("598ee84a-c772-4156-abf3-bc0d57c678a1"), (short)0, "R & D" },
+                    { new Guid("37c1161f-aac3-4e5e-81df-3cce00e3b25c"), (short)13, null, null, (short)1, "Associations" },
                     { new Guid("87ffbf10-1f99-4d0b-ae5a-202736ed5a4e"), (short)16, null, null, (short)4, "Different price for business" },
-                    { new Guid("2d9ebc0f-7a82-4891-8dc6-1fa64b5fa22d"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)1, "Manufacturing buildings" },
-                    { new Guid("3325759e-8add-4b30-a00c-10ce7fbbd330"), (short)17, null, null, (short)1, "Free" },
+                    { new Guid("578b2d6c-608f-4bd7-9e38-1f888650e6b0"), (short)12, null, null, (short)1, "Raw materials, finished or semi-finished goods" },
                     { new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)21, null, null, (short)4, "Utilities" },
                     { new Guid("ef60cdef-d5b1-421a-aa36-10463faf9f6e"), (short)22, null, null, (short)6, "Permits & licenses" },
                     { new Guid("fe7ff7a5-af48-4eb2-b60e-0d76c808a43f"), (short)23, null, new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)5, "Other" },
-                    { new Guid("e6aaacaf-9550-4937-bf13-0d1ff0b69874"), (short)23, null, new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)1, "Electricity" },
-                    { new Guid("c31ebd92-79bc-417c-bab4-0c3960778ef7"), (short)32, null, null, (short)5, "35 - 64" }
+                    { new Guid("e6aaacaf-9550-4937-bf13-0d1ff0b69874"), (short)23, null, new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)1, "Electricity" }
                 });
 
             migrationBuilder.InsertData(
@@ -652,6 +652,8 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)43, "{\"fileName\":\"C.11.06+C.11.07_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.7459198Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":1,\"severity\":1,\"comments\":\"Less affected than most industries.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Less affected than most industries.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"The demand for different classes of alcoholic beverages is subject to large shifts in taste and social norms. Furthermore, due to generational and age differences in tastes, demand shifts can be brought about by demographic changes. The severity of taste shifts is likely to depend on the type of drink (larger for niche drinks, smaller for mainstream/generic drinks).\\nFor others: Similar, but to a lesser extent; norms not relevant.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":1,\"severity\":1,\"comments\":\"New technologies speed up processes and allow for economies of scale, but traditionally produced products are generally perceived as premium and not in direct competition with mass produced ones.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":2,\"comments\":\"Availability and price of some inputs might be affected by climate change.\\nNOTE: Think about weather vs climate (what goes under economic/ availability of resources due to weather and what goes under Environmental).\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nCountries closer to the equator are likely to be more negatively impacted by global warming.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Status quo in other: Two main market segments: (1) a highly concentrated mainstream market along with (2) multiple niche markets (specialty/ organic etc. drinks) with many small players. Survival of smaller players much more difficult in the mainstream segment than in the niche segment.\\nNOTE: Here we talk about the industry structure, focusing on how easy or hard would it be for our new entrant to survive in this market.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Entry mainly affects the niche markets and the impact is mitigated by the differentiated nature of the products.\\nNOTE: This is about the threat of entry. We talk about the extent to which our enterprise, once it establishes itself in the market, will be threatened by future entrants. Note that differentiation (as in the specialty brewing industry) protects both existing players and entrants from each other!\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"Due to meeting a basic human need, water and soft drinks as a whole are unlikely to be displaced by a substitute. Internal substitution within the group, however, is common (see “social factors” above).\\nNOTE: Check what counts as emergence of a substitute vs. simply new entry in the same market.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":1,\"severity\":2,\"comments\":\"The inputs tend not to be highly specific (water, energy, sugar). For the more specialized inputs (flavors etc.), viable substitutes are likely to be available and supply markets tend to be fairly competitive.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nSubstantial international differences exist, but they are to a large extent the result of different predominant products and business models\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of buyers depends on the chosen distribution channels and volume of sales. If most of the production is sold directly to consumers and via restaurants, bars, and cafes, the bargaining power of buyers is low. If much of the production is sold via wholesalers/ supermarket chains, buyers hold much more power. Switching between channels is costly and may not be possible in the short run.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nVariations depend on consumption patterns (home vs bar consumption), government policies regarding the distribution of alcohol, and structure of retail markets (the extent to which the largest chains dominate).\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":2,\"comments\":\"This industry, especially its craft/specialty sector, is to a large extent dependent on the skill and experience of a few key personnel (master brewer/ distiller/ winemaker). Losing these key people can be disastrous to the whole operation and finding a replacement at short notice is likely to be difficult. Relatedly, to ensure continuity, it is important to keep detailed documentation of the employed procedures/ recipes. But for non alcohol drinks essentially, the same problems but to a lesser extent.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nAvailability of skilled personnel for a particular drink may vary based on a country’s traditions.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":1,\"comments\":\"After the initial investments have been made, the production equipment should last for a fairly long time. Repairs are unlikely to be excessively costly and can often be done in-house.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":2,\"comments\":\"It is imperative to ensure proper hygiene during the production and bottling process. Contamination can result in an inferior product.\\nNOTE: This is mostly about operational processes but supporting processes might be mentioned if they have industry-specific issues/ potential risks.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}", null, (short)0, "" },
+                    { new Guid("c31ebd92-79bc-417c-bab4-0c3960778ef7"), (short)32, null, null, (short)5, "35 - 64" },
                     { new Guid("c48b255a-2451-42e2-a889-0a76e5b850e0"), (short)3, null, null, (short)2, "Government regulation" },
                     { new Guid("25feae02-736b-44c7-b6e7-06fa502f4c63"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)1, "Brands" },
                     { new Guid("6a09985e-01b1-4034-9a82-05945dce19a5"), (short)19, null, null, (short)3, "Premium" },
@@ -661,11 +663,10 @@ namespace KabadaAPI.Migrations
                     { new Guid("5cb61693-d73a-40fd-9664-01921eeba8cc"), (short)23, null, new Guid("abdbd71b-4c23-4cc1-aacb-2dac249540f3"), (short)1, "Other" },
                     { new Guid("7ac334c8-cafd-4f64-8414-00c61aa80cb7"), (short)22, null, null, (short)7, "Marketing" },
                     { new Guid("bbe1a5d6-d7d1-4d70-a5cf-00589419ce8d"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)2, "Cost of warehouse" },
+                    { new Guid("3325759e-8add-4b30-a00c-10ce7fbbd330"), (short)17, null, null, (short)1, "Free" },
+                    { new Guid("2d9ebc0f-7a82-4891-8dc6-1fa64b5fa22d"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)1, "Manufacturing buildings" },
                     { new Guid("fef1c6f8-493c-4641-9f0c-1141cb762605"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)3, "Volume dependent" },
-                    { new Guid("e1d977e9-0c83-4f69-8bfe-3f2689b6cec2"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)3, "Real time market" },
-                    { new Guid("aa2e4a07-25cf-454b-9505-118ee9077477"), (short)23, null, new Guid("4bf467d0-1c9d-469d-9dad-45b6bf4b7f47"), (short)1, "Other" },
-                    { new Guid("2984418a-638e-4da9-be1d-12ba94d8ffaf"), (short)15, null, null, (short)5, "Based on old technology" },
-                    { new Guid("578b2d6c-608f-4bd7-9e38-1f888650e6b0"), (short)12, null, null, (short)1, "Raw materials, finished or semi-finished goods" },
+                    { new Guid("bdb6d057-80b7-411a-a6b6-12aae71581c3"), (short)33, null, null, (short)3, "High" },
                     { new Guid("09b845a4-df9c-4f53-b833-1f69ae6d1835"), (short)22, null, null, (short)1, "Resources" },
                     { new Guid("8e07b533-f25e-4227-8fd8-1b2f19a7b4f3"), (short)1, "a", null, (short)7, "Patents" },
                     { new Guid("bbab5ef4-bbd3-44aa-a879-1a792a5feada"), (short)34, null, null, (short)2, "Secondary" },
@@ -680,20 +681,19 @@ namespace KabadaAPI.Migrations
                     { new Guid("c6e60be8-eef9-41fe-948b-133375a3c43b"), (short)1, "a", null, (short)20, "Discounts" },
                     { new Guid("404d16aa-f0f7-452a-88ce-13109e57724a"), (short)30, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)1, "Own website" },
                     { new Guid("ac1f0f22-1958-45fd-851b-130a155e86c3"), (short)23, null, new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"), (short)4, "Marketing" },
-                    { new Guid("bdb6d057-80b7-411a-a6b6-12aae71581c3"), (short)33, null, null, (short)3, "High" },
-                    { new Guid("ab606dbd-08d6-49be-8bc6-844812d8b214"), (short)24, null, null, (short)6, "Brokerage fees" },
-                    { new Guid("ef193985-9b48-495e-a40c-3f53f2b0b30a"), (short)32, null, null, (short)1, "Under 12" },
-                    { new Guid("ab3c7d47-062b-437e-a164-4172444e276f"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)1, "Ownership type" },
+                    { new Guid("2984418a-638e-4da9-be1d-12ba94d8ffaf"), (short)15, null, null, (short)5, "Based on old technology" },
+                    { new Guid("aa2e4a07-25cf-454b-9505-118ee9077477"), (short)23, null, new Guid("4bf467d0-1c9d-469d-9dad-45b6bf4b7f47"), (short)1, "Other" },
+                    { new Guid("e1d977e9-0c83-4f69-8bfe-3f2689b6cec2"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)3, "Real time market" },
+                    { new Guid("73fcb86d-53b1-4063-87b8-3aa42702c820"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)2, "Frequency" },
+                    { new Guid("bdf69fe7-c3e3-44e1-a984-41041ea08e96"), (short)15, null, null, (short)4, "Continuous" },
                     { new Guid("c267cba0-ef66-48d5-96bd-74d4efd1b52b"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)3, "Fees to distributors" },
                     { new Guid("8f4213e4-50ce-42f9-aee1-73e2d6efeaff"), (short)8, "[{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("fc87ba60-6c43-4420-bdb0-eacc00ffbca5"), (short)1, "Ownership type" },
                     { new Guid("e31f5678-6604-47a6-ac67-724b8d0d54e8"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)1, "Transport" },
-                    { new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)2, "Licenses" },
                     { new Guid("1947e5da-01ea-4d22-8e37-72264d47d9b8"), (short)13, null, null, (short)1, "Government institutions" },
                     { new Guid("316e0636-3ce5-4ba0-b72f-7223698fb8fb"), (short)3, null, null, (short)9, "Accessibility of tangible resources" },
-                    { new Guid("7146d46e-a7b5-429b-85ee-74f24e9b8894"), (short)19, null, null, (short)2, "Medium" },
                     { new Guid("2f2f8c7f-ac0c-4115-a3b8-714e0d6529d9"), (short)1, "a", null, (short)6, "Corporate image" },
-                    { new Guid("f4056ba5-de88-45b6-92a9-6f9707e4f494"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)2, "Frequency" },
-                    { new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)22, null, null, (short)4, "Salaries" }
+                    { new Guid("7146d46e-a7b5-429b-85ee-74f24e9b8894"), (short)19, null, null, (short)2, "Medium" },
+                    { new Guid("69646d5e-0e73-4056-9dac-70ff0d0a9ebe"), (short)23, null, new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)2, "Other" }
                 });
 
             migrationBuilder.InsertData(
@@ -701,8 +701,10 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("f4056ba5-de88-45b6-92a9-6f9707e4f494"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)2, "Frequency" },
+                    { new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)22, null, null, (short)4, "Salaries" },
                     { new Guid("37634235-3b04-4aad-a647-6d79a2c88655"), (short)36, null, null, (short)2, "Medium" },
-                    { new Guid("b2706a04-d62f-4103-ae40-6b5868029c73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Courier service" },
+                    { new Guid("ef193985-9b48-495e-a40c-3f53f2b0b30a"), (short)32, null, null, (short)1, "Under 12" },
                     { new Guid("4718bb8b-3018-4408-9ff1-68ab9c4f2b87"), (short)34, null, null, (short)3, "Higher education" },
                     { new Guid("5a78cb95-3eb4-432a-a0cc-68886ae692da"), (short)3, null, null, (short)24, "Potential/future competition" },
                     { new Guid("e221190c-00bc-404f-a540-708d0e673454"), (short)23, null, new Guid("df741ccc-d2ef-4797-8c96-8b5be0344f88"), (short)1, "Other" },
@@ -725,13 +727,12 @@ namespace KabadaAPI.Migrations
                     { new Guid("7ace64a6-77c6-44de-a675-78ff13ca0859"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)2, "Delivery to home" },
                     { new Guid("08a43d2e-87da-433b-9656-787878f8c04d"), (short)42, null, new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"), (short)0, "Continous training" },
                     { new Guid("f71ce8b4-dbd8-4280-a216-66677e115f74"), (short)3, null, null, (short)13, "Infrastructure" },
-                    { new Guid("bdf69fe7-c3e3-44e1-a984-41041ea08e96"), (short)15, null, null, (short)4, "Continuous" },
                     { new Guid("ee238326-5d11-4531-92b0-6565f42ae874"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)3, "Courier service" },
+                    { new Guid("b2706a04-d62f-4103-ae40-6b5868029c73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Courier service" },
                     { new Guid("9454b766-1241-44ca-ae12-63e101fbae55"), (short)38, null, null, (short)2, "National Government" },
-                    { new Guid("54afad44-3157-4521-90df-543d4686355a"), (short)23, null, new Guid("67dc4bec-4276-44df-a573-e95b64864a7e"), (short)1, "Other" },
                     { new Guid("a5a126b8-fb9a-413c-a5fa-53870b90df77"), (short)24, null, null, (short)1, "Asset sale" },
                     { new Guid("17063605-ce9b-4e92-9d41-52ea1cee6632"), (short)1, "a", null, (short)8, "Trademarks" },
-                    { new Guid("925f1189-56f9-4cc3-ae1e-50ddbab2a29d"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)4, "Auctions" },
+                    { new Guid("e1371329-8c9e-4ab3-95fe-654e7f64dfc4"), (short)23, null, new Guid("f61f60ab-7991-4dac-b40e-c742dcef878b"), (short)1, "Other" },
                     { new Guid("22d688a4-1dae-42c2-98af-4e076de1ca73"), (short)32, null, null, (short)4, "25 - 34" },
                     { new Guid("a9677a24-bc3c-40aa-8265-4be52545113b"), (short)39, null, null, (short)2, "female" },
                     { new Guid("b0cb1000-5a92-47a0-a45b-499c5f580524"), (short)27, null, null, (short)4, "Agents" },
@@ -741,8 +742,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("4bf467d0-1c9d-469d-9dad-45b6bf4b7f47"), (short)21, null, null, (short)7, "Permits & Licenses" },
                     { new Guid("adcdc439-8170-4fab-a70d-457c1b98bc92"), (short)15, null, null, (short)8, "Result of R&D" },
                     { new Guid("da250714-2420-4d57-8015-44fe1e1ff294"), (short)13, null, null, (short)1, "Non-governmental institutions" },
-                    { new Guid("3943c265-621b-4738-93c8-4470986c3af3"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)3, "Transport" },
-                    { new Guid("88fa173b-e9a8-44a7-be1a-43fab1989a02"), (short)11, null, null, (short)5, "Agents" }
+                    { new Guid("3943c265-621b-4738-93c8-4470986c3af3"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)3, "Transport" }
                 });
 
             migrationBuilder.InsertData(
@@ -750,25 +750,44 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
+                    { new Guid("88fa173b-e9a8-44a7-be1a-43fab1989a02"), (short)11, null, null, (short)5, "Agents" },
+                    { new Guid("ab3c7d47-062b-437e-a164-4172444e276f"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)1, "Ownership type" },
+                    { new Guid("54afad44-3157-4521-90df-543d4686355a"), (short)23, null, new Guid("67dc4bec-4276-44df-a573-e95b64864a7e"), (short)1, "Other" },
                     { new Guid("7851aaea-93c4-48e8-8817-563ef55cf61a"), (short)38, null, null, (short)1, "International Organisations" },
-                    { new Guid("e1371329-8c9e-4ab3-95fe-654e7f64dfc4"), (short)23, null, new Guid("f61f60ab-7991-4dac-b40e-c742dcef878b"), (short)1, "Other" },
-                    { new Guid("5d465e51-2608-4a01-af4f-566fcc5e7519"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)2, "Frequency" },
-                    { new Guid("cc3cddf7-c4fa-4679-8feb-58935864f5b2"), (short)11, null, null, (short)4, "Wholesalers" },
-                    { new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)3, "Software" },
-                    { new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)1, "Specialists & Know-how" },
-                    { new Guid("8f79391b-d687-4515-9292-5b4958ef0589"), (short)15, null, null, (short)21, "Durability" },
-                    { new Guid("0ff6b626-a1ff-4184-b1bb-5bf2992091bd"), (short)15, null, null, (short)2, "Product or service already exists in the market" },
-                    { new Guid("75bcee28-686d-47e6-82b2-5c2a32168377"), (short)16, null, null, (short)1, "Non time limited usage" },
-                    { new Guid("1b776dfa-533e-4511-8185-5c576db8dcec"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)3, "Transport" },
-                    { new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"), (short)15, null, null, (short)23, "Safety" },
+                    { new Guid("925f1189-56f9-4cc3-ae1e-50ddbab2a29d"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)4, "Auctions" },
                     { new Guid("3a0ffc1e-bede-4f74-9cff-5735a0b600f9"), (short)37, null, null, (short)1, "Goods" },
-                    { new Guid("f9862c29-9a20-4cbe-8fa2-5e1660f6b8da"), (short)15, null, null, (short)10, "Discontinuous" },
-                    { new Guid("95f441a5-2f4e-4c6e-93e7-5e18cbe26749"), (short)16, null, null, (short)7, "Other" },
-                    { new Guid("c5acf766-38a0-4cf2-8649-6074f10a6b9f"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)2, "Inventory buildings" },
-                    { new Guid("62d8c572-b4b2-45e7-be6d-607de423b903"), (short)3, null, null, (short)5, "Inflation" },
-                    { new Guid("651a1fcd-0ad6-4311-9bb0-61cb8b210146"), (short)1, "a", null, (short)15, "Packaging and labeling" },
+                    { new Guid("df75df99-8916-4eba-8ef1-636c8cc2478b"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)1, "Ownership type" },
                     { new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"), (short)41, null, null, (short)0, "Problem solving" },
-                    { new Guid("df75df99-8916-4eba-8ef1-636c8cc2478b"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)1, "Ownership type" }
+                    { new Guid("651a1fcd-0ad6-4311-9bb0-61cb8b210146"), (short)1, "a", null, (short)15, "Packaging and labeling" },
+                    { new Guid("5d465e51-2608-4a01-af4f-566fcc5e7519"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)2, "Frequency" },
+                    { new Guid("c5acf766-38a0-4cf2-8649-6074f10a6b9f"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)2, "Inventory buildings" },
+                    { new Guid("95f441a5-2f4e-4c6e-93e7-5e18cbe26749"), (short)16, null, null, (short)7, "Other" },
+                    { new Guid("f9862c29-9a20-4cbe-8fa2-5e1660f6b8da"), (short)15, null, null, (short)10, "Discontinuous" },
+                    { new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"), (short)15, null, null, (short)23, "Safety" },
+                    { new Guid("62d8c572-b4b2-45e7-be6d-607de423b903"), (short)3, null, null, (short)5, "Inflation" },
+                    { new Guid("75bcee28-686d-47e6-82b2-5c2a32168377"), (short)16, null, null, (short)1, "Non time limited usage" },
+                    { new Guid("0ff6b626-a1ff-4184-b1bb-5bf2992091bd"), (short)15, null, null, (short)2, "Product or service already exists in the market" },
+                    { new Guid("8f79391b-d687-4515-9292-5b4958ef0589"), (short)15, null, null, (short)21, "Durability" },
+                    { new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)1, "Specialists & Know-how" },
+                    { new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)3, "Software" },
+                    { new Guid("cc3cddf7-c4fa-4679-8feb-58935864f5b2"), (short)11, null, null, (short)4, "Wholesalers" },
+                    { new Guid("1b776dfa-533e-4511-8185-5c576db8dcec"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)3, "Transport" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UniversalAttributes",
+                columns: new[] { "Id", "AttrVal", "CategoryId", "Kind", "MasterId", "OrderValue" },
+                values: new object[,]
+                {
+                    { new Guid("b9bbe532-0166-4f4f-b4a5-e3eeef38e6f2"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("f970ff64-c24d-4956-ba52-879cdd77b338"), (short)0 },
+                    { new Guid("e1f7d2d0-b87a-49ce-9fe5-d91b16c74c40"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("c7459be7-61ee-4076-8141-e83038421200"), (short)0 },
+                    { new Guid("8f85dfcf-e2fb-4b66-9c1b-bd78b43d8724"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("0bf31a39-521f-442c-8f08-b68ce31b2cbb"), (short)0 },
+                    { new Guid("fec12588-dae8-4993-89a6-83ff1335fe7e"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("69291733-0241-4258-b8d4-3d2c571c6692"), (short)0 },
+                    { new Guid("5d9f1742-63ad-4067-84ac-342c8409cac8"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("51a6ed12-649a-4301-9777-8dd61732ee0a"), (short)0 },
+                    { new Guid("e017d357-1459-4754-a441-63289867dde6"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("c179de73-c634-4cbd-897c-56fd2c83852b"), (short)0 },
+                    { new Guid("6ca18f91-a049-428f-bb44-477f2baddc4e"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("7fb314db-0888-4577-8923-0e028154aa4f"), (short)0 },
+                    { new Guid("5965442c-11e8-4ca9-976e-013b953c6d4f"), "", new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)20, new Guid("59be036b-0d99-48eb-b5de-80d26f6a528a"), (short)0 },
+                    { new Guid("d14010a4-4a97-46fb-907e-7566a4441b7d"), "", new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)20, new Guid("ab1cb6b8-b2a5-430f-a1e5-6e08a3877e1d"), (short)0 }
                 });
 
             migrationBuilder.InsertData(

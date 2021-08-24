@@ -9,7 +9,7 @@ namespace KabadaAPI {
     private List<Func<Transactioner, bool>> initUpdates { get {
       return new List<Func<Transactioner, bool>>(){
 //===============================1========================================//
-        u_0, u_1, u_2 };
+        u_0, u_1, u_2, u_3 };
 //=======================================================================//
       }}
 
@@ -46,15 +46,16 @@ namespace KabadaAPI {
       return true;
       }
 
-    //private bool u_3(Transactioner tr){ // Activities.ContainerActivity filling
-    //  var ctx=tr.Context;
-    //  return importLoader(ctx);
-    //  }
+        private bool u_3(Transactioner tr)
+        { // Activities.ContainerActivity filling
+            var ctx = tr.Context;
+            return importLoader(ctx);
+        }
 
 
-//=======================================================================//
+        //=======================================================================//
 
-    protected override void expandInit() {
+        protected override void expandInit() {
       var starter=0;
       var old=new DbSettingRepository(blContext).byId(EnumDbSettings.initialDataSetLevel);
       if(old!=null)

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210823172745_InitialCreate")]
+    [Migration("20210824131840_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace KabadaAPI.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.7")
+                .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("KabadaAPIdao.Activity", b =>
@@ -8095,7 +8095,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "3"
+                            Value = "4"
                         });
                 });
 
@@ -8528,6 +8528,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)32,
                             OrderValue = (short)5,
                             Value = "35 - 64"
+                        },
+                        new
+                        {
+                            Id = new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"C.11.06+C.11.07_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.7459198Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":1,\"severity\":1,\"comments\":\"Less affected than most industries.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Less affected than most industries.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"The demand for different classes of alcoholic beverages is subject to large shifts in taste and social norms. Furthermore, due to generational and age differences in tastes, demand shifts can be brought about by demographic changes. The severity of taste shifts is likely to depend on the type of drink (larger for niche drinks, smaller for mainstream/generic drinks).\\nFor others: Similar, but to a lesser extent; norms not relevant.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":1,\"severity\":1,\"comments\":\"New technologies speed up processes and allow for economies of scale, but traditionally produced products are generally perceived as premium and not in direct competition with mass produced ones.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":2,\"comments\":\"Availability and price of some inputs might be affected by climate change.\\nNOTE: Think about weather vs climate (what goes under economic/ availability of resources due to weather and what goes under Environmental).\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nCountries closer to the equator are likely to be more negatively impacted by global warming.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Status quo in other: Two main market segments: (1) a highly concentrated mainstream market along with (2) multiple niche markets (specialty/ organic etc. drinks) with many small players. Survival of smaller players much more difficult in the mainstream segment than in the niche segment.\\nNOTE: Here we talk about the industry structure, focusing on how easy or hard would it be for our new entrant to survive in this market.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Entry mainly affects the niche markets and the impact is mitigated by the differentiated nature of the products.\\nNOTE: This is about the threat of entry. We talk about the extent to which our enterprise, once it establishes itself in the market, will be threatened by future entrants. Note that differentiation (as in the specialty brewing industry) protects both existing players and entrants from each other!\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"Due to meeting a basic human need, water and soft drinks as a whole are unlikely to be displaced by a substitute. Internal substitution within the group, however, is common (see “social factors” above).\\nNOTE: Check what counts as emergence of a substitute vs. simply new entry in the same market.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":1,\"severity\":2,\"comments\":\"The inputs tend not to be highly specific (water, energy, sugar). For the more specialized inputs (flavors etc.), viable substitutes are likely to be available and supply markets tend to be fairly competitive.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nSubstantial international differences exist, but they are to a large extent the result of different predominant products and business models\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of buyers depends on the chosen distribution channels and volume of sales. If most of the production is sold directly to consumers and via restaurants, bars, and cafes, the bargaining power of buyers is low. If much of the production is sold via wholesalers/ supermarket chains, buyers hold much more power. Switching between channels is costly and may not be possible in the short run.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nVariations depend on consumption patterns (home vs bar consumption), government policies regarding the distribution of alcohol, and structure of retail markets (the extent to which the largest chains dominate).\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":2,\"comments\":\"This industry, especially its craft/specialty sector, is to a large extent dependent on the skill and experience of a few key personnel (master brewer/ distiller/ winemaker). Losing these key people can be disastrous to the whole operation and finding a replacement at short notice is likely to be difficult. Relatedly, to ensure continuity, it is important to keep detailed documentation of the employed procedures/ recipes. But for non alcohol drinks essentially, the same problems but to a lesser extent.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nAvailability of skilled personnel for a particular drink may vary based on a country’s traditions.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":1,\"comments\":\"After the initial investments have been made, the production equipment should last for a fairly long time. Repairs are unlikely to be excessively costly and can often be done in-house.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":2,\"comments\":\"It is imperative to ensure proper hygiene during the production and bottling process. Contamination can result in an inferior product.\\nNOTE: This is mostly about operational processes but supporting processes might be mentioned if they have industry-specific issues/ potential risks.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
                         },
                         new
                         {
@@ -8976,6 +8984,14 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"),
                             OrderValue = (short)2,
                             Value = "Frequency"
+                        },
+                        new
+                        {
+                            Id = new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"P.85.41+P.85.42_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.784871Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Subject to extensive regulation (such as program accreditation etc.) and directly dependent on government funding/ grants. Massive funding cuts or interventio.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Income elasticity of demand is fairly low. Foreign exchange risk and other international factors might be important for some institutions with high proportions of international students.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demographic shifts are very important, as the industry targets a specific age group. Demand overall does not fluctuate much, whereas demand for specific disciplines can and does change over time (e.g., there has been a shift from the social sciences to STEM subjects).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Currently, a technology-driven shift in the mode of delivery of higher education is in progress. The extent to which institutions will be able to embrace this change will be critical to their future success.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":1,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"The industry is mature and fairly highly concentrated. In addition, reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"It is almost impossible to substitute away from the entire industry but shifts between subdisciplines are likely.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"comments\":\"Many inputs (such as lab equipment, software licences, and data/ journal subscriptions) are supplied by highly concentrated industries (possibly even monopolies). However, this type of expenditure forms a rather small percentage of a typical institution’s budget.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":1,\"severity\":1,\"comments\":\"The customers are individual students, who are numerous and do not wield market power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Higher education is very dependent on highly skilled and specialized labour.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"countryDeviationComment\":\"#N/A\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"countryDeviationComment\":\"#N/A\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
                         },
                         new
                         {
@@ -10391,6 +10407,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"C.11.01-C.11.05_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.3908084Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":3,\"severity\":3,\"comments\":\"Production of alcoholic beverages is a highly regulated and highly taxed industry and is subject to variability of these policies.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"Policies and attitudes toward the production, sale, and use of alcohol differ substantially by country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demand fluctuates with income (especially for beverages such as fine wines and spirits, demand falls during economic downturn). As agricultural produce is used as an input, the industry is exposed to annual variation in crop yields and quality.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":3,\"severity\":2,\"comments\":\"The demand for different classes of alcoholic beverages is subject to large shifts in taste and social norms. Furthermore, due to generational and age differences in tastes, demand shifts can be brought about by demographic changes. The severity of taste shifts is likely to depend on the type of drink (larger for niche drinks, smaller for mainstream/generic drinks).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":1,\"severity\":1,\"comments\":\"New technologies speed up processes and allow for economies of scale, but traditionally produced products are generally perceived as premium and not in direct competition with mass produced ones.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":2,\"severity\":3,\"comments\":\"If the enterprise relies on produce grown in a specific area (e.g., wines, cider, spirits of denominated origin), it may be heavily impacted by climate change/ global warming.\\nNOTE: Think about weather vs climate (what goes under economic/ availability of resources due to weather and what goes under Environmental).\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nCountries closer to the equator are likely to be more negatively impacted by global warming.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"Status quo in alco: a few large players and many smaller ones. The products are highly differentiated, so the small players are somewhat protected from direct competition from the big players. Some big players tend to buy out smaller competitors.\\nNOTE: Here we talk about the industry structure, focusing on how easy or hard would it be for our new entrant to survive in this market.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nEspecially in alco, largely affected by brewing/ distilling tradition.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":3,\"severity\":2,\"comments\":\"Industry attracts many (small) new entrants. However, due to the highly differentiated nature of the product and brand loyalty, the small players are not in fierce competition with each other.\\nNOTE: This is about the threat of entry. We talk about the extent to which our enterprise, once it establishes itself in the market, will be threatened by future entrants. Note that differentiation (as in the specialty brewing industry) protects both existing players and entrants from each other!\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nEspecially in alco, largely affected by brewing/ distilling tradition.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"Alcoholic beverages hold a unique position due to tradition. While substitution between different types of beverages is common, mass substitution towards entirely different products seems quite unlikely. Furthermore, should new alternatives emerge, it is likely many consumers will remain loyal to their current drinks of choice.\\nNOTE: Check what counts as emergence of a substitute vs. simply new entry in the same market.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of suppliers depends on the type of beverage and the business model of the producer. In case of a winery owning its vineyards, this risk is low. In the case of a craft brewery buying its malts and hops, key suppliers hold significant power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nSubstantial international differences exist, but they are to a large extent the result of different predominant products and business models\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The bargaining power of buyers depends on the chosen distribution channels and volume of sales. If most of the production is sold directly to consumers and via restaurants, bars, and cafes, the bargaining power of buyers is low. If much of the production is sold via wholesalers/ supermarket chains, buyers hold much more power. Switching between channels is costly and may not be possible in the short run.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\\nVariations depend on consumption patterns (home vs bar consumption), government policies regarding the distribution of alcohol, and structure of retail markets (the extent to which the largest chains dominate).\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":3,\"comments\":\"This industry, especially its craft/specialty sector, is to a large extent dependent on the skill and experience of a few key personnel (master brewer/ distiller/ winemaker). Losing these key people can be disastrous to the whole operation and finding a replacement at short notice is likely to be difficult. Relatedly, to ensure continuity, it is important to keep detailed documentation of the employed procedures/ recipes.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\\nAvailability of skilled personnel for a particular drink may vary based on a country’s traditions.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":1,\"comments\":\"After the initial investments have been made, the production equipment should last for a fairly long time. Repairs are unlikely to be excessively costly and can often be done in-house.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":3,\"comments\":\"For all fermented drinks, contamination during any stage of the process (fermentation, bottling, storage) can result in an inferior product or even total loss of a batch. Furthermore, fermentation is subject to natural variation (e.g., in response to changes in the ambient temperature) even when no contamination occurs.\\nNOTE: This is mostly about operational processes but supporting processes might be mentioned if they have industry-specific issues/ potential risks.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
+                        },
+                        new
+                        {
                             Id = new Guid("0f3080b7-034f-4891-9d66-e1d6f0d8cd8c"),
                             Kind = (short)8,
                             LongValue = "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]",
@@ -10707,6 +10731,89 @@ namespace KabadaAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UniversalAttributes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("5965442c-11e8-4ca9-976e-013b953c6d4f"),
+                            AttrVal = "",
+                            CategoryId = new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"),
+                            Kind = (short)20,
+                            MasterId = new Guid("59be036b-0d99-48eb-b5de-80d26f6a528a"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("5d9f1742-63ad-4067-84ac-342c8409cac8"),
+                            AttrVal = "",
+                            CategoryId = new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"),
+                            Kind = (short)20,
+                            MasterId = new Guid("51a6ed12-649a-4301-9777-8dd61732ee0a"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("6ca18f91-a049-428f-bb44-477f2baddc4e"),
+                            AttrVal = "",
+                            CategoryId = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)20,
+                            MasterId = new Guid("7fb314db-0888-4577-8923-0e028154aa4f"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("e017d357-1459-4754-a441-63289867dde6"),
+                            AttrVal = "",
+                            CategoryId = new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"),
+                            Kind = (short)20,
+                            MasterId = new Guid("c179de73-c634-4cbd-897c-56fd2c83852b"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("d14010a4-4a97-46fb-907e-7566a4441b7d"),
+                            AttrVal = "",
+                            CategoryId = new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"),
+                            Kind = (short)20,
+                            MasterId = new Guid("ab1cb6b8-b2a5-430f-a1e5-6e08a3877e1d"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("fec12588-dae8-4993-89a6-83ff1335fe7e"),
+                            AttrVal = "",
+                            CategoryId = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)20,
+                            MasterId = new Guid("69291733-0241-4258-b8d4-3d2c571c6692"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("8f85dfcf-e2fb-4b66-9c1b-bd78b43d8724"),
+                            AttrVal = "",
+                            CategoryId = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)20,
+                            MasterId = new Guid("0bf31a39-521f-442c-8f08-b68ce31b2cbb"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("e1f7d2d0-b87a-49ce-9fe5-d91b16c74c40"),
+                            AttrVal = "",
+                            CategoryId = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)20,
+                            MasterId = new Guid("c7459be7-61ee-4076-8141-e83038421200"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("b9bbe532-0166-4f4f-b4a5-e3eeef38e6f2"),
+                            AttrVal = "",
+                            CategoryId = new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"),
+                            Kind = (short)20,
+                            MasterId = new Guid("f970ff64-c24d-4956-ba52-879cdd77b338"),
+                            OrderValue = (short)0
+                        });
                 });
 
             modelBuilder.Entity("KabadaAPIdao.User", b =>

@@ -1,0 +1,9 @@
+﻿{"Id":"5965442c-11e8-4ca9-976e-013b953c6d4f","MasterId":"59be036b-0d99-48eb-b5de-80d26f6a528a","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"e8e1867e-2b03-4172-97d4-3b31470b9047"}
+{"Id":"5d9f1742-63ad-4067-84ac-342c8409cac8","MasterId":"51a6ed12-649a-4301-9777-8dd61732ee0a","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"}
+{"Id":"6ca18f91-a049-428f-bb44-477f2baddc4e","MasterId":"7fb314db-0888-4577-8923-0e028154aa4f","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"}
+{"Id":"e017d357-1459-4754-a441-63289867dde6","MasterId":"c179de73-c634-4cbd-897c-56fd2c83852b","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"}
+{"Id":"d14010a4-4a97-46fb-907e-7566a4441b7d","MasterId":"ab1cb6b8-b2a5-430f-a1e5-6e08a3877e1d","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"e8e1867e-2b03-4172-97d4-3b31470b9047"}
+{"Id":"fec12588-dae8-4993-89a6-83ff1335fe7e","MasterId":"69291733-0241-4258-b8d4-3d2c571c6692","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"}
+{"Id":"8f85dfcf-e2fb-4b66-9c1b-bd78b43d8724","MasterId":"0bf31a39-521f-442c-8f08-b68ce31b2cbb","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"}
+{"Id":"e1f7d2d0-b87a-49ce-9fe5-d91b16c74c40","MasterId":"c7459be7-61ee-4076-8141-e83038421200","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"}
+{"Id":"b9bbe532-0166-4f4f-b4a5-e3eeef38e6f2","MasterId":"f970ff64-c24d-4956-ba52-879cdd77b338","Kind":20,"AttrVal":"","OrderValue":0,"CategoryId":"6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"}
