@@ -145,6 +145,11 @@ namespace KabadaAPI {
       return r;
       }
 
+    public static decimal Ydec(string txt){
+      var r=decimal.Parse(txt, CultureInfo.InvariantCulture);
+      return r;
+      }
+
     protected float? yOfloat(string key) {
       var w = yOstring(key);
       if (w==null)
@@ -214,6 +219,21 @@ namespace KabadaAPI {
       if(t==null)
         return null;
       return (int)t.Value;
+      }
+
+    protected decimal? yOdec(string key) {
+      var w = yOstring(key);
+      if (w==null)
+        return null;
+      var r=Ydec(w);
+      return r;
+      }
+
+    protected decimal yMdec(string key) {
+      var w = yOdec(key);
+      if (w==null)
+        throw new Exception(string.Format("Missing mandatory '"+key+"'"));
+      return w.Value;
       }
     }
   }

@@ -57,5 +57,9 @@ namespace KabadaAPI {
       daContext.SaveChanges();
       return deli.Count;
       }
+
+    internal List<UniversalAttribute> byKind(short kind) {
+      return q0.Where(x=>x.Kind==kind).ToList();
+      }
     }
   }
