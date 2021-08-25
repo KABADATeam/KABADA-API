@@ -8,8 +8,8 @@ namespace KabadaAPI {
       var r=new IndustryRiskElementBL();
       r.category=yMstring("Risk Category");
       r.type=yMstring("Risk Type");
-      r.likelihood=yObyte("Likelihood");
-      r.severity=yObyte("Severity");
+      r.likelihood=yMbyte("Likelihood");
+      r.severity=yMbyte("Severity");
       r.comments=yOstring("Comments");
       r.countryDeviationScore=yOint("Possible country-specific deviations (Score)");
       r.countryDeviationComment=yOstring("Possible country-specific deviations (Comment))");

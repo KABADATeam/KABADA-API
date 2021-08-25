@@ -10,7 +10,7 @@ namespace KabadaAPI {
                                     ,channel=12
             , consumerSegment=13, businessSegment=14, ngoSegment=15 // specific
                                     , relationshipActivity1=16, relationshipActivity2=17, relationshipActivity3=18
-                                           , activity=19
+                                           , keyActivity=19
                                            , industryRiskPointer_activity=20, industryRiskPointer_industry=21
 //range limit 50 in tables 
       }
@@ -37,7 +37,7 @@ namespace KabadaAPI {
             return r;
         }
 
-        internal List<Plan_Attribute> getRevenues(Guid planId)
+    internal List<Plan_Attribute> getRevenues(Guid planId)
         {
             var l = (short)PlanAttributeKind.revenueSegment1;
             var h = (short)PlanAttributeKind.revenueOther;
@@ -71,13 +71,15 @@ namespace KabadaAPI {
 
     public List<Plan_Attribute> getSwots(Guid plan){ return get(plan, PlanAttributeKind.swot); }
 
-    internal static void DeleteAttribute(BLontext context, Guid resource, PlanAttributeKind? kindRequired=null) {
+    internal static void DeleteAttribute(BLontext context, Guid resource, PlanAttributeKind? kindRequired=null, Action<Plan_Attribute, Plan_AttributeRepository> cascade=null) {
       using(var tr=new Transactioner(context)){
         var aRepo=new Plan_AttributeRepository(context, tr.Context);
         var o=aRepo.byId(resource); 
         if(kindRequired!=null && o.Kind!=(short)kindRequired.Value)
           throw new Exception("wrong attribute kind");
         var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
+        if(cascade!=null)
+          cascade(o, aRepo);
         aRepo.Delete(o);
         tr.Commit();
         }
@@ -123,6 +125,32 @@ namespace KabadaAPI {
 
     protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
       return loadDataRow<KabadaAPIdao.Plan_Attribute, Guid>(daContext.Plan_Attributes, json, overwrite, oldDeleted, generateInits);
+      }
+
+    internal static void DeleteProduct(BLontext context, Guid resource, bool cascade=false) {
+      DeleteAttribute(context, resource, PlanAttributeKind.product, cascade?ProductCascadeDeleteHard:ProductCascadeDeleteCautious);
+      }
+
+
+    private static void ProductCascadeDeleteCautious(Plan_Attribute me, Plan_AttributeRepository repo) { // the context contains started transaction
+      ProductCascadeDelete(me, repo, false);
+      }
+
+    private static void ProductCascadeDeleteHard(Plan_Attribute me, Plan_AttributeRepository repo) { // the context contains started transaction
+      ProductCascadeDelete(me, repo, true);
+      }
+
+    private static void ProductCascadeDelete(Plan_Attribute me, Plan_AttributeRepository repo, bool hard) { // the context contains started transaction
+      var uRepo=new UniversalAttributeRepository(repo.blContext, repo.daContext);
+      var kas=uRepo.byMasters(new List<Guid?>(){ me.Id }).Where(x=>x.Kind==(short)PlanAttributeKind.keyActivity).ToList();
+      if(kas.Count>0){
+        if(hard){
+         } else breaK();
+        }
+      }
+
+    private static void breaK() {
+      throw new Exception("Dependants present");
       }
     }
   }

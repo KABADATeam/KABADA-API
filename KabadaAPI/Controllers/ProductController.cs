@@ -36,7 +36,17 @@ namespace KabadaAPI.Controllers {
     [Authorize]
     [Route("{resource}")]
     public IActionResult DeleteMe(Guid resource) { return prun<Guid>(_DeleteMe, resource); }
-    private IActionResult _DeleteMe(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.product); return Ok("deleted");}
+    private IActionResult _DeleteMe(Guid resource) {
+      Plan_AttributeRepository.DeleteProduct(context, resource); return Ok("deleted");
+      }
+
+    [HttpDelete]
+    [Authorize]
+    [Route("cascade/{resource}")]
+    public IActionResult DeleteMeC(Guid resource) { return prun<Guid>(_DeleteMeC, resource); }
+    private IActionResult _DeleteMeC(Guid resource) {
+      Plan_AttributeRepository.DeleteProduct(context, resource, true); return Ok("deleted");
+      }
 
     [Route("types")]
     [HttpGet]

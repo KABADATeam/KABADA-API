@@ -3,7 +3,7 @@ using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
   public class KeyActivityBL : BAseUniversalAttributeTypedBL<KeyActivityElementBL> { // UniversalAttributeBL<KeyActivityElementBL> {
-    public const short KIND=(short)PlanAttributeKind.activity;
+    public const short KIND=(short)PlanAttributeKind.keyActivity;
 
     public KeyActivityBL(Guid product) : base(KIND, product) {}
     public KeyActivityBL(KabadaAPIdao.UniversalAttribute old, bool forUpdate=false) : base(old, forUpdate, KIND){}
