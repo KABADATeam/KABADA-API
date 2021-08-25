@@ -144,10 +144,19 @@ namespace KabadaAPI {
       var ctx=repo.daContext;
       var uRepo=new UniversalAttributeRepository(repo.blContext, ctx);
       var kas=uRepo.byMasters(new List<Guid?>(){ me.Id }).Where(x=>x.Kind==(short)PlanAttributeKind.keyActivity).ToList();
-      if(kas.Count>0){
+      var chs = repo.getChannels(me.BusinessPlanId).Select(x=> new ChannelBL(x,true)).Where(x=>x.e.product_id.Contains(me.Id)).ToList();
+      
+      if(kas.Count>0||chs.Count>0){
         if(hard){
           foreach(var o in kas)
             ctx.UniversalAttributes.Remove(o);
+          foreach (var ch in chs)
+          {
+            ch.e.product_id.Remove(me.Id);               
+            ch.completeSet(ch.id, repo);
+            if (ch.e.product_id.Count == 0)
+                ctx.Plan_Attributes.Remove(repo.byId(ch.id));
+          }        
           ctx.SaveChanges();
          } else breaK();
         }
@@ -157,4 +166,5 @@ namespace KabadaAPI {
       throw new Exception("Dependants present");
       }
     }
+    
   }
