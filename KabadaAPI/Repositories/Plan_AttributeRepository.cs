@@ -141,10 +141,14 @@ namespace KabadaAPI {
       }
 
     private static void ProductCascadeDelete(Plan_Attribute me, Plan_AttributeRepository repo, bool hard) { // the context contains started transaction
-      var uRepo=new UniversalAttributeRepository(repo.blContext, repo.daContext);
+      var ctx=repo.daContext;
+      var uRepo=new UniversalAttributeRepository(repo.blContext, ctx);
       var kas=uRepo.byMasters(new List<Guid?>(){ me.Id }).Where(x=>x.Kind==(short)PlanAttributeKind.keyActivity).ToList();
       if(kas.Count>0){
         if(hard){
+          foreach(var o in kas)
+            ctx.UniversalAttributes.Remove(o);
+          ctx.SaveChanges();
          } else breaK();
         }
       }
