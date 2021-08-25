@@ -59,7 +59,7 @@ namespace Kabada {
       //var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, AttrVal=packVal, TexterId=channel_type_id, OrderValue=on};
       //o=new Plan_AttributeRepository(ctx).Create(o);
       //return o.Id;
-      var bo=new ChannelBL(){ businessPlanId=business_plan_id, texterId=channel_type_id };
+      var bo=new ChannelBL(business_plan_id, channel_type_id);
       assign(bo);
       new Plan_AttributeRepository(ctx).create(bo.unload());
       return bo.id;

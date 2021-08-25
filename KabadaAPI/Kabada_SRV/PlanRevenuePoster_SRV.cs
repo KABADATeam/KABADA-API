@@ -66,7 +66,7 @@ namespace Kabada {
       
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
       //var o=new Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=aKind, TexterId=stream_type_id, AttrVal=packVal, OrderValue=on};
-      var bo=new RevenueStreamBL(aKind);
+      var bo=new RevenueStreamBL(aKind, business_plan_id, stream_type_id);
       //bo.businessPlanId=business_plan_id;
       //bo.texterId=stream_type_id;
       assign(bo);

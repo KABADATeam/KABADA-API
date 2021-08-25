@@ -5,15 +5,16 @@ namespace KabadaAPI {
   public class BusinessSegmentBL : CustomerSegmentBL {
     private const short KIND=(short)PlanAttributeKind.businessSegment;
 
-    public BusinessSegmentBL() : base(KIND) {}
+    public BusinessSegmentBL(Guid plan) : base(KIND, plan) {}
     public BusinessSegmentBL(KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false) : base(KIND, old, forUpdate){}
-    public BusinessSegmentBL(Guid byId, Plan_SpecificAttributesRepository repo) : base(byId, repo, KIND) {}
+    public BusinessSegmentBL(Guid byId, Plan_SpecificAttributesRepository repo, bool forUpdate=false, Guid? planForValidate=null)
+                   : base(byId, repo, forUpdate, KIND, planForValidate) {}
 
-    public static BusinessSegmentBL Make(Guid? id, Plan_SpecificAttributesRepository repo){
+    public static BusinessSegmentBL Make(Guid? id, Plan_SpecificAttributesRepository repo, Guid plan){
       if(id==null)
-        return new BusinessSegmentBL();
+        return new BusinessSegmentBL(plan);
        else
-        return new BusinessSegmentBL(id.Value, repo);
+        return new BusinessSegmentBL(id.Value, repo, true, plan);
       }
     }
   }

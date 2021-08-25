@@ -3,9 +3,10 @@ using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
   public abstract class CustomerSegmentBL : BAsePlan_SpecificAttributeTypedBL<CustomerSegmentElementBL> { //Plan_SpecificAttributeBL<CustomerSegmentElementBL> {
-    public CustomerSegmentBL(short kind) : base(kind) {}
+    public CustomerSegmentBL(short kind, Guid plan) : base(kind, plan) {}
     public CustomerSegmentBL(short kindForTest, KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false) : base(old, forUpdate, kindForValidate: kindForTest){}
-    public CustomerSegmentBL(Guid byId, Plan_SpecificAttributesRepository repo, short? kindForValidate=null) : base(byId, repo, true, kindForValidate: kindForValidate) {}
+    public CustomerSegmentBL(Guid byId, Plan_SpecificAttributesRepository repo, bool forUpdate=false, short? kindForValidate=null, Guid? planForvalidate=null)
+        : base(byId, repo, forUpdate, kindForValidate: kindForValidate, planForValidate: planForvalidate) {}
 
     //public CustomerSegmentBL Make(KabadaAPIdao.Plan_SpecificAttribute old, bool forUpdate=false){
     //  var ek=(PlanAttributeKind)old.Kind;
@@ -17,11 +18,11 @@ namespace KabadaAPI {
     //    }
     //  }
 
-    public static CustomerSegmentBL Make(short ek, Guid? id, Plan_SpecificAttributesRepository repo){
+    public static CustomerSegmentBL Make(short ek, Guid? id, Plan_SpecificAttributesRepository repo, Guid plan){
       switch((PlanAttributeKind)ek){
-        case PlanAttributeKind.consumerSegment: return ConsumerSegmentBL.Make(id, repo);
-        case PlanAttributeKind.businessSegment: return BusinessSegmentBL.Make(id, repo);
-        case PlanAttributeKind.ngoSegment:      return NgoSegmentBL.Make(id, repo);
+        case PlanAttributeKind.consumerSegment: return ConsumerSegmentBL.Make(id, repo, plan);
+        case PlanAttributeKind.businessSegment: return BusinessSegmentBL.Make(id, repo, plan);
+        case PlanAttributeKind.ngoSegment:      return NgoSegmentBL.Make(id, repo, plan);
         default: throw new Exception($"Invalid kind='{ek.ToString()}'");
         }
       }

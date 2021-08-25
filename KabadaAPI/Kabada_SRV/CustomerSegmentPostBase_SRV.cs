@@ -53,7 +53,7 @@ namespace Kabada {
       var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
       using(var tr=new Transactioner(ctx)){
         var aRepo=new Plan_SpecificAttributesRepository(ctx, tr.Context);
-        var o=CustomerSegmentBL.Make(kind, id, aRepo);
+        var o=CustomerSegmentBL.Make(kind, id, aRepo, business_plan_id);
         assign(o);
         o.completeSet(id, aRepo);
         tr.Commit();
@@ -63,7 +63,7 @@ namespace Kabada {
 
 
     private void assign(CustomerSegmentBL bo){
-      bo.businessPlanId=business_plan_id;
+      //bo.businessPlanId=business_plan_id;
       bo.e.minorAttributes=new Dictionary<short, List<Guid>>();
       fill(bo.e);
       }

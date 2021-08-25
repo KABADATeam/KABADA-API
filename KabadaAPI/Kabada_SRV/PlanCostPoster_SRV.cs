@@ -51,7 +51,7 @@ namespace Kabada {
         throw new Exception("wrong cost_type");
 
       short on=new Plan_AttributeRepository(ctx).generateAtrrOrder(business_plan_id);
-      var bo=new CostBL(aKind){ businessPlanId=business_plan_id, orderValue=on };
+      var bo=new CostBL(aKind, business_plan_id, type_id){ orderValue=on };
       assign(bo);
       //var o=new KabadaAPIdao.Plan_Attribute(){ BusinessPlanId=business_plan_id, Kind=(short)aKind, TexterId=type_id, AttrVal=packVal, OrderValue=on};
       new Plan_AttributeRepository(ctx).create(bo.unload());

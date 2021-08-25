@@ -16,13 +16,8 @@ namespace KabadaAPI {
 
     public virtual Plan_Attribute unload(bool skipPack=false){ return unloadMe<Plan_Attribute>(skipPack); }
 
-   public BAsePlan_AttributeBL(short kind, Guid? plan=null, Guid? texter=null){
-      o=new Plan_Attribute(){ Id=Guid.NewGuid(), Kind=kind };
- 
-      if(plan!=null)
-        businessPlanId=plan.Value;
-      if(texter!=null)
-        texterId=texter.Value;
+   public BAsePlan_AttributeBL(short kind, Guid plan, Guid texter){
+      o=new Plan_Attribute(){ Id=Guid.NewGuid(), Kind=kind, BusinessPlanId=plan, TexterId=texter };
       }
 
     protected void validate(Guid? planForValidate, short? kindForValidate, List<short> kindsForValidate){
