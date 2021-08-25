@@ -13,7 +13,7 @@ namespace KabadaAPI {
       return loadDataRow<KabadaAPIdao.Job, Guid>(daContext.Jobs, json, overwrite, oldDeleted, generateInits);
       }
 
-    public enum JobKind { invitePlanMember=1, onfly_loadIRs=2 }
+    public enum JobKind { invitePlanMember=1, onfly_loadIRs=2, onfly_imports=3 }
 
     private DbSet<Job> q0 { get { return daContext.Jobs; }}
 
@@ -30,7 +30,7 @@ namespace KabadaAPI {
       var mid="JobRepository.runAll: ";
       LogInformation($"{mid}started at {DateTime.Now}.");
       var tasks=q0.OrderBy(x=>x.CreatedAt).ToList();
-      tasks.Add(new Job(){ Kind=(short)JobKind.onfly_loadIRs });
+      tasks.Add(new Job(){ Kind=(short)JobKind.onfly_imports });
       foreach(var t in tasks){
         try { runJob(t, mid); }
         catch (Exception exc) { MIX.EXC(LogError, exc, $"Job({pack(t)}) "); }
@@ -47,10 +47,13 @@ namespace KabadaAPI {
         }
       switch(t.Kind){
         case (short)JobKind.invitePlanMember: invitePlanMember(t, prefix); break;
-        case (short)JobKind.onfly_loadIRs: new IndustryRisksManager(blContext).processRegulars(); break;
+        //case (short)JobKind.onfly_loadIRs: new IndustryRisksManager(blContext).processRegulars(); break;
+        case (short)JobKind.onfly_imports: doImports(t, prefix); break;
         default: break; // unknown job kind
         }
       }
+
+    private void doImports(Job t, string prefix) { LoaderManager.Import(blContext); }
 
     private void invitePlanMember(Job t, string prefix="") {
       var u=new UsersRepository(blContext).byEmail(t.Lookup);

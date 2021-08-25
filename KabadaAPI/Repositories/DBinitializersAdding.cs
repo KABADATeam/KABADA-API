@@ -42,7 +42,7 @@ namespace KabadaAPI {
 
     private bool importLoader(DAcontext da=null){
       var t = new IndustryRisksManager(blContext, da);
-      t.processInits();
+      t.process(true); //.processInits();
       return true;
       }
 

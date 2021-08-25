@@ -2,124 +2,33 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using static KabadaAPI.Plan_AttributeRepository;
 using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
-  public class IndustryRisksManager : Blotter {
-    protected DAcontext daContext;
-    protected StreamWriter lgf;
-
+  public class IndustryRisksManager : LoaderManager {
     protected TexterRepository tRepo;
 
-    protected void logProtocol(string txt){
-      if(lgf!=null)
-        lgf.WriteLine(txt);
-      }
-
-    protected void log(string txt){
-      LogInformation(txt);
-      logProtocol(txt);
-      }
-
-    protected void err(string txt){
-      LogError(txt);
-      logProtocol(txt);
-      }
-
-    public IndustryRisksManager(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
-      if(dContext==null)
-        this.daContext = new DAcontext(_config, bCcontext.logger);
-       else
-        this.daContext=dContext;
+    public IndustryRisksManager(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {
+      filePattern="*_IR.csv";
       tRepo=new TexterRepository(blContext, daContext);
       }
 
     public IndustryRisksManager(IConfiguration configuration, ILogger<BackgroundJobber> logger, DAcontext dContext=null) : this(new BLontext(configuration, logger), dContext) {}
 
-    protected string getTheOldiest(string fullDirectoryPath, string pattern="*_IR.csv"){      
-      var f=new DirectoryInfo(fullDirectoryPath).GetFiles(pattern).OrderBy(f => f.LastWriteTime).FirstOrDefault();
-      if (f != null) return f.FullName; // return full path for the found
-      return null; // nothing found
-      }
-
-    protected string initDirectory { get {
-      var path = Directory.GetCurrentDirectory();
-      return Path.Combine(path, "ImportInit");
-      }}
-
-    protected string settingsDirectory { get {
-      var r=blContext.importDirectory;
-      if(string.IsNullOrWhiteSpace(r))
-        return null;
-      return r;
-      } }
-
-    protected void proccessCsvFiles(string fullDirectoryPath){
-      if(!Directory.Exists(fullDirectoryPath))
-        throw new Exception($"Import directory '{fullDirectoryPath}' does not exist.");
-      while(true){
-        var f=getTheOldiest(fullDirectoryPath);
-        if(f==null)
-          break;
-        processSingleFile(fullDirectoryPath, f);
-        }
-      }
-
-    public void processInits(){ proccessCsvFiles(initDirectory); }
-
-    public void processRegulars(){
-      var t=settingsDirectory;
-      if(t!=null)
-        proccessCsvFiles(t);
-      }
-
-    private bool isDelete;
-    private List<Guid?> myIndustries;
-    private List<Guid?> myActivities;
-    
-    private void processSingleFile(string fullDirectoryPath, string f) {
-      var start=DateTime.UtcNow;
-      var stmp=start.ToString("yyyy.MM.dd.HH.mm.ss");
-      var basic=Path.GetFileName(f);
-      var suba=Path.Combine(fullDirectoryPath, "Done");
-      var lgn=Path.Combine(suba, stmp+"_"+basic+".err");
-      var success=false;
-      using(lgf=new StreamWriter(lgn, false, System.Text.Encoding.UTF8)){
-        try {
-          log($"Processing started at {start} UTC.");
+    protected override void performSingleInternal(string f, string basic, DateTime start) {
           analyzeRequest(basic);
           if(isDelete)
             performDeletePointers();
            else 
             performLoadAndAddPointers(start, basic, f);
           deleteUnreferenced();
-          log($"Processing ended at {DateTime.UtcNow} UTC.");
-          success=true;
-          }
-        catch (Exception exc) {
-          err($" crashed: Message='{exc.Message}' StackTrace='{exc.StackTrace}'.");
-          var u=exc;
-          while(u.InnerException!=null){
-            u=u.InnerException;
-            err($" crashed(inner): Message='{u.Message}' StackTrace='{u.StackTrace}'.");
-            }
-          }
-        lgf.Close();
-        }
-      lgf=null;
-
-      // move the processed input file
-      var nn=Path.Combine(suba, stmp+"_"+basic);
-      File.Move(f, nn);
-
-      if(success){ // rename the log file to indicate success
-        var lgg=Path.Combine(suba, stmp+"_"+basic+".log");
-        File.Move(lgn, lgg);
-        }
       }
+
+    private bool isDelete;
+    private List<Guid?> myIndustries;
+    private List<Guid?> myActivities;
 
     private int deleteUnreferenced() {
       var usi=new UniversalAttributeRepository(blContext, daContext).usedIRs();
@@ -194,7 +103,7 @@ namespace KabadaAPI {
 
       var pat=fileName.ToUpper();
 
-      const string trailer="_IR.CSV";
+      string trailer=filePattern.Substring(1); //"_IR.CSV";
       var tl=trailer.Length;
       var fl=pat.Length;
       if(fl<1+tl || pat.Substring(fl-tl, tl)!=trailer)
