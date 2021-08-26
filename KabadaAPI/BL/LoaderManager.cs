@@ -128,6 +128,7 @@ namespace KabadaAPI {
     public static void Import(BLontext blContext, bool inits=false){
       new IndustryRisksManager(blContext).process(inits);
       new VatManager(blContext).process(inits);
+      new EssrManager(blContext).process(inits);
       }
     }
   }

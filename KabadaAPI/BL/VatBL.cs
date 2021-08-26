@@ -5,7 +5,7 @@ namespace KabadaAPI {
   public class VatBL : BAseUniversalAttributeTypedBL<VatElement> {
     public const short KIND=(short)PlanAttributeKind.vat;
 
-    public VatBL(Guid country) : base(KIND) { id=country; }
+    public VatBL(Guid country) : base(KIND, country) { }
     public VatBL(KabadaAPIdao.UniversalAttribute old, bool forUpdate=false) : base(old, forUpdate, KIND){}
 
     public VatBL(Guid byId, UniversalAttributeRepository repo) : base(byId, repo, true, KIND) {}

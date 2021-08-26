@@ -12,7 +12,7 @@ namespace KabadaAPI {
                                     , relationshipActivity1=16, relationshipActivity2=17, relationshipActivity3=18
                                            , keyActivity=19
                                            , industryRiskPointer_activity=20, industryRiskPointer_industry=21
-                                           , vat=22
+                                           , vat=22, essr=23
 //range limit 50 in tables 
       }
 
