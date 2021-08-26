@@ -41,8 +41,9 @@ namespace KabadaAPI {
       }
 
     private bool importLoader(DAcontext da=null){
-      var t = new IndustryRisksManager(blContext, da);
-      t.process(true); //.processInits();
+      //var t = new IndustryRisksManager(blContext, da);
+      //t.process(true); //.processInits();
+      LoaderManager.Import(blContext, true);
       return true;
       }
 
