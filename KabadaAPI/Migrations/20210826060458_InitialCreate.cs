@@ -377,7 +377,7 @@ namespace KabadaAPI.Migrations
             migrationBuilder.InsertData(
                 table: "DbSettings",
                 columns: new[] { "Id", "Value" },
-                values: new object[] { "initialDataSetLevel", "4" });
+                values: new object[] { "initialDataSetLevel", "5" });
 
             migrationBuilder.InsertData(
                 table: "Industries",
@@ -480,9 +480,9 @@ namespace KabadaAPI.Migrations
                     { new Guid("07d5452f-6ea6-4ae6-9395-89fd1d0eeab0"), (short)15, null, null, (short)13, "Uncertainty" },
                     { new Guid("457f681a-f052-408d-a7f6-8979f6c47063"), (short)3, null, null, (short)20, "Natural disasters" },
                     { new Guid("2483ee5b-da92-4400-aa64-88eb8a1ea152"), (short)26, null, new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)2, "Product feature dependent" },
-                    { new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)25, null, null, (short)1, "Fixed pricing" },
                     { new Guid("e77f9a30-6e69-432d-9c8e-88380ba63de2"), (short)23, null, new Guid("09b845a4-df9c-4f53-b833-1f69ae6d1835"), (short)1, "Other" },
                     { new Guid("4b0ba05e-88c6-4c54-a313-880e3aee9905"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)3, "Employees directly involved in production or service" },
+                    { new Guid("ae7c712d-f780-429f-aed6-87509c0bc43c"), (short)15, null, null, (short)7, "Improvement of existing characteristics" },
                     { new Guid("36c027b7-849b-4466-bafa-8e3441a53fb9"), (short)23, null, new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)3, "Gas" },
                     { new Guid("825d07dd-581b-4473-841c-9ec037746ae2"), (short)35, null, null, (short)7, "Transnational" },
                     { new Guid("d54aefa4-bd1c-4c73-b0f1-8e3c58eb29bc"), (short)23, null, new Guid("25532174-0c07-4293-99c2-10c954ad6367"), (short)6, "Communication" },
@@ -583,7 +583,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("0fe097a6-bd15-4272-885e-de82c1d08677"), (short)19, null, null, (short)1, "Basic" },
                     { new Guid("c06464ec-0248-4964-b09a-dd6fd7c6cc17"), (short)28, null, new Guid("3c81ac65-960e-44aa-b752-17808fa31c1f"), (short)2, "Market/Fairs" },
                     { new Guid("6dad8d59-0786-43e5-98a6-dd6d4fdc7688"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)1, "Own delivery" },
-                    { new Guid("ae7c712d-f780-429f-aed6-87509c0bc43c"), (short)15, null, null, (short)7, "Improvement of existing characteristics" },
+                    { new Guid("be31e251-6784-4472-a771-86c159b3f9fb"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)2, "Yield management" },
                     { new Guid("3f2faea5-f8f6-43b4-80f2-db55874a5c4b"), (short)14, null, null, (short)1, "Physical good" },
                     { new Guid("636b2c40-cfd3-4eb3-9003-dac709ff860b"), (short)3, null, null, (short)8, "Accessibility of human resources" },
                     { new Guid("3253125f-cc5c-4269-a6e2-d9e95f0d4c3a"), (short)23, null, new Guid("5a7a66cb-25f4-462b-b1f7-47b97735d7da"), (short)1, "Other" },
@@ -593,9 +593,9 @@ namespace KabadaAPI.Migrations
                     { new Guid("bc6e314f-5d86-40dc-a791-d63be99c22bd"), (short)34, null, null, (short)1, "Primary" },
                     { new Guid("f611bf2d-3089-4e53-b362-cf740f1f102a"), (short)3, null, null, (short)10, "Accessibility of financial resources" },
                     { new Guid("b30ffa71-9656-4f10-be64-cd92bad378c0"), (short)33, null, null, (short)1, "Low" },
-                    { new Guid("be31e251-6784-4472-a771-86c159b3f9fb"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)2, "Yield management" },
-                    { new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)2, "Licenses" },
-                    { new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)5, "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.", null, (short)3, "Human resources" }
+                    { new Guid("ab606dbd-08d6-49be-8bc6-844812d8b214"), (short)24, null, null, (short)6, "Brokerage fees" },
+                    { new Guid("266f43d7-8b45-4880-bd3c-88dcbd017fb4"), (short)25, null, null, (short)1, "Fixed pricing" },
+                    { new Guid("e04a476c-a409-472a-beb4-819b104d9731"), (short)3, null, null, (short)1, "Political stability" }
                 });
 
             migrationBuilder.InsertData(
@@ -616,7 +616,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)6, null, new Guid("b3ef13cf-c5f0-46d9-ba7b-79ab2147effb"), (short)5, "Other" },
                     { new Guid("31ca9e3a-ff44-41db-8833-2661abddb353"), (short)23, null, new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)3, "Other" },
                     { new Guid("6d62227c-94dc-4ad8-a89c-240fe74f26d6"), (short)24, null, null, (short)4, "Lending, renting, leasing" },
-                    { new Guid("4a427807-de66-429c-8ae0-2185f71d2543"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("3943c265-621b-4738-93c8-4470986c3af3"), (short)1, "Ownership type" },
+                    { new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)5, "Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.", null, (short)3, "Human resources" },
                     { new Guid("bf6b3a07-2578-4ab2-8ca8-21209388c38e"), (short)40, null, null, (short)4, "Other" },
                     { new Guid("75ccb567-91f3-4966-91f6-30565cb59ba0"), (short)3, null, null, (short)23, "Bargaining power of buyers" },
                     { new Guid("085df303-2e4d-4dd0-9e9f-204085352597"), (short)16, null, null, (short)6, "Fees come from another product" },
@@ -624,7 +624,7 @@ namespace KabadaAPI.Migrations
                     { new Guid("e8f6e9d6-0e37-4182-9c47-33c9d119ac73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)3, "To the email" },
                     { new Guid("f2424d76-d25a-430a-ab55-3c0480a1f56c"), (short)15, null, null, (short)25, "Extraordinariness" },
                     { new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)43, "{\"fileName\":\"P.85.41+P.85.42_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.784871Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Subject to extensive regulation (such as program accreditation etc.) and directly dependent on government funding/ grants. Massive funding cuts or interventio.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Income elasticity of demand is fairly low. Foreign exchange risk and other international factors might be important for some institutions with high proportions of international students.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demographic shifts are very important, as the industry targets a specific age group. Demand overall does not fluctuate much, whereas demand for specific disciplines can and does change over time (e.g., there has been a shift from the social sciences to STEM subjects).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Currently, a technology-driven shift in the mode of delivery of higher education is in progress. The extent to which institutions will be able to embrace this change will be critical to their future success.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":1,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"The industry is mature and fairly highly concentrated. In addition, reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"It is almost impossible to substitute away from the entire industry but shifts between subdisciplines are likely.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"comments\":\"Many inputs (such as lab equipment, software licences, and data/ journal subscriptions) are supplied by highly concentrated industries (possibly even monopolies). However, this type of expenditure forms a rather small percentage of a typical institution’s budget.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":1,\"severity\":1,\"comments\":\"The customers are individual students, who are numerous and do not wield market power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Higher education is very dependent on highly skilled and specialized labour.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"countryDeviationComment\":\"#N/A\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"countryDeviationComment\":\"#N/A\"}]}", null, (short)0, "" },
-                    { new Guid("ab606dbd-08d6-49be-8bc6-844812d8b214"), (short)24, null, null, (short)6, "Brokerage fees" },
+                    { new Guid("73fcb86d-53b1-4063-87b8-3aa42702c820"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)2, "Frequency" },
                     { new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)22, null, null, (short)8, "Distribution" },
                     { new Guid("70fad897-dcb6-4818-a9b1-39b2b08dd93c"), (short)3, null, null, (short)18, "Cybersecurity" },
                     { new Guid("a4b8b286-4fc6-4021-ab42-3952154ffeba"), (short)23, null, new Guid("7ac334c8-cafd-4f64-8414-00c61aa80cb7"), (short)1, "Other" },
@@ -684,15 +684,15 @@ namespace KabadaAPI.Migrations
                     { new Guid("2984418a-638e-4da9-be1d-12ba94d8ffaf"), (short)15, null, null, (short)5, "Based on old technology" },
                     { new Guid("aa2e4a07-25cf-454b-9505-118ee9077477"), (short)23, null, new Guid("4bf467d0-1c9d-469d-9dad-45b6bf4b7f47"), (short)1, "Other" },
                     { new Guid("e1d977e9-0c83-4f69-8bfe-3f2689b6cec2"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)3, "Real time market" },
-                    { new Guid("73fcb86d-53b1-4063-87b8-3aa42702c820"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)2, "Frequency" },
+                    { new Guid("4a427807-de66-429c-8ae0-2185f71d2543"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("3943c265-621b-4738-93c8-4470986c3af3"), (short)1, "Ownership type" },
                     { new Guid("bdf69fe7-c3e3-44e1-a984-41041ea08e96"), (short)15, null, null, (short)4, "Continuous" },
-                    { new Guid("c267cba0-ef66-48d5-96bd-74d4efd1b52b"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)3, "Fees to distributors" },
                     { new Guid("8f4213e4-50ce-42f9-aee1-73e2d6efeaff"), (short)8, "[{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("fc87ba60-6c43-4420-bdb0-eacc00ffbca5"), (short)1, "Ownership type" },
                     { new Guid("e31f5678-6604-47a6-ac67-724b8d0d54e8"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)1, "Transport" },
+                    { new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)2, "Licenses" },
                     { new Guid("1947e5da-01ea-4d22-8e37-72264d47d9b8"), (short)13, null, null, (short)1, "Government institutions" },
                     { new Guid("316e0636-3ce5-4ba0-b72f-7223698fb8fb"), (short)3, null, null, (short)9, "Accessibility of tangible resources" },
                     { new Guid("2f2f8c7f-ac0c-4115-a3b8-714e0d6529d9"), (short)1, "a", null, (short)6, "Corporate image" },
-                    { new Guid("7146d46e-a7b5-429b-85ee-74f24e9b8894"), (short)19, null, null, (short)2, "Medium" },
+                    { new Guid("c267cba0-ef66-48d5-96bd-74d4efd1b52b"), (short)23, null, new Guid("e50d6201-cd2e-46bb-b9b0-3a723ab72a79"), (short)3, "Fees to distributors" },
                     { new Guid("69646d5e-0e73-4056-9dac-70ff0d0a9ebe"), (short)23, null, new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)2, "Other" }
                 });
 
@@ -704,16 +704,15 @@ namespace KabadaAPI.Migrations
                     { new Guid("f4056ba5-de88-45b6-92a9-6f9707e4f494"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3066446c-5e9b-4321-bdf6-a47f367f61c5"), (short)2, "Frequency" },
                     { new Guid("c7b32094-6538-4e72-ad49-6ea1fda21562"), (short)22, null, null, (short)4, "Salaries" },
                     { new Guid("37634235-3b04-4aad-a647-6d79a2c88655"), (short)36, null, null, (short)2, "Medium" },
-                    { new Guid("ef193985-9b48-495e-a40c-3f53f2b0b30a"), (short)32, null, null, (short)1, "Under 12" },
+                    { new Guid("b2706a04-d62f-4103-ae40-6b5868029c73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Courier service" },
                     { new Guid("4718bb8b-3018-4408-9ff1-68ab9c4f2b87"), (short)34, null, null, (short)3, "Higher education" },
                     { new Guid("5a78cb95-3eb4-432a-a0cc-68886ae692da"), (short)3, null, null, (short)24, "Potential/future competition" },
                     { new Guid("e221190c-00bc-404f-a540-708d0e673454"), (short)23, null, new Guid("df741ccc-d2ef-4797-8c96-8b5be0344f88"), (short)1, "Other" },
+                    { new Guid("7146d46e-a7b5-429b-85ee-74f24e9b8894"), (short)19, null, null, (short)2, "Medium" },
                     { new Guid("bbc364e1-2394-48c7-8aaf-774ba76942b6"), (short)36, null, null, (short)3, "Large" },
                     { new Guid("4a3658fb-71ac-4feb-9104-7761fdd5cc9b"), (short)22, null, null, (short)9, "Other" },
-                    { new Guid("67cdf9e6-acc0-404a-a189-78325e83f547"), (short)16, null, null, (short)3, "Paid plans" },
-                    { new Guid("e04a476c-a409-472a-beb4-819b104d9731"), (short)3, null, null, (short)1, "Political stability" },
                     { new Guid("acb3829b-c7e2-45eb-810d-80cd3d4f5f39"), (short)1, "a", null, (short)12, "Supporting processes" },
-                    { new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)21, null, null, (short)4, "Outsourcing of services" },
+                    { new Guid("ef193985-9b48-495e-a40c-3f53f2b0b30a"), (short)32, null, null, (short)1, "Under 12" },
                     { new Guid("96f638ad-c41f-492f-982a-7f4018bcb3a6"), (short)15, null, null, (short)6, "Dominant design unchanged" },
                     { new Guid("d89128ed-072e-4f22-aea3-7f058c855888"), (short)1, "a", null, (short)16, "Complementary and after-sales service" },
                     { new Guid("a3a74886-85d0-4861-baa3-7d09bea0e583"), (short)38, null, null, (short)3, "Muncipality" },
@@ -726,13 +725,14 @@ namespace KabadaAPI.Migrations
                     { new Guid("dd32e3d1-de98-436a-be89-79206cf5204b"), (short)35, null, null, (short)2, "Domestic Urban" },
                     { new Guid("7ace64a6-77c6-44de-a675-78ff13ca0859"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)2, "Delivery to home" },
                     { new Guid("08a43d2e-87da-433b-9656-787878f8c04d"), (short)42, null, new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"), (short)0, "Continous training" },
+                    { new Guid("67cdf9e6-acc0-404a-a189-78325e83f547"), (short)16, null, null, (short)3, "Paid plans" },
                     { new Guid("f71ce8b4-dbd8-4280-a216-66677e115f74"), (short)3, null, null, (short)13, "Infrastructure" },
                     { new Guid("ee238326-5d11-4531-92b0-6565f42ae874"), (short)31, null, new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"), (short)3, "Courier service" },
-                    { new Guid("b2706a04-d62f-4103-ae40-6b5868029c73"), (short)31, null, new Guid("65c4d434-7f22-44ce-b9a3-c9681ff199a8"), (short)2, "Courier service" },
+                    { new Guid("507b8ec3-8687-4c2c-a6e2-80833c1da93e"), (short)21, null, null, (short)4, "Outsourcing of services" },
                     { new Guid("9454b766-1241-44ca-ae12-63e101fbae55"), (short)38, null, null, (short)2, "National Government" },
                     { new Guid("a5a126b8-fb9a-413c-a5fa-53870b90df77"), (short)24, null, null, (short)1, "Asset sale" },
                     { new Guid("17063605-ce9b-4e92-9d41-52ea1cee6632"), (short)1, "a", null, (short)8, "Trademarks" },
-                    { new Guid("e1371329-8c9e-4ab3-95fe-654e7f64dfc4"), (short)23, null, new Guid("f61f60ab-7991-4dac-b40e-c742dcef878b"), (short)1, "Other" },
+                    { new Guid("925f1189-56f9-4cc3-ae1e-50ddbab2a29d"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)4, "Auctions" },
                     { new Guid("22d688a4-1dae-42c2-98af-4e076de1ca73"), (short)32, null, null, (short)4, "25 - 34" },
                     { new Guid("a9677a24-bc3c-40aa-8265-4be52545113b"), (short)39, null, null, (short)2, "female" },
                     { new Guid("b0cb1000-5a92-47a0-a45b-499c5f580524"), (short)27, null, null, (short)4, "Agents" },
@@ -750,28 +750,28 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "Kind", "LongValue", "MasterId", "OrderValue", "Value" },
                 values: new object[,]
                 {
-                    { new Guid("88fa173b-e9a8-44a7-be1a-43fab1989a02"), (short)11, null, null, (short)5, "Agents" },
                     { new Guid("ab3c7d47-062b-437e-a164-4172444e276f"), (short)8, "[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]", new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"), (short)1, "Ownership type" },
+                    { new Guid("e1371329-8c9e-4ab3-95fe-654e7f64dfc4"), (short)23, null, new Guid("f61f60ab-7991-4dac-b40e-c742dcef878b"), (short)1, "Other" },
                     { new Guid("54afad44-3157-4521-90df-543d4686355a"), (short)23, null, new Guid("67dc4bec-4276-44df-a573-e95b64864a7e"), (short)1, "Other" },
                     { new Guid("7851aaea-93c4-48e8-8817-563ef55cf61a"), (short)38, null, null, (short)1, "International Organisations" },
-                    { new Guid("925f1189-56f9-4cc3-ae1e-50ddbab2a29d"), (short)26, null, new Guid("363f16df-3f11-4643-9c93-cd64242c0bf5"), (short)4, "Auctions" },
+                    { new Guid("88fa173b-e9a8-44a7-be1a-43fab1989a02"), (short)11, null, null, (short)5, "Agents" },
                     { new Guid("3a0ffc1e-bede-4f74-9cff-5735a0b600f9"), (short)37, null, null, (short)1, "Goods" },
-                    { new Guid("df75df99-8916-4eba-8ef1-636c8cc2478b"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)1, "Ownership type" },
+                    { new Guid("5d465e51-2608-4a01-af4f-566fcc5e7519"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)2, "Frequency" },
                     { new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"), (short)41, null, null, (short)0, "Problem solving" },
                     { new Guid("651a1fcd-0ad6-4311-9bb0-61cb8b210146"), (short)1, "a", null, (short)15, "Packaging and labeling" },
-                    { new Guid("5d465e51-2608-4a01-af4f-566fcc5e7519"), (short)8, "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]", new Guid("3c36a2c7-4cd3-43b1-98f5-270c8c98edd7"), (short)2, "Frequency" },
+                    { new Guid("62d8c572-b4b2-45e7-be6d-607de423b903"), (short)3, null, null, (short)5, "Inflation" },
                     { new Guid("c5acf766-38a0-4cf2-8649-6074f10a6b9f"), (short)23, null, new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"), (short)2, "Inventory buildings" },
                     { new Guid("95f441a5-2f4e-4c6e-93e7-5e18cbe26749"), (short)16, null, null, (short)7, "Other" },
                     { new Guid("f9862c29-9a20-4cbe-8fa2-5e1660f6b8da"), (short)15, null, null, (short)10, "Discontinuous" },
-                    { new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"), (short)15, null, null, (short)23, "Safety" },
-                    { new Guid("62d8c572-b4b2-45e7-be6d-607de423b903"), (short)3, null, null, (short)5, "Inflation" },
+                    { new Guid("df75df99-8916-4eba-8ef1-636c8cc2478b"), (short)8, "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]", new Guid("ca5124ab-0c2f-4224-88b1-f579a01d2522"), (short)1, "Ownership type" },
+                    { new Guid("1b776dfa-533e-4511-8185-5c576db8dcec"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)3, "Transport" },
                     { new Guid("75bcee28-686d-47e6-82b2-5c2a32168377"), (short)16, null, null, (short)1, "Non time limited usage" },
                     { new Guid("0ff6b626-a1ff-4184-b1bb-5bf2992091bd"), (short)15, null, null, (short)2, "Product or service already exists in the market" },
                     { new Guid("8f79391b-d687-4515-9292-5b4958ef0589"), (short)15, null, null, (short)21, "Durability" },
                     { new Guid("e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a"), (short)6, null, new Guid("63cee727-8378-4603-8b0b-839751dfeed1"), (short)1, "Specialists & Know-how" },
                     { new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"), (short)6, null, new Guid("d938dd78-01a5-4d06-9757-149402db6e7d"), (short)3, "Software" },
                     { new Guid("cc3cddf7-c4fa-4679-8feb-58935864f5b2"), (short)11, null, null, (short)4, "Wholesalers" },
-                    { new Guid("1b776dfa-533e-4511-8185-5c576db8dcec"), (short)23, null, new Guid("e4c57d7e-a1c6-462a-8f83-35aa7e989ddb"), (short)3, "Transport" }
+                    { new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"), (short)15, null, null, (short)23, "Safety" }
                 });
 
             migrationBuilder.InsertData(
@@ -779,15 +779,88 @@ namespace KabadaAPI.Migrations
                 columns: new[] { "Id", "AttrVal", "CategoryId", "Kind", "MasterId", "OrderValue" },
                 values: new object[,]
                 {
-                    { new Guid("b9bbe532-0166-4f4f-b4a5-e3eeef38e6f2"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("f970ff64-c24d-4956-ba52-879cdd77b338"), (short)0 },
+                    { new Guid("3b8bc3bc-a985-4f17-947e-b7b8a288177e"), "{\"StandardRate\":18.0,\"ReducedRates1\":5.0,\"ReducedRates2\":7.0}", null, (short)22, new Guid("34656372-3fe8-40b4-b1a2-a8f3e7aadd71"), (short)0 },
+                    { new Guid("a1cdab28-c834-4fe2-bff7-b473e57e512d"), "{\"StandardRate\":21.0,\"ReducedRates1\":9.0}", null, (short)22, new Guid("a0c1dd5e-8ae6-439a-9ac9-7638c8b72020"), (short)0 },
+                    { new Guid("f0162a9b-1ec6-4684-bdca-b3851e3cc2d1"), "{\"StandardRate\":23.0,\"ReducedRates1\":9.0,\"ReducedRates2\":13.5,\"SuperReducedRate\":4.8}", null, (short)22, new Guid("c66c593a-d743-4473-8202-955ac09d78cf"), (short)0 },
+                    { new Guid("38583af7-5711-473f-bfb0-afe44d396262"), "{\"2011\":13.07,\"2012\":13.07,\"2013\":13.07,\"2014\":13.07,\"2015\":13.07,\"2016\":13.07,\"2017\":13.07,\"2018\":13.07,\"2019\":13.07,\"2020\":13.07,\"2021\":13.07}", null, (short)23, new Guid("faf79adb-0ee3-4831-b3b9-45840415ac0d"), (short)0 },
+                    { new Guid("d0ed5b9a-ee1f-42ab-aa66-9ff4b3f3c601"), "{\"StandardRate\":23.0,\"ReducedRates1\":6.0,\"ReducedRates2\":13.0}", null, (short)22, new Guid("f80c19a8-cfbb-4a11-9fcf-b2bb6bb76209"), (short)0 },
+                    { new Guid("bcad0f59-75e1-44c3-a678-9f6e5d3b73c4"), "{\"StandardRate\":25.0,\"ReducedRates1\":5.0,\"ReducedRates2\":13.0}", null, (short)22, new Guid("e876704f-b93c-4a46-ac45-19a45935aa34"), (short)0 },
+                    { new Guid("baef488d-7c42-4226-877c-98df2bc3e77e"), "{\"2011\":13.4,\"2012\":13.4,\"2013\":13.4,\"2014\":13.4,\"2015\":13.4,\"2016\":13.4,\"2017\":13.4,\"2018\":13.4,\"2019\":13.4,\"2020\":13.4,\"2021\":13.4}", null, (short)23, new Guid("8d52d2a1-8459-488d-8315-4a7d2fd28204"), (short)0 },
+                    { new Guid("a7b02402-5491-46a0-97db-9e6897dd3f6e"), "{\"StandardRate\":21.0,\"ReducedRates1\":10.0,\"SuperReducedRate\":4.0}", null, (short)22, new Guid("0440025f-72d4-40df-bd15-f235d391bcb7"), (short)0 },
+                    { new Guid("2da25812-fb93-4efc-af36-93d191898b5f"), "{\"StandardRate\":25.0}", null, (short)22, new Guid("4cb2912a-653a-44fb-b7a7-bfc336e96452"), (short)0 },
+                    { new Guid("4b88ff9d-63ad-4c4b-b3bf-915102d906e6"), "{\"StandardRate\":20.0,\"ReducedRates1\":10.0,\"ReducedRates2\":13.0}", null, (short)22, new Guid("b166b440-11d7-4766-8926-45cc6f97430f"), (short)0 },
+                    { new Guid("d64434a4-c1e6-4aea-8c78-910db4238afb"), "{\"StandardRate\":20.0,\"ReducedRates1\":5.5,\"ReducedRates2\":10.0,\"SuperReducedRate\":2.1}", null, (short)22, new Guid("9ddbfacc-ef15-4bff-a4e3-8d57e90ca5c2"), (short)0 },
+                    { new Guid("718564a0-17b5-475f-811b-ba20c9bddf22"), "{\"2011\":15.0,\"2012\":15.0,\"2013\":15.0,\"2014\":15.0,\"2015\":15.0,\"2016\":15.0,\"2017\":15.0,\"2018\":15.0,\"2019\":15.0,\"2020\":15.0,\"2021\":15.0}", null, (short)23, new Guid("d480bd70-e883-4001-ba2b-10c941f2832f"), (short)0 },
+                    { new Guid("5b50e2fb-bb37-4b41-8683-86a1bdda57d2"), "{\"2011\":17.9,\"2012\":17.9,\"2013\":19.9,\"2014\":19.9,\"2015\":19.9,\"2016\":19.9,\"2017\":19.9,\"2018\":19.9,\"2019\":19.9,\"2020\":19.9,\"2021\":19.9}", null, (short)23, new Guid("4cf29c73-9558-4ee6-9fe2-973e01a71365"), (short)0 },
+                    { new Guid("320140f7-a2ff-4cc3-9814-9eea2e791a3c"), "{\"StandardRate\":19.0,\"ReducedRates1\":7.0}", null, (short)22, new Guid("3ba00e48-567d-4ab2-8d69-b2513029450f"), (short)0 },
+                    { new Guid("4551666e-d234-4bbe-bbc7-8e475275e54c"), "{\"StandardRate\":20.0,\"ReducedRates1\":9.0}", null, (short)22, new Guid("42da7d0f-bc1e-4738-981d-a347f02e149b"), (short)0 },
                     { new Guid("e1f7d2d0-b87a-49ce-9fe5-d91b16c74c40"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("c7459be7-61ee-4076-8141-e83038421200"), (short)0 },
                     { new Guid("8f85dfcf-e2fb-4b66-9c1b-bd78b43d8724"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("0bf31a39-521f-442c-8f08-b68ce31b2cbb"), (short)0 },
+                    { new Guid("47e18c6e-7756-4777-b505-fe81c8fed5b3"), "{\"2011\":13.71,\"2012\":13.71,\"2013\":13.71,\"2014\":13.71,\"2015\":13.71,\"2016\":13.71,\"2017\":3.7,\"2018\":13.71,\"2019\":13.71,\"2020\":13.71,\"2021\":13.71}", null, (short)23, new Guid("e90a042c-5236-49ad-989f-481f007f32aa"), (short)0 },
                     { new Guid("fec12588-dae8-4993-89a6-83ff1335fe7e"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("69291733-0241-4258-b8d4-3d2c571c6692"), (short)0 },
-                    { new Guid("5d9f1742-63ad-4067-84ac-342c8409cac8"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("51a6ed12-649a-4301-9777-8dd61732ee0a"), (short)0 },
-                    { new Guid("e017d357-1459-4754-a441-63289867dde6"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("c179de73-c634-4cbd-897c-56fd2c83852b"), (short)0 },
-                    { new Guid("6ca18f91-a049-428f-bb44-477f2baddc4e"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("7fb314db-0888-4577-8923-0e028154aa4f"), (short)0 },
+                    { new Guid("dd8a1999-00ed-41c7-8c64-fe20f29365d5"), "{\"2011\":31.0,\"2012\":31.0,\"2013\":31.0,\"2014\":31.0,\"2015\":31.0,\"2016\":31.0,\"2017\":31.0,\"2018\":31.0,\"2019\":31.0,\"2020\":31.0,\"2021\":31.0}", null, (short)23, new Guid("cece3c3c-ff40-428a-b6e0-fd4895e727e9"), (short)0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UniversalAttributes",
+                columns: new[] { "Id", "AttrVal", "CategoryId", "Kind", "MasterId", "OrderValue" },
+                values: new object[,]
+                {
+                    { new Guid("9d851203-7533-438c-bc6a-f8c6135f8385"), "{\"2011\":6.35,\"2012\":6.35,\"2013\":6.35,\"2014\":6.35,\"2015\":6.35,\"2016\":6.35,\"2017\":6.35,\"2018\":6.35,\"2019\":6.35,\"2020\":6.35,\"2021\":6.35}", null, (short)23, new Guid("0440025f-72d4-40df-bd15-f235d391bcb7"), (short)0 },
+                    { new Guid("d726c4c2-fdc2-4c2f-b3d9-f380ca2c4b94"), "{\"2015\":18.0,\"2016\":22.4,\"2017\":23.0,\"2018\":23.0,\"2019\":23.0,\"2020\":23.0,\"2021\":23.0}", null, (short)23, new Guid("9ddbfacc-ef15-4bff-a4e3-8d57e90ca5c2"), (short)0 },
+                    { new Guid("b9bbe532-0166-4f4f-b4a5-e3eeef38e6f2"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("f970ff64-c24d-4956-ba52-879cdd77b338"), (short)0 },
+                    { new Guid("fb4a6570-fc9d-4da7-9e8c-e2c910f0def2"), "{\"StandardRate\":19.0,\"ReducedRates1\":5.0,\"ReducedRates2\":9.0}", null, (short)22, new Guid("2f5f58b0-9187-4880-989a-d1c0df55eadf"), (short)0 },
+                    { new Guid("c8f18e91-c81d-4fe8-bb32-dd631a63fa38"), "{\"2011\":2.8,\"2012\":2.8,\"2013\":2.8,\"2014\":2.0,\"2015\":16.0,\"2016\":1.6,\"2017\":1.6,\"2018\":3.6,\"2019\":3.6,\"2020\":3.6,\"2021\":3.6}", null, (short)23, new Guid("42da7d0f-bc1e-4738-981d-a347f02e149b"), (short)0 },
+                    { new Guid("6834eab6-656e-44b8-9aa5-dc73675686db"), "{\"StandardRate\":22.0,\"ReducedRates1\":5.0,\"ReducedRates2\":10.0,\"SuperReducedRate\":4.0}", null, (short)22, new Guid("df4d5d75-8c3b-45b3-8ac0-17c7b5d0b0f9"), (short)0 },
+                    { new Guid("62f5264e-0341-44c4-b6a7-dc1e86cf494e"), "{\"2011\":11.0,\"2012\":11.0,\"2013\":11.0,\"2014\":11.0,\"2015\":11.0,\"2016\":11.0,\"2017\":11.0,\"2018\":11.0,\"2019\":11.0,\"2020\":11.0,\"2021\":11.0}", null, (short)23, new Guid("aff0b384-b033-4d50-a2a5-f88459196587"), (short)0 },
+                    { new Guid("342df3d9-b513-407b-8162-d8ee0db88cd5"), "{\"StandardRate\":20.0,\"ReducedRates1\":10.0}", null, (short)22, new Guid("8d52d2a1-8459-488d-8315-4a7d2fd28204"), (short)0 },
+                    { new Guid("83fd2607-b7c7-4e31-9905-d764a4b8a5f5"), "{\"2011\":7.8,\"2012\":7.8,\"2013\":7.8,\"2014\":8.2,\"2015\":8.2,\"2016\":8.2,\"2017\":8.2,\"2018\":8.2,\"2019\":8.2,\"2020\":8.2,\"2021\":8.2}", null, (short)23, new Guid("152b4a85-1cd8-4d6d-8943-e4fe8b54d650"), (short)0 },
+                    { new Guid("4afd8c10-958c-418b-a6d1-c6451efb949d"), "{\"StandardRate\":21.0,\"ReducedRates1\":10.0,\"ReducedRates2\":15.0}", null, (short)22, new Guid("aff0b384-b033-4d50-a2a5-f88459196587"), (short)0 },
+                    { new Guid("270f549b-eaf5-4f3e-a25c-c20cf17102d2"), "{\"2011\":17.0,\"2012\":17.5,\"2013\":18.5,\"2014\":18.5,\"2015\":18.5,\"2016\":18.5,\"2017\":18.5,\"2018\":18.5,\"2019\":18.5,\"2020\":18.5,\"2021\":18.5}", null, (short)23, new Guid("0d3a5193-d049-4578-a280-e90bde5f344a"), (short)0 },
+                    { new Guid("f26c2770-159d-413f-b43d-bfbbf1e13ea8"), "{\"2011\":4.0,\"2012\":4.0,\"2013\":4.0,\"2014\":4.0,\"2015\":4.0,\"2016\":4.0,\"2017\":4.0,\"2018\":4.0,\"2019\":4.0,\"2020\":4.0,\"2021\":4.0}", null, (short)23, new Guid("c66c593a-d743-4473-8202-955ac09d78cf"), (short)0 },
+                    { new Guid("ba4ffbfe-25d1-4f56-94a1-babbf5adda19"), "{\"2011\":6.8,\"2012\":6.8,\"2013\":6.8,\"2014\":7.8,\"2015\":7.8,\"2016\":7.8,\"2017\":7.8,\"2018\":7.8,\"2019\":8.3,\"2020\":8.3,\"2021\":8.3}", null, (short)23, new Guid("2f5f58b0-9187-4880-989a-d1c0df55eadf"), (short)0 },
+                    { new Guid("32da202a-1f14-492f-8904-8166a717a77f"), "{\"StandardRate\":24.0,\"ReducedRates1\":6.0,\"ReducedRates2\":13.0}", null, (short)22, new Guid("febb11c0-ac67-43c6-8eba-1b9e4fcbe318"), (short)0 },
+                    { new Guid("e26a33f8-3789-46e8-9033-438d5248989a"), "{\"StandardRate\":21.0,\"ReducedRates1\":6.0,\"ReducedRates2\":12.0}", null, (short)22, new Guid("faf79adb-0ee3-4831-b3b9-45840415ac0d"), (short)0 },
+                    { new Guid("caee18a3-ccfd-4375-a57d-6777f981ce0c"), "{\"2011\":7.3,\"2012\":7.31,\"2013\":7.79,\"2014\":7.79,\"2015\":8.45,\"2016\":8.95,\"2017\":9.33,\"2018\":9.78,\"2019\":9.79,\"2020\":11.76,\"2021\":10.89}", null, (short)23, new Guid("67ed2cd2-1f1c-4dcc-b79c-f4484a33ce75"), (short)0 },
                     { new Guid("5965442c-11e8-4ca9-976e-013b953c6d4f"), "", new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)20, new Guid("59be036b-0d99-48eb-b5de-80d26f6a528a"), (short)0 },
-                    { new Guid("d14010a4-4a97-46fb-907e-7566a4441b7d"), "", new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)20, new Guid("ab1cb6b8-b2a5-430f-a1e5-6e08a3877e1d"), (short)0 }
+                    { new Guid("55835b7c-06b3-450a-9873-019a87cda8fb"), "{\"2012\":31.15,\"2013\":31.15,\"2014\":31.15,\"2015\":28.15,\"2016\":28.15,\"2017\":27.65,\"2018\":27.65,\"2019\":27.65,\"2020\":27.65,\"2021\":27.65}", null, (short)23, new Guid("a0c1dd5e-8ae6-439a-9ac9-7638c8b72020"), (short)0 },
+                    { new Guid("dc05361f-005f-4ca5-9d5c-03ae62c6d56c"), "{\"2017\":0.0,\"2018\":0.0,\"2019\":0.0,\"2020\":0.0,\"2021\":0.0}", null, (short)23, new Guid("4cb2912a-653a-44fb-b7a7-bfc336e96452"), (short)0 },
+                    { new Guid("61c8e0be-ef59-4816-8612-080041d66177"), "{\"StandardRate\":24.0,\"ReducedRates1\":10.0,\"ReducedRates2\":14.0}", null, (short)22, new Guid("67ed2cd2-1f1c-4dcc-b79c-f4484a33ce75"), (short)0 },
+                    { new Guid("d5947d57-0ed2-4050-abd5-0b306048031e"), "{\"2011\":12.1,\"2012\":12.9,\"2013\":12.9,\"2014\":12.9,\"2015\":12.9,\"2016\":12.9,\"2017\":13.34,\"2018\":13.78,\"2019\":13.78,\"2020\":13.78,\"2021\":13.78}", null, (short)23, new Guid("563ddee5-e623-497f-a156-dd017c9cdab8"), (short)0 },
+                    { new Guid("cca5358d-0d38-445e-b8d5-0ced9a7faef5"), "{\"2011\":20.0,\"2012\":20.0,\"2013\":20.0,\"2014\":20.0,\"2015\":20.0,\"2016\":20.0,\"2017\":20.0,\"2018\":20.0,\"2019\":20.0,\"2020\":20.0,\"2021\":20.0}", null, (short)23, new Guid("e876704f-b93c-4a46-ac45-19a45935aa34"), (short)0 },
+                    { new Guid("e5a3c287-1ba2-4ea9-99af-0fe2bedf3dcf"), "{\"StandardRate\":17.0,\"ReducedRates1\":8.0,\"SuperReducedRate\":3.0}", null, (short)22, new Guid("9adfa62a-dc9c-4eef-9117-c524d25bed02"), (short)0 },
+                    { new Guid("5c4a967d-dc30-46a4-9551-10358ce80a3d"), "{\"2011\":7.0,\"2012\":7.0,\"2013\":7.0,\"2014\":7.0,\"2015\":7.0,\"2016\":7.0,\"2017\":7.0,\"2018\":7.0,\"2019\":7.0,\"2020\":7.0,\"2021\":7.0}", null, (short)23, new Guid("e518c516-6118-4b09-b58f-e856299682d4"), (short)0 },
+                    { new Guid("6c821792-9df5-4ee3-8e11-15d8f138bac0"), "{\"2011\":18.07,\"2012\":18.07,\"2013\":18.07,\"2014\":18.07,\"2015\":18.07,\"2016\":18.12,\"2017\":18.12,\"2018\":18.12,\"2019\":18.12,\"2020\":18.12,\"2021\":18.12}", null, (short)23, new Guid("b166b440-11d7-4766-8926-45cc6f97430f"), (short)0 },
+                    { new Guid("c51eac0c-2e4c-46c0-bfb2-236b83c61a4f"), "{\"StandardRate\":21.0,\"ReducedRates1\":5.0,\"ReducedRates2\":12.0}", null, (short)22, new Guid("e25fc6c5-ff87-45f6-91fe-e704644c2c72"), (short)0 },
+                    { new Guid("000e44f0-b0eb-4371-a2b8-329e283b2423"), "{\"2011\":9.0,\"2012\":9.0,\"2013\":9.0,\"2014\":10.0,\"2015\":10.0,\"2016\":11.0,\"2017\":11.0,\"2018\":9.0,\"2019\":19.5,\"2020\":19.5,\"2021\":19.5}", null, (short)23, new Guid("4fc44f33-6d0c-4b14-a3d6-086b8887439c"), (short)0 },
+                    { new Guid("5d9f1742-63ad-4067-84ac-342c8409cac8"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("51a6ed12-649a-4301-9777-8dd61732ee0a"), (short)0 },
+                    { new Guid("a87b8bad-0c8a-46f8-80af-3b1fad7a8571"), "{\"StandardRate\":27.0,\"ReducedRates1\":5.0,\"ReducedRates2\":18.0}", null, (short)22, new Guid("0d3a5193-d049-4578-a280-e90bde5f344a"), (short)0 },
+                    { new Guid("4b3c5bc5-1d17-4f88-ae00-3bd5a2895f4b"), "{\"2011\":20.48,\"2012\":20.88,\"2013\":20.82,\"2014\":20.82,\"2015\":20.48,\"2016\":20.68,\"2017\":20.78,\"2018\":20.63,\"2019\":20.08,\"2020\":20.13,\"2021\":20.23}", null, (short)23, new Guid("3ba00e48-567d-4ab2-8d69-b2513029450f"), (short)0 },
+                    { new Guid("d14010a4-4a97-46fb-907e-7566a4441b7d"), "", new Guid("e8e1867e-2b03-4172-97d4-3b31470b9047"), (short)20, new Guid("ab1cb6b8-b2a5-430f-a1e5-6e08a3877e1d"), (short)0 },
+                    { new Guid("01c4effd-ba75-4991-baf7-3e816eacea10"), "{\"2011\":16.5,\"2012\":16.5,\"2013\":16.5,\"2014\":16.5,\"2015\":16.5,\"2016\":16.5,\"2017\":16.5,\"2018\":35.0,\"2019\":35.0,\"2020\":35.0,\"2021\":35.0}", null, (short)23, new Guid("520e1ff1-ba39-4dec-82f5-56e2868c2822"), (short)0 },
+                    { new Guid("91727efa-fe30-44bb-bdb7-45b2fac80477"), "{\"StandardRate\":21.0,\"ReducedRates1\":5.0,\"ReducedRates2\":9.0}", null, (short)22, new Guid("4fc44f33-6d0c-4b14-a3d6-086b8887439c"), (short)0 },
+                    { new Guid("e017d357-1459-4754-a441-63289867dde6"), "", new Guid("429e19c8-a13e-4aff-9bf0-0cb4fd08bd5e"), (short)20, new Guid("c179de73-c634-4cbd-897c-56fd2c83852b"), (short)0 },
+                    { new Guid("89f44b1d-174b-411f-8348-61b52ab89f7e"), "{\"2011\":10.0,\"2012\":10.0,\"2013\":10.0,\"2014\":10.0,\"2015\":10.0,\"2016\":10.0,\"2017\":10.0,\"2018\":10.0,\"2019\":10.0,\"2020\":10.0,\"2021\":10.0}", null, (short)23, new Guid("34656372-3fe8-40b4-b1a2-a8f3e7aadd71"), (short)0 },
+                    { new Guid("f8c7f425-b68c-430f-b08e-6001c8fa83c1"), "{\"2011\":11.0,\"2012\":11.0,\"2013\":11.0,\"2014\":11.0,\"2015\":11.0,\"2016\":11.0,\"2017\":11.0,\"2018\":11.0,\"2019\":11.0,\"2020\":11.0,\"2021\":11.0}", null, (short)23, new Guid("f80c19a8-cfbb-4a11-9fcf-b2bb6bb76209"), (short)0 },
+                    { new Guid("a1bd9023-fc6a-49c0-b545-5f1c17940766"), "{\"2011\":9.0,\"2012\":11.0,\"2013\":11.0,\"2014\":11.0,\"2015\":10.5,\"2016\":10.5,\"2017\":10.5,\"2018\":11.0,\"2019\":11.0,\"2020\":11.0,\"2021\":10.5}", null, (short)23, new Guid("e25fc6c5-ff87-45f6-91fe-e704644c2c72"), (short)0 },
+                    { new Guid("b7264342-f6b0-442c-a4d0-5eaa68f25890"), "{\"StandardRate\":25.0,\"ReducedRates1\":6.0,\"ReducedRates2\":12.0}", null, (short)22, new Guid("e518c516-6118-4b09-b58f-e856299682d4"), (short)0 },
+                    { new Guid("26dffd39-f3e3-42d7-97bb-5e7b6d8ef31b"), "{\"2016\":0.0,\"2017\":0.0,\"2018\":0.0,\"2019\":0.0,\"2020\":0.0,\"2021\":0.0}", null, (short)23, new Guid("e77e44cb-424b-4e9e-af3a-d18d80af7af9"), (short)0 },
+                    { new Guid("ebc846ce-cd72-4b94-ad72-4208c32bdf8a"), "{\"StandardRate\":19.0,\"ReducedRates1\":5.0,\"ReducedRates2\":9.0}", null, (short)22, new Guid("520e1ff1-ba39-4dec-82f5-56e2868c2822"), (short)0 },
+                    { new Guid("0a32a7a4-0427-43e7-b5b1-5c11796cf1c0"), "{\"2012\":10.49,\"2013\":10.49,\"2014\":10.49,\"2015\":10.49,\"2016\":10.49,\"2017\":10.49,\"2018\":9.49,\"2019\":9.49,\"2020\":9.49,\"2021\":9.49}", null, (short)23, new Guid("df4d5d75-8c3b-45b3-8ac0-17c7b5d0b0f9"), (short)0 },
+                    { new Guid("3667c896-ca65-4b6f-85be-5356600d46b3"), "{\"2011\":22.1,\"2012\":22.1,\"2013\":22.1,\"2014\":22.1,\"2015\":22.1,\"2016\":22.1,\"2017\":22.1,\"2018\":22.1,\"2019\":22.1,\"2020\":22.1,\"2021\":22.1}", null, (short)23, new Guid("050b9ee7-07ef-40c6-8f62-9a1e3b932074"), (short)0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UniversalAttributes",
+                columns: new[] { "Id", "AttrVal", "CategoryId", "Kind", "MasterId", "OrderValue" },
+                values: new object[,]
+                {
+                    { new Guid("26ba1cc8-b984-42f1-a66f-52555cdc3fc1"), "{\"StandardRate\":22.0,\"ReducedRates1\":5.0,\"ReducedRates2\":9.5}", null, (short)22, new Guid("050b9ee7-07ef-40c6-8f62-9a1e3b932074"), (short)0 },
+                    { new Guid("83cf571d-daac-4ad9-a6bf-4ef308151fce"), "{\"2011\":6.05,\"2012\":6.25,\"2013\":6.25,\"2014\":6.25,\"2015\":6.25,\"2016\":6.23,\"2017\":6.23,\"2018\":6.0,\"2019\":6.0,\"2020\":6.0,\"2021\":6.4}", null, (short)23, new Guid("31bf0dc8-84bc-4fb4-be98-adc820e704f0"), (short)0 },
+                    { new Guid("4b903ce5-28b7-4004-8df6-4b2042b6a4ec"), "{\"StandardRate\":23.0,\"ReducedRates1\":5.0,\"ReducedRates2\":8.0}", null, (short)22, new Guid("e90a042c-5236-49ad-989f-481f007f32aa"), (short)0 },
+                    { new Guid("6ca18f91-a049-428f-bb44-477f2baddc4e"), "", new Guid("6fcb3eb3-fdbe-471f-a17d-e1bc635b9ce5"), (short)20, new Guid("7fb314db-0888-4577-8923-0e028154aa4f"), (short)0 },
+                    { new Guid("0c51f3a0-b909-4910-acc4-46827f184984"), "{\"2011\":12.35,\"2012\":12.45,\"2013\":12.45,\"2014\":12.45,\"2015\":12.45,\"2016\":12.45,\"2017\":12.45,\"2018\":12.45,\"2019\":12.45,\"2020\":12.45,\"2021\":12.45}", null, (short)23, new Guid("9adfa62a-dc9c-4eef-9117-c524d25bed02"), (short)0 },
+                    { new Guid("3972136b-e5ec-4a7e-918d-55d9296d87d2"), "{\"StandardRate\":20.0,\"ReducedRates1\":9.0}", null, (short)22, new Guid("563ddee5-e623-497f-a156-dd017c9cdab8"), (short)0 }
                 });
 
             migrationBuilder.InsertData(
