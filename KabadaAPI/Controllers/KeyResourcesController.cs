@@ -46,5 +46,15 @@ namespace KabadaAPI.Controllers {
     [Route("{resource}")]
     public IActionResult Delete(Guid resource) { return prun<Guid>(_Delete, resource); }
     private IActionResult _Delete(Guid resource) { Plan_AttributeRepository.DeleteAttribute(context, resource, PlanAttributeKind.keyResource); return Ok("deleted");}
+
+    [HttpGet]
+    [Authorize]
+    [Route("investment/{BusinessPlan}")]
+    public ActionResult<StartupInvestments> Myinvestments(Guid BusinessPlan) { return Prun<Guid, StartupInvestments>( _Myinvestments, BusinessPlan); }
+    private ActionResult<StartupInvestments> _Myinvestments(Guid planId) {
+      var r=new StartupInvestments();
+      r.read(context, planId);
+      return r;
+      }
     }
   }
