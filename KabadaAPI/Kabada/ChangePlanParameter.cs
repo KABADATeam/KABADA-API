@@ -15,5 +15,6 @@ namespace Kabada {
     public bool is_customer_segments_completed { get; set; }
     public bool is_customer_relationship_completed { get; set; }
     public bool is_activities_completed { get; set; }
+    public bool is_business_investments_completed { get; set; }
     }
 }
