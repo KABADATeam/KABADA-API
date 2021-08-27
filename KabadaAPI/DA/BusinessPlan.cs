@@ -38,7 +38,9 @@ namespace KabadaAPIdao
         public bool IsCustomerSegmentsCompleted { get; set; }
         public bool IsCustomerRelationshipCompleted { get; set; }
         public bool IsActivitiesCompleted { get; set; }
+        public bool IsBusinessInvestmentsCompleted { get; set; }
+        public string AttrVal { get; set; }
 
-    public BusinessPlan clone(){ return (BusinessPlan)this.MemberwiseClone(); }
+        public BusinessPlan clone(){ return (BusinessPlan)this.MemberwiseClone(); }
     }
 }

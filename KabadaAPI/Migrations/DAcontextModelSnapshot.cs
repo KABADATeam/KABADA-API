@@ -7769,6 +7769,9 @@ namespace KabadaAPI.Migrations
                     b.Property<Guid?>("ActivityId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AttrVal")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Completed")
                         .HasColumnType("int");
 
@@ -7784,6 +7787,9 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActivitiesCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsBusinessInvestmentsCompleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsChannelsCompleted")

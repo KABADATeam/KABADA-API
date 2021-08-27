@@ -1,6 +1,6 @@
 cd "%~dp0"
 cd ..
-del "KabadaAPI\Migrations\*"
+del "KabadaAPI\Migrations\*" /Q
 
 dotnet build
 
