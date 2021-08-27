@@ -4,24 +4,48 @@ using static KabadaAPI.Plan_AttributeRepository;
 using System.Linq;
 using Kabada;
 using System;
+using Newtonsoft.Json;
 
 namespace KabadaAPI {
   public class BusinessPlanBL {
     private KabadaAPIdao.BusinessPlan _o;
-    public  KabadaAPIdao.BusinessPlan o { get { return _o; } set { _o=value.clone(); }}
+    public  KabadaAPIdao.BusinessPlan o { get { return _o; } set { _o=value; }}
+
+    private BusinessPlanElementBL _e;
+    public BusinessPlanElementBL e {
+      get {
+        if(_e==null){
+          if(_o.AttrVal==null)
+            _e=new BusinessPlanElementBL();
+           else
+            _e=JsonConvert.DeserializeObject<BusinessPlanElementBL>(_o.AttrVal);
+          }
+        return _e;
+        }
+      set { _e=value;}
+      }
+
+    public KabadaAPIdao.BusinessPlan unload(){
+      o.AttrVal=JsonConvert.SerializeObject(_e, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }); 
+      return o;
+      }
 
     public Dictionary<short, List<Plan_Attribute>> a;
     public Dictionary<short, List<Plan_SpecificAttribute>> s;
 
     public TexterRepository textSupport;
 
-    public BusinessPlanBL(KabadaAPIdao.BusinessPlan seed=null) {
+    public BusinessPlanBL(KabadaAPIdao.BusinessPlan seed=null, bool forUpdate=false) {
       if(seed==null)
         _o=new KabadaAPIdao.BusinessPlan();
-       else
-        o=seed;
-       a=new Dictionary<short, List<Plan_Attribute>>();
-       s=new Dictionary<short, List<Plan_SpecificAttribute>>();
+       else {
+        if(forUpdate)
+          o=seed;
+         else
+          o=seed.clone();
+        }
+      a=new Dictionary<short, List<Plan_Attribute>>();
+      s=new Dictionary<short, List<Plan_SpecificAttribute>>();
       }
 
     private int _n;
