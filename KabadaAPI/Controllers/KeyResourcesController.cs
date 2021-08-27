@@ -56,5 +56,14 @@ namespace KabadaAPI.Controllers {
       r.read(context, planId);
       return r;
       }
+
+    [HttpPost]
+    [Authorize]
+    [Route("investment/update")]
+    public IActionResult Updateinvestments(StartupInvestments_POST update) { return prun<StartupInvestments_POST>(_Updateinvestments, update); }
+    private IActionResult _Updateinvestments(StartupInvestments_POST update) {
+      update.perform(context);
+      return Ok();
+      }
     }
   }
