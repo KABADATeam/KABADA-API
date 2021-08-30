@@ -31,8 +31,18 @@ namespace Kabada {
         //var w=Newtonsoft.Json.JsonConvert.DeserializeObject<PlanResource>(a.AttrVal);
         o.description=bo.e.description;
         o.name=bo.e.name;
-        o.selections=bo.e.selections;
         o.type_id = bo.texterId;
+        if(bo.e.selections!=null){
+          o.selections=new List<ResourceSelection>();
+          foreach(var x in bo.e.selections){
+            var t=new ResourceSelection(){ title=x.title };
+            o.selections.Add(t);
+            if(x.options!=null && x.options.Count>0){
+              t.options=x.options.Select(y=>new ResourceOption { title=y }).ToList();
+              t.options[x.selected].selected=true;
+              }
+            }
+          }
         }
       }
     }

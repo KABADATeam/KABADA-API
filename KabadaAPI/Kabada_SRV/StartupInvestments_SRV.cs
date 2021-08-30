@@ -14,13 +14,22 @@ namespace Kabada {
            .Select(x=>new AssetElement { amount=x.e.amount, resource_id=x.id, vat=x.e.vat, resource_title=x.e.name, resource_status=slurp(x.e.selections)}).ToList();
       }
 
-    private string slurp(List<ResourceSelection> selections) {
+    private string slurp(List<ResourceSelectionBL> selections) {
       var plus=selections.Where(x=>x.title==KeyResourceBL.OwnershipType).FirstOrDefault();
       if(plus==null)
         return null;
-      var r=plus.options.Where(x=>x.selected).Select(x=>x.title).FirstOrDefault();
-      return r;
+      if(plus.options==null || plus.options.Count<1)
+        return null;
+      return plus.options[plus.selected];
       }
+
+    //private string slurp(List<ResourceSelection> selections) {
+    //  var plus=selections.Where(x=>x.title==KeyResourceBL.OwnershipType).FirstOrDefault();
+    //  if(plus==null)
+    //    return null;
+    //  var r=plus.options.Where(x=>x.selected).Select(x=>x.title).FirstOrDefault();
+    //  return r;
+    //  }
 
     internal void read(BLontext context, Guid planId) {
       ctx=context;

@@ -1,5 +1,6 @@
 ﻿using KabadaAPI;
 using System;
+using System.Linq;
 
 namespace Kabada {
   partial class PlanResourcePoster {
@@ -18,7 +19,23 @@ namespace Kabada {
       bo.e.type_id=type_id;
       bo.e.name=name;
       bo.e.description=description;
-      bo.e.selections=selections;
+      if(selections==null || selections.Count<1)
+        return;
+      var d=selections.ToDictionary(x=>x.title); // validate uniqueness of titles
+      bo.e.selections=new System.Collections.Generic.List<ResourceSelectionBL>();
+      foreach(var s in selections){
+        var t=new ResourceSelectionBL(){ title=s.title} ;
+        bo.e.selections.Add(t);
+        if(s.options!=null && s.options.Count>0){
+          t.options=s.options.Select(x=>x.title).ToList();
+          for(var i=s.options.Count; i>0; i--){
+            if(s.options[i-1].selected){
+              t.selected=(short)(i-1);
+              break;
+              }
+            }
+          }
+        }
       }
     }
   }
