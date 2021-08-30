@@ -11,7 +11,15 @@ namespace Kabada {
       if(source==null || source.Count<1)
         return null;
       return source
-           .Select(x=>new AssetElement { amount=x.e.amount, resource_id=x.id, vat=x.e.vat, resource_title=x.e.name/*, resource_status=x.e.ow*/}).ToList();
+           .Select(x=>new AssetElement { amount=x.e.amount, resource_id=x.id, vat=x.e.vat, resource_title=x.e.name, resource_status=slurp(x.e.selections)}).ToList();
+      }
+
+    private string slurp(List<ResourceSelection> selections) {
+      var plus=selections.Where(x=>x.title==KeyResourceBL.OwnershipType).FirstOrDefault();
+      if(plus==null)
+        return null;
+      var r=plus.options.Where(x=>x.selected).Select(x=>x.title).FirstOrDefault();
+      return r;
       }
 
     internal void read(BLontext context, Guid planId) {
