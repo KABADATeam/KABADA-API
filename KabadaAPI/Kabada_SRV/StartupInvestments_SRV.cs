@@ -32,8 +32,7 @@ namespace Kabada {
       if(atri.Count<1)
         return;
       var tRepo=new TexterRepository(ctx);
-      var HID=new Guid("63CEE727-8378-4603-8B0B-839751DFEED1");
-      var typi=tRepo.getKeyResourceTypes(HID).Where(x=>x.MasterId!=null).ToDictionary(x=>x.Id, x=>false);
+      var typi=tRepo.getKeyResourceTypes(KeyResourceBL.HID).Where(x=>x.MasterId!=null).ToDictionary(x=>x.Id, x=>false);
 
       var lh=new List<KeyResourceBL>();
       var lo=new List<KeyResourceBL>();

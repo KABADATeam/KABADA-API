@@ -4,6 +4,8 @@ using static KabadaAPI.Plan_AttributeRepository;
 namespace KabadaAPI {
   public class KeyResourceBL : BAsePlan_AttributeTypedBL<KeyResourceElementBL> { // Plan_AttributeBL<KeyResourceElementBL> {
     public const short KIND=(short)PlanAttributeKind.keyResource;
+    public const string HumanResourcesGuID="{63CEE727-8378-4603-8B0B-839751DFEED1}";
+    public static Guid HID=new Guid(HumanResourcesGuID);
 
     public KeyResourceBL(Guid businessPlan, Guid texter) : base(KIND, businessPlan, texter) {}
    //public KeyResourceBL(KabadaAPIdao.Plan_Attribute old, bool forUpdate=false) : base(KIND, old, forUpdate){}
