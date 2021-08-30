@@ -12,8 +12,8 @@ namespace Kabada {
         var t=p.e.startup;
         t.grace_period=grace_period;
         t.interest_rate=interest_rate;
-        t.loan_amount=loan_amount;
-        t.own_money=loan_amount;
+       // t.loan_amount=loan_amount;
+        t.own_money=own_money;
         t.payment_period=payment_period;
         t.period=period;
         t.total_investments=total_investments;

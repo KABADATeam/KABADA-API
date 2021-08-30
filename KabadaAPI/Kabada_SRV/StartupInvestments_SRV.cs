@@ -23,7 +23,7 @@ namespace Kabada {
       vat_payer=pl.e.startup.vat_payer;
       total_investments=pl.e.startup.total_investments;
       own_money=pl.e.startup.own_money;
-      loan_amount=pl.e.startup.loan_amount;
+      loan_amount=(pl.e.startup.own_money==null || pl.e.startup.total_investments==null)?null:(pl.e.startup.total_investments - pl.e.startup.own_money);
       payment_period=pl.e.startup.payment_period;
       interest_rate=pl.e.startup.interest_rate;
       grace_period=pl.e.startup.grace_period;
