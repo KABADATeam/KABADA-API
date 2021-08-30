@@ -25,6 +25,7 @@ namespace Kabada {
           if(w!=t.payment_period || w<6 || w>60)
             throw new Exception($"Invalid payment_period specified '{payment_period}'");
           }
+        p.unload();
         var kri=new Plan_AttributeRepository(context, ctx).getResources(business_plan_id).ToDictionary(x=>x.Id);
         fill(kri, physical_assets);
         fill(kri, working_capitals);
