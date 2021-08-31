@@ -7804,6 +7804,9 @@ namespace KabadaAPI.Migrations
                     b.Property<bool>("IsCustomerSegmentsCompleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsFixedVariableCompleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsPartnersCompleted")
                         .HasColumnType("bit");
 

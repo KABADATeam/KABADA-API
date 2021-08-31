@@ -215,5 +215,11 @@ namespace KabadaAPI
             businessPlan.IsBusinessInvestmentsCompleted = newValue;
             daContext.SaveChanges();
         }
+        internal void ChangeFixedVariableCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsFixedVariableCompleted = newValue;
+            daContext.SaveChanges();
+        }
     }
 }
