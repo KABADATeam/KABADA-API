@@ -95,4 +95,4 @@ Key activities 05;P;/api/plans/changeActivitiesCompleted;UserBusinessPlan;Change
 Slack  2021.08.13 12:54 PM;P;/api/plans/update;UserBusinessPlan;Update;
 Business start-up investments 01;G;api/kres/investment/{BusinessPlan};KeyResources;Myinvestments;
 Business start-up investments 02;P;api/kres/investment/update;KeyResources;Updateinvestments;
-Business start-up investments 03;P;;;;
+Business start-up investments 03;P;/api/plans/changeBusinessInvestmentsCompleted;UserBusinessPlan;ChangeBusinessInvestmentsCompleted;
