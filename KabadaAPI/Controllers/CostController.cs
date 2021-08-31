@@ -72,10 +72,10 @@ namespace KabadaAPI.Controllers
     [HttpGet]
     [Authorize]
     [Route("costsvf/{BusinessPlan}")]
-    public ActionResult<PlanCosts> MyVFCosts(Guid BusinessPlan) { return Prun<Guid, PlanCosts>(_MyVFCosts, BusinessPlan); }
-        private ActionResult<PlanCosts> _MyVFCosts(Guid planId)
+    public ActionResult<VFcosts> MyVFCosts(Guid BusinessPlan) { return Prun<Guid, VFcosts>(_MyVFCosts, BusinessPlan); }
+        private ActionResult<VFcosts> _MyVFCosts(Guid planId)
         {
-            var r = new PlanCosts();
+            var r = new VFcosts();
             r.read(context, planId);
             return r;
         }
@@ -83,9 +83,9 @@ namespace KabadaAPI.Controllers
     [HttpPost]
     [Authorize]
     [Route("costsvf/save")]
-    public ActionResult<Guid> SaveVF(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveVF, update); }
-    private ActionResult<Guid> _SaveVF(PlanCostPoster update){
-      Guid r = update.perform(context, PlanAttributeKind.fixedCost, EnumTexterKind.costType);
+    public ActionResult<Guid> SaveVF(PlanVFCostsPoster update) { return Prun<PlanVFCostsPoster, Guid>(_SaveVF, update); }
+    private ActionResult<Guid> _SaveVF(PlanVFCostsPoster update){
+      Guid r = update.perform(context);
       return r;
       }
     }
