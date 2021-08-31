@@ -68,5 +68,25 @@ namespace KabadaAPI.Controllers
             Guid r = update.perform(context, PlanAttributeKind.variableCost, EnumTexterKind.costType);
             return r;
         }
+
+    [HttpGet]
+    [Authorize]
+    [Route("costsvf/{BusinessPlan}")]
+    public ActionResult<PlanCosts> MyVFCosts(Guid BusinessPlan) { return Prun<Guid, PlanCosts>(_MyVFCosts, BusinessPlan); }
+        private ActionResult<PlanCosts> _MyVFCosts(Guid planId)
+        {
+            var r = new PlanCosts();
+            r.read(context, planId);
+            return r;
+        }
+
+    [HttpPost]
+    [Authorize]
+    [Route("costsvf/save")]
+    public ActionResult<Guid> SaveVF(PlanCostPoster update) { return Prun<PlanCostPoster, Guid>(_SaveVF, update); }
+    private ActionResult<Guid> _SaveVF(PlanCostPoster update){
+      Guid r = update.perform(context, PlanAttributeKind.fixedCost, EnumTexterKind.costType);
+      return r;
+      }
     }
 }
