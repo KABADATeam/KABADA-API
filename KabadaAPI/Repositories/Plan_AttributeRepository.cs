@@ -46,12 +46,13 @@ namespace KabadaAPI {
             return r;
         }
 
-        internal List<Plan_Attribute> getCosts(Guid planId) {
+    internal List<Plan_Attribute> getCosts(Guid planId) {
       var l=(short)PlanAttributeKind.fixedCost;   
       var h=(short)PlanAttributeKind.variableCost;
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==planId && x.Kind>=l && x.Kind<=h).OrderBy(x => x.Kind).ThenBy(x=>x.OrderValue).ToList();
       return r;
       }
+
     internal List<Plan_Attribute> getPartners(Guid planId) {
       var l=(short)PlanAttributeKind.keyDistributor;
       var h=(short)PlanAttributeKind.otherKeyPartner;
