@@ -83,10 +83,10 @@ namespace KabadaAPI.Controllers
     [HttpPost]
     [Authorize]
     [Route("costsvf/save")]
-    public ActionResult<Guid> SaveVF(PlanVFCostsPoster update) { return Prun<PlanVFCostsPoster, Guid>(_SaveVF, update); }
-    private ActionResult<Guid> _SaveVF(PlanVFCostsPoster update){
-      Guid r = update.perform(context);
-      return r;
+    public IActionResult SaveVF(PlanVFCostsPoster update) { return prun<PlanVFCostsPoster>(_SaveVF, update); }
+    private IActionResult _SaveVF(PlanVFCostsPoster update){
+      update.perform(context);
+      return Ok();
       }
     }
 }
