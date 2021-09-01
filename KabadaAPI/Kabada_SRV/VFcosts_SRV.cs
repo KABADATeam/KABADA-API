@@ -33,7 +33,7 @@ namespace Kabada {
         var l1=new CategorizedCosts(){ category_id=k.Id, category_title=k.Value, types=new List<TypedCost>()};
         r.Add(l1);
         foreach(var x in kapa[k]){
-          var l2=new TypedCost(){ id=x.Id, type_id=x.TexterId, type_title=typi[x.TexterId].Value };
+          var l2=new TypedCost(){ cost_item_id=x.Id, type_id=x.TexterId, type_title=typi[x.TexterId].Value };
           l1.types.Add(l2);
           var y=new CostBL(x);
           l2.vat=y.e.vat;

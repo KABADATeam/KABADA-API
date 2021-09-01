@@ -6,16 +6,13 @@ using System.Linq;
 namespace Kabada {
   partial class PlanVFCostsPoster {
     internal void perform(BLontext context) {
-      var tsks=new List<TypedCost>();
-      collect(tsks, @fixed);
-      collect(tsks, @variable);
-      if(tsks.Count<1)
+      if(cost_items==null || cost_items.Count<1)
         return;
       using(var tr=new Transactioner(context)){
         var ctx=tr.Context;
         var obi=new Plan_AttributeRepository(context, ctx).getCosts(business_plan_id).ToDictionary(x=>x.Id);
-        foreach(var x in tsks){
-          var bo=new CostBL(obi[x.id], true);
+        foreach(var x in cost_items){
+          var bo=new CostBL(obi[x.cost_item_id], true);
           bo.e.vat=x.vat;
           bo.e.price=x.price;
           bo.e.first_expenses=x.first_expenses;
