@@ -12,13 +12,22 @@ namespace KabadaAPI {
 
     protected override object[] getAll4snap() { return q0.ToArray(); }
 
-    internal UniversalAttribute byId(Guid id) {
-      return q0.Where(x=>x.Id==id).FirstOrDefault();
+    public IQueryable<UniversalAttribute> Q(short? kind=null, List<short> kinds=null, Guid? id=null, List<Guid?> masters=null){
+      var r=q0.AsQueryable();
+      if(id!=null)
+        r=r.Where(x=>x.Id==id.Value);
+      if(kind!=null)
+        r=r.Where(x=>x.Kind==kind.Value);
+      if(kinds!=null)
+        r=r.Where(x=>kinds.Contains(x.Kind));
+      if(masters!=null)
+        r=r.Where(x=>masters.Contains(x.MasterId));
+      return r;
       }
 
-    internal List<UniversalAttribute> byMasters(List<Guid?> masters) {
-      return q0.Where(x=>masters.Contains(x.MasterId)).ToList();
-      }
+    internal UniversalAttribute byId(Guid id) { return Q(id:id).FirstOrDefault(); }
+
+    internal List<UniversalAttribute> byMasters(List<Guid?> masters) { return Q(masters:masters).ToList(); }
 
     protected override string myTable => "UniversalAttributes";
 
@@ -58,8 +67,13 @@ namespace KabadaAPI {
       return deli.Count;
       }
 
-    internal List<UniversalAttribute> byKind(short kind) {
-      return q0.Where(x=>x.Kind==kind).ToList();
+    internal List<UniversalAttribute> byKind(short kind) { return Q(kind:kind).ToList(); }
+
+    internal IQueryable<KeyValuePair<Country, UniversalAttribute>> Qca(IQueryable<Country> qc, IQueryable<UniversalAttribute> qa){
+      var r= from c in qc
+             join a in qa on c.Id equals a.Id
+          select new KeyValuePair<Country, UniversalAttribute>(c, a);
+      return r;
       }
     }
   }
