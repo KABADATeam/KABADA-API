@@ -71,9 +71,14 @@ namespace KabadaAPI {
 
     internal IQueryable<KeyValuePair<Country, UniversalAttribute>> Qca(IQueryable<Country> qc, IQueryable<UniversalAttribute> qa){
       var r= from c in qc
-             join a in qa on c.Id equals a.Id
+             join a in qa on c.Id equals a.MasterId
           select new KeyValuePair<Country, UniversalAttribute>(c, a);
       return r;
+      }
+
+    internal IQueryable<KeyValuePair<Country, UniversalAttribute>> Qget(short? kind=null, string country=null){
+      var cR=new CountryRepository(blContext, daContext);
+      return Qca(cR.Q(country), Q(kind));
       }
     }
   }

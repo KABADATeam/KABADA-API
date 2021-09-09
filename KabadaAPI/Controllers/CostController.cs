@@ -6,6 +6,7 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using static KabadaAPI.Plan_AttributeRepository;
 using static KabadaAPI.TexterRepository;
+using System.Linq;
 
 namespace KabadaAPI.Controllers
 {
@@ -88,5 +89,14 @@ namespace KabadaAPI.Controllers
       update.perform(context);
       return Ok();
       }
+
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("vat/{Country}")]
+    public ActionResult<Vat> Vats(string Country) { return Prun<string, Vat>(_Vats, Country); }
+      private ActionResult<Vat> _Vats(string country) {
+        var r=new UniversalAttributeRepository(context).Qget( (short)PlanAttributeKind.vat, country).Select(x=>new VatBL(x.Value, false).e).First();
+        return r;
+        }
     }
 }
