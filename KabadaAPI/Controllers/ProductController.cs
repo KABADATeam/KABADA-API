@@ -114,7 +114,7 @@ namespace KabadaAPI.Controllers {
     public ActionResult<PlanSalesForecasts> MyForecasts(Guid BusinessPlan) { return Prun<Guid, PlanSalesForecasts>( _MyForecasts, BusinessPlan); }
     private ActionResult<PlanSalesForecasts> _MyForecasts(Guid planId) {
       var r=new PlanSalesForecasts();
-      //r.read(context, planId);
+      r.read(context, planId);
       return r;
       }
 
