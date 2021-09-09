@@ -108,5 +108,23 @@ namespace KabadaAPI.Controllers {
             return r;
         }
 
+    [HttpGet]
+    [Authorize]
+    [Route("salesforecasts/{BusinessPlan}")]
+    public ActionResult<PlanSalesForecasts> MyForecasts(Guid BusinessPlan) { return Prun<Guid, PlanSalesForecasts>( _MyForecasts, BusinessPlan); }
+    private ActionResult<PlanSalesForecasts> _MyForecasts(Guid planId) {
+      var r=new PlanSalesForecasts();
+      //r.read(context, planId);
+      return r;
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("salesforecasts/update")]
+    public IActionResult SFupdate(ProductsSalesForecastPOST update) { return prun<ProductsSalesForecastPOST>(_SFupdate, update); }
+    private IActionResult _SFupdate(ProductsSalesForecastPOST update) {
+      // update.perform(context);
+      return Ok();
+      }
     }
 }
