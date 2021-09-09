@@ -123,7 +123,7 @@ namespace KabadaAPI.Controllers {
     [Route("salesforecasts/update")]
     public IActionResult SFupdate(ProductsSalesForecastPOST update) { return prun<ProductsSalesForecastPOST>(_SFupdate, update); }
     private IActionResult _SFupdate(ProductsSalesForecastPOST update) {
-      // update.perform(context);
+      update.perform(context);
       return Ok();
       }
     }

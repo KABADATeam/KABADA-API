@@ -1,4 +1,5 @@
 ﻿using KabadaAPIdao;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,16 @@ namespace KabadaAPI {
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
+    protected DbSet<Plan_Attribute> q0 { get { return daContext.Plan_Attributes; }}
+
     internal IQueryable<Plan_Attribute> getQ(Guid plan, PlanAttributeKind such){
       var w=(short)such;
       var r=daContext.Plan_Attributes.Where(x=>x.BusinessPlanId==plan && x.Kind==w).OrderBy(x=>x.OrderValue);
       return r;
+      }
+
+    internal List<Plan_Attribute> byIds(List<Guid> ids){
+      return q0.Where(x=>ids.Contains(x.Id)).ToList();
       }
 
     internal List<Plan_Attribute> get(Guid plan, PlanAttributeKind such){
