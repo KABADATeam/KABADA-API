@@ -264,6 +264,16 @@ namespace KabadaAPI.Controllers {
             repo.ChangeFixedVariableCompleted(planUpdate.business_plan_id, planUpdate.is_fixed_variable_completed, uGuid);
             return Ok("Success");
         }
+        [Route("changeSalesForecastCompleted")]
+        [Authorize(Roles = Role.User)]
+        [HttpPost]
+        public IActionResult ChangeSalesForecastCompleted([FromBody] ChangePlanParameter planUpdate) { return prun<ChangePlanParameter>(_changeSalesForecastCompleted, planUpdate); }
+        private IActionResult _changeSalesForecastCompleted([FromBody] ChangePlanParameter planUpdate)
+        {
+            BusinessPlansRepository repo = new BusinessPlansRepository(context);
+            repo.ChangeSalesForecastCompleted(planUpdate.business_plan_id, planUpdate.is_sales_forecast_completed, uGuid);
+            return Ok("Success");
+        }
         [Route("update")]
     [Authorize(Roles = Role.User)]
     [HttpPost]

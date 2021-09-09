@@ -215,7 +215,8 @@ namespace KabadaAPI.Migrations
                     IsActivitiesCompleted = table.Column<bool>(type: "bit", nullable: false),
                     IsBusinessInvestmentsCompleted = table.Column<bool>(type: "bit", nullable: false),
                     AttrVal = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsFixedVariableCompleted = table.Column<bool>(type: "bit", nullable: false)
+                    IsFixedVariableCompleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsSalesForecastCompleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

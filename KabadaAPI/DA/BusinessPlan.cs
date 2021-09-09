@@ -41,7 +41,7 @@ namespace KabadaAPIdao
         public bool IsBusinessInvestmentsCompleted { get; set; }
         public string AttrVal { get; set; }
         public bool IsFixedVariableCompleted { get; set; }
-
+        public bool IsSalesForecastCompleted { get; set; }
         public BusinessPlan clone(){ return (BusinessPlan)this.MemberwiseClone(); }
     }
 }

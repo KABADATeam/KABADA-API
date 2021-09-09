@@ -7819,6 +7819,9 @@ namespace KabadaAPI.Migrations
                     b.Property<bool>("IsRevenueCompleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsSalesForecastCompleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsSwotCompleted")
                         .HasColumnType("bit");
 

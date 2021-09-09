@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210831131536_InitialCreate")]
+    [Migration("20210909063502_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -7819,6 +7819,9 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsRevenueCompleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSalesForecastCompleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsSwotCompleted")
