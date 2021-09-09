@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabada;
+using System;
 using System.Collections.Generic;
 
 namespace KabadaAPI {
@@ -12,5 +13,6 @@ namespace KabadaAPI {
         public Guid innovative_level;
         public Guid quality_level;
         public Guid differentiation_level;
+        public ProductSalesForecastElement salesForcast;
     }
   }
