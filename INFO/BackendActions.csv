@@ -102,4 +102,4 @@ Fixed and Variable Costs 03;P;/api/plans/changeFixedVariableCompleted;UserBusine
 ;G;/api/cost/vat/{Country};Cost;Vats;
 Sales forecast 01;G;/api/products/salesforecasts/{BusinessPlan};Product;MyForecasts;
 Sales forecast 02;P;/api/products/salesforecasts/update;Product;Sfupdate;
-Sales forecast 03;;;;;
+Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;ChangeSalesForecastCompleted;
