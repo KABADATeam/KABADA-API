@@ -166,10 +166,18 @@ namespace KabadaAPI {
       }}
 
     public string descriptionCost { get {// For cost structure - we also have names
-      var t=gAv<CostElementBL>(PlanAttributeKind.fixedCost).Select(x=>x.name).ToList();
-      t.AddRange(gAv<CostElementBL>(PlanAttributeKind.variableCost).Select(x=>x.name).ToList());
+      //var t=gAv<CostElementBL>(PlanAttributeKind.fixedCost).Select(x=>x.name).ToList();
+      //t.AddRange(gAv<CostElementBL>(PlanAttributeKind.variableCost).Select(x=>x.name).ToList());
+      var t=myCost_s.Select(x=>x.e.name).ToList();
       return string.Join(", ", t);
       }}
 
+    private List<ProductBL> myProduct_s { get { return gA(PlanAttributeKind.product).Select(x=>new ProductBL(x, false)).ToList(); }}
+
+    private List<CostBL> myFixedCost_s { get { return gA(PlanAttributeKind.fixedCost).Select(x=>new CostBL(x, false)).ToList(); }}
+    private List<CostBL> myVariableCost_s { get { return gA(PlanAttributeKind.variableCost).Select(x=>new CostBL(x, false)).ToList(); }}
+    private List<CostBL> myCost_s { get {var r=myFixedCost_s; r.AddRange(myVariableCost_s); return r; }}
+
+    
     }
   }
