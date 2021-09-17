@@ -13,6 +13,7 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Auth" Version="1.55.0" />
     <PackageReference Include="LumenWorks.Framework.IO" Version="3.8.0">
       <NoWarn>NU1701</NoWarn>
       </PackageReference> 

@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 using Kabada;
+using System.Threading.Tasks;
+using System;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -41,8 +43,10 @@ namespace KabadaAPI.Controllers {
         [AllowAnonymous]
         [HttpPost]
         [Route("google")]
-        public IActionResult GoogleLogin([FromBody] UserViewModel userView){ return prun<UserViewModel>(_GoogleLogin, userView); }
-        private IActionResult _GoogleLogin([FromBody] UserViewModel userView){
+        public async Task<IActionResult> GoogleLogin([FromBody] UserViewModel userView){ return await prun<UserViewModel>(_GoogleLogin, userView); }
+        private async Task<IActionResult> _GoogleLogin([FromBody] UserViewModel userView){
+          if(false==await isValidGoogleToken(userView.GoogleToken))
+            throw new Exception("wrong google authentication");
           var user = uRepo.AuthenticateGoogleUser(userView.Email);
           var tokenString = Token.Generate(user, _config);
           return Ok(new {
@@ -88,5 +92,14 @@ namespace KabadaAPI.Controllers {
            uRepo.ChangePassword(uGuid, userUpdate.password, userUpdate.newValue);
            return Ok("Success");
         }
+
+     private async Task<bool> isValidGoogleToken(string token){
+       if(!string.IsNullOrWhiteSpace(token)){
+         var validPayload = await Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(token);
+         if(validPayload!=null)
+           return true;
+         }
+       return false;
+       }
     }
 }

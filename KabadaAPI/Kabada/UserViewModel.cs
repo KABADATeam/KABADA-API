@@ -10,5 +10,6 @@ namespace Kabada {
         public bool TwoFactorAuthEnabled { get; set; } = false;
         public string PasswordResetString { get; set; }
         public string Role { get; set; }
+        public string GoogleToken { get; set; }
     }
 }
