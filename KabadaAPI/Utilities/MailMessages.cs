@@ -17,7 +17,7 @@ namespace KabadaAPI {
           break;
         case MessageKinds.memberInvitation:
           subject="Welcome";
-          h($"you are invited to join a KABADA project usong link {baseUrl}register?email={userEmail}.<br />");
+          h($"you are invited to join a KABADA project using link {baseUrl}register?email={userEmail}.<br />");
           break;
         case MessageKinds.mailchangeConfirmation:
           subject="Welcome";
