@@ -56,7 +56,7 @@ namespace KabadaAPI
         }
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {
-            var mp = daContext.BusinessPlans.Include(x =>x.User).Include(x => x.Country).Include(x => x.Language).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
+            var mp = daContext.BusinessPlans.Include(x =>x.User).Include(x => x.Country).Include(x => x.Language).Include(x=>x.Activity).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
             if (mp!=null) return mp; 
             var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
