@@ -178,6 +178,13 @@ namespace KabadaAPI {
     private List<CostBL> myVariableCost_s { get { return gA(PlanAttributeKind.variableCost).Select(x=>new CostBL(x, false)).ToList(); }}
     private List<CostBL> myCost_s { get {var r=myFixedCost_s; r.AddRange(myVariableCost_s); return r; }}
 
+    private List<CashFlowRow> initialRevenue { get {
+      var r=new List<CashFlowRow>();
+      r.Add(new CashFlowRow("Owner's contribution", (e.startup.loan_amount==null || e.startup.total_investments==null)?null:e.startup.total_investments-e.startup.loan_amount));
+      r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
+      r.Add(new CashFlowRow("Total initial revenue", e.startup.total_investments));
+      return r;
+      }}
     
     }
   }
