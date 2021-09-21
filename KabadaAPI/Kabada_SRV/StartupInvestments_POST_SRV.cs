@@ -12,11 +12,13 @@ namespace Kabada {
         var t=p.e.startup;
         t.grace_period=grace_period;
         t.interest_rate=interest_rate;
-       // t.loan_amount=loan_amount;
+        t.loan_amount=loan_amount;
         t.own_money=own_money;
         t.payment_period=payment_period;
         t.period=period;
         t.total_investments=total_investments;
+        t.investment_amount=investment_amount;
+        t.own_assets=own_assets;
         t.vat_payer=vat_payer;
         if(t.period!=null && t.period!=12 && t.period!=24)
           throw new Exception($"Invalid period specified '{period}'");
