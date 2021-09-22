@@ -244,6 +244,37 @@ namespace KabadaAPI {
       r.initialRevenue=initialRevenue;
       r.salesForecast=salesForecast;
       r.investments=investments;
+      r.variableCosts=costs(myVariableCost_s);
+      r.fixedCosts=costs(myFixedCost_s);
+      return r;
+      }
+
+    private CashFlowTable costs(List<CostBL> myCosts) {
+      if(myCosts.Count<1)
+        return null;
+      foreach(var o in myCosts)
+        o.fillMyCashFlow(e.startup.period); // basic cash flow
+      var us=myCosts.Where(x=>x.myCashFlow!=null).ToList();
+      if(us.Count<1)
+        return null;
+      var r=new CashFlowTable(){ rows=new List<CashFlowRow>() };
+      // summ by groups
+      var idi=us.Select(x=>x.texterId).Distinct().ToList();
+      var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
+      var midi=ti.Where(x=>x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x=>(Guid)x.Value).Distinct().ToList();
+      var mi=textSupport.get(midi).ToDictionary(x=>x.Id);
+      var gsi=us.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.ToList());
+      var n=this.e.startup.period.Value;
+      foreach(var o in mi){
+        var rw=new CashFlowRow(o.Value.Value, period:n);
+        r.rows.Add(rw);
+        var li=gsi[o.Key];
+        for(short m=1; m<=n; m++)
+          rw.monthlyValue[m]=CashFlowRow.Sum(gsi[o.Key].Select(x=>x.myCashFlow.monthlyValue[m]));
+        rw.totals();
+        }
+
+      // subtract investments
       return r;
       }
     }
