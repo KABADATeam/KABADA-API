@@ -41,5 +41,22 @@ namespace Kabada {
     public void y2Tot(){ totalYear2=Sum(year2); }
 
     public void totals(){ y1TotW0(); y2Tot(); }
+
+    public static decimal? Sum(decimal? me, decimal? addendum){
+      if(addendum==null)
+        return me;
+      if(me==null)
+        return addendum;
+      return me.Value+addendum.Value;
+      }
+
+    public static void Add(ref decimal? me, decimal? addendum){
+      if(addendum==null)
+        return;
+      if(me==null)
+        me=addendum;
+       else
+        me+=addendum.Value;
+      }
     }
   }

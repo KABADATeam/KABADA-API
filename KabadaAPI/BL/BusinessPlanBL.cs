@@ -185,16 +185,33 @@ namespace KabadaAPI {
       r.Add(new CashFlowRow("Owner's contribution", (e.startup.loan_amount==null || e.startup.total_investments==null)?null:e.startup.total_investments-e.startup.loan_amount));
       r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
       
-      br.summeries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", e.startup.total_investments)};
+      br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", e.startup.total_investments)};
       return br;
       }}
 
     public CashFlowTable salesForecast { get {
       var r=new CashFlowTable(){ rows=new List<CashFlowRow>() };
+      var vats=new CashFlowRow("VAT received - (PVN likmes), not calculated for export part outside EU", period: this.e.startup.period);
+      var n=(short)(vats.monthlyValue.Count-1);
       var pi=myProduct_s;
       foreach(var p in pi){
-        var rw=new CashFlowRow(p.e.title, period: this.e.startup.period);
+        var rw=new CashFlowRow(p.e.title, period: n);
+        r.rows.Add(rw);
+        for(var m=1; m<=n; m++){
+          var euS=p.euSale(m);
+          rw.monthlyValue[m]=CashFlowRow.Sum(euS, p.noneuSale(m));
+          if(euS!=null){
+            var pc=p.e.salesForcast.sales_forecast_eu.Where(x=>x.month==m).FirstOrDefault();
+            vats.monthlyValue[m]=CashFlowRow.Sum(vats.monthlyValue[m], pc.vat*euS/100);
+            }
+          }
+        rw.totals();
         }
+      r.summaries=new List<CashFlowRow>(){ r.summRow("TOTAL revenue from core business", r.rows), vats };
+      vats.totals();
+      var tr=r.summRow("TOTAL REVENUE", r.summaries);
+      tr.monthlyValue[0]=this.e.startup.total_investments;
+      r.summaries.Add(tr);
       return r;
       } }
 

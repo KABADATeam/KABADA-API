@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
 namespace Kabada {
-  public class CashFlowTable {
+  public partial class CashFlowTable {
     public List<CashFlowRow> rows;
-    public List<CashFlowRow> summeries;
+    public List<CashFlowRow> summaries;
     }
   }
