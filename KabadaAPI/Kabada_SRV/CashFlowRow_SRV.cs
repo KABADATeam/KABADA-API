@@ -25,20 +25,20 @@ namespace Kabada {
       }
 
 
-    public List<decimal?> year1W0 { get { return rangis(0, 12); }}
-    public List<decimal?> year1Strict { get { return rangis(1, 12); }}
-    public List<decimal?> year2 { get { return rangis(13, 25); }}
+    public List<decimal?> year1W0() { return rangis(0, 12); }
+    public List<decimal?> year1Strict() {  return rangis(1, 12); }
+    public List<decimal?> year2() { return rangis(13, 25); }
 
     private List<decimal?> rangis(int v1, int v2) {
       var n=monthlyValue.Count;
       if(v1>=n)
         return new List<decimal?>();
-      return monthlyValue.GetRange(v1, v2-v1+1);
+      return monthlyValue.GetRange(v1, v2-v1);
       }
 
-    public void y1TotW0(){ totalYear1=Sum(year1W0); }
-    public void y1TotWStrict(){ totalYear1=Sum(year1Strict); }
-    public void y2Tot(){ totalYear2=Sum(year2); }
+    public void y1TotW0(){ totalYear1=Sum(year1W0()); }
+    public void y1TotWStrict(){ totalYear1=Sum(year1Strict()); }
+    public void y2Tot(){ totalYear2=Sum(year2()); }
 
     public void totals(){ y1TotW0(); y2Tot(); }
 
