@@ -290,6 +290,7 @@ namespace KabadaAPI.Controllers {
     public ActionResult<CashFlow> Mycashflow(Guid BusinessPlan) { return Prun<Guid, CashFlow>(_Mycashflow, BusinessPlan); }
     private ActionResult<CashFlow> _Mycashflow(Guid planId) {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      p.textSupport=new TexterRepository(context);
       return p.myCashFlow();
       }
     }

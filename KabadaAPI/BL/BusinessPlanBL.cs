@@ -178,6 +178,8 @@ namespace KabadaAPI {
     private List<CostBL> myVariableCost_s { get { return gA(PlanAttributeKind.variableCost).Select(x=>new CostBL(x, false)).ToList(); }}
     private List<CostBL> myCost_s { get {var r=myFixedCost_s; r.AddRange(myVariableCost_s); return r; }}
 
+    private List<KeyResourceBL> myKeyResource_s { get { return gA(PlanAttributeKind.keyResource).Select(x=>new KeyResourceBL(x, false)).ToList(); }}
+
     private CashFlowTable initialRevenue { get {
       var br=new CashFlowTable();
       var r=new List<CashFlowRow>();
@@ -215,10 +217,33 @@ namespace KabadaAPI {
       return r;
       } }
 
+    public CashFlowTable investments { get {
+      var r=new CashFlowTable();
+      var rsi=myKeyResource_s;
+      var idi=rsi.Select(x=>x.texterId).Distinct().ToList();
+      var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
+      var midi=ti.Where(x=>x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x=>(Guid)x.Value).Distinct().ToList();
+      var mi=textSupport.get(midi).ToDictionary(x=>x.Id);
+      var gsi=myKeyResource_s.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.Where(x=>x.e.amount!=null).ToList());
+      var rws=new List<CashFlowRow>();
+      foreach(var o in mi){
+        var rw=new CashFlowRow(o.Value.Value);
+        rws.Add(rw);
+        var li=gsi[o.Key];
+        if(li.Count>0)
+          rw.monthlyValue[0]=li.Sum(x=>x.e.amount);
+        rw.totals();
+        }
+      if(rws.Count>0)
+        r.rows=rws;
+      return r;
+      } }
+
     public CashFlow myCashFlow(){
       var r=new CashFlow();
       r.initialRevenue=initialRevenue;
       r.salesForecast=salesForecast;
+      r.investments=investments;
       return r;
       }
     }
