@@ -27,13 +27,13 @@ namespace Kabada {
 
     public List<decimal?> year1W0() { return rangis(0, 12); }
     public List<decimal?> year1Strict() {  return rangis(1, 12); }
-    public List<decimal?> year2() { return rangis(13, 25); }
+    public List<decimal?> year2() { return rangis(13, 24); }
 
     private List<decimal?> rangis(int v1, int v2) {
       var n=monthlyValue.Count;
       if(v1>=n)
         return new List<decimal?>();
-      return monthlyValue.GetRange(v1, v2-v1);
+      return monthlyValue.GetRange(v1, v2-v1+1);
       }
 
     public void y1TotW0(){ totalYear1=Sum(year1W0()); }
