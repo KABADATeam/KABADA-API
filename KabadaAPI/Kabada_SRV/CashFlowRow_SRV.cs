@@ -30,10 +30,14 @@ namespace Kabada {
     public List<decimal?> year2() { return rangis(13, 24); }
 
     private List<decimal?> rangis(int v1, int v2) {
-      var n=monthlyValue.Count;
-      if(v1>=n)
-        return new List<decimal?>();
-      return monthlyValue.GetRange(v1, v2-v1+1);
+      var rn=new List<decimal?>();
+      if(monthlyValue==null || v1<0 || v2<v1)
+        return rn;
+      var n=monthlyValue.Count-1;
+      if(v1>n)
+        return rn;
+      var u=(v2<=n)?v2:n;
+      return monthlyValue.GetRange(v1, u-v1+1);
       }
 
     public void y1TotW0(){ totalYear1=Sum(year1W0()); }
