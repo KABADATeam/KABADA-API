@@ -188,6 +188,21 @@ namespace KabadaAPI {
       br.summeries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", e.startup.total_investments)};
       return br;
       }}
-    
+
+    public CashFlowTable salesForecast { get {
+      var r=new CashFlowTable(){ rows=new List<CashFlowRow>() };
+      var pi=myProduct_s;
+      foreach(var p in pi){
+        var rw=new CashFlowRow(p.e.title, period: this.e.startup.period);
+        }
+      return r;
+      } }
+
+    public CashFlow myCashFlow(){
+      var r=new CashFlow();
+      r.initialRevenue=initialRevenue;
+      r.salesForecast=salesForecast;
+      return r;
+      }
     }
   }

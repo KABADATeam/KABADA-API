@@ -1,12 +1,45 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Kabada {
   partial class CashFlowRow {
-    public CashFlowRow() { monthlyValue=new List<decimal?>(); }
-    public CashFlowRow(string myTitle, decimal? zeroMontthValue=null) : this() {
+    public CashFlowRow() {}
+    public CashFlowRow(short lastMonth) {
+      monthlyValue=new List<decimal?>();
+      for(short i=0; i<=lastMonth; i++)
+        monthlyValue.Add(null);
+      }
+
+    public CashFlowRow(string myTitle, decimal? zeroMontthValue=null, short? period=null) : this(period==null?(short)0:period.Value) {
       title=myTitle;
-      monthlyValue.Add(zeroMontthValue);
+      monthlyValue[0]=zeroMontthValue;
       totalYear1=zeroMontthValue;
       }
+
+    public static decimal? Sum(IEnumerable<decimal?> us){
+      var vs=us.Where(x=>x!=null).Select(x=>x.Value).ToList();
+      if(vs.Count<1)
+        return null;
+      return vs.Sum(x=>x);
+      }
+
+
+    public List<decimal?> year1W0 { get { return rangis(0, 12); }}
+    public List<decimal?> year1Strict { get { return rangis(1, 12); }}
+    public List<decimal?> year2 { get { return rangis(13, 25); }}
+
+    private List<decimal?> rangis(int v1, int v2) {
+      var n=monthlyValue.Count;
+      if(v1>=n)
+        return new List<decimal?>();
+      return monthlyValue.GetRange(v1, v2-v1+1);
+      }
+
+    public void y1TotW0(){ totalYear1=Sum(year1W0); }
+    public void y1TotWStrict(){ totalYear1=Sum(year1Strict); }
+    public void y2Tot(){ totalYear2=Sum(year2); }
+
+    public void totals(){ y1TotW0(); y2Tot(); }
     }
   }

@@ -230,7 +230,7 @@ namespace KabadaAPI.Controllers {
     [Route("overview/{BusinessPlan}")]
     public ActionResult<PlanOverview> MyOverview(Guid BusinessPlan) { return Prun<Guid, PlanOverview>(_MyOverview, BusinessPlan); }
     private ActionResult<PlanOverview> _MyOverview(Guid planId) {
-      var r = new PlanOverview();
+       var r = new PlanOverview();
       r.read(context, planId, uGuid);
       return r;
       }
@@ -283,5 +283,14 @@ namespace KabadaAPI.Controllers {
        repo.updateLight(uGuid, planUpdate);
        return Ok("Success");
        }
+
+    [HttpGet]
+    [Authorize]
+    [Route("cashflow/{BusinessPlan}")]
+    public ActionResult<CashFlow> Mycashflow(Guid BusinessPlan) { return Prun<Guid, CashFlow>(_Mycashflow, BusinessPlan); }
+    private ActionResult<CashFlow> _Mycashflow(Guid planId) {
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      return p.myCashFlow();
+      }
     }
   }
