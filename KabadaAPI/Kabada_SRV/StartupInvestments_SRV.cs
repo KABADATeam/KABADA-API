@@ -15,6 +15,8 @@ namespace Kabada {
       }
 
     private string slurp(List<ResourceSelectionBL> selections) {
+      if(selections==null)
+        return null;
       var plus=selections.Where(x=>x.title==KeyResourceBL.OwnershipType).FirstOrDefault();
       if(plus==null)
         return null;
