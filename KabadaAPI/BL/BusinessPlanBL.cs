@@ -248,16 +248,29 @@ namespace KabadaAPI {
       r.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):");
       r.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):");
       r.fixedCosts.summaries=costsSummary(r);
+      var t=r.fixedCosts.summRow("Total Expenses - KOPĒJIE IZDEVUMI", r.fixedCosts.summaries);
+      r.fixedCosts.summaries.Add(atlikums);   // DEBUG row
+      r.fixedCosts.summaries.Add(t);
       r.snapMe();
       return r;
       }
 
     private List<CashFlowRow> costsSummary(CashFlow basic) {
       var r=new List<CashFlowRow>();
-      var visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
-      visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
+      List<CashFlowRow> visi=null;
+      if(basic.variableCosts!=null)
+        visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
+      if(basic.fixedCosts!=null)
+        if(visi==null)
+          visi=basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count);
+         else
+          visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
       var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs", visi);
       r.Add(t);
+//TODO VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru
+      r.Add(new CashFlowRow("VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru", period:e.startup.period));
+//TODO
+      r.AddRange(loaner());
       return r;
       }
 
@@ -286,9 +299,41 @@ namespace KabadaAPI {
         rw.totals();
         }
 
-      // subtract investments
+//TODO      // subtract investments
 
 
+      return r;
+      }
+
+    private CashFlowRow atlikums;
+    protected List<CashFlowRow> loaner(){
+      var s=e.startup;
+      atlikums=new CashFlowRow("(DEBUG: atlikusī pamatsumma)", s.loan_amount, s.period);
+      var pamatMaksa=new CashFlowRow("Loan principal - Aizdevumu pamatsumma", null, s.period);
+      var procenti=new CashFlowRow("Loan interest - Aizdevumu procenti", null, s.period);
+      var r=new List<CashFlowRow>(){ procenti, pamatMaksa };
+      if(s.loan_amount==null || s.loan_amount==0)
+        return r;
+      var dura=s.payment_period;
+      if(dura==null)
+        dura=s.period;
+      short skipa=0;
+      if(s.grace_period!=null && s.grace_period>0)
+        skipa=s.grace_period.Value;
+      dura-=skipa;
+      var chunk=Decimal.Round((s.loan_amount/dura).Value, 2);
+      for(var m=skipa; m<=dura && m<=s.period; m++)
+        pamatMaksa.monthlyValue[m]=chunk;
+      for(var m=1; m<=s.period; m++){
+        var t=pamatMaksa.monthlyValue[m-1];
+        atlikums.monthlyValue[m]=atlikums.monthlyValue[m-1]-(t==null?0:t.Value);
+        if(pamatMaksa.monthlyValue[m]!=null && pamatMaksa.monthlyValue[m]>atlikums.monthlyValue[m])
+          pamatMaksa.monthlyValue[m]=atlikums.monthlyValue[m];
+        var w=atlikums.monthlyValue[m]*(s.interest_rate/1200);
+        if(w!=null)
+          w=decimal.Round(w.Value, 2);
+        procenti.monthlyValue[m]=w;
+        }
       return r;
       }
     }
