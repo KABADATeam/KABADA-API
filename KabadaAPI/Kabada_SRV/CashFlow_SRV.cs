@@ -50,9 +50,13 @@ namespace Kabada {
       var r=new List<string>();
       addRow(r);
       addRows(r, this.initialRevenue);
+      empty(r);
       addRows(r, this.salesForecast);
+      empty(r);
       addRows(r, this.investments);
+      empty(r);
       addRows(r, this.variableCosts);
+      empty(r);
       addRows(r, this.fixedCosts);
       return r;
       }
@@ -60,6 +64,8 @@ namespace Kabada {
     private void addRows(List<string> r, CashFlowTable table) {
       if(table==null)
         return;
+      if(table.title!=null)
+        addRow(r, new CashFlowRow(table.title));
       addRows(r, table.rows);
       addRows(r, table.summaries);
       }

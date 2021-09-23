@@ -181,7 +181,7 @@ namespace KabadaAPI {
     private List<KeyResourceBL> myKeyResource_s { get { return gA(PlanAttributeKind.keyResource).Select(x=>new KeyResourceBL(x, false)).ToList(); }}
 
     private CashFlowTable initialRevenue { get {
-      var br=new CashFlowTable();
+      var br=new CashFlowTable(){ title="Initial revenue to start business:" };
       var r=new List<CashFlowRow>();
       br.rows=r;
       r.Add(new CashFlowRow("Owner's contribution", (e.startup.loan_amount==null || e.startup.total_investments==null)?null:e.startup.total_investments-e.startup.loan_amount));
@@ -192,7 +192,7 @@ namespace KabadaAPI {
       }}
 
     public CashFlowTable salesForecast { get {
-      var r=new CashFlowTable(){ rows=new List<CashFlowRow>() };
+      var r=new CashFlowTable(){ rows=new List<CashFlowRow>(), title="Sales forcast (revenue from core business):" };
       var vats=new CashFlowRow("VAT received - (PVN likmes), not calculated for export part outside EU", period: this.e.startup.period);
       var n=(short)(vats.monthlyValue.Count-1);
       var pi=myProduct_s;
@@ -218,7 +218,7 @@ namespace KabadaAPI {
       } }
 
     public CashFlowTable investments { get {
-      var r=new CashFlowTable();
+      var r=new CashFlowTable(){ title="Investments:"};
       var rsi=myKeyResource_s;
       var idi=rsi.Select(x=>x.texterId).Distinct().ToList();
       var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
@@ -239,19 +239,29 @@ namespace KabadaAPI {
       return r;
       } }
 
+
     public CashFlow myCashFlow(){
       var r=new CashFlow();
       r.initialRevenue=initialRevenue;
       r.salesForecast=salesForecast;
       r.investments=investments;
-      r.variableCosts=costs(myVariableCost_s);
-      r.fixedCosts=costs(myFixedCost_s);
-
+      r.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):");
+      r.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):");
+      r.fixedCosts.summaries=costsSummary(r);
       r.snapMe();
       return r;
       }
 
-    private CashFlowTable costs(List<CostBL> myCosts) {
+    private List<CashFlowRow> costsSummary(CashFlow basic) {
+      var r=new List<CashFlowRow>();
+      var visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
+      visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
+      var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs", visi);
+      r.Add(t);
+      return r;
+      }
+
+    private CashFlowTable costs(List<CostBL> myCosts, string titel=null) {
       if(myCosts.Count<1)
         return null;
       foreach(var o in myCosts)
@@ -259,7 +269,7 @@ namespace KabadaAPI {
       var us=myCosts.Where(x=>x.myCashFlow!=null).ToList();
       if(us.Count<1)
         return null;
-      var r=new CashFlowTable(){ rows=new List<CashFlowRow>() };
+      var r=new CashFlowTable(){ rows=new List<CashFlowRow>(), title=titel };
       // summ by groups
       var idi=us.Select(x=>x.texterId).Distinct().ToList();
       var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
