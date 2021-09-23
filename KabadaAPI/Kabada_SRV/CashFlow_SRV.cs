@@ -14,7 +14,6 @@ namespace Kabada {
 
     protected void addRow(List<string> csv, CashFlowRow row=null){
       var l="";
-      csv.Add(l);
       lA(ref l, title(row));
       for(var m=0; m<13; m++)
         lA(ref l, month(m, row));
@@ -22,6 +21,7 @@ namespace Kabada {
       for(var m=13; m<25; m++)
         lA(ref l, month(m, row));
       lA(ref l, tote2(row));
+      csv.Add(l);
       }
 
     private string tote1(CashFlowRow row) {
