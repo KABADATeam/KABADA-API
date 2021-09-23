@@ -184,7 +184,7 @@ namespace KabadaAPI {
       var br=new CashFlowTable(){ title="Initial revenue to start business:" };
       var r=new List<CashFlowRow>();
       br.rows=r;
-      r.Add(new CashFlowRow("Owner's contribution", (e.startup.loan_amount==null || e.startup.total_investments==null)?null:e.startup.total_investments-e.startup.loan_amount));
+      r.Add(new CashFlowRow("Owner's contribution", (e.startup.own_money==null?0:e.startup.own_money)+(e.startup.own_assets==null?0:e.startup.own_assets)));
       r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
       
       br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", e.startup.total_investments)};
