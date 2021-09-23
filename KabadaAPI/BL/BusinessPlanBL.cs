@@ -246,6 +246,8 @@ namespace KabadaAPI {
       r.investments=investments;
       r.variableCosts=costs(myVariableCost_s);
       r.fixedCosts=costs(myFixedCost_s);
+
+      r.snapMe();
       return r;
       }
 
@@ -275,6 +277,8 @@ namespace KabadaAPI {
         }
 
       // subtract investments
+
+
       return r;
       }
     }

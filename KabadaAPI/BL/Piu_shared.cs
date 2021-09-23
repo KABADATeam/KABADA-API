@@ -1,4 +1,7 @@
-﻿namespace KabadaAPI {
+﻿using System;
+using System.Collections.Generic;
+
+namespace KabadaAPI {
   partial class Piu {
     private const string ActualKey="piu pieejas pārbaudīte";
 

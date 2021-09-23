@@ -62,5 +62,11 @@ namespace Kabada {
        else
         me+=addendum.Value;
       }
+
+    public decimal? mv(int month){
+      if(monthlyValue==null || month<0 || month>=monthlyValue.Count)
+        return null;
+      return monthlyValue[month];
+      }
     }
   }
