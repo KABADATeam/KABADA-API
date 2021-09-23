@@ -45,20 +45,20 @@ namespace KabadaAPI
         //   return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
         //}
         public BusinessPlan GetPlan(Guid planId, Guid userId) {
-          //check if public or mine
-          var plan = daContext.BusinessPlans.Include(x => x.User).FirstOrDefault(i => i.Id.Equals(planId) && (i.Public||i.User.Id.Equals(userId)));
-          if (plan!=null)
+            //check if public or mine
+            var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();
+            if (plan!=null)
             return plan;
             //check if shared with me
-            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).FirstOrDefault();
+            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).Include(x => x.BusinessPlan.Country).Include(x => x.BusinessPlan.Language).Include(x => x.BusinessPlan.Activity).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
             return null;
         }
         public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         {
-            var mp = daContext.BusinessPlans.Include(x =>x.User).Include(x => x.Country).Include(x => x.Language).Include(x=>x.Activity).FirstOrDefault(i => i.Id.Equals(planId) && i.User.Id.Equals(userId));            
+            var mp = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();            
             if (mp!=null) return mp; 
-            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).FirstOrDefault();
+            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).Include(x => x.BusinessPlan.Country).Include(x => x.BusinessPlan.Language).Include(x => x.BusinessPlan.Activity).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
             throw new Exception("No plan found for update");
         }
