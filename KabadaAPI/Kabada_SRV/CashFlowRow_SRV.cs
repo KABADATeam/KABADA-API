@@ -68,5 +68,23 @@ namespace Kabada {
         return null;
       return monthlyValue[month];
       }
+
+    internal CashFlowRow minusots(string title, CashFlowRow t) {
+      var n=(short)(monthlyValue.Count-1);
+      var r=new CashFlowRow(title, null, n);
+      for(var m=0; m<=n; m++)
+        r.monthlyValue[m]=diff(monthlyValue[m], t.monthlyValue[m]);
+      r.totalYear1=diff(totalYear1, t.totalYear1);
+      r.totalYear2=diff(totalYear2, t.totalYear2);
+      return r;
+      }
+
+    private decimal? diff(decimal? v1, decimal? v2) {
+      if(v2==null)
+        return v1;
+      if(v1==null)
+        return -v2.Value;
+      return v1.Value-v2.Value;
+      }
     }
   }

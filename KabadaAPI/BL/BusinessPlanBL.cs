@@ -251,7 +251,21 @@ namespace KabadaAPI {
       var t=r.fixedCosts.summRow("Total Expenses - KOPĒJIE IZDEVUMI", r.fixedCosts.summaries);
       r.fixedCosts.summaries.Add(atlikums);   // DEBUG row
       r.fixedCosts.summaries.Add(t);
+      var z=r.salesForecast.summaries[r.salesForecast.summaries.Count-1].minusots("Montly balance - Mēneša bilance", t);
+      r.fixedCosts.summaries.Add(z);
+      r.fixedCosts.summaries.Add(beigubilance(z));
       r.snapMe();
+      return r;
+      }
+
+    private CashFlowRow beigubilance(CashFlowRow z) {
+      short n=(short)(z.monthlyValue.Count-1);
+      var r=new CashFlowRow("Total balance - Beigu bilance", period:n);
+      decimal? w=0;
+      for(var m=0; m<=n; m++){
+        w-=z.monthlyValue[m];
+        r.monthlyValue[m]=w;
+        }
       return r;
       }
 
