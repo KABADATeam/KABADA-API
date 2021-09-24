@@ -5,5 +5,6 @@
     public CashFlowTable investments;
     public CashFlowTable variableCosts;
     public CashFlowTable fixedCosts;
+    public CashFlowTable balances;
     }
   }
