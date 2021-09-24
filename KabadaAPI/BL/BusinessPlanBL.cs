@@ -191,11 +191,11 @@ namespace KabadaAPI {
       return br;
       }}
 
-    public CashFlowTable salesForecast { get {
+    public CashFlowTable salesForecast(decimal? initialRevenue) { 
       var r=new CashFlowTable(){ rows=new List<CashFlowRow>(), title="Sales forcast (revenue from core business):" };
       var vats=new CashFlowRow("VAT received - (PVN likmes), not calculated for export part outside EU", period: this.e.startup.period);
       var n=(short)(vats.monthlyValue.Count-1);
-      var pi=myProduct_s;
+      var pi=myProduct_s.OrderBy(x=>x.e.title).ToList();
       foreach(var p in pi){
         var rw=new CashFlowRow(p.e.title, period: n);
         r.rows.Add(rw);
@@ -204,7 +204,7 @@ namespace KabadaAPI {
           rw.monthlyValue[m]=CashFlowRow.Sum(euS, p.noneuSale(m));
           if(euS!=null){
             var pc=p.e.salesForcast.sales_forecast_eu.Where(x=>x.month==m).FirstOrDefault();
-            vats.monthlyValue[m]=CashFlowRow.Sum(vats.monthlyValue[m], pc.vat*euS/100);
+            vats.monthlyValue[m]=CashFlowRow.Sum(vats.monthlyValue[m], money(pc.vat*euS/100));
             }
           }
         rw.totals();
@@ -212,10 +212,16 @@ namespace KabadaAPI {
       r.summaries=new List<CashFlowRow>(){ r.summRow("TOTAL revenue from core business", r.rows), vats };
       vats.totals();
       var tr=r.summRow("TOTAL REVENUE", r.summaries);
-      tr.monthlyValue[0]=this.e.startup.total_investments;
+      tr.monthlyValue[0]=initialRevenue; //this.e.startup.total_investments;
       r.summaries.Add(tr);
       return r;
-      } }
+      }
+
+    private decimal? money(decimal? v) {
+      if(v==null)
+        return null;
+      return decimal.Round(v.Value, 2);
+      }
 
     public CashFlowTable investments { get {
       var r=new CashFlowTable(){ title="Investments:"};
@@ -243,7 +249,7 @@ namespace KabadaAPI {
     public CashFlow myCashFlow(){
       var r=new CashFlow();
       r.initialRevenue=initialRevenue;
-      r.salesForecast=salesForecast;
+      r.salesForecast=salesForecast(r.initialRevenue.summaries[0].monthlyValue[0]);
       r.investments=investments;
       r.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):");
       r.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):");
@@ -263,7 +269,7 @@ namespace KabadaAPI {
       var r=new CashFlowRow("Total balance - Beigu bilance", period:n);
       decimal? w=0;
       for(var m=0; m<=n; m++){
-        w-=z.monthlyValue[m];
+        w+=z.monthlyValue[m];
         r.monthlyValue[m]=w;
         }
       return r;
@@ -301,15 +307,15 @@ namespace KabadaAPI {
       var idi=us.Select(x=>x.texterId).Distinct().ToList();
       var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
       var midi=ti.Where(x=>x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x=>(Guid)x.Value).Distinct().ToList();
-      var mi=textSupport.get(midi).ToDictionary(x=>x.Id);
+      var mi=textSupport.get(midi).OrderBy(x=>x.Value).ToList();
       var gsi=us.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.ToList());
       var n=this.e.startup.period.Value;
       foreach(var o in mi){
-        var rw=new CashFlowRow(o.Value.Value, period:n);
+        var rw=new CashFlowRow(o.Value, period:n);
         r.rows.Add(rw);
-        var li=gsi[o.Key];
+        var li=gsi[o.Id];
         for(short m=1; m<=n; m++)
-          rw.monthlyValue[m]=CashFlowRow.Sum(gsi[o.Key].Select(x=>x.myCashFlow.monthlyValue[m]));
+          rw.monthlyValue[m]=CashFlowRow.Sum(gsi[o.Id].Select(x=>x.myCashFlow.monthlyValue[m]));
         rw.totals();
         }
 
@@ -335,7 +341,7 @@ namespace KabadaAPI {
       if(s.grace_period!=null && s.grace_period>0)
         skipa=s.grace_period.Value;
       dura-=skipa;
-      var chunk=Decimal.Round((s.loan_amount/dura).Value, 2);
+      var chunk=money((s.loan_amount/dura).Value);
       for(var m=skipa; m<=dura && m<=s.period; m++)
         pamatMaksa.monthlyValue[m]=chunk;
       for(var m=1; m<=s.period; m++){
@@ -343,10 +349,7 @@ namespace KabadaAPI {
         atlikums.monthlyValue[m]=atlikums.monthlyValue[m-1]-(t==null?0:t.Value);
         if(pamatMaksa.monthlyValue[m]!=null && pamatMaksa.monthlyValue[m]>atlikums.monthlyValue[m])
           pamatMaksa.monthlyValue[m]=atlikums.monthlyValue[m];
-        var w=atlikums.monthlyValue[m]*(s.interest_rate/1200);
-        if(w!=null)
-          w=decimal.Round(w.Value, 2);
-        procenti.monthlyValue[m]=w;
+        procenti.monthlyValue[m]=money(atlikums.monthlyValue[m]*(s.interest_rate/1200));
         }
       return r;
       }

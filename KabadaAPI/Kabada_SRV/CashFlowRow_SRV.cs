@@ -69,22 +69,48 @@ namespace Kabada {
       return monthlyValue[month];
       }
 
-    internal CashFlowRow minusots(string title, CashFlowRow t) {
+    internal CashFlowRow minusots(string v, CashFlowRow t) { return makots(v, t, minuso); }
+      //var n=(short)(monthlyValue.Count-1);
+      //var r=new CashFlowRow(title, null, n);
+      //for(var m=0; m<=n; m++)
+      //  r.monthlyValue[m]=minuso(monthlyValue[m], t.monthlyValue[m]);
+      //r.totalYear1=minuso(totalYear1, t.totalYear1);
+      //r.totalYear2=minuso(totalYear2, t.totalYear2);
+      //return r;
+      //}
+
+    internal CashFlowRow plusots(string v, CashFlowRow t) { return makots(v, t, pluso); }
+      //var n=(short)(monthlyValue.Count-1);
+      //var r=new CashFlowRow(title, null, n);
+      //for(var m=0; m<=n; m++)
+      //  r.monthlyValue[m]=pluso(monthlyValue[m], t.monthlyValue[m]);
+      //r.totalYear1=pluso(totalYear1, t.totalYear1);
+      //r.totalYear2=pluso(totalYear2, t.totalYear2);
+      //return r;
+      //}
+
+    protected CashFlowRow makots(string title, CashFlowRow t, Func<decimal?, decimal?, decimal?> mako) {
       var n=(short)(monthlyValue.Count-1);
       var r=new CashFlowRow(title, null, n);
       for(var m=0; m<=n; m++)
-        r.monthlyValue[m]=diff(monthlyValue[m], t.monthlyValue[m]);
-      r.totalYear1=diff(totalYear1, t.totalYear1);
-      r.totalYear2=diff(totalYear2, t.totalYear2);
+        r.monthlyValue[m]=mako(monthlyValue[m], t.monthlyValue[m]);
+      r.totalYear1=mako(totalYear1, t.totalYear1);
+      r.totalYear2=mako(totalYear2, t.totalYear2);
       return r;
       }
 
-    private decimal? diff(decimal? v1, decimal? v2) {
-      if(v2==null)
-        return v1;
-      if(v1==null)
-        return -v2.Value;
-      return v1.Value-v2.Value;
+    private decimal v(decimal? me){ return me==null?0:me.Value; }
+
+    private decimal? pluso(decimal? v1, decimal? v2) {
+      if(v1==null && v2==null)
+        return null;
+      return v(v1)+v(v2);
+      }
+
+    private decimal? minuso(decimal? v1, decimal? v2) {
+      if(v1==null && v2==null)
+        return null;
+      return v(v1)-v(v2);
       }
     }
   }
