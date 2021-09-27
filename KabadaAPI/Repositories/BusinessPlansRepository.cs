@@ -195,14 +195,22 @@ namespace KabadaAPI
             daContext.SaveChanges();
       }
 
+    private Guid? countryId(BusinessPlan p){ return p.Country==null?null:p.Country.Id; }
+    private Guid? activityId(BusinessPlan p){ return p.Activity==null?null:p.Activity.Id; }
+    private Guid? languageId(BusinessPlan p){ return p.Language==null?null:p.Language.Id; }
+
     internal void updateLight(Guid userId, Kabada.BusinessPlan n) {
       var o=GetPlanForUpdate(userId, n.Id);
 
-      if(n.CountryId!=null && o.Country.Id!=n.CountryId.Value)
-        o.Country=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value));
-      if(o.Activity.Id!=n.ActivityId)
+      
+      if(countryId(o)!=n.CountryId)
+        if(n.CountryId!=null)
+          o.Country=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value));
+         else
+          o.Country=null;
+      if(activityId(o)!=n.ActivityId)
         o.Activity=daContext.Activities.FirstOrDefault(i => i.Id.Equals(n.ActivityId));
-      if(o.Language.Id!=n.LanguageId)
+      if(languageId(o)!=n.LanguageId)
         o.Language=daContext.Languages.FirstOrDefault(i => i.Id.Equals(n.LanguageId));
       o.Img=n.Img;
       o.Title=n.Title;
