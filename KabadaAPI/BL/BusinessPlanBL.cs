@@ -306,7 +306,11 @@ namespace KabadaAPI {
       return r;
       }
 
-    private decimal? salaryTax { get { return 23.5m/100m; }}
+    private decimal? _salaryTax;
+    private decimal? salaryTax { get {
+      return 23.5m/100m;
+      }}
+    private decimal? _vatTax;
     private decimal? vatTax { get { return 21m/100m; }}
 
     private CashFlowTable costs(List<CostBL> myCosts, string titel=null, Guid? salaryID=null) {

@@ -58,7 +58,9 @@ namespace Kabada {
       addRows(r, this.variableCosts);
       empty(r);
       addRows(r, this.fixedCosts);
-      return r;
+      empty(r);
+      addRows(r, this.balances);
+     return r;
       }
 
     private void addRows(List<string> r, CashFlowTable table) {
