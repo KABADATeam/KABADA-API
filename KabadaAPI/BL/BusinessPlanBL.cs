@@ -251,8 +251,8 @@ namespace KabadaAPI {
       r.initialRevenue=initialRevenue;
       r.salesForecast=salesForecast(r.initialRevenue.summaries[0].monthlyValue[0]);
       r.investments=investments;
-      r.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):");
-      r.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):");
+      r.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):", KeyResourceBL.SVID);
+      r.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):", KeyResourceBL.SFID);
       r.fixedCosts.summaries=costsSummary(r);
       var t=r.fixedCosts.summRow("Total Expenses - KOPĒJIE IZDEVUMI", r.fixedCosts.summaries);
       r.fixedCosts.summaries.Add(atlikums);   // DEBUG row
@@ -286,24 +286,30 @@ namespace KabadaAPI {
 
     private List<CashFlowRow> costsSummary(CashFlow basic) {
       var r=new List<CashFlowRow>();
-      List<CashFlowRow> visi=null;
+      var visi=new List<CashFlowRow>();
       if(basic.variableCosts!=null)
         visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
       if(basic.fixedCosts!=null)
-        if(visi==null)
-          visi=basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count);
-         else
-          visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
+        visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
       var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs", visi);
       r.Add(t);
-//TODO VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru
-      r.Add(new CashFlowRow("VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru", period:e.startup.period));
-//TODO
+ 
+      visi=new List<CashFlowRow>();
+      if(basic.variableCosts!=null)
+        visi=basic.variableCosts.normalRows();
+      if(basic.fixedCosts!=null)
+        visi.AddRange(basic.fixedCosts.normalRows());
+      var tmp=basic.fixedCosts.summRow("---", visi);
+      r.Add(tmp.multoRow("VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru", vatTax));
+
       r.AddRange(loaner());
       return r;
       }
 
-    private CashFlowTable costs(List<CostBL> myCosts, string titel=null) {
+    private decimal? salaryTax { get { return 23.5m/100m; }}
+    private decimal? vatTax { get { return 21m/100m; }}
+
+    private CashFlowTable costs(List<CostBL> myCosts, string titel=null, Guid? salaryID=null) {
       if(myCosts.Count<1)
         return null;
       foreach(var o in myCosts)
@@ -326,9 +332,20 @@ namespace KabadaAPI {
         for(short m=1; m<=n; m++)
           rw.monthlyValue[m]=CashFlowRow.Sum(gsi[o.Id].Select(x=>x.myCashFlow.monthlyValue[m]));
         rw.totals();
+
+        if(o.Id==salaryID){ // || o.Value=="Salaries"){
+          if(r.specialRows!=null)
+            throw new Exception("Special rows already present...");
+
+          var k=r.rows.Count;
+          r.specialRows=k-1;
+          r.rows.Add(rw.multoRow("Labor taxes (katrai valstij savs %)", salaryTax));
+          }
         }
 
 //TODO      // subtract investments
+
+
 
 
       return r;

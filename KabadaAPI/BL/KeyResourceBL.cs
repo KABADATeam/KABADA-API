@@ -7,6 +7,10 @@ namespace KabadaAPI {
     public const string HumanResourcesGuID="{63CEE727-8378-4603-8B0B-839751DFEED1}";
     public static Guid HID=new Guid(HumanResourcesGuID);
     public const string OwnershipType="Ownership type";
+    public const string SalaryGuIDvariable="{c7b32094-6538-4e72-ad49-6ea1fda21562}";
+    public static Guid SVID=new Guid(SalaryGuIDvariable);
+    public const string SalaryGuIDfixed="{f5d95c3b-4894-41b1-98b8-b1eb44ef436a}";
+    public static Guid SFID=new Guid(SalaryGuIDfixed);
 
     public KeyResourceBL(Guid businessPlan, Guid texter) : base(KIND, businessPlan, texter) {}
    //public KeyResourceBL(KabadaAPIdao.Plan_Attribute old, bool forUpdate=false) : base(KIND, old, forUpdate){}

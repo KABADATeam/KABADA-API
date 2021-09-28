@@ -89,6 +89,22 @@ namespace Kabada {
       //return r;
       //}
 
+    internal CashFlowRow multoRow(string v, decimal? multiplier) { 
+      var n=(short)(monthlyValue.Count-1);
+      var r=new CashFlowRow(v, null, n);
+      for(var m=0; m<=n; m++)
+        r.monthlyValue[m]=multo(monthlyValue[m], multiplier);
+      r.totalYear1=multo(totalYear1, multiplier);
+      r.totalYear2=multo(totalYear2, multiplier);
+      return r;
+      }
+
+    private decimal? multo(decimal? arg1, decimal? arg2) {
+      if(arg1==null || arg2==null)
+        return null;
+      return decimal.Round(arg1.Value*arg2.Value, 2);
+      }
+
     protected CashFlowRow makots(string title, CashFlowRow t, Func<decimal?, decimal?, decimal?> mako) {
       var n=(short)(monthlyValue.Count-1);
       var r=new CashFlowRow(title, null, n);
