@@ -24,7 +24,7 @@ namespace Kabada {
           throw new Exception($"Invalid period specified '{period}'");
         if(t.payment_period!=null){
           var w=(t.payment_period / 6)*6;
-          if(w!=t.payment_period || w<6 || w>60)
+          if(w!=t.payment_period || w<6 || w>120)
             throw new Exception($"Invalid payment_period specified '{payment_period}'");
           }
         p.unload();

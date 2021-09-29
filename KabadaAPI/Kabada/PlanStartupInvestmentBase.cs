@@ -7,7 +7,7 @@
     public decimal? own_money;
     public decimal? loan_amount;    // investment_amount-own_money
     public decimal? own_assets;    
-    public short? payment_period; // any value from range: 6, 12, 18, ...., 60
+    public short? payment_period; // any value from range: 6, 12, 18, ...., 120
     public decimal? interest_rate;
     public short? grace_period;
     }
