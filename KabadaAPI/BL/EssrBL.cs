@@ -24,5 +24,10 @@ namespace KabadaAPI {
 
     internal void validate() {
       }
+
+    internal decimal recent(){
+      var lu=e.Keys.Max(x=>x);
+      return e[lu];
+      }
     }
   }

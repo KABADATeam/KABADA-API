@@ -247,6 +247,16 @@ namespace KabadaAPI {
 
 
     public CashFlow myCashFlow(){
+      if(this._o.Country!=null){
+        var cID=this._o.Country.Id;
+        var uaRepo=new UniversalAttributeRepository(textSupport.blContext, textSupport.daContext);
+        var vat=uaRepo.getVAT(cID);
+        if(vat!=null)
+           _vatTax=vat.e.StandardRate;
+        var essr=uaRepo.getESSR(cID);
+        if(essr!=null)
+           _salaryTax=essr.recent();
+        }
       var r=new CashFlow();
       r.initialRevenue=initialRevenue;
       r.salesForecast=salesForecast(r.initialRevenue.summaries[0].monthlyValue[0]);
@@ -258,9 +268,6 @@ namespace KabadaAPI {
       r.fixedCosts.summaries.Add(atlikums);   // DEBUG row
       r.fixedCosts.summaries.Add(t);
       r.balances=makeBalances(r.salesForecast.summaries[r.salesForecast.summaries.Count-1], t);
-      //var z=r.salesForecast.summaries[r.salesForecast.summaries.Count-1].minusots("Montly balance - Mēneša bilance", t);
-      //r.fixedCosts.summaries.Add(z);
-      //r.fixedCosts.summaries.Add(beigubilance(z));
       r.snapMe();
       return r;
       }
@@ -307,11 +314,9 @@ namespace KabadaAPI {
       }
 
     private decimal? _salaryTax;
-    private decimal? salaryTax { get {
-      return 23.5m/100m;
-      }}
+    private decimal? salaryTax { get { return _salaryTax/100m; }}
     private decimal? _vatTax;
-    private decimal? vatTax { get { return 21m/100m; }}
+    private decimal? vatTax { get { return _vatTax/100m; }}
 
     private CashFlowTable costs(List<CostBL> myCosts, string titel=null, Guid? salaryID=null) {
       if(myCosts.Count<1)

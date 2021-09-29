@@ -16,6 +16,7 @@ namespace Kabada {
           bo.e.vat=x.vat;
           bo.e.price=x.price;
           bo.e.first_expenses=x.first_expenses;
+          bo.e.monthly_expenses=x.monthly_expenses;
           bo.unload();
           }
         ctx.SaveChanges();

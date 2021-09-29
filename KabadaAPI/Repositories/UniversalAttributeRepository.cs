@@ -80,5 +80,19 @@ namespace KabadaAPI {
       var cR=new CountryRepository(blContext, daContext);
       return Qca(cR.Q(country), Q(kind));
       }
+
+    internal VatBL getVAT(Guid cID) {
+      var o=q0.Where(x=>x.Kind==VatBL.KIND && x.MasterId==cID).FirstOrDefault();
+      if(o==null)
+        return null;
+      return new VatBL(o);
+      }
+
+    internal EssrBL getESSR(Guid cID) {
+      var o=q0.Where(x=>x.Kind==EssrBL.KIND && x.MasterId==cID).FirstOrDefault();
+      if(o==null)
+        return null;
+      return new EssrBL(o);
+      }
     }
   }
