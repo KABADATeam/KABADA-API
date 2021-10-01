@@ -19,8 +19,10 @@ namespace KabadaAPI {
     protected override string myTable => "DbSettings";
 
     protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
-      return loadDataRow<KabadaAPIdao.DbSetting, Guid>(daContext.DbSettings, json, overwrite, oldDeleted, generateInits);
+      return loadDataRow<KabadaAPIdao.DbSetting, string>(daContext.DbSettings, json, overwrite, oldDeleted, generateInits);
       }
+
+    protected override void getOldies() { getOldies<string>(); }
 
     public enum EnumDbSettings { initialDataSetLevel }
 
