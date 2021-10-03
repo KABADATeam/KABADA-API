@@ -21,6 +21,7 @@ namespace KabadaAPI {
     public int mcIn { get; protected set; }
     public int mcDebt { get; protected set; }
     public int mcPay { get; protected set; }
+    public int mcPerc { get; protected set; }
 
     protected MonthedDataRow incomingMoney() {
       var r=new MonthedDataRow();
@@ -39,17 +40,21 @@ namespace KabadaAPI {
       var inc=catalog.add(myTitle+" LOAN.in", incomingMoney()); mcIn=inc.myId;
       var debt=catalog.add(myTitle+" LOAN.debt", new MonthedDataRow(lastMonth+1)); mcDebt=debt.myId;
       var pay=catalog.add(myTitle+" LOAN.pay", new MonthedDataRow(lastMonth+1)); mcPay=pay.myId;
-      buildPayDebt(inc.myData, debt.myData, pay.myData);
+      var percent=catalog.add(myTitle+" LOAN.percent", new MonthedDataRow(lastMonth+1)); mcPerc=percent.myId;
+      buildPayDebt(inc.myData, debt.myData, pay.myData, percent.myData);
       }
 
-    private void buildPayDebt(MonthedDataRow inc, MonthedDataRow debt, MonthedDataRow pay) {
-      debt[0]=inc[0]; pay[0]=0m;
+    private void buildPayDebt(MonthedDataRow inc, MonthedDataRow debt, MonthedDataRow pay, MonthedDataRow perc) {
+      debt[0]=inc[0]; pay[0]=0m; perc[0]=0m;
+      var multa=interest_rate/1200m;
+      var nop=((start_month==0)?1:start_month)+grace_period;
       for(var m=0; m<lastMonth; m++){
         var m1=m+1;
         debt[m1]=debt[m]-pay[m];
         if((inc.Count-1)>m1 && inc[m1]!=null)
           debt[m1]+=inc[m1].Value;
-        pay[m1]=decimal.Round((debt[m1].Value/(lastMonth-m1+1)), 2);
+        pay[m1]=(m1>=nop)?decimal.Round((debt[m1].Value/(lastMonth-m1+1)), 2):0m;
+        perc[m1]=decimal.Round(multa*debt[m1].Value, 2);
         }
       }
     }
