@@ -40,7 +40,7 @@ namespace KabadaAPI {
 
     private void fillBaseCash() {
       var s=this.e.startup;
-      var longtermLoan=new MonthedLoan("Long term loan", s.grace_period, s.interest_rate, s.loan_amount, s.payment_period);
+      var longtermLoan=new MonthedLoan("Long term loan", s.period, s.grace_period, s.interest_rate, s.loan_amount, s.payment_period);
       longtermLoan.generateRecords(mc);
 
 

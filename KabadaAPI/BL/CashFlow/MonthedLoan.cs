@@ -2,16 +2,19 @@
 
 namespace KabadaAPI {
   public class MonthedLoan {
+    public short   project_period;
     public string  myTitle;
     public decimal loan_amount;
     public decimal interest_rate; // a year, >=0
     public short   payment_period; // >0
     public short   grace_period;   // >=0
     public short   start_month;    // >=0
+
     public List<decimal?> additional_sums; // the 0 element is for start_month+1
 
-    public MonthedLoan(string title, short? grace_period1, decimal? interest_rate1, decimal? loan_amount1, short? payment_period1) {
+    public MonthedLoan(string title, short? project_period1, short? grace_period1, decimal? interest_rate1, decimal? loan_amount1, short? payment_period1) {
       myTitle=title;
+      project_period=(short)((project_period1==null)?12:project_period1.Value);
       grace_period=(short)((grace_period1==null)?0:grace_period1.Value);
       interest_rate=((interest_rate1==null)?0m:interest_rate1.Value);
       loan_amount=((loan_amount1==null)?0m:loan_amount1.Value);
