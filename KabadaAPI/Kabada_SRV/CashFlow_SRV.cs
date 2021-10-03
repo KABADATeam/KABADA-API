@@ -79,12 +79,12 @@ namespace Kabada {
         addRow(r, o);
       }
 
-    public void snapMe(){
+    public void snapMe(string filePath) {
       var csv=toCSV();
-      var filename=$"CashFlow-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}.csv";
-      var path = Directory.GetCurrentDirectory(); 
-      var opa=Path.Combine(path, "Logs",filename);
-      using(var os=new StreamWriter(opa, false, System.Text.Encoding.UTF8)){
+      //var filename=$"CashFlow-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}.csv";
+      //var path = Directory.GetCurrentDirectory(); 
+      //var opa=Path.Combine(path, "Logs",filename);
+      using(var os=new StreamWriter(filePath, false, System.Text.Encoding.UTF8)){
         foreach(var o in csv)
           os.WriteLine(o);
         os.Close();
