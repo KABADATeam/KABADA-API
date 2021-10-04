@@ -40,10 +40,14 @@ namespace KabadaAPI {
 
     private void fillBaseCash() {
       var s=this.e.startup;
-      var longtermLoan=new MonthedLoan("Long term loan", s.period, s.grace_period, s.interest_rate, s.loan_amount, s.payment_period);
+      var longtermLoan=new MonthedLoan("Long term", s.period, s.grace_period, s.interest_rate, s.loan_amount, s.payment_period);
       longtermLoan.generateRecords(mc);
 
+      var shorttermLoan=new MonthedLoan("Short term", s.period, null, 8, 23000, 10){ additional_sums=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
+      shorttermLoan.generateRecords(mc);
 
+      var own=new OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
+      own.generateRecords(mc);
       }
 
     protected CashFlow myCashFlowInternal(){

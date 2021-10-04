@@ -43,8 +43,8 @@ namespace KabadaAPI {
     public void generateRecords(MonthedCatalog catalog){
       var inc=catalog.add(CatalogRowKind.financialInvestment, myTitle, incomingMoney()); mcIn=inc.id;
       var debt=catalog.add(CatalogRowKind.actualDebt, myTitle, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
-      var pay=catalog.add(CatalogRowKind.payback, myTitle, new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
-      var percent=catalog.add(CatalogRowKind.percentPayment, myTitle, new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
+      var pay=catalog.add(CatalogRowKind.payback, $"Aizdevumu pamatsumma ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
+      var percent=catalog.add(CatalogRowKind.percentPayment, $"Aizdevumu procenti ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
       buildPayDebt(inc.data, debt.data, pay.data, percent.data);
       }
 
