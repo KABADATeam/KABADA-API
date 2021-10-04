@@ -1,9 +1,13 @@
 ﻿namespace KabadaAPI {
   public class MonthedCatalogRow {
-    public int myId { get; protected set; }
-    public string myTitle;
-    public MonthedDataRow myData;
+    public enum CatalogRowKind { unspecified=0, financialInvestment=1, actualDebt=2, payback=3, percentPayment=4 }
 
-    public MonthedCatalogRow(int id, string title=null, MonthedDataRow data=null) { myId=id; myTitle=title; myData=(data==null)?new MonthedDataRow():data; }
+    public int id { get; protected set; }
+    public CatalogRowKind kind;
+    public string master;
+    public string title;
+    public MonthedDataRow data;
+
+    public MonthedCatalogRow(int id, string title=null, MonthedDataRow data=null) { this.id=id; this.title=title; this.data=(data==null)?new MonthedDataRow() : data; }
     }
   }

@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Kabada;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace KabadaAPI.Controllers {
   [Route("api/[controller]")]
@@ -45,23 +47,12 @@ namespace KabadaAPI.Controllers {
         return Ok("OK");
         }
 
-    //[AllowAnonymous]
-    //[Route("jst")]
-    //[HttpGet]
-    //public IActionResult jst() { return grun(_jst); }
-    //private IActionResult _jst() {
-    //  var t=IndustryRiskDescriptor.ByActivityName("C.11.03", context);
-    //  t=IndustryRiskDescriptor.ByActivityName("C.12.00", context);
-    //   //string m;
-    //  //m=MIX.Method(0);
-    //  //m=MIX.Method(1);
-    //  //m=MIX.Method(2);
-    //  //m=MIX.Method(3);
-
-    //  //var t = new IndustryRisksManager(context);
-    //  //t.processRegulars();
-    //  //BackgroundJobber.Notify();
-    //  return Ok(".");
-    //  }
+    [Authorize(Roles = Role.User)]
+    [Route("test/{BusinessPlan}")]
+    [HttpGet]
+    public IActionResult test(Guid BusinessPlan) { return prun<Guid>(_test, BusinessPlan); }
+    private IActionResult _test(Guid BusinessPlan) {
+      return Ok(".");
+      }
     }
   }

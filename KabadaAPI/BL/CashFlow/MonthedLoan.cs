@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using static KabadaAPI.MonthedCatalogRow;
 
 namespace KabadaAPI {
   public class MonthedLoan {
@@ -40,11 +41,11 @@ namespace KabadaAPI {
     public short lastMonth { get { return (short)(start_month+payment_period); }}
 
     public void generateRecords(MonthedCatalog catalog){
-      var inc=catalog.add(myTitle+" LOAN.in", incomingMoney()); mcIn=inc.myId;
-      var debt=catalog.add(myTitle+" LOAN.debt", new MonthedDataRow(lastMonth+1)); mcDebt=debt.myId;
-      var pay=catalog.add(myTitle+" LOAN.pay", new MonthedDataRow(lastMonth+1)); mcPay=pay.myId;
-      var percent=catalog.add(myTitle+" LOAN.percent", new MonthedDataRow(lastMonth+1)); mcPerc=percent.myId;
-      buildPayDebt(inc.myData, debt.myData, pay.myData, percent.myData);
+      var inc=catalog.add(CatalogRowKind.financialInvestment, myTitle, incomingMoney()); mcIn=inc.id;
+      var debt=catalog.add(CatalogRowKind.actualDebt, myTitle, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
+      var pay=catalog.add(CatalogRowKind.payback, myTitle, new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
+      var percent=catalog.add(CatalogRowKind.percentPayment, myTitle, new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
+      buildPayDebt(inc.data, debt.data, pay.data, percent.data);
       }
 
     private void buildPayDebt(MonthedDataRow inc, MonthedDataRow debt, MonthedDataRow pay, MonthedDataRow perc) {
