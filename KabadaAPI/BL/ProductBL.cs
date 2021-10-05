@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabada;
+using System;
 using System.Linq;
 using static KabadaAPI.Plan_AttributeRepository;
 
@@ -18,6 +19,13 @@ namespace KabadaAPI {
       if(o==null)
         return null;
       return o.price*o.qty;
+      }
+
+    internal ProductSalesForecastElementMonth eu(int m) {
+      if(e.salesForcast==null || e.salesForcast.sales_forecast_eu==null)
+        return null;
+      var o=e.salesForcast.sales_forecast_eu.Where(x=>x.month==m).FirstOrDefault();
+      return o;
       }
 
     internal decimal? noneuSale(int m) {

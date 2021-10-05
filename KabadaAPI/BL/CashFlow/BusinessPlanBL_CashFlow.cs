@@ -9,7 +9,7 @@ namespace KabadaAPI {
     protected CashFlow cf;
     protected MonthedCatalog mc;
 
-    protected int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
+    public int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
 
     //----------------------------------------- 1 ------------------------------------------//
     public CashFlow myCashFlow(){
@@ -29,6 +29,7 @@ namespace KabadaAPI {
     //----------------------------------------- 2 ------------------------------------------//
     private List<OwnMoney> ownMoney;
     private List<MonthedLoan> loans;
+    private List<Production> productions;
 
     protected void loadTaxes(){
       if(this._o.Country!=null){
@@ -47,6 +48,7 @@ namespace KabadaAPI {
       loans=new List<MonthedLoan>();
       var s=this.e.startup;
 
+      //=======================LOANs==========================================//
       var w=new MonthedLoan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
       loans.Add(w);
       w.generateRecords(mc);
@@ -55,9 +57,20 @@ namespace KabadaAPI {
       loans.Add(w);
       w.generateRecords(mc);
 
+      //=======================OWN MONEY==========================================//
       var own=new OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
       own.generateRecords(mc);
       ownMoney=new List<OwnMoney>(){ own };
+
+      //=======================SALES FORECAST==========================================//
+      productions=new List<Production>();
+      var pi=myProduct_s.OrderBy(x=>x.e.title).ToList();
+      foreach(var p in pi){
+        var o=new Production(p);
+        o.generateRecords(mc, this);
+        productions.Add(o);
+        }
+      var sms=Production.GenerateSumRecords(mc, productions, this);
       }
 
     protected CashFlow myCashFlowInternal(){
