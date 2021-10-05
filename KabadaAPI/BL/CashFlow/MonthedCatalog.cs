@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabada;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,19 +23,24 @@ namespace KabadaAPI {
       var mam=1;
       if(rows.Count>0)
         mam=rows.Select(x=>x.data.Count).Max();
-      var t="id;title;kind;master;";
+      var t="title;kind;";
       for(var m=0; m<mam; m++) t+=m.ToString()+";";
+      t+="id;master;";
       using(var os=new StreamWriter(filePath, false, System.Text.Encoding.UTF8)){
         os.WriteLine(t);
         foreach(var o in rows){
-          t=$"{o.id};{o.title};{o.kind.ToString()};{o.master};";
+          t=$"{o.title};{o.kind.ToString()};";
           var n=o.data.Count;
           for(var m=0; m<n; m++)
             t+=o.data[m].ToString()+";";
+          for(var m=n;m<mam;m++)t+=";";
+          t+=$"{o.id};{o.master};";
           os.WriteLine(t);
           }
         os.Close();
         }
       }
+
+    public CashFlowRow expose(int rowId, int lastMonth){ return get(rowId).expose(lastMonth); }
     }
   }

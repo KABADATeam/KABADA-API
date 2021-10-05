@@ -9,6 +9,8 @@ namespace KabadaAPI {
     protected CashFlow cf;
     protected MonthedCatalog mc;
 
+    protected int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
+
     //----------------------------------------- 1 ------------------------------------------//
     public CashFlow myCashFlow(){
       loadTaxes();
@@ -25,6 +27,9 @@ namespace KabadaAPI {
       }
 
     //----------------------------------------- 2 ------------------------------------------//
+    private List<OwnMoney> ownMoney;
+    private List<MonthedLoan> loans;
+
     protected void loadTaxes(){
       if(this._o.Country!=null){
         var cID=this._o.Country.Id;
@@ -39,15 +44,20 @@ namespace KabadaAPI {
       }
 
     private void fillBaseCash() {
+      loans=new List<MonthedLoan>();
       var s=this.e.startup;
-      var longtermLoan=new MonthedLoan("Long term", s.period, s.grace_period, s.interest_rate, s.loan_amount, s.payment_period);
-      longtermLoan.generateRecords(mc);
 
-      var shorttermLoan=new MonthedLoan("Short term", s.period, null, 8, 23000, 10){ additional_sums=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
-      shorttermLoan.generateRecords(mc);
+      var w=new MonthedLoan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
+      loans.Add(w);
+      w.generateRecords(mc);
+
+      w=new MonthedLoan("Short term", s.period, null, 8, 10, 23000) { investmentAmounts=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
+      loans.Add(w);
+      w.generateRecords(mc);
 
       var own=new OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
       own.generateRecords(mc);
+      ownMoney=new List<OwnMoney>(){ own };
       }
 
     protected CashFlow myCashFlowInternal(){
@@ -58,7 +68,7 @@ namespace KabadaAPI {
       cf.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):", KeyResourceBL.SFID);
       cf.fixedCosts.summaries=costsSummary(cf);
       var t=cf.fixedCosts.summRow("Total Expenses - KOPĒJIE IZDEVUMI", cf.fixedCosts.summaries);
-      cf.fixedCosts.summaries.Add(atlikums);   // DEBUG row
+      //cf.fixedCosts.summaries.Add(atlikums);   // DEBUG row
       cf.fixedCosts.summaries.Add(t);
       cf.balances=makeBalances(cf.salesForecast.summaries[cf.salesForecast.summaries.Count-1], t);
       //cf.snapMe();
@@ -232,31 +242,40 @@ namespace KabadaAPI {
       return r;
       }
 
-    private CashFlowRow atlikums;
+    //private CashFlowRow atlikums;
+    //protected List<CashFlowRow> loaner(){
+    //  var s=e.startup;
+    //  atlikums=new CashFlowRow("(DEBUG: atlikusī pamatsumma)", s.loan_amount, s.period);
+    //  var pamatMaksa=new CashFlowRow("Loan principal - Aizdevumu pamatsumma", null, s.period);
+    //  var procenti=new CashFlowRow("Loan interest - Aizdevumu procenti", null, s.period);
+    //  var r=new List<CashFlowRow>(){ procenti, pamatMaksa };
+    //  if(s.loan_amount==null || s.loan_amount==0)
+    //    return r;
+    //  var dura=s.payment_period;
+    //  if(dura==null)
+    //    dura=s.period;
+    //  short skipa=0;
+    //  if(s.grace_period!=null && s.grace_period>0)
+    //    skipa=s.grace_period.Value;
+    //  dura-=skipa;
+    //  var chunk=money((s.loan_amount/dura).Value);
+    //  for(var m=skipa; m<=dura && m<=s.period; m++)
+    //    pamatMaksa.monthlyValue[m]=chunk;
+    //  for(var m=1; m<=s.period; m++){
+    //    var t=pamatMaksa.monthlyValue[m-1];
+    //    atlikums.monthlyValue[m]=atlikums.monthlyValue[m-1]-(t==null?0:t.Value);
+    //    if(pamatMaksa.monthlyValue[m]!=null && pamatMaksa.monthlyValue[m]>atlikums.monthlyValue[m])
+    //      pamatMaksa.monthlyValue[m]=atlikums.monthlyValue[m];
+    //    procenti.monthlyValue[m]=money(atlikums.monthlyValue[m]*(s.interest_rate/1200));
+    //    }
+    //  return r;
+    //  }
+
     protected List<CashFlowRow> loaner(){
-      var s=e.startup;
-      atlikums=new CashFlowRow("(DEBUG: atlikusī pamatsumma)", s.loan_amount, s.period);
-      var pamatMaksa=new CashFlowRow("Loan principal - Aizdevumu pamatsumma", null, s.period);
-      var procenti=new CashFlowRow("Loan interest - Aizdevumu procenti", null, s.period);
-      var r=new List<CashFlowRow>(){ procenti, pamatMaksa };
-      if(s.loan_amount==null || s.loan_amount==0)
-        return r;
-      var dura=s.payment_period;
-      if(dura==null)
-        dura=s.period;
-      short skipa=0;
-      if(s.grace_period!=null && s.grace_period>0)
-        skipa=s.grace_period.Value;
-      dura-=skipa;
-      var chunk=money((s.loan_amount/dura).Value);
-      for(var m=skipa; m<=dura && m<=s.period; m++)
-        pamatMaksa.monthlyValue[m]=chunk;
-      for(var m=1; m<=s.period; m++){
-        var t=pamatMaksa.monthlyValue[m-1];
-        atlikums.monthlyValue[m]=atlikums.monthlyValue[m-1]-(t==null?0:t.Value);
-        if(pamatMaksa.monthlyValue[m]!=null && pamatMaksa.monthlyValue[m]>atlikums.monthlyValue[m])
-          pamatMaksa.monthlyValue[m]=atlikums.monthlyValue[m];
-        procenti.monthlyValue[m]=money(atlikums.monthlyValue[m]*(s.interest_rate/1200));
+      var r=new List<CashFlowRow>();
+      foreach(var x in loans){
+        r.Add(mc.expose(x.mcPayW, pPeriod));
+        r.Add(mc.expose(x.mcPercW, pPeriod));
         }
       return r;
       }

@@ -2,50 +2,51 @@
 using static KabadaAPI.MonthedCatalogRow;
 
 namespace KabadaAPI {
-  public class MonthedLoan {
-    public short   project_period;
-    public string  myTitle;
+  public class MonthedLoan : FinancialInvestment {
     public decimal loan_amount;
     public decimal interest_rate; // a year, >=0
     public short   payment_period; // >0
     public short   grace_period;   // >=0
     public short   start_month;    // >=0
 
-    public List<decimal?> additional_sums; // the 0 element is for start_month+1
-
-    public MonthedLoan(string title, short? project_period1, short? grace_period1, decimal? interest_rate1, decimal? loan_amount1, short? payment_period1) {
-      myTitle=title;
-      project_period=(short)((project_period1==null)?12:project_period1.Value);
-      grace_period=(short)((grace_period1==null)?0:grace_period1.Value);
-      interest_rate=((interest_rate1==null)?0m:interest_rate1.Value);
-      loan_amount=((loan_amount1==null)?0m:loan_amount1.Value);
-      payment_period=(short)((payment_period1==null)?0:payment_period1.Value);
-      }
-
-    public int mcIn { get; protected set; }
-    public int mcDebt { get; protected set; }
-    public int mcPay { get; protected set; }
-    public int mcPerc { get; protected set; }
-
-    protected MonthedDataRow incomingMoney() {
-      var r=new MonthedDataRow();
-      for(var i=0; i<start_month; i++) r.Add(0m);
-      r.Add(loan_amount);
-      if(additional_sums!=null){
-        foreach(var o in additional_sums) r.Add((o==null)?0m:o);
+    public MonthedLoan(string title, short? project_period, short? grace_period, decimal? interest_rate, short? payment_period,
+        decimal? startMonthLoan=null, List<decimal?> loanValues=null) 
+       : base(title, project_period, loanValues) {
+      this.grace_period=(short)NZ.Z(grace_period);
+      this.interest_rate=NZ.Z(interest_rate);
+      this.payment_period=(short)NZ.Z(payment_period);
+      if(startMonthLoan!=null){
+        if(investmentAmounts==null)
+          investmentAmounts=new List<decimal?>(){ startMonthLoan };
+         else {
+          if(investmentAmounts.Count<1)
+            investmentAmounts.Add(startMonthLoan);
+           else
+            investmentAmounts[0]=NZ.Zp(startMonthLoan, investmentAmounts[0]);
+          }
         }
-      return r;
+      loan_amount=((startMonthLoan==null)?0m:startMonthLoan.Value);
       }
+
+    public int mcDebt { get; protected set; }
+    public int mcDebtW { get; protected set; }
+    public int mcPay { get; protected set; }
+    public int mcPayW { get; protected set; }
+    public int mcPerc { get; protected set; }
+    public int mcPercW { get; protected set; }
  
 
     public short lastMonth { get { return (short)(start_month+payment_period); }}
 
-    public void generateRecords(MonthedCatalog catalog){
-      var inc=catalog.add(CatalogRowKind.financialInvestment, myTitle, incomingMoney()); mcIn=inc.id;
-      var debt=catalog.add(CatalogRowKind.actualDebt, myTitle, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
-      var pay=catalog.add(CatalogRowKind.payback, $"Aizdevumu pamatsumma ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
-      var percent=catalog.add(CatalogRowKind.percentPayment, $"Aizdevumu procenti ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
+    protected override void makeOther() {
+      var inc=mc.get(mcIn);
+      var debt=mc.add(CatalogRowKind.actualDebt, myTitle, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
+      var pay=mc.add(CatalogRowKind.payback, $"Aizdevumu pamatsumma ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
+      var percent=mc.add(CatalogRowKind.percentPayment, $"Aizdevumu procenti ({myTitle})", new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
       buildPayDebt(inc.data, debt.data, pay.data, percent.data);
+      mcDebtW=windowIt(mcDebt, CatalogRowKind.actualDebtW, true);
+      mcPayW=windowIt(mcPay, CatalogRowKind.paybackW);
+      mcPercW=windowIt(mcPerc, CatalogRowKind.percentPaymentW);
       }
 
     private void buildPayDebt(MonthedDataRow inc, MonthedDataRow debt, MonthedDataRow pay, MonthedDataRow perc) {
