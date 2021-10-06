@@ -22,6 +22,7 @@
 {"Id":"404d16aa-f0f7-452a-88ce-13109e57724a","Value":"Own website","Kind":30,"MasterId":"65c4d434-7f22-44ce-b9a3-c9681ff199a8","OrderValue":1}
 {"Id":"c6e60be8-eef9-41fe-948b-133375a3c43b","Value":"Discounts","Kind":1,"LongValue":"a","OrderValue":20}
 {"Id":"d938dd78-01a5-4d06-9757-149402db6e7d","Value":"Intellectual resources","Kind":5,"LongValue":"These are non-physical, intangible resources like brand, patents, IP, copyrights, and even partnerships. Customer lists, customer knowledge, and even your own people, represent a form of intellectual resource. Intellectual resources take a great deal of time and expenditure to develop. But once developed, they can offer unique advantages to the company.","OrderValue":2}
+{"Id":"073cdc19-b49b-415f-9282-15542b4b0f71","Value":"Frequency","Kind":8,"MasterId":"7682545b-fbee-475e-ab30-5a1f694c81c6","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"e83d8ad7-c709-41b3-b1cd-15e1871fb374","Value":"Highly diversified distributors","Kind":11,"LongValue":"You can choose «Many Distributors» if you believe that distribution channels are strongly diversified and no distributor is of high importance","OrderValue":2}
 {"Id":"c109d793-c4af-4ade-b0c1-17157bc927de","Value":"Highly","Kind":18,"OrderValue":3}
 {"Id":"a560bf73-2db4-46de-a121-17756a2cd4ad","Value":"Manufacturing building","Kind":23,"MasterId":"fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c","OrderValue":1}
@@ -52,6 +53,7 @@
 {"Id":"d39c0155-1419-4a48-962f-2e42d5aca11b","Value":"Driven by technology","Kind":15,"OrderValue":15}
 {"Id":"42c22ecb-1f79-467a-8b1f-2e709de5a5e2","Value":"Guarantees and warranties","Kind":1,"LongValue":"a","OrderValue":17}
 {"Id":"75ccb567-91f3-4966-91f6-30565cb59ba0","Value":"Bargaining power of buyers","Kind":3,"OrderValue":23}
+{"Id":"e6ee044d-d548-45fa-8e61-3147e3db167f","Value":"Ownership type","Kind":8,"MasterId":"d4ede701-8037-488b-9794-9b8632c1c3c0","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}
 {"Id":"fd203ec9-9519-4adb-8c98-314cab2b4689","Value":"Printed Promotional/informative materials","Kind":40,"OrderValue":3}
 {"Id":"0addb638-0a86-4fc8-90fa-332a530655b8","Value":"R & D","Kind":42,"MasterId":"598ee84a-c772-4156-abf3-bc0d57c678a1","OrderValue":0}
 {"Id":"e8f6e9d6-0e37-4182-9c47-33c9d119ac73","Value":"To the email","Kind":31,"MasterId":"65c4d434-7f22-44ce-b9a3-c9681ff199a8","OrderValue":3}
@@ -59,6 +61,7 @@
 {"Id":"2897fd3b-afad-47e5-8407-3582fb0cdf07","Value":"Negotiation","Kind":26,"MasterId":"363f16df-3f11-4643-9c93-cd64242c0bf5","OrderValue":1}
 {"Id":"e4c57d7e-a1c6-462a-8f83-35aa7e989ddb","Value":"Rent of equipment","Kind":21,"OrderValue":3}
 {"Id":"e1da4359-882f-4fd7-8eb0-360b5f859c9a","Value":"Recruitment","Kind":42,"MasterId":"53299dc3-8c18-486c-8be9-623d2152b9dd","OrderValue":0}
+{"Id":"73cdae02-d5d6-4d8f-991a-3636dce19acd","Value":"Frequency","Kind":8,"MasterId":"25feae02-736b-44c7-b6e7-06fa502f4c63","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"ad8c7415-613b-4c04-b7ee-3643d949fd2a","Value":"Marketing","Kind":42,"MasterId":"53299dc3-8c18-486c-8be9-623d2152b9dd","OrderValue":0}
 {"Id":"ab5ffc0e-da10-4ed8-a7fb-369785911381","Value":"Exchange rate","Kind":3,"OrderValue":6}
 {"Id":"c7250794-8be0-4cdb-99e7-37337b2e8fc1","Value":"Sales buildings (shops)","Kind":23,"MasterId":"da2dac96-650b-4d54-a984-9c6bae0653c7","OrderValue":3}
@@ -130,6 +133,7 @@
 {"Id":"7146d46e-a7b5-429b-85ee-74f24e9b8894","Value":"Medium","Kind":19,"OrderValue":2}
 {"Id":"bbc364e1-2394-48c7-8aaf-774ba76942b6","Value":"Large","Kind":36,"OrderValue":3}
 {"Id":"4a3658fb-71ac-4feb-9104-7761fdd5cc9b","Value":"Other","Kind":22,"OrderValue":9}
+{"Id":"e0ff7a0c-075b-48b7-ac9e-77dcd8a65da6","Value":"Ownership type","Kind":8,"MasterId":"7682545b-fbee-475e-ab30-5a1f694c81c6","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}
 {"Id":"67cdf9e6-acc0-404a-a189-78325e83f547","Value":"Paid plans","Kind":16,"OrderValue":3}
 {"Id":"08a43d2e-87da-433b-9656-787878f8c04d","Value":"Continous training","Kind":42,"MasterId":"53299dc3-8c18-486c-8be9-623d2152b9dd","OrderValue":0}
 {"Id":"7ace64a6-77c6-44de-a675-78ff13ca0859","Value":"Delivery to home","Kind":31,"MasterId":"4152d046-a8a2-4adc-a6b3-b2de8c3cafbf","OrderValue":2}
@@ -218,6 +222,7 @@
 {"Id":"598ee84a-c772-4156-abf3-bc0d57c678a1","Value":"Platform/Network","Kind":41,"OrderValue":0}
 {"Id":"593cfcc0-bc1d-4189-b0af-bdd5f51b0b8d","Value":"Services","Kind":37,"OrderValue":2}
 {"Id":"335fcecd-5a78-4b23-a065-be7eaeae4f20","Value":"Frequency","Kind":8,"MasterId":"ca5124ab-0c2f-4224-88b1-f579a01d2522","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
+{"Id":"6814da52-ec5d-4e23-8bbd-bec538a0d43a","Value":"Frequency","Kind":8,"MasterId":"d4ede701-8037-488b-9794-9b8632c1c3c0","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"f90efa9d-ff68-4fe7-b6b3-bf55850f7437","Value":"Self pickup","Kind":31,"MasterId":"4152d046-a8a2-4adc-a6b3-b2de8c3cafbf","OrderValue":1}
 {"Id":"fbaa6538-cedd-43f9-b739-bffcf4f00e96","Value":"Other","Kind":13,"OrderValue":1}
 {"Id":"b4517dc0-8202-4cff-be3e-c11a1f78037c","Value":"Administrative","Kind":6,"MasterId":"63cee727-8378-4603-8b0b-839751dfeed1","OrderValue":2}
@@ -225,6 +230,7 @@
 {"Id":"109af523-c8ae-409f-a5ab-c15d02ce5858","Value":"18 - 24","Kind":32,"OrderValue":3}
 {"Id":"e8daf129-e055-4683-b4aa-c1ebd5934e25","Value":"Management processes","Kind":1,"LongValue":"a","OrderValue":11}
 {"Id":"2e4ee3fe-7f1b-4105-b37e-c1ee4d8d4d40","Value":"Fixed location","Kind":30,"MasterId":"4152d046-a8a2-4adc-a6b3-b2de8c3cafbf","OrderValue":1}
+{"Id":"669d2eb0-dcbf-487d-af07-c33e4baee61a","Value":"Ownership type","Kind":8,"MasterId":"25feae02-736b-44c7-b6e7-06fa502f4c63","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}
 {"Id":"50477479-4b86-4ce1-bcea-c3e7b075f5c8","Value":"Equipment and real estate","Kind":12,"OrderValue":2}
 {"Id":"44468654-bf65-4e70-ab92-c4bf5c399d03","Value":"Medium","Kind":18,"OrderValue":2}
 {"Id":"7322bf24-fee2-4a31-bcda-c4e7a762c162","Value":"Vehicles","Kind":1,"LongValue":"a","OrderValue":3}
@@ -246,6 +252,7 @@
 {"Id":"003ba515-28f7-4141-af55-ce6a35b96e41","Value":"Services","Kind":42,"MasterId":"b2445fa0-fa0d-4f77-b545-a3d10f6da338","OrderValue":0}
 {"Id":"f611bf2d-3089-4e53-b362-cf740f1f102a","Value":"Accessibility of financial resources","Kind":3,"OrderValue":10}
 {"Id":"bc6e314f-5d86-40dc-a791-d63be99c22bd","Value":"Primary","Kind":34,"OrderValue":1}
+{"Id":"8b08eb78-84b9-4ad4-b00f-d876bffc62a5","Value":"Frequency","Kind":8,"MasterId":"aa351db4-3b28-4cab-ad95-722bfcba23dc","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"9d608883-4f26-4303-9903-d8de46433f04","Value":"Land","Kind":1,"LongValue":"a","OrderValue":1}
 {"Id":"0367b12d-3444-4c35-8045-d8ecc607cc00","Value":"Medium","Kind":20,"OrderValue":2}
 {"Id":"97070765-ae68-4bb1-9b50-d99761807ef4","Value":"Retailers","Kind":27,"OrderValue":2}
@@ -297,3 +304,4 @@
 {"Id":"cf1657e0-d4eb-430c-8185-fc80c20aa25c","Value":"Other","Kind":23,"MasterId":"25532174-0c07-4293-99c2-10c954ad6367","OrderValue":7}
 {"Id":"187d8314-5350-4f30-a68c-fde38021a178","Value":"Rarity","Kind":15,"OrderValue":20}
 {"Id":"e0c84bf6-dbc3-450e-95ac-fe42299e05df","Value":"Product design","Kind":1,"LongValue":"a","OrderValue":13}
+{"Id":"4d2bbd5e-d9ef-45cd-84b2-fe93bde5eff1","Value":"Ownership type","Kind":8,"MasterId":"aa351db4-3b28-4cab-ad95-722bfcba23dc","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}

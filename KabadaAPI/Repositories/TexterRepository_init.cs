@@ -41,16 +41,24 @@ namespace KabadaAPI {
         }
       return r.Id;
       }
-
-    internal Guid set(Guid master, short kind, string value) {
-      var r=q0.Where(x=>x.Kind==kind && x.MasterId==master && x.Value==value).FirstOrDefault();
-      if(r==null){
-        r=new Texter(){Id=Guid.NewGuid(), Kind=kind, Value=value, MasterId=master };
-        q0.Add(r);
-        daContext.SaveChanges();
+    internal Guid set(Guid master, short kind, string value){
+        var r = q0.Where(x => x.Kind == kind && x.MasterId == master && x.Value == value).FirstOrDefault();
+        if (r == null) {
+            r = new Texter() { Id = Guid.NewGuid(), Kind = kind, Value = value, MasterId = master };
+            q0.Add(r);
+            daContext.SaveChanges();
         }
-      return r.Id;
-      }
+        return r.Id;
+    }
+    internal Guid set(Guid master, short kind, string value, string longvalue=null, short ordervalue = 1) {
+    var r=q0.Where(x=>x.Kind==kind && x.MasterId==master && x.Value==value).FirstOrDefault();
+    if(r==null){
+    r=new Texter(){Id=Guid.NewGuid(), Kind=kind, Value=value, MasterId=master, LongValue=longvalue, OrderValue=ordervalue };
+    q0.Add(r);
+    daContext.SaveChanges();
+    }
+    return r.Id;
+    }
 
     private static List<Texter> education(){
       return Codifiers(EnumTexterKind.education,
