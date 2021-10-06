@@ -2,14 +2,14 @@
 using static KabadaAPI.MonthedCatalogRow;
 
 namespace KabadaAPI {
-  public class MonthedLoan : FinancialInvestment {
+  public class Plan_Loan : FinancialInvestment {
     public decimal loan_amount;
     public decimal interest_rate; // a year, >=0
     public short   payment_period; // >0
     public short   grace_period;   // >=0
     public short   start_month;    // >=0
 
-    public MonthedLoan(string title, short? project_period, short? grace_period, decimal? interest_rate, short? payment_period,
+    public Plan_Loan(string title, short? project_period, short? grace_period, decimal? interest_rate, short? payment_period,
         decimal? startMonthLoan=null, List<decimal?> loanValues=null) 
        : base(title, project_period, loanValues) {
       this.grace_period=(short)NZ.Z(grace_period);

@@ -1,5 +1,5 @@
 ﻿namespace Kabada {
-  public class ProductSalesForecastElementMonth {
+  public partial class ProductSalesForecastElementMonth {
     public int month;
     public decimal price;
     public int qty;

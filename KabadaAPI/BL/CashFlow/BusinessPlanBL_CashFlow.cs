@@ -27,9 +27,10 @@ namespace KabadaAPI {
       }
 
     //----------------------------------------- 2 ------------------------------------------//
-    private List<OwnMoney> ownMoney;
-    private List<MonthedLoan> loans;
-    private List<Production> productions;
+    private List<Plan_OwnMoney> ownMoney;
+    private List<Plan_Loan> loans;
+  //  private List<Plan_SaleForecast> productions;
+    protected Plan_SaleForecast salesMaster;
 
     protected void loadTaxes(){
       if(this._o.Country!=null){
@@ -45,32 +46,26 @@ namespace KabadaAPI {
       }
 
     private void fillBaseCash() {
-      loans=new List<MonthedLoan>();
+      loans=new List<Plan_Loan>();
       var s=this.e.startup;
 
       //=======================LOANs==========================================//
-      var w=new MonthedLoan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
+      var w=new Plan_Loan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
       loans.Add(w);
       w.generateRecords(mc);
 
-      w=new MonthedLoan("Short term", s.period, null, 8, 10, 23000) { investmentAmounts=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
+      w=new Plan_Loan("Short term", s.period, null, 8, 10, 23000) { investmentAmounts=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
       loans.Add(w);
       w.generateRecords(mc);
 
       //=======================OWN MONEY==========================================//
-      var own=new OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
+      var own=new Plan_OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
       own.generateRecords(mc);
-      ownMoney=new List<OwnMoney>(){ own };
+      ownMoney=new List<Plan_OwnMoney>(){ own };
 
       //=======================SALES FORECAST==========================================//
-      productions=new List<Production>();
-      var pi=myProduct_s.OrderBy(x=>x.e.title).ToList();
-      foreach(var p in pi){
-        var o=new Production(p);
-        o.generateRecords(mc, this);
-        productions.Add(o);
-        }
-      var sms=Production.GenerateSumRecords(mc, productions, this);
+      salesMaster=new Plan_SaleForecast(mc, this);
+      salesMaster.generateRecords(myProduct_s.OrderBy(x=>x.e.title).ToList());
       }
 
     protected CashFlow myCashFlowInternal(){
@@ -114,24 +109,26 @@ namespace KabadaAPI {
 
     public CashFlowTable salesForecast(decimal? initialRevenue) { 
       var r=new CashFlowTable(){ rows=new List<CashFlowRow>(), title="Sales forcast (revenue from core business):" };
-      var vats=new CashFlowRow("VAT received - (PVN likmes), not calculated for export part outside EU", period: this.e.startup.period);
-      var n=(short)(vats.monthlyValue.Count-1);
-      var pi=myProduct_s.OrderBy(x=>x.e.title).ToList();
-      foreach(var p in pi){
-        var rw=new CashFlowRow(p.e.title, period: n);
-        r.rows.Add(rw);
-        for(var m=1; m<=n; m++){
-          var euS=p.euSale(m);
-          rw.monthlyValue[m]=CashFlowRow.Sum(euS, p.noneuSale(m));
-          if(euS!=null){
-            var pc=p.e.salesForcast.sales_forecast_eu.Where(x=>x.month==m).FirstOrDefault();
-            vats.monthlyValue[m]=CashFlowRow.Sum(vats.monthlyValue[m], money(pc.vat*euS/100));
-            }
-          }
-        rw.totals();
-        }
-      r.summaries=new List<CashFlowRow>(){ r.summRow("TOTAL revenue from core business", r.rows), vats };
-      vats.totals();
+      r.rows=salesMaster.basicRows();
+      //var vats=new CashFlowRow("VAT received - (PVN likmes), not calculated for export part outside EU", period: this.e.startup.period);
+      //var n=(short)(vats.monthlyValue.Count-1);
+      //var pi=myProduct_s.OrderBy(x=>x.e.title).ToList();
+      //foreach(var p in pi){
+      //  var rw=new CashFlowRow(p.e.title, period: n);
+      //  r.rows.Add(rw);
+      //  for(var m=1; m<=n; m++){
+      //    var euS=p.euSale(m);
+      //    rw.monthlyValue[m]=CashFlowRow.Sum(euS, p.noneuSale(m));
+      //    if(euS!=null){
+      //      var pc=p.e.salesForcast.sales_forecast_eu.Where(x=>x.month==m).FirstOrDefault();
+      //      vats.monthlyValue[m]=CashFlowRow.Sum(vats.monthlyValue[m], money(pc.vat*euS/100));
+      //      }
+      //    }
+      //  rw.totals();
+      //  }
+      r.summaries=salesMaster.summaries();
+      //r.summaries=new List<CashFlowRow>(){ r.summRow("TOTAL revenue from core business", r.rows), vats };
+      //vats.totals();
       var tr=r.summRow("TOTAL REVENUE", r.summaries);
       tr.monthlyValue[0]=initialRevenue; //this.e.startup.total_investments;
       r.summaries.Add(tr);
