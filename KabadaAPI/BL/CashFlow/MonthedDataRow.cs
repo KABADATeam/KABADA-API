@@ -10,6 +10,8 @@ namespace KabadaAPI {
 
     public MonthedDataRow(IEnumerable<decimal?> data) : this() { set(data); }
 
+    public MonthedDataRow(decimal? startup) : this(new List<decimal?>(){ startup}) {}
+
     public void set(IEnumerable<decimal?> data) {
       var n=Count;
       var i=0;

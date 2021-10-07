@@ -6,13 +6,17 @@ using static KabadaAPI.MonthedCatalogRow;
 namespace KabadaAPI {
   public class Plan_SaleForecast {
     //===================MASTER===============================//
+    protected MonthedCatalog _mc;
+    protected BusinessPlanBL _bp;
+
+    protected Plan_SaleForecast dad;
     protected List<Plan_SaleForecast> slaves;
 
-    protected MonthedCatalog monthedCatalog;
-    protected BusinessPlanBL plan;
+    private MonthedCatalog mc { get { return _mc==null?dad._mc:_mc; }}
+    private BusinessPlanBL bp { get { return _bp==null?dad._bp:_bp; }}
 
     public Plan_SaleForecast(MonthedCatalog catalog, BusinessPlanBL businessPlan) {
-      monthedCatalog=catalog; plan=businessPlan;
+      _mc=catalog; _bp=businessPlan;
       slaves=new List<Plan_SaleForecast>();
       }
 
@@ -29,39 +33,35 @@ namespace KabadaAPI {
       }
 
     public void GenerateSumRecords(){
-      var s=monthedCatalog.add(CatalogRowKind.productSelledPureSum, "TOTAL revenue from core business", new MonthedDataRow());
+      var s=_mc.add(CatalogRowKind.productSelledPureSum, "TOTAL revenue from core business", new MonthedDataRow());
       summRow=s.id;
-      var db=slaves.Select(x=>monthedCatalog.get(x.mcIncomePure).data).ToList();
-      for(var m=0; m<=plan.pPeriod; m++)
+      var db=slaves.Select(x=>_mc.get(x.mcIncomePure).data).ToList();
+      for(var m=0; m<=_bp.pPeriod; m++)
         s.data.Add(NZ.Np(db.Select(x=>x.get(m))));
 
-      var v=monthedCatalog.add(CatalogRowKind.productVatSum, "VAT received(in EU)", new MonthedDataRow());
+      var v=_mc.add(CatalogRowKind.productVatSum, "VAT received(in EU)", new MonthedDataRow());
       vatRow=v.id;
-      db=slaves.Select(x=>monthedCatalog.get(x.mcVat).data).ToList();
+      db=slaves.Select(x=>_mc.get(x.mcVat).data).ToList();
       v.data.Add(null); // shift one month
-      for(var m=0; m<=plan.pPeriod; m++)
+      for(var m=0; m<=_bp.pPeriod; m++)
         v.data.Add(NZ.Np(db.Select(x=>x.get(m))));
       }
 
     internal List<CashFlowRow> basicRows() {
       var r=new List<CashFlowRow>();
       foreach(var s in slaves)
-        r.Add(monthedCatalog.expose(s.mcIncomePure, plan.pPeriod));
+        r.Add(_mc.expose(s.mcIncomePure, _bp.pPeriod));
       return r;
       }
 
     internal List<CashFlowRow> summaries() {
       var r=new List<CashFlowRow>();
-      r.Add(monthedCatalog.expose(summRow, plan.pPeriod));
-      r.Add(monthedCatalog.expose(vatRow, plan.pPeriod));
+      r.Add(_mc.expose(summRow, _bp.pPeriod));
+      r.Add(_mc.expose(vatRow, _bp.pPeriod));
       return r;
       }
 
     //===================SLAVE===============================//
-    protected Plan_SaleForecast dad;
-    private MonthedCatalog mc { get { return dad.monthedCatalog; }}
-    private BusinessPlanBL bp { get { return dad.plan; }}
-
     protected ProductBL p;
     public int mcIncomePure;
     public int mcVat;
@@ -73,9 +73,6 @@ namespace KabadaAPI {
 
       var income=mc.add(CatalogRowKind.productSelledPure, tit, new MonthedDataRow(bp.pPeriod+4)); mcIncomePure=income.id; income.master=p.id.ToString();
       var vat=mc.add(CatalogRowKind.productVat, tit, new MonthedDataRow(bp.pPeriod+4)); mcVat=vat.id; vat.master=p.id.ToString();
-
-      //// month 0
-      //income.data.Add(null); vat.data.Add(null);
 
       for(var m=1; m<=bp.pPeriod; m++){
         var e=p.eu(m);
@@ -98,14 +95,6 @@ namespace KabadaAPI {
             }
           }
 
-        //var sm=NZ.Np(euS, p.noneuSale(m));
-        //decimal? w=null;
-        //if(bp.e.startup.vat_payer==true && euS!=null){
-        //  w=NZ.N(euS.Value*eu.vat/100);
-        //  }
-        //var tm=m+
-        //income.data.Add(sm);
-        //vat.data.Add(w);
         }
       }
     }

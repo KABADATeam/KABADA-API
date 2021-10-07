@@ -179,5 +179,39 @@ namespace KabadaAPI {
     private List<CostBL> myCost_s { get {var r=myFixedCost_s; r.AddRange(myVariableCost_s); return r; }}
 
     private List<KeyResourceBL> myKeyResource_s { get { return gA(PlanAttributeKind.keyResource).Select(x=>new KeyResourceBL(x, false)).ToList(); }}
+
+    private List<InvestmentElementBL> ownMoney(){
+      var r=new List<InvestmentElementBL>();
+      if(e.startup.own_money!=null)      // basic own money
+        r.Add(new InvestmentElementBL("Own Money", e.startup.own_money));
+      // TODO extra own money
+      var m2=new InvestmentElementBL("Own extra money", 5000);
+      m2.AddRange(new List<decimal?>{ null, 6500, 12000, 1350, 60});
+      r.Add(m2);
+      // end TODO- replace with real data
+      return r;
+      }
+
+    private List<LoanElementBL> loanList(){
+      var r=new List<LoanElementBL>();
+      var s=e.startup;
+      if(s.loan_amount!=null && s.loan_amount.Value>0){
+        var w=new LoanElementBL("Long term", s.loan_amount){
+                 payment_period=(short)NZ.Z(s.payment_period, pPeriod)
+               , interest_rate=NZ.Z(s.interest_rate)
+               , grace_period=(short)NZ.Z(s.grace_period)
+               };
+        //var w=new Plan_Loan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
+        r.Add(w);
+        }
+
+      // TODO extra loan
+      var m2 = new LoanElementBL("Short term", 23000){ payment_period=7, interest_rate=10, grace_period=3 };
+      m2.AddRange(new List<decimal?> { null, 5000, 5000, 20000, 12500 });
+      r.Add(m2);
+      //end TODO-replace with real data
+
+      return r;
+      }
     }
   }
