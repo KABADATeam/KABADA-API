@@ -60,6 +60,8 @@ namespace KabadaAPI {
       loanMaster=new Plan_Loan(mc, this);
       loanMaster.generateRecords(loanList());
 
+      loanMaster.generateTotalInitR(ownMaster);
+
       //=======================SALES FORECAST==========================================//
       salesMaster=new Plan_SaleForecast(mc, this);
       salesMaster.generateRecords(myProduct_s.OrderBy(x=>x.e.title).ToList());
@@ -94,13 +96,23 @@ namespace KabadaAPI {
       }
 
     private CashFlowTable initialRevenue { get {
-      var br=new CashFlowTable(){ title="Initial revenue to start business:" };
+      var br=new CashFlowTable(){ title="Initial money revenue to start business:" };
       var r=new List<CashFlowRow>();
       br.rows=r;
-      r.Add(new CashFlowRow("Owner's contribution", (e.startup.own_money==null?0:e.startup.own_money)+(e.startup.own_assets==null?0:e.startup.own_assets)));
-      r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
+      var sum=0m;
+      var t=new List<CashFlowRow>(){ ownMaster.revenueRow() };
+      t.AddRange(loanMaster.revenueRows());
+      foreach(var o in t){
+        if(o.monthlyValue.Count<1)
+          continue;
+        r.Add(o);
+//        sum+=NZ.Z(o.monthlyValue[0]);
+        }
+
+      //r.Add(new CashFlowRow("Owner's contribution", (e.startup.own_money==null?0:e.startup.own_money)+(e.startup.own_assets==null?0:e.startup.own_assets)));
+      //r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
       
-      br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", e.startup.total_investments)};
+      br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", mc.get(loanMaster.mcRevSumW).data[0])};
       return br;
       }}
 
@@ -123,10 +135,12 @@ namespace KabadaAPI {
       //    }
       //  rw.totals();
       //  }
+      var t=new List<CashFlowRow>(){ mc.expose(loanMaster.mcRevSumW, pPeriod) };
       r.summaries=salesMaster.summaries();
+      t.AddRange(r.summaries);
       //r.summaries=new List<CashFlowRow>(){ r.summRow("TOTAL revenue from core business", r.rows), vats };
       //vats.totals();
-      var tr=r.summRow("TOTAL REVENUE", r.summaries);
+      var tr=r.summRow("TOTAL REVENUE", t);
       tr.monthlyValue[0]=initialRevenue; //this.e.startup.total_investments;
       r.summaries.Add(tr);
       return r;

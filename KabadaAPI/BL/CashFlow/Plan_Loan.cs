@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Kabada;
+using System.Collections.Generic;
+using System.Linq;
 using static KabadaAPI.MonthedCatalogRow;
 
 namespace KabadaAPI {
@@ -18,17 +20,39 @@ namespace KabadaAPI {
         slaves.Add(o);
         o.generateRecords();
         }
-      generateSumRecords();
+//      generateSumRecords();
       }
+
+    public int mcRevSum { get; protected set; }
+    public int mcRevSumW { get; protected set; }
 
     //protected int summRow;
 
-    private void generateSumRecords() {
-      //var s=_mc.add(CatalogRowKind.ownMoneySum, "OwnMoney", new MonthedDataRow());
-      //summRow=s.id;
-      //var db=slaves.Select(x=>_mc.get(x.mcInW).data).ToList();
-      //for(var m=0; m<=_bp.pPeriod; m++)
-      //  s.data.Add(NZ.Np(db.Select(x=>x.get(m))));
+    //private void generateSumRecords() {
+    //  //var s=_mc.add(CatalogRowKind.ownMoneySum, "OwnMoney", new MonthedDataRow());
+    //  //summRow=s.id;
+    //  //var db=slaves.Select(x=>_mc.get(x.mcInW).data).ToList();
+    //  //for(var m=0; m<=_bp.pPeriod; m++)
+    //  //  s.data.Add(NZ.Np(db.Select(x=>x.get(m))));
+    //  }
+
+    internal List<CashFlowRow> revenueRows() {
+      var r=new List<CashFlowRow>();
+      foreach(var o in slaves)
+        r.Add(o.revenueRow());
+      return r;
+      }
+
+    internal void generateTotalInitR(Plan_OwnMoney ownMaster) {
+      var t=new List<MonthedCatalogRow>(){  mc.get(ownMaster.summRow) };
+      foreach(var o in slaves)
+        t.Add(mc.get(o.mcIn));
+      var n=t.Select(x=>x.data.Count).Max();
+      var sumis=new MonthedDataRow(n);
+      var w=mc.add(CatalogRowKind.initialRevenue, "TOTAL initial revenue", sumis); mcRevSum=w.id;
+      for(var m=0; m<n; m++)
+        sumis[m]=NZ.Np(t.Select(x=>x.data.get(m)));
+      mcRevSumW=windowIt(bp.pPeriod, mcRevSum, CatalogRowKind.initialRevenueW); 
       }
 
     //===================SLAVE===============================//
@@ -57,35 +81,6 @@ namespace KabadaAPI {
       makeOther();
       }
 
-
-
-
-
-
-
-  //  public decimal loan_amount;
-
-    //public Plan_Loan(string title, short? project_period, short? grace_period, decimal? interest_rate, short? payment_period,
-    //    decimal? startMonthLoan=null, List<decimal?> loanValues=null) 
-    //   : base(title, project_period, loanValues) {
-    //  this.grace_period=(short)NZ.Z(grace_period);
-    //  this.interest_rate=NZ.Z(interest_rate);
-    //  this.payment_period=(short)NZ.Z(payment_period);
-    //  if(startMonthLoan!=null){
-    //    if(investmentAmounts==null)
-    //      investmentAmounts=new List<decimal?>(){ startMonthLoan };
-    //     else {
-    //      if(investmentAmounts.Count<1)
-    //        investmentAmounts.Add(startMonthLoan);
-    //       else
-    //        investmentAmounts[0]=NZ.Zp(startMonthLoan, investmentAmounts[0]);
-    //      }
-    //    }
-    //  loan_amount=((startMonthLoan==null)?0m:startMonthLoan.Value);
-    //  }
- 
-
-
     protected void makeOther() {
       var inc=mc.get(mcIn);
       var debt=mc.add(CatalogRowKind.actualDebt, p.title, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
@@ -96,6 +91,8 @@ namespace KabadaAPI {
       mcPayW=windowIt(project_period, mcPay, CatalogRowKind.paybackW);
       mcPercW=windowIt(project_period, mcPerc, CatalogRowKind.percentPaymentW);
       }
+
+    private CashFlowRow revenueRow() { return mc.expose(mcInW, project_period); }
 
     private void buildPayDebt(MonthedDataRow inc, MonthedDataRow debt, MonthedDataRow pay, MonthedDataRow perc) {
       debt[0]=inc[0]; pay[0]=0m; perc[0]=0m;

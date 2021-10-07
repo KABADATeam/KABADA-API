@@ -3,7 +3,8 @@
 namespace KabadaAPI {
   public class MonthedCatalogRow {
     public enum CatalogRowKind { unspecified=0
-      , financialInvestment, financialInvestmentW, ownMoneySum, actualDebt, actualDebtW, payback, paybackW, percentPayment, percentPaymentW
+      , financialInvestment, financialInvestmentW, actualDebt, actualDebtW, payback, paybackW, percentPayment, percentPaymentW
+      , ownMoneySum, initialRevenue, initialRevenueW
       , productSelledPure, productVat, productSelledPureSum, productVatSum
       }
 

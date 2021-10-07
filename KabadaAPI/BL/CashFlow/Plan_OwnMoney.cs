@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Kabada;
+using System.Collections.Generic;
 using System.Linq;
 using static KabadaAPI.MonthedCatalogRow;
 
@@ -23,7 +24,7 @@ namespace KabadaAPI {
       generateSumRecords();
       }
 
-    protected int summRow;
+    public int summRow { get; protected set; }
 
     private void generateSumRecords() {
       var s=_mc.add(CatalogRowKind.ownMoneySum, "OwnMoney", new MonthedDataRow());
@@ -39,6 +40,8 @@ namespace KabadaAPI {
     public Plan_OwnMoney(Plan_OwnMoney master, InvestmentElementBL element) {_dad=master; this.p=element; }
 
     protected void generateRecords() { generateIncoming(mc, p); }
+
+    internal CashFlowRow revenueRow() { return mc.expose(summRow, project_period); }
 
     //public int mcIn; // montlyTable.financialInvestment
     //public int mcInW; // montlyTable.financialInvestment windowed
