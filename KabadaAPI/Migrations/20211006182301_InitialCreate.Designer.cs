@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20210929072549_InitialCreate")]
+    [Migration("20211006182301_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -8107,7 +8107,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "6"
+                            Value = "7"
                         });
                 });
 
@@ -8650,6 +8650,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("073cdc19-b49b-415f-9282-15542b4b0f71"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
                             Id = new Guid("e83d8ad7-c709-41b3-b1cd-15e1871fb374"),
                             Kind = (short)11,
                             LongValue = "You can choose «Many Distributors» if you believe that distribution channels are strongly diversified and no distributor is of high importance",
@@ -8874,6 +8883,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("e6ee044d-d548-45fa-8e61-3147e3db167f"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("d4ede701-8037-488b-9794-9b8632c1c3c0"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
+                        },
+                        new
+                        {
                             Id = new Guid("fd203ec9-9519-4adb-8c98-314cab2b4689"),
                             Kind = (short)40,
                             OrderValue = (short)3,
@@ -8925,6 +8943,15 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("53299dc3-8c18-486c-8be9-623d2152b9dd"),
                             OrderValue = (short)0,
                             Value = "Recruitment"
+                        },
+                        new
+                        {
+                            Id = new Guid("73cdae02-d5d6-4d8f-991a-3636dce19acd"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("25feae02-736b-44c7-b6e7-06fa502f4c63"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
                         },
                         new
                         {
@@ -9462,6 +9489,15 @@ namespace KabadaAPI.Migrations
                             Kind = (short)22,
                             OrderValue = (short)9,
                             Value = "Other"
+                        },
+                        new
+                        {
+                            Id = new Guid("e0ff7a0c-075b-48b7-ac9e-77dcd8a65da6"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("7682545b-fbee-475e-ab30-5a1f694c81c6"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
                         },
                         new
                         {
@@ -10123,6 +10159,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("6814da52-ec5d-4e23-8bbd-bec538a0d43a"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("d4ede701-8037-488b-9794-9b8632c1c3c0"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
+                        },
+                        new
+                        {
                             Id = new Guid("f90efa9d-ff68-4fe7-b6b3-bf55850f7437"),
                             Kind = (short)31,
                             MasterId = new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"),
@@ -10173,6 +10218,15 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("4152d046-a8a2-4adc-a6b3-b2de8c3cafbf"),
                             OrderValue = (short)1,
                             Value = "Fixed location"
+                        },
+                        new
+                        {
+                            Id = new Guid("669d2eb0-dcbf-487d-af07-c33e4baee61a"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("25feae02-736b-44c7-b6e7-06fa502f4c63"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
                         },
                         new
                         {
@@ -10327,6 +10381,15 @@ namespace KabadaAPI.Migrations
                             Kind = (short)34,
                             OrderValue = (short)1,
                             Value = "Primary"
+                        },
+                        new
+                        {
+                            Id = new Guid("8b08eb78-84b9-4ad4-b00f-d876bffc62a5"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]",
+                            MasterId = new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"),
+                            OrderValue = (short)2,
+                            Value = "Frequency"
                         },
                         new
                         {
@@ -10715,6 +10778,15 @@ namespace KabadaAPI.Migrations
                             LongValue = "a",
                             OrderValue = (short)13,
                             Value = "Product design"
+                        },
+                        new
+                        {
+                            Id = new Guid("4d2bbd5e-d9ef-45cd-84b2-fe93bde5eff1"),
+                            Kind = (short)8,
+                            LongValue = "[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]",
+                            MasterId = new Guid("aa351db4-3b28-4cab-ad95-722bfcba23dc"),
+                            OrderValue = (short)1,
+                            Value = "Ownership type"
                         });
                 });
 
