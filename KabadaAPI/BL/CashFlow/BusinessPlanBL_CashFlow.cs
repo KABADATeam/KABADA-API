@@ -53,23 +53,12 @@ namespace KabadaAPI {
 
 
       //=======================OWN MONEY==========================================//
-      //var own=new Plan_OwnMoney("Own money", s.period, new List<decimal?>(){20000, null, 500m, 34000m});
-      //own.generateRecords(mc);
-      //_ownMoney=new List<Plan_OwnMoney>(){ own };
       ownMaster=new Plan_OwnMoney(mc, this);
       ownMaster.generateRecords(ownMoney());
 
       //=======================LOANs==========================================//
       loanMaster=new Plan_Loan(mc, this);
       loanMaster.generateRecords(loanList());
-
-      //var w=new Plan_Loan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
-      //loans.Add(w);
-      //w.generateRecords(mc);
-
-      //w=new Plan_Loan("Short term", s.period, null, 8, 10, 23000) { investmentAmounts=new List<decimal?>(){null, null, 15739.52m, 34692.81m}};;
-      //loans.Add(w);
-      //w.generateRecords(mc);
 
       //=======================SALES FORECAST==========================================//
       salesMaster=new Plan_SaleForecast(mc, this);
