@@ -6,6 +6,7 @@ namespace KabadaAPI {
       , financialInvestment, financialInvestmentW, actualDebt, actualDebtW, payback, paybackW, percentPayment, percentPaymentW
       , ownMoneySum, initialRevenue, initialRevenueW
       , productSelledPure, productVat, productSelledPureSum, productVatSum
+      , pendingInvestment
       }
 
     public int id { get; protected set; }

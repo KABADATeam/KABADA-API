@@ -3,11 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using static KabadaAPI.MonthedCatalogRow;
 
 namespace KabadaAPI {
   partial class BusinessPlanBL {
     protected CashFlow cf;
     protected MonthedCatalog mc;
+
+    public int pendingInvestment;
 
     public int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
 
@@ -33,6 +36,7 @@ namespace KabadaAPI {
     protected Plan_SaleForecast salesMaster;
     protected Plan_OwnMoney ownMaster;
     protected Plan_Loan loanMaster;
+    protected Plan_Assets assetMaster;
 
     protected void loadTaxes(){
       if(this._o.Country!=null){
@@ -51,6 +55,7 @@ namespace KabadaAPI {
       loans=new List<Plan_Loan>();
       var s=this.e.startup;
 
+var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.data.AddRange(new List<decimal?>(){ null, null, null, -4501.03m}); pendingInvestment=pI.id;
 
       //=======================OWN MONEY==========================================//
       ownMaster=new Plan_OwnMoney(mc, this);
@@ -65,6 +70,10 @@ namespace KabadaAPI {
       //=======================SALES FORECAST==========================================//
       salesMaster=new Plan_SaleForecast(mc, this);
       salesMaster.generateRecords(myProduct_s.OrderBy(x=>x.e.title).ToList());
+
+      //======================COSTS.INVESTMENTS===ASSETS=================================//
+      assetMaster=new Plan_Assets(mc, this);
+      assetMaster.generateRecords(this.myKeyResource_s);
       }
 
     protected CashFlow myCashFlowInternal(){
@@ -99,7 +108,7 @@ namespace KabadaAPI {
       var br=new CashFlowTable(){ title="Initial money revenue to start business:" };
       var r=new List<CashFlowRow>();
       br.rows=r;
-      var sum=0m;
+      //var sum=0m;
       var t=new List<CashFlowRow>(){ ownMaster.revenueRow() };
       t.AddRange(loanMaster.revenueRows());
       foreach(var o in t){
@@ -113,6 +122,8 @@ namespace KabadaAPI {
       //r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
       
       br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", mc.get(loanMaster.mcRevSumW).data[0])};
+      if(pendingInvestment!=0)
+        br.rows.Add(mc.expose(pendingInvestment, pPeriod));
       return br;
       }}
 
