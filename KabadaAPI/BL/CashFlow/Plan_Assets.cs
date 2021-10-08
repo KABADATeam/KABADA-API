@@ -55,6 +55,16 @@ namespace KabadaAPI {
       //GenerateSumRecords();
       }
 
+    internal decimal investments() {
+      var r=0m;
+      foreach(var o in slaves){
+        if(o.mcSum==0)
+          continue;
+        r+=NZ.Z(mc.get(o.mcSum).data.get(0));
+        }
+      return r;
+      }
+
     //===================SLAVE===============================//
     protected SelectorForKeyResources p;
     public int mcSum;

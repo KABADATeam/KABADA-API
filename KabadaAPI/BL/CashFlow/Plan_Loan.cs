@@ -55,6 +55,15 @@ namespace KabadaAPI {
       mcRevSumW=windowIt(bp.pPeriod, mcRevSum, CatalogRowKind.initialRevenueW); 
       }
 
+    internal List<CashFlowRow> costsRows() {
+      var r=new List<CashFlowRow>();
+      foreach(var o in slaves){
+        r.Add(mc.expose(o.mcPercW, bp.pPeriod));
+        r.Add(mc.expose(o.mcPayW, bp.pPeriod));
+        }
+      return r;
+      }
+
     //===================SLAVE===============================//
     LoanElementBL p;
     protected decimal interest_rate { get { return p.interest_rate; }}
@@ -84,8 +93,8 @@ namespace KabadaAPI {
     protected void makeOther() {
       var inc=mc.get(mcIn);
       var debt=mc.add(CatalogRowKind.actualDebt, p.title, new MonthedDataRow(lastMonth+1)); mcDebt=debt.id;
-      var pay=mc.add(CatalogRowKind.payback, $"Aizdevumu pamatsumma ({p.title})", new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
-      var percent=mc.add(CatalogRowKind.percentPayment, $"Aizdevumu procenti ({p.title})", new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
+      var pay=mc.add(CatalogRowKind.payback, $"Loan principal  ({p.title})", new MonthedDataRow(lastMonth+1)); mcPay=pay.id;
+      var percent=mc.add(CatalogRowKind.percentPayment, $"Loan interest ({p.title})", new MonthedDataRow(lastMonth+1)); mcPerc=percent.id;
       buildPayDebt(inc.data, debt.data, pay.data, percent.data);
       mcDebtW=windowIt(project_period, mcDebt, CatalogRowKind.actualDebtW, true);
       mcPayW=windowIt(project_period, mcPay, CatalogRowKind.paybackW);

@@ -30,11 +30,11 @@ namespace KabadaAPI {
       }
 
     public MonthedDataRow window(int projectSize, bool keepPostAsIs) {
-      var t=range(0, projectSize);
+      var t=range(0, projectSize+1);
       if(keepPostAsIs)
-        t.Add(get(projectSize+1));
+        t.Add(get(projectSize+2));
        else {
-        var tail=range(projectSize+1);
+        var tail=range(projectSize+2);
         var s=NZ.Np(tail);
         if(s!=null)
           t.Add(s);

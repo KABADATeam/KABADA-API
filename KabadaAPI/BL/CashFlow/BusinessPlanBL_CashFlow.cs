@@ -82,10 +82,11 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       cf.investments=investments;
       cf.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):", KeyResourceBL.SVID);
       cf.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):", KeyResourceBL.SFID);
-      cf.fixedCosts.summaries=costsSummary(cf);
-      var t=cf.fixedCosts.summRow("Total Expenses - KOPĒJIE IZDEVUMI", cf.fixedCosts.summaries);
+      var sh=cf.variableCosts; // holder of summary
+      sh.summaries=costsSummary(cf);
+      var t=cf.fixedCosts.summRow("TOTAL COSTS", sh.summaries);
       //cf.fixedCosts.summaries.Add(atlikums);   // DEBUG row
-      cf.fixedCosts.summaries.Add(t);
+      sh.summaries.Add(t);
       cf.balances=makeBalances(cf.salesForecast.summaries[cf.salesForecast.summaries.Count-1], t);
       //cf.snapMe();
       return cf;
@@ -213,7 +214,8 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
         visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
       if(basic.fixedCosts!=null)
         visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
-      var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs", visi);
+      var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs and additional investments in current assets:", visi);
+      t.monthlyValue[0]=NZ.Np(t.monthlyValue[0], assetMaster.investments());
       r.Add(t);
  
       visi=new List<CashFlowRow>();
@@ -222,7 +224,7 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       if(basic.fixedCosts!=null)
         visi.AddRange(basic.fixedCosts.normalRows());
       var tmp=basic.fixedCosts.summRow("---", visi);
-      r.Add(tmp.multoRow("VAT input - PVN priekšnodoklis (ņem vērā katras izmaksas PVN likmes apmēru", vatTax));
+      r.Add(tmp.multoRow("VAT Input", vatTax));
 
       r.AddRange(loaner());
       return r;
@@ -268,12 +270,10 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
         }
 
 //TODO      // subtract investments
-
-
-
-
       return r;
       }
+
+    protected List<CashFlowRow> loaner(){ return loanMaster.costsRows(); }
 
     //private CashFlowRow atlikums;
     //protected List<CashFlowRow> loaner(){
@@ -303,14 +303,5 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
     //    }
     //  return r;
     //  }
-
-    protected List<CashFlowRow> loaner(){
-      var r=new List<CashFlowRow>();
-      foreach(var x in loans){
-        r.Add(mc.expose(x.mcPayW, pPeriod));
-        r.Add(mc.expose(x.mcPercW, pPeriod));
-        }
-      return r;
-      }
     }
   }
