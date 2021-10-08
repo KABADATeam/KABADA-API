@@ -84,6 +84,7 @@ namespace KabadaAPI {
         var pure=NZ.r(o.e.amount.Value/(1m+NZ.Z(o.e.vat)/100m));
         var vaa=o.e.amount.Value-pure;
         var t=mc.add(p.elementKind, p.title+":"+td[o.texterId].Value+"."+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
+        t.master=o.id.ToString();
         su+=pure; va+=vaa;
         }
       var kn=(CatalogRowKind)(1+(int)p.elementKind);
@@ -97,7 +98,10 @@ namespace KabadaAPI {
       if(osis==null)
         return false;
       var t=osis.options[osis.selected];
-      return ownership.Contains(t);
+      var r=ownership.Contains(t);
+      //if(r==false)
+      //  return false;
+      return r;
       }
 
     internal List<CashFlowRow> getRows() {
