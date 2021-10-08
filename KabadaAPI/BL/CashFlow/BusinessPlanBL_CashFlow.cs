@@ -263,7 +263,7 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
 
           var k=r.rows.Count;
           r.specialRows=k-1;
-          r.rows.Add(rw.multoRow("Labor taxes (katrai valstij savs %)", salaryTax));
+          r.rows.Add(rw.multoRow("Labor taxes (katrai valstij savs %)", salaryTax, 1));
           }
         }
 

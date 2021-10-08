@@ -90,11 +90,11 @@ namespace Kabada {
       //return r;
       //}
 
-    internal CashFlowRow multoRow(string v, decimal? multiplier) { 
+    internal CashFlowRow multoRow(string v, decimal? multiplier, int shift=0) { 
       var n=(short)(monthlyValue.Count-1);
-      var r=new CashFlowRow(v, null, n);
+      var r=new CashFlowRow(v, null, (short)(n+shift));
       for(var m=0; m<=n; m++)
-        r.monthlyValue[m]=multo(monthlyValue[m], multiplier);
+        r.monthlyValue[m+shift]=multo(monthlyValue[m], multiplier);
       r.totalYear1=multo(totalYear1, multiplier);
       r.totalYear2=multo(totalYear2, multiplier);
       return r;
