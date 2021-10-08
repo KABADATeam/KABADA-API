@@ -73,7 +73,7 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
 
       //======================COSTS.INVESTMENTS===ASSETS=================================//
       assetMaster=new Plan_Assets(mc, this);
-      assetMaster.generateRecords(this.myKeyResource_s);
+      assetMaster.generateRecords(this.myKeyResource_s, textSupport.getKeyResourceMeta());
       }
 
     protected CashFlow myCashFlowInternal(){
@@ -165,23 +165,24 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
 
     public CashFlowTable investments { get {
       var r=new CashFlowTable(){ title="Investments:"};
-      var rsi=myKeyResource_s;
-      var idi=rsi.Select(x=>x.texterId).Distinct().ToList();
-      var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
-      var midi=ti.Where(x=>x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x=>(Guid)x.Value).Distinct().ToList();
-      var mi=textSupport.get(midi).ToDictionary(x=>x.Id);
-      var gsi=myKeyResource_s.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.Where(x=>x.e.amount!=null).ToList());
-      var rws=new List<CashFlowRow>();
-      foreach(var o in mi){
-        var rw=new CashFlowRow(o.Value.Value);
-        rws.Add(rw);
-        var li=gsi[o.Key];
-        if(li.Count>0)
-          rw.monthlyValue[0]=li.Sum(x=>x.e.amount);
-        rw.totals();
-        }
-      if(rws.Count>0)
-        r.rows=rws;
+      r.rows=assetMaster.getRows();
+      //var rsi=myKeyResource_s;
+      //var idi=rsi.Select(x=>x.texterId).Distinct().ToList();
+      //var ti=textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.MasterId);
+      //var midi=ti.Where(x=>x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x=>(Guid)x.Value).Distinct().ToList();
+      //var mi=textSupport.get(midi).ToDictionary(x=>x.Id);
+      //var gsi=myKeyResource_s.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.Where(x=>x.e.amount!=null).ToList());
+      //var rws=new List<CashFlowRow>();
+      //foreach(var o in mi){
+      //  var rw=new CashFlowRow(o.Value.Value);
+      //  rws.Add(rw);
+      //  var li=gsi[o.Key];
+      //  if(li.Count>0)
+      //    rw.monthlyValue[0]=li.Sum(x=>x.e.amount);
+      //  rw.totals();
+      //  }
+      //if(rws.Count>0)
+      //  r.rows=rws;
       return r;
       } }
 

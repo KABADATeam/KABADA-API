@@ -7,6 +7,9 @@ namespace KabadaAPI {
       , ownMoneySum, initialRevenue, initialRevenueW
       , productSelledPure, productVat, productSelledPureSum, productVatSum
       , pendingInvestment
+      , buildingsElement, buildingsSum, buildingsVat
+      , equipElement, equipSum, equipVat
+      , inteliaElement, inteliaSum, inteliaVat
       }
 
     public int id { get; protected set; }

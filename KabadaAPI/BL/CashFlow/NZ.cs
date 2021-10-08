@@ -10,7 +10,7 @@ namespace KabadaAPI {
 
     public static decimal? N(decimal? x, decimal defaultValue=0m){ return (x==null || x==defaultValue)?null:x; }
 
-    protected static Func<decimal, decimal> r = x => decimal.Round(x,2);
+    public static Func<decimal, decimal> r = x => decimal.Round(x,2);
     public static Func<decimal?, decimal?>  Nr = x => (x==null)?x:r(x.Value);
     public static Func<decimal?, decimal>   Zr = x => r(Z(x));
 
