@@ -92,8 +92,8 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       }
 
     private void snapCSV() {
-      cf.snapMe(filePath("CashFlow.csv"));
       mc.snapMe(filePath("CashBase.csv"));
+      cf.snapMe(filePath("CashFlow.csv"));
       }
 
     //----------------------------------------- n ------------------------------------------//

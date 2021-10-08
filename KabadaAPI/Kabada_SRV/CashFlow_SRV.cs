@@ -55,9 +55,9 @@ namespace Kabada {
       empty(r);
       addRows(r, this.investments);
       empty(r);
-      addRows(r, this.variableCosts);
       empty(r);
       addRows(r, this.fixedCosts);
+      addRows(r, this.variableCosts);
       empty(r);
       addRows(r, this.balances);
      return r;

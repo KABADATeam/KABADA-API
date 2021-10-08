@@ -80,7 +80,7 @@ namespace KabadaAPI {
       var su=0m;
       var va=0m;
       foreach(var o in us){
-        var pure=NZ.r(o.e.amount.Value/(1m+NZ.Z(o.e.vat)));
+        var pure=NZ.r(o.e.amount.Value/(1m+NZ.Z(o.e.vat)/100m));
         var vaa=o.e.amount.Value-pure;
         var t=mc.add(p.elementKind, p.title+":"+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
         su+=pure; va+=vaa;
