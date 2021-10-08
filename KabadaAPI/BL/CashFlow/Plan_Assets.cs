@@ -18,11 +18,12 @@ namespace KabadaAPI {
         }
       }
     protected static List<string> BO=new List<string>{ "Buy", "Own"};
+    protected static List<string> B=new List<string>{ "Buy" };
 
     protected static List<SelectorForKeyResources> todo=new List<SelectorForKeyResources>(){
-         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property (bez PVN)", KeyResourceBL.PID, BO) { types=new List<string>{ "Buildings" }}
-       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Prod.Machinery and Equipment, Transport & other", KeyResourceBL.PID, BO) {types=new List<string>{ "Equipment", "Transport", "Other" }}
-       , new SelectorForKeyResources(CatalogRowKind.inteliaElement, "Intellectual assets (brands, licenses, software & other)", KeyResourceBL.IID, new List<string>{ "Buy"})
+         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property (bez PVN)", KeyResourceBL.PID, B) { types=new List<string>{ "Buildings" }}
+       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Prod.Machinery and Equipment, Transport & other", KeyResourceBL.PID, B) {types=new List<string>{ "Equipment", "Transport", "Other" }}
+       , new SelectorForKeyResources(CatalogRowKind.inteliaElement, "Intellectual assets (brands, licenses, software & other)", KeyResourceBL.IID, B)
        };
 
     //===================MASTER===============================//
@@ -82,7 +83,7 @@ namespace KabadaAPI {
       foreach(var o in us){
         var pure=NZ.r(o.e.amount.Value/(1m+NZ.Z(o.e.vat)/100m));
         var vaa=o.e.amount.Value-pure;
-        var t=mc.add(p.elementKind, p.title+":"+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
+        var t=mc.add(p.elementKind, p.title+":"+td[o.texterId].Value+"."+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
         su+=pure; va+=vaa;
         }
       var kn=(CatalogRowKind)(1+(int)p.elementKind);
