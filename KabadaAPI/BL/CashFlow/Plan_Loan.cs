@@ -114,10 +114,12 @@ namespace KabadaAPI {
         var plu=0m;
         if((inc.Count-1)>=m1 && inc[m1]!=null)
           plu=inc[m1].Value;
+        var lD=NZ.Z(debt[m]);
         //var plu=NZ.Z(inc[m1]);
-        mStartDebt[m1]=debt[m]+(plu>0?plu:0m);
+        mStartDebt[m1]=lD+(plu>0?plu:0m);
         var sm=NZ.Z(mStartDebt[m1]);
-        pay[m1]=  ((m1>=nop)?decimal.Round((sm/(lastMonth-m1+1)), 2):0m  )   +  (plu<0?-plu:0m);
+        //pay[m1]=  ((m1>=nop)?decimal.Round((sm/(lastMonth-m1+1)), 2):0m  )   +  (plu<0?-plu:0m);
+        pay[m1]=  ((m1>=nop)?NZ.r(lD/(lastMonth-m1+1)):0m  )   +  (plu<0?-plu:0m);
         if(pay[m1]>mStartDebt[m1])
           pay[m1]=mStartDebt[m1];
         debt[m1]=mStartDebt[m1]-pay[m1];
