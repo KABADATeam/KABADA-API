@@ -42,5 +42,20 @@ namespace KabadaAPI {
       }
 
     public CashFlowRow expose(int rowId, int lastMonth){ return get(rowId).expose(lastMonth); }
+
+    public MonthedCatalogRow plus(CatalogRowKind kind, string title=null, params int[] rows){
+      var r=add(kind, title, new MonthedDataRow());
+      for(int i=0; i<rows.Length; i++){
+        if(rows[i]<2)
+          continue;
+        var t=get(rows[i]).data;
+        for(var m=0; m<t.Count && m<r.data.Count; m++){
+          r.data[m]=NZ.Np( r.data[m],  t[m]);
+          }
+        for(var m=r.data.Count; m<t.Count; m++)
+          r.data.Add(t[m]);
+        }
+      return r;
+      }
     }
   }

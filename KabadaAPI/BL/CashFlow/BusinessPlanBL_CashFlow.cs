@@ -37,6 +37,8 @@ namespace KabadaAPI {
     protected Plan_OwnMoney ownMaster;
     protected Plan_Loan loanMaster;
     protected Plan_Assets assetMaster;
+    protected Plan_Cost fixMaster;
+    protected Plan_Cost varMaster;
 
     protected void loadTaxes(){
       if(this._o.Country!=null){
@@ -74,14 +76,20 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       //======================COSTS.INVESTMENTS===ASSETS=================================//
       assetMaster=new Plan_Assets(mc, this);
       assetMaster.generateRecords(this.myKeyResource_s, textSupport.getKeyResourceMeta());
+
+      //======================COSTS F/V====================================//
+      fixMaster=new Plan_Cost(mc, this);
+      fixMaster.generateRecords("Fixed costs (without VAT):", myFixedCost_s, KeyResourceBL.SFID);
+      varMaster=new Plan_Cost(mc, this);
+      varMaster.generateRecords("Variable costs (without VAT):", myVariableCost_s, KeyResourceBL.SVID);
       }
 
     protected CashFlow myCashFlowInternal(){
       cf.initialRevenue=initialRevenue;
       cf.salesForecast=salesForecast(cf.initialRevenue.summaries[0].monthlyValue[0]);
       cf.investments=investments;
-      cf.variableCosts=costs(myVariableCost_s, "Variable costs (without VAT):", KeyResourceBL.SVID);
-      cf.fixedCosts=costs(myFixedCost_s, "Fixed costs (without VAT):", KeyResourceBL.SFID);
+      cf.variableCosts=varMaster.table("Variable costs (without VAT):"); // costs(myVariableCost_s, "Variable costs (without VAT):", KeyResourceBL.SVID);
+      cf.fixedCosts=fixMaster.table("Fixed costs (without VAT):"); //costs(myFixedCost_s, "Fixed costs (without VAT):", KeyResourceBL.SFID);
       var sh=cf.variableCosts; // holder of summary
       sh.summaries=costsSummary(cf);
       var t=cf.fixedCosts.summRow("TOTAL COSTS", sh.summaries);
@@ -209,29 +217,34 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
 
     private List<CashFlowRow> costsSummary(CashFlow basic) {
       var r=new List<CashFlowRow>();
-      var visi=new List<CashFlowRow>();
-      if(basic.variableCosts!=null)
-        visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
-      if(basic.fixedCosts!=null)
-        visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
-      var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs and additional investments in current assets:", visi);
-      t.monthlyValue[0]=NZ.Np(t.monthlyValue[0], assetMaster.investments());
-      r.Add(t);
+      var t=mc.plus(CatalogRowKind.costValue, "SUM of Variable costs, fixed costs and additional investments in current assets:", fixMaster.mcVal, varMaster.mcVal);
+      
+      //var visi=new List<CashFlowRow>();
+      //if(basic.variableCosts!=null)
+      //  visi=basic.variableCosts.rows.GetRange(0, basic.variableCosts.rows.Count);
+      //if(basic.fixedCosts!=null)
+      //  visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
+      //var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs and additional investments in current assets:", visi);
+      t.data[0]=NZ.Np(t.data[0], assetMaster.investments());
+      r.Add(t.expose(pPeriod));
+      
+      t=mc.plus(CatalogRowKind.costVat, "VAT Input", fixMaster.mcVat, varMaster.mcVat);
+      r.Add(t.expose(pPeriod));
  
-      visi=new List<CashFlowRow>();
-      if(basic.variableCosts!=null)
-        visi=basic.variableCosts.normalRows();
-      if(basic.fixedCosts!=null)
-        visi.AddRange(basic.fixedCosts.normalRows());
-      var tmp=basic.fixedCosts.summRow("---", visi);
-      r.Add(tmp.multoRow("VAT Input", vatTax));
+      //visi=new List<CashFlowRow>();
+      //if(basic.variableCosts!=null)
+      //  visi=basic.variableCosts.normalRows();
+      //if(basic.fixedCosts!=null)
+      //  visi.AddRange(basic.fixedCosts.normalRows());
+      //var tmp=basic.fixedCosts.summRow("---", visi);
+      //r.Add(tmp.multoRow("VAT Input", vatTax));
 
       r.AddRange(loaner());
       return r;
       }
 
     private decimal? _salaryTax;
-    private decimal? salaryTax { get { return _salaryTax/100m; }}
+    public decimal? salaryTax { get { return _salaryTax/100m; }}
     private decimal? _vatTax;
     private decimal? vatTax { get { return _vatTax/100m; }}
 
@@ -255,8 +268,11 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
         var rw=new CashFlowRow(o.Value, period:n);
         r.rows.Add(rw);
         var li=gsi[o.Id];
-        for(short m=1; m<=n; m++)
+        for(short m=1; m<=n; m++){
           rw.monthlyValue[m]=CashFlowRow.Sum(gsi[o.Id].Select(x=>x.myCashFlow.monthlyValue[m]));
+          var vat=CashFlowRow.Sum(gsi[o.Id]
+            .Select(x=>NZ.Nr(NZ.Z(x.myCashFlow.monthlyValue[m])*NZ.Z(x.e.vat)/100m)));
+          }
         rw.totals();
 
         if(o.Id==salaryID){ // || o.Value=="Salaries"){

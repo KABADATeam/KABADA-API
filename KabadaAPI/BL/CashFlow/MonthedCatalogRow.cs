@@ -3,13 +3,14 @@
 namespace KabadaAPI {
   public class MonthedCatalogRow {
     public enum CatalogRowKind { unspecified=0
-      , financialInvestment, financialInvestmentW, actualDebt, actualDebtW, payback, paybackW, percentPayment, percentPaymentW
+      , financialInvestment, financialInvestmentW, actualDebt, actualDebtW, actualDebtMstart, payback, paybackW, percentPayment, percentPaymentW
       , ownMoneySum, initialRevenue, initialRevenueW
       , productSelledPure, productVat, productSelledPureSum, productVatSum
       , pendingInvestment
       , buildingsElement, buildingsSum, buildingsVat
       , equipElement, equipSum, equipVat
       , inteliaElement, inteliaSum, inteliaVat
+      , costValue, costVat, salaryTax
       }
 
     public int id { get; protected set; }
