@@ -52,6 +52,7 @@ namespace KabadaAPI {
         if(o.Id==salaryID) { // || o.Value=="Salaries"){
           if(specialRow!=0)
             throw new Exception("Special rows already present...");
+          p.mcVat=0;
           var td=new List<decimal?>(){ null };
           td.AddRange(mc.get(p.mcVal).data);
           var sr=mc.add(CatalogRowKind.salaryTax, "Labor taxes (katrai valstij savs %)", new MonthedDataRow(td)); specialRow=sr.id;

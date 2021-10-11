@@ -65,6 +65,15 @@ namespace KabadaAPI {
       return r;
       }
 
+    internal decimal vat() {
+      var r=0m;
+      foreach(var p in slaves){
+        if(p.mcVat!=0)
+          r=NZ.Zp(r, mc.get(p.mcVat).data[0]);
+        }
+      return r;
+      }
+
     //===================SLAVE===============================//
     protected SelectorForKeyResources p;
     public int mcSum;

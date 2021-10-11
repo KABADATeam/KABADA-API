@@ -229,6 +229,10 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       r.Add(t.expose(pPeriod));
       
       t=mc.plus(CatalogRowKind.costVat, "VAT Input", fixMaster.mcVat, varMaster.mcVat);
+      var rw2=new List<decimal?>(){ null };
+      rw2.AddRange(t.data);
+      t.data=new MonthedDataRow(rw2);
+      t.data[1]=assetMaster.vat();
       r.Add(t.expose(pPeriod));
  
       //visi=new List<CashFlowRow>();
