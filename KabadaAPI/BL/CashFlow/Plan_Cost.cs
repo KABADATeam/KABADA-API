@@ -35,7 +35,7 @@ namespace KabadaAPI {
       var idi = us.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
       var ti = bp.textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types   
       var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
-      var mi=bp.textSupport.get(midi).OrderBy(x=>x.Value).ToList();
+      var mi=bp.textSupport.get(midi).OrderBy(x=>x.OrderValue).ToList();
       var gsi=us.GroupBy(x=>ti[x.texterId]).ToDictionary(g => g.Key, g => g.ToList());
       
       //var val=mVal(titel, bp.o.Id);mcVal=val.id;
