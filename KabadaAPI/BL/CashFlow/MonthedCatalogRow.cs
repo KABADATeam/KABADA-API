@@ -7,9 +7,9 @@ namespace KabadaAPI {
       , ownMoneySum, initialRevenue, initialRevenueW
       , productSelledPure, productVat, productSelledPureSum, productVatSum
       , pendingInvestment
-      , buildingsElement, buildingsSum, buildingsVat
-      , equipElement, equipSum, equipVat
-      , inteliaElement, inteliaSum, inteliaVat
+      , buildingsElement, buildingsSum, buildingsVat, buildingsElementExt, buildingsSumExt
+      , equipElement, equipSum, equipVat, equipElementExt, equipSumExt
+      , inteliaElement, inteliaSum, inteliaVat, inteliaElementExt, inteliaSumExt
       , costValue, costVat, salaryTax
       }
 

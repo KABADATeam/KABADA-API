@@ -1,5 +1,6 @@
 ﻿namespace Kabada {
   public partial class CashFlow {
+    public CashFlowTable openingCash;
     public CashFlowTable initialRevenue;
     public CashFlowTable salesForecast;
     public CashFlowTable investments;

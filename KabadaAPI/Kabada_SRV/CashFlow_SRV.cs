@@ -49,6 +49,8 @@ namespace Kabada {
     public List<string> toCSV(){
       var r=new List<string>();
       addRow(r);
+      addRows(r, this.openingCash);
+      empty(r);
       addRows(r, this.initialRevenue);
       empty(r);
       addRows(r, this.salesForecast);

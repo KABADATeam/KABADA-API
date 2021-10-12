@@ -21,8 +21,8 @@ namespace KabadaAPI {
     protected static List<string> B=new List<string>{ "Buy" };
 
     protected static List<SelectorForKeyResources> todo=new List<SelectorForKeyResources>(){
-         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property (bez PVN)", KeyResourceBL.PID, B) { types=new List<string>{ "Buildings" }}
-       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Prod.Machinery and Equipment, Transport & other", KeyResourceBL.PID, B) {types=new List<string>{ "Equipment", "Transport", "Other" }}
+         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property (bez PVN)", KeyResourceBL.PID, BO) { types=new List<string>{ "Buildings" }}
+       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Prod.Machinery and Equipment, Transport & other", KeyResourceBL.PID, BO) {types=new List<string>{ "Equipment", "Transport", "Other" }}
        , new SelectorForKeyResources(CatalogRowKind.inteliaElement, "Intellectual assets (brands, licenses, software & other)", KeyResourceBL.IID, B)
        };
 
@@ -74,14 +74,30 @@ namespace KabadaAPI {
       return r;
       }
 
+    public decimal fullSum(){
+      var r=slaves.Select(x=>x.extSum).Sum();
+      return r;
+      }
+
     //===================SLAVE===============================//
     protected SelectorForKeyResources p;
     public int mcSum;
     public int mcVat;
+    public decimal extSum;
 
     public Plan_Assets(Plan_Assets master, SelectorForKeyResources product) { dad=master; this.p=product; }
 
     private void generateRecords(Dictionary<Guid, List<KeyResourceBL>> gsi, Dictionary<Guid, Texter> td) {
+      var diff=(p.ownership!=B);
+      generateRecordsI(gsi, td, diff?null:B); // generate extended
+      extSum=NZ.Z(mc.get(mcSum).data.get(0));
+
+      if(diff)
+        generateRecordsI(gsi, td, B);
+      }
+
+    private void generateRecordsI(Dictionary<Guid, List<KeyResourceBL>> gsi, Dictionary<Guid, Texter> td, List<string> overrideOwnership=null) {
+      var isExtended=(overrideOwnership==null);
       var q=td.Values.Where(x=>x.MasterId==p.category);
       if(p.types!=null)
         q=q.Where(x=>p.types.Contains(x.Value.Trim()));
@@ -94,7 +110,13 @@ namespace KabadaAPI {
         if(gsi.TryGetValue(t, out me))
           us.AddRange(me);
       var k=us.Count;
-      us=us.Where(x=>eligible(p.ownership, x.e.selections)).ToList();
+      var ow=overrideOwnership;
+      var k0=p.elementKind;
+      if(isExtended){
+        ow=p.ownership;
+        k0=(CatalogRowKind)(3+(int)k0);
+        }
+      us=us.Where(x=>eligible(ow, x.e.selections)).ToList();
       k=us.Count;
 
       var su=0m;
@@ -102,11 +124,11 @@ namespace KabadaAPI {
       foreach(var o in us){
         var pure=NZ.r(o.e.amount.Value/(1m+NZ.Z(o.e.vat)/100m));
         var vaa=o.e.amount.Value-pure;
-        var t=mc.add(p.elementKind, p.title+":"+td[o.texterId].Value+"."+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
+        var t=mc.add(k0, p.title+":"+td[o.texterId].Value+"."+o.e.name, new MonthedDataRow(new decimal?[]{ pure, vaa, o.e.amount, o.e.vat }));
         t.master=o.id.ToString();
         su+=pure; va+=vaa;
         }
-      var kn=(CatalogRowKind)(1+(int)p.elementKind);
+      var kn=(CatalogRowKind)(1+(int)k0);
       mcSum=mc.add(kn, p.title, new MonthedDataRow(su)).id;
       kn=(CatalogRowKind)(1+(int)kn);
       mcVat=mc.add(kn, p.title, new MonthedDataRow(va)).id;

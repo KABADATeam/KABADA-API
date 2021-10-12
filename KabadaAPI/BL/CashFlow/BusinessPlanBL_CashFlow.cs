@@ -57,7 +57,7 @@ namespace KabadaAPI {
       loans=new List<Plan_Loan>();
       var s=this.e.startup;
 
-var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.data.AddRange(new List<decimal?>(){ null, null, null, -4501.03m}); pendingInvestment=pI.id;
+//var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.data.AddRange(new List<decimal?>(){ null, null, null, -4501.03m}); pendingInvestment=pI.id;
 
       //=======================OWN MONEY==========================================//
       ownMaster=new Plan_OwnMoney(mc, this);
@@ -93,10 +93,8 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       var sh=cf.variableCosts; // holder of summary
       sh.summaries=costsSummary(cf);
       var t=cf.fixedCosts.summRow("TOTAL COSTS", sh.summaries);
-      //cf.fixedCosts.summaries.Add(atlikums);   // DEBUG row
       sh.summaries.Add(t);
       cf.balances=makeBalances(cf.salesForecast.summaries[cf.salesForecast.summaries.Count-1], t);
-      //cf.snapMe();
       return cf;
       }
 
@@ -131,8 +129,9 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
       //r.Add(new CashFlowRow("Loan from bank/leasing company", e.startup.loan_amount));
       
       br.summaries=new List<CashFlowRow>(){ new CashFlowRow("Total initial revenue", mc.get(loanMaster.mcRevSumW).data[0])};
-      if(pendingInvestment!=0)
+      if(pendingInvestment!=0){
         br.rows.Add(mc.expose(pendingInvestment, pPeriod));
+        }
       return br;
       }}
 
@@ -198,20 +197,35 @@ var pI=mc.add(CatalogRowKind.pendingInvestment, null, new MonthedDataRow()); pI.
 
     private CashFlowTable makeBalances(CashFlowRow totalRevenue, CashFlowRow totalExpenses) {
       var r=new CashFlowTable(){ rows=new List<CashFlowRow>()};
-      var z=totalRevenue.minusots("Montly balance - Mēneša bilance", totalExpenses);
+      var z=totalRevenue.minusots("Montly balance", totalExpenses);
+      z.monthlyValue[0]=28000m; // TODO: new field in investments //  assetMaster.fullSum();
       r.rows.Add(z);
       r.rows.Add(beigubilance(z));
       return r;
       }
 
     private CashFlowRow beigubilance(CashFlowRow z) {
+      var specRow=new CashFlowRow("Opening Cash (naudas summa sākot mēnesi)", null);
+
+      var t=new MonthedDataRow();
+
       short n=(short)(z.monthlyValue.Count-1);
-      var r=new CashFlowRow("Total balance - Beigu bilance", period:n);
+      var r=new CashFlowRow("Total balance", period:n);
       decimal? w=0;
       for(var m=0; m<=n; m++){
         w+=z.monthlyValue[m];
         r.monthlyValue[m]=w;
+        specRow.monthlyValue.Add(w);
+        t.Add(w>=0m?null:w);
         }
+      
+      cf.openingCash=new CashFlowTable(){ rows=new List<CashFlowRow>(){ specRow }};
+      
+      if(t.Where(x=>x!=null).FirstOrDefault()!=null){
+        pendingInvestment=mc.add(CatalogRowKind.unspecified, "", t).id;
+        cf.initialRevenue.rows.Add(mc.expose(pendingInvestment, pPeriod));
+        }
+
       return r;
       }
 
