@@ -21,6 +21,7 @@ namespace Kabada {
         nace.industry_title=w.Industry.Title;
         }
       }
+    this.planImage=p.o.Img;
     customer_segments=me(p.o.IsCustomerSegmentsCompleted, p.descriptionCustomerSegments);     //TODO Maybe info from the first two fields: Age groups and Gender
     value_proposition=me(p.o.IsPropositionCompleted, p.descriptionPropostion);
     channels=me(p.o.IsChannelsCompleted, p.descriptionChannels); 

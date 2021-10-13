@@ -1,4 +1,6 @@
-﻿namespace Kabada {
+﻿using System;
+
+namespace Kabada {
   public partial class PlanOverview {
     public PlanOverviewNace nace;
     public PlanOverviewElement customer_segments;  // Maybe info from the first two fields: Age groups and Gender
@@ -13,5 +15,6 @@
     public PlanOverviewElement swot;           // not clear, yet
     public PlanOverviewElement financial_projections;    // not clear, yet
     public PlanOverviewElement team_competencies;    // not clear, yet
+    public Guid? planImage;
     }
   }
