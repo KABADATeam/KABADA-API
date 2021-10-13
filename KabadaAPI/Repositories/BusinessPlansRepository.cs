@@ -46,7 +46,7 @@ namespace KabadaAPI
         //}
         public BusinessPlan GetPlan(Guid planId, Guid userId) {
             //check if public or mine
-            var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();
+             var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && (i.User.Id.Equals(userId)|| i.Public == true)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity.Industry).FirstOrDefault();
             if (plan!=null)
             return plan;
             //check if shared with me
