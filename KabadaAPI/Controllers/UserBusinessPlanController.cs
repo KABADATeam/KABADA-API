@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
 using Kabada;
+using System.Collections.Generic;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -292,6 +293,16 @@ namespace KabadaAPI.Controllers {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
       return p.myCashFlow();
+      }
+
+    [HttpGet]
+    [Authorize]
+    [Route("necessaryCapital/{BusinessPlan}")]
+    public ActionResult<List<decimal?>> MynecessaryCapital(Guid BusinessPlan) { return Prun<Guid, List<decimal?>>(_MynecessaryCapital, BusinessPlan); }
+    private ActionResult<List<decimal?>> _MynecessaryCapital(Guid planId) {
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      p.textSupport=new TexterRepository(context);
+      return p.refreshNecessaryCapital();
       }
     }
   }

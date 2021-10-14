@@ -14,7 +14,7 @@ namespace KabadaAPI {
                                            , keyActivity=19
                                            , industryRiskPointer_activity=20, industryRiskPointer_industry=21
                                            , vat=22, essr=23
-            , loan=24
+            , necessaryCapital=24
 //range limit 50 in tables 
       }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using static KabadaAPI.MonthedCatalogRow;
+using static KabadaAPI.Plan_AttributeRepository;
 
 namespace KabadaAPI {
   partial class BusinessPlanBL {
@@ -14,17 +15,26 @@ namespace KabadaAPI {
 
     public int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
 
+    public List<decimal?> refreshNecessaryCapital(bool createCSV=false, bool skipNecessaryCapitalUpdate=false){
+      myCashFlow(!createCSV, skipNecessaryCapitalUpdate);
+      var r=necessaryCapital();
+      if(r.Where(x=>x!=null).FirstOrDefault()!=null)
+        return r;
+      return null;
+      }
+
     //----------------------------------------- 1 ------------------------------------------//
-    public CashFlow myCashFlow(){
+    public CashFlow myCashFlow(bool skipCSV=false, bool skipNecessaryCapitalUpdate=false){
       loadTaxes();
 
       mc=new MonthedCatalog();
       fillBaseCash();
 
       cf=new CashFlow();
-      myCashFlowInternal();
+      myCashFlowInternal(skipNecessaryCapitalUpdate);
 
-      snapCSV();
+      if(skipCSV==false)
+        snapCSV();
 
       return cf;
       }
@@ -84,7 +94,14 @@ namespace KabadaAPI {
       varMaster.generateRecords("Variable costs (without VAT):", myVariableCost_s, KeyResourceBL.SVID);
       }
 
-    protected CashFlow myCashFlowInternal(){
+    protected List<decimal?> necessaryCapital(){
+      var r=new List<decimal?>(){ null };
+      if(pendingInvestment!=0)
+        r=mc.get(pendingInvestment).data;
+      return r;
+      }
+
+    protected CashFlow myCashFlowInternal(bool skipNecessaryCapitalUpdate) {
       cf.initialRevenue=initialRevenue;
       cf.salesForecast=salesForecast(cf.initialRevenue.summaries[0].monthlyValue[0]);
       cf.investments=investments;
@@ -95,6 +112,34 @@ namespace KabadaAPI {
       var t=cf.fixedCosts.summRow("TOTAL COSTS", sh.summaries);
       sh.summaries.Add(t);
       cf.balances=makeBalances(cf.salesForecast.summaries[cf.salesForecast.summaries.Count-1], t);
+
+      if(skipNecessaryCapitalUpdate==false){
+        var ola=gS(PlanAttributeKind.necessaryCapital).Select(x=>new NecessaryCapitalBL(x)).FirstOrDefault();
+        var f1=(ola==null).ToString().Substring(0,1).ToUpper();
+        var n=necessaryCapital();
+        var f2="F";
+        if(n.Where(x=>x!=null).FirstOrDefault()!=null)
+          f2="T";
+        var sRepo=new Plan_SpecificAttributesRepository(textSupport.blContext);
+        switch(f1+f2){  // old missing + new required
+          case "FT": // must replace old
+            var wo=new NecessaryCapitalBL(ola.id, sRepo, true);
+            wo.e.RemoveRange(0, wo.e.Count);
+            wo.e.AddRange(n);
+            sRepo.daContext.SaveChanges();
+            break;
+          case "FF": // must delete old data
+          case "TT": // create new
+            ola=new NecessaryCapitalBL(o.Id);
+            ola.e.AddRange(n);
+            var w=ola.unload();
+            sRepo.create(w);
+            break;
+           case "TF" : break; // nothing to do
+          default: throw new Exception($"How '{f1}'+'{f2}'");
+          }
+        }
+
       return cf;
       }
 

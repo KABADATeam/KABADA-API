@@ -103,4 +103,5 @@ Fixed and Variable Costs 03;P;/api/plans/changeFixedVariableCompleted;UserBusine
 Sales forecast 01;G;/api/products/salesforecasts/{BusinessPlan};Product;MyForecasts;
 Sales forecast 02;P;/api/products/salesforecasts/update;Product;Sfupdate;
 Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;ChangeSalesForecastCompleted;
-;G;/api/cashflow/{BusinessPlan};UserBusinessPlan;Mycashflow;
+;G;/api/plans/cashflow/{BusinessPlan};UserBusinessPlan;Mycashflow;
+;G;/api/plans/necessaryCapital/{BusinessPlan};UserBusinessPlan;MynecessaryCapital;
