@@ -19,7 +19,7 @@
     public decimal? working_capital_amount; 
     public decimal? startup_own_money;
     public decimal? startup_loan_amount;
-    public decimal? loan_amount_short;    
+      
 
     }
 }
