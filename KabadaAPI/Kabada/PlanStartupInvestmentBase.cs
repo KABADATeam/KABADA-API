@@ -10,5 +10,11 @@
     public short? payment_period; // any value from range: 6, 12, 18, ...., 120
     public decimal? interest_rate;
     public short? grace_period;
+
+    public decimal? working_capital_amount;
+    public decimal? startup_own_money;
+    public decimal? startup_load_amount;
+    public decimal? loan_amount_short;    
+
     }
-  }
+}
