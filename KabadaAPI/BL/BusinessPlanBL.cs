@@ -207,9 +207,12 @@ namespace KabadaAPI {
         }
 
       // TODO extra loan
-      var m2 = new LoanElementBL("Short term", 23000){ payment_period=7, interest_rate=10, grace_period=3 };
-      m2.AddRange(new List<decimal?> { null, 5000, 5000, 20000, 12500 });
-      r.Add(m2);
+      var m2 = new LoanElementBL("Short term", s.startup_loan_amount){ payment_period=7, interest_rate=10, grace_period=3 };
+      if(e.working_capitals!=null)
+        m2.AddRange(e.working_capitals.Select(x=>x.loan_amount).ToList());
+      var t=m2.Where(x=>x!=null).FirstOrDefault();
+      if(t!=null)
+        r.Add(m2);
       //end TODO-replace with real data
 
       return r;

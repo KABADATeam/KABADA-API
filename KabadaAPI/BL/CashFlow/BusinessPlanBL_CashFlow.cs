@@ -243,7 +243,7 @@ namespace KabadaAPI {
     private CashFlowTable makeBalances(CashFlowRow totalRevenue, CashFlowRow totalExpenses) {
       var r=new CashFlowTable(){ rows=new List<CashFlowRow>()};
       var z=totalRevenue.minusots("Montly balance", totalExpenses);
-      z.monthlyValue[0]=28000m; // TODO: new field in investments //  assetMaster.fullSum();
+      z.monthlyValue[0]=e.startup.working_capital_amount;
       r.rows.Add(z);
       r.rows.Add(beigubilance(z));
       return r;

@@ -23,7 +23,6 @@ namespace Kabada {
         t.working_capital_amount=working_capital_amount;
         t.startup_own_money=startup_own_money;
         t.startup_loan_amount=startup_loan_amount;
-        t.loan_amount=loan_amount;
         if(t.period!=null && t.period!=12 && t.period!=24)
           throw new Exception($"Invalid period specified '{period}'");
         if(t.payment_period!=null){
