@@ -184,11 +184,12 @@ namespace KabadaAPI {
       var r=new List<InvestmentElementBL>();
       if(e.startup.own_money!=null)      // basic own money
         r.Add(new InvestmentElementBL("Own Money", e.startup.own_money));
-      // TODO extra own money
-      var m2=new InvestmentElementBL("Own extra money", 5000);
-      m2.AddRange(new List<decimal?>{ null, 6500, 12000, 1350, 60});
-      r.Add(m2);
-      // end TODO- replace with real data
+      var m2=new InvestmentElementBL("Own extra money", e.startup.startup_own_money);
+      if(e.working_capitals!=null)
+        m2.AddRange(e.working_capitals.Select(x=>x.own_amount).ToList());
+      var t=m2.Where(x=>x!=null).FirstOrDefault();
+      if(t!=null)
+        r.Add(m2);
       return r;
       }
 
