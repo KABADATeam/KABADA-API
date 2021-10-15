@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Kabada {
+﻿namespace Kabada {
   public class WorkingCapitalPosterElement
     {    
     public decimal? own_amount;
