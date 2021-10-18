@@ -55,14 +55,18 @@ namespace Kabada {
         return;
       var tRepo=new TexterRepository(ctx);
       var typi=tRepo.getKeyResourceTypes(KeyResourceBL.HID).Where(x=>x.MasterId!=null).ToDictionary(x=>x.Id, x=>false);
+      var w=tRepo.getKeyResourceTypes(null).ToDictionary(x=>x.Id);     
 
       var lh=new List<KeyResourceBL>();
       var lo=new List<KeyResourceBL>();
       foreach(var a in atri){
-        if(typi.ContainsKey(a.texterId))
-          lh.Add(a);
-         else
+        if(typi.ContainsKey(a.texterId)){
+         // lh.Add(a);
+        } else {
+          var tu=w[a.texterId];
+          var tutu=tu.Value;
           lo.Add(a);
+        }
         }
       physical_assets=make(lo);
       working_capital=make(lh);

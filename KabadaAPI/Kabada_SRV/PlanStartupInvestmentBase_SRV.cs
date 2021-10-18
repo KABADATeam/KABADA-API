@@ -46,7 +46,7 @@ namespace Kabada {
       if(rate<0m)
         throw new Exception($"{titel}: wrong rate='{rate}'");
       if(grace<0 || grace>(my_period()-6))
-        throw new Exception($"{titel}: wrong rate='{rate}'");
+        throw new Exception($"{titel}: wrong grace='{grace}'");
       }
 
     public void set(PlanStartupInvestmentBase o){
