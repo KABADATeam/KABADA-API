@@ -284,14 +284,20 @@ namespace KabadaAPI {
       //if(basic.fixedCosts!=null)
       //  visi.AddRange(basic.fixedCosts.rows.GetRange(0, basic.fixedCosts.rows.Count));
       //var t=basic.fixedCosts.summRow("SUM of Variable costs, fixed costs and additional investments in current assets:", visi);
-      t.data[0]=NZ.Np(t.data[0], assetMaster.investments());
+      var x=assetMaster.investments();
+      t.data.set(0, NZ.Np(t.data.get(0), x));
+      //if(t.data.Count>0)
+      //  t.data[0]=NZ.Np(t.data[0], x);
+      // else
+      //  t.data.Add(x);
       r.Add(t.expose(pPeriod));
       
       t=mc.plus(CatalogRowKind.costVat, "VAT Input", fixMaster.mcVat, varMaster.mcVat);
       var rw2=new List<decimal?>(){ null };
       rw2.AddRange(t.data);
       t.data=new MonthedDataRow(rw2);
-      t.data[1]=assetMaster.vat();
+      t.data.set(1,assetMaster.vat());
+      //t.data[1]=assetMaster.vat();
       r.Add(t.expose(pPeriod));
  
       //visi=new List<CashFlowRow>();

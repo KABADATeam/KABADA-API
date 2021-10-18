@@ -47,6 +47,15 @@ namespace KabadaAPI {
         t.RemoveAt(k);
         }
       return new MonthedDataRow(t);
-      }    
+      }
+
+    internal void set(int m, decimal? v2) {
+      var n=Count;
+      if(m>=n){
+        for(var i=0; i<=n-m; i++)
+        this.Add(null);
+        }
+        this[m]=v2;
+      }
     }
   }
