@@ -38,16 +38,17 @@ namespace Kabada {
 
       var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid));
       is_business_investments_completed=pl.o.IsBusinessInvestmentsCompleted;
-      period=pl.e.startup.period;
-      vat_payer=pl.e.startup.vat_payer;
-      total_investments=pl.e.startup.total_investments;
-      own_money=pl.e.startup.own_money;
-      loan_amount=pl.e.startup.loan_amount; 
-      investment_amount=pl.e.startup.investment_amount; 
-      own_assets=pl.e.startup.own_assets; 
-      payment_period=pl.e.startup.payment_period;
-      interest_rate=pl.e.startup.interest_rate;
-      grace_period=pl.e.startup.grace_period;
+      set(pl.e.startup);
+      //period=pl.e.startup.period;
+      //vat_payer=pl.e.startup.vat_payer;
+      //total_investments=pl.e.startup.total_investments;
+      //own_money=pl.e.startup.own_money;
+      //loan_amount=pl.e.startup.loan_amount; 
+      //investment_amount=pl.e.startup.investment_amount; 
+      //own_assets=pl.e.startup.own_assets; 
+      //payment_period=pl.e.startup.payment_period;
+      //interest_rate=pl.e.startup.interest_rate;
+      //grace_period=pl.e.startup.grace_period;
       
       var atri= new Plan_AttributeRepository(ctx).getResources(planId).Select(x=>new KeyResourceBL(x)).ToList();
       if(atri.Count<1)

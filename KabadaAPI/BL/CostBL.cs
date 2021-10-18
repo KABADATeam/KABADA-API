@@ -14,7 +14,7 @@ namespace KabadaAPI {
 
     public CashFlowRow myCashFlow;
     public void fillMyCashFlow(short? months){
-      if(months==null || (e.price==null && e.monthly_expenses==null))
+      if(months==0 || months==null || (e.price==null && e.monthly_expenses==null))
         return;
       myCashFlow=new CashFlowRow("", period: months.Value);
       var n=myCashFlow.monthlyValue.Count-1;

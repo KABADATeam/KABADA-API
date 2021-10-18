@@ -1,5 +1,5 @@
 ﻿namespace Kabada {
-  public class PlanStartupInvestmentBase  {
+  public partial class PlanStartupInvestmentBase  {
     public short?   period; // "12 or 24",
     public bool?    vat_payer;
     public decimal? total_investments;
@@ -19,7 +19,5 @@
     public decimal? working_capital_amount; 
     public decimal? startup_own_money;
     public decimal? startup_loan_amount;
-      
-
     }
 }
