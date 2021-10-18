@@ -304,5 +304,14 @@ namespace KabadaAPI.Controllers {
       p.textSupport=new TexterRepository(context);
       return p.refreshNecessaryCapital();
       }
+
+    [HttpPost]
+    [Authorize]
+    [Route("investmentSaveRecalc")]
+    public ActionResult<List<decimal?>> MySaveRecalc(StartupInvestments_POST update) { return Prun<StartupInvestments_POST, List<decimal?>>(_MySaveRecalc, update); }
+    private ActionResult<List<decimal?>> _MySaveRecalc(StartupInvestments_POST update) {
+      update.perform(context);
+      return _MynecessaryCapital(update.business_plan_id);
+      }
     }
   }

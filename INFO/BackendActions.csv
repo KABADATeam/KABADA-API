@@ -105,3 +105,4 @@ Sales forecast 02;P;/api/products/salesforecasts/update;Product;Sfupdate;
 Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;ChangeSalesForecastCompleted;
 ;G;/api/plans/cashflow/{BusinessPlan};UserBusinessPlan;Mycashflow;
 ;G;/api/plans/necessaryCapital/{BusinessPlan};UserBusinessPlan;MynecessaryCapital;
+;P;/api/plans/investmentSaveRecalc;UserBusinessPlan;MySaveRecalc;
