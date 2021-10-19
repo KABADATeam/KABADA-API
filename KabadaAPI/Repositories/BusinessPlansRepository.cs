@@ -235,5 +235,11 @@ namespace KabadaAPI
             businessPlan.IsSalesForecastCompleted = newValue;
             daContext.SaveChanges();
         }
+        internal void ChangeAssetsCompleted(Guid planId, bool newValue, Guid userId)
+        {
+            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            businessPlan.IsAssetsCompleted = newValue;
+            daContext.SaveChanges();
+        }
     }
 }
