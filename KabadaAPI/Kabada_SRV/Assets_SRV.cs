@@ -8,7 +8,7 @@ namespace Kabada {
   partial class Assets {
     internal void read(BLontext ctx, Guid planId) {
       var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).GetPlan(planId, ctx.userGuid));
-      is_business_investments_completed=pl.o.IsBusinessInvestmentsCompleted;
+      is_assets_completed=pl.o.IsBusinessInvestmentsCompleted;
       var atri= new Plan_AttributeRepository(ctx).getResources(planId).Select(x=>new KeyResourceBL(x)).ToList();
       if(atri.Count<1)
         return;

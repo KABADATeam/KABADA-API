@@ -2,7 +2,7 @@
 
 namespace Kabada {
   public partial class Assets {
-    public bool is_business_investments_completed;
+    public bool is_assets_completed;
     public List<AssetElement> physical_assets;
     }
   }
