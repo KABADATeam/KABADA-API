@@ -94,6 +94,46 @@ namespace KabadaAPI {
             }
             return true;
         }
+        private bool u_7(Transactioner tr) { // replace product features with new ones
+            var KIND=(short)EnumTexterKind.productFeature;
+            var numba=new Dictionary<string, string>(){
+                        { "NewProduct",	"Is a fundamentally new product or service"}
+                      , { "Improvment",	"Is an improvement of an existing product or service"}
+                      , { "DifferentDesign",	"Has a different visual design"}
+                      , { "ResearchDevelopment",	"Is the result of R&D"}
+                      , { "NewFeatures",	"Has a new set of features"}
+                      , { "SetTrend",	"Aims to set a trend"}
+                      , { "ImprovedProcess",	"Has an improved production/delivery process"}
+                      , { "Exclusive",	"Is exclusive"}
+                      , { "Comfortable",	"Is more comfortable & usable"}
+                      , { "UserFriendly",	"Is more user-friendly"}
+                      , { "Safe",	"Is safer to use"}
+                      , { "Durable",	"Is more durable"}
+                      , { "Niche",	"Is a niche"}
+                      , { "Eco",	"Is more eco-friendly"}
+                      , { "Adaptable",	"Is more adaptable/versatile"}
+                      , { "Customisable",	"Is more customisable (more user-selectable options)"}
+                      , { "DifferentVariant",	"Is a different variant of a current product/service"}
+              };
+            var ctx = tr.Context;
+            var tx = new TexterRepository(blContext, ctx);
+            var oldi = tx.getByKind(KIND);
+            var n=oldi.Count; var i=0;
+            foreach(var o in numba){
+              if(i<n){
+                oldi[i].Name=o.Key; oldi[i].Value=o.Value;
+               } else {
+                var t=new Texter(){ Id=Guid.NewGuid(), Kind=KIND, Name=o.Key, Value=o.Value };
+                ctx.Texters.Add(t);
+                }
+              i++;
+              }
+            for(var j=i; j<n; j++){
+              oldi[j].Name="-"; oldi[j].Value=null;
+              }
+            ctx.SaveChanges();
+            return true;
+        }
         //=======================================================================//
 
         protected override void expandInit() {
