@@ -65,5 +65,24 @@ namespace KabadaAPI.Controllers {
       update.perform(context);
       return Ok();
       }
+
+    [HttpGet]
+    [Authorize]
+    [Route("assets/{BusinessPlan}")]
+    public ActionResult<Assets> MyAssets(Guid BusinessPlan) { return Prun<Guid, Assets>(_MyAssets, BusinessPlan); }
+    private ActionResult<Assets> _MyAssets(Guid planId) {
+      var r = new Assets();
+      r.read(context, planId);
+      return r;
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("assets/save")]
+    public IActionResult MyAssetsSave(Assets_POST update) { return prun<Assets_POST>(_MyAssetsSave, update); }
+    private IActionResult _MyAssetsSave(Assets_POST update) {
+      update.perform(context);
+      return Ok();
+      }
     }
   }

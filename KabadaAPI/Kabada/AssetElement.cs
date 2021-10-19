@@ -2,5 +2,6 @@
   public class AssetElement : AssetPosterElement {
     public string resource_title;
     public string resource_status;
+    public string type_title;
     }
   }
