@@ -130,7 +130,7 @@ namespace KabadaAPI {
               i++;
               }
             for(var j=i; j<n; j++){
-              oldi[j].Name="-"; oldi[j].Value=null; oldi[j].OrderValue=(short)(j+1);
+              oldi[j].Name="-"; oldi[j].Value=""; oldi[j].OrderValue=(short)(j+1);
               }
             ctx.SaveChanges();
             return true;
