@@ -117,19 +117,20 @@ namespace KabadaAPI {
               };
             var ctx = tr.Context;
             var tx = new TexterRepository(blContext, ctx);
-            var oldi = tx.getByKind(KIND);
+            var oldi = tx.getByKind(KIND).OrderBy(x=>x.OrderValue).ToList();
             var n=oldi.Count; var i=0;
             foreach(var o in numba){
+              var k=(short)(i+1);
               if(i<n){
-                oldi[i].Name=o.Key; oldi[i].Value=o.Value;
+                oldi[i].Name=o.Key; oldi[i].Value=o.Value; oldi[i].OrderValue=k;
                } else {
-                var t=new Texter(){ Id=Guid.NewGuid(), Kind=KIND, Name=o.Key, Value=o.Value };
+                var t=new Texter(){ Id=Guid.NewGuid(), Kind=KIND, Name=o.Key, Value=o.Value, OrderValue=k };
                 ctx.Texters.Add(t);
                 }
               i++;
               }
             for(var j=i; j<n; j++){
-              oldi[j].Name="-"; oldi[j].Value=null;
+              oldi[j].Name="-"; oldi[j].Value=null; oldi[j].OrderValue=(short)(j+1);
               }
             ctx.SaveChanges();
             return true;
