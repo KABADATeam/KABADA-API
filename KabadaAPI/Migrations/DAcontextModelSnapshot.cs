@@ -7789,6 +7789,9 @@ namespace KabadaAPI.Migrations
                     b.Property<bool>("IsActivitiesCompleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsAssetsCompleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsBusinessInvestmentsCompleted")
                         .HasColumnType("bit");
 
@@ -8449,6 +8452,10 @@ namespace KabadaAPI.Migrations
 
                     b.Property<Guid?>("MasterId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<short>("OrderValue")
                         .HasColumnType("smallint");
