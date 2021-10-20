@@ -59,7 +59,7 @@ namespace KabadaAPI.Controllers {
     [HttpGet]
     public IActionResult ProductFeatures() { return grun(_ProductFeatures); }
     private IActionResult _ProductFeatures() {
-      var r=new TexterRepository(context).getProductFeatureMeta().Select(x=>new CodifierBase() { id=x.Id, title=x.Value }).ToList();
+      var r=new TexterRepository(context).getProductFeatureMeta().Where(x=>x.Name!="-").Select(x=>new CodifierNamed() { id=x.Id, title=x.Value, name=x.Name }).ToList();
       return Ok(r);
     }
     [Route("incomeSources")]
