@@ -17,7 +17,7 @@
     public short? grace_period_short; 
     //working capital part
     public decimal? working_capital_amount; 
-    public decimal? startup_own_money;
-    public decimal? startup_loan_amount;
+    public decimal? own_money_short;
+    public decimal? loan_amount_short;
     }
 }

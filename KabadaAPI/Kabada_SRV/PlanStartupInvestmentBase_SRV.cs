@@ -21,8 +21,8 @@ namespace Kabada {
     public decimal my_interest_rate_short() { return NZ.Z(interest_rate_short); }
     public short   my_grace_period_short() { return (short)NZ.Z(grace_period_short); }
     public decimal my_working_capital_amount() { return NZ.Z(working_capital_amount); }
-    public decimal my_startup_own_money() { return NZ.Z(startup_own_money); }
-    public decimal my_startup_loan_amount() { return NZ.Z(startup_loan_amount); }
+    public decimal my_startup_own_money() { return NZ.Z(own_money_short); }
+    public decimal my_startup_loan_amount() { return NZ.Z(loan_amount_short); }
 
     public void validate(){
       var t=my_period();
@@ -64,8 +64,8 @@ namespace Kabada {
       interest_rate_short=o.interest_rate_short;
       grace_period_short=o.grace_period_short;
       working_capital_amount=o.working_capital_amount;
-      startup_own_money=o.startup_own_money;
-      startup_loan_amount=o.startup_loan_amount;
+      own_money_short=o.own_money_short;
+      loan_amount_short=o.loan_amount_short;
       }
     }
   }
