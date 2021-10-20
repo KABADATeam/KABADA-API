@@ -88,29 +88,29 @@ namespace KabadaAPI {
         private void AddData(ModelBuilder modelBuilder)
         {
 // System.Diagnostics.Debugger.Launch();
- var useOldFunctions=false;
-          if(useOldFunctions){
-            AddData_UserTypes(modelBuilder);
-            AddData_Countries(modelBuilder);
-            AddData_SWOTtexters(modelBuilder);
-            AddData_KeyResourcesTexters(modelBuilder);
-            AddData_PartnersTypes(modelBuilder);
-            AddData_Languages(modelBuilder);
-            AddData_NACE(modelBuilder);
-            AddData_ProductsTypes(modelBuilder);
-            AddData_ProductFeatures(modelBuilder);
-            AddData_ProductIncomeSources(modelBuilder);
-            AddData_ProductsPriceLevels(modelBuilder);
-            AddData_ProductsInnovativeOptions(modelBuilder);
-            AddData_ProductsQualityOptions(modelBuilder);
-            AddData_ProductsDiffOptions(modelBuilder);
-            AddData_CostTypes(modelBuilder);
-            AddData_RevenueStreamTypes(modelBuilder);
-            AddData_RevenuePriceTypes(modelBuilder);
-            AddData_ChannelTypes(modelBuilder);
-            AddData_CustomerSegmentCodifiers(modelBuilder);
-            AddData_CustomerActions(modelBuilder);
-           } else
+ //var useOldFunctions=false;
+ //         if(useOldFunctions){
+ //           AddData_UserTypes(modelBuilder);
+ //           AddData_Countries(modelBuilder);
+ //           AddData_SWOTtexters(modelBuilder);
+ //           AddData_KeyResourcesTexters(modelBuilder);
+ //           AddData_PartnersTypes(modelBuilder);
+ //           AddData_Languages(modelBuilder);
+ //           AddData_NACE(modelBuilder);
+ //           AddData_ProductsTypes(modelBuilder);
+ //           AddData_ProductFeatures(modelBuilder);
+ //           AddData_ProductIncomeSources(modelBuilder);
+ //           AddData_ProductsPriceLevels(modelBuilder);
+ //           AddData_ProductsInnovativeOptions(modelBuilder);
+ //           AddData_ProductsQualityOptions(modelBuilder);
+ //           AddData_ProductsDiffOptions(modelBuilder);
+ //           AddData_CostTypes(modelBuilder);
+ //           AddData_RevenueStreamTypes(modelBuilder);
+ //           AddData_RevenuePriceTypes(modelBuilder);
+ //           AddData_ChannelTypes(modelBuilder);
+ //           AddData_CustomerSegmentCodifiers(modelBuilder);
+ //           AddData_CustomerActions(modelBuilder);
+ //          } else
             AddData_DBinit(modelBuilder);
             }
     }
