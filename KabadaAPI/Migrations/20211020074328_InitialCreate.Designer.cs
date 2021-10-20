@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20211019121038_InitialCreate")]
+    [Migration("20211020074328_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -8110,7 +8110,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "7"
+                            Value = "8"
                         });
                 });
 
@@ -8620,8 +8620,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("2984418a-638e-4da9-be1d-12ba94d8ffaf"),
                             Kind = (short)15,
+                            Name = "NewFeatures",
                             OrderValue = (short)5,
-                            Value = "Based on old technology"
+                            Value = "Has a new set of features"
                         },
                         new
                         {
@@ -8870,8 +8871,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("d39c0155-1419-4a48-962f-2e42d5aca11b"),
                             Kind = (short)15,
+                            Name = "Adaptable",
                             OrderValue = (short)15,
-                            Value = "Driven by technology"
+                            Value = "Is more adaptable/versatile"
                         },
                         new
                         {
@@ -9043,8 +9045,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("f2424d76-d25a-430a-ab55-3c0480a1f56c"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)25,
-                            Value = "Extraordinariness"
+                            Value = ""
                         },
                         new
                         {
@@ -9072,8 +9075,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("bdf69fe7-c3e3-44e1-a984-41041ea08e96"),
                             Kind = (short)15,
+                            Name = "ResearchDevelopment",
                             OrderValue = (short)4,
-                            Value = "Continuous"
+                            Value = "Is the result of R&D"
                         },
                         new
                         {
@@ -9110,8 +9114,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("adcdc439-8170-4fab-a70d-457c1b98bc92"),
                             Kind = (short)15,
+                            Name = "Exclusive",
                             OrderValue = (short)8,
-                            Value = "Result of R&D"
+                            Value = "Is exclusive"
                         },
                         new
                         {
@@ -9245,15 +9250,17 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("8f79391b-d687-4515-9292-5b4958ef0589"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)21,
-                            Value = "Durability"
+                            Value = ""
                         },
                         new
                         {
                             Id = new Guid("0ff6b626-a1ff-4184-b1bb-5bf2992091bd"),
                             Kind = (short)15,
+                            Name = "Improvment",
                             OrderValue = (short)2,
-                            Value = "Product or service already exists in the market"
+                            Value = "Is an improvement of an existing product or service"
                         },
                         new
                         {
@@ -9274,15 +9281,17 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("58b41b4d-da41-4f9b-9cec-5da895a0b502"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)23,
-                            Value = "Safety"
+                            Value = ""
                         },
                         new
                         {
                             Id = new Guid("f9862c29-9a20-4cbe-8fa2-5e1660f6b8da"),
                             Kind = (short)15,
+                            Name = "UserFriendly",
                             OrderValue = (short)10,
-                            Value = "Discontinuous"
+                            Value = "Is more user-friendly"
                         },
                         new
                         {
@@ -9555,8 +9564,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("4cb290b2-7fbc-4846-be7b-79f9e3efbb46"),
                             Kind = (short)15,
+                            Name = "Customisable",
                             OrderValue = (short)16,
-                            Value = "Expertise of manufacturer"
+                            Value = "Is more customisable (more user-selectable options)"
                         },
                         new
                         {
@@ -9570,8 +9580,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("aae57ccf-f33c-4a0e-925a-7a65d8ca171e"),
                             Kind = (short)15,
+                            Name = "NewProduct",
                             OrderValue = (short)1,
-                            Value = "Not different from competitors"
+                            Value = "Is a fundamentally new product or service"
                         },
                         new
                         {
@@ -9599,8 +9610,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("96f638ad-c41f-492f-982a-7f4018bcb3a6"),
                             Kind = (short)15,
+                            Name = "SetTrend",
                             OrderValue = (short)6,
-                            Value = "Dominant design unchanged"
+                            Value = "Aims to set a trend"
                         },
                         new
                         {
@@ -9651,8 +9663,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("ae7c712d-f780-429f-aed6-87509c0bc43c"),
                             Kind = (short)15,
+                            Name = "ImprovedProcess",
                             OrderValue = (short)7,
-                            Value = "Improvement of existing characteristics"
+                            Value = "Has an improved production/delivery process"
                         },
                         new
                         {
@@ -9696,8 +9709,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("07d5452f-6ea6-4ae6-9395-89fd1d0eeab0"),
                             Kind = (short)15,
+                            Name = "Niche",
                             OrderValue = (short)13,
-                            Value = "Uncertainty"
+                            Value = "Is a niche"
                         },
                         new
                         {
@@ -9914,8 +9928,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("7da1cdc9-d7e4-4234-b31b-9e0570e5e9c6"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)22,
-                            Value = "Comfortability & Usability"
+                            Value = ""
                         },
                         new
                         {
@@ -9964,8 +9979,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("49ac2e9c-ecbb-4a14-aa35-a35efb4ff919"),
                             Kind = (short)15,
+                            Name = "DifferentVariant",
                             OrderValue = (short)17,
-                            Value = "Manufacturing complexity"
+                            Value = "Is a different variant of a current product/service"
                         },
                         new
                         {
@@ -10054,8 +10070,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("cf6361ec-886e-4b0a-b53b-af9a477f334b"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)19,
-                            Value = "Workmanship"
+                            Value = ""
                         },
                         new
                         {
@@ -10101,8 +10118,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("121f0a92-8b35-4890-8384-b66f48db9ac5"),
                             Kind = (short)15,
+                            Name = "Durable",
                             OrderValue = (short)12,
-                            Value = "Leads to a new design"
+                            Value = "Is more durable"
                         },
                         new
                         {
@@ -10283,8 +10301,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("7baa945c-4bcb-46b9-8e95-c72fe5b49778"),
                             Kind = (short)15,
+                            Name = "Comfortable",
                             OrderValue = (short)9,
-                            Value = "Driven by market pull"
+                            Value = "Is more comfortable & usable"
                         },
                         new
                         {
@@ -10320,15 +10339,17 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("2ad13e8d-672f-4eb7-87eb-ca33891eeffb"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)24,
-                            Value = "Aesthetics"
+                            Value = ""
                         },
                         new
                         {
                             Id = new Guid("b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)18,
-                            Value = "Special materials and components"
+                            Value = ""
                         },
                         new
                         {
@@ -10561,8 +10582,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("5eb6013b-0cca-4f89-b39d-e711477a972f"),
                             Kind = (short)15,
+                            Name = "DifferentDesign",
                             OrderValue = (short)3,
-                            Value = "No improvements or innovations"
+                            Value = "Has a different visual design"
                         },
                         new
                         {
@@ -10645,8 +10667,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("dfe881a2-cd69-4295-a16a-edfb2c8fc0bf"),
                             Kind = (short)15,
+                            Name = "Safe",
                             OrderValue = (short)11,
-                            Value = "Based on new technologies"
+                            Value = "Is safer to use"
                         },
                         new
                         {
@@ -10667,8 +10690,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("5365d22f-9372-4471-baab-f1175d25ae0f"),
                             Kind = (short)15,
+                            Name = "Eco",
                             OrderValue = (short)14,
-                            Value = "New set of features"
+                            Value = "Is more eco-friendly"
                         },
                         new
                         {
@@ -10775,8 +10799,9 @@ namespace KabadaAPI.Migrations
                         {
                             Id = new Guid("187d8314-5350-4f30-a68c-fde38021a178"),
                             Kind = (short)15,
+                            Name = "-",
                             OrderValue = (short)20,
-                            Value = "Rarity"
+                            Value = ""
                         },
                         new
                         {

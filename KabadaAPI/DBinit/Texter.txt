@@ -17,7 +17,7 @@
 {"Id":"fef1c6f8-493c-4641-9f0c-1141cb762605","Value":"Volume dependent","Kind":26,"MasterId":"266f43d7-8b45-4880-bd3c-88dcbd017fb4","OrderValue":3}
 {"Id":"aa2e4a07-25cf-454b-9505-118ee9077477","Value":"Other","Kind":23,"MasterId":"4bf467d0-1c9d-469d-9dad-45b6bf4b7f47","OrderValue":1}
 {"Id":"bdb6d057-80b7-411a-a6b6-12aae71581c3","Value":"High","Kind":33,"OrderValue":3}
-{"Id":"2984418a-638e-4da9-be1d-12ba94d8ffaf","Value":"Based on old technology","Kind":15,"OrderValue":5}
+{"Id":"2984418a-638e-4da9-be1d-12ba94d8ffaf","Name":"NewFeatures","Value":"Has a new set of features","Kind":15,"OrderValue":5}
 {"Id":"ac1f0f22-1958-45fd-851b-130a155e86c3","Value":"Marketing","Kind":23,"MasterId":"f5d95c3b-4894-41b1-98b8-b1eb44ef436a","OrderValue":4}
 {"Id":"404d16aa-f0f7-452a-88ce-13109e57724a","Value":"Own website","Kind":30,"MasterId":"65c4d434-7f22-44ce-b9a3-c9681ff199a8","OrderValue":1}
 {"Id":"c6e60be8-eef9-41fe-948b-133375a3c43b","Value":"Discounts","Kind":1,"LongValue":"a","OrderValue":20}
@@ -50,7 +50,7 @@
 {"Id":"373f6176-6eef-4866-96ff-2c4efe5c4a76","Value":"Other","Kind":23,"MasterId":"da2dac96-650b-4d54-a984-9c6bae0653c7","OrderValue":4}
 {"Id":"3fe4a8e4-daa1-4edb-a209-2d9f6f9ced35","Value":"Platform","Kind":30,"MasterId":"65c4d434-7f22-44ce-b9a3-c9681ff199a8","OrderValue":2}
 {"Id":"abdbd71b-4c23-4cc1-aacb-2dac249540f3","Value":"Outsourcing of specified services","Kind":21,"OrderValue":5}
-{"Id":"d39c0155-1419-4a48-962f-2e42d5aca11b","Value":"Driven by technology","Kind":15,"OrderValue":15}
+{"Id":"d39c0155-1419-4a48-962f-2e42d5aca11b","Name":"Adaptable","Value":"Is more adaptable/versatile","Kind":15,"OrderValue":15}
 {"Id":"42c22ecb-1f79-467a-8b1f-2e709de5a5e2","Value":"Guarantees and warranties","Kind":1,"LongValue":"a","OrderValue":17}
 {"Id":"75ccb567-91f3-4966-91f6-30565cb59ba0","Value":"Bargaining power of buyers","Kind":3,"OrderValue":23}
 {"Id":"e6ee044d-d548-45fa-8e61-3147e3db167f","Value":"Ownership type","Kind":8,"MasterId":"d4ede701-8037-488b-9794-9b8632c1c3c0","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}
@@ -72,16 +72,16 @@
 {"Id":"e50d6201-cd2e-46bb-b9b0-3a723ab72a79","Value":"Distribution","Kind":22,"OrderValue":8}
 {"Id":"73fcb86d-53b1-4063-87b8-3aa42702c820","Value":"Frequency","Kind":8,"MasterId":"b4517dc0-8202-4cff-be3e-c11a1f78037c","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"e8e1867e-2b03-4172-97d4-3b31470b9047","Value":"","Kind":43,"LongValue":"{\"fileName\":\"P.85.41+P.85.42_IR.csv\",\"loadStartedUtc\":\"2021-08-24T13:12:50.784871Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Subject to extensive regulation (such as program accreditation etc.) and directly dependent on government funding/ grants. Massive funding cuts or interventio.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"Income elasticity of demand is fairly low. Foreign exchange risk and other international factors might be important for some institutions with high proportions of international students.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"Demographic shifts are very important, as the industry targets a specific age group. Demand overall does not fluctuate much, whereas demand for specific disciplines can and does change over time (e.g., there has been a shift from the social sciences to STEM subjects).\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Currently, a technology-driven shift in the mode of delivery of higher education is in progress. The extent to which institutions will be able to embrace this change will be critical to their future success.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":1,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"The industry is mature and fairly highly concentrated. In addition, reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Reputation dependence creates a very high barrier to entry.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"It is almost impossible to substitute away from the entire industry but shifts between subdisciplines are likely.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"comments\":\"Many inputs (such as lab equipment, software licences, and data/ journal subscriptions) are supplied by highly concentrated industries (possibly even monopolies). However, this type of expenditure forms a rather small percentage of a typical institution’s budget.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":1,\"severity\":1,\"comments\":\"The customers are individual students, who are numerous and do not wield market power.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Higher education is very dependent on highly skilled and specialized labour.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"countryDeviationComment\":\"#N/A\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"countryDeviationComment\":\"#N/A\"}]}","OrderValue":0}
-{"Id":"f2424d76-d25a-430a-ab55-3c0480a1f56c","Value":"Extraordinariness","Kind":15,"OrderValue":25}
+{"Id":"f2424d76-d25a-430a-ab55-3c0480a1f56c","Name":"-","Value":"","Kind":15,"OrderValue":25}
 {"Id":"37c1161f-aac3-4e5e-81df-3cce00e3b25c","Value":"Associations","Kind":13,"OrderValue":1}
 {"Id":"e1d977e9-0c83-4f69-8bfe-3f2689b6cec2","Value":"Real time market","Kind":26,"MasterId":"363f16df-3f11-4643-9c93-cd64242c0bf5","OrderValue":3}
 {"Id":"ef193985-9b48-495e-a40c-3f53f2b0b30a","Value":"Under 12","Kind":32,"OrderValue":1}
-{"Id":"bdf69fe7-c3e3-44e1-a984-41041ea08e96","Value":"Continuous","Kind":15,"OrderValue":4}
+{"Id":"bdf69fe7-c3e3-44e1-a984-41041ea08e96","Name":"ResearchDevelopment","Value":"Is the result of R&D","Kind":15,"OrderValue":4}
 {"Id":"ab3c7d47-062b-437e-a164-4172444e276f","Value":"Ownership type","Kind":8,"MasterId":"b4517dc0-8202-4cff-be3e-c11a1f78037c","LongValue":"[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false}]","OrderValue":1}
 {"Id":"88fa173b-e9a8-44a7-be1a-43fab1989a02","Value":"Agents","Kind":11,"OrderValue":5}
 {"Id":"3943c265-621b-4738-93c8-4470986c3af3","Value":"Transport","Kind":6,"MasterId":"b3ef13cf-c5f0-46d9-ba7b-79ab2147effb","OrderValue":3}
 {"Id":"da250714-2420-4d57-8015-44fe1e1ff294","Value":"Non-governmental institutions","Kind":13,"OrderValue":1}
-{"Id":"adcdc439-8170-4fab-a70d-457c1b98bc92","Value":"Result of R&D","Kind":15,"OrderValue":8}
+{"Id":"adcdc439-8170-4fab-a70d-457c1b98bc92","Name":"Exclusive","Value":"Is exclusive","Kind":15,"OrderValue":8}
 {"Id":"4bf467d0-1c9d-469d-9dad-45b6bf4b7f47","Value":"Permits & Licenses","Kind":21,"OrderValue":7}
 {"Id":"d8cb55ce-d517-4912-8b07-46d41d4d4c4a","Value":"Operations","Kind":42,"MasterId":"b2445fa0-fa0d-4f77-b545-a3d10f6da338","OrderValue":0}
 {"Id":"5a7a66cb-25f4-462b-b1f7-47b97735d7da","Value":"Other","Kind":21,"OrderValue":9}
@@ -99,12 +99,12 @@
 {"Id":"cc3cddf7-c4fa-4679-8feb-58935864f5b2","Value":"Wholesalers","Kind":11,"OrderValue":4}
 {"Id":"7682545b-fbee-475e-ab30-5a1f694c81c6","Value":"Software","Kind":6,"MasterId":"d938dd78-01a5-4d06-9757-149402db6e7d","OrderValue":3}
 {"Id":"e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a","Value":"Specialists & Know-how","Kind":6,"MasterId":"63cee727-8378-4603-8b0b-839751dfeed1","OrderValue":1}
-{"Id":"8f79391b-d687-4515-9292-5b4958ef0589","Value":"Durability","Kind":15,"OrderValue":21}
-{"Id":"0ff6b626-a1ff-4184-b1bb-5bf2992091bd","Value":"Product or service already exists in the market","Kind":15,"OrderValue":2}
+{"Id":"8f79391b-d687-4515-9292-5b4958ef0589","Name":"-","Value":"","Kind":15,"OrderValue":21}
+{"Id":"0ff6b626-a1ff-4184-b1bb-5bf2992091bd","Name":"Improvment","Value":"Is an improvement of an existing product or service","Kind":15,"OrderValue":2}
 {"Id":"75bcee28-686d-47e6-82b2-5c2a32168377","Value":"Non time limited usage","Kind":16,"OrderValue":1}
 {"Id":"1b776dfa-533e-4511-8185-5c576db8dcec","Value":"Transport","Kind":23,"MasterId":"e4c57d7e-a1c6-462a-8f83-35aa7e989ddb","OrderValue":3}
-{"Id":"58b41b4d-da41-4f9b-9cec-5da895a0b502","Value":"Safety","Kind":15,"OrderValue":23}
-{"Id":"f9862c29-9a20-4cbe-8fa2-5e1660f6b8da","Value":"Discontinuous","Kind":15,"OrderValue":10}
+{"Id":"58b41b4d-da41-4f9b-9cec-5da895a0b502","Name":"-","Value":"","Kind":15,"OrderValue":23}
+{"Id":"f9862c29-9a20-4cbe-8fa2-5e1660f6b8da","Name":"UserFriendly","Value":"Is more user-friendly","Kind":15,"OrderValue":10}
 {"Id":"95f441a5-2f4e-4c6e-93e7-5e18cbe26749","Value":"Other","Kind":16,"OrderValue":7}
 {"Id":"c5acf766-38a0-4cf2-8649-6074f10a6b9f","Value":"Inventory buildings","Kind":23,"MasterId":"da2dac96-650b-4d54-a984-9c6bae0653c7","OrderValue":2}
 {"Id":"62d8c572-b4b2-45e7-be6d-607de423b903","Value":"Inflation","Kind":3,"OrderValue":5}
@@ -140,26 +140,26 @@
 {"Id":"dd32e3d1-de98-436a-be89-79206cf5204b","Value":"Domestic Urban","Kind":35,"OrderValue":2}
 {"Id":"b3ef13cf-c5f0-46d9-ba7b-79ab2147effb","Value":"Physical resources","Kind":5,"LongValue":"Physical assets are tangible resources that a company uses to create its value proposition. These could include equipment, inventory, buildings, manufacturing plants and distribution networks that enable the business to function.","OrderValue":1}
 {"Id":"c64ed84d-db99-4a25-95f1-79bb99fa6936","Value":"Service","Kind":14,"OrderValue":2}
-{"Id":"4cb290b2-7fbc-4846-be7b-79f9e3efbb46","Value":"Expertise of manufacturer","Kind":15,"OrderValue":16}
+{"Id":"4cb290b2-7fbc-4846-be7b-79f9e3efbb46","Name":"Customisable","Value":"Is more customisable (more user-selectable options)","Kind":15,"OrderValue":16}
 {"Id":"aa02701e-c0d0-4c27-a09d-7a4987629640","Value":"Other","Kind":23,"MasterId":"0bff5c28-137c-4890-90df-ba7e0746431c","OrderValue":1}
-{"Id":"aae57ccf-f33c-4a0e-925a-7a65d8ca171e","Value":"Not different from competitors","Kind":15,"OrderValue":1}
+{"Id":"aae57ccf-f33c-4a0e-925a-7a65d8ca171e","Name":"NewProduct","Value":"Is a fundamentally new product or service","Kind":15,"OrderValue":1}
 {"Id":"e1915d59-a5a4-43bd-a5db-7c8ab320371a","Value":"Wholesalers","Kind":27,"OrderValue":3}
 {"Id":"a3a74886-85d0-4861-baa3-7d09bea0e583","Value":"Muncipality","Kind":38,"OrderValue":3}
 {"Id":"d89128ed-072e-4f22-aea3-7f058c855888","Value":"Complementary and after-sales service","Kind":1,"LongValue":"a","OrderValue":16}
-{"Id":"96f638ad-c41f-492f-982a-7f4018bcb3a6","Value":"Dominant design unchanged","Kind":15,"OrderValue":6}
+{"Id":"96f638ad-c41f-492f-982a-7f4018bcb3a6","Name":"SetTrend","Value":"Aims to set a trend","Kind":15,"OrderValue":6}
 {"Id":"507b8ec3-8687-4c2c-a6e2-80833c1da93e","Value":"Outsourcing of services","Kind":21,"OrderValue":4}
 {"Id":"acb3829b-c7e2-45eb-810d-80cd3d4f5f39","Value":"Supporting processes","Kind":1,"LongValue":"a","OrderValue":12}
 {"Id":"e04a476c-a409-472a-beb4-819b104d9731","Value":"Political stability","Kind":3,"OrderValue":1}
 {"Id":"63cee727-8378-4603-8b0b-839751dfeed1","Value":"Human resources","Kind":5,"LongValue":"Employees are often the most important and yet the most easily overlooked assets of an organization. Specifically for companies in the service industries or require a great deal of creativity and an extensive knowledge pool, human resources such as customer service representatives, software engineers or scientists are pivotal.","OrderValue":3}
 {"Id":"ab606dbd-08d6-49be-8bc6-844812d8b214","Value":"Brokerage fees","Kind":24,"OrderValue":6}
 {"Id":"be31e251-6784-4472-a771-86c159b3f9fb","Value":"Yield management","Kind":26,"MasterId":"363f16df-3f11-4643-9c93-cd64242c0bf5","OrderValue":2}
-{"Id":"ae7c712d-f780-429f-aed6-87509c0bc43c","Value":"Improvement of existing characteristics","Kind":15,"OrderValue":7}
+{"Id":"ae7c712d-f780-429f-aed6-87509c0bc43c","Name":"ImprovedProcess","Value":"Has an improved production/delivery process","Kind":15,"OrderValue":7}
 {"Id":"4b0ba05e-88c6-4c54-a313-880e3aee9905","Value":"Employees directly involved in production or service","Kind":6,"MasterId":"63cee727-8378-4603-8b0b-839751dfeed1","OrderValue":3}
 {"Id":"e77f9a30-6e69-432d-9c8e-88380ba63de2","Value":"Other","Kind":23,"MasterId":"09b845a4-df9c-4f53-b833-1f69ae6d1835","OrderValue":1}
 {"Id":"266f43d7-8b45-4880-bd3c-88dcbd017fb4","Value":"Fixed pricing","Kind":25,"OrderValue":1}
 {"Id":"2483ee5b-da92-4400-aa64-88eb8a1ea152","Value":"Product feature dependent","Kind":26,"MasterId":"266f43d7-8b45-4880-bd3c-88dcbd017fb4","OrderValue":2}
 {"Id":"457f681a-f052-408d-a7f6-8979f6c47063","Value":"Natural disasters","Kind":3,"OrderValue":20}
-{"Id":"07d5452f-6ea6-4ae6-9395-89fd1d0eeab0","Value":"Uncertainty","Kind":15,"OrderValue":13}
+{"Id":"07d5452f-6ea6-4ae6-9395-89fd1d0eeab0","Name":"Niche","Value":"Is a niche","Kind":15,"OrderValue":13}
 {"Id":"a2254a01-9908-42e0-af0d-8a0b04875197","Value":"Small","Kind":36,"OrderValue":1}
 {"Id":"a4e19cfd-e63d-4eaf-b45e-8a298a3be406","Value":"Water","Kind":23,"MasterId":"25532174-0c07-4293-99c2-10c954ad6367","OrderValue":2}
 {"Id":"92455eb0-dd6b-4c56-a883-8a39f2dafbae","Value":"Facilities and equipment","Kind":1,"LongValue":"a","OrderValue":2}
@@ -188,14 +188,14 @@
 {"Id":"2fc70a56-27b6-442b-938c-9c13fb36e316","Value":"Word of Mouth","Kind":40,"OrderValue":1}
 {"Id":"da2dac96-650b-4d54-a984-9c6bae0653c7","Value":"Rent of buildings","Kind":21,"OrderValue":2}
 {"Id":"3bb18f50-91bf-4c73-ad1f-9cdd924127fb","Value":"Financiers","Kind":12,"OrderValue":4}
-{"Id":"7da1cdc9-d7e4-4234-b31b-9e0570e5e9c6","Value":"Comfortability & Usability","Kind":15,"OrderValue":22}
+{"Id":"7da1cdc9-d7e4-4234-b31b-9e0570e5e9c6","Name":"-","Value":"","Kind":15,"OrderValue":22}
 {"Id":"825d07dd-581b-4473-841c-9ec037746ae2","Value":"Transnational","Kind":35,"OrderValue":7}
 {"Id":"329ecdc4-faeb-43fa-b53e-9efad8c7b4d3","Value":"Not","Kind":18,"OrderValue":1}
 {"Id":"adb303c0-23af-4eca-948c-9f09142bf015","Value":"Competition","Kind":3,"OrderValue":21}
 {"Id":"cdc1a197-fb79-42b9-a7cb-9ff8fd0e1622","Value":"Economic growth","Kind":3,"OrderValue":3}
 {"Id":"5087771d-cce4-4521-a3cb-a14b1891abba","Value":"Office","Kind":23,"MasterId":"fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c","OrderValue":2}
 {"Id":"6a08ddad-1878-46da-a843-a1856a93dd91","Value":"Lifestyle trends","Kind":3,"OrderValue":16}
-{"Id":"49ac2e9c-ecbb-4a14-aa35-a35efb4ff919","Value":"Manufacturing complexity","Kind":15,"OrderValue":17}
+{"Id":"49ac2e9c-ecbb-4a14-aa35-a35efb4ff919","Name":"DifferentVariant","Value":"Is a different variant of a current product/service","Kind":15,"OrderValue":17}
 {"Id":"b2445fa0-fa0d-4f77-b545-a3d10f6da338","Value":"Production","Kind":41,"OrderValue":0}
 {"Id":"d57d1d34-e721-4d46-a5f4-a3f9e7d3a198","Value":"Other","Kind":27,"OrderValue":5}
 {"Id":"3066446c-5e9b-4321-bdf6-a47f367f61c5","Value":"Other","Kind":6,"MasterId":"63cee727-8378-4603-8b0b-839751dfeed1","OrderValue":4}
@@ -207,13 +207,13 @@
 {"Id":"9f62a58d-00b7-43ee-8374-ae679f5d68af","Value":"Payment terms","Kind":1,"LongValue":"a","OrderValue":21}
 {"Id":"d050dc8f-aa16-47f8-ab35-ae6fc8d7a3ae","Value":"Usage fee","Kind":24,"OrderValue":2}
 {"Id":"1afacd96-1b6b-4958-bffd-af953759ee25","Value":"Price","Kind":1,"LongValue":"a","OrderValue":19}
-{"Id":"cf6361ec-886e-4b0a-b53b-af9a477f334b","Value":"Workmanship","Kind":15,"OrderValue":19}
+{"Id":"cf6361ec-886e-4b0a-b53b-af9a477f334b","Name":"-","Value":"","Kind":15,"OrderValue":19}
 {"Id":"f5d95c3b-4894-41b1-98b8-b1eb44ef436a","Value":"Salaries","Kind":21,"OrderValue":6}
 {"Id":"4152d046-a8a2-4adc-a6b3-b2de8c3cafbf","Value":"Physical","Kind":29,"MasterId":"91d5edff-f361-47aa-8d3c-b420681dcd5e","OrderValue":1}
 {"Id":"f5311b29-88a0-4500-8173-b2e16a3137ed","Value":"Ownership type","Kind":8,"MasterId":"e2d723ce-1ea6-4d1e-a35e-5b47907d2d2a","LongValue":"[{\"title\":\"Employ\",\"selected\":false},{\"title\":\"Outsource\",\"selected\":false},{\"title\":\"Myself\",\"selected\":false}]","OrderValue":1}
 {"Id":"91d5edff-f361-47aa-8d3c-b420681dcd5e","Value":"Own shop","Kind":28,"MasterId":"3c81ac65-960e-44aa-b752-17808fa31c1f","OrderValue":1}
 {"Id":"86d1df12-6c1b-4211-a936-b5c2cad16a81","Value":"Knowledge management","Kind":42,"MasterId":"53299dc3-8c18-486c-8be9-623d2152b9dd","OrderValue":0}
-{"Id":"121f0a92-8b35-4890-8384-b66f48db9ac5","Value":"Leads to a new design","Kind":15,"OrderValue":12}
+{"Id":"121f0a92-8b35-4890-8384-b66f48db9ac5","Name":"Durable","Value":"Is more durable","Kind":15,"OrderValue":12}
 {"Id":"22656f17-0f99-438f-a934-b71d64a7fbd6","Value":"Buildings","Kind":6,"MasterId":"b3ef13cf-c5f0-46d9-ba7b-79ab2147effb","OrderValue":1}
 {"Id":"e682f874-c899-432d-a963-b82470f6bcf1","Value":"Logistics","Kind":42,"MasterId":"b2445fa0-fa0d-4f77-b545-a3d10f6da338","OrderValue":0}
 {"Id":"bf7c1d8a-7240-4c81-84e2-b96709e3c3ba","Value":"Subscription fee","Kind":24,"OrderValue":3}
@@ -237,13 +237,13 @@
 {"Id":"9c1015a6-00a0-4d86-a723-c56bb7da4df5","Value":"Retailers","Kind":11,"OrderValue":3}
 {"Id":"e33adb3f-4391-4631-ab67-c5ce6989dd38","Value":"Marketing","Kind":42,"MasterId":"598ee84a-c772-4156-abf3-bc0d57c678a1","OrderValue":0}
 {"Id":"7a82656a-a993-4a54-b8e6-c69224642dd1","Value":"Consultants","Kind":13,"OrderValue":1}
-{"Id":"7baa945c-4bcb-46b9-8e95-c72fe5b49778","Value":"Driven by market pull","Kind":15,"OrderValue":9}
+{"Id":"7baa945c-4bcb-46b9-8e95-c72fe5b49778","Name":"Comfortable","Value":"Is more comfortable & usable","Kind":15,"OrderValue":9}
 {"Id":"f61f60ab-7991-4dac-b40e-c742dcef878b","Value":"Marketing","Kind":21,"OrderValue":8}
 {"Id":"a3935a3c-ad19-4395-8020-c7c73a9587f3","Value":"New markets","Kind":3,"OrderValue":12}
 {"Id":"65c4d434-7f22-44ce-b9a3-c9681ff199a8","Value":"Online","Kind":29,"MasterId":"91d5edff-f361-47aa-8d3c-b420681dcd5e","OrderValue":2}
 {"Id":"90a35599-3c47-4389-b571-c9d3c7957daf","Value":"Other","Kind":23,"MasterId":"fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c","OrderValue":4}
-{"Id":"2ad13e8d-672f-4eb7-87eb-ca33891eeffb","Value":"Aesthetics","Kind":15,"OrderValue":24}
-{"Id":"b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d","Value":"Special materials and components","Kind":15,"OrderValue":18}
+{"Id":"2ad13e8d-672f-4eb7-87eb-ca33891eeffb","Name":"-","Value":"","Kind":15,"OrderValue":24}
+{"Id":"b00a4df7-4b4e-41b6-a2ac-cabf1e75ce5d","Name":"-","Value":"","Kind":15,"OrderValue":18}
 {"Id":"c055ffa9-c8e4-4f77-859d-cae9785736f6","Value":"Domestic","Kind":35,"OrderValue":1}
 {"Id":"c6a66809-c479-4563-95df-cb9396c37e35","Value":"","Kind":28,"MasterId":"3c81ac65-960e-44aa-b752-17808fa31c1f","OrderValue":4}
 {"Id":"363f16df-3f11-4643-9c93-cd64242c0bf5","Value":"Dynamic pricing","Kind":25,"OrderValue":2}
@@ -274,7 +274,7 @@
 {"Id":"7a4a57fd-79e7-4141-88b5-e57a22d7ef9a","Value":"Cultural norms and values","Kind":3,"OrderValue":15}
 {"Id":"197debde-3d72-4bae-89e5-e5d9010c8562","Value":"Foreign","Kind":35,"OrderValue":4}
 {"Id":"de834ef4-a990-4a17-9385-e6a6c226189c","Value":"Other","Kind":23,"MasterId":"e50d6201-cd2e-46bb-b9b0-3a723ab72a79","OrderValue":4}
-{"Id":"5eb6013b-0cca-4f89-b39d-e711477a972f","Value":"No improvements or innovations","Kind":15,"OrderValue":3}
+{"Id":"5eb6013b-0cca-4f89-b39d-e711477a972f","Name":"DifferentDesign","Value":"Has a different visual design","Kind":15,"OrderValue":3}
 {"Id":"eea606be-c02d-41a6-a35e-e8701086869c","Value":"Market size","Kind":3,"OrderValue":11}
 {"Id":"67dc4bec-4276-44df-a573-e95b64864a7e","Value":"Outsourcing of specified services","Kind":22,"OrderValue":5}
 {"Id":"f782da7f-d1e2-4cf8-9267-ea403651f58d","Value":"Inventory","Kind":1,"LongValue":"a","OrderValue":4}
@@ -285,10 +285,10 @@
 {"Id":"b362e97b-b47d-4183-82b2-ecc6dbd9bc6f","Value":"Frequency","Kind":8,"MasterId":"3943c265-621b-4738-93c8-4470986c3af3","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"eaee254e-e4c3-4ebd-86eb-ed38a54c238b","Value":"Accountant","Kind":23,"MasterId":"507b8ec3-8687-4c2c-a6e2-80833c1da93e","OrderValue":1}
 {"Id":"f5e69507-6f10-49bd-a3aa-edd3b0845e67","Value":"Demographic trends","Kind":3,"OrderValue":14}
-{"Id":"dfe881a2-cd69-4295-a16a-edfb2c8fc0bf","Value":"Based on new technologies","Kind":15,"OrderValue":11}
+{"Id":"dfe881a2-cd69-4295-a16a-edfb2c8fc0bf","Name":"Safe","Value":"Is safer to use","Kind":15,"OrderValue":11}
 {"Id":"2d5348f7-f619-4de2-a186-ee0ad4fff927","Value":"Domestic Rural","Kind":35,"OrderValue":3}
 {"Id":"327ca493-9191-4fb5-b1a8-eec264849f7d","Value":"R & D","Kind":42,"MasterId":"b2445fa0-fa0d-4f77-b545-a3d10f6da338","OrderValue":0}
-{"Id":"5365d22f-9372-4471-baab-f1175d25ae0f","Value":"New set of features","Kind":15,"OrderValue":14}
+{"Id":"5365d22f-9372-4471-baab-f1175d25ae0f","Name":"Eco","Value":"Is more eco-friendly","Kind":15,"OrderValue":14}
 {"Id":"be005f23-8f91-4776-835c-f4e231bdb1e5","Value":"Frequency","Kind":8,"MasterId":"22656f17-0f99-438f-a934-b71d64a7fbd6","LongValue":"[{\"title\":\"Permanently\",\"selected\":false},{\"title\":\"Time to time\",\"selected\":false}]","OrderValue":2}
 {"Id":"ca5124ab-0c2f-4224-88b1-f579a01d2522","Value":"Equipment","Kind":6,"MasterId":"b3ef13cf-c5f0-46d9-ba7b-79ab2147effb","OrderValue":2}
 {"Id":"e59e3f4e-077f-4d34-9214-f5b93134cf44","Value":"Foreign Rural","Kind":35,"OrderValue":6}
@@ -302,6 +302,6 @@
 {"Id":"eed82f80-4e74-435d-9371-fba9683b33ad","Value":"Equipment","Kind":23,"MasterId":"fb2a304a-f8fb-4fc2-ae29-eb95cd44bf6c","OrderValue":3}
 {"Id":"7cb479d5-c8e5-40c3-909c-fbde2188b593","Value":"Copyrights","Kind":1,"LongValue":"a","OrderValue":9}
 {"Id":"cf1657e0-d4eb-430c-8185-fc80c20aa25c","Value":"Other","Kind":23,"MasterId":"25532174-0c07-4293-99c2-10c954ad6367","OrderValue":7}
-{"Id":"187d8314-5350-4f30-a68c-fde38021a178","Value":"Rarity","Kind":15,"OrderValue":20}
+{"Id":"187d8314-5350-4f30-a68c-fde38021a178","Name":"-","Value":"","Kind":15,"OrderValue":20}
 {"Id":"e0c84bf6-dbc3-450e-95ac-fe42299e05df","Value":"Product design","Kind":1,"LongValue":"a","OrderValue":13}
 {"Id":"4d2bbd5e-d9ef-45cd-84b2-fe93bde5eff1","Value":"Ownership type","Kind":8,"MasterId":"aa351db4-3b28-4cab-ad95-722bfcba23dc","LongValue":"[{\"title\":\"Rent\",\"selected\":false},{\"title\":\"Buy\",\"selected\":false},{\"title\":\"Own\",\"selected\":false}]","OrderValue":1}
