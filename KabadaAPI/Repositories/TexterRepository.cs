@@ -19,8 +19,11 @@ namespace KabadaAPI {
                    , activityType=41, activitySubtype=42
                        , industryRisks=43
         }       
-
-        public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+    public const string BLOCK="-";
+    public static bool IsBlocked(Texter me){ return (me.Name==BLOCK); }
+    public static void Block(Texter me){ me.Name=BLOCK; }
+   
+    public TexterRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
     protected IQueryable<Texter> getQ(Guid? master=null, short? @from=null, short? @to=null, List<short> kinds=null, bool ignoreMaster=false){
       var q=daContext.Texters.AsQueryable();
