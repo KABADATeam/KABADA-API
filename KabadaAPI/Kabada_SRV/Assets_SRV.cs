@@ -16,6 +16,9 @@ namespace Kabada {
 //      var typi=tRepo.getKeyResourceTypes(KeyResourceBL.HID).Where(x=>x.MasterId!=null).ToDictionary(x=>x.Id, x=>false);
       var w=tRepo.getKeyResourceTypes(null).ToDictionary(x=>x.Id);     
       physical_assets=make(atri, w);
+      total_investments=pl.e.startup.total_investments;
+      own_assets=pl.e.startup.own_assets;
+      investment_amount=pl.e.startup.investment_amount;
       }
 
     protected List<AssetElement> make(List<KeyResourceBL> source, Dictionary<Guid, Texter> types){

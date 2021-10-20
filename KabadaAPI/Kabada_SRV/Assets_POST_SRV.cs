@@ -6,11 +6,19 @@ using System.Linq;
 namespace Kabada {
   partial class Assets_POST {
     internal void perform(BLontext ctx) {
-      var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
-        var paRepo=new Plan_AttributeRepository(ctx);
-        var kri=paRepo.getResources(business_plan_id).ToDictionary(x=>x.Id);
-        fill(kri, physical_assets);
-        paRepo.daContext.SaveChanges();
+      var bRepo=new BusinessPlansRepository(ctx);
+      var plan=bRepo.GetPlanForUpdate(ctx.userGuid, business_plan_id);
+      var t=new BusinessPlanBL(plan, true);
+      t.e.startup.total_investments=total_investments;
+      t.e.startup.own_assets=own_assets;
+      t.e.startup.investment_amount=investment_amount;
+      t.unload();
+
+      var paRepo=new Plan_AttributeRepository(ctx, bRepo.daContext);
+      var kri=paRepo.getResources(business_plan_id).ToDictionary(x=>x.Id);
+      fill(kri, physical_assets);
+
+      bRepo.daContext.SaveChanges();
       }
 
     private void fill(Dictionary<Guid, KabadaAPIdao.Plan_Attribute> kri, List<AssetPosterElement> assets) {
