@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 
 namespace KabadaAPI.Controllers {
-  [Route("quest")]
+  [Route("api/quest")]
   [ApiController]
   public class QuestionaireController : KController {
     public QuestionaireController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}

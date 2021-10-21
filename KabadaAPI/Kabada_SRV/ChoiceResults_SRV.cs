@@ -26,7 +26,7 @@ namespace Kabada {
       var paRepo=new Plan_SpecificAttributesRepository(ctx, bRepo.daContext);
       var kri=PersonalCharBL.Make(paRepo, plan_id);
       kri.e.Clear();
-      foreach(var x in this)
+      foreach(var x in this.choices)
         kri.e.Add(x);
       kri.unload();
       bRepo.daContext.SaveChanges();
