@@ -12,7 +12,7 @@ namespace KabadaAPI.Controllers {
     public QuestionaireController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
     [HttpGet]
-   // [Authorize]
+    [Authorize]
     [Route("personal/{BusinessPlan}")]
     public ActionResult<ChoiceResults> MyPersonalCharacteristics(Guid BusinessPlan) { return Prun<Guid, ChoiceResults>(_MyPersonalCharacteristics, BusinessPlan); }
     private ActionResult<ChoiceResults> _MyPersonalCharacteristics(Guid planId){
