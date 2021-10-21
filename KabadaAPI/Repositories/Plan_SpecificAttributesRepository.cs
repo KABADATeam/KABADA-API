@@ -14,6 +14,13 @@ namespace KabadaAPI {
       return r;
       }
 
+    internal Plan_SpecificAttribute personalChar(Guid planId) {
+      var t=get(planId, PlanAttributeKind.personalCharacteristics);
+      if(t.Count>0)
+        return t[0];
+      return null;
+      }
+
     internal List<Plan_SpecificAttribute> getSegments(Guid planId) {
       var l=(short)PlanAttributeKind.consumerSegment;
       var h=(short)PlanAttributeKind.ngoSegment;

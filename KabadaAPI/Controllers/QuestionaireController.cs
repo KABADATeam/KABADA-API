@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Kabada;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,22 +11,24 @@ namespace KabadaAPI.Controllers {
   public class QuestionaireController : KController {
     public QuestionaireController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
-    //[Route("categories")]
-    //[HttpGet]
-    //public ActionResult<ActivitiesTypes> Categories() { return Grun<ActivitiesTypes>(_Categories); }
-    //  private ActionResult<ActivitiesTypes> _Categories(){
-    //    var r = new ActivitiesTypes();
-    //    r.read(context);
-    //    return r;
-    //    }
+    [HttpGet]
+    [Authorize]
+    [Route("personal/{BusinessPlan}")]
+    public ActionResult<ChoiceResults> MyPersonalCharacteristics(Guid BusinessPlan) { return Prun<Guid, ChoiceResults>(MyPersonalCharacteristics, BusinessPlan); }
+    private ActionResult<ChoiceResults> _MyPersonalCharacteristics(Guid planId){
+      var r = new ChoiceResults();
+      r.read(context, planId);
+      return r;
+      }
 
-    //[HttpPost]
-    //[Authorize]
-    //[Route("save")]
-    //public ActionResult<Guid> Save(KeyActivityPost update) { return Prun<KeyActivityPost, Guid>(_Save, update); }
-    //private ActionResult<Guid> _Save(KeyActivityPost update) {
-    //  Guid r=update.perform(context);
-    //  return r;
-    //  }
+    [HttpPost]
+    [Authorize]
+    [Route("personal/save")]
+    public IActionResult MyPersonalSave(ChoiceResults update) { return prun<ChoiceResults>(_MyPersonalSave, update); }
+    private IActionResult _MyPersonalSave(ChoiceResults update) {
+      update.perform(context);
+      return Ok();
+      }
+
     }
   }

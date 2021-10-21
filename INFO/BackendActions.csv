@@ -108,3 +108,5 @@ Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;Cha
 ;P;/api/plans/investmentSaveRecalc;UserBusinessPlan;MySaveRecalc;
 ;G;api/kres/assets/{BusinessPlan;KeyResources;MyAssets;
 ;P;api/kres/assets/save;KeyResources;MyAssetsSave;
+;P;/quest/personal/save;Questionaire;MyPersonalSave;
+;G;/quest/personal/{BusinessPlan};Questionaire;MyPersonalCharacteristics;
