@@ -24,12 +24,17 @@ namespace Kabada {
         throw new Exception("not owner");
 
       var paRepo=new Plan_SpecificAttributesRepository(ctx, bRepo.daContext);
-      var kri=PersonalCharBL.Make(paRepo, plan_id);
+      var o=paRepo.personalChar(plan_id);
+      PersonalCharBL kri=null;
+      if(o==null)
+        kri=new PersonalCharBL(plan_id);
+       else
+        kri=new PersonalCharBL(o, true);
       kri.e.Clear();
       foreach(var x in this.choices)
         kri.e.Add(x);
       kri.unload();
-      bRepo.daContext.SaveChanges();
+      kri.completeSet(o==null?null:kri.id, paRepo);
       }
     }
   }

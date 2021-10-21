@@ -12,12 +12,12 @@ namespace KabadaAPI {
     public PersonalCharBL(Guid byId, Plan_SpecificAttributesRepository repo, bool forUpdate=false, Guid? planForValidate=null)
                    : base(byId, repo, forUpdate, planForValidate, KIND) {}
 
-    public static PersonalCharBL Make(Plan_SpecificAttributesRepository repo, Guid plan){
-      var o=repo.personalChar(plan);
-      if(o==null)
-        return new PersonalCharBL(plan);
-       else
-        return new PersonalCharBL(o, true);
-      }
+    //public static PersonalCharBL Make(Plan_SpecificAttributesRepository repo, Guid plan){
+    //  var o=repo.personalChar(plan);
+    //  if(o==null)
+    //    return new PersonalCharBL(plan);
+    //   else
+    //    return new PersonalCharBL(o, true);
+    //  }
     }
   }
