@@ -6,15 +6,15 @@ using Microsoft.Extensions.Logging;
 using System;
 
 namespace KabadaAPI.Controllers {
-  [Route("api/quest")]
-  [ApiController]
-  public class QuestionaireController : KController {
+    [ApiController]
+    [Route("api/quest")]
+    public class QuestionaireController : KController {
     public QuestionaireController(ILogger<KController> logger, IConfiguration configuration) : base(logger, configuration) {}
 
     [HttpGet]
-    [Authorize]
+   // [Authorize]
     [Route("personal/{BusinessPlan}")]
-    public ActionResult<ChoiceResults> MyPersonalCharacteristics(Guid BusinessPlan) { return Prun<Guid, ChoiceResults>(MyPersonalCharacteristics, BusinessPlan); }
+    public ActionResult<ChoiceResults> MyPersonalCharacteristics(Guid BusinessPlan) { return Prun<Guid, ChoiceResults>(_MyPersonalCharacteristics, BusinessPlan); }
     private ActionResult<ChoiceResults> _MyPersonalCharacteristics(Guid planId){
       var r = new ChoiceResults();
       r.read(context, planId);
