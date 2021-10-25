@@ -122,7 +122,7 @@ namespace KabadaAPI {
         return Path.Combine(path, "DBinit");
       }}
 
-    internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false) {
+    internal string reinitialize(string inDirectoryPath=null, bool overwrite=false, bool deleteOld=false, bool generateInits=false, List<string> skip=null) {
       var opa=inDirectoryPath;
       if(opa==null)
         opa=iniPath;
@@ -140,14 +140,16 @@ namespace KabadaAPI {
 
       k=0;
       foreach(var o in importOrder)
-        k+=o.loadMe(opa, overwrite, deleteOld, generateInits);
+         k+=o.loadMe(opa, overwrite, deleteOld, generateInits, skip);
       LogInformation($"Total loaded {k} records.");
 
       return opa;
       }
 
-    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits) {
+    protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits, List<string> skip) {
       var nam=this.GetType().Name;
+      if(skip!=null && skip.Contains(nam))
+        return 0;
       var l1=nam.IndexOf("Repository");
       if(l1>0)
         nam=nam.Substring(0, l1);

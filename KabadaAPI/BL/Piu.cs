@@ -36,7 +36,7 @@ namespace KabadaAPI {
 
     private void doRestore() {
       var t=new UsersRepository(context); // use this because the BaseRepository is abstract
-      var r=t.reinitialize(backupDirectory);
+      var r=t.reinitialize(backupDirectory, skip:new List<string>(){ "Country", "IndustryActivity", "Industry", "UserTypes", "Languages"});
       }
 
     private string backupDirectory { get {
