@@ -9,6 +9,7 @@ namespace KabadaAPI {
       public UsersRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
       private DbSet<User> q0 { get { return daContext.Users; }}
+      public IQueryable<User> Q() { return q0.AsQueryable(); }
 
       public User AddUser(string email, string password)
         {

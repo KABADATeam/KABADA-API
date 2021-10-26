@@ -29,7 +29,10 @@ namespace KabadaAPIdao
         [Range(0,100)]
         public int Completed { get; set; }
         public bool Public { get; set; }
+
+        public Guid? UserId { get; set; }
         public User User { get; set; }
+
         public bool IsSwotCompleted { get; set; }
         public bool IsResourcesCompleted { get; set; }
         public bool IsPartnersCompleted { get; set; }

@@ -243,12 +243,21 @@ namespace KabadaAPI
         }
 
     protected Guid? LV;
+    protected bool isJH;
+    protected Guid? JH;
     protected override void adjust(object me) {
       var o=(KabadaAPIdao.BusinessPlan)me;
       if(o.CountryId==null){
         if(LV==null)
           LV=new CountryRepository(blContext, daContext).Q("LV").Select(x=>x.Id).FirstOrDefault();
         o.CountryId=LV;
+        }
+      if(o.Public==false && o.UserId==null){
+        if(isJH==false){
+          isJH=true;
+          JH=new UsersRepository(blContext, daContext).Q().Where(x=>x.Email=="janis.hermanis@ba.lv").Select(x=>x.Id).FirstOrDefault();
+          }
+        o.UserId=JH;
         }
       }
     }
