@@ -93,8 +93,8 @@ namespace KabadaAPI.Controllers {
                         industry = p.Activity?.Industry.Title,
                         country = p.Country?.Title,
                         dateCreated = p.Created.Date,
-                        owner = String.Format("{0} {1}", p.User.Name, p.User.Surname),
-                        ownerAvatar = p.User.UserPhoto
+                        owner = String.Format("{0} {1}", p.User?.Name, p.User?.Surname),
+                        ownerAvatar = p.User?.UserPhoto
                     }); 
                 }
                 return new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans };//repository.GetPublicPlans();
