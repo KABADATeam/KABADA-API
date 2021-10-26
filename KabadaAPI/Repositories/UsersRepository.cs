@@ -221,5 +221,10 @@ namespace KabadaAPI {
       return r;
       }
 
+    protected override void adjust(object me) {
+      var o=(KabadaAPIdao.User)me;
+      if(o.TypeId==0)
+        o.TypeId=100;
+      }
     }
 }

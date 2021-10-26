@@ -146,6 +146,8 @@ namespace KabadaAPI {
       return opa;
       }
 
+    protected virtual void adjust(object me){}
+
     protected virtual int loadMe(string opa, bool overwrite, bool oldDeleted, bool generateInits, List<string> skip) {
       var nam=this.GetType().Name;
       if(skip!=null && skip.Contains(nam))
@@ -216,6 +218,7 @@ namespace KabadaAPI {
 
     protected virtual bool loadDataRow<Te, Tk>(DbSet<Te> set, string json, bool overwrite, bool oldDeleted, bool generateInits) where Te:class {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Te>(json);
+      adjust(o);
       if(generateInits){
         daContext.INITaddInit<Te>(o);
         return true;
@@ -265,5 +268,6 @@ namespace KabadaAPI {
       reinitialize(iniPath, false, false, true);
       }
 
+   
     }
 }

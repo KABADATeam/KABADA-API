@@ -28,6 +28,7 @@ namespace KabadaAPIdao
         public string Salt { get; set; }
 
         [Required]
+        public int TypeId { get; set; }
         public UserType Type { get; set; }
 
         [Required]
