@@ -14,7 +14,7 @@ namespace KabadaAPIdao
         public Guid? CountryId { get; set; }
         public Country Country { get; set; }
 
-        [Required]
+        public Guid? ActivityID { get; set; }
         public Activity Activity { get; set; }
 
         [Required]
