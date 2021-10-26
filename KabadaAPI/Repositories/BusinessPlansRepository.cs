@@ -241,5 +241,15 @@ namespace KabadaAPI
             businessPlan.IsAssetsCompleted = newValue;
             daContext.SaveChanges();
         }
+
+    protected Guid? LV;
+    protected override void adjust(object me) {
+      var o=(KabadaAPIdao.BusinessPlan)me;
+      if(o.CountryId==null){
+        if(LV==null)
+          LV=new CountryRepository(blContext, daContext).Q("LV").Select(x=>x.Id).FirstOrDefault();
+        o.CountryId=LV;
+        }
+      }
     }
 }
