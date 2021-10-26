@@ -19,8 +19,10 @@ namespace KabadaAPIdao
 
         [Required]
         public string Title { get; set; }
-        [Required]
+
+        public Guid? LanguageId { get; set; }
         public Language Language { get; set; }
+
         // [vp]
         public Guid? Img { get; set; }
         public DateTime Created { get; set; }
