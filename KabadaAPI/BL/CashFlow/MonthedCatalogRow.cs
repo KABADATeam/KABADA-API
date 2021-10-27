@@ -24,8 +24,9 @@ namespace KabadaAPI {
     public CashFlowRow expose(int lastMonth){
       var r=new CashFlowRow((short)lastMonth){ title=this.title, postProject=this.data.get(lastMonth+1) };
       var w=NZ.range(this.data, 0, lastMonth);
-      for(var m=0; m<w.Count; m++)
-        r.monthlyValue[m]=w[m];
+      //for(var m=0; m<w.Count; m++)
+      //  r.monthlyValue[m]=w[m];
+      r.monthlyValue=w;
       r.totals();
       return r;
       }

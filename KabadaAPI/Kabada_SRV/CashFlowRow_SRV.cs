@@ -28,7 +28,7 @@ namespace Kabada {
     public List<decimal?> year1W0() { return rangis(0, 12); }
     public List<decimal?> year1Strict() {  return rangis(1, 12); }
     public List<decimal?> year2() { return rangis(13, 24); }
-    public decimal? postProject;
+    //public decimal? postProject;
 
     private List<decimal?> rangis(int v1, int v2) {
       var rn=new List<decimal?>();

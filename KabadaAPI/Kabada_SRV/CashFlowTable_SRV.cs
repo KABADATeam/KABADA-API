@@ -12,7 +12,7 @@ namespace Kabada {
       if(are==false)
         return sr;
       for(var m=0; m<=n; m++)
-        sr.monthlyValue[m]=CashFlowRow.Sum(us.Select(x=>x.monthlyValue[m]));
+        sr.monthlyValue[m]=CashFlowRow.Sum(us.Select(x=>x.mv(m)));
       sr.totals();
       return sr;
       }
