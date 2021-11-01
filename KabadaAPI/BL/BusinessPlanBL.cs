@@ -186,7 +186,7 @@ namespace KabadaAPI {
         r.Add(new InvestmentElementBL("Own Money", e.startup.own_money));
       var m2=new InvestmentElementBL("Own extra money", e.startup.own_money_short);
       if(e.working_capitals!=null)
-        m2.AddRange(e.working_capitals.Select(x=>x.own_amount).ToList());
+        m2.AddRange(e.working_capitals.Select(x=>x==null?null:x.own_amount).ToList());
       var t=m2.Where(x=>x!=null).FirstOrDefault();
       if(t!=null)
         r.Add(m2);
@@ -211,7 +211,7 @@ namespace KabadaAPI {
         var m2 = new LoanElementBL("Short term", s.loan_amount_short){
           payment_period=(short)NZ.Z(s.payment_period_short), interest_rate=NZ.Z(s.interest_rate_short), grace_period=(short)NZ.Z(s.grace_period_short) };
         if(e.working_capitals!=null)
-          m2.AddRange(e.working_capitals.Select(x=>x.loan_amount).ToList());
+          m2.AddRange(e.working_capitals.Select(x=>x==null?null:x.loan_amount).ToList());
         var t=m2.Where(x=>x!=null).FirstOrDefault();
         if(t!=null)
           r.Add(m2);
