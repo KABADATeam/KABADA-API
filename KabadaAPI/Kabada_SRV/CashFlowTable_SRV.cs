@@ -7,7 +7,7 @@ namespace Kabada {
 
     internal CashFlowRow summRow(string v, List<CashFlowRow> us) {
       var are=(us!=null && us.Count>0);
-      short n=are?((short)(us[0].monthlyValue.Count-1)):(short)12;
+      short n=are?((short)(us.Select(x=>x.monthlyValue.Count-1)).Max()):(short)12;
       var sr=new CashFlowRow(v, period:n);
       if(are==false)
         return sr;
