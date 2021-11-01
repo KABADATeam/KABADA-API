@@ -69,7 +69,7 @@ namespace Kabada {
         }
         }
       physical_assets=make(lo);
-      working_capital=make(lh);
+      working_capital=pl.e.working_capitals;
       }
     }
   }

@@ -5,6 +5,6 @@ namespace Kabada {
     public bool is_business_investments_completed;
     //public decimal? loan_amount;
     public List<AssetElement> physical_assets;
-    public List<AssetElement> working_capital;
+    public List<WorkingCapitalPosterElement> working_capital;
     }
   }
