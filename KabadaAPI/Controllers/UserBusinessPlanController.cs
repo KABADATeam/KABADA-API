@@ -314,7 +314,7 @@ namespace KabadaAPI.Controllers {
     private ActionResult<List<decimal?>> _MynecessaryCapital(Guid planId) {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
-      return p.refreshNecessaryCapital();
+      return p.refreshNecessaryCapital(true);
       }
 
     [HttpPost]
