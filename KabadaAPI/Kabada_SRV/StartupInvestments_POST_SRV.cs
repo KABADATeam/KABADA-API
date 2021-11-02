@@ -38,7 +38,7 @@ namespace Kabada {
         p.e.working_capitals=working_capitals;
         p.unload();
         var kri=new Plan_AttributeRepository(context, ctx).getResources(business_plan_id).ToDictionary(x=>x.Id);
-        fill(kri, physical_assets);
+       // fill(kri, physical_assets);
         //  fill(kri, working_capitals); the contents drastically changed
         ctx.SaveChanges();
         tr.Commit();
