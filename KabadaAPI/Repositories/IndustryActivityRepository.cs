@@ -10,7 +10,7 @@ namespace KabadaAPI {
     
         public IndustryActivityRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
  
-        private DbSet<Activity> q0 { get { return daContext.Activities; }}
+        public DbSet<Activity> q0 { get { return daContext.Activities; }}
 
         public List<Industry> GetIndustries()
         {

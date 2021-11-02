@@ -113,3 +113,4 @@ Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;Cha
 Assets 01;G;api/kres/assets/{BusinessPlan};KeyResources;MyAssets;
 Assets 02;P;api/kres/assets/save;KeyResources;MyAssetsSave;
 Assets 03;P;/api/plans/changeAssetsCompleted;UserBusinessPlan;changeAssetsCompleted;
+;G;/api/nace/wood;NACE;GetIndustriesWood;

@@ -100,5 +100,14 @@ namespace KabadaAPI.Controllers
 
         //        return Ok("Success");
         //}
+
+        [HttpGet]
+        [Route("wood")]
+        public ActionResult<IndustryWood> GetIndustriesWood(){ return Grun<IndustryWood>(_GetIndustriesWood); }
+        private ActionResult<IndustryWood> _GetIndustriesWood(){
+          var wood = new IndustryWood();
+          wood.read(context, iRepo);
+          return wood;
+          }
     }
 }
