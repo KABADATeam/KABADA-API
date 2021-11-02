@@ -49,13 +49,10 @@ namespace Kabada {
         throw new Exception($"{titel}: wrong grace='{grace}'");
       }
 
-    public void set(PlanStartupInvestmentBase o){
+    public void set(PlanStartupInvestmentBase o, bool skipShared=false){
       period=o.period;
       vat_payer=o.vat_payer;
-      total_investments=o.total_investments;
-      investment_amount=o.investment_amount;
       own_money=o.own_money;
-      own_assets=o.own_assets;
       loan_amount=o.loan_amount;
       payment_period=o.payment_period;
       interest_rate=o.interest_rate;
@@ -66,6 +63,11 @@ namespace Kabada {
       working_capital_amount=o.working_capital_amount;
       own_money_short=o.own_money_short;
       loan_amount_short=o.loan_amount_short;
+      if(skipShared==false){
+        total_investments=o.total_investments;
+        investment_amount=o.investment_amount;
+        own_assets=o.own_assets;
+        }
       }
     }
   }

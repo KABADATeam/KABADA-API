@@ -11,7 +11,7 @@ namespace Kabada {
         var ctx=tr.Context;
         var p=new BusinessPlanBL(new BusinessPlansRepository(context, ctx).GetPlanForUpdate(context.userGuid, business_plan_id), true);
         var t=p.e.startup;
-        t.set(this);
+        t.set(this, true);
         //t.grace_period=grace_period;
         //t.interest_rate=interest_rate;
         //t.loan_amount=loan_amount;
