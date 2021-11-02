@@ -150,7 +150,7 @@ namespace KabadaAPI {
 
     //----------------------------------------- n ------------------------------------------//
     private string filePath(string tail){
-      var fn=$"{textSupport.blContext.userGuid}.{textSupport.blContext.sessionId}.{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss")}"+tail;
+      var fn=$"{textSupport.blContext.userGuid}.{textSupport.blContext.sessionId}.{DateTime.Now.ToString("yyyy.MM.dd-HH.mm.ss.fff")}"+tail;
       var path = Directory.GetCurrentDirectory(); 
       var r=Path.Combine(path, "Logs", fn);
       return r;
