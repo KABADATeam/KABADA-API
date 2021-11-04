@@ -32,8 +32,15 @@ namespace Kabada {
     key_partners=me(p.o.IsPartnersCompleted, p.descriptionPartners);
     cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);
     swot=me(p.o.IsSwotCompleted);                                                             //TODO not clear, yet
-    //TODOpublic PlanOverviewElement financial_projections;    // not clear, yet
-    //TODOpublic PlanOverviewElement team_competencies;    // not clear, yet
-      }
+    assets=me(p.o.IsAssetsCompleted);                                                         //TODO not clear, yet
+    fixed_and_variables_costs=me(p.o.IsFixedVariableCompleted);                               //TODO not clear, yet
+    sales_forecast=me(p.o.IsSalesForecastCompleted);                                          //TODO not clear, yet
+    business_start_up_investments=me(p.o.IsBusinessInvestmentsCompleted);                     //TODO not clear, yet
+    cash_flow=me(false);                                                       //"is_cash_flow_completed" TODO not clear, yet
+    personal_characteristics=me(false);                                       // not clear, yet // no such variable,yet - still not developed
+    reasons=me(false);;                                                       // not clear, yet // no such variable,yet - still not developed
+    ////TODOpublic PlanOverviewElement financial_projections;    // not clear, yet
+    team_competencies=me(false);                                             // not clear, yet // no such variable,yet - still not developed
     }
   }
+}

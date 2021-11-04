@@ -13,7 +13,15 @@ namespace Kabada {
     public PlanOverviewElement key_partners;  // String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2
     public PlanOverviewElement cost_structure; // For cost structure - we also have names
     public PlanOverviewElement swot;           // not clear, yet
-    public PlanOverviewElement financial_projections;    // not clear, yet
+
+    public PlanOverviewElement assets;           // not clear, yet
+    public PlanOverviewElement fixed_and_variables_costs;           // not clear, yet
+    public PlanOverviewElement sales_forecast;           // not clear, yet
+    public PlanOverviewElement business_start_up_investments;           // not clear, yet
+    public PlanOverviewElement cash_flow;           // not clear, yet
+    public PlanOverviewElement personal_characteristics;           // not clear, yet // no such variable,yet - still not developed
+    public PlanOverviewElement reasons;           // not clear, yet // no such variable,yet - still not developed
+
     public PlanOverviewElement team_competencies;    // not clear, yet
     public Guid? planImage;
     }
