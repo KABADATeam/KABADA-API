@@ -114,3 +114,4 @@ Assets 01;G;api/kres/assets/{BusinessPlan};KeyResources;MyAssets;
 Assets 02;P;api/kres/assets/save;KeyResources;MyAssetsSave;
 Assets 03;P;/api/plans/changeAssetsCompleted;UserBusinessPlan;changeAssetsCompleted;
 ;G;/api/nace/wood;NACE;GetIndustriesWood;
+;G;/api/nace/risks/{activityId};NACE;GetRisks;

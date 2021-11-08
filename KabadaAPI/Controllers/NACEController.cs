@@ -109,5 +109,14 @@ namespace KabadaAPI.Controllers
           wood.read(context, iRepo);
           return wood;
           }
+
+        [HttpGet]
+        [Route("risks/{activityId}")]
+        public ActionResult<IndustryRiskS> GetRisks(Guid activityId) { return Prun<Guid, IndustryRiskS>( _GetRisks, activityId); }
+        private ActionResult<IndustryRiskS> _GetRisks(Guid activityId) {
+          var r=new IndustryRiskS();
+          r.read(context, activityId);
+          return r;
+        }
     }
 }

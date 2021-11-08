@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Kabada;
+using System.Collections.Generic;
 
 namespace KabadaAPI {
   public class IndustryRisksLoader : CsvLoader {
-    List<IndustryRiskElementBL> returnList;
+    List<IndustryRisk> returnList;
 
     protected override object storeRow() {
-      var r=new IndustryRiskElementBL();
+      var r=new IndustryRisk();
       r.category=yMstring("Risk Category");
       r.type=yMstring("Risk Type");
       r.likelihood=yMbyte("Likelihood");
@@ -19,8 +20,8 @@ namespace KabadaAPI {
       return r;
       }
 
-    public List<IndustryRiskElementBL> load(string fileWithFullPath){
-      returnList=new List<IndustryRiskElementBL>();
+    public List<IndustryRisk> load(string fileWithFullPath){
+      returnList=new List<IndustryRisk>();
       loadInternal(fileWithFullPath);
       if(returnList.Count<1)
         error("No valid lines loaded.");

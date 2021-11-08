@@ -176,6 +176,7 @@ namespace KabadaAPI {
       return q0.Where(x=>String.Compare(x.Code, @from)>=0 && String.Compare(x.Code, @to)<=0).ToList();
       }
 
+    public Guid? masterForRisk;
     public Guid? getMyRisks(Guid industryActivity){
         Guid? curId = industryActivity;
         Activity a;
@@ -200,7 +201,10 @@ namespace KabadaAPI {
     private Guid? getRiskId(Guid masterId)
     {
         var risk = daContext.UniversalAttributes.Where(x => (x.Kind == 21 || x.Kind == 20) && x.MasterId == masterId).FirstOrDefault();
-        if (risk != null) return risk.CategoryId;
+        if (risk != null){
+          masterForRisk=risk.MasterId;
+          return risk.CategoryId;
+          }
         return null;
     }
     }
