@@ -6,8 +6,7 @@
 3. paņemt no gitlab kabada-api-master.zip (ja ir ērtāk, tad zip-us var paņemt citā mašīnā un šeit iekopēt caur RDP savienojumu).
 4. paņemt no gitlab kabada-web-master.zip
 
-5. apturēt veco testa variantu: Ctrl-C, kamēr parādās jautājums pa batch apturēšanu, Y
-Logu atstāt vaļā (noderēs nākošajā solī)
+5. .\SNP.cmd
 
 6. Atvērt komandlogu (var arī PowerShell) un nonākt mūsu direktorijā.
 
@@ -17,5 +16,5 @@ Logu atstāt vaļā (noderēs nākošajā solī)
 
 9. Aplikācijas logu atstāt atvērtu! Nedarīt logout no vm! Aizvērt RDP logu (brīdinās, ka sesija paliek fonā aktīva).
 
+10. Ja grib vekt datu migrāciju: .\REST.cmd
 
- 
