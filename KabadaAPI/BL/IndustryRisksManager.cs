@@ -103,7 +103,7 @@ namespace KabadaAPI {
 
       var pat=fileName.ToUpper();
 
-      string trailer=filePattern.Substring(1); //"_IR.CSV";
+      string trailer=filePattern.Substring(1).ToUpper(); //"_IR.CSV";
       var tl=trailer.Length;
       var fl=pat.Length;
       if(fl<1+tl || pat.Substring(fl-tl, tl)!=trailer)
