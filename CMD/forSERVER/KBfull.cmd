@@ -3,6 +3,8 @@ set H=%~dp0
 echo SNP unload old DB contentents and stop servers
 call SNP.cmd
 
+set H=%~dp0
+cd "%H%"
 echo %H%
 echo KB1 prepare application directories
 call KB1.cmd
