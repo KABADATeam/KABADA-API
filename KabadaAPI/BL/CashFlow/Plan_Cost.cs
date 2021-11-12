@@ -55,7 +55,7 @@ namespace KabadaAPI {
           p.mcVat=0;
           var td=new List<decimal?>(){ null };
           td.AddRange(mc.get(p.mcVal).data);
-          var sr=mc.add(CatalogRowKind.salaryTax, "Labor taxes (katrai valstij savs %)", new MonthedDataRow(td)); specialRow=sr.id;
+          var sr=mc.add(CatalogRowKind.salaryTax, "Labor taxes", new MonthedDataRow(td)); specialRow=sr.id;
           var st=bp.salaryTax;
           for(int m=0; m<sr.data.Count; m++){
             sr.data[m]=NZ.Nr(NZ.Z(sr.data[m])*st);

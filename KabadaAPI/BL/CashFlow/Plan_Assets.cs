@@ -21,8 +21,8 @@ namespace KabadaAPI {
     protected static List<string> B=new List<string>{ "Buy" };
 
     protected static List<SelectorForKeyResources> todo=new List<SelectorForKeyResources>(){
-         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property (bez PVN)", KeyResourceBL.PID, BO) { types=new List<string>{ "Buildings" }}
-       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Prod.Machinery and Equipment, Transport & other", KeyResourceBL.PID, BO) {types=new List<string>{ "Equipment", "Transport", "Other" }}
+         new SelectorForKeyResources(CatalogRowKind.buildingsElement, "Buildings/ Property", KeyResourceBL.PID, BO) { types=new List<string>{ "Buildings" }}
+       , new SelectorForKeyResources(CatalogRowKind.equipElement, "Equipment, Transport & other", KeyResourceBL.PID, BO) {types=new List<string>{ "Equipment", "Transport", "Other" }}
        , new SelectorForKeyResources(CatalogRowKind.inteliaElement, "Intellectual assets (brands, licenses, software & other)", KeyResourceBL.IID, B)
        };
 

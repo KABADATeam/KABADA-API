@@ -4,6 +4,7 @@
     public decimal interest_rate;
     public short grace_period;
     public short start_month;
+    public string revenueTitle;
 
     public LoanElementBL() {} 
     public LoanElementBL(string title, decimal? startup=null) : base(title, startup){}

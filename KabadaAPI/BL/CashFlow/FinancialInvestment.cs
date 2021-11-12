@@ -59,8 +59,8 @@ namespace KabadaAPI {
       return n.id;
       }
 
-    protected void generateIncoming(MonthedCatalog mc, InvestmentElementBL me){
-      var o=mc.add(CatalogRowKind.financialInvestment, me.title, me); mcIn=o.id;
+    protected void generateIncoming(MonthedCatalog mc, InvestmentElementBL me, string specificName=null){
+      var o=mc.add(CatalogRowKind.financialInvestment, specificName==null?me.title:specificName, me); mcIn=o.id;
       mcInW=windowIt(bp.pPeriod, mcIn, CatalogRowKind.financialInvestmentW);
       }
     }

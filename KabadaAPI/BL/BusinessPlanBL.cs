@@ -201,6 +201,7 @@ namespace KabadaAPI {
                  payment_period=(short)NZ.Z(s.payment_period, pPeriod)
                , interest_rate=NZ.Z(s.interest_rate)
                , grace_period=(short)NZ.Z(s.grace_period)
+               , revenueTitle="Loan (LongTerm) - Investment"
                };
         //var w=new Plan_Loan("Long term", s.period, s.grace_period, s.interest_rate, s.payment_period, s.loan_amount);
         r.Add(w);
@@ -209,7 +210,8 @@ namespace KabadaAPI {
       // TODO extra loan
       if(s.payment_period_short!=null){
         var m2 = new LoanElementBL("Short term", s.loan_amount_short){
-          payment_period=(short)NZ.Z(s.payment_period_short), interest_rate=NZ.Z(s.interest_rate_short), grace_period=(short)NZ.Z(s.grace_period_short) };
+          payment_period=(short)NZ.Z(s.payment_period_short), interest_rate=NZ.Z(s.interest_rate_short), grace_period=(short)NZ.Z(s.grace_period_short),
+          revenueTitle="Loan (ShortTerm) - Working Capital" };
         if(e.working_capitals!=null)
           m2.AddRange(e.working_capitals.Select(x=>x==null?null:x.loan_amount).ToList());
         var t=m2.Where(x=>x!=null).FirstOrDefault();

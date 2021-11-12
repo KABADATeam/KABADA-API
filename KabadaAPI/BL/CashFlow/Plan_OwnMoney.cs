@@ -27,7 +27,7 @@ namespace KabadaAPI {
     public int summRow { get; protected set; }
 
     private void generateSumRecords() {
-      var s=_mc.add(CatalogRowKind.ownMoneySum, "OwnMoney", new MonthedDataRow());
+      var s=_mc.add(CatalogRowKind.ownMoneySum, "Own money", new MonthedDataRow());
       summRow=s.id;
       var db=slaves.Select(x=>_mc.get(x.mcInW).data).ToList();
       for(var m=0; m<=_bp.pPeriod; m++)

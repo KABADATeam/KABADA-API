@@ -217,7 +217,7 @@ namespace KabadaAPI {
       }
 
     public CashFlowTable investments { get {
-      var r=new CashFlowTable(){ title="Investments:"};
+      var r=new CashFlowTable(){ title="Investments (without VAT):"};
       r.rows=assetMaster.getRows();
       //var rsi=myKeyResource_s;
       //var idi=rsi.Select(x=>x.texterId).Distinct().ToList();
@@ -250,7 +250,7 @@ namespace KabadaAPI {
       }
 
     private CashFlowRow beigubilance(CashFlowRow z) {
-      var specRow=new CashFlowRow("Opening Cash (naudas summa sākot mēnesi)", null);
+      var specRow=new CashFlowRow("Opening Cash", null);
 
       var t=new MonthedDataRow();
 
@@ -276,7 +276,7 @@ namespace KabadaAPI {
 
     private List<CashFlowRow> costsSummary(CashFlow basic) {
       var r=new List<CashFlowRow>();
-      var t=mc.plus(CatalogRowKind.costValue, "SUM of Variable costs, fixed costs and additional investments in current assets:", fixMaster.mcVal, varMaster.mcVal);
+      var t=mc.plus(CatalogRowKind.costValue, "SUM of all costs and investments", fixMaster.mcVal, varMaster.mcVal);
       
       //var visi=new List<CashFlowRow>();
       //if(basic.variableCosts!=null)
@@ -350,7 +350,7 @@ namespace KabadaAPI {
 
           var k=r.rows.Count;
           r.specialRows=k-1;
-          r.rows.Add(rw.multoRow("Labor taxes (katrai valstij savs %)", salaryTax, 1));
+          r.rows.Add(rw.multoRow("Labor taxes", salaryTax, 1));
           }
         }
 

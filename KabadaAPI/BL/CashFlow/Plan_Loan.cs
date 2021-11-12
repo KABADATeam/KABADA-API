@@ -87,7 +87,7 @@ namespace KabadaAPI {
     public int mcPercW { get; protected set; }
 
     protected void generateRecords() {
-      generateIncoming(mc, p);
+      generateIncoming(mc, p, p.revenueTitle);
       makeOther();
       }
 
