@@ -79,6 +79,7 @@ namespace KabadaAPI {
         return r;
       return new List<Plan_Attribute>();
       }
+
     private List<Plan_Attribute> gA(PlanAttributeKind kind){ return gA((short)kind); }
 
     private List<Plan_SpecificAttribute> gS(short kind){
@@ -221,6 +222,36 @@ namespace KabadaAPI {
       //end TODO-replace with real data
 
       return r;
+      }
+
+    
+    internal UnloadSet unloadSet() {
+      var r=new UnloadSet(){ descriptor="jst bp2f test", elements=new List<UnloadSetElement>() };
+
+      var tidi=new List<Guid>();
+      foreach(var st in a.Values)
+        tidi.AddRange(st.Select(x=>x.TexterId).ToList());
+      var todi=textSupport.get(tidi);
+      foreach(var t in todi)
+        regIt(r, t.Id, t);
+
+      foreach(var st in a.Values){
+        foreach(var t in st)
+          regIt(r, t.Id, t);
+        }
+      foreach(var st in s.Values){
+        foreach(var t in st)
+          regIt(r, t.Id, t);
+        }
+      regIt(r, o.Id, o);
+
+      r.toCSV(filePath("bpU.csv"));
+      return r;
+      }
+
+    private void regIt(UnloadSet r, Guid id, object o) {
+      var t=new UnloadSetElement(){ id=id, type=o.GetType().Name, contents=JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })  };
+      r.elements.Add(t);
       }
     }
   }

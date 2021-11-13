@@ -51,7 +51,10 @@ namespace KabadaAPI.Controllers {
     [Route("test/{BusinessPlan}")]
     [HttpGet]
     public IActionResult test(Guid BusinessPlan) { return prun<Guid>(_test, BusinessPlan); }
-    private IActionResult _test(Guid BusinessPlan) {
+    private IActionResult _test(Guid planId) {
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      p.textSupport=new TexterRepository(context);
+      UnloadSet w=p.unloadSet();      
       return Ok(".");
       }
     }
