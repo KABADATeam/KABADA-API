@@ -176,6 +176,11 @@ namespace KabadaAPI {
     private static void breaK() {
       throw new Exception("Dependants present");
       }
-    }
+ 
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Plan_Attribute>(json);
+      return o.Id;
+      }
+   }
     
   }

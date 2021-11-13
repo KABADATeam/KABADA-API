@@ -260,5 +260,10 @@ namespace KabadaAPI
         o.UserId=JH;
         }
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<BusinessPlan>(json);
+      return o.Id;
+      }
     }
 }

@@ -23,5 +23,10 @@ namespace KabadaAPI {
     //  daContext.Languages.Add(o);
     //  return true;
     //  }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Language>(json);
+      return o.Id;
+      }
     }
   }

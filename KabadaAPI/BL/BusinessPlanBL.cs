@@ -228,6 +228,8 @@ namespace KabadaAPI {
     internal UnloadSet unloadSet() {
       var r=new UnloadSet(){ descriptor="jst bp2f test", elements=new List<UnloadSetElement>() };
 
+      var oldGuids=textSupport.initGuids;
+
       var tidi=new List<Guid>();
       foreach(var st in a.Values)
         tidi.AddRange(st.Select(x=>x.TexterId).ToList());

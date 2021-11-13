@@ -268,6 +268,52 @@ namespace KabadaAPI {
       reinitialize(iniPath, false, false, true);
       }
 
-   
+    //====================================== initGuids===========================================//
+    protected static Dictionary<Guid, bool> _initGuids;
+
+    public Dictionary<Guid, bool> initGuids { get {
+      if(_initGuids==null)
+        _initGuids=loadInitGuids();
+      return _initGuids;
+      }}
+
+    private Dictionary<Guid, bool> loadInitGuids() {
+      var r=new Dictionary<Guid, bool>();
+      foreach(var o in importOrder)
+        o.getGuids(iniPath, r);
+      return r;
+      }
+
+    protected virtual List<Guid> loadGuids(string opa) {
+      var nam=this.GetType().Name;
+      var l1=nam.IndexOf("Repository");
+      if(l1>0)
+        nam=nam.Substring(0, l1);
+      var inf=Path.Combine(opa, $"{nam}.txt");
+      if(!File.Exists(inf))
+        return null;
+
+      var k=new List<Guid>();
+      string ln;  
+      using(var os=new StreamReader(inf, System.Text.Encoding.UTF8)){
+        while ((ln = os.ReadLine()) != null) {
+          Guid? t=guid(ln);
+          if(t!=null)
+            k.Add(t.Value);
+          }
+        os.Close();  
+        }
+      return k;
+      }
+
+    protected virtual Guid? guid(string json) { return null; }
+
+    protected virtual void getGuids(string iniPath, Dictionary<Guid, bool> r) {
+      var t=loadGuids(iniPath);
+      if(t==null)
+        return;
+      foreach(var o in t)
+        r[o]=true;
+      }
     }
 }

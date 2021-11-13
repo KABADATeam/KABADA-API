@@ -227,5 +227,10 @@ namespace KabadaAPI {
       if(o.TypeId==0)
         o.TypeId=100;
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.User>(json);
+      return o.Id;
+      }
     }
 }

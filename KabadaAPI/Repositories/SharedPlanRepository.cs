@@ -39,5 +39,10 @@ namespace KabadaAPI {
       q0.Remove(o);
       daContext.SaveChanges();
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<SharedPlan>(json);
+      return o.Id;
+      }
     }
   }

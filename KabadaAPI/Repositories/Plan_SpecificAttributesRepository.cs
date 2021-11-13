@@ -85,5 +85,10 @@ namespace KabadaAPI {
     protected override bool loadData(string json, bool overwrite, bool oldDeleted, bool generateInits) {
       return loadDataRow<KabadaAPIdao.Plan_SpecificAttribute, Guid>(daContext.Plan_SpecificAttributes, json, overwrite, oldDeleted, generateInits);
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Plan_SpecificAttribute>(json);
+      return o.Id;
+      }
     }
   }

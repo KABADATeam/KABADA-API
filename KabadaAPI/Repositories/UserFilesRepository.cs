@@ -17,5 +17,10 @@ namespace KabadaAPI {
     //  daContext.UserFiles.Add(o);
     //  return true;
     //  }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserFile>(json);
+      return o.Id;
+      }
     }
   }

@@ -174,5 +174,10 @@ namespace KabadaAPI {
       return getQ(null, (short)EnumTexterKind.activityType, (short)EnumTexterKind.activitySubtype, null, true);
       }
 
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Texter>(json);
+      return o.Id;
+      }
+
     }
   }

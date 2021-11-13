@@ -72,5 +72,10 @@ namespace KabadaAPI {
       }
 
     
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Job>(json);
+      return o.Id;
+      }
     }
   }

@@ -94,5 +94,11 @@ namespace KabadaAPI {
         return null;
       return new EssrBL(o);
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<UniversalAttribute>(json);
+      return o.Id;
+      }
+
     }
   }

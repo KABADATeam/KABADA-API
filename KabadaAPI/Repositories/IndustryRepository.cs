@@ -30,5 +30,10 @@ namespace KabadaAPI {
     public List<Industry> interval(string @from, string @to){
       return q0.Where(x=>String.Compare(x.Code, @from)>=0 && String.Compare(x.Code, @to)<=0).ToList();
       }
+
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Industry>(json);
+      return o.Id;
+      }
     }
   }

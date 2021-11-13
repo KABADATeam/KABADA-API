@@ -28,5 +28,10 @@ namespace KabadaAPI {
       return loadDataRow<KabadaAPIdao.Country, Guid>(daContext.Countries, json, overwrite, oldDeleted, generateInits);
       }
 
+    protected override Guid? guid(string json) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Country>(json);
+      return o.Id;
+      }
+
     }
 }
