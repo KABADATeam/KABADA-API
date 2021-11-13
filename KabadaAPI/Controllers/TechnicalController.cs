@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 
 namespace KabadaAPI.Controllers {
   [Route("api/[controller]")]
@@ -51,10 +52,13 @@ namespace KabadaAPI.Controllers {
     [Route("test/{BusinessPlan}")]
     [HttpGet]
     public IActionResult test(Guid BusinessPlan) { return prun<Guid>(_test, BusinessPlan); }
-    private IActionResult _test(Guid planId) {
-      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
-      p.textSupport=new TexterRepository(context);
-      UnloadSet w=p.unloadSet();      
+    private IActionResult _test(Guid iddddd) {
+      var pubi=new BusinessPlansRepository(context).GetPlans(context.userGuid).Select(x=>x.Id).ToList();
+      foreach(var planId in pubi){
+        var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+        p.textSupport=new TexterRepository(context);
+        UnloadSet w=p.unloadSet(); 
+        }
       return Ok(".");
       }
     }

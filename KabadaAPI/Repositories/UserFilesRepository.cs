@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KabadaAPIdao;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace KabadaAPI {
@@ -22,5 +24,9 @@ namespace KabadaAPI {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserFile>(json);
       return o.Id;
       }
+
+    private DbSet<UserFile> q0 { get { return daContext.UserFiles; }}
+
+    public UserFile byId(Guid id){ return q0.Where(x=>x.Id==id).FirstOrDefault(); }
     }
   }
