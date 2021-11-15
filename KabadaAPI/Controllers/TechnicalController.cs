@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KabadaAPI.Controllers {
@@ -51,15 +52,19 @@ namespace KabadaAPI.Controllers {
     [Authorize(Roles = Role.User)]
     [Route("test/{BusinessPlan}")]
     [HttpGet]
-    public IActionResult test(Guid BusinessPlan) { return prun<Guid>(_test, BusinessPlan); }
-    private IActionResult _test(Guid iddddd) {
-      var pubi=new BusinessPlansRepository(context).GetPlans(context.userGuid).Select(x=>x.Id).ToList();
-      foreach(var planId in pubi){
-        var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
-        p.textSupport=new TexterRepository(context);
-        UnloadSet w=p.unloadSet(); 
-        }
-      return Ok(".");
+    public ActionResult<UnloadSet> test(Guid BusinessPlan) { return Prun<Guid, UnloadSet>(_test, BusinessPlan); }
+    private ActionResult<UnloadSet> _test(Guid iddddd) {
+      var br=new BusinessPlansRepository(context);
+      var r=new UnloadSet();
+      br.unloadMe(iddddd, r, br.initGuids, new Dictionary<Guid, bool>());
+      //var pubi=new BusinessPlansRepository(context).GetPlans(context.userGuid).Select(x=>x.Id).ToList();
+      //foreach(var planId in pubi){
+      //  var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      //  p.textSupport=new TexterRepository(context);
+      //  UnloadSet w=p.unloadSet(); 
+      //  }
+      r.toCSV("bpU.csv");
+      return r;
       }
     }
   }

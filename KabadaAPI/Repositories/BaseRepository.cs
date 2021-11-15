@@ -1,4 +1,5 @@
-﻿using KabadaAPIdao;
+﻿using Kabada;
+using KabadaAPIdao;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -10,7 +11,7 @@ using System.Linq;
 
 namespace KabadaAPI {
   public abstract class BaseRepository : Blotter, IDisposable   {
-    public readonly DAcontext daContext;
+    internal DAcontext daContext;
 
     public BaseRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext) {
       if(dContext==null)
@@ -19,6 +20,7 @@ namespace KabadaAPI {
         this.daContext=dContext;
        }
 
+    protected BaseRepository(){}
  //   public BaseRepository(IConfiguration config=null, ILogger logger=null, DAcontext dContext=null) : this(new BLontext(config, logger), dContext) {}
 
     protected virtual void dispose(){
@@ -315,5 +317,62 @@ namespace KabadaAPI {
       foreach(var o in t)
         r[o]=true;
       }
+
+    //===========================================================//
+    protected virtual void unloadChildren(object o, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){}
+
+    protected virtual object byIdU(Guid myId){ return GetType().Name+".unloadMeInternal missing"; }
+
+    protected virtual void unloadMeInternalPlain(object o, Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
+      //if(skipUnload(id, skipSet, unloadedSet))
+      //  return;
+      unloadedSet[id]=true;
+      us.regIt(id, o);
+      }
+
+    protected virtual void unloadMeInternal(object o, Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
+      unloadedSet[id]=true;
+      unloadChildren(o, us, skipSet, unloadedSet);
+      us.regIt(id, o);
+      }
+
+    protected virtual void unloadMeInternal(Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
+      unloadMeInternal(byIdU(id), id, us, skipSet, unloadedSet);
+      }
+
+
+    protected virtual bool skipUnload(Guid? id, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
+      if(id==null)
+        return true;
+      var i=id.Value;
+      if(skipSet.ContainsKey(i) || unloadedSet.ContainsKey(i))
+        return true;
+      return false;
+      }
+
+    public virtual bool unloadMe(Guid? id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
+      if(skipUnload(id, skipSet, unloadedSet))
+        return false;
+      unloadMeInternal(id.Value, us, skipSet, unloadedSet);
+      return true;
+      }
+
+    public virtual bool unloadHim<T>(Guid? id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) where T:BaseRepository, new() {
+      if(skipUnload(id, skipSet, unloadedSet))
+        return false;
+      var rp=new T(){ blContext=blContext, daContext=daContext };
+      return rp.unloadMe(id, us, skipSet, unloadedSet);
+      }
+
+    public virtual bool unloadMe(List<Guid> ids, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
+      if (ids==null || ids.Count<1)
+        return false;
+      var idi = ids.Where(x => !skipSet.ContainsKey(x) && !unloadedSet.ContainsKey(x)).Distinct().ToList();
+      if (idi.Count<1)
+        return false;
+      foreach(var i in idi)
+        unloadMeInternal(i, us, skipSet, unloadedSet);
+      return true;
+      }
     }
-}
+  }

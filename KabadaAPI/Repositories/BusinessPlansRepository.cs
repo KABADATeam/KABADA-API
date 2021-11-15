@@ -262,8 +262,35 @@ namespace KabadaAPI
       }
 
     protected override Guid? guid(string json) {
-      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<BusinessPlan>(json);
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
       return o.Id;
       }
+
+    protected override void unloadChildren(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
+      var planId=((BusinessPlan)o).Id;
+      var p=getPlanBLfull(planId, blContext.userGuid);
+      us.descriptor="jst bp2f test";
+      us.user=p.o.User.Email;
+      unloadHim<UserFilesRepository>(p.o.Img, us, skipSet, unloadedSet);
+      unloadHim<CountryRepository>(p.o.CountryId, us, skipSet, unloadedSet);
+      unloadHim<LanguagesRepository>(p.o.LanguageId, us, skipSet, unloadedSet);
+      unloadHim<IndustryActivityRepository>(p.o.ActivityID, us, skipSet, unloadedSet);
+      p.textSupport=new TexterRepository(blContext, daContext);
+      var tidi=new List<Guid>();
+      foreach(var st in p.a.Values)
+        tidi.AddRange(st.Select(x=>x.TexterId).ToList());
+      p.textSupport.unloadMe(tidi, us, skipSet, unloadedSet);
+
+      foreach (var st in p.a.Values) {
+        foreach (var t in st)
+          unloadMeInternalPlain(t, t.Id, us, skipSet, unloadedSet);
+        }
+      foreach (var st in p.s.Values) {
+        foreach (var t in st)
+          unloadMeInternalPlain(t, t.Id, us, skipSet, unloadedSet);
+        }
+      }
+
+    protected override object byIdU(Guid myId) { return GetPlan(myId, blContext.userGuid); }
     }
 }

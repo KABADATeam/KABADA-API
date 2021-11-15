@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace KabadaAPI {
   public class CountryRepository : BaseRepository  {
     public CountryRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+    public CountryRepository(){}
 
     protected DbSet<Country> q0 { get { return daContext.Countries; }}
    

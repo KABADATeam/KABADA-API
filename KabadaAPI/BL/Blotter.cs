@@ -3,7 +3,8 @@ using Microsoft.Extensions.Logging;
 
 namespace KabadaAPI {
   public abstract class Blotter {
-    public BLontext blContext { get; private set; }
+    protected Blotter(){}
+    public BLontext blContext { get; protected set; }
     protected Blotter(BLontext context) { blContext=context;}
 
     protected IConfiguration _config { get { return blContext.config; }}

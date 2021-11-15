@@ -10,6 +10,7 @@ namespace Kabada {
 
   public partial class UnloadSet {
     public string descriptor;
+    public string user;
     public List<UnloadSetElement> elements;
     }
   }
