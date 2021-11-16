@@ -54,16 +54,19 @@ namespace KabadaAPI.Controllers {
     [HttpGet]
     public ActionResult<UnloadSet> test(Guid BusinessPlan) { return Prun<Guid, UnloadSet>(_test, BusinessPlan); }
     private ActionResult<UnloadSet> _test(Guid iddddd) {
+      UnloadSet r=null;
       var br=new BusinessPlansRepository(context);
-      var r=new UnloadSet();
-      br.unloadMe(iddddd, r, br.initGuids, new Dictionary<Guid, bool>());
-      //var pubi=new BusinessPlansRepository(context).GetPlans(context.userGuid).Select(x=>x.Id).ToList();
-      //foreach(var planId in pubi){
-      //  var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
-      //  p.textSupport=new TexterRepository(context);
-      //  UnloadSet w=p.unloadSet(); 
-      //  }
-      r.toCSV("bpU.csv");
+
+      //r=new UnloadSet();
+      //br.unloadMe(iddddd, r, br.initGuids, new Dictionary<Guid, bool>());
+      //r.toCSV();
+
+      var pubi=br.GetPlans(context.userGuid).Select(x=>x.Id).ToList();
+      foreach (var planId in pubi) {
+        r=new UnloadSet();
+        br.unloadMe(planId, r, br.initGuids, new Dictionary<Guid, bool>());
+        r.toCSV();
+        }
       return r;
       }
     }

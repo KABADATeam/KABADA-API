@@ -266,16 +266,27 @@ namespace KabadaAPI
       return o.Id;
       }
 
-    protected override void unloadChildren(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
+
+
+    protected override object unloadChildren(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
       var planId=((BusinessPlan)o).Id;
       var p=getPlanBLfull(planId, blContext.userGuid);
+      p.textSupport=new TexterRepository(blContext, daContext);
       us.descriptor="jst bp2f test";
       us.user=p.o.User.Email;
+      if(us.outfile==null)
+        us.outfile=p.filePath("bpU.csv");
       unloadHim<UserFilesRepository>(p.o.Img, us, skipSet, unloadedSet);
       unloadHim<CountryRepository>(p.o.CountryId, us, skipSet, unloadedSet);
       unloadHim<LanguagesRepository>(p.o.LanguageId, us, skipSet, unloadedSet);
       unloadHim<IndustryActivityRepository>(p.o.ActivityID, us, skipSet, unloadedSet);
-      p.textSupport=new TexterRepository(blContext, daContext);
+      return p;
+      }
+
+    protected override object byIdU(Guid myId) { return GetPlan(myId, blContext.userGuid); }
+
+    protected override void unloadFollowers(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
+      var p=(BusinessPlanBL)o;
       var tidi=new List<Guid>();
       foreach(var st in p.a.Values)
         tidi.AddRange(st.Select(x=>x.TexterId).ToList());
@@ -289,8 +300,11 @@ namespace KabadaAPI
         foreach (var t in st)
           unloadMeInternalPlain(t, t.Id, us, skipSet, unloadedSet);
         }
+      var akti=unloadedSet.Keys.ToList();
+      var uaR=new UniversalAttributeRepository(blContext, daContext);
+      var ui=uaR.referencers(akti);
+      foreach(var t in ui)
+       unloadMeInternalPlain(t, t.Id, us, skipSet, unloadedSet);
       }
-
-    protected override object byIdU(Guid myId) { return GetPlan(myId, blContext.userGuid); }
     }
 }

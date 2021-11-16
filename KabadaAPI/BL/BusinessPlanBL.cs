@@ -225,43 +225,43 @@ namespace KabadaAPI {
       }
 
     
-    internal UnloadSet unloadSet() {
-      var r=new UnloadSet(){ descriptor="jst bp2f test", elements=new List<UnloadSetElement>() };
+    //internal UnloadSet unloadSet() {
+    //  var r=new UnloadSet(){ descriptor="jst bp2f test", elements=new List<UnloadSetElement>() };
 
-      var oldGuids=textSupport.initGuids;
+    //  var oldGuids=textSupport.initGuids;
 
-      var tidi=new List<Guid>();
-      foreach(var st in a.Values)
-        tidi.AddRange(st.Select(x=>x.TexterId).ToList());
-      var todi=textSupport.get(tidi);
-      foreach(var t in todi)
-        regIt(oldGuids, r, t.Id, t);
+    //  var tidi=new List<Guid>();
+    //  foreach(var st in a.Values)
+    //    tidi.AddRange(st.Select(x=>x.TexterId).ToList());
+    //  var todi=textSupport.get(tidi);
+    //  foreach(var t in todi)
+    //    regIt(oldGuids, r, t.Id, t);
 
-      foreach(var st in a.Values){
-        foreach(var t in st)
-          regIt(oldGuids, r, t.Id, t);
-        }
-      foreach(var st in s.Values){
-        foreach(var t in st)
-          regIt(oldGuids, r, t.Id, t);
-        }
+    //  foreach(var st in a.Values){
+    //    foreach(var t in st)
+    //      regIt(oldGuids, r, t.Id, t);
+    //    }
+    //  foreach(var st in s.Values){
+    //    foreach(var t in st)
+    //      regIt(oldGuids, r, t.Id, t);
+    //    }
 
-      if(o.Img!=null){
-        var t=new UserFilesRepository(textSupport.blContext, textSupport.daContext).byId(o.Img.Value);
-        regIt(oldGuids, r, t.Id, t);
-        }
+    //  if(o.Img!=null){
+    //    var t=new UserFilesRepository(textSupport.blContext, textSupport.daContext).byId(o.Img.Value);
+    //    regIt(oldGuids, r, t.Id, t);
+    //    }
 
-      regIt(oldGuids, r, o.Id, o);
+    //  regIt(oldGuids, r, o.Id, o);
 
-      r.toCSV(filePath("bpU.csv"));
-      return r;
-      }
+    //  r.toCSV(filePath("bpU.csv"));
+    //  return r;
+    //  }
 
-    private void regIt(Dictionary<Guid, bool> oldGuids, UnloadSet r, Guid id, object o) {
-      if(oldGuids.ContainsKey(id))
-        return; // no need to export initial data - everywhere equal
-      var t=new UnloadSetElement(){ id=id, type=o.GetType().Name, contents=JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })  };
-      r.elements.Add(t);
-      }
+    //private void regIt(Dictionary<Guid, bool> oldGuids, UnloadSet r, Guid id, object o) {
+    //  if(oldGuids.ContainsKey(id))
+    //    return; // no need to export initial data - everywhere equal
+    //  var t=new UnloadSetElement(){ id=id, type=o.GetType().Name, contents=JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })  };
+    //  r.elements.Add(t);
+    //  }
     }
   }

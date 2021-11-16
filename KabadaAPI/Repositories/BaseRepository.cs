@@ -319,7 +319,8 @@ namespace KabadaAPI {
       }
 
     //===========================================================//
-    protected virtual void unloadChildren(object o, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){}
+    protected virtual object unloadChildren(object o, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){ return null; }
+    protected virtual void unloadFollowers(object o, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){ }
 
     protected virtual object byIdU(Guid myId){ return GetType().Name+".unloadMeInternal missing"; }
 
@@ -332,8 +333,9 @@ namespace KabadaAPI {
 
     protected virtual void unloadMeInternal(object o, Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){
       unloadedSet[id]=true;
-      unloadChildren(o, us, skipSet, unloadedSet);
+      var t=unloadChildren(o, us, skipSet, unloadedSet);
       us.regIt(id, o);
+      unloadFollowers(t, us, skipSet, unloadedSet);
       }
 
     protected virtual void unloadMeInternal(Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet){

@@ -100,5 +100,12 @@ namespace KabadaAPI {
       return o.Id;
       }
 
+    internal List<UniversalAttribute> referencers(List<Guid> refi) {
+      var r=q0.Where(x=>x.CategoryId!=null && refi.Contains(x.CategoryId.Value)).ToList();
+      var idi=r.Select(x=>x.Id).ToList();
+      var w=q0.Where(x=>x.MasterId!=null && !idi.Contains(x.Id) && refi.Contains(x.MasterId.Value)).ToList();
+      r.AddRange(w);
+      return r;
+      }
     }
   }
