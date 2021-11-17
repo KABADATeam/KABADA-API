@@ -324,5 +324,22 @@ namespace KabadaAPI
       daContext.Add(o);
       }
 
+    public Kabada.UnloadSet unload(Guid planId){
+      var r=new Kabada.UnloadSet();
+      unloadMe(planId, r, initGuids, new Dictionary<Guid, bool>());
+      return r;
+      }
+
+    public Guid reload(Kabada.UnloadSet me, Guid? targetOwner=null){
+      var w=new UnloadSetImport(){ bR=this, targetOwner=targetOwner };
+      return w.import(me);
+      }
+
+    public Guid clone(Guid planId, bool exportCSV=false){
+      var t=unload(planId);
+      if(exportCSV)
+        t.toCSV();
+      return reload(t, blContext.userGuid);
+      }
     }
 }

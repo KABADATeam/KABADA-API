@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 namespace KabadaAPI {
   public class UnloadSetImport {
+    public const string BPN="BusinessPlan";
+
     public Guid? targetOwner;
     public string targetNamePattern;
     public Dictionary<Guid, Guid> redirect;
@@ -13,13 +15,19 @@ namespace KabadaAPI {
 
     Dictionary<string, BaseRepository> repos;
 
-    internal void import(UnloadSet r) {
-      foreach(var e in r.elements)
-        redirect.Add(e.id, Guid.NewGuid());
-      repos=new Dictionary<string, BaseRepository>(){{"BusinessPlan", bR}};
+    internal Guid import(UnloadSet r) {
+      Guid ret=default(Guid);
+      foreach(var e in r.elements){
+        var t=Guid.NewGuid();
+        redirect.Add(e.id, t);
+        if(e.type==BPN)
+          ret=t;
+        }
+      repos=new Dictionary<string, BaseRepository>(){{BPN, bR}};
       foreach(var e in r.elements)
         import(e);
       bR.daContext.SaveChanges();
+      return ret;
       }
 
     private void import(UnloadSetElement e) {
