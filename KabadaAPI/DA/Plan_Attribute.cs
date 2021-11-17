@@ -8,11 +8,11 @@ namespace KabadaAPIdao {
 
         [Required]
         public Guid BusinessPlanId { get; set; }
-        public BusinessPlan BusinessPlan { get; set; }
+  //      public BusinessPlan BusinessPlan { get; set; }
 
         [Required]
         public Guid TexterId { get; set; }
-        public Texter Texter { get; set; }
+   //     public Texter Texter { get; set; }
 
         [Required]
         [Range(1,50)]

@@ -57,16 +57,18 @@ namespace KabadaAPI.Controllers {
       UnloadSet r=null;
       var br=new BusinessPlansRepository(context);
 
-      //r=new UnloadSet();
-      //br.unloadMe(iddddd, r, br.initGuids, new Dictionary<Guid, bool>());
-      //r.toCSV();
+      r=new UnloadSet();
+      br.unloadMe(iddddd, r, br.initGuids, new Dictionary<Guid, bool>());
+      r.toCSV();
 
-      var pubi=br.GetPlans(context.userGuid).Select(x=>x.Id).ToList();
-      foreach (var planId in pubi) {
-        r=new UnloadSet();
-        br.unloadMe(planId, r, br.initGuids, new Dictionary<Guid, bool>());
-        r.toCSV();
-        }
+      new UnloadSetImport(){ targetOwner=context.userGuid, bR=br }.import(r);
+
+      //var pubi=br.GetPlans(context.userGuid).Select(x=>x.Id).ToList();
+      //foreach (var planId in pubi) {
+      //  r=new UnloadSet();
+      //  br.unloadMe(planId, r, br.initGuids, new Dictionary<Guid, bool>());
+      //  r.toCSV();
+      //  }
       return r;
       }
     }

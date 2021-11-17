@@ -20,6 +20,7 @@ namespace KabadaAPI {
       }
 
     public Plan_AttributeRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+    public Plan_AttributeRepository() {}
 
     protected DbSet<Plan_Attribute> q0 { get { return daContext.Plan_Attributes; }}
 
@@ -180,6 +181,14 @@ namespace KabadaAPI {
     protected override Guid? guid(string json) {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Plan_Attribute>(json);
       return o.Id;
+      }
+
+    internal override void import(Guid newId, string json, UnloadSetImport unloadSetImport) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Plan_Attribute>(json);
+      o.Id=newId;
+      o.BusinessPlanId=upis(o.BusinessPlanId, unloadSetImport);
+      o.TexterId=upis(o.TexterId, unloadSetImport);
+      daContext.Add(o);
       }
    }
     

@@ -8,7 +8,7 @@ namespace KabadaAPIdao {
 
         [Required]
         public Guid BusinessPlanId { get; set; }
-        public BusinessPlan BusinessPlan { get; set; }
+     //   public BusinessPlan BusinessPlan { get; set; }
 
         [Required]
         [Range(1,50)]

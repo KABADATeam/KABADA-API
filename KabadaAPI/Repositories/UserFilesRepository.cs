@@ -36,5 +36,11 @@ namespace KabadaAPI {
     //protected override object unloadMeInternal(Guid id, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
     //  return byId(id);
     //  }
+
+    internal override void import(Guid newId, string json, UnloadSetImport unloadSetImport) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.UserFile>(json);
+      o.Id=newId;
+      daContext.Add(o);
+      }
     }
   }

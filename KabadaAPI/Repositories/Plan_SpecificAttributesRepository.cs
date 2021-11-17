@@ -7,6 +7,7 @@ using static KabadaAPI.Plan_AttributeRepository;
 namespace KabadaAPI {
   public class Plan_SpecificAttributesRepository : BaseRepository {
     public Plan_SpecificAttributesRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
+    public Plan_SpecificAttributesRepository() {}
 
     protected List<Plan_SpecificAttribute> get(Guid plan, PlanAttributeKind such){
       var w=(short)such;
@@ -89,6 +90,13 @@ namespace KabadaAPI {
     protected override Guid? guid(string json) {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Plan_SpecificAttribute>(json);
       return o.Id;
+      }
+
+    internal override void import(Guid newId, string json, UnloadSetImport unloadSetImport) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.Plan_SpecificAttribute>(json);
+      o.Id=newId;
+      o.BusinessPlanId=upis(o.BusinessPlanId, unloadSetImport);
+      daContext.Add(o);
       }
     }
   }

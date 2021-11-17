@@ -56,6 +56,8 @@ namespace KabadaAPI {
       return r;
       }}
 
+    internal virtual void import(Guid newId, string json, UnloadSetImport unloadSetImport) { throw new NotImplementedException(); }
+
     protected List<BaseRepository> exportOrder { get { var r=deleteBaseOrder; return r; }}
 
     protected List<BaseRepository> deleteOrder { get {
@@ -375,6 +377,22 @@ namespace KabadaAPI {
       foreach(var i in idi)
         unloadMeInternal(i, us, skipSet, unloadedSet);
       return true;
+      }
+
+    protected Guid? upis(Guid? oldis, UnloadSetImport unloadSetImport) {
+      if(oldis!=null){
+        Guid r=oldis.Value;
+        if(unloadSetImport.redirect.TryGetValue(r, out r))
+          return r;
+        }
+      return oldis;
+      }
+
+    protected Guid upis(Guid oldis, UnloadSetImport unloadSetImport) {
+        Guid r=oldis;
+        if(unloadSetImport.redirect.TryGetValue(oldis, out r))
+          return r;
+      return oldis;
       }
     }
   }

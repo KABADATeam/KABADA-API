@@ -269,7 +269,9 @@ namespace KabadaAPI
 
 
     protected override object unloadChildren(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
-      var planId=((BusinessPlan)o).Id;
+      var oo=(BusinessPlan)o;
+      var planId=oo.Id;
+
       var p=getPlanBLfull(planId, blContext.userGuid);
       p.textSupport=new TexterRepository(blContext, daContext);
       us.descriptor="jst bp2f test";
@@ -280,6 +282,9 @@ namespace KabadaAPI
       unloadHim<CountryRepository>(p.o.CountryId, us, skipSet, unloadedSet);
       unloadHim<LanguagesRepository>(p.o.LanguageId, us, skipSet, unloadedSet);
       unloadHim<IndustryActivityRepository>(p.o.ActivityID, us, skipSet, unloadedSet);
+
+      oo.Activity=null; oo.Country=null; oo.Language=null; oo.User=null;
+
       return p;
       }
 
@@ -306,5 +311,18 @@ namespace KabadaAPI
       foreach(var t in ui)
        unloadMeInternalPlain(t, t.Id, us, skipSet, unloadedSet);
       }
+
+    internal override void import(Guid newId, string json, UnloadSetImport unloadSetImport) {
+      var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
+      o.Title=string.Format( unloadSetImport.targetNamePattern, o.Title);
+      o.Id=newId;
+      o.UserId=unloadSetImport.targetOwner;
+      o.Img=upis(o.Img, unloadSetImport);
+      o.ActivityID=upis(o.ActivityID, unloadSetImport);
+      o.LanguageId=upis(o.LanguageId, unloadSetImport);
+      o.CountryId=upis(o.CountryId, unloadSetImport);
+      daContext.Add(o);
+      }
+
     }
 }
