@@ -179,5 +179,11 @@ namespace KabadaAPI {
       return o.Id;
       }
 
+
+    protected override object unloadChildren(object o, UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
+      var me=(Texter)o;
+      unloadMe(me.MasterId, us, skipSet, unloadedSet);
+      return null;
+      }
     }
   }
