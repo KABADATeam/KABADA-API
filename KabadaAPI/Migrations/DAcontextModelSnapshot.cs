@@ -8108,7 +8108,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "9"
+                            Value = "10"
                         });
                 });
 
@@ -8363,10 +8363,6 @@ namespace KabadaAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BusinessPlanId");
-
-                    b.HasIndex("TexterId");
-
                     b.ToTable("Plan_Attributes");
                 });
 
@@ -8390,8 +8386,6 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("smallint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BusinessPlanId");
 
                     b.ToTable("Plan_SpecificAttributes");
                 });
@@ -8687,6 +8681,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("3b7af860-7a74-4772-be75-17cd573d8bcc"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"N.79_IR.csv\",\"loadStartedUtc\":\"2021-11-24T14:00:48.0711164Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Government policies, regulations, and laws different between trade bloc and countries (e.g. free movement of people and goods). Also the increase of political crisis (as a result of financial, social, health, environmental, etc. instability) are more frequent globaly and impacts on travels decisions from tourist. Global conflits have a huge impact in several tourist destinations. \",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":2,\"comments\":\"Fluctuations in interest rates and foreign exchange rates. The tourism industry is often described as being a “fragile” industry, and susceptible to various types of disturbances (shocks) such as wars, disease outbreaks, terrorist attacks, fluctuations economic, currency instability and energy prices, which unfortunately come with some\\nfrequency all over the world . Also aspectss related with access to financial markets/ credit, and availability of human resources are important to tourism inndustry in order to garantee quality and differenciation determinant for the attractiveness of tourist destinations.  International tourism is counted as an export when, for example, a foreign visitor spends money in a given country, the logic being reversed for accounting for imports. \",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"Tourism industry is dependent from variation on tastes, lifestyle trends, and cultural norms and values. Also changes on the demographic composition of the population affects tourism supply and demand. The problematic living conditions can limit the opportunities to enjoy vacations and, consequently, travel, on the other hand, the growing need for social well-being seems to contribute to an increase in the need for vacation travel.\",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":3,\"severity\":3,\"comments\":\"Technology has completely transformed the tourism industry in every aspect. One of the main impacts is traveler empowerment. Technology has allowed the traveler to be much more informed and take a proactive role in travel arrangements. Now, the tourist is much more demanding, has several options to choose from and has bargaining power. He has also become not just a mere visitor, but a generator of content that he shares with other travelers, with the ability to influence the choices and travels of others.  On the one hand, technology and the internet made it possible to expand distribution channels. A travel agency can currently offer its services to any internet user who browses the net.\\nOn the other hand, the in-house implementation of technology allows tourism companies to be more efficient. Many processes have been simplified thanks to technology.\\nIn addition, the digitization of records facilitated the collection and analysis of data through Big Data strategies that allow us to know our customers better, close sales and retain them.\\nAnother consequence of the implementation of technology in the tourism sector was that companies that failed to adapt, or did not carry out the implementation optimally, failed and in many cases had to close.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":3,\"severity\":3,\"comments\":\"Tourism has impacts on the environment as it is a major\\nconsumer of fuel, electricity, food and other water and land resources, generating significant amounts of waste and emissions in this same environment. For a growing percentage of the world's population, environmental preservation is fundamentally and extremely important for sustainable economic growth. In fact, the formulation and implementation of environmental policies depend on a chain of social agents, whose links range from the State and public agents, academia and scientists, economic sectors, the media to organized civil society and the population in general. Unfortunately not everyone is in agreement and consensus has been difficult.\",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":2,\"severity\":3,\"comments\":\"Tourism inndustry is high competetive. E.g. a consequence of the implementation of technology in the tourism sector was that companies that failed to adapt, or did not carry out the implementation optimally, failed and in many cases had to close. The lack of digitization has been a major brake on this competitive market.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":2,\"severity\":2,\"comments\":\"It is assumed in the extensive literature on competitiveness and tourism, that the more competitive a tourist destination is, the more tourists it will attract, bringing an increase in income through this sector, which will lead to an increase of production and economic growth. One of the best known concepts of competitiveness in the tourism industry is the ability of a tourist destination to add value and thus increase wealth through the management of goods and processes. On the other hand, global institutions for monitoring competitiveness consider that it is generated by the set of institutions, policies and factors that determine a country's productivity (WEF, 2015).\\nHowever, there seems to be a cause-effect relationship between aspects such as infrastructure, good climate, natural resources, and the ability to generate a good flow of tourism. \",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":2,\"severity\":2,\"comments\":\"As refered before technology and the internet made it possible to expand distribution channels. A travel agency can currently offer its services to any internet user who browses the net.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":1,\"severity\":1,\"comments\":\"The travel and tourism industry, suppliers are varied and not concentrated, their bargaining power is not very high.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":3,\"severity\":2,\"comments\":\"Concerning travel and tourism industry the sensitivity of consumers to prices in travel and tourism depends a lot on the type of products they intend to purchase. Buyers tend to be more price sensitive if they are buying products that are undifferentiated, expensive and of a type whose quality is not particularly important. \",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":2,\"comments\":\"HR in travel and tourism industry, in addition to being an important part of the service, is the one who works to make the tourist experience a unique moment, their training is very important and increasingly. And their performance can contribute to an important differenciation of the company performance and result.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":2,\"severity\":2,\"comments\":\"The travel and tourism industry depends on a set of tangible resources that can make consumer travel more or less attractive. The quality and differentiating characteristics of a set of infrastructures such as hotels, airlines, restaurants, museums, etc. are important.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":2,\"comments\":\"The performance of companies in the travel and tourism industry contributes very directly to consumer satisfaction. Some processes can be significant for this performance. As mentioned earlier, for example, travel agency can currently offer its services to any internet user who browses the net. In fact, many processes have been simplified thanks to technology. As already referred, also the digitization of records that facilitate the collection and analysis of data through Big Data strategies can contribute to a better performance of sales and marketing\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
+                        },
+                        new
+                        {
                             Id = new Guid("4261a424-6b58-467c-a5da-1844827950b5"),
                             Kind = (short)17,
                             OrderValue = (short)4,
@@ -8831,6 +8833,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("10718a0a-819b-4677-a711-28b794339ee8"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"I.55_IR.csv\",\"loadStartedUtc\":\"2021-11-24T14:00:48.0214765Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"Political and Legal turbulence in countries influences the incoming of tourist and thier image on the exterior\",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":2,\"comments\":\"Depends on the type of economic risk, for instance the quality of the infrastructure (transports, airports, roads) could impact\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":1,\"severity\":2,\"comments\":\"In Europe this risk is low, however could increase in other continents\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Hospitality depends on ICT, for booking, even more tourists use this digital channels\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":2,\"severity\":3,\"comments\":\"Sustainability is more than a trend, so climate changes and other environomental risks could influence this nace\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"This Nace have big players (International Hotel Channels that have global brands and scale economy) but also small and independent hotels, campings etc, so it is very heterogenous. My evaluate was proposed for a new SME taht would like to enter in this sector\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":2,\"severity\":3,\"comments\":\"The potential competitiion decrease with COVID-19, however for SME is in general high\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":2,\"severity\":3,\"comments\":\"The elasticity of demand in this nace tend to be higher in the long term. New possibilities such as Airnb compete with the formal hotels and more traditional  accomodattion structures\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":1,\"severity\":1,\"comments\":\"Depends on the dimension. For SMEs if they privilege local suppliers the bairganing power is balanced\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":3,\"comments\":\"With ICT the booking and the availabilty of teh demand comes more transparent for the buyers and they power tend to increase in the long term\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":2,\"severity\":2,\"comments\":\"Hospitality tends to absorve part of the less qualified workers, however new trends show that workrs are more qaulified and their role in some areas in the front office and back office, mainly realted with CRM are crucial and a key success factor\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":2,\"comments\":\"The infrastuctures of the hotels (facilities) could be a factor for the differentiation\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":1,\"severity\":2,\"comments\":\"In the distribution and management tends to bemore complex due the support of the technology, however technology could also facilitate. Depends on the qualification and training of the human resources\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
+                        },
+                        new
+                        {
                             Id = new Guid("ce619ee3-d636-497f-8238-2ac9c9e79b49"),
                             Kind = (short)40,
                             OrderValue = (short)2,
@@ -8857,6 +8867,14 @@ namespace KabadaAPI.Migrations
                             MasterId = new Guid("da2dac96-650b-4d54-a984-9c6bae0653c7"),
                             OrderValue = (short)4,
                             Value = "Other"
+                        },
+                        new
+                        {
+                            Id = new Guid("805c5650-958a-4e6c-bc60-2cd39dab64ca"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"A.03_IR.csv\",\"loadStartedUtc\":\"2021-11-24T14:00:47.6930508Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":3,\"severity\":2,\"comments\":\"As climate changes afect the quantity of fishes at wild nature, it's expected that regulations are more and more strict. International agreements are more likely to be pursued. Conflicts over jurisditional boundaries are expected. Catch rights are in in place as well as seasonal closures.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":3,\"severity\":3,\"comments\":\"Direct impact of climate change on marine fish stocks directly afect productivity. Also, fishery is very fuel dependent and this is a very uncertain market. Fish price is expected to increase due to the shortest of fish and political and legal constraints. However, projections over fuel and fish prices are dificult. In high value species, the volume of landings (supply) impacts fish price. A decrease in landings will lead to an increase in fish price.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":1,\"comments\":\"Most important impact is labor force. Differences lie in either it's an international labor force (as cheap as possible) or a local labor force, fairly payed.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":3,\"severity\":2,\"comments\":\"Fishery operations will experience pressure in order to get more sustainable and economicaly viable. This will encourage the development and implementation of new technologies in old and new entrants. Fuel efficiency and catch efficiency are the two main concerns, but other improvements as is the case of survival of discards are also very important ones. \",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":3,\"severity\":2,\"comments\":\"Climate change is anticipated to have long-term and widespread direct consequences for the European marine ecosystems. Polution can impact  fish quality and food security.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":2,\"comments\":\"Fisheries from al over the world compete between eachother, leading to fish prices war. Big fishery companies can act as near monopoly in order to maximize the profit. \",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":3,\"severity\":2,\"comments\":\"As population increases, also the demand for food. The wild catch fishes and also aquaculture are expected to grow in demand and new companies. On the other side, there are other competition for sea waters that come from other activities, as for instance the offshore wind energy production, military activities or marine protected areas.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":3,\"severity\":3,\"comments\":\"Due to the higher demand on food, substitutes of wild fish can come from aquaculture. Also, fish and derivates are easy to substitute by other forms of protein. \",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":2,\"severity\":2,\"comments\":\"Fuel suply and prices are completely dependent on international conditions and it has a huge impact on operations and profit. Vessel, equipment and maintenance are mature industries that can be relatively predicted and competitive.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"As substitutes are rather easy to use and fish catches and prices are more dificult to predict, the power from buyers increases. Huge distribuition companies also have a clear buying power, however, catch availability and sesonability may have bigger impact from the supply side.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Operationalization depend on human resources available and the labor cost.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":3,\"severity\":3,\"comments\":\"Vessels are very costly equipments. Depending on the number of vessels in the fleet, maintenance and substituition costs can vary from higlh impact to medium impact. \",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":2,\"comments\":\"Technological efficiency directly impact profit as it can assume fuel efficiency and catch efficiency.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
                         },
                         new
                         {
@@ -10938,6 +10956,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("6fcea518-0c00-40af-b0ba-2e6777a32f2a"),
+                            AttrVal = "",
+                            CategoryId = new Guid("10718a0a-819b-4677-a711-28b794339ee8"),
+                            Kind = (short)20,
+                            MasterId = new Guid("bc964bb9-5b2b-4fae-8647-e1e5f764ae85"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
                             Id = new Guid("000e44f0-b0eb-4371-a2b8-329e283b2423"),
                             AttrVal = "{\"2011\":30.98,\"2012\":30.98,\"2013\":30.98,\"2014\":30.98,\"2015\":30.98,\"2016\":30.98,\"2017\":30.98,\"2018\":31.18,\"2019\":1.77,\"2020\":1.77,\"2021\":1.77}",
                             Kind = (short)23,
@@ -11056,6 +11083,15 @@ namespace KabadaAPI.Migrations
                             AttrVal = "{\"StandardRate\":20.0,\"ReducedRates1\":9.0}",
                             Kind = (short)22,
                             MasterId = new Guid("563ddee5-e623-497f-a156-dd017c9cdab8"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("e9b9e74e-5a22-454e-bf81-5ba1f1a62131"),
+                            AttrVal = "",
+                            CategoryId = new Guid("3b7af860-7a74-4772-be75-17cd573d8bcc"),
+                            Kind = (short)20,
+                            MasterId = new Guid("28e5bb7b-fc1d-490a-8553-ea9441c48a89"),
                             OrderValue = (short)0
                         },
                         new
@@ -11179,6 +11215,15 @@ namespace KabadaAPI.Migrations
                             AttrVal = "{\"StandardRate\":20.0,\"ReducedRates1\":10.0,\"ReducedRates2\":13.0}",
                             Kind = (short)22,
                             MasterId = new Guid("b166b440-11d7-4766-8926-45cc6f97430f"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("bc5bc23d-3b70-4fba-ba97-918ac0d1a2b6"),
+                            AttrVal = "",
+                            CategoryId = new Guid("805c5650-958a-4e6c-bc60-2cd39dab64ca"),
+                            Kind = (short)20,
+                            MasterId = new Guid("b34f5b8e-ee2d-4a6b-9e8e-bb34adf3ffeb"),
                             OrderValue = (short)0
                         },
                         new
@@ -11573,36 +11618,6 @@ namespace KabadaAPI.Migrations
                     b.Navigation("Language");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.Plan_Attribute", b =>
-                {
-                    b.HasOne("KabadaAPIdao.BusinessPlan", "BusinessPlan")
-                        .WithMany()
-                        .HasForeignKey("BusinessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("KabadaAPIdao.Texter", "Texter")
-                        .WithMany()
-                        .HasForeignKey("TexterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BusinessPlan");
-
-                    b.Navigation("Texter");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.Plan_SpecificAttribute", b =>
-                {
-                    b.HasOne("KabadaAPIdao.BusinessPlan", "BusinessPlan")
-                        .WithMany()
-                        .HasForeignKey("BusinessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BusinessPlan");
                 });
 
             modelBuilder.Entity("KabadaAPIdao.RefreshToken", b =>
