@@ -40,6 +40,7 @@ namespace Kabada {
           l2.price=y.e.price;
           l2.first_expenses=y.e.first_expenses;
           l2.monthly_expenses=y.e.monthly_expenses;
+          l2.type_name=y.e.name;
           }
         }
       return r;
