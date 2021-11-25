@@ -32,8 +32,9 @@ namespace Kabada {
           default: throw new Exception("wrong type attribute encountered");
           }
         o.id=a.Id;
-        o.comment=a.Comment;
+        //o.comment=a.Comment;
         var w=Newtonsoft.Json.JsonConvert.DeserializeObject<CustomerSegmentElementBL>(a.AttrVal);
+        o.segment_name=w.segment_name;
         o.unpack(w, codes);
         }
        }

@@ -12,6 +12,7 @@ namespace KabadaAPI {
     public bool? flag;
     public string v1;
     public string v2;
+    public string segment_name;
 
     public string pack(){  return Newtonsoft.Json.JsonConvert.SerializeObject(this, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }); }
 

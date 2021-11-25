@@ -35,10 +35,10 @@ namespace Kabada {
         o.unpack(a.AttrVal);
         o.id=a.Id;
         o.type_id=a.TexterId;
-        o.type_title=typi[o.type_id].Value;         
+        o.type_title=typi[o.type_id].Value; 
         var c=cati[typi[a.TexterId].MasterId.Value];
         o.category_id = c.Id;
-        o.category_title = c.Value;              
+        o.category_title = c.Value;
         }
        }
 

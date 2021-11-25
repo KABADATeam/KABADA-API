@@ -4,6 +4,7 @@ namespace Kabada {
   public abstract partial class CustomerSegmentPostBase {
     public Guid? id;
     public Guid business_plan_id;
-    public string comment;
+    //public string comment;
+    public string segment_name;
     }
   }
