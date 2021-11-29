@@ -93,5 +93,9 @@ namespace KabadaAPI {
       return getS("importDirectory", null);
       }}
 
+    public string sofficeDirectory { get {
+      return getS("SofficeDirectory", null);
+      }}
+
     }
   }
