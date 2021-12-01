@@ -158,13 +158,21 @@ namespace KabadaAPI {
       return string.Join(", ", t);
       }}
 
+
     private List<string> rvp(PlanAttributeKind kind){ return gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList(); }
+
+    private List<string> rvpL(PlanAttributeKind kind){
+      return gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList();
+      }
+
     private string rvp(string prefix, string name, PlanAttributeKind kind){
-      var t=gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList();
+      //var t=gAv<KeyPartnersAttribute>(kind).Select(x=>x.name).ToList();
+      var t=rvpL(kind);
       if(t.Count<1)
         return prefix;
       return (string.IsNullOrWhiteSpace(prefix)?"":prefix+" ")+name+": "+string.Join(", ", t);
       }
+
     public string descriptionPartners { get { // String format -> Distributors: Name #1, Name #2,.. Suppliers: Name #1, Name #2
       string r=null;
       r=rvp(r, "Distributors", PlanAttributeKind.keyDistributor);

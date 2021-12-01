@@ -1,7 +1,7 @@
 bookmark;data (BusinessPlanBL.*);comment
 kabada_planName;o.Title;plan title
 kabada_naceCode;naceCode;plan.Activity.Code and plan.Activity.Title
-kabada_bc_keyDist;plan.keyPartners.distributors;list of plan key partners-distributors
-kabada_bc_keySupp;plan.keyPartners.supplies;list of plan key partners-suppliers
+kabada_bc_keyDist;keyDist;list of plan key partners-distributors
+kabada_bc_keySupp;keySupp;list of plan key partners-suppliers
 kabada_bc_keyAct;namesActivities;list of key activities names
 kabada_bc_keyRes;keyRes;list of key resources names
