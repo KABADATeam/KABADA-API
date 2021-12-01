@@ -142,12 +142,19 @@ namespace KabadaAPI {
       return string.Join(", ", t);
       }}
 
-    public string descriptionActivities { get {// activities names
+    public List<string> namesActivities { get {// activities names
       var pi=gA((short)PlanAttributeKind.product).Select(x=>(Guid?)x.Id).ToList();
       if(pi.Count<1)
         return null;
       var t=new UniversalAttributeRepository(textSupport.blContext).byMasters(pi).Where(x=>KeyActivityBL.KIND==x.Kind)
             .Select(x=>new KeyActivityBL(x).e.name).ToList();
+      return t;
+      }}
+
+    public string descriptionActivities { get {// activities names
+      var t=namesActivities;
+      if(t==null)
+        return null;
       return string.Join(", ", t);
       }}
 
