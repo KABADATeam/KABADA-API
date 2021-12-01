@@ -96,7 +96,7 @@ namespace KabadaAPI {
       }
 
     private List<T> gAv<T>(PlanAttributeKind kind) where T:class {
-      var r=gA(kind).Select(x=>Newtonsoft.Json.JsonConvert.DeserializeObject<T>( x.AttrVal)).ToList();
+      var r=gA(kind).OrderBy(x=>x.OrderValue).Select(x=>Newtonsoft.Json.JsonConvert.DeserializeObject<T>( x.AttrVal)).ToList();
       return r;
       }
 
