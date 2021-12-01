@@ -1,7 +1,7 @@
-bookmark;data;comment
-kabada_planName;plan.Title;"plan title"
-kabada_naceCode;plan.Activity;"plan.Activity.Code and plan.Activity.Title"
-kabada_bc_keyDist;plan.keyPartners.distributors;"list of plan key partners-distributors"
-kabada_bc_keySupp;plan.keyPartners.supplies;"list of plan key partners-suppliers"
-kabada_bc_keyAct;plan.keyActivities;"list of key activities names"
-kabada_bc_keyRes;plan.keyResources;"list of key resources names"
+bookmark;data (BusinessPlanBL.*);comment
+kabada_planName;o.Title;plan title
+kabada_naceCode;plan.Activity;plan.Activity.Code and plan.Activity.Title
+kabada_bc_keyDist;plan.keyPartners.distributors;list of plan key partners-distributors
+kabada_bc_keySupp;plan.keyPartners.supplies;list of plan key partners-suppliers
+kabada_bc_keyAct;plan.keyActivities;list of key activities names
+kabada_bc_keyRes;plan.keyResources;list of key resources names
