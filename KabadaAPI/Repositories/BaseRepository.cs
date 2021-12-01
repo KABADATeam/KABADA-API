@@ -30,7 +30,7 @@ namespace KabadaAPI {
 
     public void Dispose() { dispose(); }
 
-    protected List<BaseRepository> deleteBaseOrder { get { // RefreshTokens not included - must be processed separately
+    protected List<BaseRepository> getDeleteBaseOrder(DAcontext daContext=null) { 
       var r=new List<BaseRepository>();
 
       r.Add(new UniversalAttributeRepository(blContext, daContext));
@@ -54,11 +54,15 @@ namespace KabadaAPI {
       r.Add(new DbSettingRepository(blContext, daContext));
 
       return r;
+      }
+
+    protected List<BaseRepository> deleteBaseOrder { get { // RefreshTokens not included - must be processed separately
+      return getDeleteBaseOrder(daContext);
       }}
 
     internal virtual void import(Guid newId, string json, UnloadSetImport unloadSetImport) { throw new NotImplementedException(); }
 
-    protected List<BaseRepository> exportOrder { get { var r=deleteBaseOrder; return r; }}
+    protected List<BaseRepository> exportOrder { get { var r=getDeleteBaseOrder(daContext); return r; }}
 
     protected List<BaseRepository> deleteOrder { get {
       var r=new List<BaseRepository>(){ new RefreshTokenRepository(blContext, daContext) };
@@ -66,7 +70,7 @@ namespace KabadaAPI {
       return r;
       }}
 
-    protected List<BaseRepository> importOrder { get { var r=deleteBaseOrder; r.Reverse(); return r; }}
+    protected List<BaseRepository> importOrder(DAcontext daContext=null) { var r=getDeleteBaseOrder(daContext); r.Reverse(); return r; }
 
     internal string snap(string outDirectoryPath=null) {
       var opa=outDirectoryPath;
@@ -143,7 +147,7 @@ namespace KabadaAPI {
         LogInformation("Old data are kept.");
 
       k=0;
-      foreach(var o in importOrder)
+      foreach(var o in importOrder(generateInits?daContext:null))
          k+=o.loadMe(opa, overwrite, deleteOld, generateInits, skip);
       LogInformation($"Total loaded {k} records.");
 
@@ -283,7 +287,7 @@ namespace KabadaAPI {
 
     private Dictionary<Guid, bool> loadInitGuids() {
       var r=new Dictionary<Guid, bool>();
-      foreach(var o in importOrder)
+      foreach(var o in importOrder(daContext))
         o.getGuids(iniPath, r);
       return r;
       }
