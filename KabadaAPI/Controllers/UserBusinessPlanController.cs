@@ -325,5 +325,51 @@ namespace KabadaAPI.Controllers {
       update.perform(context);
       return _MynecessaryCapital(update.business_plan_id);
       }
+
+    [HttpGet("doc/{BusinessPlan}")]
+    [AllowAnonymous]
+    public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
+    private IActionResult _DocFile(Guid planId)
+    {
+        _logger.LogInformation($"-- DocFile for plan {planId}");
+       // try
+       // {
+            context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");                
+            //create doc file
+            var docFile = new DocFile(context, planId);                
+            return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);
+       // }
+       // catch (Exception e)
+       // {
+       //     return StatusCode(500, $"Internal server error: {e}");
+       // }
+    }
+        //[HttpGet("pdf/{BusinessPlan}")]
+        //[AllowAnonymous]
+        //public IActionResult PdfFile(Guid BusinessPlan) { return prun<Guid>(_PdfFile, BusinessPlan); }
+        //private IActionResult _PdfFile(Guid planId)
+        //{
+        //    _logger.LogInformation($"-- PdfFile for plan {planId}");
+        //    try
+        //    {
+        //        context.userGuid = Guid.Parse("{63FA8008-F6B1-4957-3B2D-08D9AF55AE06}");
+        //        var p = new BusinessPlanBL();
+        //        p.textSupport = new TexterRepository(context);
+        //        //create doc file
+        //         var docFile = new DocFile(context, planId);
+        //        //docFile.create(planId, "plan_template.docx", context);
+        //        var fn = p.filePath("_Kabada_export.docx"); //temp file 
+        //        //write to file on disk
+        //        System.IO.File.WriteAllBytes("some_name.docx", docFile.stream.ToArray());
+        //        SofficeManager.ConvertToPDF(context,fn);
+                
+        //        return Ok();
+        //        //return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return StatusCode(500, $"Internal server error: {e}");
+        //    }
+        //}
     }
   }
