@@ -126,14 +126,20 @@ namespace KabadaAPI {
       }}
 
     private List<Guid> rvs(PlanAttributeKind kind){ return gAv<RevenueStreamElementBL>(kind).Select(x=>x.stream_type_id).ToList(); }
-    public string descriptionRevenue { get {// I guess, - Revenue stream names
-      //return "TODO: I guess, - Revenue stream names";
+
+
+    public List<string> revenue { get {
       var w=rvs(PlanAttributeKind.revenueSegment1);
       w.AddRange(rvs(PlanAttributeKind.revenueSegment2));
       w.AddRange(rvs(PlanAttributeKind.revenueOther));
       w=w.Distinct().ToList();
       var ti=textSupport.get(w).ToDictionary(x=>x.Id, x=>x.Value);
       var t=w.Select(x=>ti[x]).ToList();
+      return t;
+      }}
+
+    public string descriptionRevenue { get {// I guess, - Revenue stream names
+      var t=revenue;
       return string.Join(", ", t);
       }}
 

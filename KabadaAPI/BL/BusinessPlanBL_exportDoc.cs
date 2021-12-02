@@ -32,7 +32,7 @@ namespace KabadaAPI {
     public List<string> costVariable { get { return _costs(myVariableCost_s); }}
 
     public List<string> channels { get {
-      var w=gAv<ChannelElementBL>(PlanAttributeKind.channel).Select(x=>x.channel_type_id).Distinct().ToList();
+      var w=gAv<ChannelElementBL>(PlanAttributeKind.channel).Select(x=>x.channel_type_id).ToList();
       return _tValues(w);
       } }
 
