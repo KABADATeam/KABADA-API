@@ -331,18 +331,11 @@ namespace KabadaAPI.Controllers {
     public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
     private IActionResult _DocFile(Guid planId)
     {
-        _logger.LogInformation($"-- DocFile for plan {planId}");
-       // try
-       // {
-            context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");                
+        _logger.LogInformation($"-- DocFile for plan {planId}");      
+            //context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");                
             //create doc file
             var docFile = new DocFile(context, planId);                
-            return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);
-       // }
-       // catch (Exception e)
-       // {
-       //     return StatusCode(500, $"Internal server error: {e}");
-       // }
+            return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);     
     }
         //[HttpGet("pdf/{BusinessPlan}")]
         //[AllowAnonymous]
