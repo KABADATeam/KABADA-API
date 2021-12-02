@@ -50,5 +50,18 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public List<KeyValuePair<string, List<string>>> valProp { get {
+      var r=new List<KeyValuePair<string, List<string>>>();
+      var ps=myProduct_s;
+      foreach(var p in ps){
+        var fl=new List<string>();
+        var t=p.e.product_features;
+        if(t!=null && t.Count>0)
+          fl=textSupport.get(t).Select(x=>x.Value).ToList();
+        var w=new KeyValuePair<string, List<string>>(p.e.title, fl);
+        }
+      return r;
+      }}
     }
   }
