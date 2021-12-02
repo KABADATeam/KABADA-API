@@ -361,11 +361,11 @@ namespace KabadaAPI
       return null;
       }
 
-    public BusinessPlan validateRW(Guid planId, Guid userId) {
+    public BusinessPlan validateRW(Guid userId, Guid planId) {
       var r=getRW(planId, userId);
       if(r==null)
         throw new Exception("Access denied");
-      return null;
+      return r;
       }
     }
 }

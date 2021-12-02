@@ -110,7 +110,7 @@ namespace Kabada {
       var n=(short)(monthlyValue.Count-1);
       var r=new CashFlowRow(title, null, n);
       for(var m=0; m<=n; m++)
-        r.monthlyValue[m]=mako(monthlyValue[m], t.monthlyValue[m]);
+        r.monthlyValue[m]=mako(monthlyValue[m], t.mv(m) /*t.monthlyValue[m]*/);
       r.totalYear1=mako(totalYear1, t.totalYear1);
       r.totalYear2=mako(totalYear2, t.totalYear2);
       return r;

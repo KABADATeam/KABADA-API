@@ -89,7 +89,8 @@ namespace KabadaAPI {
         var o=aRepo.byId(resource); 
         if(kindRequired!=null && o.Kind!=(short)kindRequired.Value)
           throw new Exception("wrong attribute kind");
-        var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
+        //var plan=new BusinessPlansRepository(context).GetPlanForUpdate(context.userGuid, o.BusinessPlanId); // only to validate rights on plan
+        new BusinessPlansRepository(context).validateRW(context.userGuid, o.BusinessPlanId);
         if(cascade!=null)
           cascade(o, aRepo);
         aRepo.Delete(o);

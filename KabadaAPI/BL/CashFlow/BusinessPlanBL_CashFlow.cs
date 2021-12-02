@@ -256,9 +256,9 @@ namespace KabadaAPI {
 
       short n=(short)(z.monthlyValue.Count-1);
       var r=new CashFlowRow("Total balance", period:n);
-      decimal? w=0;
+      decimal w=0;
       for(var m=0; m<=n; m++){
-        w+=z.monthlyValue[m];
+        w+=NZ.Z(z.monthlyValue[m]);
         r.monthlyValue[m]=w;
         specRow.monthlyValue.Add(w);
         t.Add(w>=0m?null:w);
