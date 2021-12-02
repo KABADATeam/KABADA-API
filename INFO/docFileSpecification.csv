@@ -8,7 +8,7 @@ kabada_bc_keyRes;keyRes;list of key resources names
 kabada_bc_valProp;valProp;list of products names, containing list of product features for each product
 kabada_bc_custRel;custRel;list of channels names in customer relations
 kabada_bc_channels;channels;list of channel types names for a plan
-kabada_bc_custSeg;?custSeg;list of segments names
+kabada_bc_custSeg;custSeg;list of segments names
 kabada_bc_costFixed;costFixed;list of fixed costs types for a plan
 kabada_bc_costVariable;costVariable;list of variable costs types for a plan
 kabada_bc_revenue;revenue;list of revenue stream types for a plan

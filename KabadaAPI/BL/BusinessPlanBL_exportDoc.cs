@@ -63,5 +63,20 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public List<string> custSeg { get {
+      var t=gA(PlanAttributeKind.businessSegment);
+      t.AddRange(gA(PlanAttributeKind.consumerSegment));
+      t.AddRange(gA(PlanAttributeKind.ngoSegment));
+
+      var r=new List<string>();
+      foreach(var a in t){
+        if(string.IsNullOrWhiteSpace(a.AttrVal))
+          continue;
+        var w=Newtonsoft.Json.JsonConvert.DeserializeObject<CustomerSegmentElementBL>(a.AttrVal);
+        r.Add(w.segment_name);
+        }
+      return r;
+      }}
     }
   }
