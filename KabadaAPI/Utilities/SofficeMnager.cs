@@ -35,7 +35,7 @@ namespace KabadaAPI {
 
         while (pname.Length > 0)       //simultaneously only one instance of LibreOffice can be run 
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
             pname = Process.GetProcessesByName("soffice");
         }
         process.Start();

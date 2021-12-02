@@ -64,7 +64,14 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keySupp", plan.keySupp);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keyAct", plan.namesActivities);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keyRes", plan.keyRes);
-                 
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyValProp", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custRel", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_channels", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custSeg", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costFixed", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", null);
+                    //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
 
@@ -268,8 +275,21 @@ namespace Kabada {
                 else
                     elem.Append(np);
                 elem = np;
-            }
-            
+            }            
+        }
+        public byte[] ToPdf()
+        {
+            if (stream==null) return null;
+            var p = new BusinessPlanBL();            
+            p.textSupport = new TexterRepository(context);                        
+            var fn = p.filePath("_Kabada_export.docx"); //temp file name
+            System.IO.File.WriteAllBytes(fn, stream.ToArray()); //write to file on disk
+            SofficeManager.ConvertToPDF(context, fn);
+            var fnPdf = Path.ChangeExtension(fn, ".pdf");
+            var temp = System.IO.File.ReadAllBytes(fnPdf);
+            File.Delete(fn);
+            File.Delete(fnPdf);
+            return temp;
         }
     }
   }
