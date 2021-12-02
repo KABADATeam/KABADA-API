@@ -36,8 +36,19 @@ namespace KabadaAPI {
       return _tValues(w);
       } }
 
-    //public List<string> ppp { get {
-    //  return null;
-    //  }}
+    public List<string> custRel { get {
+      var t=gA(PlanAttributeKind.relationshipActivity1);
+      t.AddRange(gA(PlanAttributeKind.relationshipActivity2));
+      t.AddRange(gA(PlanAttributeKind.relationshipActivity3));
+
+      var r=new List<string>();
+      foreach(var a in t){
+        if(string.IsNullOrWhiteSpace(a.AttrVal))
+          continue;
+        var w=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
+        r.AddRange(w);
+        }
+      return r;
+      }}
     }
   }
