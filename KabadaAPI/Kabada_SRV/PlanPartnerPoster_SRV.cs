@@ -16,7 +16,8 @@ namespace Kabada {
     internal Guid perform(BLontext context, Plan_AttributeRepository.PlanAttributeKind aKind, EnumTexterKind tKind) {
       ctx=context;
 
-      var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
+      //var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
+      new BusinessPlansRepository(ctx).validateRW(ctx.userGuid, business_plan_id);
 
       if(id==null)
         return create(aKind, tKind);
