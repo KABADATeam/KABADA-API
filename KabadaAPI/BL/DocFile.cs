@@ -64,13 +64,13 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keySupp", plan.keySupp);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keyAct", plan.namesActivities);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_keyRes", plan.keyRes);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyValProp", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custRel", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_channels", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custSeg", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costFixed", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", null);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", null);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyValProp", plan.valProp);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custRel", plan.custRel);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_channels", plan.channels);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custSeg", plan.custSeg);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costFixed", plan.costFixed);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
+                    fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
                     //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
@@ -137,7 +137,33 @@ namespace Kabada {
                 bm.bms.Remove();                                   
             }
             fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name,values==null||values.Count==0?value:"");            
-        }        
+        }
+        private void fillTextFieldMultiLine(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<KeyValuePair<string,List<string>>> values)
+        {
+            String value = null;
+            var bm = new DocBookmark(context);
+            bm.find(bookmarkStarts, bookmarkEnds, name);
+
+            if (bm.bms != null && bm.bme != null)
+            {
+                var rp = removeBookmarkText(bm.bms, bm.bme);
+                
+                if (values != null)
+                {
+                    OpenXmlElement elem = bm.bms;
+                    foreach (var val in values)
+                    {
+                        RunProperties rp_h = (RunProperties)rp.Clone();
+                        rp_h.Append(new Bold());
+                        elem = addText(elem, val.Key, rp_h);
+                        elem = addText(elem, val.Value, rp);
+                    }
+                }
+                bm.bms.Remove();
+            }
+            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
+        }
+
         private void fillTextFieldNoData(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, string value=null)
             {      
                 fillTextField(bookmarkStarts, bookmarkEnds, name + NODATASUFFIX, value==null?NODATATEXT:value);
@@ -192,7 +218,7 @@ namespace Kabada {
             }
             return rProp;
         }
-        private void addText(BookmarkStart bms, string value, RunProperties rp)
+        private Run addText(OpenXmlElement elem, string value, RunProperties rp)
         {
            // var bmRp = removeBookmarkText(bms, bme);
             //if (rp == null) rp = bmRp;
@@ -200,12 +226,11 @@ namespace Kabada {
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
             nr.Append(new Text(value));
-            bms.InsertAfterSelf(nr);            
+            elem.InsertAfterSelf(nr);
+            return nr;
         }
-        private void addText(BookmarkStart bms, List<string> value, RunProperties rp, string format=null)
+        private Run addText(OpenXmlElement elem, List<string> value, RunProperties rp, string format=null)
         {
-            // var bmRp = removeBookmarkText(bms, bme);
-            //if (rp == null) rp = bmRp;
             var nr = new Run();
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
@@ -216,8 +241,10 @@ namespace Kabada {
                 nr.Append(new Text(line));
                 if(v!=value.Last()) nr.Append(new Break());
             }                
-            bms.InsertAfterSelf(nr);
+            elem.InsertAfterSelf(nr);
+            return nr;
         }
+        
         private void replaceBookmarkText(BookmarkStart bms, BookmarkEnd bme, string value, RunProperties rp = null)
         {
             var bmRp = removeBookmarkText(bms, bme);

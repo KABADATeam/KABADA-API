@@ -328,18 +328,33 @@ namespace KabadaAPI.Controllers {
       }
 
     [HttpGet("doc/{BusinessPlan}")]
-    [AllowAnonymous]
+    [Authorize]
     public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
     private IActionResult _DocFile(Guid planId)
     {
         _logger.LogInformation($"-- DocFile for plan {planId}");      
             context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");                
             //create doc file
-            var docFile = new DocFile(context, planId);                
+            var docFile = new DocFile(context, planId);    
             return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);     
     }
+        [HttpGet("docx/{BusinessPlan}")]
+        [Authorize]
+        public IActionResult DocxFile(Guid BusinessPlan) { return prun<Guid>(_DocxFile, BusinessPlan); }
+        private IActionResult _DocxFile(Guid planId)
+        {
+            _logger.LogInformation($"-- DocxFile for plan {planId}");
+            context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");
+            //create doc file
+            var docFile = new DocFile(context, planId);
+            var p = new BusinessPlanBL();
+            p.textSupport = new TexterRepository(context);
+            var fn = p.filePath("_Kabada_export.docx");
+            System.IO.File.WriteAllBytes(fn, docFile.stream.ToArray());
+            return Ok();
+        }
         [HttpGet("pdf/{BusinessPlan}")]
-        [AllowAnonymous]
+        [Authorize]
         public IActionResult PdfFile(Guid BusinessPlan) { return prun<Guid>(_PdfFile, BusinessPlan); }
         private IActionResult _PdfFile(Guid planId)
         {
