@@ -341,5 +341,31 @@ namespace KabadaAPI
         t.toCSV();
       return reload(t, blContext.userGuid);
       }
+
+    public bool isShared(BusinessPlan plan, Guid userId) {
+      var cnt=daContext.SharedPlans.Where(x=>x.BusinessPlanId==plan.Id && x.UserId==userId).Count();
+      return (cnt>0);
+      }
+
+    public BusinessPlan getRO(Guid planId, Guid userId) {
+      var plan=qID(planId).FirstOrDefault();
+      if(plan==null || plan.Public || plan.UserId==userId || isShared(plan, userId))
+        return plan;
+      return null;
+      }
+
+    public BusinessPlan getRW(Guid planId, Guid userId) {
+      var plan=qID(planId).FirstOrDefault();
+      if(plan==null || plan.UserId==userId || isShared(plan, userId))
+        return plan;
+      return null;
+      }
+
+    public BusinessPlan validateRW(Guid planId, Guid userId) {
+      var r=getRW(planId, userId);
+      if(r==null)
+        throw new Exception("Access denied");
+      return null;
+      }
     }
 }
