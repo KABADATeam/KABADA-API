@@ -81,24 +81,45 @@ namespace KabadaAPI {
       return r;
       }}
 
+    private Dictionary<Guid, KabadaAPIdao.Texter> idti;
+    private string d(Guid k){
+      KabadaAPIdao.Texter r=null;
+      if(idti.TryGetValue(k, out r))
+        return r.Value;
+      return k.ToString();
+      }
+
     public List<ValueProp_doc> valProps { get {
       var r=new List<ValueProp_doc>();
       var ps=myProduct_s;
+      var idi=ps.Select(x=>x.e.product_type).Distinct().ToList();
+      idi.AddRange(ps.Select(x=>x.e.price_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
+      idi.AddRange(ps.Select(x=>x.e.innovative_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
+      idi.AddRange(ps.Select(x=>x.e.differentiation_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
+      foreach(var p in ps){
+        if(p.e.selected_additional_income_sources==null)
+          continue;
+        idi.AddRange(p.e.selected_additional_income_sources.Where(x=>!idi.Contains(x)).Distinct().ToList());
+        }
+      idti=textSupport.get(idi).ToDictionary(x=>x.Id);
+
       foreach(var p in ps){
         var w=new ValueProp_doc();
         w.title=p.e.title;
-        w.prodType=p.e.product_type.ToString();   //TODO
+        w.prodType=d(p.e.product_type);  
         w.description=p.e.description;
-        w.priceLevel=p.e.price_level.ToString();  //TODO
-        w.addIncomeSource="TODO"; //comma separated string   //TODO
-                          
+        w.priceLevel=d(p.e.price_level);
+
+        if(p.e.selected_additional_income_sources!=null)
+           w.addIncomeSource=string.Join(",", p.e.selected_additional_income_sources.Select(x=>d(x)).ToList());
+
         var t=p.e.product_features;
         if(t!=null && t.Count>0)
           w.productFeatures=textSupport.get(t).Select(x=>x.Value).ToList();
 
-        w.innovLevel=p.e.innovative_level.ToString();   //TODO
-        w.qualityLevel=p.e.quality_level.ToString();   //TODO
-        w.diffLevel=p.e.differentiation_level.ToString();   //TODO
+        w.innovLevel=d(p.e.innovative_level); 
+        w.qualityLevel=d(p.e.quality_level);
+        w.diffLevel=d(p.e.differentiation_level);
         r.Add(w);
         }
       return r;
