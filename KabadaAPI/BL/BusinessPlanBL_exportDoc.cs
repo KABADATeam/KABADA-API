@@ -60,6 +60,7 @@ namespace KabadaAPI {
         if(t!=null && t.Count>0)
           fl=textSupport.get(t).Select(x=>x.Value).ToList();
         var w=new KeyValuePair<string, List<string>>(p.e.title, fl);
+        r.Add(w);
         }
       return r;
       }}
