@@ -7,7 +7,8 @@ namespace Kabada {
   partial class Assets_POST {
     internal void perform(BLontext ctx) {
       var bRepo=new BusinessPlansRepository(ctx);
-      var plan=bRepo.GetPlanForUpdate(ctx.userGuid, business_plan_id);
+      //var plan=bRepo.GetPlanForUpdate(ctx.userGuid, business_plan_id);
+      var plan=bRepo.getRW(business_plan_id);
       var t=new BusinessPlanBL(plan, true);
       t.e.startup.total_investments=total_investments;
       t.e.startup.own_assets=own_assets;

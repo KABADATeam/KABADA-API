@@ -47,7 +47,7 @@ namespace KabadaAPI.Controllers {
     [Route("update")]
     public IActionResult Update(PlanSwotUpdate update) { return prun<PlanSwotUpdate>(_Update, update); }
     private IActionResult _Update(PlanSwotUpdate update) {
-      var plan=pRepo.GetPlanForUpdate(uGuid, update.business_plan_id);
+      var plan=pRepo.getRW(update.business_plan_id);
       update.Perform(context, plan);
       return Ok("success");
       }
@@ -55,7 +55,7 @@ namespace KabadaAPI.Controllers {
     [Route("save")]
     public IActionResult AddLocal(PlanSwotLocalSinglePoster item) { return prun<PlanSwotLocalSinglePoster>(_AddLocal, item); }
     private IActionResult _AddLocal(PlanSwotLocalSinglePoster item) {
-      var plan=pRepo.GetPlanForUpdate(uGuid, item.business_plan_id);
+      pRepo.getRW(item.business_plan_id);
       var id = item.Save(context);
       return Ok(id);
       }

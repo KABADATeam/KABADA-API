@@ -31,13 +31,13 @@ namespace KabadaAPI
         }
         public void ChangeSwotCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId,planId);
+            BusinessPlan businessPlan = get(planId, userId); //   GetPlanForUpdate(userId,planId);
             businessPlan.IsSwotCompleted = newValue;
             daContext.SaveChanges();
         }
         public void ChangeResourcesCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsResourcesCompleted = newValue;
             daContext.SaveChanges();
         }
@@ -104,38 +104,38 @@ namespace KabadaAPI
         }
         internal void ChangePartnersCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsPartnersCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangePropositionCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsPropositionCompleted = newValue;
             daContext.SaveChanges();
         }
 
         internal void ChangeCostCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsCostCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangeRevenueCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsRevenueCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangeChannelsCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsChannelsCompleted = newValue;
             daContext.SaveChanges();
         }
 
     internal void changeStatus(Guid planId, bool newValue, Guid userId)        {
-            var businessPlan = GetPlanForUpdate(userId, planId);
+            var businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.Public = !newValue;
             daContext.SaveChanges();
         }
@@ -149,19 +149,20 @@ namespace KabadaAPI
       }
 
     internal void ChangeCustomerSegmentsCompleted(Guid planId, bool newValue, Guid userId) {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsCustomerSegmentsCompleted = newValue;
             daContext.SaveChanges();
       }
 
     internal void ChangeRelationshipCompleted(Guid planId, bool newValue, Guid userId) {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); // GetPlanForUpdate(userId, planId);
             businessPlan.IsCustomerRelationshipCompleted = newValue;
             daContext.SaveChanges();
       }
 
     internal string inviteMember(Guid planId, string email, Guid userId) {
-      var businessPlan = GetPlanForUpdate(userId, planId); // ensure rights to change
+      //var businessPlan = GetPlanForUpdate(userId, planId); // ensure rights to change
+      get(planId, userId); // ensure rights to change
       var u=new UsersRepository(blContext).byEmail(email);
       if(u==null){
         var jRepo=new JobRepository(blContext);
@@ -190,14 +191,14 @@ namespace KabadaAPI
       }
 
     internal void ChangeActivitiesCompleted(Guid planId, bool newValue, Guid userId) {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
             businessPlan.IsActivitiesCompleted = newValue;
             daContext.SaveChanges();
       }
 
-    private Guid? countryId(BusinessPlan p){ return p.Country==null?null:p.Country.Id; }
-    private Guid? activityId(BusinessPlan p){ return p.Activity==null?null:p.Activity.Id; }
-    private Guid? languageId(BusinessPlan p){ return p.Language==null?null:p.Language.Id; }
+    private Guid? countryId(BusinessPlan p){ return p.CountryId; } // p.Country==null?null:p.Country.Id; }
+    private Guid? activityId(BusinessPlan p){ return p.ActivityID; } // p.Activity==null?null:p.Activity.Id; }
+    private Guid? languageId(BusinessPlan p){ return p.LanguageId; } // p.Language==null?null:p.Language.Id; }
 
     internal void updateLight(Guid userId, Kabada.BusinessPlan n) {
       var o=GetPlanForUpdate(userId, n.Id);
@@ -219,25 +220,25 @@ namespace KabadaAPI
       }
         internal void ChangeBusinessInvestmentsCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
             businessPlan.IsBusinessInvestmentsCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangeFixedVariableCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
             businessPlan.IsFixedVariableCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangeSalesForecastCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
             businessPlan.IsSalesForecastCompleted = newValue;
             daContext.SaveChanges();
         }
         internal void ChangeAssetsCompleted(Guid planId, bool newValue, Guid userId)
         {
-            BusinessPlan businessPlan = GetPlanForUpdate(userId, planId);
+            BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
             businessPlan.IsAssetsCompleted = newValue;
             daContext.SaveChanges();
         }
@@ -346,27 +347,6 @@ namespace KabadaAPI
       var cnt=daContext.SharedPlans.Where(x=>x.BusinessPlanId==plan.Id && x.UserId==userId).Count();
       return (cnt>0);
       }
-
-    public BusinessPlan getRO(Guid planId, Guid userId) {
-      var plan=qID(planId).FirstOrDefault();
-      if(plan==null || plan.Public || plan.UserId==userId || isShared(plan, userId))
-        return plan;
-      return null;
-      }
-
-    public BusinessPlan _getRW(Guid planId, Guid userId) {
-      var plan=qID(planId).FirstOrDefault();
-      if(plan==null || plan.UserId==userId || isShared(plan, userId))
-        return plan;
-      return null;
-      }
-
-    //public BusinessPlan getRW(Guid userId, Guid planId) {
-    //  var r=_getRW(planId, userId);
-    //  if(r==null)
-    //    throw new Exception("Access denied");
-    //  return r;
-    //  }
 
     private bool validateAccessRights(BusinessPlan plan, Guid userId, bool acceptRO, bool quiet) {
       if(plan!=null){
