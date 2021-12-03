@@ -17,7 +17,7 @@ namespace KabadaAPI {
       var r=new List<string>();
       if(us.Count>0){
         var d=textSupport.get(us).ToDictionary(x=>x.Id);
-        r=us.Select(x=>d[x].Name).ToList(); 
+        r=us.Select(x=>d[x].Value).ToList(); 
         }
       return r;
       }
