@@ -329,6 +329,7 @@ namespace KabadaAPI.Controllers {
 
     [HttpGet("doc/{BusinessPlan}")]
     [Authorize]
+   // [AllowAnonymous]
     public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
     private IActionResult _DocFile(Guid planId)
     {

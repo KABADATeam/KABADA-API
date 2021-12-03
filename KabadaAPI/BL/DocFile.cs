@@ -155,8 +155,8 @@ namespace Kabada {
                     {
                         RunProperties rp_h = (RunProperties)rp.Clone();
                         rp_h.Append(new Bold());
-                        elem = addText(elem, val.Key, rp_h);
-                        elem = addText(elem, val.Value, rp);
+                        elem = addText(elem, val.Key, rp_h, endBreak:true);
+                        elem = addText(elem, val.Value, rp, LINEFORMAT,true);
                     }
                 }
                 bm.bms.Remove();
@@ -218,18 +218,20 @@ namespace Kabada {
             }
             return rProp;
         }
-        private Run addText(OpenXmlElement elem, string value, RunProperties rp)
+        private Run addText(OpenXmlElement elem, string value, RunProperties rp, string format = null, bool endBreak=false)
         {
            // var bmRp = removeBookmarkText(bms, bme);
             //if (rp == null) rp = bmRp;
             var nr = new Run();
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
+            if (!String.IsNullOrEmpty(format)) value = String.Format(format, value);
             nr.Append(new Text(value));
+            if (endBreak) nr.Append(new Break());
             elem.InsertAfterSelf(nr);
             return nr;
         }
-        private Run addText(OpenXmlElement elem, List<string> value, RunProperties rp, string format=null)
+        private Run addText(OpenXmlElement elem, List<string> value, RunProperties rp, string format=null, bool endBreak=false)
         {
             var nr = new Run();
             if (rp != null)
@@ -239,8 +241,9 @@ namespace Kabada {
                 var line = v;
                 if (!String.IsNullOrEmpty(format)) line = String.Format(format, v);
                 nr.Append(new Text(line));
-                if(v!=value.Last()) nr.Append(new Break());
-            }                
+                if(v!=value.Last()) nr.Append(new Break());               
+            }
+            if (endBreak) nr.Append(new Break());
             elem.InsertAfterSelf(nr);
             return nr;
         }
