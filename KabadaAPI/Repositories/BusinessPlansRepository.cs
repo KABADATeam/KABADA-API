@@ -179,7 +179,10 @@ namespace KabadaAPI
         }
       }
 
-    public BusinessPlanBL getPlanBL(Guid planId, Guid userId){ return new BusinessPlanBL(GetPlan(planId, userId)); }
+    public BusinessPlanBL getPlanBL(Guid planId, Guid userId){
+      //var t=joinRO(planId);
+      return new BusinessPlanBL(GetPlan(planId, userId));
+      }
 
     public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
       var r=new BusinessPlanBL(GetPlan(planId, userId));
@@ -373,5 +376,24 @@ namespace KabadaAPI
 
     public BusinessPlan getRO(Guid planId) { return get(planId, blContext.userGuid, true); }
 
+    protected IQueryable<BPjoin> joinQ(IQueryable<BusinessPlan> planQuery){
+      var r=from p in planQuery
+            join ct in daContext.Countries  on p.CountryId  equals ct.Id into ctlist from c in ctlist.DefaultIfEmpty()
+            join lt in daContext.Languages  on p.LanguageId equals lt.Id into ltlist from l in ltlist.DefaultIfEmpty()
+            join ut in daContext.Users      on p.UserId     equals ut.Id into utlist from u in utlist.DefaultIfEmpty()
+            join at in daContext.Activities on p.ActivityID equals at.Id into atlist from a in atlist.DefaultIfEmpty()
+            join it in daContext.Industries on a.IndustryId equals it.Id into itlist from i in itlist.DefaultIfEmpty()
+            select new BPjoin { bp=p, cn=c, us=u, lng=l, ac=a, ind=i };
+      return r;
+      }
+
+    public BPjoin join(Guid planId, Guid userId, bool acceptRO=false, bool quiet=false) {
+      var plan=joinQ(qID(planId)).FirstOrDefault();
+      if(validateAccessRights(plan==null?null:plan.bp, userId, acceptRO, quiet))
+        return plan;
+      return null;
+      }
+
+    public BPjoin joinRO(Guid planId) { return join(planId, blContext.userGuid, true); }
     }
 }

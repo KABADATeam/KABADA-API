@@ -67,9 +67,9 @@ namespace KabadaAPI {
       }}
 
     public List<string> custSeg { get {
-      var t=gA(PlanAttributeKind.businessSegment);
-      t.AddRange(gA(PlanAttributeKind.consumerSegment));
-      t.AddRange(gA(PlanAttributeKind.ngoSegment));
+      var t=gS(PlanAttributeKind.businessSegment);
+      t.AddRange(gS(PlanAttributeKind.consumerSegment));
+      t.AddRange(gS(PlanAttributeKind.ngoSegment));
 
       var r=new List<string>();
       foreach(var a in t){
