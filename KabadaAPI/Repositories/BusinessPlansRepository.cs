@@ -14,13 +14,13 @@ namespace KabadaAPI
         private DbSet<BusinessPlan> q0 { get { return daContext.BusinessPlans; }}
 
         private IQueryable<BusinessPlan> qID(Guid id) { return q0.Where(x=>x.Id==id); }
-        private IQueryable<BusinessPlan> qUid(Guid userId) { return q0.Where(x=>x.User.Id.Equals(userId)); }
-        private IQueryable<BusinessPlan> qFull(IQueryable<BusinessPlan> basic) {
-          return basic
-            .Include(x => x.Country)
-            .Include(x => x.User)
-            .Include(x => x.Activity.Industry);
-            }
+        //private IQueryable<BusinessPlan> qUid(Guid userId) { return q0.Where(x=>x.User.Id.Equals(userId)); }
+        //private IQueryable<BusinessPlan> qFull(IQueryable<BusinessPlan> basic) {
+        //  return basic
+        //    .Include(x => x.Country)
+        //    .Include(x => x.User)
+        //    .Include(x => x.Activity.Industry);
+        //    }
 
         public List<BusinessPlan> GetPublicPlans()
         {

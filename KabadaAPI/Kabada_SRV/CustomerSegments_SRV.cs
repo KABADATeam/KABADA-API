@@ -10,7 +10,7 @@ namespace Kabada {
     internal void read(BLontext context, Guid planId) {
       ctx=context;
  
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
+      var pl=new BusinessPlansRepository(ctx).getRO(planId); //GetPlan(planId, context.userGuid);
       is_customer_segments_completed=pl.IsCustomerSegmentsCompleted;
       
       var atri= new Plan_SpecificAttributesRepository(ctx).getSegments(planId);

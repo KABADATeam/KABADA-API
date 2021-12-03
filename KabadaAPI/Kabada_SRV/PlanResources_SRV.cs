@@ -11,7 +11,7 @@ namespace Kabada {
 
       key_resources=new List<PlanResorceWithCategory>();
 
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
+      var pl=new BusinessPlansRepository(ctx).getRO(planId); //GetPlan(planId, context.userGuid);
       is_resources_completed=pl.IsResourcesCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getResources(planId);

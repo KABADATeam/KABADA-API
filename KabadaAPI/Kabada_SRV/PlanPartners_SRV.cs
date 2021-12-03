@@ -15,7 +15,7 @@ namespace Kabada {
       this.suppliers=new List<PlanSupplier>();
       this.others=new List<PlanPartnerOther>();
 
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
+      var pl=new BusinessPlansRepository(ctx).getRO(planId); //GetPlan(planId, context.userGuid);
       is_partners_completed=pl.IsPartnersCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getPartners(planId);

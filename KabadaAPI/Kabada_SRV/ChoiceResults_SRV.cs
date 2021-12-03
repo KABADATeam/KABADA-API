@@ -6,7 +6,7 @@ namespace Kabada {
 
     internal void read(BLontext context, Guid planId) {
       plan_id=planId;
-      var p=new BusinessPlansRepository(context).GetPlan(planId, context.userGuid);
+      var p=new BusinessPlansRepository(context).getRO(planId); //GetPlan(planId, context.userGuid);
       if(p==null)
         throw new Exception("access prohibited");
       var a=new Plan_SpecificAttributesRepository(context).personalChar(planId);

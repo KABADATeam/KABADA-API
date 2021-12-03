@@ -8,7 +8,7 @@ namespace Kabada {
 
     internal void read(BLontext context, Guid planId) {
       var pRepo=new BusinessPlansRepository(context);
-      var p=pRepo.GetPlan(planId, context.userGuid);
+      var p=pRepo.getRO(planId); //GetPlan(planId, context.userGuid);
       is_sales_forecast_completed=p.IsSalesForecastCompleted;
 
       var prodi=new Plan_AttributeRepository(context, pRepo.daContext).getProducts(planId).Select(x=>new ProductBL(x, true)).ToList();

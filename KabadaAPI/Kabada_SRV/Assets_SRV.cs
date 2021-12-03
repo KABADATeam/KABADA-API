@@ -7,7 +7,7 @@ using System.Linq;
 namespace Kabada {
   partial class Assets {
     internal void read(BLontext ctx, Guid planId) {
-      var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).GetPlan(planId, ctx.userGuid));
+      var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).getRO(planId)); //GetPlan(planId, ctx.userGuid));
       is_assets_completed=pl.o.IsAssetsCompleted;
       var atri= new Plan_AttributeRepository(ctx).getResources(planId).Select(x=>new KeyResourceBL(x)).ToList();
       if(atri.Count<1)

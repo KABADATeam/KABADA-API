@@ -36,7 +36,7 @@ namespace Kabada {
     internal void read(BLontext context, Guid planId) {
       ctx=context;
 
-      var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid));
+      var pl=new BusinessPlanBL(new BusinessPlansRepository(ctx).getRO(planId)); //GetPlan(planId, context.userGuid));
       is_business_investments_completed=pl.o.IsBusinessInvestmentsCompleted;
       set(pl.e.startup);
       //period=pl.e.startup.period;

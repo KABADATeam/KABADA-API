@@ -8,7 +8,7 @@ namespace Kabada {
   partial class VFcosts {
     internal void read(BLontext context, Guid planId) {
       var ctx=context;
-      var pl=new BusinessPlansRepository(ctx).GetPlan(planId, context.userGuid);
+      var pl=new BusinessPlansRepository(ctx).getRO(planId); // GetPlan(planId, context.userGuid);
       is_fixed_variable_completed=pl.IsFixedVariableCompleted;
       
       var atri= new Plan_AttributeRepository(ctx).getCosts(planId);

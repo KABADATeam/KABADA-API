@@ -5,7 +5,7 @@ using System.Linq;
 namespace Kabada {
   partial class PlanMembers {
     internal void read(BLontext context, Guid planId, Guid uGuid) {
-      var pl=new BusinessPlansRepository(context).GetPlan(planId, uGuid); // to validate rights
+      var pl=new BusinessPlansRepository(context).getRO(planId); //GetPlan(planId, uGuid); // to validate rights
       if(pl==null)
         return;
       var mGuis=new SharedPlanRepository(context).members(planId);
