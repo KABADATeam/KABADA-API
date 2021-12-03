@@ -7,8 +7,11 @@ namespace Kabada {
     private PlanOverviewElement md(bool comp){ return me(comp, "TODO"); }
 
     internal void read(BLontext context, Guid planId, Guid uGuid) {
-      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      var pR=new BusinessPlansRepository(context);
+      var p=pR.getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
+     
+      //var t=pR.joinRO(planId);
 
     // nace;
     if(p.o.Activity!=null){

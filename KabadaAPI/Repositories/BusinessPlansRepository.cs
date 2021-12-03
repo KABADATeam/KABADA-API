@@ -54,14 +54,14 @@ namespace KabadaAPI
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
             return null;
         }
-        public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
-        {
-            var mp = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();            
-            if (mp!=null) return mp; 
-            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).Include(x => x.BusinessPlan.Country).Include(x => x.BusinessPlan.Language).Include(x => x.BusinessPlan.Activity).FirstOrDefault();
-            if (shp?.BusinessPlan != null) return shp.BusinessPlan;
-            throw new Exception("No plan found for update");
-        }
+        //public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
+        //{
+        //    var mp = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();            
+        //    if (mp!=null) return mp; 
+        //    var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x =>x.BusinessPlan).Include(x => x.BusinessPlan.Country).Include(x => x.BusinessPlan.Language).Include(x => x.BusinessPlan.Activity).FirstOrDefault();
+        //    if (shp?.BusinessPlan != null) return shp.BusinessPlan;
+        //    throw new Exception("No plan found for update");
+        //}
         public List<BusinessPlan> GetPlans(Guid userId)
         {
             var pp = daContext.BusinessPlans.Include(x => x.User);
@@ -199,28 +199,59 @@ namespace KabadaAPI
             daContext.SaveChanges();
       }
 
-    private Guid? countryId(BusinessPlan p){ return p.CountryId; } // p.Country==null?null:p.Country.Id; }
-    private Guid? activityId(BusinessPlan p){ return p.ActivityID; } // p.Activity==null?null:p.Activity.Id; }
-    private Guid? languageId(BusinessPlan p){ return p.LanguageId; } // p.Language==null?null:p.Language.Id; }
+    //private Guid? countryId(BusinessPlan p){ return p.CountryId; } // p.Country==null?null:p.Country.Id; }
+    //private Guid? activityId(BusinessPlan p){ return p.ActivityID; } // p.Activity==null?null:p.Activity.Id; }
+    //private Guid? languageId(BusinessPlan p){ return p.LanguageId; } // p.Language==null?null:p.Language.Id; }
+
+    //internal void updateLight(Guid userId, Kabada.BusinessPlan n) {
+    //  var o=GetPlanForUpdate(userId, n.Id);
+      
+      
+    //  if(o.CountryId!=n.CountryId)
+    //    if(n.CountryId!=null)
+    //      o.Country=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value));
+    //     else
+    //      o.Country=null;
+    //  if(o.ActivityID!=n.ActivityId)
+    //    o.Activity=daContext.Activities.FirstOrDefault(i => i.Id.Equals(n.ActivityId));
+    //  if(o.LanguageId!=n.LanguageId)
+    //    o.Language=daContext.Languages.FirstOrDefault(i => i.Id.Equals(n.LanguageId));
+    //  o.Img=n.Img;
+    //  o.Title=n.Title;
+
+    //  daContext.SaveChanges();
+    //  }
 
     internal void updateLight(Guid userId, Kabada.BusinessPlan n) {
-      var o=GetPlanForUpdate(userId, n.Id);
-
+      var o=getRW(n.Id);
       
-      if(countryId(o)!=n.CountryId)
+      if(o.CountryId!=n.CountryId){
         if(n.CountryId!=null)
-          o.Country=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value));
+          o.CountryId=daContext.Countries.FirstOrDefault(i => i.Id.Equals(n.CountryId.Value)).Id;
          else
-          o.Country=null;
-      if(activityId(o)!=n.ActivityId)
-        o.Activity=daContext.Activities.FirstOrDefault(i => i.Id.Equals(n.ActivityId));
-      if(languageId(o)!=n.LanguageId)
-        o.Language=daContext.Languages.FirstOrDefault(i => i.Id.Equals(n.LanguageId));
+          o.CountryId=null;
+        }
+
+      if(o.ActivityID!=n.ActivityId){
+        if(n.ActivityId!=null)
+          o.ActivityID=daContext.Activities.FirstOrDefault(i => i.Id.Equals(n.ActivityId)).Id;
+         else
+          o.ActivityID=null;
+         }
+
+      if(o.LanguageId!=n.LanguageId){
+        //if(n.LanguageId!=null)
+          o.LanguageId=daContext.Languages.FirstOrDefault(i => i.Id.Equals(n.LanguageId)).Id;
+         //else
+         // o.LanguageId=null;
+        }
+
       o.Img=n.Img;
       o.Title=n.Title;
 
       daContext.SaveChanges();
       }
+
         internal void ChangeBusinessInvestmentsCompleted(Guid planId, bool newValue, Guid userId)
         {
             BusinessPlan businessPlan =get(planId, userId); //  GetPlanForUpdate(userId, planId);
@@ -269,8 +300,6 @@ namespace KabadaAPI
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.BusinessPlan>(json);
       return o.Id;
       }
-
-
 
     protected override object unloadChildren(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
       var oo=(BusinessPlan)o;
