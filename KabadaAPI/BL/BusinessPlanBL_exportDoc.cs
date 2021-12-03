@@ -24,6 +24,7 @@ namespace KabadaAPI {
 
     protected List<string> _costs(List<CostBL> us){
       var l= us.Select(x=>x.texterId).Distinct().ToList();
+      l=textSupport.get(l).Where(x=>x.MasterId!=null).Select(x=>x.MasterId.Value).Distinct().ToList();
       return _tValues(l);
       }
 
