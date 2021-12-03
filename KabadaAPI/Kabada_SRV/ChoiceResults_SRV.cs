@@ -20,7 +20,7 @@ namespace Kabada {
     internal void perform(BLontext ctx) {
       var bRepo=new BusinessPlansRepository(ctx);
       //var plan=bRepo.GetPlanForUpdate(ctx.userGuid, plan_id); // to validate rights
-      var plan=new BusinessPlansRepository(ctx).validateRW(ctx.userGuid, plan_id);
+      var plan=new BusinessPlansRepository(ctx).getRW(plan_id);
       if(plan==null || plan.UserId!=ctx.userGuid)
         throw new Exception("not owner");
 

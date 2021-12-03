@@ -9,8 +9,7 @@ namespace Kabada {
       validate();
       using(var tr=new Transactioner(context)){
         var ctx=tr.Context;
-        //var p=new BusinessPlanBL(new BusinessPlansRepository(context, ctx).GetPlanForUpdate(context.userGuid, business_plan_id), true);
-        var p=new BusinessPlanBL(new BusinessPlansRepository(context, ctx).validateRW(context.userGuid, business_plan_id), true);
+        var p=new BusinessPlanBL(new BusinessPlansRepository(context, ctx).getRW(business_plan_id), true);
         var t=p.e.startup;
         t.set(this, true);
         //t.grace_period=grace_period;

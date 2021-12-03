@@ -354,18 +354,44 @@ namespace KabadaAPI
       return null;
       }
 
-    public BusinessPlan getRW(Guid planId, Guid userId) {
+    public BusinessPlan _getRW(Guid planId, Guid userId) {
       var plan=qID(planId).FirstOrDefault();
       if(plan==null || plan.UserId==userId || isShared(plan, userId))
         return plan;
       return null;
       }
 
-    public BusinessPlan validateRW(Guid userId, Guid planId) {
-      var r=getRW(planId, userId);
-      if(r==null)
-        throw new Exception("Access denied");
-      return r;
+    //public BusinessPlan getRW(Guid userId, Guid planId) {
+    //  var r=_getRW(planId, userId);
+    //  if(r==null)
+    //    throw new Exception("Access denied");
+    //  return r;
+    //  }
+
+    private bool validateAccessRights(BusinessPlan plan, Guid userId, bool acceptRO, bool quiet) {
+      if(plan!=null){
+        if(plan.UserId==userId)
+          return true;
+        if(acceptRO && plan.Public)
+          return true;
+        if(isShared(plan, userId))
+          return true;
+        }
+      if(quiet)
+        return false;
+      throw new Exception("Access denied");
       }
+
+    public BusinessPlan get(Guid planId, Guid userId, bool acceptRO=false, bool quiet=false) {
+      var plan=qID(planId).FirstOrDefault();
+      if(validateAccessRights(plan, userId, acceptRO, quiet))
+        return plan;
+      return null;
+      }
+
+    public BusinessPlan getRW(Guid planId) { return get(planId, blContext.userGuid); }
+
+    public BusinessPlan getRO(Guid planId) { return get(planId, blContext.userGuid, true); }
+
     }
 }

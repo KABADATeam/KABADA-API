@@ -24,8 +24,7 @@ namespace KabadaAPI {
 
     public static KeyResourceBL Make(Guid? id, Plan_AttributeRepository repo, Guid businessPlan, Guid texter, bool skipValidatePlanRights=false){
       if(skipValidatePlanRights==false)
-        //new BusinessPlansRepository(repo.blContext, repo.daContext).GetPlanForUpdate(repo.blContext.userGuid, businessPlan);
-        new BusinessPlansRepository(repo.blContext, repo.daContext).validateRW(repo.blContext.userGuid, businessPlan);
+        new BusinessPlansRepository(repo.blContext, repo.daContext).getRW(businessPlan);
       if(id==null)
         return new KeyResourceBL(businessPlan, texter);
        else

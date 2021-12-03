@@ -20,8 +20,7 @@ namespace Kabada {
       idi=prodi.Select(x=>x.BusinessPlanId).Distinct().ToList();
       if(idi.Count>1)
         throw new Exception("MUST belong to one plan...");
-      //new BusinessPlansRepository(context, paRepo.daContext).GetPlanForUpdate(context.userGuid, idi[0]); // to validate write rights
-      new BusinessPlansRepository(context, paRepo.daContext).validateRW(context.userGuid, idi[0]);
+      new BusinessPlansRepository(context, paRepo.daContext).getRW(idi[0]); // only to validate rights on plan
       var pd=prodi.Select(x=>new ProductBL(x, true)).ToDictionary(x=>x.id);
       foreach(var x in products){
         var pn=pd[x.product_id];

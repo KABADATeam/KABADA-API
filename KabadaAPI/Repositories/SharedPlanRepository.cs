@@ -33,7 +33,7 @@ namespace KabadaAPI {
 
     internal void deleteMember(Deleter resource, Guid uGuid) {
       //new BusinessPlansRepository(blContext).GetPlanForUpdate(uGuid, resource.master); // to validate modify rights
-      var plan=new BusinessPlansRepository(blContext).validateRW(uGuid, resource.master);
+      var plan=new BusinessPlansRepository(blContext).get(resource.master, uGuid); // only to validate rights on plan
       var o=q0.Where(x=>x.BusinessPlanId==resource.master && x.UserId==resource.part).FirstOrDefault();
       if(o==null)
         throw new Exception("missing member");

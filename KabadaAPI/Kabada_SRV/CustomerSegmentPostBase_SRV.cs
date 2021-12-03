@@ -50,8 +50,7 @@ namespace Kabada {
 
     public virtual Guid perform(BLontext context, short kind){
       var ctx=context;
-      //var plan=new BusinessPlansRepository(ctx).GetPlanForUpdate(ctx.userGuid, business_plan_id); // only to validate rights on plan
-      new BusinessPlansRepository(ctx).validateRW(ctx.userGuid, business_plan_id);
+      new BusinessPlansRepository(ctx).getRW(business_plan_id); // only to validate rights on plan
       using(var tr=new Transactioner(ctx)){
         var aRepo=new Plan_SpecificAttributesRepository(ctx, tr.Context);
         var o=CustomerSegmentBL.Make(kind, id, aRepo, business_plan_id);
