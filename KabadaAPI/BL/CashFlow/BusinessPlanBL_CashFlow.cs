@@ -51,8 +51,8 @@ namespace KabadaAPI {
     protected Plan_Cost varMaster;
 
     protected void loadTaxes(){
-      if(this._o.Country!=null){
-        var cID=this._o.Country.Id;
+      if(this._o.CountryId!=null){
+        var cID=this._o.CountryId.Value;
         var uaRepo=new UniversalAttributeRepository(textSupport.blContext, textSupport.daContext);
         var vat=uaRepo.getVAT(cID);
         if(vat!=null)

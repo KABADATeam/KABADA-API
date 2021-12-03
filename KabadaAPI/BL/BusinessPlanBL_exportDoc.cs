@@ -80,5 +80,28 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public List<ValueProp_doc> valProps { get {
+      var r=new List<ValueProp_doc>();
+      var ps=myProduct_s;
+      foreach(var p in ps){
+        var w=new ValueProp_doc();
+        w.title=p.e.title;
+        w.prodType=p.e.product_type.ToString();   //TODO
+        w.description=p.e.description;
+        w.priceLevel=p.e.price_level.ToString();  //TODO
+        w.addIncomeSource="TODO"; //comma separated string   //TODO
+                          
+        var t=p.e.product_features;
+        if(t!=null && t.Count>0)
+          w.productFeatures=textSupport.get(t).Select(x=>x.Value).ToList();
+
+        w.innovLevel=p.e.innovative_level.ToString();   //TODO
+        w.qualityLevel=p.e.quality_level.ToString();   //TODO
+        w.diffLevel=p.e.differentiation_level.ToString();   //TODO
+        r.Add(w);
+        }
+      return r;
+      }}
     }
   }
