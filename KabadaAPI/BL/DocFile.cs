@@ -18,6 +18,7 @@ using RunProperties = DocumentFormat.OpenXml.Wordprocessing.RunProperties;
 using ParagraphProperties = DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties;
 using DocumentFormat.OpenXml;
 using Break = DocumentFormat.OpenXml.Wordprocessing.Break;
+using System.Reflection;
 
 namespace Kabada {
   public partial class DocFile {
@@ -73,6 +74,8 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
                     fillObject(bms, bme, "kabada_valProps", plan.valProps);
+                    var temp = plan.custSeG.consumer;
+                    fillTable(body, "kabada_cs_consumerTable", temp);
                     //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
@@ -159,25 +162,34 @@ namespace Kabada {
         {
             return body.Descendants<Table>().Where(tbl => tbl.InnerXml.Contains(bookmark)).FirstOrDefault();
         }
-        //private void fillProductsTable(Body body)
-        //{
-        //    var products = new PlanProducts();
-        //    products.read(context, plan.Id);
-        //    var b_vp_table = getDocTable("kabada_valuePropositions", body);
-        //    //TableRow b_vp_row = b_vp_table.Elements<TableRow>().Last();
-        //    if (b_vp_table != null)
-        //    {
-        //        foreach (var p in products?.products)
-        //        {
-        //            b_vp_table.Append(new TableRow(new TableCell(new Paragraph(new Run(new Text(p.name))))
-        //                                          , new TableCell(new Paragraph(new Run(new Text(p.product_type))))
-        //                                          , new TableCell(new Paragraph(new Run(new Text(p.price))))
-        //                                          , new TableCell(new Paragraph(new Run(new Text(p.value))))
-        //                             ));
-        //        }
-        //    }
-        //}
-        private void fillTextFieldMultiLine(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<string> values)
+        private void fillTable(Body body, string name, List<ConsumerSegment_doc> list)
+        {            
+            var t = getDocTable(name, body);
+            fillTableBody(ref t, list);
+           
+        }
+        private void fillTableBody(ref Table t, List<ConsumerSegment_doc> list)
+        {
+            if (t != null)
+            {
+                foreach (var l in list)
+                {
+                    var tr = new TableRow();
+                    foreach (PropertyInfo prop in l.GetType().GetProperties())
+                    {
+                        tr.Append(new TableCell(new Paragraph(new Run(new Text(prop.GetValue(l).ToString())))));
+                    }
+                    t.Append(tr);
+                    //b_vp_table.Append(new TableRow(new TableCell(new Paragraph(new Run(new Text(p.name))))
+                    //                              , new TableCell(new Paragraph(new Run(new Text(p.product_type))))
+                    //                              , new TableCell(new Paragraph(new Run(new Text(p.price))))
+                    //                              , new TableCell(new Paragraph(new Run(new Text(p.value))))
+                    //                 ));
+                }
+            }
+        }
+
+            private void fillTextFieldMultiLine(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<string> values)
         {
             String value = null;
             var bm = new DocBookmark(context);
