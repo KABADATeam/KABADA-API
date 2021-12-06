@@ -182,5 +182,18 @@ namespace KabadaAPI {
         }
       return r;;
       }
+
+    public List<Channel_doc> channelS { get {
+      var r=new List<Channel_doc>();
+      var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
+      foreach(var c in us){
+        var w=new Channel_doc();
+        r.Add(w);
+        w.channelType=textSupport.getById(c.channel_type_id).Value;
+        w.distributionChannels=string.Join(",", _tValues(c.distribution_channels_id));
+        w.products=string.Join(",", myProduct_s.Where(x=>c.product_id.Contains(x.id)).Select(x=>x.e.title).ToList());
+        }
+      return r;
+      }}
     }
   }
