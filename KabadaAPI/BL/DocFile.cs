@@ -74,8 +74,8 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
                     fillObject(bms, bme, "kabada_valProps", plan.valProps);
-                    var temp = plan.custSeG.consumer;
-                    fillTable(body, "kabada_cs_consumerTable", temp);
+                    fillTable<ConsumerSegment_doc>(body, "kabada_cs_consumerTable", plan.custSeG.consumer);
+                    fillTable<BusinessSegment_doc>(body, "kabada_cs_businessTable", plan.custSeG.business);
                     //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
@@ -162,29 +162,29 @@ namespace Kabada {
         {
             return body.Descendants<Table>().Where(tbl => tbl.InnerXml.Contains(bookmark)).FirstOrDefault();
         }
-        private void fillTable(Body body, string name, List<ConsumerSegment_doc> list)
+        private void fillTable<T>(Body body, string name, List<T> list)
         {            
             var t = getDocTable(name, body);
-            fillTableBody(ref t, list);
+            fillTableBody<T>(t, list);
            
         }
-        private void fillTableBody(ref Table t, List<ConsumerSegment_doc> list)
+        private void fillTableBody<T>(Table t, List<T> list)
         {
             if (t != null)
             {
+                var tcPr = t.GetFirstChild<TableRow>().GetFirstChild<TableCell>().TableCellProperties;
                 foreach (var l in list)
                 {
                     var tr = new TableRow();
-                    foreach (PropertyInfo prop in l.GetType().GetProperties())
+                    foreach (FieldInfo prop in typeof(T).GetFields())
                     {
-                        tr.Append(new TableCell(new Paragraph(new Run(new Text(prop.GetValue(l).ToString())))));
+                        var tc = new TableCell();
+                        tc.Append(tcPr.Clone());
+                        tc.Append(new Paragraph(new Run(new Text(prop.GetValue(l).ToString()))));
+                        tr.Append(tc);
                     }
-                    t.Append(tr);
-                    //b_vp_table.Append(new TableRow(new TableCell(new Paragraph(new Run(new Text(p.name))))
-                    //                              , new TableCell(new Paragraph(new Run(new Text(p.product_type))))
-                    //                              , new TableCell(new Paragraph(new Run(new Text(p.price))))
-                    //                              , new TableCell(new Paragraph(new Run(new Text(p.value))))
-                    //                 ));
+                    if(tr.LastChild!=null)
+                        t.Append(tr);                   
                 }
             }
         }
