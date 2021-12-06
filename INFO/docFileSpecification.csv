@@ -14,3 +14,5 @@ kabada_bc_costVariable;costVariable;list of variable costs types for a plan
 kabada_bc_revenue;revenue;list of revenue stream types for a plan
 kabada_valProps;valProps;List<ValProp_doc>, see BL/ExportDoc/ValProp_doc.cs
 kabada_custSeg;custSeG;CustomrtSegment_doc, see BL/ExportDoc/CustomerSegment_doc.cs
+?kabada_channels;channelS;List<Channel_doc>, see BL/ExportDoc/Channel_doc.cs
+?kabada_CustRel;CustomerRelationship;CustRel_doc, see BL/ExportDoc/CustRel_doc.cs
