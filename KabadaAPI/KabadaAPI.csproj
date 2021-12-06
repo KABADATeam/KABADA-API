@@ -10,7 +10,6 @@
     <Compile Remove="Repositories\UsersPlansRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BL\ExportDoc\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>

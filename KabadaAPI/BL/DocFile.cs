@@ -44,6 +44,7 @@ namespace Kabada {
             var template = getTemplateFromFile(templateFile);
 
             plan = new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);     //BusinessPlanBL 
+            if (plan.o.Id == Guid.Empty) throw new Exception("Plan not found");
             plan.textSupport = new TexterRepository(context);
             setDefaultFileName();
             using (stream = new MemoryStream())
@@ -71,6 +72,7 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_costFixed", plan.costFixed);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
+                    fillObject(bms, bme, "kabada_valProps", plan.valProps);
                     //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
@@ -78,7 +80,60 @@ namespace Kabada {
                 }
                 stream.Close();
             }
-        }        
+        }
+
+        private void fillObject(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<ValueProp_doc> values)
+        {
+            String value = null;
+            var bm = new DocBookmark(context);
+            bm.find(bookmarkStarts, bookmarkEnds, name);
+
+            if (bm.bms != null && bm.bme != null)
+            {
+                var rp = removeBookmarkText(bm.bms, bm.bme);
+
+                if (values != null)
+                {
+                    OpenXmlElement elem = bm.bms.Parent;
+                    var insListElem = bm.bms.Parent;
+
+                    foreach (var val in values)
+                    {
+                        
+                        RunProperties rp_h = (RunProperties)rp.Clone();
+                        rp_h.Append(new Bold());
+                        var rp_n = (RunProperties)rp_h.Clone();
+                        rp_h.Append(new FontSize() { Val = "28" });
+                        var p = new Paragraph();
+                        elem.InsertAfterSelf(p);
+                        //elem = addText(elem, "", rp, null, true);
+                        elem = addText(p, val.title, rp_h, endBreak: true);
+                        elem = addText(elem, ValueProp_doc.t_prodType, rp_n);
+                        elem = addText(elem, val.prodType, rp,endBreak: true);
+                        elem = addText(elem, ValueProp_doc.t_priceLevel, rp_n);
+                        elem = addText(elem, val.priceLevel, rp, endBreak: true);
+                        elem = addText(elem, ValueProp_doc.t_addIncomeSource, rp_n);
+                        elem = addText(elem, val.addIncomeSource, rp,endBreak:true);
+                        elem = addText(elem, ValueProp_doc.t_productFeatures, rp_n);
+                        insListElem = p;
+                        elem = addList(insListElem, val.productFeatures);
+                        p = new Paragraph();
+                        elem.InsertAfterSelf(p);
+                        elem = addText(p, ValueProp_doc.t_summary, rp_n);
+                        var summary = new List<string>() { ValueProp_doc.t_price+val.priceLevel,
+                        ValueProp_doc.t_innov+val.innovLevel,
+                        ValueProp_doc.t_qual+val.qualityLevel,
+                        ValueProp_doc.t_diff+val.diffLevel};
+                        elem = addList(p, summary);
+                        p = new Paragraph();
+                        elem.InsertAfterSelf(p);
+                        elem = addText(p, "", rp, null, true);
+                    }
+                }
+                bm.bms.Remove();
+            }
+            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
+        }
 
         internal void SaveToDisk() {
             if (String.IsNullOrEmpty(fileName)) throw new Exception("No filename parameter");
@@ -180,26 +235,26 @@ namespace Kabada {
                     bm.bms.Remove();
                 }                   
             }
-        private void fillListField(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<string> values)
-        {
-            String value = null;
-            var bm = new DocBookmark(context);
-            bm.find(bookmarkStarts, bookmarkEnds, name);
+        //private void fillListField(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<string> values)
+        //{
+        //    String value = null;
+        //    var bm = new DocBookmark(context);
+        //    bm.find(bookmarkStarts, bookmarkEnds, name);
 
-            if (bm.bms != null && bm.bme != null)
-            {
-                var rp = removeBookmarkText(bm.bms, bm.bme);
-                if (values != null)
-                {
-                    var insertElement = bm.bms.Parent.PreviousSibling();
-                    addList(values, insertElement);
-                }
-                bm.bms.Remove();
+        //    if (bm.bms != null && bm.bme != null)
+        //    {
+        //        var rp = removeBookmarkText(bm.bms, bm.bme);
+        //        if (values != null)
+        //        {
+        //            var insertElement = bm.bms.Parent.PreviousSibling();
+        //            addList(insertElement, values);
+        //        }
+        //        bm.bms.Remove();
 
 
-            }
-            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
-        }
+        //    }
+        //    fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
+        //}
         private RunProperties removeBookmarkText(BookmarkStart bms, BookmarkEnd bme)
         {
             var rProp = bms.Parent.Descendants<Run>().Where(rp => rp.RunProperties != null).Select(rp => rp.RunProperties).FirstOrDefault();
@@ -218,17 +273,21 @@ namespace Kabada {
             }
             return rProp;
         }
-        private Run addText(OpenXmlElement elem, string value, RunProperties rp, string format = null, bool endBreak=false)
+        private Run addText(OpenXmlElement elem, string value, RunProperties rp, string format = null, bool endBreak=false, bool tabChar=false)
         {
            // var bmRp = removeBookmarkText(bms, bme);
             //if (rp == null) rp = bmRp;
             var nr = new Run();
+            if (tabChar) nr.Append(new TabChar());
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
             if (!String.IsNullOrEmpty(format)) value = String.Format(format, value);
             nr.Append(new Text(value));
             if (endBreak) nr.Append(new Break());
-            elem.InsertAfterSelf(nr);
+            if ((elem.Parent == null) || (elem.GetType() == typeof(Paragraph)))
+                elem.Append(nr); 
+            else
+                elem.InsertAfterSelf(nr);
             return nr;
         }
         private Run addText(OpenXmlElement elem, List<string> value, RunProperties rp, string format=null, bool endBreak=false)
@@ -244,7 +303,10 @@ namespace Kabada {
                 if(v!=value.Last()) nr.Append(new Break());               
             }
             if (endBreak) nr.Append(new Break());
-            elem.InsertAfterSelf(nr);
+            if ((elem.Parent == null) || (elem.GetType() == typeof(Paragraph)))
+                elem.Append(nr);
+            else
+                elem.InsertAfterSelf(nr);
             return nr;
         }
         
@@ -285,7 +347,7 @@ namespace Kabada {
                  .FirstOrDefault();
         }
         
-        private void addList(List<string> list, OpenXmlElement elem)
+        private OpenXmlElement addList(OpenXmlElement elem,List<string> list)
         {
             int i = 0;
             foreach (string l in list)
@@ -295,8 +357,8 @@ namespace Kabada {
                 Paragraph np = new Paragraph
                     (new ParagraphProperties(
                         new NumberingProperties(
-                           new NumberingLevelReference() { Val = 1 },
-                           new NumberingId() { Val = i })),
+                           new NumberingLevelReference() { Val = 0 },
+                           new NumberingId() { Val = 4 })),
                            new Run(
                             new RunProperties(),
                             new Text(l) { Space = SpaceProcessingModeValues.Preserve }));
@@ -305,7 +367,8 @@ namespace Kabada {
                 else
                     elem.Append(np);
                 elem = np;
-            }            
+            }
+            return elem;
         }
         public byte[] ToPdf()
         {
