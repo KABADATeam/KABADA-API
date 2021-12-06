@@ -9,14 +9,16 @@ using System.IdentityModel.Tokens.Jwt;
 namespace KabadaAPI {
     public static class Token
     {
-        public static string Generate(User user, IConfiguration config)
+        public static string Generate(UserJoin uJ, IConfiguration config)
         {
+           var user=uJ?.us;
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var claims = new[] {
                 new Claim(ClaimTypes.Name, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.Type.Title)
+                new Claim(ClaimTypes.Role, uJ.ut.Title)
             };
 
             var identity = new ClaimsIdentity(claims);

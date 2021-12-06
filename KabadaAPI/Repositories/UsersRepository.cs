@@ -9,6 +9,11 @@ namespace KabadaAPI {
       public UsersRepository(BLontext bCcontext, DAcontext dContext=null) : base(bCcontext, dContext) {}
 
       private DbSet<User> q0 { get { return daContext.Users; }}
+
+      public IQueryable<User> qID(Guid id) { return q0.Where(x=>x.Id==id); }
+
+      public IQueryable<User> qMail(string eMail) { return q0.Where(x=>x.Email==eMail); }
+ 
       public IQueryable<User> Q() { return q0.AsQueryable(); }
 
       public User AddUser(string email, string password)
@@ -33,7 +38,7 @@ namespace KabadaAPI {
                 EmailConfirmed = false,
                 PasswordHash = passwordHash,
                 Salt = salt,
-                Type = type,
+                TypeId = type.Id,
                 TwoFactorAuthEnabled = false
             };
 
@@ -47,16 +52,17 @@ namespace KabadaAPI {
             return user;
         }
 
-        public User AuthenticateUser(string email, string password)
-        {
-            var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
+        public UserJoin AuthenticateUser(string email, string password){
+          var uJ=join(qMail(email)).FirstOrDefault();
+          var user=uJ?.us;
+          //  var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
                 if (user.PasswordHash.Length > 0 && user.Salt.Length > 0)
                 {
                     string passwordHash = Cryptography.GetHash(password, user.Salt);
                     if (user.PasswordHash.Equals(passwordHash))
-                        return user;
+                        return uJ;
                     else
                         throw new Exception("Wrong email or password");
                 }
@@ -67,15 +73,16 @@ namespace KabadaAPI {
                 throw new Exception("Wrong email or password");
         }
 
-        public User AuthenticateGoogleUser(string email)
-        {
-            var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
+        public UserJoin AuthenticateGoogleUser(string email) {
+            var uJ=join(qMail(email)).FirstOrDefault();
+            var user=uJ?.us;
+            //var user = daContext.Users.Include(s => s.Type).Where(u => u.Email == email).FirstOrDefault();
             if (user != null)
             {
                 if (user.PasswordHash.Length > 0)
                     throw new Exception("Account under this email already exist");
                 else
-                    return user;
+                    return uJ;
             }
             else
             {
@@ -88,14 +95,14 @@ namespace KabadaAPI {
                     EmailConfirmed = false,
                     PasswordHash = "",
                     Salt = "",
-                    Type = type,
+                    TypeId = type.Id,
                     TwoFactorAuthEnabled = false
                 };
 
                 daContext.Users.Add(user);
                 daContext.SaveChanges();
 
-                return user;
+                return new UserJoin(){ us=user, ut=type };
             }
         }
 
@@ -232,5 +239,13 @@ namespace KabadaAPI {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<KabadaAPIdao.User>(json);
       return o.Id;
       }
+
+    public IQueryable<UserJoin> join(IQueryable<User> uQ){
+      var r=from u in uQ
+            join t in daContext.UserTypes  on u.TypeId  equals t.Id
+            select new UserJoin { us=u, ut=t };
+      return r;
+      }
+    public UserJoin join(Guid user){ return join(qID(user)).FirstOrDefault(); }
     }
 }

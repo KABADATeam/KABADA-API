@@ -34,9 +34,9 @@ namespace KabadaAPI.Controllers {
            var tokenString = Token.Generate(user, _config);
            return Ok(new {
                     access_token = tokenString,
-                    email = user.Email,
-                    name = user.Name,
-                    role = user.Type.Title
+                    email = user.us.Email,
+                    name = user.us.Name,
+                    role = user.ut.Title
                 });
         }
 
@@ -47,13 +47,14 @@ namespace KabadaAPI.Controllers {
         private async Task<IActionResult> _GoogleLogin([FromBody] UserViewModel userView){
           if(false==await isValidGoogleToken(userView.GoogleToken))
             throw new Exception("wrong google authentication");
-          var user = uRepo.AuthenticateGoogleUser(userView.Email);
-          var tokenString = Token.Generate(user, _config);
+          var uJ = uRepo.AuthenticateGoogleUser(userView.Email);
+          var tokenString = Token.Generate(uJ, _config);
+          var user=uJ?.us;
           return Ok(new {
                     access_token = tokenString,
                     email = user.Email,
                     name = user.Name,
-                    role = user.Type.Title
+                    role = uJ.ut.Title
                 });
         }
 

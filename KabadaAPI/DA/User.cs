@@ -29,7 +29,7 @@ namespace KabadaAPIdao
 
         [Required]
         public int TypeId { get; set; }
-        public UserType Type { get; set; }
+//        public UserType Type { get; set; }
 
         [Required]
         public bool TwoFactorAuthEnabled { get; set; } = false;
