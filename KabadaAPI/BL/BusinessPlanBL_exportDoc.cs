@@ -95,6 +95,7 @@ namespace KabadaAPI {
       var idi=ps.Select(x=>x.e.product_type).Distinct().ToList();
       idi.AddRange(ps.Select(x=>x.e.price_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
       idi.AddRange(ps.Select(x=>x.e.innovative_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
+      idi.AddRange(ps.Select(x=>x.e.quality_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
       idi.AddRange(ps.Select(x=>x.e.differentiation_level).Where(x=>!idi.Contains(x)).Distinct().ToList());
       foreach(var p in ps){
         if(p.e.selected_additional_income_sources==null)
