@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using static KabadaAPI.Plan_AttributeRepository;
+using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
   partial class BusinessPlanBL {
@@ -125,5 +126,59 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public CustomerSegment_doc custSeG { get {
+      var r=new CustomerSegment_doc();
+      r.business=custSeGbus();
+      r.consumer=custSeGcons();
+      return r;
+      }}
+
+    private Dictionary<Guid, string> namid(Dictionary<short, List<Guid>> full){
+      var idi=new List<Guid>();
+      foreach(var w in full.Values)
+        idi.AddRange(w);
+      return textSupport.get(idi).ToDictionary(x=>x.Id, x=>x.Value);
+      }
+
+    private List<ConsumerSegment_doc> custSeGcons() {
+      var r=new List<ConsumerSegment_doc>();
+      var us=gS(PlanAttributeKind.consumerSegment).Select(x=>new ConsumerSegmentBL(x)).ToList();
+      foreach(var x in us){
+        var w=new ConsumerSegment_doc(){ segment_name=x.e.segment_name };
+        var d=namid(x.e.minorAttributes);
+        w.age=namil(EnumTexterKind.age_group, x.e.minorAttributes, d);
+        w.education=namil(EnumTexterKind.education, x.e.minorAttributes, d);
+        w.gender=namil(EnumTexterKind.gender, x.e.minorAttributes, d);
+        w.geographic_location=namil(EnumTexterKind.geographic_location, x.e.minorAttributes, d);
+        w.income=namil(EnumTexterKind.income, x.e.minorAttributes, d);
+        r.Add(w);
+        }
+      return r;;
+      }
+
+    private string namil(EnumTexterKind kind, Dictionary<short, List<Guid>> minorAttributes, Dictionary<Guid, string> d) {
+      var k=(short)kind;
+      List<Guid> idi=null;
+      if(minorAttributes.TryGetValue(k, out idi)){
+        var sl=idi.Select(x=>d[x]).ToList();
+        return string.Join(",", sl);
+        }
+      return null;
+      }
+
+    private List<BusinessSegment_doc> custSeGbus() {
+      var r=new List<BusinessSegment_doc>();
+      var us=gS(PlanAttributeKind.businessSegment).Select(x=>new ConsumerSegmentBL(x)).ToList();
+      foreach(var x in us){
+        var w=new BusinessSegment_doc(){ segment_name=x.e.segment_name };
+        var d=namid(x.e.minorAttributes);
+        w.business_type=namil(EnumTexterKind.industry, x.e.minorAttributes, d);
+        w.company_size=namil(EnumTexterKind.company_size, x.e.minorAttributes, d);
+        w.geographic_location=namil(EnumTexterKind.geographic_location, x.e.minorAttributes, d);
+        r.Add(w);
+        }
+      return r;;
+      }
     }
   }
