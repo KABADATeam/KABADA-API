@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace KabadaAPI {
   public class TooltipLoader : CsvLoader {
-    public Dictionary<long, Tooltip> fullSet;
+    public Dictionary<string, Tooltip> fullSet;
 
     public List<Tooltip> load(string fileWithFullPath){
-      fullSet=new Dictionary<long, Tooltip>();
+      fullSet=new Dictionary<string, Tooltip>();
       loadInternal(fileWithFullPath);
       if(fullSet.Count<1)
         error("No valid lines loaded.");
@@ -19,7 +19,7 @@ namespace KabadaAPI {
 
     protected override object storeRow() {
       var o=new Tooltip();
-      o.code=yMlong("Code");
+      o.code=yMstring("Code");
       o.tooltip=yMstring("Tooltip");
       fullSet[o.code]=o;
       return null;

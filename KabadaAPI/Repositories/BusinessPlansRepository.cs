@@ -186,10 +186,10 @@ namespace KabadaAPI
 
     public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
       var r=new BusinessPlanBL(GetPlan(planId, userId));
-      r.a=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone())
-           .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
-      r.s=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone())
-           .GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      var w1=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
+      r.a=w1.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      var w2=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
+      r.s=w2.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       return r;
       }
 

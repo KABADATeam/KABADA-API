@@ -11,7 +11,7 @@ namespace KabadaAPI {
 
     internal List<Tooltip> load() {
       var l=new TooltipLoader(){ infoReporter=log, errorReporter=err};
-      l.fullSet=new Dictionary<long, Tooltip>();
+      l.fullSet=new Dictionary<string, Tooltip>();
       var f=Path.Combine(new BusinessPlansRepository(blContext).iniPath, "Tooltips.csv");
       return new TooltipLoader(){ infoReporter=log, errorReporter=err}.load(f);
       }

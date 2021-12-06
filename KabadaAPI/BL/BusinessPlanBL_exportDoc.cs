@@ -39,7 +39,8 @@ namespace KabadaAPI {
       } }
 
     public List<string> custRel { get {
-      var t=gA(PlanAttributeKind.relationshipActivity1);
+      var t=new List<KabadaAPIdao.Plan_Attribute>();
+      t.AddRange(gA(PlanAttributeKind.relationshipActivity1));
       t.AddRange(gA(PlanAttributeKind.relationshipActivity2));
       t.AddRange(gA(PlanAttributeKind.relationshipActivity3));
 
@@ -68,7 +69,8 @@ namespace KabadaAPI {
       }}
 
     public List<string> custSeg { get {
-      var t=gS(PlanAttributeKind.businessSegment);
+      var t=new List<KabadaAPIdao.Plan_SpecificAttribute>();
+      t.AddRange(gS(PlanAttributeKind.businessSegment));
       t.AddRange(gS(PlanAttributeKind.consumerSegment));
       t.AddRange(gS(PlanAttributeKind.ngoSegment));
 
@@ -169,7 +171,7 @@ namespace KabadaAPI {
 
     private List<BusinessSegment_doc> custSeGbus() {
       var r=new List<BusinessSegment_doc>();
-      var us=gS(PlanAttributeKind.businessSegment).Select(x=>new ConsumerSegmentBL(x)).ToList();
+      var us=gS(PlanAttributeKind.businessSegment).Select(x=>new BusinessSegmentBL(x)).ToList();
       foreach(var x in us){
         var w=new BusinessSegment_doc(){ segment_name=x.e.segment_name };
         var d=namid(x.e.minorAttributes);
