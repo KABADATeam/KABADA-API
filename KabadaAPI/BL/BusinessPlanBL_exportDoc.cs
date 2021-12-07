@@ -219,13 +219,13 @@ namespace KabadaAPI {
       return r;
       }
 
-    public List<keyRes_doc> keyResources { get {
-      var r=new List<keyRes_doc>();
+    public List<KeyRes_doc> keyResources { get {
+      var r=new List<KeyRes_doc>();
 
       var types=textSupport.getKeyResourceTypes(null).ToDictionary(x=>x.Id);     
 
       foreach(var o in myKeyResource_s){
-        var w=new keyRes_doc(){ name=o.e.name };
+        var w=new KeyRes_doc(){ name=o.e.name };
         w.category=types[o.texterId].Value; //
         w.ownership=KeyResourceElementBL.selectionValue(o.e.selections);
         w.frequecy=KeyResourceElementBL.selectionValue(o.e.selections, KeyResourceBL.Frequency);
