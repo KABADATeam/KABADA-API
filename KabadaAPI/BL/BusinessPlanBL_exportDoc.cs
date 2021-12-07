@@ -195,5 +195,27 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public CustRel_doc CustomerRelationship { get {
+      var r=new CustRel_doc();
+      var acti=textSupport.getCustomerRelationshipActions().ToDictionary(x=>x.Id);
+      r.convCust=makeCustRel(acti,  PlanAttributeKind.relationshipActivity3);
+      r.getCust=makeCustRel(acti,  PlanAttributeKind.relationshipActivity1);
+      r.keepCust=makeCustRel(acti,  PlanAttributeKind.relationshipActivity2);
+
+      return r;
+      }}
+
+    private List<CustRelElement_doc> makeCustRel(Dictionary<Guid, KabadaAPIdao.Texter> acti, PlanAttributeKind kind) {
+      var r=new List<CustRelElement_doc>();
+      var us=gA(kind);
+      foreach(var a in us){
+        var w=new CustRelElement_doc(){ action=acti[a.TexterId].Value };
+        var channels=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
+        w.channel=string.Join(",", channels);
+        r.Add(w);
+        }
+      return r;
+      }
     }
   }
