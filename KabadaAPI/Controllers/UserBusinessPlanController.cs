@@ -91,7 +91,7 @@ namespace KabadaAPI.Controllers {
                     {
                         Id = p.Id,
                         name = p.Title,
-                        industry = p.Activity?.Industry.Title,
+                        industry = pj.ind?.Title,
                         country = pj.cn?.Title,
                         dateCreated = p.Created.Date,
                         owner = String.Format("{0} {1}", pj.us?.Name, pj.us?.Surname),

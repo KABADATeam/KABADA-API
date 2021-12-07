@@ -8,6 +8,8 @@ namespace KabadaAPI {
      public KabadaAPIdao.Language Language { get; set; }
      public KabadaAPIdao.Country Country { get; set; }
      public KabadaAPIdao.User User { get; set; }
+     public KabadaAPIdao.Activity Activity { get; set; }
+     public KabadaAPIdao.Industry Industry { get; set; }
 
 
     public BPextended(){}
@@ -52,6 +54,7 @@ namespace KabadaAPI {
       Activity=joined.ac;
       Language=joined.lng;
       User=joined.us;
+      Industry=joined.ind;
       }
     }
   }
