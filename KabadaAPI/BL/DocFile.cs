@@ -74,8 +74,13 @@ namespace Kabada {
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
                     fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
                     fillObject(bms, bme, "kabada_valProps", plan.valProps);
-                    fillTable<ConsumerSegment_doc>(body, "kabada_cs_consumerTable", plan.custSeG.consumer);
-                    fillTable<BusinessSegment_doc>(body, "kabada_cs_businessTable", plan.custSeG.business);
+                    fillTable<ConsumerSegment_doc>(bms, bme, body, "kabada_cs_consumerTable", plan.custSeG.consumer);
+                    fillTable<BusinessSegment_doc>(bms, bme, body, "kabada_cs_businessTable", plan.custSeG.business);
+                    fillTable<Channel_doc>(bms, bme, body, "kabada_channels", plan.channelS);
+                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_getCust", plan.CustomerRelationship.getCust);
+                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_keepCust", plan.CustomerRelationship.keepCust);
+                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_convCust", plan.CustomerRelationship.convCust);
+
                     //
                     //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
                     //fillProductsTable(body);
@@ -162,11 +167,19 @@ namespace Kabada {
         {
             return body.Descendants<Table>().Where(tbl => tbl.InnerXml.Contains(bookmark)).FirstOrDefault();
         }
-        private void fillTable<T>(Body body, string name, List<T> list)
+        private void removeTableBookmark(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name)
+        {
+            var bm = new DocBookmark(context);
+            bm.find(bookmarkStarts, bookmarkEnds, name);
+
+            if (bm.bms != null && bm.bme != null)
+                bm.bms.Remove();
+        }
+        private void fillTable<T>(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, Body body, string name, List<T> list)
         {            
             var t = getDocTable(name, body);
             fillTableBody<T>(t, list);
-           
+            removeTableBookmark(bookmarkStarts, bookmarkEnds, name);
         }
         private void fillTableBody<T>(Table t, List<T> list)
         {
@@ -179,8 +192,13 @@ namespace Kabada {
                     foreach (FieldInfo prop in typeof(T).GetFields())
                     {
                         var tc = new TableCell();
-                        tc.Append(tcPr.Clone());
-                        tc.Append(new Paragraph(new Run(new Text(prop.GetValue(l)?.ToString()))));
+                        var r = new Run(new Text(prop.GetValue(l)?.ToString()));
+                        var rPr = new RunProperties();
+                        rPr.Append(new RunFonts { Ascii = "Arial", HighAnsi="Arial" });
+                        rPr.Append(new FontSize { Val = new StringValue("21") });        
+                        r.PrependChild(rPr);
+                        // tc.Append(tcPr.Clone());
+                        tc.Append(new Paragraph(r));
                         tr.Append(tc);
                     }
                     if(tr.LastChild!=null)
@@ -294,7 +312,7 @@ namespace Kabada {
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
             if (!String.IsNullOrEmpty(format)) value = String.Format(format, value);
-            nr.Append(new Text(value));
+            nr.Append(new Text(){Text = value, Space = SpaceProcessingModeValues.Preserve });
             if (endBreak) nr.Append(new Break());
             if ((elem.Parent == null) || (elem.GetType() == typeof(Paragraph)))
                 elem.Append(nr); 
