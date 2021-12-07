@@ -236,6 +236,28 @@ namespace KabadaAPI {
 
     public List<KeyValuePair<string, List<KeyAct_doc>>> keyActivities { get {
       var r=new List<KeyValuePair<string, List<KeyAct_doc>>>();
+
+      var prodi=myProduct_s;
+      if(prodi.Count>0){
+        var idi=prodi.Select(x=>(Guid?)x.id).ToList();
+        var d=prodi.ToDictionary(x=>x.id);
+        var txi=textSupport.getActivitiesTypesQ().ToDictionary(x=>x.Id);
+        var acti=new UniversalAttributeRepository(textSupport.blContext).byMasters(idi).Select(x=>new KeyActivityBL(x)).ToList();
+
+        foreach(var p in prodi){
+          var macti=acti.Where(x=>x.masterId==p.id);
+          var dacti=new List<KeyAct_doc>();
+          foreach(var a in macti){
+            var su=txi[a.categoryId.Value];
+            var ty=txi[su.MasterId.Value];
+            var an=new KeyAct_doc(){  desc=a.e.description, subType=su.Value, type=ty.Value };
+            dacti.Add(an);
+            }
+          var w=new KeyValuePair<string, List<KeyAct_doc>>(p.e.description, dacti);
+          r.Add(w);
+          }
+        }
+
       return r;
       }}
     }
