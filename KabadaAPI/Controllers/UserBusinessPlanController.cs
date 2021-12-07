@@ -333,9 +333,7 @@ namespace KabadaAPI.Controllers {
     public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
     private IActionResult _DocFile(Guid planId)
     {
-        _logger.LogInformation($"-- DocFile for plan {planId}");      
-            //context.userGuid = Guid.Parse("{BCD98AB9-3FA8-47CE-FA8E-08D9B6809FA6}");                
-            //create doc file
+        _logger.LogInformation($"-- DocFile for plan {planId}");                  
             var docFile = new DocFile(context, planId);    
             return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);     
     }
@@ -358,14 +356,9 @@ namespace KabadaAPI.Controllers {
         public IActionResult PdfFile(Guid BusinessPlan) { return prun<Guid>(_PdfFile, BusinessPlan); }
         private IActionResult _PdfFile(Guid planId)
         {
-            _logger.LogInformation($"-- PdfFile for plan {planId}");            
-            context.userGuid = Guid.Parse("{6190FBBF-0370-4AFA-E1ED-08D9B3CDB5C5}");
-            var p = new BusinessPlanBL();
-            p.textSupport = new TexterRepository(context);
-            //create doc file
+            _logger.LogInformation($"-- PdfFile for plan {planId}");                                   
             var docFile = new DocFile(context, planId);
             var temp = docFile.ToPdf();            
-            //return Ok();
             return File(temp, "application/pdf", Path.ChangeExtension(docFile.fileName, ".pdf"));           
         }
     }

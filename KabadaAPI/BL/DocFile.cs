@@ -180,7 +180,7 @@ namespace Kabada {
                     {
                         var tc = new TableCell();
                         tc.Append(tcPr.Clone());
-                        tc.Append(new Paragraph(new Run(new Text(prop.GetValue(l).ToString()))));
+                        tc.Append(new Paragraph(new Run(new Text(prop.GetValue(l)?.ToString()))));
                         tr.Append(tc);
                     }
                     if(tr.LastChild!=null)
