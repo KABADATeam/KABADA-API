@@ -11,6 +11,8 @@ namespace KabadaAPI {
     private KabadaAPIdao.BusinessPlan _o;
     public  KabadaAPIdao.BusinessPlan o { get { return _o; } set { _o=value; }}
 
+    private BPjoin _j;
+
     private BusinessPlanElementBL _e;
     public BusinessPlanElementBL e {
       get {
@@ -35,7 +37,7 @@ namespace KabadaAPI {
 
     public TexterRepository textSupport;
 
-    public BusinessPlanBL(KabadaAPIdao.BusinessPlan seed=null, bool forUpdate=false) {
+    public BusinessPlanBL(KabadaAPIdao.BusinessPlan seed, bool forUpdate=false) {
       if(seed==null)
         _o=new KabadaAPIdao.BusinessPlan();
        else {
@@ -43,6 +45,20 @@ namespace KabadaAPI {
           o=seed;
          else
           o=seed.clone();
+        }
+      a=new Dictionary<short, List<Plan_Attribute>>();
+      s=new Dictionary<short, List<Plan_SpecificAttribute>>();
+      }
+
+    public BusinessPlanBL(BPjoin seed=null, bool forUpdate=false) {
+      if(seed==null){
+        _j=new BPjoin(){ bp=new KabadaAPIdao.BusinessPlan()};
+        }
+       else {
+        if(forUpdate)
+          _j=seed;
+         else
+          _j=seed.clone();
         }
       a=new Dictionary<short, List<Plan_Attribute>>();
       s=new Dictionary<short, List<Plan_SpecificAttribute>>();

@@ -18,5 +18,7 @@ namespace KabadaAPIdao {
         public virtual Industry Industry { get; set; }
 
         public Guid? ContainerActivityId { get; set; }
+
+        public Activity clone(){ return (Activity)this.MemberwiseClone(); }
     }
 }

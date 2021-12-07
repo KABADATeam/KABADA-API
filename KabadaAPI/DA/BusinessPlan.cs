@@ -21,7 +21,7 @@ namespace KabadaAPIdao
         public string Title { get; set; }
 
         public Guid? LanguageId { get; set; }
-        public Language Language { get; set; }
+//        public Language Language { get; set; }
 
         // [vp]
         public Guid? Img { get; set; }

@@ -46,11 +46,15 @@ namespace KabadaAPI
         //}
         public BusinessPlan GetPlan(Guid planId, Guid userId) {
             //check if public or mine
-             var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && (i.User.Id.Equals(userId)|| i.Public == true)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity.Industry).FirstOrDefault();
+             var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && (i.User.Id.Equals(userId)|| i.Public == true)).Include(x => x.User).Include(x => x.Country)
+                 //.Include(x => x.Language)
+                 .Include(x => x.Activity.Industry).FirstOrDefault();
             if (plan!=null)
             return plan;
             //check if shared with me
-            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).Include(x => x.BusinessPlan.Country).Include(x => x.BusinessPlan.Language).Include(x => x.BusinessPlan.Activity).FirstOrDefault();
+            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).Include(x => x.BusinessPlan.Country)
+                   //.Include(x => x.BusinessPlan.Language)
+                   .Include(x => x.BusinessPlan.Activity).FirstOrDefault();
             if (shp?.BusinessPlan != null) return shp.BusinessPlan;
             return null;
         }
@@ -86,7 +90,7 @@ namespace KabadaAPI
                 Title = title,
                 Activity = activity,
                 Country = country,
-                Language = language,
+                LanguageId = language.Id,
                 Img = imgId,
                 User = user,
                 Created = DateTime.Now
@@ -97,7 +101,7 @@ namespace KabadaAPI
         }
         public void Remove(Guid userId, Guid planId)
         {
-            BusinessPlan businessPlan = GetPlan(planId, userId);// daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
+            var businessPlan = get(planId, userId); // GetPlan(planId, userId);// daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));
             daContext.BusinessPlans.Remove(businessPlan);
             daContext.SaveChanges();
             // return plan;
@@ -179,10 +183,10 @@ namespace KabadaAPI
         }
       }
 
-    public BusinessPlanBL getPlanBL(Guid planId, Guid userId){
-      //var t=joinRO(planId);
-      return new BusinessPlanBL(GetPlan(planId, userId));
-      }
+    //public BusinessPlanBL getPlanBL(Guid planId, Guid userId){
+    //  //var t=joinRO(planId);
+    //  return new BusinessPlanBL(GetPlan(planId, userId));
+    //  }
 
     public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
       var r=new BusinessPlanBL(GetPlan(planId, userId));
@@ -316,12 +320,14 @@ namespace KabadaAPI
       unloadHim<LanguagesRepository>(p.o.LanguageId, us, skipSet, unloadedSet);
       unloadHim<IndustryActivityRepository>(p.o.ActivityID, us, skipSet, unloadedSet);
 
-      oo.Activity=null; oo.Country=null; oo.Language=null; oo.User=null;
+      oo.Activity=null; oo.Country=null;
+      //oo.Language=null;
+      oo.User=null;
 
       return p;
       }
 
-    protected override object byIdU(Guid myId) { return GetPlan(myId, blContext.userGuid); }
+    protected override object byIdU(Guid myId) { return getRO(myId); } // GetPlan(myId, blContext.userGuid); }
 
     protected override void unloadFollowers(object o, Kabada.UnloadSet us, Dictionary<Guid, bool> skipSet, Dictionary<Guid, bool> unloadedSet) {
       var p=(BusinessPlanBL)o;
@@ -424,5 +430,7 @@ namespace KabadaAPI
       }
 
     public BPjoin joinRO(Guid planId) { return join(planId, blContext.userGuid, true); }
+
+    public BPextended getROe(Guid planId) { return new BPextended(joinRO(planId)); }
     }
 }

@@ -13,5 +13,6 @@ namespace KabadaAPIdao
 
         [Required]
         public string ShortCode { get; set; }
+        public Country clone(){ return (Country)this.MemberwiseClone(); }
     }
 }

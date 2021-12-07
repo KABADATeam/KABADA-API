@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace KabadaAPI {
   public class BPextended : KabadaAPIdao.BusinessPlan {
+     public KabadaAPIdao.Language Language { get; set; }
+
+
     public BPextended(){}
     public BPextended(KabadaAPIdao.BusinessPlan me){ set(me); }
     public BPextended(BPjoin me){ set(me); }

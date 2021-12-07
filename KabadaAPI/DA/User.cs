@@ -57,5 +57,6 @@ namespace KabadaAPIdao
         public string PasswordResetString { get; set; }
 
         //public virtual List<BusinessPlan> BusinessPlans { get; set; }
+        public User clone(){ return (User)this.MemberwiseClone(); }
     }
 }

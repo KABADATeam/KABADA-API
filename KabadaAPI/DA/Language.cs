@@ -11,5 +11,6 @@ namespace KabadaAPIdao {
 
         [Required]
         public string Title { get; set; }
+        public Language clone(){ return (Language)this.MemberwiseClone(); }
     }
   }

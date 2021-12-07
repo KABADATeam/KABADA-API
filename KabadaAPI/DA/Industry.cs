@@ -17,6 +17,7 @@ namespace KabadaAPIdao {
         public string Language { get; set; }
 
     //    public virtual List<Activity> Activities { get; set; }
-
+        public Industry clone(){ return (Industry)this.MemberwiseClone(); }
+ 
     }
 }
