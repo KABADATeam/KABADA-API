@@ -233,5 +233,10 @@ namespace KabadaAPI {
         }
       return r;
       }}
+
+    public List<KeyValuePair<string, List<KeyAct_doc>>> keyActivities { get {
+      var r=new List<KeyValuePair<string, List<KeyAct_doc>>>();
+      return r;
+      }}
     }
   }
