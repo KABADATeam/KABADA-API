@@ -115,7 +115,7 @@ namespace KabadaAPI {
         w.priceLevel=d(p.e.price_level);
 
         if(p.e.selected_additional_income_sources!=null)
-           w.addIncomeSource=string.Join(",", p.e.selected_additional_income_sources.Select(x=>d(x)).ToList());
+           w.addIncomeSource=string.Join(", ", p.e.selected_additional_income_sources.Select(x=>d(x)).ToList());
 
         var t=p.e.product_features;
         if(t!=null && t.Count>0)
@@ -164,7 +164,7 @@ namespace KabadaAPI {
       List<Guid> idi=null;
       if(minorAttributes.TryGetValue(k, out idi)){
         var sl=idi.Select(x=>d[x]).ToList();
-        return string.Join(",", sl);
+        return string.Join(", ", sl);
         }
       return null;
       }
@@ -191,8 +191,8 @@ namespace KabadaAPI {
         r.Add(w);
         w.channelType=textSupport.getById(c.channel_type_id).Value;
         var t=_tValues(c.distribution_channels_id);
-        w.distributionChannels=t.Count<1?"-":string.Join(",", t);
-        w.products=string.Join(",", myProduct_s.Where(x=>c.product_id.Contains(x.id)).Select(x=>x.e.title).ToList());
+        w.distributionChannels=t.Count<1?"-":string.Join(", ", t);
+        w.products=string.Join(", ", myProduct_s.Where(x=>c.product_id.Contains(x.id)).Select(x=>x.e.title).ToList());
         }
       return r;
       }}
@@ -213,7 +213,7 @@ namespace KabadaAPI {
       foreach(var a in us){
         var w=new CustRelElement_doc(){ action=acti[a.TexterId].Value };
         var channels=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
-        w.channel=string.Join(",", channels);
+        w.channel=string.Join(", ", channels);
         r.Add(w);
         }
       return r;
