@@ -218,5 +218,20 @@ namespace KabadaAPI {
         }
       return r;
       }
+
+    public List<keyRes_doc> keyResources { get {
+      var r=new List<keyRes_doc>();
+
+      var types=textSupport.getKeyResourceTypes(null).ToDictionary(x=>x.Id);     
+
+      foreach(var o in myKeyResource_s){
+        var w=new keyRes_doc(){ name=o.e.name };
+        w.category=types[o.texterId].Value; //
+        w.ownership=KeyResourceElementBL.selectionValue(o.e.selections);
+        w.frequecy=KeyResourceElementBL.selectionValue(o.e.selections, KeyResourceBL.Frequency);
+        r.Add(w);
+        }
+      return r;
+      }}
     }
   }
