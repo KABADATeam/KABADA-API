@@ -22,13 +22,18 @@ namespace KabadaAPI
         //    .Include(x => x.Activity.Industry);
         //    }
 
-        public List<BusinessPlan> GetPublicPlans()
-        {
-            var plans = daContext.BusinessPlans.Where(x => x.Public == true)
-                        .Include(x => x.Country).Include(x => x.User)
-                        .Include(x => x.Activity.Industry);
-            return plans.OrderBy(x => x.Title).ToList();           
-        }
+        //public List<BusinessPlan> GetPublicPlans()
+        //{
+        //    var plans = daContext.BusinessPlans.Where(x => x.Public == true)
+        //                .Include(x => x.Country).Include(x => x.User)
+        //                .Include(x => x.Activity.Industry);
+        //    return plans.OrderBy(x => x.Title).ToList();           
+        //}
+        public List<BPjoin> GetPublicPlans(){
+          var plans=joinQ(q0.Where(x => x.Public == true));
+          return plans.OrderBy(x => x.bp.Title).ToList();           
+          }
+
         public void ChangeSwotCompleted(Guid planId, bool newValue, Guid userId)
         {
             BusinessPlan businessPlan = get(planId, userId); //   GetPlanForUpdate(userId,planId);
@@ -89,7 +94,7 @@ namespace KabadaAPI
             {
                 Title = title,
                 Activity = activity,
-                Country = country,
+                CountryId = country.Id,
                 LanguageId = language.Id,
                 Img = imgId,
                 User = user,
@@ -320,7 +325,8 @@ namespace KabadaAPI
       unloadHim<LanguagesRepository>(p.o.LanguageId, us, skipSet, unloadedSet);
       unloadHim<IndustryActivityRepository>(p.o.ActivityID, us, skipSet, unloadedSet);
 
-      oo.Activity=null; oo.Country=null;
+      oo.Activity=null;
+      //oo.Country=null;
       //oo.Language=null;
       oo.User=null;
 

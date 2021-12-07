@@ -85,14 +85,14 @@ namespace KabadaAPI.Controllers {
                 BusinessPlansRepository repository = new BusinessPlansRepository(context);
                 var plans = repository.GetPublicPlans();
                 var publicPlans = new PublicBusinessPlans();
-                foreach (var p in plans)
-                {
+                foreach (var pj in plans) {
+                  var p=pj.bp;
                     publicPlans.BusinessPlan.Add(new PublicBusinessPlan
                     {
                         Id = p.Id,
                         name = p.Title,
                         industry = p.Activity?.Industry.Title,
-                        country = p.Country?.Title,
+                        country = pj.cn?.Title,
                         dateCreated = p.Created.Date,
                         owner = String.Format("{0} {1}", p.User?.Name, p.User?.Surname),
                         ownerAvatar = p.User?.UserPhoto

@@ -12,7 +12,7 @@ namespace KabadaAPIdao
         public Guid Id { get; set; }
 
         public Guid? CountryId { get; set; }
-        public Country Country { get; set; }
+//        public Country Country { get; set; }
 
         public Guid? ActivityID { get; set; }
         public Activity Activity { get; set; }
