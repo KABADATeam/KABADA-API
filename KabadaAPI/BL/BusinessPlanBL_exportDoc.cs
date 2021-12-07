@@ -190,7 +190,8 @@ namespace KabadaAPI {
         var w=new Channel_doc();
         r.Add(w);
         w.channelType=textSupport.getById(c.channel_type_id).Value;
-        w.distributionChannels=string.Join(",", _tValues(c.distribution_channels_id));
+        var t=_tValues(c.distribution_channels_id);
+        w.distributionChannels=t.Count<1?"-":string.Join(",", t);
         w.products=string.Join(",", myProduct_s.Where(x=>c.product_id.Contains(x.id)).Select(x=>x.e.title).ToList());
         }
       return r;

@@ -102,6 +102,7 @@ namespace KabadaAPI
             };
 
             daContext.BusinessPlans.Add(plan);
+            daContext.SaveChanges();
             return plan;
         }
         public void Remove(Guid userId, Guid planId)
@@ -194,7 +195,7 @@ namespace KabadaAPI
     //  }
 
     public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
-      var r=new BusinessPlanBL(join(planId, userId)); //      GetPlan(planId, userId));
+      var r=new BusinessPlanBL(join(planId, userId, true)); //      GetPlan(planId, userId));
       var w1=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
       r.a=w1.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       var w2=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
