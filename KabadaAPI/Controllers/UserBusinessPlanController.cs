@@ -37,7 +37,7 @@ namespace KabadaAPI.Controllers {
                         dateCreated = p.Created.Date,
                         Public = p.Public,
                         planImage = p.Img,                      
-                        SharedWithMe = p.User.Id!=userId?true:false
+                        SharedWithMe = p.UserId!=userId?true:false
                     }) ;
                 }
                 _logger.LogInformation($"-- List of plans for user={userId}: count={privatePlans.BusinessPlan.Count}");
@@ -94,8 +94,8 @@ namespace KabadaAPI.Controllers {
                         industry = p.Activity?.Industry.Title,
                         country = pj.cn?.Title,
                         dateCreated = p.Created.Date,
-                        owner = String.Format("{0} {1}", p.User?.Name, p.User?.Surname),
-                        ownerAvatar = p.User?.UserPhoto
+                        owner = String.Format("{0} {1}", pj.us?.Name, pj.us?.Surname),
+                        ownerAvatar = pj.us?.UserPhoto
                     }); 
                 }
                 return new PublicBusinessPlans_ret() { publicBusinessPlans = publicPlans };//repository.GetPublicPlans();

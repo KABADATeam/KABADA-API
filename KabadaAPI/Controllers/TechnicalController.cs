@@ -63,13 +63,13 @@ namespace KabadaAPI.Controllers {
     public ActionResult<UnloadSet> test(Guid BusinessPlan) { return Prun<Guid, UnloadSet>(_test, BusinessPlan); }
     private ActionResult<UnloadSet> _test(Guid iddddd) {
       UnloadSet r=null;
-      var br=new BusinessPlansRepository(context);
+//      var br=new BusinessPlansRepository(context);
 
-//      br.clone(iddddd, true);
+////      br.clone(iddddd, true);
 
-      var pubi = br.GetPlans(context.userGuid).Select(x => x.Id).ToList();
-      foreach (var planId in pubi)
-        br.clone(planId, true);
+//      var pubi = br.GetPlans(context.userGuid).Select(x => x.Id).ToList();
+//      foreach (var planId in pubi)
+//        br.clone(planId, true);
       return r;
       }
     }

@@ -7,6 +7,7 @@ namespace KabadaAPI {
   public class BPextended : KabadaAPIdao.BusinessPlan {
      public KabadaAPIdao.Language Language { get; set; }
      public KabadaAPIdao.Country Country { get; set; }
+     public KabadaAPIdao.User User { get; set; }
 
 
     public BPextended(){}

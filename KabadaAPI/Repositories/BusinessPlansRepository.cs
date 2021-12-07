@@ -73,8 +73,8 @@ namespace KabadaAPI
         //}
         public List<BusinessPlan> GetPlans(Guid userId)
         {
-            var pp = daContext.BusinessPlans.Include(x => x.User);
-            var myPlans = pp.Where(x => x.User.Id.Equals(userId)).ToList();
+            var pp = daContext.BusinessPlans; //.Include(x => x.User);
+            var myPlans = pp.Where(x => x.UserId.Equals(userId)).ToList();
             var shp = daContext.SharedPlans.Where(x => x.UserId.Equals(userId));
             var sharedPlans = from sh in shp
                               join bp in pp on sh.BusinessPlanId equals bp.Id
@@ -97,7 +97,7 @@ namespace KabadaAPI
                 CountryId = country.Id,
                 LanguageId = language.Id,
                 Img = imgId,
-                User = user,
+                UserId = user.Id,
                 Created = DateTime.Now
             };
 
@@ -318,7 +318,7 @@ namespace KabadaAPI
       var p=getPlanBLfull(planId, blContext.userGuid);
       p.textSupport=new TexterRepository(blContext, daContext);
       us.descriptor="jst bp2f test";
-      us.user=p.o.User.Email;
+      us.user=p.user?.Email;
       if(us.outfile==null)
         us.outfile=p.filePath("bpU.csv");
       unloadHim<UserFilesRepository>(p.o.Img, us, skipSet, unloadedSet);
@@ -329,7 +329,7 @@ namespace KabadaAPI
       oo.Activity=null;
       //oo.Country=null;
       //oo.Language=null;
-      oo.User=null;
+      //oo.User=null;
 
       return p;
       }
