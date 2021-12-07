@@ -14,14 +14,14 @@ namespace Kabada {
       //var t=pR.joinRO(planId);
 
     // nace;
-    if(p.o.Activity!=null){
+    if(p.activity!=null){
       nace=new PlanOverviewNace();
-      var w=p.o.Activity;
+      var w=p.activity;
       nace.activity_code=w.Code;
       nace.activity_title=w.Title;
-      if(w.Industry!=null){
-        nace.industry_code=w.Industry.Code;
-        nace.industry_title=w.Industry.Title;
+      if(p.industry!=null){
+        nace.industry_code=p.industry.Code;
+        nace.industry_title=p.industry.Title;
         }
       }
     this.planImage=p.o.Img;

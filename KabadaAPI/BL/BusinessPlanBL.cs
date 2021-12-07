@@ -12,6 +12,9 @@ namespace KabadaAPI {
     public  KabadaAPIdao.BusinessPlan o { get { return _o; } set { _o=value; }}
 
     private BPjoin _j;
+    public User user { get { return _j.us; }}
+    public Activity activity { get { return _j.ac; }}
+    public KabadaAPIdao.Industry industry { get { return _j.ind; }}
 
     private BusinessPlanElementBL _e;
     public BusinessPlanElementBL e {

@@ -6,7 +6,7 @@ using static KabadaAPI.TexterRepository;
 
 namespace KabadaAPI {
   partial class BusinessPlanBL {
-    public string naceCode { get { return (o.Activity==null)?null:$"{o.Activity.Code} - {o.Activity.Title}"; }}
+    public string naceCode { get { return (activity==null)?null:$"{activity.Code} - {activity.Title}"; }}
 
     public List<string> keyRes { get { return myKeyResource_s.Select(x=>x.e.name).ToList(); }}
 

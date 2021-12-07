@@ -24,7 +24,7 @@ namespace KabadaAPI {
         public List<Activity> GetActivities(Guid industryId)
         {
             return daContext.Activities
-                .Where(s => s.Industry.Id == industryId)
+                .Where(s => s.IndustryId == industryId)
                 .OrderBy(x => x.Code)
                 .ToList();
         }
@@ -76,44 +76,44 @@ namespace KabadaAPI {
           
         
 
-        public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
-        {
-            Activity act = daContext.Activities.FirstOrDefault(i => i.Code.Equals(actCode) && i.Industry.Language.Equals(indLang));
-            Industry ind = daContext.Industries.FirstOrDefault(i => i.Code.Equals(indCode) && i.Language.Equals(indLang));
+        //public void AddIndustryAndActivities(string indCode, string indTitle, string indLang, string actCode, string actTitle)
+        //{
+        //    Activity act = daContext.Activities.FirstOrDefault(i => i.Code.Equals(actCode) && i.Industry.Language.Equals(indLang));
+        //    Industry ind = daContext.Industries.FirstOrDefault(i => i.Code.Equals(indCode) && i.Language.Equals(indLang));
 
-            if (ind == null && act == null)
-            {
-                Industry industry = new Industry()
-                {                   
-                    Code = indCode,
-                    Language = indLang,
-                    Title = indTitle
-                };
+        //    if (ind == null && act == null)
+        //    {
+        //        Industry industry = new Industry()
+        //        {                   
+        //            Code = indCode,
+        //            Language = indLang,
+        //            Title = indTitle
+        //        };
 
-                Activity activity = new Activity()
-                {                  
-                    Code = actCode,
-                    Title = actTitle,
-                    Industry = industry
-                };
-                daContext.Activities.Add(activity);
-            }
-            else if (ind != null && act == null)
-            {
-                Activity activity = new Activity()
-                {           
-                    Code = actCode,
-                    Title = actTitle,
-                    Industry = ind
-                };
-                daContext.Activities.Add(activity);
-            }
-            daContext.SaveChanges();
-        }        
+        //        Activity activity = new Activity()
+        //        {                  
+        //            Code = actCode,
+        //            Title = actTitle,
+        //            IndustryId = industry.Id
+        //        };
+        //        daContext.Activities.Add(activity);
+        //    }
+        //    else if (ind != null && act == null)
+        //    {
+        //        Activity activity = new Activity()
+        //        {           
+        //            Code = actCode,
+        //            Title = actTitle,
+        //            IndustryId = ind.Id
+        //        };
+        //        daContext.Activities.Add(activity);
+        //    }
+        //    daContext.SaveChanges();
+        //}        
     protected override object[] getAll4snap() {
       var r=daContext.Activities.ToArray();
-      foreach(var o in r)
-        o.Industry=null;
+      //foreach(var o in r)
+      //  o.Industry=null;
       return r;
       }
 

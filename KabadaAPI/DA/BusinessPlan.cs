@@ -15,7 +15,7 @@ namespace KabadaAPIdao
 //        public Country Country { get; set; }
 
         public Guid? ActivityID { get; set; }
-        public Activity Activity { get; set; }
+//        public Activity Activity { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -31,7 +31,7 @@ namespace KabadaAPIdao
         public bool Public { get; set; }
 
         public Guid? UserId { get; set; }
-        public User User { get; set; }
+//        public User User { get; set; }
 
         public bool IsSwotCompleted { get; set; }
         public bool IsResourcesCompleted { get; set; }
