@@ -11,6 +11,7 @@ namespace KabadaAPI {
     public const string IntelectualResourcesGuID="{D938DD78-01A5-4D06-9757-149402DB6E7D}";
     public static Guid IID=new Guid(IntelectualResourcesGuID);
     public const string OwnershipType="Ownership type";
+    public const string Frequency="Frequency";
     public const string SalaryGuIDvariable="{c7b32094-6538-4e72-ad49-6ea1fda21562}";
     public static Guid SVID=new Guid(SalaryGuIDvariable);
     public const string SalaryGuIDfixed="{f5d95c3b-4894-41b1-98b8-b1eb44ef436a}";

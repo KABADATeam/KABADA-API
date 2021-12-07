@@ -25,19 +25,9 @@ namespace Kabada {
       if(source==null || source.Count<1)
         return null;
       return source.Select(x=>new AssetElement {
-               amount=x.e.amount, resource_id=x.id, vat=x.e.vat, resource_title=x.e.name, resource_status=slurp(x.e.selections), type_title=types[x.texterId].Value
+               amount=x.e.amount, resource_id=x.id, vat=x.e.vat, resource_title=x.e.name,
+               resource_status=KeyResourceElementBL.selectionValue(x.e.selections), type_title=types[x.texterId].Value
              }).ToList();
-      }
-
-    private string slurp(List<ResourceSelectionBL> selections) {
-      if(selections==null)
-        return null;
-      var plus=selections.Where(x=>x.title==KeyResourceBL.OwnershipType).FirstOrDefault();
-      if(plus==null)
-        return null;
-      if(plus.options==null || plus.options.Count<1)
-        return null;
-      return plus.options[plus.selected];
       }
     }
   }
