@@ -60,6 +60,7 @@ namespace KabadaAPI {
          else
           _j=seed.clone();
         }
+      o=_j.bp;
       a=new Dictionary<short, List<Plan_Attribute>>();
       s=new Dictionary<short, List<Plan_SpecificAttribute>>();
       }

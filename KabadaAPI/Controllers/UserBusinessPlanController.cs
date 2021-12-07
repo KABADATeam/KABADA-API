@@ -51,10 +51,10 @@ namespace KabadaAPI.Controllers {
         private IActionResult _AddPlan([FromBody] BusinessPlan businessPlan){
                  using (var repository = bRepo)
                 {
-                    var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
+                    //var userId = Guid.Parse(User.FindFirst(ClaimTypes.Name)?.Value.ToString());
                     if(businessPlan.ActivityId==null)
                       throw new Exception("missing Activity");
-                    var plan = repository.Save(userId, businessPlan.Title, businessPlan.ActivityId.Value, businessPlan.LanguageId,businessPlan.Img,businessPlan.CountryId);
+                    var plan = repository.Save(context.userGuid, businessPlan.Title, businessPlan.ActivityId.Value, businessPlan.LanguageId,businessPlan.Img,businessPlan.CountryId);
                     return Ok(plan);
                 }
         }

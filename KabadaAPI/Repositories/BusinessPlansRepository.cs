@@ -44,20 +44,20 @@ namespace KabadaAPI
         //private BusinessPlan GetPlan(Guid planId){
         //   return daContext.BusinessPlans.FirstOrDefault(i => i.Id.Equals(planId));            
         //}
-        public BusinessPlan GetPlan(Guid planId, Guid userId) {
-            //check if public or mine
-             var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && (i.User.Id.Equals(userId)|| i.Public == true)).Include(x => x.User).Include(x => x.Country)
-                 //.Include(x => x.Language)
-                 .Include(x => x.Activity.Industry).FirstOrDefault();
-            if (plan!=null)
-            return plan;
-            //check if shared with me
-            var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).Include(x => x.BusinessPlan.Country)
-                   //.Include(x => x.BusinessPlan.Language)
-                   .Include(x => x.BusinessPlan.Activity).FirstOrDefault();
-            if (shp?.BusinessPlan != null) return shp.BusinessPlan;
-            return null;
-        }
+        //public BusinessPlan GetPlan(Guid planId, Guid userId) {
+        //    //check if public or mine
+        //     var plan = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && (i.User.Id.Equals(userId)|| i.Public == true)).Include(x => x.User).Include(x => x.Country)
+        //         //.Include(x => x.Language)
+        //         .Include(x => x.Activity.Industry).FirstOrDefault();
+        //    if (plan!=null)
+        //    return plan;
+        //    //check if shared with me
+        //    var shp = daContext.SharedPlans.Where(i => i.BusinessPlanId.Equals(planId) && i.UserId.Equals(userId)).Include(x => x.BusinessPlan).Include(x => x.BusinessPlan.Country)
+        //           //.Include(x => x.BusinessPlan.Language)
+        //           .Include(x => x.BusinessPlan.Activity).FirstOrDefault();
+        //    if (shp?.BusinessPlan != null) return shp.BusinessPlan;
+        //    return null;
+        //}
         //public BusinessPlan GetPlanForUpdate(Guid userId, Guid planId)
         //{
         //    var mp = daContext.BusinessPlans.Where(i => i.Id.Equals(planId) && i.User.Id.Equals(userId)).Include(x => x.User).Include(x => x.Country).Include(x => x.Language).Include(x => x.Activity).FirstOrDefault();            
@@ -189,7 +189,7 @@ namespace KabadaAPI
     //  }
 
     public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
-      var r=new BusinessPlanBL(GetPlan(planId, userId));
+      var r=new BusinessPlanBL(join(planId, userId)); //      GetPlan(planId, userId));
       var w1=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
       r.a=w1.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       var w2=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
