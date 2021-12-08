@@ -251,7 +251,7 @@ namespace KabadaAPI {
           foreach(var a in macti){
             var su=txi[a.categoryId.Value];
             var ty=txi[su.MasterId.Value];
-            var an=new KeyAct_doc(){  desc=a.e.description, subType=su.Value, type=ty.Value };
+            var an=new KeyAct_doc(){  desc=a.e.description, subType=su.Value, type=ty.Value, name=a.e.name };
             dacti.Add(an);
             }
           var w=new KeyValuePair<string, List<KeyAct_doc>>(p.e.title, dacti);
