@@ -254,7 +254,7 @@ namespace KabadaAPI {
             var an=new KeyAct_doc(){  desc=a.e.description, subType=su.Value, type=ty.Value };
             dacti.Add(an);
             }
-          var w=new KeyValuePair<string, List<KeyAct_doc>>(p.e.description, dacti);
+          var w=new KeyValuePair<string, List<KeyAct_doc>>(p.e.title, dacti);
           r.Add(w);
           }
         }
