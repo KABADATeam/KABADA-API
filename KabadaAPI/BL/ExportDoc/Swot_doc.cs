@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 
 namespace KabadaAPI {
-  public class KeyAct_doc {       
-        public string type;
-        public string subType; 
-        public string name; 
-        public string desc; 
+  public class Swot_doc {       
+        public List<string> strengths;
+        public List<string> weaknesses; 
+        public List<string> opportunities; 
+        public List<string> threats; 
 
     }
 
