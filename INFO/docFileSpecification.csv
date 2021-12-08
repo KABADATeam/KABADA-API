@@ -20,4 +20,4 @@ kabada_keyResources;keyResources;List<keyRes_doc>, see BL/ExportDoc/keyRes_doc.c
 kabada_keyActivities;keyActivities;List<KeyValuePair<string, List<KeyAct_doc>>> where Key=ProductName, Value=KeyAct_doc, see see BL/ExportDoc/keyAct_doc.cs
 kabada_keyPartners;keyPartners;KeyPartners_doc, see BL/ExportDoc/KeyPartners_doc.cs
 kabada_costs;Costs;Costs_doc, see BL/ExportDoc/Costs_doc.cs
-?kabada_swot;Swot;Swot_doc, see BL/ExportDoc/Swot_doc.cs
+kabada_swot;Swot;Swot_doc, see BL/ExportDoc/Swot_doc.cs

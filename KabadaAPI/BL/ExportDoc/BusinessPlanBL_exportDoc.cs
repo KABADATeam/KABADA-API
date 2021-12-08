@@ -314,5 +314,33 @@ namespace KabadaAPI {
         }
       return r;
       }
+
+    public Swot_doc Swot { get { 
+      var r=new Swot_doc();
+      var swots=gA(PlanAttributeKind.swot).OrderBy(x=>x.OrderValue).ToList();
+      var idi=swots.Select(x=>x.TexterId).Distinct().ToList();
+      var txi=textSupport.get(idi).ToDictionary(x=>x.Id);
+      r.opportunities=new List<string>();
+      r.strengths=new List<string>();
+      r.threats=new List<string>();
+      r.weaknesses=new List<string>();
+
+      foreach(var a in swots){
+        var v=short.Parse(a.AttrVal);
+        if(v!=0) v=1;
+        var t=txi[a.TexterId];
+        short m=0;
+        if(t.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
+          m=2; // strengths_weakness
+        switch(m+v){
+          case 0: r.opportunities.Add(t.Value); break;
+          case 1: r.threats.Add(t.Value); break;
+          case 2: r.strengths.Add(t.Value); break;
+          case 3: r.weaknesses.Add(t.Value); break;
+          }
+        }
+
+      return r;
+      }}
     }
   }
