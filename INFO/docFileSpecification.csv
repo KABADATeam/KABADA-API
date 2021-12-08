@@ -18,4 +18,4 @@ kabada_channels;channelS;List<Channel_doc>, see BL/ExportDoc/Channel_doc.cs
 kabada_custRel;CustomerRelationship;CustRel_doc, see BL/ExportDoc/CustRel_doc.cs
 kabada_keyResources;keyResources;List<keyRes_doc>, see BL/ExportDoc/keyRes_doc.cs
 kabada_keyActivities;keyActivities;List<KeyValuePair<string, List<KeyAct_doc>>> where Key=ProductName, Value=KeyAct_doc, see see BL/ExportDoc/keyAct_doc.cs
-?kabada_keyPartners;keyPartners;KeyPartners_doc, see BL/ExportDoc/KeyPartners_doc.cs
+kabada_keyPartners;keyPartners;KeyPartners_doc, see BL/ExportDoc/KeyPartners_doc.cs

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabada;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using static KabadaAPI.Plan_AttributeRepository;
@@ -260,5 +261,32 @@ namespace KabadaAPI {
 
       return r;
       }}
+
+    private Dictionary<Guid, string> partnerTypes;
+
+    private List<KeyPartnersElement_doc> _getKeyPartners(PlanAttributeKind kind){
+      var t1=gA(kind);
+      if(t1==null || t1.Count<1)
+        return null;
+      var r=new List<KeyPartnersElement_doc>();
+      foreach(var t2 in t1){
+        var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KeyPartnersAttribute>(t2.AttrVal);
+        var w=new KeyPartnersElement_doc()
+          { comment=o.comment, web=o.website, priority=o.is_priority?"Yes":"No", company=o.name, partnerType=partnerTypes[t2.TexterId] };
+        r.Add(w);
+        }
+      return r;
+      }
+
+    public KeyPartners_doc keyPartners { get {
+      var r=new KeyPartners_doc();
+      partnerTypes=textSupport.getKeyPartnerMeta().ToDictionary(x=>x.Id, x=>x.Value);
+
+      r.distributors= _getKeyPartners(PlanAttributeKind.keyDistributor);
+      r.others= _getKeyPartners(PlanAttributeKind.otherKeyPartner);
+      r.suppliers= _getKeyPartners(PlanAttributeKind.keySupplier);
+      return r;
+      }}
+
     }
   }
