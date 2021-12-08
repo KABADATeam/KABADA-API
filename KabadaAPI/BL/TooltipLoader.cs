@@ -24,9 +24,11 @@ namespace KabadaAPI {
     protected override object storeRow() {
       var o=new Tooltip();
       o.code=yOstring("Code");
+      o.tooltip=yOstring("Tooltip");
+      if(string.IsNullOrWhiteSpace(o.tooltip) && string.IsNullOrWhiteSpace(o.code))
+        return null;
       if(string.IsNullOrWhiteSpace(o.code))
         o.code="GeneratedId_"+(++usedId).ToString();
-      o.tooltip=yMstring("Tooltip");
       if(strict)
         fullSet.Add(o.code, o);
        else
