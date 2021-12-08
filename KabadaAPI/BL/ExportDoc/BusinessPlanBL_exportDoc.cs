@@ -288,5 +288,31 @@ namespace KabadaAPI {
       return r;
       }}
 
+    public Costs_doc Costs { get { 
+      var r=new Costs_doc();
+      r.fixedCosts=_detailedCosts(myFixedCost_s);
+      r.variableCosts=_detailedCosts(myVariableCost_s);
+      return r;
+      }}
+
+    private List<CostElement_doc> _detailedCosts(List<CostBL> us) {
+      if(us==null || us.Count<1)
+        return null;
+      var r=new List<CostElement_doc>();
+      var idi = us.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
+      var ti = textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types
+      var tidi=ti.Values.Where(x=>x!=null).Select(x=>x.Value).Distinct().ToList();
+      tidi.AddRange(idi);
+      var txi=textSupport.get(tidi).ToDictionary(x=>x.Id, x=>x.Value);
+      //var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
+      foreach(var o in us){
+        var w=new CostElement_doc(){ name=o.e.name, desc=o.e.description, category="??", subCategory=txi[o.texterId] };
+        var ct=ti[o.texterId];
+        if(ct!=null)
+          w.category=txi[ct.Value];
+        r.Add(w);
+        }
+      return r;
+      }
     }
   }
