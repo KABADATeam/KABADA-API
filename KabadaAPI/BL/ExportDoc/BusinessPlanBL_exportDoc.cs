@@ -327,16 +327,17 @@ namespace KabadaAPI {
 
       foreach(var a in swots){
         var v=short.Parse(a.AttrVal);
-        if(v!=0) v=1;
+        //if(v!=0) v=1;
         var t=txi[a.TexterId];
-        short m=0;
-        if(t.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
-          m=2; // strengths_weakness
-        switch(m+v){
-          case 0: r.opportunities.Add(t.Value); break;
-          case 1: r.threats.Add(t.Value); break;
-          case 2: r.strengths.Add(t.Value); break;
-          case 3: r.weaknesses.Add(t.Value); break;
+        //short m=0;
+        //if(t.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
+        //  m=2; // strengths_weakness
+        //switch(m+v){
+        switch(v){
+          case 3: r.opportunities.Add(t.Value); break;
+          case 4: r.threats.Add(t.Value); break;
+          case 1: r.strengths.Add(t.Value); break;
+          case 2: r.weaknesses.Add(t.Value); break;
           }
         }
 
