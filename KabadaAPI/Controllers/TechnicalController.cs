@@ -52,10 +52,15 @@ namespace KabadaAPI.Controllers {
     [AllowAnonymous]
     [Route("tooltips")]
     [HttpGet]
-    public ActionResult<List<Tooltip>> Tooltips() { return Grun<List<Tooltip>>(_Tooltips); }
-    private ActionResult<List<Tooltip>> _Tooltips() {
-      return new TooltipManager(context).load();
+    public ActionResult<List<Tooltip>> Tooltips() { return Prun<bool, List<Tooltip>>(_Tooltips, false); }
+    private ActionResult<List<Tooltip>> _Tooltips(bool strict=false) {
+      return new TooltipManager(context).load(strict);
       }
+
+    [AllowAnonymous]
+    [Route("tooltipsStrict")]
+    [HttpGet]
+    public ActionResult<List<Tooltip>> TooltipsStrict() { return Prun<bool, List<Tooltip>>(_Tooltips, true); }
 
     [Authorize(Roles = Role.User)]
     [Route("test/{BusinessPlan}")]
