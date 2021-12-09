@@ -7,8 +7,10 @@ namespace Kabada {
     internal void read(BLontext context, Guid planId) {
       plan_id=planId;
       var p=new BusinessPlansRepository(context).getRO(planId); //GetPlan(planId, context.userGuid);
-      if(p==null)
-        throw new Exception("access prohibited");
+      //if(p==null)
+      //  throw new Exception("access prohibited");
+      var pe=new BusinessPlanBL(p);
+      is_personal_characteristics_completed=pe.e.is_personal_characteristics_completed;
       var a=new Plan_SpecificAttributesRepository(context).personalChar(planId);
       if(a!=null){
         var bo=new PersonalCharBL(a);
@@ -20,7 +22,7 @@ namespace Kabada {
     internal void perform(BLontext ctx) {
       var bRepo=new BusinessPlansRepository(ctx);
       //var plan=bRepo.GetPlanForUpdate(ctx.userGuid, plan_id); // to validate rights
-      var plan=new BusinessPlansRepository(ctx).getRW(plan_id);
+      var plan=bRepo.getRW(plan_id);
       if(plan==null || plan.UserId!=ctx.userGuid)
         throw new Exception("not owner");
 
@@ -36,6 +38,13 @@ namespace Kabada {
         kri.e.Add(x);
       kri.unload();
       kri.completeSet(o==null?null:kri.id, paRepo);
+      
+      var pe=new BusinessPlanBL(plan);
+      if(pe.e.is_personal_characteristics_completed!=is_personal_characteristics_completed){
+        pe.e.is_personal_characteristics_completed=is_personal_characteristics_completed;
+        pe.unload();
+        bRepo.daContext.SaveChanges();
+        }
       }
     }
   }

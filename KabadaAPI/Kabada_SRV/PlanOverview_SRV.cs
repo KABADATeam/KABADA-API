@@ -40,7 +40,7 @@ namespace Kabada {
     sales_forecast=me(p.o.IsSalesForecastCompleted);                                          //TODO not clear, yet
     business_start_up_investments=me(p.o.IsBusinessInvestmentsCompleted);                     //TODO not clear, yet
     cash_flow=me(false);                                                       //"is_cash_flow_completed" TODO not clear, yet
-    personal_characteristics=me(false);                                       // not clear, yet // no such variable,yet - still not developed
+    personal_characteristics=me(p.e.is_personal_characteristics_completed);    // not clear, yet
     reasons=me(false);;                                                       // not clear, yet // no such variable,yet - still not developed
     ////TODOpublic PlanOverviewElement financial_projections;    // not clear, yet
     team_competencies=me(false);                                             // not clear, yet // no such variable,yet - still not developed
