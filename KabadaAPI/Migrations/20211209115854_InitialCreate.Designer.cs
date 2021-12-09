@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KabadaAPI.Migrations
 {
     [DbContext(typeof(DAcontext))]
-    [Migration("20211129153208_InitialCreate")]
+    [Migration("20211209115854_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,8 +42,6 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IndustryId");
 
                     b.ToTable("Activities");
 
@@ -7845,14 +7843,6 @@ namespace KabadaAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ActivityID");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("LanguageId");
-
-                    b.HasIndex("UserId");
-
                     b.ToTable("BusinessPlans");
                 });
 
@@ -8110,7 +8100,7 @@ namespace KabadaAPI.Migrations
                         new
                         {
                             Id = "initialDataSetLevel",
-                            Value = "11"
+                            Value = "12"
                         });
                 });
 
@@ -8405,12 +8395,10 @@ namespace KabadaAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("RefreshTokens");
                 });
@@ -8428,8 +8416,6 @@ namespace KabadaAPI.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BusinessPlanId");
 
                     b.ToTable("SharedPlans");
                 });
@@ -9839,6 +9825,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("deba5fd9-ab05-48a5-8719-913e5d1447c1"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"A.01_IR.csv\",\"loadStartedUtc\":\"2021-12-09T11:55:59.7930819Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"For a long time, no concept has been set in the agricultural sector and thus, of course, the situation does not make it any easier for entities that are directly dependent on government decisions through the Ministry of Agriculture - I mean agricultural enterprises. I see this situation as unfavorable\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":3,\"severity\":2,\"comments\":\"We can say with absolute certainty that either simultaneously or with a time lag, a relationship was found between the growth of gross domestic product and the development of sales of the company and vice versa. or easier availability of bank loans.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":3,\"severity\":2,\"comments\":\"Factors that affect the company are the living standards of the population, especially customers of agricultural equipment and related consumer habits of buyers. In the field of agricultural technology, the education of employees in the field is very important. The required education should be supplemented by knowledge of dealing with the customer and willingness to meet his needs.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"Technological progress in agricultural machinery is quite high. Machines that are innovated are being sold, the performance of the machines is constantly increasing, and modern digital technologies are being incorporated into the machines to make working in agriculture as easy as possible.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":2,\"severity\":2,\"comments\":\"Currently, the company is also affected by the \\\"green\\\" issues in the form of financial cost-effectiveness of offered fuels containing bio-components or efforts to decompose exhaust fumes based on chemical reactions to components that are less harmful to the environment. Of course, these methods are also used by competitors, in order to be visible and gain a competitive advantage.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":1,\"severity\":1,\"comments\":\"Unfortunately, agriculture is also a sector of unexpected change, the more difficult it is then to fight the competition. We can say that this is a tough and uncompromising fight. It is realized primarily through prices, quality, transport distance and ability to provide services.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"The risk of new competitors entering the market is very small, mainly due to the large number of barriers to entry into the sector. Entry into the industry is associated with high capital intensity compared to uncertain and not entirely satisfactory profits. In particular, new competitors are discouraged from entering the market by very high initial investments in machinery, equipment and modern technologies, high prices and a shortage of land or a shortage of manpower.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"Due to the fact that there is not a very large possibility of producing new products in the field of agriculture, the replacement of products by means of substitutes is not perceived as a great threat. Companies usually produce the same products, which differ in price or quality as a result.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":3,\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Shortage of staff\",\"countryDeviationScore\":5,\"countryDeviationComment\":\"The level and nature of these risks vary greatly from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":2,\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":1,\"severity\":2,\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
+                        },
+                        new
+                        {
                             Id = new Guid("fb4a4c08-a17d-444c-9776-92c54acd6940"),
                             Kind = (short)23,
                             MasterId = new Guid("f5d95c3b-4894-41b1-98b8-b1eb44ef436a"),
@@ -10258,6 +10252,14 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("233f2800-c736-4f51-8f9f-c0de4116f372"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"G.45.1_IR.csv\",\"loadStartedUtc\":\"2021-12-09T11:56:00.6489393Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"A decline in demand could lead to a decline in production and a reduction in the state's economy. However, the positive factors of scrapping remain: the idea of saving the environment, rejuvenating the vehicle fleet, reducing road accidents and supporting the economy. Another measure by which the state has influenced the development of car sales in recent years has been an increase in the value added tax rate since January 2013. The excise tax, which is introduced for petrol, diesel and electricity, affects producers' operating costs. Manufacturers must handle these raw materials as efficiently as possible.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":2,\"severity\":1,\"comments\":\"According to the European Automobile Association (ACEA), the European Union accounts for around 24% of world production, a testament to the competitiveness of the European car industry and the experience of decades over which European industry can draw: two oil crises, technological advances and EU enlargement. .\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":2,\"severity\":2,\"comments\":\"The automotive industry is an important and traditional driver for the Czech Republic, not only due to the production of more than a million vehicles and a long tradition, but above all it employs a large number of people and employment is an important indicator for all individual sectors.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":2,\"severity\":2,\"comments\":\"In line with the social environment, the possibility of educating individuals, new media technologies with developed informatics and telecommunications, changes in social behavior and individuality are growing. The automotive industry is one of those industries whose changes in social aspects have necessitated change in societies. This means that developments in society determine the direction and viability of companies in the automotive industry.  Trends in new technologies have always been a highly innovative sector and this is not expected to slow down in the future. Developments in ICT information and communication technologies, new design, new materials and new types of fuel are the most anticipated.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":1,\"severity\":1,\"comments\":\"The negative of cars on the environment can be divided into two categories: air and noise. At first glance, the car looks like clean and first-class goods, but it is incredibly dirty. At the time of the invention of the car, tons of ozone and other gaseous substances were added, which do not smell but are harmful to health. Environmental research is important not only for people, but also for nature itself. The topic of environmental protection is a long-term topic, but it is more important for the economy that the number of cars on the roads is not reduced and that as much production as possible is produced.\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"Due to similar products made of the same material and the same technological processes, the rivalry between companies in the industry is great. In general, the industry: whoever offers to make a contract faster and cheaper will also get it. Sales prices are usually determined by the contracting authority. Firms are therefore limited in a situation of rising prices and the resulting growth in profits. Therefore, the company that reduces the price to win the contract, other companies usually follow it so as not to lose customers.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Most existing companies in the industry produce as many products as possible, of course, with the lowest sustainable price. Therefore, each new entrant must expect high initial investments and losses before reaching its corresponding market share.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":1,\"severity\":2,\"comments\":\"New variants of means of transport\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":1,\"comments\":\"Higher levels of innovation are pushing companies into areas with higher availability of technical specialists, which also corresponds to the current development of a growing number of researchers. The future higher level of market volatility is expected to cause slower market growth, as mentioned, and the number of vehicles sold in Europe will stagnate. These uncertainties also affect the position of suppliers, also due to the ties to the German and Russian markets. Thus, expectations for future developments on the part of suppliers are rather conservative.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":1,\"severity\":1,\"comments\":\"Customers in the automotive industry usually have an overview of demand, market prices and supplier costs. It is not a problem for customers to change their supplier in case of dissatisfaction. That is why it is important to deal with clients properly and to process orders faster, which aims to strengthen relationships with the customer. In most cases, suppliers are also partly dependent on their customers, so there is often no exchange of suppliers.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Shortage of staff\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":2,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":1,\"severity\":2,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
+                        },
+                        new
+                        {
                             Id = new Guid("b4517dc0-8202-4cff-be3e-c11a1f78037c"),
                             Kind = (short)6,
                             MasterId = new Guid("63cee727-8378-4603-8b0b-839751dfeed1"),
@@ -10452,6 +10454,14 @@ namespace KabadaAPI.Migrations
                             Kind = (short)3,
                             OrderValue = (short)10,
                             Value = "Accessibility of financial resources"
+                        },
+                        new
+                        {
+                            Id = new Guid("b1e25239-1926-4de2-b2e8-d389653140cf"),
+                            Kind = (short)43,
+                            LongValue = "{\"fileName\":\"C.16_IR.csv\",\"loadStartedUtc\":\"2021-12-09T11:56:00.729091Z\",\"risks\":[{\"category\":\"MACRO\",\"type\":\"Political and legal\",\"likelihood\":2,\"severity\":3,\"comments\":\"New legislative restrictions and implementation of the strategies\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The extent of autonomy of higher education institutions varies from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Economic\",\"likelihood\":3,\"severity\":2,\"comments\":\"Risk of the inflation\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Social\",\"likelihood\":3,\"severity\":3,\"comments\":\"I would focus on the main aspects of the social factor of the analysis and unemployment and on the average wage.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Technological\",\"likelihood\":3,\"severity\":2,\"comments\":\"Progress in the technology sector is visible to all. The positive progress in communication with customers and business partners is great progress in technology development.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"MACRO\",\"type\":\"Environmental\",\"likelihood\":2,\"severity\":2,\"comments\":\"Waste management\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Existing competition\",\"likelihood\":3,\"severity\":3,\"comments\":\"The current state of small wood processing companies with regional scope allows the emergence of competitive rivalry rather indirectly in the fight for customers and competitive rivalry within products is only in second place. Competitive rivalry has a material and real essence here. Companies in the wood processing industry produce tangible goods, the quality of which can be measured and quantified with the help of financial resources. Businesses do not use marketing strategies, do not create costly advertising campaigns to attract consumers or new customers, but let their products, their company policy and their actions towards consumers, customers or suppliers speak for themselves.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Potential competition\",\"likelihood\":1,\"severity\":2,\"comments\":\"Long-term contracts are created here based on mutual compliance with contractual conditions and it is not just a one-time purchase and sale, therefore companies do not invest a large amount of funds in marketing plans.\",\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Substitution possibilities\",\"likelihood\":2,\"severity\":2,\"comments\":\"Wood is in itself an irreplaceable raw material and has many advantages. Nevertheless, we find materials on the market that are similar in their properties to satisfy customer needs. Generally speaking, plastics are the main substitute for wood.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of suppliers\",\"likelihood\":3,\"severity\":3,\"comments\":\"The basic raw material processed is wood, which is often supplied by forestry companies. The vast majority of these companies are not only involved in logging, but they process the harvested wood themselves and sell the unprocessed surplus.\",\"countryDeviationScore\":2,\"countryDeviationComment\":\"The level and nature of these risks vary slightly from country to country.\"},{\"category\":\"INDUSTRY\",\"type\":\"Power of buyers\",\"likelihood\":2,\"severity\":2,\"comments\":\"The best scenario for reducing the strength of customers and at the same time increasing competitiveness is the weakening or complete foreclosure of another business entity engaged in similar activities from the market. The company would thus achieve less competition, gain a larger market share and, in addition, could fight for customers of the displaced competitor.\",\"countryDeviationScore\":4,\"countryDeviationComment\":\"The level and nature of these risks vary substantially from country to country.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Human\",\"likelihood\":3,\"severity\":3,\"comments\":\"Shortage of staff\",\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Resources: Tangible\",\"likelihood\":1,\"severity\":2,\"countryDeviationScore\":1,\"countryDeviationComment\":\"The level and nature of these risks are virtually the same in all countries.\"},{\"category\":\"COMPANY\",\"type\":\"Processes\",\"likelihood\":2,\"severity\":2,\"countryDeviationScore\":3,\"countryDeviationComment\":\"The level and nature of these risks vary to some extent from country to country.\"}]}",
+                            OrderValue = (short)0,
+                            Value = ""
                         },
                         new
                         {
@@ -10991,6 +11001,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("9a1357b9-8568-4be4-9001-298bcc33816b"),
+                            AttrVal = "",
+                            CategoryId = new Guid("b1e25239-1926-4de2-b2e8-d389653140cf"),
+                            Kind = (short)20,
+                            MasterId = new Guid("abe1be08-d12c-495e-abac-a5de7f98c019"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
                             Id = new Guid("688fdbf6-3131-4875-83de-2b043e0d820b"),
                             AttrVal = "",
                             CategoryId = new Guid("34d20eca-58e3-41c9-a322-daaf93a8b1a3"),
@@ -11218,6 +11237,15 @@ namespace KabadaAPI.Migrations
                             AttrVal = "{\"StandardRate\":24.0,\"ReducedRates1\":6.0,\"ReducedRates2\":13.0}",
                             Kind = (short)22,
                             MasterId = new Guid("febb11c0-ac67-43c6-8eba-1b9e4fcbe318"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
+                            Id = new Guid("bbc4cbe8-0c91-401d-9d71-81cde26e3445"),
+                            AttrVal = "",
+                            CategoryId = new Guid("deba5fd9-ab05-48a5-8719-913e5d1447c1"),
+                            Kind = (short)20,
+                            MasterId = new Guid("4fd7b982-39af-4cc1-a469-70e5daf0d68b"),
                             OrderValue = (short)0
                         },
                         new
@@ -11493,6 +11521,15 @@ namespace KabadaAPI.Migrations
                         },
                         new
                         {
+                            Id = new Guid("dbe5c0aa-2fb8-432d-abab-f78427d98fc8"),
+                            AttrVal = "",
+                            CategoryId = new Guid("233f2800-c736-4f51-8f9f-c0de4116f372"),
+                            Kind = (short)20,
+                            MasterId = new Guid("40c75f2b-3f76-4091-9ceb-47d49620c513"),
+                            OrderValue = (short)0
+                        },
+                        new
+                        {
                             Id = new Guid("9d851203-7533-438c-bc6a-f8c6135f8385"),
                             AttrVal = "{\"2011\":29.9,\"2012\":29.9,\"2013\":29.9,\"2014\":29.9,\"2015\":29.9,\"2016\":29.9,\"2017\":29.9,\"2018\":29.9,\"2019\":29.9,\"2020\":29.9,\"2021\":29.9}",
                             Kind = (short)23,
@@ -11581,8 +11618,6 @@ namespace KabadaAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TypeId");
-
                     b.ToTable("Users");
                 });
 
@@ -11633,75 +11668,6 @@ namespace KabadaAPI.Migrations
                             Id = 100,
                             Title = "Simple"
                         });
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.Activity", b =>
-                {
-                    b.HasOne("KabadaAPIdao.Industry", "Industry")
-                        .WithMany()
-                        .HasForeignKey("IndustryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Industry");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.BusinessPlan", b =>
-                {
-                    b.HasOne("KabadaAPIdao.Activity", "Activity")
-                        .WithMany()
-                        .HasForeignKey("ActivityID");
-
-                    b.HasOne("KabadaAPIdao.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId");
-
-                    b.HasOne("KabadaAPIdao.Language", "Language")
-                        .WithMany()
-                        .HasForeignKey("LanguageId");
-
-                    b.HasOne("KabadaAPIdao.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Activity");
-
-                    b.Navigation("Country");
-
-                    b.Navigation("Language");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.RefreshToken", b =>
-                {
-                    b.HasOne("KabadaAPIdao.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.SharedPlan", b =>
-                {
-                    b.HasOne("KabadaAPIdao.BusinessPlan", "BusinessPlan")
-                        .WithMany()
-                        .HasForeignKey("BusinessPlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BusinessPlan");
-                });
-
-            modelBuilder.Entity("KabadaAPIdao.User", b =>
-                {
-                    b.HasOne("KabadaAPIdao.UserType", "Type")
-                        .WithMany()
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Type");
                 });
 #pragma warning restore 612, 618
         }
