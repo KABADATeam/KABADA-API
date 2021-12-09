@@ -56,17 +56,17 @@ namespace Kabada {
                     fillTextField("kabada_planName", plan.o.Title);
                     fillTextField("kabada_naceCode", plan.naceCode); 
                     //Business Canvas Page
-                    fillTextFieldMultiLine("kabada_bc_keyDist", plan.keyDist);
-                    fillTextFieldMultiLine("kabada_bc_keySupp", plan.keySupp);
-                    fillTextFieldMultiLine("kabada_bc_keyAct", plan.namesActivities);
-                    fillTextFieldMultiLine("kabada_bc_keyRes", plan.keyRes);
-                    fillTextFieldMultiLine("kabada_bc_keyValProp", plan.valProp);
-                    fillTextFieldMultiLine("kabada_bc_custRel", plan.custRel);
-                    fillTextFieldMultiLine("kabada_bc_channels", plan.channels);
-                    fillTextFieldMultiLine("kabada_bc_custSeg", plan.custSeg);
-                    fillTextFieldMultiLine("kabada_bc_costFixed", plan.costFixed);
-                    fillTextFieldMultiLine("kabada_bc_costVariable", plan.costVariable);
-                    fillTextFieldMultiLine("kabada_bc_revenue", plan.revenue);
+                    fillTextFieldMultiLine("kabada_bc_keyDist", plan.keyDist, true);
+                    fillTextFieldMultiLine("kabada_bc_keySupp", plan.keySupp, true);
+                    fillTextFieldMultiLine("kabada_bc_keyAct", plan.namesActivities, true);
+                    fillTextFieldMultiLine("kabada_bc_keyRes", plan.keyRes, true);
+                    fillTextFieldMultiLine("kabada_bc_keyValProp", plan.valProp, true);
+                    fillTextFieldMultiLine("kabada_bc_custRel", plan.custRel, true);
+                    fillTextFieldMultiLine("kabada_bc_channels", plan.channels, true);
+                    fillTextFieldMultiLine("kabada_bc_custSeg", plan.custSeg, true);
+                    fillTextFieldMultiLine("kabada_bc_costFixed", plan.costFixed, true);
+                    fillTextFieldMultiLine("kabada_bc_costVariable", plan.costVariable, true);
+                    fillTextFieldMultiLine("kabada_bc_revenue", plan.revenue, true);
                     fillObject("kabada_valProps", plan.valProps);
                     fillTable<ConsumerSegment_doc>("kabada_cs_consumerTable", plan.custSeG.consumer);
                     fillTable<BusinessSegment_doc>("kabada_cs_businessTable", plan.custSeG.business);
@@ -117,8 +117,7 @@ namespace Kabada {
             }
         }
             private void fillObject(string name, List<ValueProp_doc> values)
-        {
-            String value = null;
+        {           
             var bm = new DocBookmark(context);
             bm.find(bookmarkStarts, bookmarkEnds, name);
 
@@ -166,7 +165,7 @@ namespace Kabada {
                 }
                 bm.bms.Remove();
             }
-            fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
+            //fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
         }
 
         internal void SaveToDisk() {
@@ -290,7 +289,7 @@ namespace Kabada {
                 elem.AppendChild(new Run(new Text { Text = title }));
             }
         }
-            private void fillTextFieldMultiLine(string name, List<string> values)
+            private void fillTextFieldMultiLine(string name, List<string> values, bool noDataLabel=false)
         {
             String value = null;
             var bm = new DocBookmark(context);
@@ -304,9 +303,10 @@ namespace Kabada {
                 }
                 bm.bms.Remove();                                   
             }
-            fillTextFieldNoData(name,values==null||values.Count==0?value:"");            
+            if(noDataLabel)
+                fillTextFieldNoData(name,values==null||values.Count==0?value:"");            
         }
-        private void fillTextFieldMultiLine(string name, List<KeyValuePair<string,List<string>>> values)
+        private void fillTextFieldMultiLine(string name, List<KeyValuePair<string,List<string>>> values, bool noDataLabel=false)
         {
             String value = null;
             var bm = new DocBookmark(context);
@@ -329,7 +329,8 @@ namespace Kabada {
                 }
                 bm.bms.Remove();
             }
-            fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
+            if(noDataLabel)
+                fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
         }
 
         private void fillTextFieldNoData(string name, string value=null)

@@ -15,11 +15,11 @@ namespace KabadaAPI {
         {
             bms = getbmStart(bookmarkStarts, name);
             var error = String.Format("Word template error! Bookmark {0} not found", name);
-            if (bms == null) { context.logError(error);  }
+            if (bms == null) { context.logWarning(error);  }
             else {
                 error = String.Format("Word template error! BookmarkEnd not found (name: {0}, id: {1})", bms.Name, bms.Id);
                 bme = getbmEnd(bookmarkEnds, bms.Id);
-                if (bme == null) { context.logError(error);  }              
+                if (bme == null) { context.logWarning(error);  }              
             }
         }
         private BookmarkStart getbmStart(IEnumerable<BookmarkStart> bookmarks, string name) { return bookmarks.Where(i => i.Name == name).FirstOrDefault(); }
