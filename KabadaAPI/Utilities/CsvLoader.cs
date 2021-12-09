@@ -64,7 +64,7 @@ namespace KabadaAPI {
                   , hasHeaders // has headers
                   , ';'  // field delimiter
                   , '"'  // quote           , '\0' // Set quote char to '\0' to ignore quoted characters
-                  , '\0' // escape
+                  , '"' // escape
                   , '#'  // comment
                   , ValueTrimmingOptions.UnquotedOnly)) {
           rdr.SkipEmptyLines = true;

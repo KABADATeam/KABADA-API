@@ -19,7 +19,7 @@ namespace Kabada {
     public PlanOverviewElement sales_forecast;           // not clear, yet
     public PlanOverviewElement business_start_up_investments;           // not clear, yet
     public PlanOverviewElement cash_flow;           // not clear, yet
-    public PlanOverviewElement personal_characteristics;           // not clear, yet // no such variable,yet - still not developed
+    public PlanOverviewElement personal_characteristics;           // not clear, yet
     public PlanOverviewElement reasons;           // not clear, yet // no such variable,yet - still not developed
 
     public PlanOverviewElement team_competencies;    // not clear, yet
