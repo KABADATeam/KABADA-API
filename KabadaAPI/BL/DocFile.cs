@@ -1,23 +1,12 @@
 ﻿using System.IO;
-using DocumentFormat.OpenXml.Drawing;
-using DocumentFormat.OpenXml.Drawing.Wordprocessing;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using KabadaAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Paragraph = DocumentFormat.OpenXml.Wordprocessing.Paragraph;
 using Path = System.IO.Path;
-using Run = DocumentFormat.OpenXml.Wordprocessing.Run;
-using Table = DocumentFormat.OpenXml.Wordprocessing.Table;
-using TableCell = DocumentFormat.OpenXml.Wordprocessing.TableCell;
-using TableRow = DocumentFormat.OpenXml.Wordprocessing.TableRow;
-using Text = DocumentFormat.OpenXml.Wordprocessing.Text;
-using RunProperties = DocumentFormat.OpenXml.Wordprocessing.RunProperties;
-using ParagraphProperties = DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties;
 using DocumentFormat.OpenXml;
-using Break = DocumentFormat.OpenXml.Wordprocessing.Break;
 using System.Reflection;
 
 namespace Kabada {
@@ -28,6 +17,10 @@ namespace Kabada {
         protected BLontext context;
         protected Guid planId;
         protected BusinessPlanBL plan;
+        protected MainDocumentPart mainDoc;
+        protected IEnumerable<BookmarkStart> bookmarkStarts;
+        protected IEnumerable<BookmarkEnd> bookmarkEnds;
+
         protected const string NODATASUFFIX = "_nodata";
         protected const string LINEFORMAT = "- {0}";
         protected const string FILETEMPLATE = "Kabada_export.docx";
@@ -55,42 +48,75 @@ namespace Kabada {
                 using (WordprocessingDocument doc = WordprocessingDocument.Open(stream, true))
                 {
                     Body body = doc.MainDocumentPart.Document.Body;
-                    var bms = body.Descendants<BookmarkStart>();
-                    var bme = body.Descendants<BookmarkEnd>();
-                    fillPlanImage(doc.MainDocumentPart);                    
+                    mainDoc = doc.MainDocumentPart;
+                    bookmarkStarts = body.Descendants<BookmarkStart>();
+                    bookmarkEnds = body.Descendants<BookmarkEnd>();
+                    fillPlanImage();                    
                     //Title page
-                    fillTextField(bms,bme, "kabada_planName", plan.o.Title);
-                    fillTextField(bms, bme, "kabada_naceCode", plan.naceCode); 
+                    fillTextField("kabada_planName", plan.o.Title);
+                    fillTextField("kabada_naceCode", plan.naceCode); 
                     //Business Canvas Page
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyDist", plan.keyDist);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keySupp", plan.keySupp);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyAct", plan.namesActivities);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyRes", plan.keyRes);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_keyValProp", plan.valProp);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custRel", plan.custRel);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_channels", plan.channels);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_custSeg", plan.custSeg);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costFixed", plan.costFixed);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_costVariable", plan.costVariable);
-                    fillTextFieldMultiLine(bms, bme, "kabada_bc_revenue", plan.revenue);
-                    fillObject(bms, bme, "kabada_valProps", plan.valProps);
-                    fillTable<ConsumerSegment_doc>(bms, bme, body, "kabada_cs_consumerTable", plan.custSeG.consumer);
-                    fillTable<BusinessSegment_doc>(bms, bme, body, "kabada_cs_businessTable", plan.custSeG.business);
-                    fillTable<Channel_doc>(bms, bme, body, "kabada_channels", plan.channelS);
-                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_getCust", plan.CustomerRelationship.getCust);
-                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_keepCust", plan.CustomerRelationship.keepCust);
-                    fillTable<CustRelElement_doc>(bms, bme, body, "kabada_cr_convCust", plan.CustomerRelationship.convCust);
-
-                    //
-                    //fillPlanTextFieldWrapped(bms,bme, "kabada_bc_prod",plan.descriptionPropostion)
-                    //fillProductsTable(body);
+                    fillTextFieldMultiLine("kabada_bc_keyDist", plan.keyDist);
+                    fillTextFieldMultiLine("kabada_bc_keySupp", plan.keySupp);
+                    fillTextFieldMultiLine("kabada_bc_keyAct", plan.namesActivities);
+                    fillTextFieldMultiLine("kabada_bc_keyRes", plan.keyRes);
+                    fillTextFieldMultiLine("kabada_bc_keyValProp", plan.valProp);
+                    fillTextFieldMultiLine("kabada_bc_custRel", plan.custRel);
+                    fillTextFieldMultiLine("kabada_bc_channels", plan.channels);
+                    fillTextFieldMultiLine("kabada_bc_custSeg", plan.custSeg);
+                    fillTextFieldMultiLine("kabada_bc_costFixed", plan.costFixed);
+                    fillTextFieldMultiLine("kabada_bc_costVariable", plan.costVariable);
+                    fillTextFieldMultiLine("kabada_bc_revenue", plan.revenue);
+                    fillObject("kabada_valProps", plan.valProps);
+                    fillTable<ConsumerSegment_doc>("kabada_cs_consumerTable", plan.custSeG.consumer);
+                    fillTable<BusinessSegment_doc>("kabada_cs_businessTable", plan.custSeG.business);
+                    fillTable<Channel_doc>("kabada_channels", plan.channelS);
+                    fillTable<CustRelElement_doc>("kabada_cr_getCust", plan.CustomerRelationship.getCust);
+                    fillTable<CustRelElement_doc>("kabada_cr_keepCust", plan.CustomerRelationship.keepCust);
+                    fillTable<CustRelElement_doc>("kabada_cr_convCust", plan.CustomerRelationship.convCust);
+                    fillTable<KeyRes_doc>("kabada_keyResources", plan.keyResources);
+                    fillObject("kabada_keyActivities", plan.keyActivities);
+                    fillTable<KeyPartnersElement_doc>("kabada_kp_dist", plan.keyPartners.distributors);
+                    fillTable<KeyPartnersElement_doc>("kabada_kp_supp", plan.keyPartners.suppliers);
+                    fillTable<KeyPartnersElement_doc>("kabada_kp_other", plan.keyPartners.others);
+                    fillTable<CostElement_doc>("kabada_fixedCost", plan.Costs.fixedCosts);
+                    fillTable<CostElement_doc>("kabada_variableCost", plan.Costs.variableCosts);
+                    fillTextFieldMultiLine("kabada_swot_s", plan.Swot.strengths);
+                    fillTextFieldMultiLine("kabada_swot_w", plan.Swot.weaknesses);
+                    fillTextFieldMultiLine("kabada_swot_o", plan.Swot.opportunities);
+                    fillTextFieldMultiLine("kabada_swot_t", plan.Swot.threats);
 
                 }
                 stream.Close();
             }
         }
+        private void fillObject(string name, List<KeyValuePair<string, List<KeyAct_doc>>> values)
+        {
+            var t = getDocTable(name, mainDoc.Document.Body);
+            removeTableBookmark(name);
+            if (t != null)
+            {
+                Table temp_t = (Table)t.Clone();
+                Table cur_t = t;
+                var i = 0;
+                foreach (var v in values)
+                {
+                    i++;                   
+                        fillTableBody<KeyAct_doc>(cur_t, v.Value);
+                        RunProperties rp_h = new RunProperties();
+                        rp_h.Append(new Bold());
 
-        private void fillObject(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<ValueProp_doc> values)
+                        rp_h.Append(new FontSize() { Val = "28" });
+                        var p = new Paragraph();
+                        cur_t.InsertBeforeSelf(p);
+                    if (i!=1) addText(p, " ", rp_h, endBreak: true);
+                        addText(p, v.Key, rp_h, endBreak: true);
+                        if (i < values.Count)
+                            cur_t = cur_t.InsertAfterSelf((Table)temp_t.Clone());                    
+                }                
+            }
+        }
+            private void fillObject(string name, List<ValueProp_doc> values)
         {
             String value = null;
             var bm = new DocBookmark(context);
@@ -98,7 +124,7 @@ namespace Kabada {
 
             if (bm.bms != null && bm.bme != null)
             {
-                var rp = removeBookmarkText(bm.bms, bm.bme);
+                var rp = removeBookmarkText(bm);
 
                 if (values != null)
                 {
@@ -140,7 +166,7 @@ namespace Kabada {
                 }
                 bm.bms.Remove();
             }
-            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
+            fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
         }
 
         internal void SaveToDisk() {
@@ -167,7 +193,7 @@ namespace Kabada {
         {
             return body.Descendants<Table>().Where(tbl => tbl.InnerXml.Contains(bookmark)).FirstOrDefault();
         }
-        private void removeTableBookmark(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name)
+        private void removeTableBookmark(string name)
         {
             var bm = new DocBookmark(context);
             bm.find(bookmarkStarts, bookmarkEnds, name);
@@ -175,55 +201,112 @@ namespace Kabada {
             if (bm.bms != null && bm.bme != null)
                 bm.bms.Remove();
         }
-        private void fillTable<T>(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, Body body, string name, List<T> list)
+        private void fillTable<T>(string name, List<T> list)
         {            
-            var t = getDocTable(name, body);
+            var t = getDocTable(name, mainDoc.Document.Body);
             fillTableBody<T>(t, list);
-            removeTableBookmark(bookmarkStarts, bookmarkEnds, name);
+            removeTableBookmark(name);
         }
         private void fillTableBody<T>(Table t, List<T> list)
         {
             if (t != null)
             {
                 var tcPr = t.GetFirstChild<TableRow>().GetFirstChild<TableCell>().TableCellProperties;
-                foreach (var l in list)
+                if (list==null || list.Count == 0)
                 {
                     var tr = new TableRow();
                     foreach (FieldInfo prop in typeof(T).GetFields())
                     {
-                        var tc = new TableCell();
-                        var r = new Run(new Text(prop.GetValue(l)?.ToString()));
-                        var rPr = new RunProperties();
-                        rPr.Append(new RunFonts { Ascii = "Arial", HighAnsi="Arial" });
-                        rPr.Append(new FontSize { Val = new StringValue("21") });        
-                        r.PrependChild(rPr);
-                        // tc.Append(tcPr.Clone());
-                        tc.Append(new Paragraph(r));
-                        tr.Append(tc);
+                        fillTableCell(tr, "", (TableCellProperties)tcPr.Clone());
                     }
-                    if(tr.LastChild!=null)
-                        t.Append(tr);                   
+                    t.Append(tr);
+                }
+                else
+                {
+                    foreach (var l in list)
+                    {
+                        var tr = new TableRow();
+                        foreach (FieldInfo prop in typeof(T).GetFields())
+                        {
+                            fillTableCell(tr, prop.GetValue(l)?.ToString(), (TableCellProperties)tcPr.Clone(),isLink(prop.Name));
+                        }
+                        if (tr.LastChild != null)
+                            t.Append(tr);
+                    }
                 }
             }
         }
+        private bool isLink(string value) { 
+            var list = new List<string>() {"Website", "web" };
+            return list.Contains(value);
+        }
+        private void fillTableCell(TableRow tr, string value, TableCellProperties tcPr=null, bool ifLink=false)
+        {
+            var tc = new TableCell();
+            if (tcPr != null) tc.Append(tcPr);
+            var p = new Paragraph();
+            tc.Append(p);
 
-            private void fillTextFieldMultiLine(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<string> values)
+            if (ifLink) { fillHyperLink(value,value,p); }
+            else
+            {
+                var r = new Run();
+                r.Append(new Text(value));
+                var rPr = new RunProperties();
+                rPr.Append(new RunFonts { Ascii = "Arial", HighAnsi = "Arial" });
+                rPr.Append(new FontSize { Val = new StringValue("21") });
+                r.PrependChild(rPr);
+                p.Append(r);
+            }
+
+            
+           
+            tr.Append(tc);
+        }
+        private void fillHyperLink(string title, string url, OpenXmlElement elem)
+        {
+            try
+            {          
+                var rel = mainDoc.AddHyperlinkRelationship(new UriBuilder(url).Uri, true);
+
+                // Append the hyperlink with formatting.
+                elem.AppendChild(
+                    new Hyperlink(
+                        new Run(
+                            new RunProperties(
+                                // This should be enough if starting with a template
+                                new RunStyle { Val = "Hyperlink", },
+                                // Add these settings to style the link yourself
+                                new Underline { Val = UnderlineValues.Single },
+                                new Color { ThemeColor = ThemeColorValues.Hyperlink }),
+                            new Text { Text = title }
+                        ))
+                    { History = OnOffValue.FromBoolean(true), Id = rel.Id });
+            }
+            catch (Exception e)
+            {
+                context.logWarning(e.Message);
+                context.logWarning("Text field is created instead of hyperlink!");
+                elem.AppendChild(new Run(new Text { Text = title }));
+            }
+        }
+            private void fillTextFieldMultiLine(string name, List<string> values)
         {
             String value = null;
             var bm = new DocBookmark(context);
             bm.find(bookmarkStarts, bookmarkEnds, name);
             
             if (bm.bms != null&&bm.bme != null)   {
-               var rp = removeBookmarkText(bm.bms, bm.bme);
+               var rp = removeBookmarkText(bm);
                if (values != null)
                 {
                     addText(bm.bms, values, rp,LINEFORMAT);                    
                 }
                 bm.bms.Remove();                                   
             }
-            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name,values==null||values.Count==0?value:"");            
+            fillTextFieldNoData(name,values==null||values.Count==0?value:"");            
         }
-        private void fillTextFieldMultiLine(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, List<KeyValuePair<string,List<string>>> values)
+        private void fillTextFieldMultiLine(string name, List<KeyValuePair<string,List<string>>> values)
         {
             String value = null;
             var bm = new DocBookmark(context);
@@ -231,7 +314,7 @@ namespace Kabada {
 
             if (bm.bms != null && bm.bme != null)
             {
-                var rp = removeBookmarkText(bm.bms, bm.bme);
+                var rp = removeBookmarkText(bm);
                 
                 if (values != null)
                 {
@@ -246,21 +329,21 @@ namespace Kabada {
                 }
                 bm.bms.Remove();
             }
-            fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
+            fillTextFieldNoData(name, values == null || values.Count == 0 ? value : "");
         }
 
-        private void fillTextFieldNoData(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, string value=null)
+        private void fillTextFieldNoData(string name, string value=null)
             {      
-                fillTextField(bookmarkStarts, bookmarkEnds, name + NODATASUFFIX, value==null?NODATATEXT:value);
+                fillTextField(name + NODATASUFFIX, value==null?NODATATEXT:value);
             }
-        private void fillTextField(IEnumerable<BookmarkStart> bookmarkStarts, IEnumerable<BookmarkEnd> bookmarkEnds, string name, string value)
+        private void fillTextField(string name, string value)
             {
                 var bm = new DocBookmark(context);
                 bm.find(bookmarkStarts, bookmarkEnds, name);
 
                 if (bm.bms != null && bm.bme != null)
                 {
-                    var rp = removeBookmarkText(bm.bms, bm.bme);
+                    var rp = removeBookmarkText(bm);
                     if(!String.IsNullOrEmpty(value)) addText(bm.bms, value, rp);
                     bm.bms.Remove();
                 }                   
@@ -285,16 +368,16 @@ namespace Kabada {
         //    }
         //    fillTextFieldNoData(bookmarkStarts, bookmarkEnds, name, values == null || values.Count == 0 ? value : "");
         //}
-        private RunProperties removeBookmarkText(BookmarkStart bms, BookmarkEnd bme)
+        private RunProperties removeBookmarkText(DocBookmark bm)
         {
-            var rProp = bms.Parent.Descendants<Run>().Where(rp => rp.RunProperties != null).Select(rp => rp.RunProperties).FirstOrDefault();
-            if (bms.PreviousSibling() == null && bme.ElementsAfter().Count(e => e.GetType() == typeof(Run)) == 0)
+            var rProp = bm.bms.Parent.Descendants<Run>().Where(rp => rp.RunProperties != null).Select(rp => rp.RunProperties).FirstOrDefault();
+            if (bm.bms.PreviousSibling() == null && bm.bme.ElementsAfter().Count(e => e.GetType() == typeof(Run)) == 0)
             {
-                bms.Parent.RemoveAllChildren();
+                bm.bms.Parent.RemoveAllChildren();
             }
             else
             {
-                var list = bms.ElementsAfter().Where(r => r.IsBefore(bme)).ToList();
+                var list = bm.bms.ElementsAfter().Where(r => r.IsBefore(bm.bme)).ToList();
                 var trRun = list.Where(rp => rp.GetType() == typeof(Run) && ((Run)rp).RunProperties != null).Select(rp => ((Run)rp).RunProperties).FirstOrDefault();
                 if (trRun != null)
                     rProp = (RunProperties)trRun.Clone();
@@ -340,36 +423,36 @@ namespace Kabada {
             return nr;
         }
         
-        private void replaceBookmarkText(BookmarkStart bms, BookmarkEnd bme, string value, RunProperties rp = null)
-        {
-            var bmRp = removeBookmarkText(bms, bme);
-            if (rp == null) rp = bmRp;
-            addText(bms, value, rp);
-        }
+        //private void replaceBookmarkText(DocBookmark bm, string value, RunProperties rp = null)
+        //{
+        //    var bmRp = removeBookmarkText(bm);
+        //    if (rp == null) rp = bmRp;
+        //    addText(bm.bms, value, rp);
+        //}
 
-        private void fillPlanImage(MainDocumentPart mainDocPart)
+        private void fillPlanImage()
         {
             if (plan.o.Img != null)
             {
-                var imageId = getPlanImageId(mainDocPart);
+                var imageId = getPlanImageId();
                 if (!String.IsNullOrEmpty(imageId))
                 {
                     var imgContent = new UserFilesRepository(context, new DAcontext(context.config, context.logger)).byId(plan.o.Img.Value).Content;
-                    ImagePart imagePart = (ImagePart)mainDocPart.GetPartById(imageId);
+                    ImagePart imagePart = (ImagePart)mainDoc.GetPartById(imageId);
                     BinaryWriter writer = new BinaryWriter(imagePart.GetStream());
                     writer.Write(imgContent);
                     writer.Close();
                 }
             }
         }
-        private string getPlanImageId(MainDocumentPart mainDocPart)
+        private string getPlanImageId()
         {            
-            var blip = GetBlipForPicture("businessPlan.jpg", mainDocPart.Document);
+            var blip = GetBlipForPicture("businessPlan.jpg", mainDoc.Document);
             if (blip != null)
                 return blip.Embed.Value;
             return null;            
         }
-        private Blip GetBlipForPicture(string picName, Document document)
+        private DocumentFormat.OpenXml.Drawing.Blip GetBlipForPicture(string picName, Document document)
         {
             return document.Descendants<DocumentFormat.OpenXml.Drawing.Pictures.Picture>()
                  .Where(p => picName == p.NonVisualPictureProperties.NonVisualDrawingProperties.Name)
