@@ -1,7 +1,7 @@
-set H=%~dp0
+set HOJO=%~dp0
 call DOWN.cmd
 
 timeout 20
 
-cd "%H%"
+cd "%HOJO%"
 call UP.cmd
