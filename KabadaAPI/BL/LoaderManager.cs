@@ -129,6 +129,7 @@ namespace KabadaAPI {
       new IndustryRisksManager(blContext).process(inits);
       new VatManager(blContext).process(inits);
       new EssrManager(blContext).process(inits);
+      new TooltipManager(blContext).process(inits);
       }
     }
   }

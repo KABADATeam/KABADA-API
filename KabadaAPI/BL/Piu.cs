@@ -9,7 +9,7 @@ namespace KabadaAPI {
     public Piu(BLontext context) { this.context=context; }
 
     private string extract(string key) {
-      var w=Controllers.TechnicalController.ActualKey;
+      var w=ActualKey;
       if(!key.StartsWith(w))
         throw new Exception("kur lien");
       return key.Substring(w.Length);
