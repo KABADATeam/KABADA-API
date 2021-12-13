@@ -5,6 +5,7 @@ namespace KabadaAPI {
   public class CustomerSegment_doc {
     public List<ConsumerSegment_doc> consumer;    
     public List<BusinessSegment_doc> business;
+    public List<PublicSegment_doc> publicNgo; //new
     }
   public class ConsumerSegment_doc {
         public string segment_name;
@@ -19,5 +20,10 @@ namespace KabadaAPI {
         public string business_type; //comma separated list of names
         public string company_size; //comma separated list of names       
         public string geographic_location; //comma separated list of names
+    }
+    public class PublicSegment_doc
+    {
+        public string segment_name;
+        public string business_type; //comma separated list of names
     }
 }
