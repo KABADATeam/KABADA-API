@@ -13,7 +13,7 @@ kabada_bc_costFixed;costFixed;list of fixed costs types for a plan
 kabada_bc_costVariable;costVariable;list of variable costs types for a plan
 kabada_bc_revenue;revenue;list of revenue stream types for a plan
 kabada_valProps;valProps;List<ValProp_doc>, see BL/ExportDoc/ValProp_doc.cs
-kabada_custSeg;custSeG;CustomrtSegment_doc, see BL/ExportDoc/CustomerSegment_doc.cs
+?kabada_custSeg;custSeG;CustomrtSegment_doc, see BL/ExportDoc/CustomerSegment_doc.cs
 kabada_channels;channelS;List<Channel_doc>, see BL/ExportDoc/Channel_doc.cs
 kabada_custRel;CustomerRelationship;CustRel_doc, see BL/ExportDoc/CustRel_doc.cs
 kabada_keyResources;keyResources;List<keyRes_doc>, see BL/ExportDoc/keyRes_doc.cs
@@ -21,3 +21,4 @@ kabada_keyActivities;keyActivities;List<KeyValuePair<string, List<KeyAct_doc>>> 
 kabada_keyPartners;keyPartners;KeyPartners_doc, see BL/ExportDoc/KeyPartners_doc.cs
 kabada_costs;Costs;Costs_doc, see BL/ExportDoc/Costs_doc.cs
 kabada_swot;Swot;Swot_doc, see BL/ExportDoc/Swot_doc.cs
+?kabada_revenue;revenue;RevenueStream_doc, see BL/ExportDoc/RevenueStream_doc.cs
