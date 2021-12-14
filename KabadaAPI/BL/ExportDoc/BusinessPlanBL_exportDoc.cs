@@ -343,5 +343,32 @@ namespace KabadaAPI {
 
       return r;
       }}
+
+    public RevenueStream_doc revenuE { get {
+      var r=new RevenueStream_doc();
+      r.consumer=_rev(PlanAttributeKind.revenueSegment1);
+      r.business=_rev(PlanAttributeKind.revenueSegment2);
+      r.publicNgo=_rev(PlanAttributeKind.revenueOther);
+      return r;
+      }}
+
+    private List<RevenueStreamElement_doc> _rev(PlanAttributeKind kind) {
+      var segi=gA(kind);
+      var r=new List<RevenueStreamElement_doc>();
+      foreach(var o in segi){
+        var bo=new RevenueStreamBL(o);
+        var tidi=new List<Guid>{ bo.e.price_type_id, bo.e.stream_type_id };
+        var didi=textSupport.get(tidi).ToDictionary(x=>x.Id);
+        var p=didi[bo.e.price_type_id];
+        
+        var w=new RevenueStreamElement_doc(){ consumers="TODO", name=didi[bo.e.stream_type_id].Value, prices=p.Value };
+
+        var m=p.MasterId.Value;
+        w.pricingType=textSupport.getById(m).Value;
+
+        r.Add(w);
+        }
+      return r;
+      }
     }
   }

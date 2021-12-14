@@ -26,5 +26,14 @@ namespace KabadaAPI {
         default: throw new Exception($"Invalid kind='{ek.ToString()}'");
         }
       }
+
+    public static CustomerSegmentBL Make(KabadaAPIdao.Plan_SpecificAttribute old){
+      switch((PlanAttributeKind)old.Kind){
+        case PlanAttributeKind.consumerSegment: return new ConsumerSegmentBL(old);
+        case PlanAttributeKind.businessSegment: return new BusinessSegmentBL(old);
+        case PlanAttributeKind.ngoSegment:      return new NgoSegmentBL(old);
+        default: throw new Exception($"Invalid kind='{old.Kind.ToString()}'");
+        }
+      }
     }
   }

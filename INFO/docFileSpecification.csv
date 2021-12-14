@@ -21,4 +21,4 @@ kabada_keyActivities;keyActivities;List<KeyValuePair<string, List<KeyAct_doc>>> 
 kabada_keyPartners;keyPartners;KeyPartners_doc, see BL/ExportDoc/KeyPartners_doc.cs
 kabada_costs;Costs;Costs_doc, see BL/ExportDoc/Costs_doc.cs
 kabada_swot;Swot;Swot_doc, see BL/ExportDoc/Swot_doc.cs
-?kabada_revenue;revenue;RevenueStream_doc, see BL/ExportDoc/RevenueStream_doc.cs
+kabada_revenue;revenuE;RevenueStream_doc, see BL/ExportDoc/RevenueStream_doc.cs
