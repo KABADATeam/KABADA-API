@@ -27,12 +27,12 @@ namespace Kabada {
         protected const string NODATATEXT = "No Data";
         protected const string PLANFILENAMEFORMAT = "Kabada_export_{0}.docx";
         public DocFile(BLontext context) { this.context = context; }
-        public DocFile(BLontext context, Guid planId, string templateFile=null, bool saveToDisk=false) { 
+        public DocFile(BLontext context, Guid planId, string templateFile=null, bool saveToDisk=false, List<string> images=null) { 
             this.context = context; 
-            Create(planId, templateFile);
+            Create(planId, templateFile, images);
             if (saveToDisk) SaveToDisk();
         }
-        internal void Create(Guid planId, string templateFile=null)
+        internal void Create(Guid planId, string templateFile=null, List<string> images=null)
         {            
             this.planId = planId;
             var template = getTemplateFromFile(templateFile);
@@ -70,10 +70,14 @@ namespace Kabada {
                     fillObject("kabada_valProps", plan.valProps);
                     fillTable<ConsumerSegment_doc>("kabada_cs_consumerTable", plan.custSeG.consumer);
                     fillTable<BusinessSegment_doc>("kabada_cs_businessTable", plan.custSeG.business);
+                    fillTable<PublicSegment_doc>("kabada_cs_publicTable", plan.custSeG.publicNgo);
                     fillTable<Channel_doc>("kabada_channels", plan.channelS);
                     fillTable<CustRelElement_doc>("kabada_cr_getCust", plan.CustomerRelationship.getCust);
                     fillTable<CustRelElement_doc>("kabada_cr_keepCust", plan.CustomerRelationship.keepCust);
                     fillTable<CustRelElement_doc>("kabada_cr_convCust", plan.CustomerRelationship.convCust);
+                    fillTable<RevenueStreamElement_doc>("kabada_rs_consumer", plan.revenuE.consumer);
+                    fillTable<RevenueStreamElement_doc>("kabada_rs_business", plan.revenuE.business);
+                    fillTable<RevenueStreamElement_doc>("kabada_rs_public", plan.revenuE.publicNgo);
                     fillTable<KeyRes_doc>("kabada_keyResources", plan.keyResources);
                     fillObject("kabada_keyActivities", plan.keyActivities);
                     fillTable<KeyPartnersElement_doc>("kabada_kp_dist", plan.keyPartners.distributors);
@@ -85,6 +89,7 @@ namespace Kabada {
                     fillTextFieldMultiLine("kabada_swot_w", plan.Swot.weaknesses);
                     fillTextFieldMultiLine("kabada_swot_o", plan.Swot.opportunities);
                     fillTextFieldMultiLine("kabada_swot_t", plan.Swot.threats);
+                    fillIndustryDataImages(images);
 
                 }
                 stream.Close();
@@ -423,32 +428,58 @@ namespace Kabada {
                 elem.InsertAfterSelf(nr);
             return nr;
         }
-        
+
         //private void replaceBookmarkText(DocBookmark bm, string value, RunProperties rp = null)
         //{
         //    var bmRp = removeBookmarkText(bm);
         //    if (rp == null) rp = bmRp;
         //    addText(bm.bms, value, rp);
         //}
-
+        private void fillIndustryDataImages(List<string> images)
+        {
+            if (images != null)
+            {
+                if (!String.IsNullOrEmpty(images[0])) {
+                    var imageId = getImageId("rate.png");
+                    if (!String.IsNullOrEmpty(imageId))
+                    {
+                        var imgContent = Convert.FromBase64String(images[0]);
+                        fillImage(imgContent, imageId);
+                    }
+                }
+                if (!String.IsNullOrEmpty(images[1]))
+                {
+                    var imageId = getImageId("summary.png");
+                    if (!String.IsNullOrEmpty(imageId))
+                    {
+                        var imgContent = Convert.FromBase64String(images[1]);
+                        fillImage(imgContent, imageId);
+                    }
+                }
+            }
+        }
         private void fillPlanImage()
         {
             if (plan.o.Img != null)
             {
-                var imageId = getPlanImageId();
+                var imageId = getImageId("businessPlan.jpg");
                 if (!String.IsNullOrEmpty(imageId))
                 {
                     var imgContent = new UserFilesRepository(context, new DAcontext(context.config, context.logger)).byId(plan.o.Img.Value).Content;
-                    ImagePart imagePart = (ImagePart)mainDoc.GetPartById(imageId);
-                    BinaryWriter writer = new BinaryWriter(imagePart.GetStream());
-                    writer.Write(imgContent);
-                    writer.Close();
+                    fillImage(imgContent, imageId);
                 }
             }
         }
-        private string getPlanImageId()
+        private void fillImage(byte[] imgContent, string imageId)
+        {
+            ImagePart imagePart = (ImagePart)mainDoc.GetPartById(imageId);
+            BinaryWriter writer = new BinaryWriter(imagePart.GetStream());
+            writer.Write(imgContent);
+            writer.Close();
+        }
+        private string getImageId(string imgName)
         {            
-            var blip = GetBlipForPicture("businessPlan.jpg", mainDoc.Document);
+            var blip = GetBlipForPicture(imgName, mainDoc.Document);
             if (blip != null)
                 return blip.Embed.Value;
             return null;            

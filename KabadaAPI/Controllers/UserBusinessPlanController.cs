@@ -333,33 +333,47 @@ namespace KabadaAPI.Controllers {
     public IActionResult DocFile(Guid BusinessPlan) { return prun<Guid>(_DocFile, BusinessPlan); }
     private IActionResult _DocFile(Guid planId)
     {
-        _logger.LogInformation($"-- DocFile for plan {planId}");                  
+        _logger.LogInformation($"-- DocFile for plan {planId}");
             var docFile = new DocFile(context, planId);    
             return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);     
     }
-        [HttpGet("docx/{BusinessPlan}")]
-        [Authorize]
-        public IActionResult DocxFile(Guid BusinessPlan) { return prun<Guid>(_DocxFile, BusinessPlan); }
-        private IActionResult _DocxFile(Guid planId)
-        {
-            _logger.LogInformation($"-- DocxFile for plan {planId}");
-            //create doc file
-            var docFile = new DocFile(context, planId);
-            var p = new BusinessPlanBL();
-            p.textSupport = new TexterRepository(context);
-            var fn = p.filePath("_Kabada_export.docx");
-            System.IO.File.WriteAllBytes(fn, docFile.stream.ToArray());
-            return Ok();
-        }
-        [HttpGet("pdf/{BusinessPlan}")]
-        [Authorize]
-        public IActionResult PdfFile(Guid BusinessPlan) { return prun<Guid>(_PdfFile, BusinessPlan); }
-        private IActionResult _PdfFile(Guid planId)
-        {
-            _logger.LogInformation($"-- PdfFile for plan {planId}");                                   
-            var docFile = new DocFile(context, planId);
-            var temp = docFile.ToPdf();            
-            return File(temp, "application/pdf", Path.ChangeExtension(docFile.fileName, ".pdf"));           
-        }
+
+    [HttpPost("docx")]
+    [Authorize]
+    //[AllowAnonymous]
+    public IActionResult DocFilePost([FromBody] ExportPlan plan) { return prun<ExportPlan>(_DocFilePost, plan); }
+    private IActionResult _DocFilePost([FromBody] ExportPlan plan)
+    {
+        _logger.LogInformation($"-- DocpFile for plan {plan.id}");
+        //create doc file
+        var docFile = new DocFile(context, plan.id,images:plan.images);
+        return File(docFile.stream.ToArray(), "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docFile.fileName);
+    }
+
+    [HttpGet("docx/{BusinessPlan}")]
+    [Authorize]
+    public IActionResult DocxFile(Guid BusinessPlan) { return prun<Guid>(_DocxFile, BusinessPlan); }
+    private IActionResult _DocxFile(Guid planId)
+    {
+        _logger.LogInformation($"-- DocxFile for plan {planId}");
+        //create doc file
+        var docFile = new DocFile(context, planId);
+        var p = new BusinessPlanBL();
+        p.textSupport = new TexterRepository(context);
+        var fn = p.filePath("_Kabada_export.docx");
+        System.IO.File.WriteAllBytes(fn, docFile.stream.ToArray());
+        return Ok();
+    }
+
+    [HttpGet("pdf/{BusinessPlan}")]
+    [Authorize]
+    public IActionResult PdfFile(Guid BusinessPlan) { return prun<Guid>(_PdfFile, BusinessPlan); }
+    private IActionResult _PdfFile(Guid planId)
+    {
+        _logger.LogInformation($"-- PdfFile for plan {planId}");                                   
+        var docFile = new DocFile(context, planId);
+        var temp = docFile.ToPdf();            
+        return File(temp, "application/pdf", Path.ChangeExtension(docFile.fileName, ".pdf"));           
+    }
     }
   }
