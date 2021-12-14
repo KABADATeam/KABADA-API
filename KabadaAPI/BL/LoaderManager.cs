@@ -113,7 +113,12 @@ namespace KabadaAPI {
         }
       lgf=null;
 
-      // move the processed input file
+      if(success){ // copy to condensate
+        var conda=Path.Combine(Path.Combine(fullDirectoryPath, "condensate"), basic);
+        File.Copy(f, conda, true);
+        }
+
+       // move the processed input file
       var nn=Path.Combine(suba, stmp+"_"+basic);
       File.Move(f, nn);
 
