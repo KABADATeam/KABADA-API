@@ -374,7 +374,8 @@ namespace KabadaAPI {
         var didi=textSupport.get(tidi).ToDictionary(x=>x.Id);
         var p=didi[bo.e.price_type_id];
         
-        var w=new RevenueStreamElement_doc(){ consumers="TODO", name=didi[bo.e.stream_type_id].Value, prices=p.Value };
+        var w=new RevenueStreamElement_doc(){ consumers=(bo.e.namesOfSegments==null || bo.e.namesOfSegments.Count<1)?"":string.Join(", ", bo.e.namesOfSegments),
+                 name=didi[bo.e.stream_type_id].Value, prices=p.Value };
 
         var m=p.MasterId.Value;
         w.pricingType=textSupport.getById(m).Value;
