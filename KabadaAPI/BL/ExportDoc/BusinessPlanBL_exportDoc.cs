@@ -144,7 +144,7 @@ namespace KabadaAPI {
       foreach(var x in us){
         var w=new PublicSegment_doc(){ segment_name=x.e.segment_name };
         var d=namid(x.e.minorAttributes);
-        w.business_type=namil(EnumTexterKind.industry, x.e.minorAttributes, d);
+        w.business_type=namil(EnumTexterKind.public_bodies_ngo, x.e.minorAttributes, d);
         r.Add(w);
         }
       return r;
