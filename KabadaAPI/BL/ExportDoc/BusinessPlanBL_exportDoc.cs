@@ -134,8 +134,21 @@ namespace KabadaAPI {
       var r=new CustomerSegment_doc();
       r.business=custSeGbus();
       r.consumer=custSeGcons();
+      r.publicNgo=custSeGngo();
       return r;
       }}
+
+    private List<PublicSegment_doc> custSeGngo() {
+      var r=new List<PublicSegment_doc>();
+      var us=gS(PlanAttributeKind.ngoSegment).Select(x=>new NgoSegmentBL(x)).ToList();
+      foreach(var x in us){
+        var w=new PublicSegment_doc(){ segment_name=x.e.segment_name };
+        var d=namid(x.e.minorAttributes);
+        w.business_type=namil(EnumTexterKind.industry, x.e.minorAttributes, d);
+        r.Add(w);
+        }
+      return r;
+      }
 
     private Dictionary<Guid, string> namid(Dictionary<short, List<Guid>> full){
       var idi=new List<Guid>();
@@ -181,7 +194,7 @@ namespace KabadaAPI {
         w.geographic_location=namil(EnumTexterKind.geographic_location, x.e.minorAttributes, d);
         r.Add(w);
         }
-      return r;;
+      return r;
       }
 
     public List<Channel_doc> channelS { get {
