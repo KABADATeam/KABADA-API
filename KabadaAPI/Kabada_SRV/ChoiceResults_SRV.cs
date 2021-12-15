@@ -39,7 +39,7 @@ namespace Kabada {
       kri.unload();
       kri.completeSet(o==null?null:kri.id, paRepo);
       
-      var pe=new BusinessPlanBL(plan);
+      var pe=new BusinessPlanBL(plan, true);
       if(pe.e.is_personal_characteristics_completed!=is_personal_characteristics_completed){
         pe.e.is_personal_characteristics_completed=is_personal_characteristics_completed;
         pe.unload();
