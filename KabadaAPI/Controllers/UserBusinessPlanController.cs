@@ -376,6 +376,10 @@ namespace KabadaAPI.Controllers {
         return File(temp, "application/pdf", Path.ChangeExtension(docFile.fileName, ".pdf"));           
     }
 
+    private FileStreamResult xlsR(MemoryStream ms, string outfile){ return File(ms, CashFlow.XLSXmedia, outfile); }
+
+    private FileContentResult xlsR(byte[] cnt, string outfile){ return File(cnt, CashFlow.XLSXmedia, outfile); }
+      
     [HttpGet("xlsx/{BusinessPlan}")]
     //[AllowAnonymous]
     [Authorize]
@@ -386,8 +390,17 @@ namespace KabadaAPI.Controllers {
         u=Guid.Parse("{C1F7DC07-FFC7-4B20-B966-08D9BB1CD004}");
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId,u);
       p.textSupport=new TexterRepository(context);
-      var temp =p.xlsxBytes();            
-      return File(temp, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Kabada_export_{p.o.Title}.xlsx");           
+
+      var skipXlsxFile=false;
+      var skipCSV=false;
+      var skipCapitalUpdate=false;
+      
+      var nam=$"Kabada_export_{p.o.Title}.xlsx";
+      if(skipXlsxFile)
+        return xlsR(p.xlsxStream(skipCSV, skipCapitalUpdate), nam);
+       else
+        return xlsR(p.xlsxBytes(skipCSV, skipCapitalUpdate), nam);
+      //return File(temp, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Kabada_export_{p.o.Title}.xlsx");           
     }
     }
   }

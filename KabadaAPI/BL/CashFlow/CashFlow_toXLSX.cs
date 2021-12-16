@@ -10,7 +10,17 @@ using X15 = DocumentFormat.OpenXml.Office2013.Excel;
 
 namespace Kabada {
   partial class CashFlow {
+    public const string XLSXmedia="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+
     //---------------------- entry points -------------------------------//
+    public MemoryStream xlsxStream(short years=1) {
+      var memoryStream = new MemoryStream();
+      var spreadsheetDocument = SpreadsheetDocument.Create(memoryStream, SpreadsheetDocumentType.Workbook);
+      fillInXlsx(spreadsheetDocument);
+      memoryStream.Seek(0, SeekOrigin.Begin);
+      return memoryStream;
+      }
+
     public byte[] xlsxBytes(string fileFullname, short years=1) {
       createExcelFile(fileFullname, years);
       return System.IO.File.ReadAllBytes(fileFullname);
@@ -19,8 +29,7 @@ namespace Kabada {
     public void createExcelFile(string fileFullname, short years=1) {
       xYears=years;
       using (var doc = SpreadsheetDocument.Create(fileFullname, SpreadsheetDocumentType.Workbook)){
-        createPartsForExcel(doc, "CashFlow");
-        generateWorksheetPartContent(worksheetPart, generateSheetdataForDetails());
+        fillInXlsx(doc);
         workbookPart.Workbook.Save();
         doc.Close(); 
         }
@@ -33,6 +42,11 @@ namespace Kabada {
     private WorksheetPart worksheetPart;
 
     //---------------------- this xlsx specific -------------------------------//
+    private void fillInXlsx(SpreadsheetDocument doc) {
+      createPartsForExcel(doc, "CashFlow");
+      generateWorksheetPartContent(worksheetPart, generateSheetdataForDetails());
+      }
+
     private List<string> headers { get {
       var r=new List<string>{ "Title", "0" };
       for(var y=1; y<=xYears; y++){

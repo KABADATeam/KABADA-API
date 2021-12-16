@@ -30,6 +30,11 @@ namespace KabadaAPI {
       return w.xlsxBytes(filePath("CashFlow.xlsx"), pYears);
       }
 
+    public MemoryStream xlsxStream(bool skipCSV=false, bool skipNecessaryCapitalUpdate=false){
+      var w=myCashFlow(skipCSV, skipNecessaryCapitalUpdate);
+      return w.xlsxStream(pYears);
+      }
+
     public CashFlow myCashFlow(bool skipCSV=false, bool skipNecessaryCapitalUpdate=false){
       loadTaxes();
 
