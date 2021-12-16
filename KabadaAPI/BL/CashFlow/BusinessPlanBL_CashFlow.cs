@@ -32,6 +32,7 @@ namespace KabadaAPI {
 
       cf=new CashFlow();
       myCashFlowInternal(skipNecessaryCapitalUpdate);
+cf.createExcelFile(filePath("CashFlow.xlsx"));
 
       if(skipCSV==false)
         snapCSV();

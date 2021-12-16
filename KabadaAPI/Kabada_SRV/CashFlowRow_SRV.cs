@@ -70,6 +70,14 @@ namespace Kabada {
       return monthlyValue[month];
       }
 
+    public decimal? yv(int year){ // start with 1
+      switch(year){
+        case 1: return totalYear1;
+        case 2: return totalYear2;
+        default: return null;
+        }
+      }
+
     internal CashFlowRow minusots(string v, CashFlowRow t) { return makots(v, t, minuso); }
       //var n=(short)(monthlyValue.Count-1);
       //var r=new CashFlowRow(title, null, n);
