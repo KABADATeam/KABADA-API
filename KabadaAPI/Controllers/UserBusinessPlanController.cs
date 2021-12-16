@@ -377,10 +377,14 @@ namespace KabadaAPI.Controllers {
     }
 
     [HttpGet("xlsx/{BusinessPlan}")]
+    //[AllowAnonymous]
     [Authorize]
     public IActionResult CashFlowFile(Guid BusinessPlan) { return prun<Guid>(_CashFlowFile, BusinessPlan); }
     private IActionResult _CashFlowFile(Guid planId) {
-      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      var u=context.userGuid;
+      if(u==Guid.Empty)
+        u=Guid.Parse("{C1F7DC07-FFC7-4B20-B966-08D9BB1CD004}");
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId,u);
       p.textSupport=new TexterRepository(context);
       var temp =p.xlsxBytes();            
       return File(temp, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Kabada_export_{p.o.Title}.xlsx");           
