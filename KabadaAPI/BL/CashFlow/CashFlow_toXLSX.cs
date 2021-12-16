@@ -30,8 +30,8 @@ namespace Kabada {
       xYears=years;
       using (var doc = SpreadsheetDocument.Create(fileFullname, SpreadsheetDocumentType.Workbook)){
         fillInXlsx(doc);
-        workbookPart.Workbook.Save();
-        doc.Close(); 
+        //workbookPart.Workbook.Save();
+        //doc.Close(); 
         }
       }
 
@@ -45,7 +45,8 @@ namespace Kabada {
     private void fillInXlsx(SpreadsheetDocument doc) {
       createPartsForExcel(doc, "CashFlow");
       generateWorksheetPartContent(worksheetPart, generateSheetdataForDetails());
-      }
+      doc.Close();
+        }
 
     private List<string> headers { get {
       var r=new List<string>{ "Title", "0" };

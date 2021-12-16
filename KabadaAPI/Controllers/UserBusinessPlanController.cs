@@ -381,7 +381,7 @@ namespace KabadaAPI.Controllers {
     private FileContentResult xlsR(byte[] cnt, string outfile){ return File(cnt, CashFlow.XLSXmedia, outfile); }
       
     [HttpGet("xlsx/{BusinessPlan}")]
-    //[AllowAnonymous]
+   // [AllowAnonymous]
     [Authorize]
     public IActionResult CashFlowFile(Guid BusinessPlan) { return prun<Guid>(_CashFlowFile, BusinessPlan); }
     private IActionResult _CashFlowFile(Guid planId) {
@@ -391,7 +391,7 @@ namespace KabadaAPI.Controllers {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId,u);
       p.textSupport=new TexterRepository(context);
 
-      var skipXlsxFile=false;
+      var skipXlsxFile=true;
       var skipCSV=false;
       var skipCapitalUpdate=false;
       
