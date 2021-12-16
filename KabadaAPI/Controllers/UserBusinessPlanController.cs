@@ -375,5 +375,15 @@ namespace KabadaAPI.Controllers {
         var temp = docFile.ToPdf();            
         return File(temp, "application/pdf", Path.ChangeExtension(docFile.fileName, ".pdf"));           
     }
+
+    [HttpGet("xlsx/{BusinessPlan}")]
+    [Authorize]
+    public IActionResult CashFlowFile(Guid BusinessPlan) { return prun<Guid>(_CashFlowFile, BusinessPlan); }
+    private IActionResult _CashFlowFile(Guid planId) {
+      var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
+      p.textSupport=new TexterRepository(context);
+      var temp =p.xlsxBytes();            
+      return File(temp, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Kabada_export_{p.o.Title}.xlsx");           
+    }
     }
   }

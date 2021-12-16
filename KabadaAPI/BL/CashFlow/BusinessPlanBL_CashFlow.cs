@@ -14,6 +14,7 @@ namespace KabadaAPI {
     public int pendingInvestment;
 
     public int pPeriod { get { return NZ.Z(e.startup.period, 12); }}
+    public short pYears { get { return (short)(pPeriod/12); }}
 
     public List<decimal?> refreshNecessaryCapital(bool createCSV=false, bool skipNecessaryCapitalUpdate=false){
       myCashFlow(!createCSV, skipNecessaryCapitalUpdate);
@@ -24,6 +25,11 @@ namespace KabadaAPI {
       }
 
     //----------------------------------------- 1 ------------------------------------------//
+    public byte[] xlsxBytes(bool skipCSV=false, bool skipNecessaryCapitalUpdate=false){
+      var w=myCashFlow(skipCSV, skipNecessaryCapitalUpdate);
+      return w.xlsxBytes(filePath("CashFlow.xlsx"), pYears);
+      }
+
     public CashFlow myCashFlow(bool skipCSV=false, bool skipNecessaryCapitalUpdate=false){
       loadTaxes();
 
