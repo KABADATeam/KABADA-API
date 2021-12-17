@@ -56,6 +56,7 @@ namespace Kabada {
       bo.texterId=stream_type_id;
       bo.e.stream_type_id=stream_type_id;
       bo.e.price_type_id=price_type_id;
+      bo.e.namesOfSegments=segments;
       }
 
     private Guid create() {
