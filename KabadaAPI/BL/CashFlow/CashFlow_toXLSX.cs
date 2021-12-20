@@ -14,6 +14,7 @@ namespace Kabada {
 
     //---------------------- entry points -------------------------------//
     public MemoryStream xlsxStream(short years=1) {
+      xYears=years;
       var memoryStream = new MemoryStream();
       var spreadsheetDocument = SpreadsheetDocument.Create(memoryStream, SpreadsheetDocumentType.Workbook);
       fillInXlsx(spreadsheetDocument);
