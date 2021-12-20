@@ -26,6 +26,7 @@ namespace Kabada {
         protected const string FILETEMPLATE = "Kabada_export.docx";
         protected const string NODATATEXT = "No Data";
         protected const string PLANFILENAMEFORMAT = "Kabada_export_{0}.docx";
+        protected Dictionary<byte, string> risksValues = new Dictionary<byte, string>() { {1,"High"},{2,"Medium"},{3,"Low"} };
         public DocFile(BLontext context) { this.context = context; }
         public DocFile(BLontext context, Guid planId, string templateFile=null, bool saveToDisk=false, List<string> images=null) { 
             this.context = context; 
@@ -41,6 +42,9 @@ namespace Kabada {
             if (plan.o.Id == Guid.Empty) throw new Exception("Plan not found");
             plan.textSupport = new TexterRepository(context);
             setDefaultFileName();
+            var r = new IndustryRiskS();
+            if(plan.activity!=null)
+                r.read(context, plan.activity.Id);
             using (stream = new MemoryStream())
             {
                 stream.Write(template, 0, (int)template.Length);
@@ -89,12 +93,92 @@ namespace Kabada {
                     fillTextFieldMultiLine("kabada_swot_w", plan.Swot.weaknesses);
                     fillTextFieldMultiLine("kabada_swot_o", plan.Swot.opportunities);
                     fillTextFieldMultiLine("kabada_swot_t", plan.Swot.threats);
-                    fillIndustryDataImages(images);
+                    //fillIndustryDataImages(images);
+                    fillObject("kabada_industryRisks", r.risks);
 
                 }
                 stream.Close();
             }
         }
+
+        private void fillObject(string name, List<IndustryRisk> values)
+        {
+            var bm = new DocBookmark(context);
+            bm.find(bookmarkStarts, bookmarkEnds, name);
+
+            if (bm.bms != null && bm.bme != null)
+            {
+                var rp = removeBookmarkText(bm);
+                RunProperties rp_h2 = (RunProperties)rp.Clone();
+                rp_h2.Append(new Bold());
+                rp_h2.Append(new FontSize() { Val = "36" });
+                RunProperties rp_h3 = (RunProperties)rp.Clone();
+                rp_h3.Append(new Bold());
+                rp_h3.Append(new FontSize() { Val = "28" });
+                RunProperties rp_b = (RunProperties)rp.Clone();
+                rp_b.Append(new Bold());               
+                
+                if (values != null)
+                {
+                    OpenXmlElement elem = bm.bms.Parent;
+                    //var insListElem = bm.bms.Parent;
+                    var oldCat = "";
+                    foreach (var val in values)
+                    {
+                        var p = new Paragraph();
+                        elem.InsertAfterSelf(p);
+                        elem = p;
+                        var cat = val.category[0].ToString().ToUpper() + val.category.Substring(1).ToLower();
+                        if (val.category != oldCat) elem = addText(p, cat, rp_h2, endBreak: true);
+                        oldCat = val.category;
+                        elem = addText(elem, val.type, rp_h3, endBreak:true);
+                        elem = addText(elem, "Likelihood / Severity: ", rp_b);
+                        if (val.likelihood != null || val.severity != null)
+                            elem = addText(elem, String.Format("{0} / {1}", val.likelihood == null ? "" : risksValues[val.likelihood.Value], val.severity == null ? "":risksValues[val.severity.Value]), addColor(rp_b, val.severity, val.likelihood), endBreak:true);
+                        elem = addText(elem, val.comments, rp);                                      
+                        elem = addText(elem, String.Format("\u24BE Possible country - specific deviations: {0} - {1}", val.countryDeviationScore, val.countryDeviationComment), addColor(rp,0), endBreak:true );
+                    }
+                }
+                bm.bms.Remove();
+            }
+        }
+        private RunProperties addColor(RunProperties rp, byte? i=null, byte? j=null)
+        {
+            RunProperties rp_colored = (RunProperties)rp.Clone();
+            var k = 100;
+            if (i == 0) k = 0;
+            else
+            if (i != null && j != null) { decimal n = (i.Value + j.Value)/2m;k = n < 2 ? 1 : n==2?(int)n:3; }
+            else
+            if (i == null && j == null) k = 0;
+
+            switch (k)
+            {
+                case 0: //light blue
+                    rp_colored.Highlight?.Remove();
+                    rp_colored.Append(new Shading() { Fill = "E6F7ff" });
+                    break;
+                case 1: //green
+                    rp_colored.Append(new Color() { Val = "c80000" });
+                    rp_colored.Highlight?.Remove();
+                    rp_colored.Append(new Shading() { Fill = "F4CCCC" });
+                    
+                    break;
+                case 2: //yellow
+                    rp_colored.Append(new Color() { Val = "B45F06" });
+                    rp_colored.Highlight?.Remove();
+                    rp_colored.Append(new Shading() { Fill = "ffe599" });
+                    break;
+                case 3: //red
+                    rp_colored.Append(new Color() { Val = "3F6600" });
+                    rp_colored.Highlight?.Remove();
+                    rp_colored.Append(new Shading() { Fill = "B7EB8F" });
+                    break;
+                }
+           
+            return rp_colored;
+        }
+
         private void fillObject(string name, List<KeyValuePair<string, List<KeyAct_doc>>> values)
         {
             var t = getDocTable(name, mainDoc.Document.Body);
@@ -392,7 +476,7 @@ namespace Kabada {
             }
             return rProp;
         }
-        private Run addText(OpenXmlElement elem, string value, RunProperties rp, string format = null, bool endBreak=false, bool tabChar=false)
+        private Run addText(OpenXmlElement elem, string value, RunProperties rp, string format = null, bool endBreak=false, bool tabChar=false,  HexBinaryValue ch=null)
         {
            // var bmRp = removeBookmarkText(bms, bme);
             //if (rp == null) rp = bmRp;
@@ -401,6 +485,8 @@ namespace Kabada {
             if (rp != null)
                 nr.RunProperties = (RunProperties)rp.Clone();
             if (!String.IsNullOrEmpty(format)) value = String.Format(format, value);
+            if (ch!=null)
+               nr.Append(new SymbolChar() { Char=ch });
             nr.Append(new Text(){Text = value, Space = SpaceProcessingModeValues.Preserve });
             if (endBreak) nr.Append(new Break());
             if ((elem.Parent == null) || (elem.GetType() == typeof(Paragraph)))
