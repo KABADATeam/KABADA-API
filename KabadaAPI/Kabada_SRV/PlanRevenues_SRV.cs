@@ -45,7 +45,8 @@ namespace Kabada {
         o.price_type_name = priceTypes[bo.e.price_type_id].Value;
         var c=priceTypes[priceTypes[bo.e.price_type_id].MasterId.Value];
         o.price_category_id = c.Id;
-        o.price_category_name = c.Value;              
+        o.price_category_name = c.Value;
+        o.segments=bo.e.namesOfSegments;
         }
        }
 

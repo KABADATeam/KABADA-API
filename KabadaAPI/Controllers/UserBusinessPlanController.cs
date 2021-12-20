@@ -305,7 +305,7 @@ namespace KabadaAPI.Controllers {
     private ActionResult<CashFlow> _Mycashflow(Guid planId) {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
-      return p.myCashFlow();
+      return p.myCashFlow(true);
       }
 
     [HttpGet]
@@ -315,7 +315,7 @@ namespace KabadaAPI.Controllers {
     private ActionResult<List<decimal?>> _MynecessaryCapital(Guid planId) {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
-      return p.refreshNecessaryCapital(true);
+      return p.refreshNecessaryCapital(false);
       }
 
     [HttpPost]
@@ -392,7 +392,7 @@ namespace KabadaAPI.Controllers {
       p.textSupport=new TexterRepository(context);
 
       var skipXlsxFile=true;
-      var skipCSV=false;
+      var skipCSV=true;
       var skipCapitalUpdate=false;
       
       var nam=$"Kabada_export_{p.o.Title}.xlsx";
