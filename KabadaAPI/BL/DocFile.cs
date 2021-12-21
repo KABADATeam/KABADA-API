@@ -26,7 +26,7 @@ namespace Kabada {
         protected const string FILETEMPLATE = "Kabada_export.docx";
         protected const string NODATATEXT = "No Data";
         protected const string PLANFILENAMEFORMAT = "Kabada_export_{0}.docx";
-        protected Dictionary<byte, string> risksValues = new Dictionary<byte, string>() { {1,"High"},{2,"Medium"},{3,"Low"} };
+        protected Dictionary<byte, string> risksValues = new Dictionary<byte, string>() { {1,"Low"},{2,"Medium"},{3,"High"} };
         public DocFile(BLontext context) { this.context = context; }
         public DocFile(BLontext context, Guid planId, string templateFile=null, bool saveToDisk=false, List<string> images=null) { 
             this.context = context; 
@@ -158,11 +158,10 @@ namespace Kabada {
                     rp_colored.Highlight?.Remove();
                     rp_colored.Append(new Shading() { Fill = "E6F7ff" });
                     break;
-                case 1: //green
-                    rp_colored.Append(new Color() { Val = "c80000" });
+                case 1: //green 
+                    rp_colored.Append(new Color() { Val = "3F6600" });
                     rp_colored.Highlight?.Remove();
-                    rp_colored.Append(new Shading() { Fill = "F4CCCC" });
-                    
+                    rp_colored.Append(new Shading() { Fill = "B7EB8F" });                                        
                     break;
                 case 2: //yellow
                     rp_colored.Append(new Color() { Val = "B45F06" });
@@ -170,9 +169,9 @@ namespace Kabada {
                     rp_colored.Append(new Shading() { Fill = "ffe599" });
                     break;
                 case 3: //red
-                    rp_colored.Append(new Color() { Val = "3F6600" });
+                    rp_colored.Append(new Color() { Val = "c80000" });
                     rp_colored.Highlight?.Remove();
-                    rp_colored.Append(new Shading() { Fill = "B7EB8F" });
+                    rp_colored.Append(new Shading() { Fill = "F4CCCC" });
                     break;
                 }
            
