@@ -137,6 +137,7 @@ namespace Kabada {
                             elem = addText(elem, String.Format("{0} / {1}", val.likelihood == null ? "" : risksValues[val.likelihood.Value], val.severity == null ? "":risksValues[val.severity.Value]), addColor(rp_b, val.severity, val.likelihood), endBreak:true);
                         elem = addText(elem, val.comments, rp);                                      
                         elem = addText(elem, String.Format("\u24BE Possible country - specific deviations: {0} - {1}", val.countryDeviationScore, val.countryDeviationComment), addColor(rp,0), endBreak:true );
+                        elem = p;
                     }
                 }
                 bm.bms.Remove();
