@@ -353,29 +353,32 @@ namespace Kabada {
         }
         private void fillHyperLink(string title, string url, OpenXmlElement elem)
         {
-            try
-            {          
-                var rel = mainDoc.AddHyperlinkRelationship(new UriBuilder(url).Uri, true);
-
-                // Append the hyperlink with formatting.
-                elem.AppendChild(
-                    new Hyperlink(
-                        new Run(
-                            new RunProperties(
-                                // This should be enough if starting with a template
-                                new RunStyle { Val = "Hyperlink", },
-                                // Add these settings to style the link yourself
-                                new Underline { Val = UnderlineValues.Single },
-                                new Color { ThemeColor = ThemeColorValues.Hyperlink }),
-                            new Text { Text = title }
-                        ))
-                    { History = OnOffValue.FromBoolean(true), Id = rel.Id });
-            }
-            catch (Exception e)
+            if (!String.IsNullOrEmpty(url))
             {
-                context.logWarning(e.Message);
-                context.logWarning("Text field is created instead of hyperlink!");
-                elem.AppendChild(new Run(new Text { Text = title }));
+                if (String.IsNullOrEmpty(title)) title = url;
+                try
+                {
+                    var rel = mainDoc.AddHyperlinkRelationship(new UriBuilder(url).Uri, true);
+                    // Append the hyperlink with formatting.
+                    elem.AppendChild(
+                        new Hyperlink(
+                            new Run(
+                                new RunProperties(
+                                    // This should be enough if starting with a template
+                                    new RunStyle { Val = "Hyperlink", },
+                                    // Add these settings to style the link yourself
+                                    new Underline { Val = UnderlineValues.Single },
+                                    new Color { ThemeColor = ThemeColorValues.Hyperlink }),
+                                new Text { Text = title }
+                            ))
+                        { History = OnOffValue.FromBoolean(true), Id = rel.Id });
+                }
+                catch (Exception e)
+                {
+                    context.logWarning(e.Message);
+                    context.logWarning("Text field is created instead of hyperlink!");
+                    elem.AppendChild(new Run(new Text { Text = title }));
+                }
             }
         }
             private void fillTextFieldMultiLine(string name, List<string> values, bool noDataLabel=false)
