@@ -120,12 +120,9 @@ namespace KabadaAPI {
       return r;
       }
 
-    public string descriptionCustomerSegments { get {//TODO Maybe info from the first two fields: Age groups and Gender
-      return "TODO: Maybe info from the first two fields: Age groups and Gender";
-      //var r=gSv(PlanAttributeKind.consumerSegment);
-      //r.AddRange(gSv(PlanAttributeKind.businessSegment));
-      //r.AddRange(gSv(PlanAttributeKind.ngoSegment));
-      //return r.Count<1?null:string.Join(" ,", r);
+    public string descriptionCustomerSegments { get {// segments name
+      var t=custSeg;
+      return string.Join(", ", t);
       }}
 
     public string descriptionPropostion { get { // product names
@@ -141,8 +138,9 @@ namespace KabadaAPI {
       return string.Join(", ", t);
       }}
 
-    public string descriptionRelationship { get {//TODO maybe at the first moment selected channels, but not sure (needs more discussion)
-      return "TODO: maybe at the first moment selected channels, but not sure (needs more discussion)";
+    public string descriptionRelationship { get {//names of selected channels
+      var t=custRel;
+      return string.Join(", ", t);
       }}
 
     private List<Guid> rvs(PlanAttributeKind kind){ return gAv<RevenueStreamElementBL>(kind).Select(x=>x.stream_type_id).ToList(); }
@@ -265,6 +263,22 @@ namespace KabadaAPI {
       return r;
       }
 
+    private string _swot(string name, List<string> texts){
+      if(texts==null || texts.Count<1)
+        return "";
+      var r=$"{name}: {string.Join(", ", texts)} ";
+      return r;
+      }
+
+    public string descriptionSwot { get {
+      var t=Swot;
+      var r="";
+      r+=_swot("Opportunities", t.opportunities);
+      r+=_swot("Strengths", t.strengths);
+      r+=_swot("Threats", t.threats);
+      r+=_swot("Weaknesses", t.weaknesses);
+      return r;
+      } }
     
     }
   }

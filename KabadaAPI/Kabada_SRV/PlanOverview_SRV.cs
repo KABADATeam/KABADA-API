@@ -34,7 +34,7 @@ namespace Kabada {
     key_activities=me(p.o.IsActivitiesCompleted, p.descriptionActivities);
     key_partners=me(p.o.IsPartnersCompleted, p.descriptionPartners);
     cost_structure=me(p.o.IsCostCompleted, p.descriptionCost);
-    swot=me(p.o.IsSwotCompleted);                                                             //TODO not clear, yet
+    swot=me(p.o.IsSwotCompleted, p.descriptionSwot);                                                             //TODO not clear, yet
     assets=me(p.o.IsAssetsCompleted);                                                         //TODO not clear, yet
     fixed_and_variables_costs=me(p.o.IsFixedVariableCompleted);                               //TODO not clear, yet
     sales_forecast=me(p.o.IsSalesForecastCompleted);                                          //TODO not clear, yet
