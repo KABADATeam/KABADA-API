@@ -41,6 +41,8 @@ namespace Kabada {
         //o.stream_type_name=streams[o.stream_type_id].Value;
         //o.price_type_name = priceTypes[o.price_type_id].Value;
         //var c=priceTypes[priceTypes[o.price_type_id].MasterId.Value];
+        o.price_type_id=bo.e.price_type_id;
+        o.stream_type_id=bo.e.stream_type_id;
         o.stream_type_name=streams[bo.e.stream_type_id].Value;
         o.price_type_name = priceTypes[bo.e.price_type_id].Value;
         var c=priceTypes[priceTypes[bo.e.price_type_id].MasterId.Value];
