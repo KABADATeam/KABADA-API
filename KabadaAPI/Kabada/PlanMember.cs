@@ -5,6 +5,7 @@ namespace Kabada {
     public Guid user_id;
     public string name;
     public string surname;
+    public string email;
     public byte[] photo;
     }
   }

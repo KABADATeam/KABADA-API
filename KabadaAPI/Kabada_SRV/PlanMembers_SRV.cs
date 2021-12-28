@@ -12,7 +12,7 @@ namespace Kabada {
       if(mGuis==null || mGuis.Count<1)
         return;
       var mUsers=new UsersRepository(context).Read(mGuis);
-      members=mUsers.Select(x=>new PlanMember { user_id=x.Id, name=x.Name, surname=x.Surname, photo=x.UserPhoto }).ToList();
+      members=mUsers.Select(x=>new PlanMember { user_id=x.Id, name=x.Name, surname=x.Surname, photo=x.UserPhoto, email=x.Email }).ToList();
       }
     }
   }
