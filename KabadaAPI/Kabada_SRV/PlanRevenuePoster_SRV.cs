@@ -37,6 +37,7 @@ namespace Kabada {
         var o=aRepo.byId(rid, business_plan_id);
         var bo=new RevenueStreamBL(o, true);
         assign(bo);
+        bo.unload();
         tr.daContext.SaveChanges();
         tr.Commit();
         //var v=packVal;
