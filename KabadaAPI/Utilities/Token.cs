@@ -25,14 +25,15 @@ namespace KabadaAPI {
 
             var handler = new JwtSecurityTokenHandler();
             var now = DateTime.Now;
-
+            var minutes=new AppSettings(config).tokenExpirationMinutes;
             var token = handler.CreateToken(new SecurityTokenDescriptor()
             {
                 Issuer = config["JWT:Issuer"],
                 Audience = config["JWT:Issuer"],
                 Subject = identity,
                 NotBefore = now,
-                Expires = now.AddMinutes(600),
+                //Expires = now.AddMinutes(600),
+                Expires = now.AddMinutes(minutes),
                 IssuedAt = now,
                 SigningCredentials = credentials
             });
