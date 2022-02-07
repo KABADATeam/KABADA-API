@@ -97,5 +97,9 @@ namespace KabadaAPI {
       return getS("SofficeDirectory", null);
       }}
 
+    public int tokenExpirationMinutes { get {
+      return getI("TokenExpirationMinutes", 60);
+      }}
+
     }
   }
