@@ -219,7 +219,7 @@ namespace KabadaAPI {
       oldiesDictionary=getToldies<T>();
       }
 
-    protected string pack(object o){
+    public string pack(object o){
       var r=Newtonsoft.Json.JsonConvert.SerializeObject(o, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
       return r;
       }

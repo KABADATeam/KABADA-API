@@ -327,6 +327,15 @@ namespace KabadaAPI.Controllers {
       return _MynecessaryCapital(update.business_plan_id);
       }
 
+    [HttpPost]
+    [Authorize]
+    [Route("predict")]
+    public IActionResult MyPredict(BPpredictP p) { return prun<BPpredictP>(_MyPredict, p); }
+    private IActionResult _MyPredict(BPpredictP p) {
+      string r=p.perform(context);
+      return Ok(r);
+      }
+
     [HttpGet("doc/{BusinessPlan}")]
     [Authorize]
     //[AllowAnonymous]

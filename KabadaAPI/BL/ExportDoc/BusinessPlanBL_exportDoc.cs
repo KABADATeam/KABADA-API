@@ -384,5 +384,11 @@ namespace KabadaAPI {
         }
       return r;
       }
+
+
+    public BPunloaded unloadForAI(){
+      var r=new BPunloaded();
+      return r;
+      }
     }
   }

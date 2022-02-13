@@ -1,117 +1,118 @@
-Specification;O;Path;Controller;Action;TODO
-Sprint No.6.docx 03;P;/api/auth/change_email;Authentication;change_email;
-Sprint No.6.docx 04;P;/api/auth/change_password;Authentication;change_password;
-;P;/api/auth/google;Authentication;;
-;P;/api/auth/login;Authentication;;
-;P;/api/auth/register;Authentication;;
-;P;/api/auth/reset;Authentication;;
-;P;/api/auth/set_password;Authentication;;
-;G;/api/countries;Country;GetAll;
-;G;/api/files;UserFile;;
-;P;/api/files;UserFile;;
-;D;/api/files/{id};UserFile;;
-;G;/api/files/{id};UserFile;;
-;G;/api/files/byname/{name};UserFile;;
-Specification.docx 01;G;/api/kres/{BusinessPlan};KeyResources;MyResources;
-Specification.docx 02;D;/api/kres/{resource};KeyResources;Delete;
-Specification.docx 03;G;/api/kres/categories;KeyResources;Categories;
-Specification.docx 04;P;/api/kres/update;KeyResources;Update;
-New business plan/Specification.docx 02;G;/api/languages;Languages;GetAll;
-;G;/api/nace/{TitleKeyword};NACE;GetActivitiesByKey;
-;G;/api/nace/industries;NACE;GetIndustries;
-;G;/api/nace/industries/{industryId}/activities;NACE;GetActivities;
-Key partners/Specification.docx 01;G;/api/par/{BusinessPlan};KeyPartners;MyResources;
-Key partners/Specification.docx 05;G;/api/par/categories;KeyPartners;Categories;
-Key partners/Specification.docx 02;D;/api/par/distr/{resource};KeyPartners;DeleteDistr;
-Key partners/Specification.docx 06;P;/api/par/distr/save;KeyPartners;SaveDistributor;
-Key partners/Specification.docx 04;D;/api/par/other/{resource};KeyPartners;DeleteOther;
-Key partners/Specification.docx 08;P;/api/par/other/save;KeyPartners;SaveOther;
-Key partners/Specification.docx 03;D;/api/par/suppl/{resource};KeyPartners;DeleteSuppl;
-Key partners/Specification.docx 07;P;/api/par/suppl/save;KeyPartners;SaveSupplier;
-Sprint No.6.docx 01;G;/api/plans;UserBusinessPlan;GetPlans;
-New business plan/Specification.docx 01;P;/api/plans;UserBusinessPlan;AddPlan;
-Key partners/Specification.docx 09;P;/api/plans/changePartnersCompleted;UserBusinessPlan;ChangePartnersCompleted;
-Specification.docx 05;P;/api/plans/changeResourcesCompleted;UserBusinessPlan;ChangeResourcesCompleted;
-Sprint No. 7.docx 03;P;/api/plans/changeSwotCompleted;UserBusinessPlan;ChangeSwotCompleted;
-;P;/api/plans/fetch;UserBusinessPlan;;
-Sprint No.6.docx 02;G;/api/plans/public;UserBusinessPlan;GetPublicPlans;
-;P;/api/plans/remove;UserBusinessPlan;;
-Sprint No. 7.docx 01;G;/api/swot/{BusinessPlan};Swot;GetByKey;
-Sprint No. 7.docx 02;P;/api/swot/update;Swot;Update;
-Sprint No.6.docx 05;G;/api/user/getSettings;User;getSettings;
-Sprint No.6.docx 06;P;/api/user/updateWithoutPhoto;User;updateWithoutPhoto;
-Sprint No.6.docx 07;P;/api/user/updateWithPhoto;User;updateWithPhoto;
-Value proposition 01;G;/api/products/{BusinessPlan};Product;MyResources;
-Value proposition 02;D;/api/products/{resource};Product;DeleteMe;
-Value proposition 03;G;/api/products/types;Product;ProductTypes;
-Value proposition 04;G;/api/products/features;Product;ProductFeatures;
-Value proposition 05;G;/api/products/incomeSources;Product;IncomeSources;
-Value proposition 12;P;/api/plans/changePropositionCompleted;UserBusinessPlan;ChangePropositionCompleted;
-Value proposition 06;G;/api/products/priceLevels;Product;PriceLevels;
-Value proposition 07;G;/api/products/innOptions;Product;InnovativeOptions;
-Value proposition 08;G;/api/products/qualOptions;Product;QualityOptions;
-Value proposition 09;G;/api/products/diffOptions;Product;DifferentiationOptions;
-Value proposition 10;G;/api/products/product/{id};Product;ProductById;
-Value proposition 11;P;/api/products/update;Product;Update;
-Add new single local SWOT;P;/api/swot/save;Swot;AddLocal;
-Cost structure 01;G;/api/cost/{BusinessPlan};Cost;MyCosts;
-Cost structure 04;G;/api/cost/categories;Cost;Categories;
-Cost structure 07;P;/api/plans/changeCostCompleted;UserBusinessPlan;ChangeCostCompleted;
-Cost structure 02;D;/api/cost/fixed/{resource};Cost;DeleteFixed;
-Cost structure 03;D;/api/cost/var/{resource};Cost;DeleteVariable;
-Cost structure 05;P;/api/cost/fixed/save;Cost;SaveFixed;
-Cost structure 06;P;/api/cost/var/save;Cost;SaveVariable;
-Revenue streams 01;G;/api/revenue/{BusinessPlan};Revenue;MyRevenues;
-Revenue streams 02;D;/api/revenue/{resource};Revenue;DeleteMe;
-Revenue streams 03;G;/api/revenue/streamTypes;Revenue;Categories;
-Revenue streams 04;G;/api/revenue/prices;Revenue;Prices;
-Revenue streams 05;P;/api/revenue/save;Revenue;Save;
-Revenue streams 06;P;/api/plans/changeRevenueCompleted;UserBusinessPlan;changeRevenueCompleted;
-;P;/api/plans/changeStatus;UserBusinessPlan;ChangeStatus;
-;P;/api/plans/inviteMember;UserBusinessPlan;InviteMember;
-Customer segments 01;G;/api/custSegs/{BusinessPlan};CustomerSegments;MySegments;
-Customer segments 02;D;/api/custSegs/cons/{consumer};CustomerSegments;DeleteMe;
-Customer segments 03;G;/api/custSegs/codifiers;CustomerSegments;Categories;
-Customer segments 04;P;/api/custSegs/updateConsumer;CustomerSegments;UpdateConsumer;
-Customer segments 05;P;/api/custSegs/updateBusiness;CustomerSegments;UpdateBusiness;
-Customer segments 06;O;/api/custSegs/updatengo;CustomerSegments;UpdateNgo;
-Customer segments 07;P;/api/plans/changeCustomerSegmentsCompleted;UserBusinessPlan;ChangeCustomerSegmentsCompleted;
-Customer segments 08;D;/api/custSegs/bus/{business};CustomerSegments;DeleteBusiness;
-Customer segments 09;D;/api/custSegs/ngo/{ngo};CustomerSegments;Deletengo;
-Customer relationship 01;G;/api/custRel/{BusinessPlan};CustomerRelationship;MyRelationships;
-Customer relationship 02;D;/api/custRel/{resource};CustomerRelationship;DeleteMe;
-Customer relationship 03;G;/api/custRel/categories;CustomerRelationship;Categories;
-Customer relationship 04;P;/api/custRel/save;CustomerRelationship;Save;
-Customer relationship 05;P;/api/plans/changeRelationshipCompleted;UserBusinessPlan;ChangeRelationshipCompleted;
-Invitation 01;P;/api/plans/inviteMember;UserBusinessPlan;InviteMember;
-Invitation 02;G;/api/plans/members/{BusinessPlan};UserBusinessPlan;MyMembers;
-Invitation 03;D;/api/plans/{BusinessPlan}/member/{user_id};UserBusinessPlan;Dmember;
-Overview 01;G;/api/plans/overview/{BusinessPlan};UserBusinessPlan;MyOverview;
-Key activities 01;G;/api/activities/{BusinessPlan};Activities;MyActivities;
-Key activities 02;D;/api/activities/categories{resource};Activities;DeleteMe;
-Key activities 03;G;/api/activities/categories;Activities;Categories;
-Key activities 04;P;/api/activities/save;Activities;Save;
-Key activities 05;P;/api/plans/changeActivitiesCompleted;UserBusinessPlan;ChangeActivitiesCompleted;
-Slack  2021.08.13 12:54 PM;P;/api/plans/update;UserBusinessPlan;Update;
-Business start-up investments 01;G;api/kres/investment/{BusinessPlan};KeyResources;Myinvestments;
-Business start-up investments 02;P;api/kres/investment/update;KeyResources;Updateinvestments;
-Business start-up investments 03;P;/api/plans/changeBusinessInvestmentsCompleted;UserBusinessPlan;ChangeBusinessInvestmentsCompleted;
-Fixed and Variable Costs 01;G;/api/costsvf/{BusinessPlan};Cost;MyVFCosts;
-Fixed and Variable Costs 02;P;/api/costsvf/save;Cost;SaveVF;
-Fixed and Variable Costs 03;P;/api/plans/changeFixedVariableCompleted;UserBusinessPlan;ChangeFixedVariableCompleted;
-;G;/api/cost/vat/{Country};Cost;Vats;
-Sales forecast 01;G;/api/products/salesforecasts/{BusinessPlan};Product;MyForecasts;
-Sales forecast 02;P;/api/products/salesforecasts/update;Product;Sfupdate;
-Sales forecast 03;P;/api/plans/changeSalesForecastCompleted;UserBusinessPlan;ChangeSalesForecastCompleted;
-;G;/api/plans/cashflow/{BusinessPlan};UserBusinessPlan;Mycashflow;
-;G;/api/plans/necessaryCapital/{BusinessPlan};UserBusinessPlan;MynecessaryCapital;
-;P;/api/plans/investmentSaveRecalc;UserBusinessPlan;MySaveRecalc;
-;G;api/kres/assets/{BusinessPlan;KeyResources;MyAssets;
-;P;api/kres/assets/save;KeyResources;MyAssetsSave;
-;P;/quest/personal/save;Questionaire;MyPersonalSave;
-;G;/quest/personal/{BusinessPlan};Questionaire;MyPersonalCharacteristics;
-Assets 01;G;api/kres/assets/{BusinessPlan};KeyResources;MyAssets;
-Assets 02;P;api/kres/assets/save;KeyResources;MyAssetsSave;
-Assets 03;P;/api/plans/changeAssetsCompleted;UserBusinessPlan;changeAssetsCompleted;
-;G;/api/nace/wood;NACE;GetIndustriesWood;
-;G;/api/nace/risks/{activityId};NACE;GetRisks;
+Specification	O	Path	Controller	Action	TODO
+Sprint No.6.docx 03	P	/api/auth/change_email	Authentication	change_email	
+Sprint No.6.docx 04	P	/api/auth/change_password	Authentication	change_password	
+	P	/api/auth/google	Authentication		
+	P	/api/auth/login	Authentication		
+	P	/api/auth/register	Authentication		
+	P	/api/auth/reset	Authentication		
+	P	/api/auth/set_password	Authentication		
+	G	/api/countries	Country	GetAll	
+	G	/api/files	UserFile		
+	P	/api/files	UserFile		
+	D	/api/files/{id}	UserFile		
+	G	/api/files/{id}	UserFile		
+	G	/api/files/byname/{name}	UserFile		
+Specification.docx 01	G	/api/kres/{BusinessPlan}	KeyResources	MyResources	
+Specification.docx 02	D	/api/kres/{resource}	KeyResources	Delete	
+Specification.docx 03	G	/api/kres/categories	KeyResources	Categories	
+Specification.docx 04	P	/api/kres/update	KeyResources	Update	
+New business plan/Specification.docx 02	G	/api/languages	Languages	GetAll	
+	G	/api/nace/{TitleKeyword}	NACE	GetActivitiesByKey	
+	G	/api/nace/industries	NACE	GetIndustries	
+	G	/api/nace/industries/{industryId}/activities	NACE	GetActivities	
+Key partners/Specification.docx 01	G	/api/par/{BusinessPlan}	KeyPartners	MyResources	
+Key partners/Specification.docx 05	G	/api/par/categories	KeyPartners	Categories	
+Key partners/Specification.docx 02	D	/api/par/distr/{resource}	KeyPartners	DeleteDistr	
+Key partners/Specification.docx 06	P	/api/par/distr/save	KeyPartners	SaveDistributor	
+Key partners/Specification.docx 04	D	/api/par/other/{resource}	KeyPartners	DeleteOther	
+Key partners/Specification.docx 08	P	/api/par/other/save	KeyPartners	SaveOther	
+Key partners/Specification.docx 03	D	/api/par/suppl/{resource}	KeyPartners	DeleteSuppl	
+Key partners/Specification.docx 07	P	/api/par/suppl/save	KeyPartners	SaveSupplier	
+Sprint No.6.docx 01	G	/api/plans	UserBusinessPlan	GetPlans	
+New business plan/Specification.docx 01	P	/api/plans	UserBusinessPlan	AddPlan	
+Key partners/Specification.docx 09	P	/api/plans/changePartnersCompleted	UserBusinessPlan	ChangePartnersCompleted	
+Specification.docx 05	P	/api/plans/changeResourcesCompleted	UserBusinessPlan	ChangeResourcesCompleted	
+Sprint No. 7.docx 03	P	/api/plans/changeSwotCompleted	UserBusinessPlan	ChangeSwotCompleted	
+	P	/api/plans/fetch	UserBusinessPlan		
+Sprint No.6.docx 02	G	/api/plans/public	UserBusinessPlan	GetPublicPlans	
+	P	/api/plans/remove	UserBusinessPlan		
+Sprint No. 7.docx 01	G	/api/swot/{BusinessPlan}	Swot	GetByKey	
+Sprint No. 7.docx 02	P	/api/swot/update	Swot	Update	
+Sprint No.6.docx 05	G	/api/user/getSettings	User	getSettings	
+Sprint No.6.docx 06	P	/api/user/updateWithoutPhoto	User	updateWithoutPhoto	
+Sprint No.6.docx 07	P	/api/user/updateWithPhoto	User	updateWithPhoto	
+Value proposition 01	G	/api/products/{BusinessPlan}	Product	MyResources	
+Value proposition 02	D	/api/products/{resource}	Product	DeleteMe	
+Value proposition 03	G	/api/products/types	Product	ProductTypes	
+Value proposition 04	G	/api/products/features	Product	ProductFeatures	
+Value proposition 05	G	/api/products/incomeSources	Product	IncomeSources	
+Value proposition 12	P	/api/plans/changePropositionCompleted	UserBusinessPlan	ChangePropositionCompleted	
+Value proposition 06	G	/api/products/priceLevels	Product	PriceLevels	
+Value proposition 07	G	/api/products/innOptions	Product	InnovativeOptions	
+Value proposition 08	G	/api/products/qualOptions	Product	QualityOptions	
+Value proposition 09	G	/api/products/diffOptions	Product	DifferentiationOptions	
+Value proposition 10	G	/api/products/product/{id}	Product	ProductById	
+Value proposition 11	P	/api/products/update	Product	Update	
+Add new single local SWOT	P	/api/swot/save	Swot	AddLocal	
+Cost structure 01	G	/api/cost/{BusinessPlan}	Cost	MyCosts	
+Cost structure 04	G	/api/cost/categories	Cost	Categories	
+Cost structure 07	P	/api/plans/changeCostCompleted	UserBusinessPlan	ChangeCostCompleted	
+Cost structure 02	D	/api/cost/fixed/{resource}	Cost	DeleteFixed	
+Cost structure 03	D	/api/cost/var/{resource}	Cost	DeleteVariable	
+Cost structure 05	P	/api/cost/fixed/save	Cost	SaveFixed	
+Cost structure 06	P	/api/cost/var/save	Cost	SaveVariable	
+Revenue streams 01	G	/api/revenue/{BusinessPlan}	Revenue	MyRevenues	
+Revenue streams 02	D	/api/revenue/{resource}	Revenue	DeleteMe	
+Revenue streams 03	G	/api/revenue/streamTypes	Revenue	Categories	
+Revenue streams 04	G	/api/revenue/prices	Revenue	Prices	
+Revenue streams 05	P	/api/revenue/save	Revenue	Save	
+Revenue streams 06	P	/api/plans/changeRevenueCompleted	UserBusinessPlan	changeRevenueCompleted	
+	P	/api/plans/changeStatus	UserBusinessPlan	ChangeStatus	
+	P	/api/plans/inviteMember	UserBusinessPlan	InviteMember	
+Customer segments 01	G	/api/custSegs/{BusinessPlan}	CustomerSegments	MySegments	
+Customer segments 02	D	/api/custSegs/cons/{consumer}	CustomerSegments	DeleteMe	
+Customer segments 03	G	/api/custSegs/codifiers	CustomerSegments	Categories	
+Customer segments 04	P	/api/custSegs/updateConsumer	CustomerSegments	UpdateConsumer	
+Customer segments 05	P	/api/custSegs/updateBusiness	CustomerSegments	UpdateBusiness	
+Customer segments 06	O	/api/custSegs/updatengo	CustomerSegments	UpdateNgo	
+Customer segments 07	P	/api/plans/changeCustomerSegmentsCompleted	UserBusinessPlan	ChangeCustomerSegmentsCompleted	
+Customer segments 08	D	/api/custSegs/bus/{business}	CustomerSegments	DeleteBusiness	
+Customer segments 09	D	/api/custSegs/ngo/{ngo}	CustomerSegments	Deletengo	
+Customer relationship 01	G	/api/custRel/{BusinessPlan}	CustomerRelationship	MyRelationships	
+Customer relationship 02	D	/api/custRel/{resource}	CustomerRelationship	DeleteMe	
+Customer relationship 03	G	/api/custRel/categories	CustomerRelationship	Categories	
+Customer relationship 04	P	/api/custRel/save	CustomerRelationship	Save	
+Customer relationship 05	P	/api/plans/changeRelationshipCompleted	UserBusinessPlan	ChangeRelationshipCompleted	
+Invitation 01	P	/api/plans/inviteMember	UserBusinessPlan	InviteMember	
+Invitation 02	G	/api/plans/members/{BusinessPlan}	UserBusinessPlan	MyMembers	
+Invitation 03	D	/api/plans/{BusinessPlan}/member/{user_id}	UserBusinessPlan	Dmember	
+Overview 01	G	/api/plans/overview/{BusinessPlan}	UserBusinessPlan	MyOverview	
+Key activities 01	G	/api/activities/{BusinessPlan}	Activities	MyActivities	
+Key activities 02	D	/api/activities/categories{resource}	Activities	DeleteMe	
+Key activities 03	G	/api/activities/categories	Activities	Categories	
+Key activities 04	P	/api/activities/save	Activities	Save	
+Key activities 05	P	/api/plans/changeActivitiesCompleted	UserBusinessPlan	ChangeActivitiesCompleted	
+Slack  2021.08.13 12:54 PM	P	/api/plans/update	UserBusinessPlan	Update	
+Business start-up investments 01	G	api/kres/investment/{BusinessPlan}	KeyResources	Myinvestments	
+Business start-up investments 02	P	api/kres/investment/update	KeyResources	Updateinvestments	
+Business start-up investments 03	P	/api/plans/changeBusinessInvestmentsCompleted	UserBusinessPlan	ChangeBusinessInvestmentsCompleted	
+Fixed and Variable Costs 01	G	/api/costsvf/{BusinessPlan}	Cost	MyVFCosts	
+Fixed and Variable Costs 02	P	/api/costsvf/save	Cost	SaveVF	
+Fixed and Variable Costs 03	P	/api/plans/changeFixedVariableCompleted	UserBusinessPlan	ChangeFixedVariableCompleted	
+	G	/api/cost/vat/{Country}	Cost	Vats	
+Sales forecast 01	G	/api/products/salesforecasts/{BusinessPlan}	Product	MyForecasts	
+Sales forecast 02	P	/api/products/salesforecasts/update	Product	Sfupdate	
+Sales forecast 03	P	/api/plans/changeSalesForecastCompleted	UserBusinessPlan	ChangeSalesForecastCompleted	
+	G	/api/plans/cashflow/{BusinessPlan}	UserBusinessPlan	Mycashflow	
+	G	/api/plans/necessaryCapital/{BusinessPlan}	UserBusinessPlan	MynecessaryCapital	
+	P	/api/plans/investmentSaveRecalc	UserBusinessPlan	MySaveRecalc	
+	G	api/kres/assets/{BusinessPlan	KeyResources	MyAssets	
+	P	api/kres/assets/save	KeyResources	MyAssetsSave	
+	P	/quest/personal/save	Questionaire	MyPersonalSave	
+	G	/quest/personal/{BusinessPlan}	Questionaire	MyPersonalCharacteristics	
+Assets 01	G	api/kres/assets/{BusinessPlan}	KeyResources	MyAssets	
+Assets 02	P	api/kres/assets/save	KeyResources	MyAssetsSave	
+Assets 03	P	/api/plans/changeAssetsCompleted	UserBusinessPlan	changeAssetsCompleted	
+	G	/api/nace/wood	NACE	GetIndustriesWood	
+	G	/api/nace/risks/{activityId}	NACE	GetRisks	
+	P	/api/plans/predict	UserBusinessPlan	MyPredict	
