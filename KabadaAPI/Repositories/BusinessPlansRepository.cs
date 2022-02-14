@@ -195,13 +195,27 @@ namespace KabadaAPI
     //  return new BusinessPlanBL(GetPlan(planId, userId));
     //  }
 
-    public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
-      var r=new BusinessPlanBL(join(planId, userId, true)); //      GetPlan(planId, userId));
+    protected BusinessPlanBL getPlanBLfull(BPjoin me, Guid planId){
+      var r=new BusinessPlanBL(me);
       var w1=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
       r.a=w1.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       var w2=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
       r.s=w2.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
       return r;
+      }
+
+    public BusinessPlanBL getPlanBLfullUnlimited(Guid planId){
+      return getPlanBLfull(joinUnlimited(planId), planId); 
+      }
+
+    public BusinessPlanBL getPlanBLfull(Guid planId, Guid userId){
+      return getPlanBLfull(join(planId, userId, true), planId); 
+      //var r=new BusinessPlanBL(join(planId, userId, true)); //      GetPlan(planId, userId));
+      //var w1=new Plan_AttributeRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
+      //r.a=w1.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      //var w2=new Plan_SpecificAttributesRepository(blContext, daContext).get(planId).Select(x=>x.clone()).ToList();
+      //r.s=w2.GroupBy(x=>x.Kind).ToDictionary(g => g.Key, g => g.ToList());
+      //return r;
       }
 
     internal void ChangeActivitiesCompleted(Guid planId, bool newValue, Guid userId) {
@@ -430,8 +444,12 @@ namespace KabadaAPI
       return r;
       }
 
+    protected BPjoin joinUnlimited(Guid planId) {
+      return joinQ(qID(planId)).FirstOrDefault();
+      }
+
     public BPjoin join(Guid planId, Guid userId, bool acceptRO=false, bool quiet=false) {
-      var plan=joinQ(qID(planId)).FirstOrDefault();
+      var plan=joinUnlimited(planId);
       if(validateAccessRights(plan==null?null:plan.bp, userId, acceptRO, quiet))
         return plan;
       return null;
@@ -440,5 +458,7 @@ namespace KabadaAPI
     public BPjoin joinRO(Guid planId) { return join(planId, blContext.userGuid, true); }
 
     public BPextended getROe(Guid planId) { return new BPextended(joinRO(planId)); }
+
+    public IQueryable<Guid> allPlans() { return q0.Select(x=>x.Id); }
     }
 }
