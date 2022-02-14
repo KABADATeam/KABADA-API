@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace KabadaAPI {
-  public class CustomerSegmentAI {
+namespace Kabada {
+  public partial class CustomerSegmentAI {
     public List<ConsumerSegmentAI> consumer;    
     public List<BusinessSegmentAI> business;
     public List<PublicSegmentAI> publicNgo; 
