@@ -27,12 +27,14 @@ namespace Kabada {
 
     private void learn(List<Guid> guids, BLontext blContext) {
       var repo=new BusinessPlansRepository(blContext);
+      var tr=new TexterRepository(blContext, repo.daContext);
       var wp=new AIlearnP(){ isFirst=this.isFirst, learningSessionId=this.learningSessionId };
       for(var i=guids.Count-1; i>=0; i--){
         if(i==0)
           wp.isLast=this.isLast;
         var t=repo.getPlanBLfullUnlimited(guids[i]);
-        wp.plan=null;
+        t.textSupport=tr;
+        wp.plan=t.unloadForAI();
         // perform AI call with wp
         wp.isFirst=false;
         }
