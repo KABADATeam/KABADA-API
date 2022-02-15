@@ -1,18 +1,26 @@
 ﻿using KabadaAPI;
 using System;
+using System.Threading.Tasks;
 
 namespace Kabada {
   partial class BPpredictP {
-    internal string perform(BLontext context) {
+    internal async Task<string> perform(BLontext context) {
       var p=new BusinessPlansRepository(context).getPlanBLfull(planId, context.userGuid);
       p.textSupport=new TexterRepository(context);
 
       var pAI=new AIpredictP(){ location=location };
       pAI.plan=p.unloadForAI();
 
-      // call predict action with the pAI as parameter
-      return p.textSupport.pack(pAI);
-     
+      string r=null;
+      var burl=new AppSettings(context.config).aiUrl;
+      if(string.IsNullOrWhiteSpace(burl))
+        r=p.textSupport.pack(pAI);
+       else {
+        var ai=new AIbridge(){ baseAddress=burl };
+        r=await ai.predict(pAI);
+        }
+
+      return r;
       }
     }
   }

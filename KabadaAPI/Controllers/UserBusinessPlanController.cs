@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Kabada;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -330,9 +331,9 @@ namespace KabadaAPI.Controllers {
     [HttpPost]
     [Authorize]
     [Route("predict")]
-    public IActionResult MyPredict(BPpredictP p) { return prun<BPpredictP>(_MyPredict, p); }
-    private IActionResult _MyPredict(BPpredictP p) {
-      string r=p.perform(context);
+    public async Task<IActionResult> MyPredict(BPpredictP p) { return await prun<BPpredictP>(_MyPredict, p); }
+    private async Task<IActionResult> _MyPredict(BPpredictP p) {
+      string r=await p.perform(context);
       return Ok(r);
       }
 
