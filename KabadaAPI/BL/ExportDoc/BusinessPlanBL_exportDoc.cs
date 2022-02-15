@@ -400,7 +400,7 @@ namespace KabadaAPI {
       foreach(var w in t){
         var z=new NgoSegmentBL(w);
         var o=new PublicSegmentAI(){ segment_id=w.Id };
-        o.business_type=minors(EnumTexterKind.industry ,z.e.minorAttributes);
+        o.business_type=minors(EnumTexterKind.public_bodies_ngo ,z.e.minorAttributes);
         r.Add(o);
         }
       return r;
