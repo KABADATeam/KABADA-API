@@ -365,6 +365,7 @@ namespace KabadaAPI {
       return r;
       }}
 
+ 
     private List<RevenueStreamElement_doc> _rev(PlanAttributeKind kind) {
       var segi=gA(kind);
       var r=new List<RevenueStreamElement_doc>();
@@ -381,6 +382,63 @@ namespace KabadaAPI {
         w.pricingType=textSupport.getById(m).Value;
 
         r.Add(w);
+        }
+      return r;
+      }
+
+    
+
+    public BPunloaded unloadForAI(){
+      var r=new BPunloaded(){ businessPlan_id=o.Id, country=o.CountryId.Value, language=o.LanguageId.Value, nace=o.ActivityID.Value};
+      r.custSegs=new CustomerSegmentAI(){ business=businessSegAI(), consumer=consumerSegAI(), publicNgo=publicNgoAI() };
+      return r;
+      }
+
+    private List<PublicSegmentAI> publicNgoAI() {
+      var r=new List<PublicSegmentAI>();
+      var t=gS(PlanAttributeKind.ngoSegment);
+      foreach(var w in t){
+        var z=new NgoSegmentBL(w);
+        var o=new PublicSegmentAI(){ segment_id=w.Id };
+        o.business_type=minors(EnumTexterKind.public_bodies_ngo ,z.e.minorAttributes);
+        r.Add(o);
+        }
+      return r;
+      }
+
+    private List<ConsumerSegmentAI> consumerSegAI() {
+      var r=new List<ConsumerSegmentAI>();
+      var t=gS(PlanAttributeKind.consumerSegment);
+      foreach(var w in t){
+        var z=new ConsumerSegmentBL(w);
+        var o=new ConsumerSegmentAI(){ segment_id=w.Id };
+        o.age=minors(EnumTexterKind.age_group ,z.e.minorAttributes);
+        o.education=minors(EnumTexterKind.education ,z.e.minorAttributes);
+        o.geographic_location=minors(EnumTexterKind.geographic_location ,z.e.minorAttributes);
+        o.gender=minors(EnumTexterKind.gender ,z.e.minorAttributes);
+        o.income=minors(EnumTexterKind.income ,z.e.minorAttributes);
+        r.Add(o);
+        }
+      return r;
+      }
+
+    private List<Guid> minors(EnumTexterKind kind, Dictionary<short, List<Guid>> minorAttributes){
+      List<Guid> w=null;
+      if(!minorAttributes.TryGetValue((short)kind, out w))
+        return null;
+      return w;
+      }
+
+    private List<BusinessSegmentAI> businessSegAI() {
+      var r=new List<BusinessSegmentAI>();
+      var t=gS(PlanAttributeKind.businessSegment);
+      foreach(var w in t){
+        var z=new BusinessSegmentBL(w);
+        var o=new BusinessSegmentAI(){ segment_id=w.Id };
+        o.business_type=minors(EnumTexterKind.industry ,z.e.minorAttributes);
+        o.company_size=minors(EnumTexterKind.company_size ,z.e.minorAttributes);
+        o.geographic_location=minors(EnumTexterKind.geographic_location ,z.e.minorAttributes);
+        r.Add(o);
         }
       return r;
       }

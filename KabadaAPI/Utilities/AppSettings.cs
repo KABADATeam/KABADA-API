@@ -88,7 +88,6 @@ namespace KabadaAPI {
       return getDM("JobsNotifyRescanInterval", new TimeSpan(0, 0, 5));
       }}
 
-
     public string importDirectory { get {
       return getS("importDirectory", null);
       }}
@@ -99,6 +98,10 @@ namespace KabadaAPI {
 
     public int tokenExpirationMinutes { get {
       return getI("TokenExpirationMinutes", 60);
+      }}
+
+    public string aiUrl { get {
+      return getS("AIurl", null);
       }}
 
     }

@@ -77,5 +77,9 @@ namespace KabadaAPI {
       var o = Newtonsoft.Json.JsonConvert.DeserializeObject<Job>(json);
       return o.Id;
       }
+
+    public void teachAI(){
+      new Kabada.AIlearnP().learn(blContext);
+      }
     }
   }

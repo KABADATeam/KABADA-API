@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Kabada;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace KabadaAPI.Controllers {
   [Authorize]
@@ -325,6 +326,15 @@ namespace KabadaAPI.Controllers {
     private ActionResult<List<decimal?>> _MySaveRecalc(StartupInvestments_POST update) {
       update.perform(context);
       return _MynecessaryCapital(update.business_plan_id);
+      }
+
+    [HttpPost]
+    [Authorize]
+    [Route("predict")]
+    public async Task<IActionResult> MyPredict(BPpredictP p) { return await prun<BPpredictP>(_MyPredict, p); }
+    private async Task<IActionResult> _MyPredict(BPpredictP p) {
+      string r=await p.perform(context);
+      return Ok(r);
       }
 
     [HttpGet("doc/{BusinessPlan}")]
