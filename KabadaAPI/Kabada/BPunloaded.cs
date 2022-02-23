@@ -13,9 +13,9 @@ namespace Kabada {
     public KeyPartnerAI keyPartners;
     public List<KeyResourceAI> keyResources;
     public CustomerRelationshipAI custRelationship;
-        //costs
-        //swot
-        //revenue
-        //valueProposition
+    public CostAI costs;
+    public SwotAI swot;
+    public RevenueStreamAI revenue;
+    public List<ValuePropAI> valueProposition;
     }
   }

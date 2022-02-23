@@ -5,6 +5,6 @@ namespace Kabada {
   public class ChannelAI {       
         public Guid channelType;
         public List<Guid> distributionChannels; 
-        public List<Guid> products; 
+        public List<Guid> products; //value proposition
     }
 }
