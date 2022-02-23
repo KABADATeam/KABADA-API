@@ -391,6 +391,88 @@ namespace KabadaAPI {
     public BPunloaded unloadForAI(){
       var r=new BPunloaded(){ businessPlan_id=o.Id, country=o.CountryId.Value, language=o.LanguageId.Value, nace=o.ActivityID.Value};
       r.custSegs=new CustomerSegmentAI(){ business=businessSegAI(), consumer=consumerSegAI(), publicNgo=publicNgoAI() };
+      r.channels=getAIchannels();
+      r.custRelationship=getCustRels();
+      r.keyActivities=getKeyActsAI();
+      r.keyPartners=getKeyPartnersAI();
+      r.keyResources=getKeyResourcesAI();
+      return r;
+      }
+
+    private List<KeyResourceAI> getKeyResourcesAI() {
+      return myKeyResource_s.Select(x=>new KeyResourceAI(){ name=x.e.name, category=x.e.type_id/*, ownership=? */ }).ToList();
+      }
+
+    private KeyPartnerAI getKeyPartnersAI() {
+      var r=new KeyPartnerAI();
+      partnerTypes=textSupport.getKeyPartnerMeta().ToDictionary(x=>x.Id, x=>x.Value);
+      r.distributors=getKeyPartnersAI(PlanAttributeKind.keyDistributor);
+      r.others=getKeyPartnersAI(PlanAttributeKind.otherKeyPartner);
+      r.suppliers=getKeyPartnersAI(PlanAttributeKind.keySupplier);
+      return r;
+      }
+
+    private List<KeyPartnersElementAI> getKeyPartnersAI(PlanAttributeKind kind) {
+      var t1=gA(kind);
+      if(t1==null || t1.Count<1)
+        return null;
+      var r=new List<KeyPartnersElementAI>();
+      foreach(var t2 in t1){
+        var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KeyPartnersAttribute>(t2.AttrVal);
+        var w=new KeyPartnersElementAI()   
+          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority?"Yes":"No" };
+        r.Add(w);
+        }
+      return r;
+      }
+
+    private List<KeyValuePair<string, List<KeyActivityAI>>> getKeyActsAI() {
+      var r=new List<KeyValuePair<string, List<KeyActivityAI>>>();
+
+      var prodi=myProduct_s;
+      if(prodi.Count>0){
+        var idi=prodi.Select(x=>(Guid?)x.id).ToList();
+        var d=prodi.ToDictionary(x=>x.id);
+        var txi=textSupport.getActivitiesTypesQ().ToDictionary(x=>x.Id);
+        var acti=new UniversalAttributeRepository(textSupport.blContext).byMasters(idi).Select(x=>new KeyActivityBL(x)).ToList();
+
+        foreach(var p in prodi){
+          var macti=acti.Where(x=>x.masterId==p.id);
+          var dacti=new List<KeyActivityAI>();
+          foreach(var a in macti){
+            var su=txi[a.categoryId.Value];
+            //var ty=txi[su.MasterId.Value];
+            var an=new KeyActivityAI(){  desc=a.e.description, subType=a.categoryId.Value, type=su.MasterId.Value, name=a.e.name };
+            dacti.Add(an);
+            }
+          var w=new KeyValuePair<string, List<KeyActivityAI>>(p.e.title, dacti);
+          r.Add(w);
+          }
+        }
+
+      return r;
+      throw new NotImplementedException();
+      }
+
+    private CustomerRelationshipAI getCustRels() {
+      var r=new CustomerRelationshipAI();
+      r.getCust=aiRels(PlanAttributeKind.relationshipActivity1);
+      r.keepCust=aiRels(PlanAttributeKind.relationshipActivity2);
+      r.convCust=aiRels(PlanAttributeKind.relationshipActivity3);
+      return r;
+      }
+
+    private List<CustRelElementAI> aiRels(PlanAttributeKind relationshipKind) { //TODO
+      var t=gA(relationshipKind);
+      //  var w=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
+
+      //var r=gA(PlanAttributeKind.Select(w=>new CustomerRelationshipBL().relationshipActivity1).Select(x=>new CustRelElementAI(){ action=x.}).ToList();
+      return null;
+      }
+
+    private List<ChannelAI> getAIchannels() {
+      var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
+      var r=us.Select(c=>new ChannelAI(){ channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id }).ToList();
       return r;
       }
 

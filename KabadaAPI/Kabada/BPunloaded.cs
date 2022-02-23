@@ -10,7 +10,7 @@ namespace Kabada {
     public CustomerSegmentAI custSegs;
     public List<ChannelAI> channels;
     public List<KeyValuePair<string, List<KeyActivityAI>>> keyActivities;
-    public List<KeyPartnerAI> keyPartners;
+    public KeyPartnerAI keyPartners;
     public List<KeyResourceAI> keyResources;
     public CustomerRelationshipAI custRelationship;
         //costs
