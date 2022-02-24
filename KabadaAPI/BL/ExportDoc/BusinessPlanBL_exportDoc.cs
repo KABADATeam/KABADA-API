@@ -340,20 +340,14 @@ namespace KabadaAPI {
 
       foreach(var a in swots){
         var v=short.Parse(a.AttrVal);
-        //if(v!=0) v=1;
-        var t=txi[a.TexterId];
-        //short m=0;
-        //if(t.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
-        //  m=2; // strengths_weakness
-        //switch(m+v){
+        var t=txi[a.TexterId].Value;
         switch(v){
-          case 3: r.opportunities.Add(t.Value); break;
-          case 4: r.threats.Add(t.Value); break;
-          case 1: r.strengths.Add(t.Value); break;
-          case 2: r.weaknesses.Add(t.Value); break;
+          case 3: r.opportunities.Add(t); break;
+          case 4: r.threats.Add(t); break;
+          case 1: r.strengths.Add(t); break;
+          case 2: r.weaknesses.Add(t); break;
           }
         }
-
       return r;
       }}
 
@@ -471,10 +465,6 @@ namespace KabadaAPI {
       var r=new List<CostElementAI>();
       var idi = costs.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
       var ti = textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types
-      //var tidi=ti.Values.Where(x=>x!=null).Select(x=>x.Value).Distinct().ToList();
-      //tidi.AddRange(idi);
-      //var txi=textSupport.get(tidi).ToDictionary(x=>x.Id, x=>x.Value);
-      //var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
       foreach(var o in costs){
         var w=new CostElementAI(){ name=o.e.name, desc=o.e.description, subCategory=o.texterId };
         var ct=ti[o.texterId];
