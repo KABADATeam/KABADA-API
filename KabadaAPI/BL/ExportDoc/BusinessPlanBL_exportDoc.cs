@@ -385,7 +385,6 @@ namespace KabadaAPI {
       var r=new BPunloaded(){ businessPlan_id=o.Id, country=o.CountryId.Value, language=o.LanguageId.Value, nace=o.ActivityID.Value};
       r.custSegs=new CustomerSegmentAI(){ business=businessSegAI(), consumer=consumerSegAI(), publicNgo=publicNgoAI() };
       r.channels=getAIchannels();
-      r.custRelationship=getCustRelsAI();
       r.keyActivities=getKeyActsAI();
       r.keyPartners=getKeyPartnersAI();
       r.keyResources=getKeyResourcesAI();
@@ -398,7 +397,14 @@ namespace KabadaAPI {
       }
 
     private List<ValuePropAI> getValuePropositionAI() {
-      var r=new List<ValuePropAI>();
+      var ps=myProduct_s;
+      if(ps==null || ps.Count<1)
+        return null;
+      var r=ps.Select(p=>
+             new ValuePropAI(){ title=p.e.title, description=p.e.description
+              , prodType=p.e.product_type, priceLevel=p.e.price_level, innovLevel=p.e.innovative_level, diffLevel=p.e.differentiation_level, qualityLevel=p.e.quality_level
+              , addIncomeSource=p.e.selected_additional_income_sources, productFeatures=p.e.product_features
+              }).ToList();  
       return r;
       }
 
@@ -474,11 +480,6 @@ namespace KabadaAPI {
       return r;
       }
 
-    private CustomerRelationshipAI getCustRelationshipAI() {
-      var r=new CustomerRelationshipAI();
-      return r;
-      }
-
     private List<KeyResourceAI> getKeyResourcesAI() {
       return myKeyResource_s.Select(x=>new KeyResourceAI(){ name=x.e.name, category=x.e.type_id/*, ownership=? */ }).ToList();
       }
@@ -532,7 +533,7 @@ namespace KabadaAPI {
       return r;
       }
 
-    private CustomerRelationshipAI getCustRelsAI() {
+    private CustomerRelationshipAI getCustRelationshipAI() {
       var r=new CustomerRelationshipAI();
       r.getCust=aiRels(PlanAttributeKind.relationshipActivity1);
       r.keepCust=aiRels(PlanAttributeKind.relationshipActivity2);
