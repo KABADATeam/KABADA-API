@@ -396,6 +396,36 @@ namespace KabadaAPI {
       r.keyActivities=getKeyActsAI();
       r.keyPartners=getKeyPartnersAI();
       r.keyResources=getKeyResourcesAI();
+      r.custRelationship=getCustRelationship();
+      r.costs=getCosts();
+      r.swot=getSwot();
+      r.revenue=getRevenue();
+      r.valueProposition=getValueProposition();
+      return r;
+      }
+
+    private List<ValuePropAI> getValueProposition() {
+      var r=new List<ValuePropAI>();
+      return r;
+      }
+
+    private RevenueStreamAI getRevenue() {
+      var r=new RevenueStreamAI();
+      return r;
+      }
+
+    private SwotAI getSwot() {
+      var r=new SwotAI();
+      return r;
+      }
+
+    private CostAI getCosts() {
+      var r=new CostAI();
+      return r;
+      }
+
+    private CustomerRelationshipAI getCustRelationship() {
+      var r=new CustomerRelationshipAI();
       return r;
       }
 
