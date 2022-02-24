@@ -317,7 +317,6 @@ namespace KabadaAPI {
       var tidi=ti.Values.Where(x=>x!=null).Select(x=>x.Value).Distinct().ToList();
       tidi.AddRange(idi);
       var txi=textSupport.get(tidi).ToDictionary(x=>x.Id, x=>x.Value);
-      //var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
       foreach(var o in us){
         var w=new CostElement_doc(){ name=o.e.name, desc=o.e.description, category="??", subCategory=txi[o.texterId] };
         var ct=ti[o.texterId];
@@ -390,20 +389,20 @@ namespace KabadaAPI {
       r.keyActivities=getKeyActsAI();
       r.keyPartners=getKeyPartnersAI();
       r.keyResources=getKeyResourcesAI();
-      r.custRelationship=getCustRelationship();
-      r.costs=getCosts();
-      r.swot=getSwot();
-      r.revenue=getRevenue();
-      r.valueProposition=getValueProposition();
+      r.custRelationship=getCustRelationshipAI();
+      r.costs=getCostsAI();
+      r.swot=getSwotAI();
+      r.revenue=getRevenueAI();
+      r.valueProposition=getValuePropositionAI();
       return r;
       }
 
-    private List<ValuePropAI> getValueProposition() {
+    private List<ValuePropAI> getValuePropositionAI() {
       var r=new List<ValuePropAI>();
       return r;
       }
 
-    private RevenueStreamAI getRevenue() {
+    private RevenueStreamAI getRevenueAI() {
       var r=new RevenueStreamAI();
       r.consumer=getRevenueAI(PlanAttributeKind.revenueSegment1);
       r.business=getRevenueAI(PlanAttributeKind.revenueSegment2);
@@ -428,7 +427,7 @@ namespace KabadaAPI {
       return r;
       }
 
-    private SwotAI getSwot() {
+    private SwotAI getSwotAI() {
       var r=new SwotAI();
       var swots=gA(PlanAttributeKind.swot).OrderBy(x=>x.OrderValue).ToList();
       if(swots==null || swots.Count<1)
@@ -452,14 +451,14 @@ namespace KabadaAPI {
       return r;
       }
 
-    private CostAI getCosts() {
+    private CostAI getCostsAI() {
       var r=new CostAI();
-      r.fixedCosts=getCosts(myFixedCost_s);
-      r.variableCosts=getCosts(myVariableCost_s);
+      r.fixedCosts=getCostsAI(myFixedCost_s);
+      r.variableCosts=getCostsAI(myVariableCost_s);
       return r;
       }
 
-    private List<CostElementAI> getCosts(List<CostBL> costs) {
+    private List<CostElementAI> getCostsAI(List<CostBL> costs) {
       if(costs==null || costs.Count<1)
         return null;
       var r=new List<CostElementAI>();
@@ -475,7 +474,7 @@ namespace KabadaAPI {
       return r;
       }
 
-    private CustomerRelationshipAI getCustRelationship() {
+    private CustomerRelationshipAI getCustRelationshipAI() {
       var r=new CustomerRelationshipAI();
       return r;
       }
