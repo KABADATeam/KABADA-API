@@ -385,7 +385,7 @@ namespace KabadaAPI {
       var r=new BPunloaded(){ businessPlan_id=o.Id, country=o.CountryId.Value, language=o.LanguageId.Value, nace=o.ActivityID.Value};
       r.custSegs=new CustomerSegmentAI(){ business=businessSegAI(), consumer=consumerSegAI(), publicNgo=publicNgoAI() };
       r.channels=getAIchannels();
-      r.custRelationship=getCustRels();
+      r.custRelationship=getCustRelsAI();
       r.keyActivities=getKeyActsAI();
       r.keyPartners=getKeyPartnersAI();
       r.keyResources=getKeyResourcesAI();
@@ -529,12 +529,10 @@ namespace KabadaAPI {
           r.Add(w);
           }
         }
-
       return r;
-      throw new NotImplementedException();
       }
 
-    private CustomerRelationshipAI getCustRels() {
+    private CustomerRelationshipAI getCustRelsAI() {
       var r=new CustomerRelationshipAI();
       r.getCust=aiRels(PlanAttributeKind.relationshipActivity1);
       r.keepCust=aiRels(PlanAttributeKind.relationshipActivity2);
@@ -544,10 +542,15 @@ namespace KabadaAPI {
 
     private List<CustRelElementAI> aiRels(PlanAttributeKind relationshipKind) { //TODO
       var t=gA(relationshipKind);
-      //  var w=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
-
-      //var r=gA(PlanAttributeKind.Select(w=>new CustomerRelationshipBL().relationshipActivity1).Select(x=>new CustRelElementAI(){ action=x.}).ToList();
-      return null;
+      if(t==null || t.Count<1)
+        return null;
+      var r=new List<CustRelElementAI>();
+      foreach(var a in t){
+        var z=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
+        var w=new CustRelElementAI(){ channel=z, action=a.TexterId };
+        r.Add(w);
+        }
+      return r;
       }
 
     private List<ChannelAI> getAIchannels() {
