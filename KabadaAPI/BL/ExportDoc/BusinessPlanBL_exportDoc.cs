@@ -411,16 +411,77 @@ namespace KabadaAPI {
 
     private RevenueStreamAI getRevenue() {
       var r=new RevenueStreamAI();
+      r.consumer=getRevenueAI(PlanAttributeKind.revenueSegment1);
+      r.business=getRevenueAI(PlanAttributeKind.revenueSegment2);
+      r.publicNgo=getRevenueAI(PlanAttributeKind.revenueOther);
+      return r;
+      }
+
+    private List<RevenueStreamElementAI> getRevenueAI(PlanAttributeKind kind) {
+      var segi=gA(kind);
+      var r=new List<RevenueStreamElementAI>();
+      foreach(var o in segi){
+        var bo=new RevenueStreamBL(o);
+        var tidi=new List<Guid>{ bo.e.price_type_id, bo.e.stream_type_id };
+        var didi=textSupport.get(tidi).ToDictionary(x=>x.Id);
+        var p=didi[bo.e.price_type_id];
+        
+        var w=new RevenueStreamElementAI(){ segments=bo.e.namesOfSegments, category=bo.e.stream_type_id, price=bo.e.price_type_id };
+        w.pricingType=p.MasterId.Value;
+
+        r.Add(w);
+        }
       return r;
       }
 
     private SwotAI getSwot() {
       var r=new SwotAI();
+      var swots=gA(PlanAttributeKind.swot).OrderBy(x=>x.OrderValue).ToList();
+      if(swots==null || swots.Count<1)
+        return r;
+      var idi=swots.Select(x=>x.TexterId).Distinct().ToList();
+      var txi=textSupport.get(idi).ToDictionary(x=>x.Id);
+      r.opportunities=new List<Guid>();
+      r.strengths=new List<Guid>();
+      r.threats=new List<Guid>();
+      r.weaknesses=new List<Guid>();
+
+      foreach(var a in swots){
+        var v=short.Parse(a.AttrVal);
+        switch(v){
+          case 3: r.opportunities.Add(a.TexterId); break;
+          case 4: r.threats.Add(a.TexterId); break;
+          case 1: r.strengths.Add(a.TexterId); break;
+          case 2: r.weaknesses.Add(a.TexterId); break;
+          }
+        }
       return r;
       }
 
     private CostAI getCosts() {
       var r=new CostAI();
+      r.fixedCosts=getCosts(myFixedCost_s);
+      r.variableCosts=getCosts(myVariableCost_s);
+      return r;
+      }
+
+    private List<CostElementAI> getCosts(List<CostBL> costs) {
+      if(costs==null || costs.Count<1)
+        return null;
+      var r=new List<CostElementAI>();
+      var idi = costs.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
+      var ti = textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types
+      //var tidi=ti.Values.Where(x=>x!=null).Select(x=>x.Value).Distinct().ToList();
+      //tidi.AddRange(idi);
+      //var txi=textSupport.get(tidi).ToDictionary(x=>x.Id, x=>x.Value);
+      //var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
+      foreach(var o in costs){
+        var w=new CostElementAI(){ name=o.e.name, desc=o.e.description, subCategory=o.texterId };
+        var ct=ti[o.texterId];
+        if(ct!=null)
+          w.category=ct.Value;
+        r.Add(w);
+        }
       return r;
       }
 

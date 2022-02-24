@@ -13,6 +13,6 @@ namespace Kabada {
         public Guid category;
         public Guid price;
         public Guid pricingType;
-        public List<Guid> segments;     
+        public List<string> segments;     
     }   
 }
