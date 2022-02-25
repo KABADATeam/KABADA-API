@@ -501,7 +501,7 @@ namespace KabadaAPI {
       foreach(var t2 in t1){
         var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KeyPartnersAttribute>(t2.AttrVal);
         var w=new KeyPartnersElementAI()   
-          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority?"Yes":"No" };
+          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority };
         r.Add(w);
         }
       return r;
