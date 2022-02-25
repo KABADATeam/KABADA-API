@@ -10,7 +10,7 @@ namespace Kabada {
   public class KeyPartnersElementAI  {
         public Guid partnerType;
         public string company; 
-        public string priority; 
+        public bool priority; //yes,no
         public string web; 
         public string comment; 
     }
