@@ -317,7 +317,6 @@ namespace KabadaAPI {
       var tidi=ti.Values.Where(x=>x!=null).Select(x=>x.Value).Distinct().ToList();
       tidi.AddRange(idi);
       var txi=textSupport.get(tidi).ToDictionary(x=>x.Id, x=>x.Value);
-      //var midi = ti.Where(x => x.Value!=null && x.Value!=KeyResourceBL.HID).Select(x => (Guid)x.Value).Distinct().ToList();
       foreach(var o in us){
         var w=new CostElement_doc(){ name=o.e.name, desc=o.e.description, category="??", subCategory=txi[o.texterId] };
         var ct=ti[o.texterId];
@@ -340,20 +339,14 @@ namespace KabadaAPI {
 
       foreach(var a in swots){
         var v=short.Parse(a.AttrVal);
-        //if(v!=0) v=1;
-        var t=txi[a.TexterId];
-        //short m=0;
-        //if(t.Kind<(int)TexterRepository.EnumTexterKind.oportunity)
-        //  m=2; // strengths_weakness
-        //switch(m+v){
+        var t=txi[a.TexterId].Value;
         switch(v){
-          case 3: r.opportunities.Add(t.Value); break;
-          case 4: r.threats.Add(t.Value); break;
-          case 1: r.strengths.Add(t.Value); break;
-          case 2: r.weaknesses.Add(t.Value); break;
+          case 3: r.opportunities.Add(t); break;
+          case 4: r.threats.Add(t); break;
+          case 1: r.strengths.Add(t); break;
+          case 2: r.weaknesses.Add(t); break;
           }
         }
-
       return r;
       }}
 
@@ -391,6 +384,179 @@ namespace KabadaAPI {
     public BPunloaded unloadForAI(){
       var r=new BPunloaded(){ businessPlan_id=o.Id, country=o.CountryId.Value, language=o.LanguageId.Value, nace=o.ActivityID.Value};
       r.custSegs=new CustomerSegmentAI(){ business=businessSegAI(), consumer=consumerSegAI(), publicNgo=publicNgoAI() };
+      r.channels=getAIchannels();
+      r.keyActivities=getKeyActsAI();
+      r.keyPartners=getKeyPartnersAI();
+      r.keyResources=getKeyResourcesAI();
+      r.custRelationship=getCustRelationshipAI();
+      r.costs=getCostsAI();
+      r.swot=getSwotAI();
+      r.revenue=getRevenueAI();
+      r.valueProposition=getValuePropositionAI();
+      return r;
+      }
+
+    private List<ValuePropAI> getValuePropositionAI() {
+      var ps=myProduct_s;
+      if(ps==null || ps.Count<1)
+        return null;
+      var r=ps.Select(p=>
+             new ValuePropAI(){ title=p.e.title, description=p.e.description
+              , prodType=p.e.product_type, priceLevel=p.e.price_level, innovLevel=p.e.innovative_level, diffLevel=p.e.differentiation_level, qualityLevel=p.e.quality_level
+              , addIncomeSource=p.e.selected_additional_income_sources, productFeatures=p.e.product_features
+              }).ToList();  
+      return r;
+      }
+
+    private RevenueStreamAI getRevenueAI() {
+      var r=new RevenueStreamAI();
+      r.consumer=getRevenueAI(PlanAttributeKind.revenueSegment1);
+      r.business=getRevenueAI(PlanAttributeKind.revenueSegment2);
+      r.publicNgo=getRevenueAI(PlanAttributeKind.revenueOther);
+      return r;
+      }
+
+    private List<RevenueStreamElementAI> getRevenueAI(PlanAttributeKind kind) {
+      var segi=gA(kind);
+      var r=new List<RevenueStreamElementAI>();
+      foreach(var o in segi){
+        var bo=new RevenueStreamBL(o);
+        var tidi=new List<Guid>{ bo.e.price_type_id, bo.e.stream_type_id };
+        var didi=textSupport.get(tidi).ToDictionary(x=>x.Id);
+        var p=didi[bo.e.price_type_id];
+        
+        var w=new RevenueStreamElementAI(){ segments=bo.e.namesOfSegments, category=bo.e.stream_type_id, price=bo.e.price_type_id };
+        w.pricingType=p.MasterId.Value;
+
+        r.Add(w);
+        }
+      return r;
+      }
+
+    private SwotAI getSwotAI() {
+      var r=new SwotAI();
+      var swots=gA(PlanAttributeKind.swot).OrderBy(x=>x.OrderValue).ToList();
+      if(swots==null || swots.Count<1)
+        return r;
+      var idi=swots.Select(x=>x.TexterId).Distinct().ToList();
+      var txi=textSupport.get(idi).ToDictionary(x=>x.Id);
+      r.opportunities=new List<Guid>();
+      r.strengths=new List<Guid>();
+      r.threats=new List<Guid>();
+      r.weaknesses=new List<Guid>();
+
+      foreach(var a in swots){
+        var v=short.Parse(a.AttrVal);
+        switch(v){
+          case 3: r.opportunities.Add(a.TexterId); break;
+          case 4: r.threats.Add(a.TexterId); break;
+          case 1: r.strengths.Add(a.TexterId); break;
+          case 2: r.weaknesses.Add(a.TexterId); break;
+          }
+        }
+      return r;
+      }
+
+    private CostAI getCostsAI() {
+      var r=new CostAI();
+      r.fixedCosts=getCostsAI(myFixedCost_s);
+      r.variableCosts=getCostsAI(myVariableCost_s);
+      return r;
+      }
+
+    private List<CostElementAI> getCostsAI(List<CostBL> costs) {
+      if(costs==null || costs.Count<1)
+        return null;
+      var r=new List<CostElementAI>();
+      var idi = costs.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
+      var ti = textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types
+      foreach(var o in costs){
+        var w=new CostElementAI(){ name=o.e.name, desc=o.e.description, subCategory=o.texterId };
+        var ct=ti[o.texterId];
+        if(ct!=null)
+          w.category=ct.Value;
+        r.Add(w);
+        }
+      return r;
+      }
+
+    private List<KeyResourceAI> getKeyResourcesAI() {
+      return myKeyResource_s.Select(x=>new KeyResourceAI(){ name=x.e.name, category=x.e.type_id/*, ownership=? */ }).ToList();
+      }
+
+    private KeyPartnerAI getKeyPartnersAI() {
+      var r=new KeyPartnerAI();
+      partnerTypes=textSupport.getKeyPartnerMeta().ToDictionary(x=>x.Id, x=>x.Value);
+      r.distributors=getKeyPartnersAI(PlanAttributeKind.keyDistributor);
+      r.others=getKeyPartnersAI(PlanAttributeKind.otherKeyPartner);
+      r.suppliers=getKeyPartnersAI(PlanAttributeKind.keySupplier);
+      return r;
+      }
+
+    private List<KeyPartnersElementAI> getKeyPartnersAI(PlanAttributeKind kind) {
+      var t1=gA(kind);
+      if(t1==null || t1.Count<1)
+        return null;
+      var r=new List<KeyPartnersElementAI>();
+      foreach(var t2 in t1){
+        var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KeyPartnersAttribute>(t2.AttrVal);
+        var w=new KeyPartnersElementAI()   
+          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority };
+        r.Add(w);
+        }
+      return r;
+      }
+
+    private List<KeyValuePair<string, List<KeyActivityAI>>> getKeyActsAI() {
+      var r=new List<KeyValuePair<string, List<KeyActivityAI>>>();
+
+      var prodi=myProduct_s;
+      if(prodi.Count>0){
+        var idi=prodi.Select(x=>(Guid?)x.id).ToList();
+        var d=prodi.ToDictionary(x=>x.id);
+        var txi=textSupport.getActivitiesTypesQ().ToDictionary(x=>x.Id);
+        var acti=new UniversalAttributeRepository(textSupport.blContext).byMasters(idi).Select(x=>new KeyActivityBL(x)).ToList();
+
+        foreach(var p in prodi){
+          var macti=acti.Where(x=>x.masterId==p.id);
+          var dacti=new List<KeyActivityAI>();
+          foreach(var a in macti){
+            var su=txi[a.categoryId.Value];
+            //var ty=txi[su.MasterId.Value];
+            var an=new KeyActivityAI(){  desc=a.e.description, subType=a.categoryId.Value, type=su.MasterId.Value, name=a.e.name };
+            dacti.Add(an);
+            }
+          var w=new KeyValuePair<string, List<KeyActivityAI>>(p.e.title, dacti);
+          r.Add(w);
+          }
+        }
+      return r;
+      }
+
+    private CustomerRelationshipAI getCustRelationshipAI() {
+      var r=new CustomerRelationshipAI();
+      r.getCust=aiRels(PlanAttributeKind.relationshipActivity1);
+      r.keepCust=aiRels(PlanAttributeKind.relationshipActivity2);
+      r.convCust=aiRels(PlanAttributeKind.relationshipActivity3);
+      return r;
+      }
+
+    private List<CustRelElementAI> aiRels(PlanAttributeKind relationshipKind) { //TODO
+      var t=gA(relationshipKind);
+      if(t==null || t.Count<1)
+        return null;
+      var r=new List<CustRelElementAI>();
+      foreach(var a in t){
+        var z=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
+        var w=new CustRelElementAI(){ channel=z, action=a.TexterId };
+        r.Add(w);
+        }
+      return r;
+      }
+
+    private List<ChannelAI> getAIchannels() {
+      var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
+      var r=us.Select(c=>new ChannelAI(){ channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id }).ToList();
       return r;
       }
 
