@@ -5,8 +5,7 @@ namespace Kabada {
   public class KeyResourceAI
     {       
         public Guid category;
-        public string name; 
-        public Guid ownership; 
-        public Guid frequecy; 
+        public string name;
+        public List<ResourceSelection> selections;
     }
 }
