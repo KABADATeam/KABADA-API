@@ -481,7 +481,39 @@ namespace KabadaAPI {
       }
 
     private List<KeyResourceAI> getKeyResourcesAI() {
-      return myKeyResource_s.Select(x=>new KeyResourceAI(){ name=x.e.name, category=x.e.type_id/*, ownership=? */ }).ToList();
+      var w=myKeyResource_s;
+      if(w==null || w.Count<1)
+        return null;
+      var cati=textSupport.getKeyResourceCategories().ToDictionary(x=>x.Id);
+      var typi=textSupport.getKeyResourceTypes(null).ToDictionary(x=>x.Id, x=>x.MasterId.Value);
+      var r=new List<KeyResourceAI>();
+      foreach(var bo in w){
+        var o=new KeyResourceAI(){ name=bo.e.name, category=typi[bo.texterId] };
+        r.Add(o);
+        //var c=cati[typi[bo.texterId]];
+        //o.category=new ResourceCategory(){ id=c.Id, description=c.Value, title=c.LongValue};
+        //o.resource_id=bo.id;
+        ////var w=Newtonsoft.Json.JsonConvert.DeserializeObject<PlanResource>(a.AttrVal);
+        //o.description=bo.e.description;
+        //o.name=bo.e.name;
+        //o.type_id = bo.texterId;
+        if(bo.e.selections!=null){
+          o.selections=new List<ResourceSelection>();
+          foreach(var x in bo.e.selections){
+            var t=new ResourceSelection(){ title=x.title };
+            o.selections.Add(t);
+            if(x.options!=null && x.options.Count>0){
+              t.options=x.options.Select(y=>new ResourceOption { title=y }).ToList();
+              t.options[x.selected].selected=true;
+              }
+            }
+          }
+        }
+      return r;
+      //return myKeyResource_s.Select(x=>new KeyResourceAI(){
+      //  name=x.e.name, category=x.e.type_id,
+      // selections=x.e.selections.Select(y=>new ResourceSelection(){ title=y.title, options=y.options.Select(z=>new ResourceOption(){ title=z new List<ResourceOption> y.options}).ToList() 
+      //}).ToList();
       }
 
     private KeyPartnerAI getKeyPartnersAI() {
@@ -556,7 +588,10 @@ namespace KabadaAPI {
 
     private List<ChannelAI> getAIchannels() {
       var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
-      var r=us.Select(c=>new ChannelAI(){ channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id }).ToList();
+      var r=us.Select(c=>new ChannelAI(){
+       channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id
+       , channelSubtype=c.channel_subtype_id, subtypeType=c.subtype_type_id, locationType=c.location_type_id
+       }).ToList();
       return r;
       }
 
