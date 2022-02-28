@@ -556,7 +556,10 @@ namespace KabadaAPI {
 
     private List<ChannelAI> getAIchannels() {
       var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
-      var r=us.Select(c=>new ChannelAI(){ channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id }).ToList();
+      var r=us.Select(c=>new ChannelAI(){
+       channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id
+       , channelSubtype=c.channel_subtype_id, subtypeType=c.subtype_type_id, locationType=c.location_type_id
+       }).ToList();
       return r;
       }
 
