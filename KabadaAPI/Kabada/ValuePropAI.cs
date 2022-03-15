@@ -7,6 +7,7 @@ namespace Kabada
 {
     public class ValuePropAI
     {
+        public Guid id;
         public string title;
         public Guid prodType;
         public string description;

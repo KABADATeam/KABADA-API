@@ -10,6 +10,7 @@ namespace Kabada {
     }
     public class RevenueStreamElementAI
     {
+        public Guid id;
         public Guid category;
         public Guid price;
         public Guid pricingType;

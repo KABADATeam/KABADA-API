@@ -8,6 +8,7 @@ namespace Kabada {
     public List<KeyPartnersElementAI> others;
     }
   public class KeyPartnersElementAI  {
+        public Guid id;
         public Guid partnerType;
         public string company; 
         public bool priority; //yes,no
