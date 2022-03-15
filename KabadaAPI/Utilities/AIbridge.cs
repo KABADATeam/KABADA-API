@@ -26,11 +26,11 @@ namespace KabadaAPI {
         return r;
        } else {
         if(quiet!=true){
-          if(response.StatusCode==System.Net.HttpStatusCode.BadRequest){
+          //if(response.StatusCode==System.Net.HttpStatusCode.BadRequest){
             var s=await response.Content.ReadAsStringAsync();
-            throw new Exception("BadRequest:"+s);
-            }
-          response.EnsureSuccessStatusCode();
+            throw new Exception(response.StatusCode+": " +s);
+         //   }
+          //response.EnsureSuccessStatusCode();
           }
         return default(Tr);
         }
