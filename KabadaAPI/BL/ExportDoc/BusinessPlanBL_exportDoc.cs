@@ -600,7 +600,7 @@ namespace KabadaAPI {
       var t=gS(PlanAttributeKind.ngoSegment);
       foreach(var w in t){
         var z=new NgoSegmentBL(w);
-        var o=new PublicSegmentAI(){ segment_id=w.Id };
+        var o=new PublicSegmentAI(){ id=w.Id };
         o.business_type=minors(EnumTexterKind.public_bodies_ngo ,z.e.minorAttributes);
         r.Add(o);
         }
@@ -612,7 +612,7 @@ namespace KabadaAPI {
       var t=gS(PlanAttributeKind.consumerSegment);
       foreach(var w in t){
         var z=new ConsumerSegmentBL(w);
-        var o=new ConsumerSegmentAI(){ segment_id=w.Id };
+        var o=new ConsumerSegmentAI(){ id=w.Id };
         o.age=minors(EnumTexterKind.age_group ,z.e.minorAttributes);
         o.education=minors(EnumTexterKind.education ,z.e.minorAttributes);
         o.geographic_location=minors(EnumTexterKind.geographic_location ,z.e.minorAttributes);
@@ -635,7 +635,7 @@ namespace KabadaAPI {
       var t=gS(PlanAttributeKind.businessSegment);
       foreach(var w in t){
         var z=new BusinessSegmentBL(w);
-        var o=new BusinessSegmentAI(){ segment_id=w.Id };
+        var o=new BusinessSegmentAI(){ id=w.Id };
         o.business_type=minors(EnumTexterKind.industry ,z.e.minorAttributes);
         o.company_size=minors(EnumTexterKind.company_size ,z.e.minorAttributes);
         o.geographic_location=minors(EnumTexterKind.geographic_location ,z.e.minorAttributes);
