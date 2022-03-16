@@ -403,7 +403,7 @@ namespace KabadaAPI {
       var r=ps.Select(p=>
              new ValuePropAI(){ title=p.e.title, description=p.e.description
               , prodType=p.e.product_type, priceLevel=p.e.price_level, innovLevel=p.e.innovative_level, diffLevel=p.e.differentiation_level, qualityLevel=p.e.quality_level
-              , addIncomeSource=p.e.selected_additional_income_sources, productFeatures=p.e.product_features
+              , addIncomeSource=p.e.selected_additional_income_sources, productFeatures=p.e.product_features, id=p.id
               }).ToList();  
       return r;
       }
@@ -425,7 +425,7 @@ namespace KabadaAPI {
         var didi=textSupport.get(tidi).ToDictionary(x=>x.Id);
         var p=didi[bo.e.price_type_id];
         
-        var w=new RevenueStreamElementAI(){ segments=bo.e.namesOfSegments, category=bo.e.stream_type_id, price=bo.e.price_type_id };
+        var w=new RevenueStreamElementAI(){ segments=bo.e.namesOfSegments, category=bo.e.stream_type_id, price=bo.e.price_type_id, id=bo.id };
         w.pricingType=p.MasterId.Value;
 
         r.Add(w);
@@ -471,7 +471,7 @@ namespace KabadaAPI {
       var idi = costs.Select(x => x.texterId).Distinct().ToList();    // type texter Ids used in CostBL
       var ti = textSupport.get(idi).ToDictionary(x => x.Id, x => x.MasterId);  // types
       foreach(var o in costs){
-        var w=new CostElementAI(){ name=o.e.name, desc=o.e.description, subCategory=o.texterId };
+        var w=new CostElementAI(){ id=o.id, name=o.e.name, desc=o.e.description, subCategory=o.texterId };
         var ct=ti[o.texterId];
         if(ct!=null)
           w.category=ct.Value;
@@ -488,7 +488,7 @@ namespace KabadaAPI {
       var typi=textSupport.getKeyResourceTypes(null).ToDictionary(x=>x.Id, x=>x.MasterId.Value);
       var r=new List<KeyResourceAI>();
       foreach(var bo in w){
-        var o=new KeyResourceAI(){ name=bo.e.name, category=typi[bo.texterId] };
+        var o=new KeyResourceAI(){ name=bo.e.name, category=typi[bo.texterId], id=bo.id };
         r.Add(o);
         //var c=cati[typi[bo.texterId]];
         //o.category=new ResourceCategory(){ id=c.Id, description=c.Value, title=c.LongValue};
@@ -533,7 +533,7 @@ namespace KabadaAPI {
       foreach(var t2 in t1){
         var o=Newtonsoft.Json.JsonConvert.DeserializeObject<KeyPartnersAttribute>(t2.AttrVal);
         var w=new KeyPartnersElementAI()   
-          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority };
+          { comment=o.comment, web=o.website, company=o.name, partnerType=t2.TexterId, priority=o.is_priority, id=t2.Id };
         r.Add(w);
         }
       return r;
@@ -555,7 +555,7 @@ namespace KabadaAPI {
           foreach(var a in macti){
             var su=txi[a.categoryId.Value];
             //var ty=txi[su.MasterId.Value];
-            var an=new KeyActivityAI(){  desc=a.e.description, subType=a.categoryId.Value, type=su.MasterId.Value, name=a.e.name };
+            var an=new KeyActivityAI(){  desc=a.e.description, subType=a.categoryId.Value, type=su.MasterId.Value, name=a.e.name, id=a.id };
             dacti.Add(an);
             }
           var w=new KeyValuePair<string, List<KeyActivityAI>>(p.e.title, dacti);
@@ -580,17 +580,17 @@ namespace KabadaAPI {
       var r=new List<CustRelElementAI>();
       foreach(var a in t){
         var z=Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(a.AttrVal);
-        var w=new CustRelElementAI(){ channel=z, action=a.TexterId };
+        var w=new CustRelElementAI(){ channel=z, action=a.TexterId, id=a.Id };
         r.Add(w);
         }
       return r;
       }
 
     private List<ChannelAI> getAIchannels() {
-      var us=gAv<ChannelElementBL>(PlanAttributeKind.channel);
-      var r=us.Select(c=>new ChannelAI(){
-       channelType=c.channel_type_id, distributionChannels=c.distribution_channels_id, products=c.product_id
-       , channelSubtype=c.channel_subtype_id, subtypeType=c.subtype_type_id, locationType=c.location_type_id
+      var us=gAvP<ChannelElementBL>(PlanAttributeKind.channel);
+      var r=us.Select(c=>new ChannelAI(){ id=c.Key,
+       channelType=c.Value.channel_type_id, distributionChannels=c.Value.distribution_channels_id, products=c.Value.product_id
+       , channelSubtype=c.Value.channel_subtype_id, subtypeType=c.Value.subtype_type_id, locationType=c.Value.location_type_id
        }).ToList();
       return r;
       }

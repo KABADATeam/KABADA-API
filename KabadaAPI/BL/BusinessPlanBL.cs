@@ -120,6 +120,11 @@ namespace KabadaAPI {
       return r;
       }
 
+    private List<KeyValuePair<Guid,T>> gAvP<T>(PlanAttributeKind kind) where T : class {
+      var r = gA(kind).OrderBy(x => x.OrderValue).Select(x => new KeyValuePair<Guid, T>(x.Id, Newtonsoft.Json.JsonConvert.DeserializeObject<T>(x.AttrVal))).ToList();
+      return r;
+    }
+
     public string descriptionCustomerSegments { get {// segments name
       var t=custSeg;
       return string.Join(", ", t);
