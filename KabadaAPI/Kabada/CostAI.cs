@@ -8,6 +8,7 @@ namespace Kabada {
     }
     public class CostElementAI
     {
+        public Guid id;
         public Guid category;
         public Guid subCategory;
         public string name;

@@ -10,6 +10,7 @@ namespace Kabada {
     }
     public class CustRelElementAI
     {
+        public Guid id;
         public Guid action;
         public List<string> channel; 
     }

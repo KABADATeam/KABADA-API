@@ -8,7 +8,7 @@ namespace Kabada {
     public List<PublicSegmentAI> publicNgo; 
     }
   public class ConsumerSegmentAI {
-        public Guid segment_id;
+        public Guid id;
         public List<Guid> age; 
         public List<Guid> gender; 
         public List<Guid> education; 
@@ -16,14 +16,14 @@ namespace Kabada {
         public List<Guid> geographic_location; 
     }
   public class BusinessSegmentAI {
-        public Guid segment_id;
+        public Guid id;
         public List<Guid> business_type; 
         public List<Guid> company_size;    
         public List<Guid> geographic_location; 
     }
     public class PublicSegmentAI
     {
-        public Guid segment_id;
+        public Guid id;
         public List<Guid> business_type;
     }
 }
