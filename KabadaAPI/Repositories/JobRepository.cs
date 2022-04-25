@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace KabadaAPI {
   public class JobRepository : BaseRepository {
@@ -78,8 +79,8 @@ namespace KabadaAPI {
       return o.Id;
       }
 
-    public void teachAI(){
-      new Kabada.AIlearnP().learn(blContext);
+    public async Task teachAI(){
+      await new  Kabada.AIlearnP().learn(blContext);
       }
     }
   }
