@@ -51,5 +51,11 @@ namespace KabadaAPI {
       var r=await post<AIpredictP, string>("predict", parm, false, true);
       return r;
       }
+
+    //===================================================================================================//
+    public async Task<string> learn(AIlearnP parm) {
+      var r = await post<AIlearnP, string>("learn", parm, false, true);
+      return r;
     }
   }
+}
