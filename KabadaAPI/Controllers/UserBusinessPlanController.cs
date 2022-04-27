@@ -412,5 +412,16 @@ namespace KabadaAPI.Controllers {
         return xlsR(p.xlsxBytes(skipCSV, skipCapitalUpdate), nam);
       //return File(temp, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"Kabada_export_{p.o.Title}.xlsx");           
     }
+
+    [HttpGet("startAItraining")]
+    [AllowAnonymous]
+   // [Authorize]
+// THIS IS TEMPORARY for AI debugging purposes ONLY. Should later go to the scheduled tasks.
+    public async Task<IActionResult> startAItraining() { return await grun(_startAItraining); }
+    private async Task<IActionResult> _startAItraining(){
+      await new AIlearnP().learn(context);
+      return Ok();
     }
+
   }
+}
