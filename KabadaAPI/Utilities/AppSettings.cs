@@ -104,5 +104,9 @@ namespace KabadaAPI {
       return getS("AIurl", null);
       }}
 
-    }
+    public TimeSpan? aiTeachPoint  {
+      get { return getD("aiTeachPoint");
+      }}
+
   }
+}
