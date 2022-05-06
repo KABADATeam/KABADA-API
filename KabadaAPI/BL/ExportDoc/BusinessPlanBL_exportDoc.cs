@@ -488,7 +488,7 @@ namespace KabadaAPI {
       var typi=textSupport.getKeyResourceTypes(null).ToDictionary(x=>x.Id, x=>x.MasterId.Value);
       var r=new List<KeyResourceAI>();
       foreach(var bo in w){
-        var o=new KeyResourceAI(){ name=bo.e.name, category=typi[bo.texterId], id=bo.id };
+        var o=new KeyResourceAI(){ name=bo.e.name, category=typi[bo.texterId], resType=bo.texterId, id=bo.id };
         r.Add(o);
         //var c=cati[typi[bo.texterId]];
         //o.category=new ResourceCategory(){ id=c.Id, description=c.Value, title=c.LongValue};
@@ -539,8 +539,8 @@ namespace KabadaAPI {
       return r;
       }
 
-    private List<KeyValuePair<string, List<KeyActivityAI>>> getKeyActsAI() {
-      var r=new List<KeyValuePair<string, List<KeyActivityAI>>>();
+    private List<KeyValuePair<Guid, List<KeyActivityAI>>> getKeyActsAI() {
+      var r=new List<KeyValuePair<Guid, List<KeyActivityAI>>>();
 
       var prodi=myProduct_s;
       if(prodi.Count>0){
@@ -558,7 +558,7 @@ namespace KabadaAPI {
             var an=new KeyActivityAI(){  desc=a.e.description, subType=a.categoryId.Value, type=su.MasterId.Value, name=a.e.name, id=a.id };
             dacti.Add(an);
             }
-          var w=new KeyValuePair<string, List<KeyActivityAI>>(p.e.title, dacti);
+          var w=new KeyValuePair<Guid, List<KeyActivityAI>>(p.id, dacti);
           r.Add(w);
           }
         }
