@@ -6,6 +6,7 @@ namespace Kabada {
     {
         public Guid id;
         public Guid category;
+        public Guid resType;
         public string name;
         public List<ResourceSelection> selections;
     }

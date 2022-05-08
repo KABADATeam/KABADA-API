@@ -20,20 +20,30 @@ namespace KabadaAPI {
       var lastRun=new DateTime(1958, 9, 28);
       var scanningStep=(int)(s.jobsNotifyRescanInterval.TotalMilliseconds);
       var rescanInterval=s.jobsRescanInterval;
+      var lastAI = lastRun;
+      var AIrescan=new TimeSpan(22, 0, 0);
+      var AIpoint=s.aiTeachPoint;
 
-      while(true){
+      while (true){
         try {
           await Task.Delay(scanningStep);  // give time to fill in log file parameters at sturtup 
           if (cancellationToken.IsCancellationRequested)
             break;
           var w = DateTime.Now;
+          var o= new JobRepository(blC);
           if (notification>lastRun || lastRun.Add(rescanInterval)<=w) {
             lastRun=w;
-            new JobRepository(blC).runAll();
+            o.runAll();
             }
           if (cancellationToken.IsCancellationRequested)
             break;
-
+          if(AIpoint!=null && lastAI.Add(AIrescan) <= w){
+            var t0=new DateTime(w.Year, w.Month, w.Day).Add(AIpoint.Value);
+            if(w>=t0 && t0.Add(rescanInterval)>w){
+              lastAI=w;
+              await o.teachAI();
+              }
+            }
           }
         catch (Exception e) { MIX.EXC(blC.logError, e, "BackgroundJobber "); }
         }
