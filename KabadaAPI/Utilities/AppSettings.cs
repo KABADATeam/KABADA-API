@@ -66,7 +66,9 @@ namespace KabadaAPI {
     public string smtpPassword { get {
       return getS("Smtp:Password", EmailAccount.Password);
       }}
-
+    public string smtpFrom { get {
+      return getS("Smtp:From", EmailAccount.UserName);
+      }}
     public bool useTLS { get {
       var t=getS("Smtp:Security", "Full");
       return (t=="TLS");
