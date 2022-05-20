@@ -38,6 +38,7 @@ namespace Kabada {
         var t=repo.getPlanBLfullUnlimited(guids[i]);
         t.textSupport=tr;
         wp.plan=t.unloadForAI();
+        var xyz=wp.plan.pack();       // for making snapshots
         await b.learn(wp); // perform AI call with wp
         wp.isFirst=false;
         }
