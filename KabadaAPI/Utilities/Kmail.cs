@@ -28,10 +28,18 @@ namespace KabadaAPI {
       }
 
     protected void send(MimeMessage mailMessage){
-      var u=Opt.smtpUsername.Trim();
-      if(u.IndexOf('@')<0)
-        u+="@"+Opt.smtpHost;
-      var a=new MailboxAddress("KABADA", u);
+            var u = Opt.smtpFrom.Trim();
+      //var u=Opt.smtpUsername.Trim();
+      //  if (u.IndexOf('@') < 0)
+      //  {               
+      //      var s1 = Opt.smtpHost.IndexOf(".");
+      //      var s2 = Opt.smtpHost.LastIndexOf(".");
+      //      if(s1==s2)
+      //          u+="@"+Opt.smtpHost;
+      //      else
+      //          u+="@"+Opt.smtpHost.Substring(s1+1);
+      //  }
+        var a=new MailboxAddress("KABADA", u);
       mailMessage.From.Add(a);
 
       using (var smtpClient = new SmtpClient()){

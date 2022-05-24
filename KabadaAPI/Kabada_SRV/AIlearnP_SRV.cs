@@ -1,4 +1,5 @@
 ﻿using KabadaAPI;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Kabada {
   partial class AIlearnP {
+    public string pack(){
+      var r = JsonConvert.SerializeObject(this, 0, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+      return r;
+    }
+
     internal async Task learn(BLontext blContext) {
       var idi=new BusinessPlansRepository(blContext).allPlans().ToList();
       var lastPos=idi.Count;
@@ -38,6 +44,7 @@ namespace Kabada {
         var t=repo.getPlanBLfullUnlimited(guids[i]);
         t.textSupport=tr;
         wp.plan=t.unloadForAI();
+        var xyz=wp.pack();       // for making snapshots
         await b.learn(wp); // perform AI call with wp
         wp.isFirst=false;
         }
