@@ -43,10 +43,11 @@ namespace KabadaAPI {
       mailMessage.From.Add(a);
 
       using (var smtpClient = new SmtpClient()){
-//        if(opt.useTLS)
+        if(Opt.useTLS)
           smtpClient.Connect(Opt.smtpHost, Opt.smtpPort, SecureSocketOptions.StartTls);
-         //else
-         // smtpClient.Connect(opt.smtpHost, opt.smtpPort, true);
+         else {
+          smtpClient.Connect(Opt.smtpHost, Opt.smtpPort, true);
+          }
         smtpClient.Authenticate(Opt.smtpUsername, Opt.smtpPassword);
         smtpClient.Send(mailMessage);
         smtpClient.Disconnect(true);
