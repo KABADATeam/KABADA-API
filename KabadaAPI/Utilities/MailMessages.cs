@@ -29,7 +29,7 @@ namespace KabadaAPI {
           break;
         case MessageKinds.passwordResetLink:
           subject="Reset password";
-          h($"<a href=\"{baseUrl}set-password?requestId={parameter}\">Password reset link</a><br /><br />");
+          h($"<a href=\"{baseUrl}#/set-password?requestId={parameter}\">Password reset link</a><br /><br />");
           break;
 
         default: throw new Exception($"unsupported e-mail message kind '{kind.ToString()}'");
