@@ -34,6 +34,7 @@ namespace Kabada {
         o.product_type=productTypes[pa.product_type].Value;        
         o.price = priceLevels[pa.price_level].Value;
         o.value = qualityOptions[pa.quality_level].Value;
+        o.description = pa.description;
         }
       }
       

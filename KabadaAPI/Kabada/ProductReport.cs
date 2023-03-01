@@ -7,5 +7,6 @@ namespace Kabada {
     public string name;
     public string price;
     public string value;
+    public string description;
     }
   }
